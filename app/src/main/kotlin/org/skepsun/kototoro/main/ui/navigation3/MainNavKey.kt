@@ -31,10 +31,14 @@ data class SearchNavKey(
     val advancedAuthor: String = "",
     val pinnedOnly: Boolean = false,
     val hideEmpty: Boolean = false,
+    val languagePresetId: Long = -1L,
 ) : MainNavKey
 
 @Serializable
 data object HomeNavKey : TopLevelNavKey
+
+@Serializable
+data object SearchHomeNavKey : TopLevelNavKey
 
 @Serializable
 data object HistoryNavKey : TopLevelNavKey
@@ -65,6 +69,7 @@ data object UpdatedNavKey : TopLevelNavKey
 
 val allTopLevelNavKeys: List<TopLevelNavKey> = listOf(
     HomeNavKey,
+    SearchHomeNavKey,
     HistoryNavKey,
     FavoritesNavKey,
     ExploreNavKey,

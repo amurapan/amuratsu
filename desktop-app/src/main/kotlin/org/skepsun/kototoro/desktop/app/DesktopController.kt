@@ -1924,6 +1924,12 @@ class DesktopController(
         startReading(DesktopReadingRequest.Chapter(null))
     }
 
+    /** Open the saved chapter/position directly from the shared personal home. */
+    internal fun resumeHomeContent(content: SourceContent) = navigate {
+        detailsOnIo(content)
+        startReading(DesktopReadingRequest.Chapter(null))
+    }
+
     /** Android's "random" quick action: open a random favourite. */
     fun randomFavourite() = navigate {
         val favourite = session.library.favourites().randomOrNull() ?: error(desktopText("error.favouritesEmpty"))

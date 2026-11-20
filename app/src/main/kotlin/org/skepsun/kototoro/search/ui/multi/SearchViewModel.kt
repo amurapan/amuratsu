@@ -35,7 +35,6 @@ import org.skepsun.kototoro.explore.data.ContentSourcesRepository
 import org.skepsun.kototoro.explore.data.SourcePreset
 import org.skepsun.kototoro.explore.data.SourcePresetsRepository
 import org.skepsun.kototoro.favourites.domain.FavouritesRepository
-import org.skepsun.kototoro.favourites.domain.GlobalFavoritesState
 import org.skepsun.kototoro.history.data.HistoryRepository
 import org.skepsun.kototoro.list.domain.ContentListMapper
 import org.skepsun.kototoro.list.ui.model.ListModel
@@ -44,6 +43,7 @@ import org.skepsun.kototoro.parsers.model.Content
 import org.skepsun.kototoro.parsers.model.ContentSource
 import org.skepsun.kototoro.parsers.util.runCatchingCancellable
 import org.skepsun.kototoro.search.domain.ALL_SEARCH_CONTENT_KINDS
+import org.skepsun.kototoro.search.domain.ALL_SOURCE_TYPES
 import org.skepsun.kototoro.search.domain.AdvancedSearchParams
 import org.skepsun.kototoro.search.domain.SearchKind
 import org.skepsun.kototoro.search.domain.SearchFilters
@@ -51,7 +51,6 @@ import org.skepsun.kototoro.search.domain.SearchV2Helper
 import org.skepsun.kototoro.search.domain.matches
 import org.skepsun.kototoro.search.domain.searchContentKindsFromNames
 import org.skepsun.kototoro.search.domain.sourceTypesFromNames
-import org.skepsun.kototoro.search.domain.sourceTypesFromTags
 import java.util.Locale
 
 private const val MAX_PARALLELISM = 4
@@ -68,13 +67,13 @@ class SearchViewModel @AssistedInject constructor(
     @Assisted("hideEmpty") initialHideEmpty: Boolean,
     @Assisted("sourceTypeNames") sourceTypeNames: Collection<String>?,
     @Assisted("contentKindNames") contentKindNames: Collection<String>?,
+    @Assisted("languagePresetId") initialLanguagePresetId: Long,
     private val mangaListMapper: ContentListMapper,
     private val searchHelperFactory: SearchV2Helper.Factory,
     private val sourcesRepository: ContentSourcesRepository,
     private val sourceTypeIdentifier: SourceTypeIdentifier,
     private val appSettings: AppSettings,
     private val sourcePresetsRepository: SourcePresetsRepository,
-    private val globalFavoritesState: GlobalFavoritesState,
     private val historyRepository: HistoryRepository,
     private val favouritesRepository: FavouritesRepository,
 ) : BaseViewModel() {
@@ -91,6 +90,7 @@ class SearchViewModel @AssistedInject constructor(
             @Assisted("hideEmpty") hideEmpty: Boolean,
             @Assisted("sourceTypeNames") sourceTypeNames: Collection<String>?,
             @Assisted("contentKindNames") contentKindNames: Collection<String>?,
+            @Assisted("languagePresetId") languagePresetId: Long = -1L,
         ): SearchViewModel
     }
 
@@ -108,24 +108,18 @@ class SearchViewModel @AssistedInject constructor(
 
     private val _filters = MutableStateFlow(
         SearchFilters(
-            sourceTypes = sourceTypesFromNames(sourceTypeNames)
-                ?: sourceTypesFromTags(globalFavoritesState.selectedSourceTags.value),
+            sourceTypes = sourceTypesFromNames(sourceTypeNames) ?: ALL_SOURCE_TYPES,
             contentKinds = searchContentKindsFromNames(contentKindNames) ?: ALL_SEARCH_CONTENT_KINDS,
             pinnedOnly = initialPinnedOnly,
             // "Hide empty sources" is remembered across searches: callers that open the search screen without a
             // scope never pass it, so the stored preference is the fallback that keeps the user's last choice.
             hideEmpty = initialHideEmpty || appSettings.isSearchHideEmptySourcesEnabled,
-            languagePresetId = appSettings.activeSourcePresetId,
+            languagePresetId = initialLanguagePresetId,
         ).normalized(),
     )
     val filters = _filters.asStateFlow()
     val languagePresets: StateFlow<List<SourcePreset>> = sourcePresetsRepository.observeAll()
         .stateIn(viewModelScope + Dispatchers.IO, SharingStarted.Eagerly, emptyList())
-    val activeLanguagePresetId: StateFlow<Long> = appSettings.observeAsStateFlow(
-        scope = viewModelScope + Dispatchers.IO,
-        key = AppSettings.KEY_ACTIVE_SOURCE_PRESET_ID,
-        valueProducer = { appSettings.activeSourcePresetId },
-    )
     val globalTagBlacklist: StateFlow<Set<String>> = appSettings.observeAsStateFlow(
         scope = viewModelScope + Dispatchers.IO,
         key = AppSettings.KEY_GLOBAL_TAG_BLACKLIST,
@@ -195,13 +189,8 @@ class SearchViewModel @AssistedInject constructor(
     fun applyFilters(filters: SearchFilters) {
         val normalized = filters.normalized()
         val previous = _filters.value
-        val currentPresetId = appSettings.activeSourcePresetId.takeIf { it > 0L } ?: -1L
-        val scopeChanged = !previous.hasSameSearchScope(normalized) ||
-            currentPresetId != normalized.languagePresetId
+        val scopeChanged = !previous.hasSameSearchScope(normalized)
         _filters.value = normalized
-        if (currentPresetId != normalized.languagePresetId) {
-            appSettings.activeSourcePresetId = normalized.languagePresetId
-        }
         if (appSettings.isSearchHideEmptySourcesEnabled != normalized.hideEmpty) {
             appSettings.isSearchHideEmptySourcesEnabled = normalized.hideEmpty
         }
@@ -319,7 +308,7 @@ class SearchViewModel @AssistedInject constructor(
         }
 
     private fun currentFilters(): SearchFilters =
-        filters.value.copy(languagePresetId = appSettings.activeSourcePresetId).normalized()
+        filters.value
 
     private suspend fun resolveSources(filters: SearchFilters, includeDisabled: Boolean): List<ContentSource> {
         val sources = when {

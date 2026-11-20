@@ -28,7 +28,6 @@ import androidx.compose.ui.res.stringResource
 import org.skepsun.kototoro.core.ui.adaptive.TvTextButton
 import org.skepsun.kototoro.core.util.ext.makeSnackbar
 import org.skepsun.kototoro.home.ui.compose.HomeScreen
-import org.skepsun.kototoro.home.ui.compose.HomeScreenActions
 import org.skepsun.kototoro.home.ui.HomeRoute
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import org.skepsun.kototoro.home.ui.HomeViewModel
@@ -388,6 +387,12 @@ private fun MainShellTopLevelEntryContent(
     }
     val activity = LocalContext.current as FragmentActivity
     when (key) {
+        org.skepsun.kototoro.main.ui.navigation3.SearchHomeNavKey ->
+            org.skepsun.kototoro.search.ui.compose.SearchHomeRoute(
+                contentPadding = contentPadding,
+                onSearch = onOpenSearch,
+                onManageSources = appRouter::openManageSources,
+            )
         org.skepsun.kototoro.main.ui.navigation3.HomeNavKey -> HomeRoute(
             animatedVisibilityScope = animatedVisibilityScope,
             appRouter = appRouter,
@@ -637,6 +642,7 @@ private fun MainShellTopLevelEntryContent(
                     hideEmpty = key.hideEmpty,
                     sourceTypeNames = key.sourceTypes.split(",").filter { it.isNotBlank() },
                     contentKindNames = key.contentKinds.split(",").filter { it.isNotBlank() },
+                    languagePresetId = key.languagePresetId,
                 )
             }
             RouteLiquidGlassBackdrop(
@@ -691,6 +697,7 @@ private fun MainShellTopLevelEntryContent(
                                         pinnedOnly = pinnedOnly,
                                         hideEmpty = hideEmpty,
                                         requestId = System.nanoTime(),
+                                        languagePresetId = viewModel.filters.value.languagePresetId,
                                     ),
                                 )
                             },

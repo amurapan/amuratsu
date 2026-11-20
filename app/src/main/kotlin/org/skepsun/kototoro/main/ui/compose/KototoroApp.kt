@@ -34,6 +34,7 @@ import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.key
@@ -166,6 +167,7 @@ import org.skepsun.kototoro.main.ui.navigation3.FavoritesNavKey
 import org.skepsun.kototoro.main.ui.navigation3.FeedNavKey
 import org.skepsun.kototoro.main.ui.navigation3.HistoryNavKey
 import org.skepsun.kototoro.main.ui.navigation3.HomeNavKey
+import org.skepsun.kototoro.main.ui.navigation3.SearchHomeNavKey
 import org.skepsun.kototoro.main.ui.navigation3.LocalNavKey
 import org.skepsun.kototoro.main.ui.navigation3.SearchNavKey
 import org.skepsun.kototoro.main.ui.navigation3.BookmarksNavKey
@@ -276,6 +278,7 @@ private fun routeOwnerKeyForTopLevelKey(
     key: TopLevelNavKey?,
 ): String? = when (key) {
     HomeNavKey -> "home"
+    SearchHomeNavKey -> "search_home"
     DiscoverNavKey -> "discover"
     HistoryNavKey -> "history"
     FavoritesNavKey -> "favorites"
@@ -292,6 +295,7 @@ private fun topLevelKeyForRouteOwnerKey(
     ownerKey: String?,
 ): TopLevelNavKey? = when (ownerKey) {
     "home" -> HomeNavKey
+    "search_home" -> SearchHomeNavKey
     "discover" -> DiscoverNavKey
     "history" -> HistoryNavKey
     "favorites" -> FavoritesNavKey
@@ -333,8 +337,9 @@ private fun TopLevelNavKey?.supportsGridSizeSlider(): Boolean = when (this) {
 
 private fun TopLevelNavKey?.titleRes(): Int? = when (this) {
     HomeNavKey -> R.string.home
+    SearchHomeNavKey -> R.string.search
     HistoryNavKey -> R.string.history
-    FavoritesNavKey -> R.string.favourites
+    FavoritesNavKey -> R.string.media_library
     ExploreNavKey -> R.string.explore
     DiscoverNavKey -> R.string.discover
     FeedNavKey -> R.string.feed
@@ -887,7 +892,7 @@ fun KototoroApp(
     val hasSelectionTopChrome =
         effectiveTopBarOverrideState is ExploreSourceSelectionTopBarState ||
             effectiveTopBarOverrideState is ContentSelectionTopBarOverrideState
-    val shouldUseMaterialTopBarScroll = shouldShowChrome && !hasSelectionTopChrome
+    val shouldUseMaterialTopBarScroll = shouldShowChrome && !hasSelectionTopChrome && chromeTopLevelKey != HomeNavKey
     val isChromeOffsetFromCurrentDestination =
         offsetDestinationRoute == currentDestinationRoute && offsetDestinationOwnerKey == currentTopBarOwnerKey
     val shouldRevealChromeForFocus = presentationConfig.isTv && isChromeFocused
@@ -955,11 +960,11 @@ fun KototoroApp(
         statusBarHeightPx + with(density) { interfaceStyleTokens.mainTopBarHeight.roundToPx() },
     )
     val maxCollapsePx = (reservedTopBarHeightPx - statusBarHeightPx).coerceAtLeast(0)
-    val contentTopInsetPx = if (shouldReserveChromeInsets) {
-        (reservedTopBarHeightPx + effectiveTopBarOffset).toInt()
+    val contentTopInsetPx = when {
+        !shouldReserveChromeInsets -> 0
+        isHomeRoute -> statusBarHeightPx // Home owns its Material header and search field.
+        else -> (reservedTopBarHeightPx + effectiveTopBarOffset).toInt()
             .coerceIn(maxCollapsePx, reservedTopBarHeightPx)
-    } else {
-        0
     }
     val layoutDirection = LocalLayoutDirection.current
     val displayCutoutPadding = WindowInsets.displayCutout.asPaddingValues()
@@ -1028,20 +1033,27 @@ fun KototoroApp(
         val railAnimationFactor = rememberRailAnimationFactor(appSettings)
         val motionStyle = LocalMotionStyle.current
         val surfaceStyle = LocalSurfaceStyle.current
-        // Content-overlap under the floating top chrome (0f at the top, 1f once the list has
-        // scrolled at least one top-bar-height). Deliberately position-derived (never velocity),
-        // smoothed with a short tween (Material: snappy, iOS: slightly longer).
-        val rawChromeScrollOverlap = if (topBarHeightPx > 0) {
-            (-chromeScrollState.totalContentScrollOffset.floatValue / topBarHeightPx.toFloat()).coerceIn(0f, 1f)
+        // Only glass chrome needs an overlap animation in composition. Material reads its
+        // gradient's scroll offset in graphicsLayer, so scrolling must not recompose the shell.
+        val needsChromeScrollOverlap = surfaceStyle == SurfaceStyle.BACKDROP && !isHomeRoute
+        val rawChromeScrollOverlap by remember(chromeScrollState, topBarHeightPx, needsChromeScrollOverlap) {
+            derivedStateOf {
+                if (needsChromeScrollOverlap && topBarHeightPx > 0) {
+                    (-chromeScrollState.totalContentScrollOffset.floatValue / topBarHeightPx).coerceIn(0f, 1f)
+                } else {
+                    0f
+                }
+            }
+        }
+        val chromeScrollOverlap = if (needsChromeScrollOverlap) {
+            animateFloatAsState(
+                targetValue = rawChromeScrollOverlap,
+                animationSpec = tween(durationMillis = if (motionStyle == MotionStyle.IOS) 240 else 120),
+                label = "chrome_scroll_overlap",
+            ).value
         } else {
             0f
         }
-        val overlapTweenMillis = if (motionStyle == MotionStyle.IOS) 240 else 120
-        val chromeScrollOverlap by animateFloatAsState(
-            targetValue = rawChromeScrollOverlap,
-            animationSpec = tween(durationMillis = overlapTweenMillis),
-            label = "chrome_scroll_overlap",
-        )
         val isScrollbarActive = remember { mutableStateOf(false) }
         // The top bar is an overlay sibling of the page content, so DOWN on a chrome stop cannot reach
         // the page on its own. The visible page publishes its first stop here and the bar links to it.
@@ -1118,7 +1130,7 @@ fun KototoroApp(
             }
             val mainShellChrome: @Composable BoxScope.() -> Unit = {
                 if (shouldShowChrome || isChromeVisible || chromeAlpha > 0f) {
-                    if (!isImmersiveRoute) {
+                    if (!isImmersiveRoute && !isHomeRoute) {
                         val glassPrefs = LocalGlassPrefs.current
                         val isTopImmersiveEdge = glassPrefs?.isTopImmersiveEdgeEnabled ?: true
                         val isBottomImmersiveEdge = glassPrefs?.isBottomImmersiveEdgeEnabled ?: false
@@ -1219,7 +1231,7 @@ fun KototoroApp(
                         }
                     }
 
-                    if (shouldShowChrome && !isImmersiveRoute) {
+                    if (shouldShowChrome && !isImmersiveRoute && !isHomeRoute) {
                         TopChromeGlow(
                             route = chromeTopLevelKey,
                             height = topImmersiveHeight + 136.dp,
@@ -1230,7 +1242,7 @@ fun KototoroApp(
                         )
                     }
 
-                    MainTopChrome(
+                    if (!isHomeRoute) MainTopChrome(
                         effectiveTopBarOverrideState = effectiveTopBarOverrideState,
                         isLandscapeNavigation = isLandscapeNavigation,
                         isLayeredSurface = isLayeredSurface,
@@ -1251,6 +1263,7 @@ fun KototoroApp(
                         },
                         query = query,
                         titleRes = chromeTopLevelKey.titleRes(),
+                        showSearch = chromeTopLevelKey != SearchHomeNavKey,
                         subtitleText = when {
                             isHomeRoute && spaceUiState.switcherEnabled -> spaceUiState.spaces.firstOrNull { it.id == navigationSpaceId }?.title?.takeIf { it.isNotBlank() }
                             else -> null
@@ -1272,7 +1285,7 @@ fun KototoroApp(
                         onAppUpdateClick = onAppUpdateClick,
                         isIncognitoModeEnabled = isIncognitoModeEnabled,
                         onIncognitoToggle = onIncognitoToggle,
-                        isLanguagePresetFilterVisible = effectiveLanguagePresetFilterVisible,
+                        isLanguagePresetFilterVisible = effectiveLanguagePresetFilterVisible && chromeTopLevelKey != SearchHomeNavKey,
                         languagePresetEntries = languagePresetEntries,
                         activeLanguagePresetId = activeSourcePresetId,
                         onLanguagePresetSelected = onLanguagePresetSelected,
@@ -1284,12 +1297,12 @@ fun KototoroApp(
                         favoritesTabsPosition = favoritesTabsPosition,
                         selectedContentType = selectedContentType,
                         enabledContentTypes = enabledContentTypes,
-                        isContentTypeFilterVisible = effectiveContentTypeFilterVisible,
+                        isContentTypeFilterVisible = effectiveContentTypeFilterVisible && chromeTopLevelKey != SearchHomeNavKey,
                         onContentTypeSelected = onContentTypeSelected,
                         selectedSourceTags = selectedSourceTags,
                         sourceTagEntries = sourceTagEntries,
                         enabledSourceTags = enabledSourceTags,
-                        isSourceTagFilterVisible = effectiveSourceTagFilterVisible,
+                        isSourceTagFilterVisible = effectiveSourceTagFilterVisible && chromeTopLevelKey != SearchHomeNavKey,
                         onSourceTagFilterClick = onSourceTagFilterClick,
                         onSourceTagSelected = onSourceTagSelected,
                         sourceTagCustomMenuContent = sourceTagCustomMenuContent,
@@ -1358,7 +1371,7 @@ fun KototoroApp(
                         navStateFlow = navStateFlow,
                         onItemSelected = bottomNavDispatcher,
                         onItemReselected = bottomNavReselectionDispatcher,
-                        isResumeEnabled = effectiveResumeEnabled,
+                        isResumeEnabled = effectiveResumeEnabled && !isHomeRoute,
                         onResumeClick = effectiveResumeClick,
                         resumeAction = effectiveResumeAction,
                         railHeaderContent = if (isTabletVerticalBar && spaceUiState.switcherEnabled) {
@@ -1386,7 +1399,7 @@ fun KototoroApp(
                             null
                         },
                         adjacentAction = if (
-                            (!isLandscapeNavigation || isTabletVerticalBar) && effectiveResumeEnabled
+                            (!isLandscapeNavigation || isTabletVerticalBar) && effectiveResumeEnabled && !isHomeRoute
                         ) {
                             {
                                 ContinueReadingFab(
@@ -1592,6 +1605,7 @@ fun KototoroApp(
                     // handle outranks it with zIndex 20), so it would cover and steal taps from the
                     // search button; there is nothing to switch spaces for while typing anyway.
                     visible = spaceUiState.switcherEnabled &&
+                        !(shouldShowChrome && (isHomeRoute || chromeTopLevelKey == SearchHomeNavKey)) &&
                         !(isTabletVerticalBar && shouldShowChrome) &&
                         !isSearchOverlayMounted &&
                         (!isSidekickOnRight || !isScrollbarActive.value) &&
@@ -1648,7 +1662,7 @@ fun KototoroApp(
                         initialSourceTypes = initialSearchSourceTypes,
                         initialContentKinds = initialSearchContentKinds,
                         languagePresets = languagePresetEntries,
-                        activeLanguagePresetId = activeSourcePresetId,
+                        activeLanguagePresetId = mainAppState.searchLanguagePresetId,
                         blacklistedTagCount = globalTagBlacklist.size,
                         onQueryChanged = onQueryChanged,
                         onSearch = {
@@ -1670,7 +1684,7 @@ fun KototoroApp(
                             chromeState.setSearchOverlayVisible(false)
                         },
                         onDismissRequest = { chromeState.setSearchOverlayVisible(false) },
-                        onLanguagePresetSelected = onLanguagePresetSelected,
+                        onLanguagePresetSelected = mainAppState.onSearchLanguagePresetSelected,
                         onManageLanguagePresets = onManageLanguagePresets,
                         onOpenGlobalTagBlacklist = {
                             onGlobalTagBlacklistClick()

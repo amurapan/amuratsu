@@ -457,7 +457,8 @@ fun KototoroBottomNav(
                             label = { Text(stringResource(item.title)) },
                             alwaysShowLabel = showSelectedLabels,
                             colors = NavigationBarItemDefaults.colors(
-                                indicatorColor = Color.Transparent,
+                                indicatorColor = if (isIosStyle) Color.Transparent
+                                    else MaterialTheme.colorScheme.secondaryContainer,
                                 selectedIconColor = sampleAccent ?: if (isIosStyle) {
                                     MaterialTheme.colorScheme.primary
                                 } else {
@@ -485,6 +486,12 @@ private fun MainNavBottomContainer(
     lensEnabled: Boolean = true,
     content: @Composable BoxScope.() -> Unit,
 ) {
+    if (LocalInterfaceStyle.current != InterfaceStyle.IOS) {
+        Surface(modifier = modifier, shape = shape, color = MaterialTheme.colorScheme.surfaceContainer) {
+            Box(content = content)
+        }
+        return
+    }
     GlassSurface(
         modifier = modifier,
         style = style,
@@ -1568,6 +1575,7 @@ private fun AnimatedNavigationIcon(
 internal fun premiumIconResId(itemId: Int, isSelected: Boolean): Int {
     return when (itemId) {
         R.id.nav_home -> if (isSelected) R.drawable.ic_home_filled else R.drawable.ic_home
+        R.id.nav_search -> R.drawable.ic_search
         R.id.nav_history -> R.drawable.ic_history
         R.id.nav_favorites -> if (isSelected) R.drawable.ic_heart else R.drawable.ic_heart_outline
         R.id.nav_explore -> if (isSelected) R.drawable.ic_explore_checked else R.drawable.ic_explore_normal

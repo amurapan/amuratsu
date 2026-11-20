@@ -473,12 +473,12 @@ class AppSettings @Inject constructor(@ApplicationContext private val context: C
      * iPhone Duo's, so it stays on the chosen physical side in right-to-left languages too.
      */
     var isTabletNavBarOnLeft: Boolean
-        get() = prefs.getBoolean(KEY_TABLET_NAV_BAR_LEFT, false)
+        get() = prefs.getBoolean(KEY_TABLET_NAV_BAR_LEFT, true)
         set(value) = prefs.edit { putBoolean(KEY_TABLET_NAV_BAR_LEFT, value) }
 
     /** Show labels under the destinations of the tablet's vertical bar (symbol-only by default). */
     var isTabletNavLabelsVisible: Boolean
-        get() = prefs.getBoolean(KEY_TABLET_NAV_LABELS, false)
+        get() = prefs.getBoolean(KEY_TABLET_NAV_LABELS, true)
         set(value) = prefs.edit { putBoolean(KEY_TABLET_NAV_LABELS, value) }
 
     var isNavBarPinned: Boolean
@@ -486,7 +486,7 @@ class AppSettings @Inject constructor(@ApplicationContext private val context: C
         set(value) = prefs.edit { putBoolean(KEY_NAV_PINNED, value) }
 
     var isNavFloating: Boolean
-        get() = prefs.getBoolean(KEY_NAV_FLOATING, true)
+        get() = prefs.getBoolean(KEY_NAV_FLOATING, false)
         set(value) = prefs.edit { putBoolean(KEY_NAV_FLOATING, value) }
 
     var isNavLayeredSurface: Boolean
@@ -549,7 +549,7 @@ class AppSettings @Inject constructor(@ApplicationContext private val context: C
     var interfaceStyle: InterfaceStyle
         get() = prefs.getEnumValue(
             KEY_INTERFACE_STYLE,
-            InterfaceStyle.IOS,
+            InterfaceStyle.MATERIAL_3_EXPRESSIVE,
         ).normalized()
         set(value) {
             val normalizedValue = value.normalized()

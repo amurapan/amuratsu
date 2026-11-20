@@ -31,6 +31,7 @@ class SearchActivity : BaseComposeActivity() {
                     hideEmpty = intent.getBooleanExtra(AppRouter.KEY_HIDE_EMPTY, false),
                     sourceTypeNames = intent.getStringArrayListExtra(AppRouter.KEY_SOURCE_TYPES),
                     contentKindNames = intent.getStringArrayListExtra(AppRouter.KEY_CONTENT_KINDS),
+                    languagePresetId = intent.getLongExtra(AppRouter.KEY_SEARCH_LANGUAGE_PRESET_ID, -1L),
                 )
             }
         },
@@ -73,6 +74,7 @@ class SearchActivity : BaseComposeActivity() {
                             advancedAuthor = advancedQuery?.author?.takeIf { it.isNotBlank() },
                             pinnedOnly = pinnedOnly,
                             hideEmpty = hideEmpty,
+                            languagePresetId = viewModel.filters.value.languagePresetId,
                         )
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out, 0)

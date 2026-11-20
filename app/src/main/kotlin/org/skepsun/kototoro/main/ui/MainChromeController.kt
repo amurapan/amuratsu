@@ -12,8 +12,7 @@ import org.skepsun.kototoro.explore.ui.model.BrowseGroupTab
 import org.skepsun.kototoro.explore.ui.model.SourceTag
 import org.skepsun.kototoro.parsers.model.ContentType
 import org.skepsun.kototoro.search.domain.ALL_SEARCH_CONTENT_KINDS
-import org.skepsun.kototoro.search.domain.SearchContentKind
-import org.skepsun.kototoro.search.domain.sourceTypesFromTags
+import org.skepsun.kototoro.search.domain.ALL_SOURCE_TYPES
 import org.skepsun.kototoro.search.ui.compose.SearchNavigationRequest
 import org.skepsun.kototoro.search.ui.suggestion.SearchSuggestionViewModel
 
@@ -134,7 +133,6 @@ class MainChromeController(
                 add(ContentType.VIDEO)
             }
         }
-        syncSearchSuggestionFilters()
     }
 
     fun onSourceTagFilterClick(anchorView: View?): Boolean {
@@ -168,8 +166,11 @@ class MainChromeController(
     }
 
     fun syncSearchSuggestionFilters() {
-        searchSuggestionViewModel.setSourceTypes(sourceTypesFromTags(activeFilterSourceTags))
-        searchSuggestionViewModel.setContentKinds(activeFilterContentType.toSearchContentKinds())
+        searchSuggestionViewModel.setLanguagePresetId(-1L)
+        // Search is a global entry point. Browsing a novel/anime space must not silently
+        // narrow the next query. Only controls inside the search UI set its scope.
+        searchSuggestionViewModel.setSourceTypes(ALL_SOURCE_TYPES)
+        searchSuggestionViewModel.setContentKinds(ALL_SEARCH_CONTENT_KINDS)
     }
 
     fun clearActiveFilters() {
@@ -193,7 +194,6 @@ class MainChromeController(
         enabledSourceTags = SourceTag.quickFilterEntries.toSet()
         enabledContentTypes = allTopBarContentTypes()
         applyConfiguredLanguagePreset()
-        syncSearchSuggestionFilters()
     }
 
     fun applyConfiguredLanguagePreset() {
@@ -213,13 +213,6 @@ class MainChromeController(
  * at the shell root; null outside the main shell (e.g. standalone activities).
  */
 val LocalMainChromeController = staticCompositionLocalOf<MainChromeController?> { null }
-
-private fun ContentType?.toSearchContentKinds(): Set<SearchContentKind> = when (this) {
-    ContentType.MANGA -> setOf(SearchContentKind.MANGA)
-    ContentType.NOVEL, ContentType.HENTAI_NOVEL -> setOf(SearchContentKind.NOVEL)
-    ContentType.VIDEO, ContentType.HENTAI_VIDEO -> setOf(SearchContentKind.VIDEO)
-    else -> ALL_SEARCH_CONTENT_KINDS
-}
 
 private fun BrowseGroupTab.toContentTypeOrNull(): ContentType? = when (this) {
     BrowseGroupTab.Content -> ContentType.MANGA

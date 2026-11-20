@@ -81,6 +81,12 @@
     <string name="search">Search</string>
     <string name="discover">Discover</string>
     <string name="search_content">Search content</string>
+    <string name="search_all_media">Search manga, books and anime</string>
+    <string name="media_books">Books</string>
+    <string name="media_anime_video">Anime &amp; video</string>
+    <string name="media_library">Library</string>
+    <string name="media_search_hint">Find something to read or watch</string>
+    <string name="media_search_description">Search your library and enabled sources across all media. Choose a format only when you want to narrow the results.</string>
     <string name="manga_downloading_">Downloading…</string>
     <string name="translating_">Translating…</string>
     <string name="super_resolution_processing_">Upscaling…</string>
@@ -4293,4 +4299,18 @@
     <string name="suggestion_reason_popular">Popular at this source</string>
     <string name="suggestion_reason_new">New or recently updated</string>
     <string name="suggestion_reason_default">Close to your reading taste</string>
+    <string name="media_home_title">Your stories</string>
+    <string name="media_home_anime">Anime</string>
+    <string name="media_home_add">Add to your collection</string>
+    <string name="media_home_import">Import a file</string>
+    <string name="media_home_empty_title">Your stories start here</string>
+    <string name="media_home_filtered_empty">Nothing here yet</string>
+    <string name="media_home_empty_description">Connect sources or import a file. Your reading and watching progress will appear here.</string>
+    <string name="media_home_updates">New chapters and episodes</string>
+    <string name="media_home_recommendations">You might like</string>
+    <string name="media_home_page_progress">Page %1$d · %2$d%%</string>
+    <string name="media_home_new_chapters">+%1$d chapters</string>
+    <string name="media_home_new_episodes">+%1$d episodes</string>
+    <string name="media_home_browse_sources">Browse sources</string>
+    <string name="media_home_video_position">At %1$d:%2$02d</string>
 </resources>

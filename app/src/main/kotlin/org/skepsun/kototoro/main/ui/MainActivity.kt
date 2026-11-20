@@ -211,6 +211,7 @@ class MainActivity : BaseComposeActivity(), SystemInstallLauncherHost {
             val suggestionState by searchSuggestionViewModel.suggestionState.collectAsStateWithLifecycle(
                 initialValue = SearchSuggestionState(),
             )
+            val searchLanguagePresetId by searchSuggestionViewModel.languagePresetId.collectAsStateWithLifecycle()
             val appUpdate by viewModel.appUpdate.collectAsStateWithLifecycle(initialValue = null)
             val isIncognitoModeEnabled by viewModel.isIncognitoModeEnabled.collectAsStateWithLifecycle()
             val isResumeEnabled by viewModel.isResumeEnabled.collectAsStateWithLifecycle()
@@ -266,6 +267,8 @@ class MainActivity : BaseComposeActivity(), SystemInstallLauncherHost {
                     initialSearchKind = SearchKind.SIMPLE,
                     initialSearchSourceTypes = searchSuggestionViewModel.getSourceTypes(),
                     initialSearchContentKinds = searchSuggestionViewModel.getContentKinds(),
+                    searchLanguagePresetId = searchLanguagePresetId,
+                    onSearchLanguagePresetSelected = searchSuggestionViewModel::setLanguagePresetId,
                     onSearchWithOptions = ::submitSearchWithOptions,
                     onSearchOverlaySourceTypesChange = searchSuggestionViewModel::setSourceTypes,
                     onSearchOverlayContentKindsChange = searchSuggestionViewModel::setContentKinds,
@@ -711,6 +714,7 @@ class MainActivity : BaseComposeActivity(), SystemInstallLauncherHost {
                 pinnedOnly = pinnedOnly,
                 hideEmpty = hideEmpty,
                 requestId = 0L,
+                languagePresetId = searchSuggestionViewModel.languagePresetId.value,
             ),
         )
     }

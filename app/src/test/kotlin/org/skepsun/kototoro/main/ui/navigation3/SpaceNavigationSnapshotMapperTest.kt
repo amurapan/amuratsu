@@ -140,6 +140,26 @@ class SpaceNavigationSnapshotMapperTest {
 		)
 	}
 
+    @Test
+    fun `global search tab restores its query and scope after details and tab switches`() {
+        val state = mainNavState()
+        val search = SearchNavKey(query = "Frieren", kind = "SIMPLE", contentKinds = "VIDEO", languagePresetId = 9L)
+        state.navigateTopLevel(SearchHomeNavKey)
+        state.pushOrReplaceCurrentTopSearch(search)
+        state.push(DetailsNavKey(mangaId = 7L))
+        state.navigateTopLevel(FavoritesNavKey)
+        state.navigateTopLevel(SearchHomeNavKey)
+        state.pop() shouldBe true
+        state.currentStack().toList() shouldBe listOf(SearchHomeNavKey, search)
+
+        val restored = mainNavState()
+        restored.restoreFromSpaceSession(state.toSpaceSessionSnapshot(BuiltInSpaces.Manga, 100L))
+        restored.selectedTopLevel shouldBe SearchHomeNavKey
+        restored.currentStack().toList() shouldBe listOf(SearchHomeNavKey, search)
+        restored.pop() shouldBe true
+        restored.currentStack().toList() shouldBe listOf(SearchHomeNavKey)
+    }
+
 	private fun mainNavState(): MainNavState {
 		var selected: TopLevelNavKey = HomeNavKey
 		val stacks = allTopLevelNavKeys.associateWith { key -> NavBackStack<MainNavKey>(key) }

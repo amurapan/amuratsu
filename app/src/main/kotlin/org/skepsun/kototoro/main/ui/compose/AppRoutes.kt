@@ -9,6 +9,7 @@ import org.skepsun.kototoro.main.ui.navigation3.FavoritesNavKey
 import org.skepsun.kototoro.main.ui.navigation3.FeedNavKey
 import org.skepsun.kototoro.main.ui.navigation3.HistoryNavKey
 import org.skepsun.kototoro.main.ui.navigation3.HomeNavKey
+import org.skepsun.kototoro.main.ui.navigation3.SearchHomeNavKey
 import org.skepsun.kototoro.main.ui.navigation3.LocalNavKey
 import org.skepsun.kototoro.main.ui.navigation3.SuggestionsNavKey
 import org.skepsun.kototoro.main.ui.navigation3.TopLevelNavKey
@@ -28,6 +29,7 @@ internal const val MAIN_SHELL_BACKDROP_OWNER_PREFIX = "main_shell"
 
 fun topLevelKeyForBottomNavItem(@IdRes itemId: Int): TopLevelNavKey = when (itemId) {
     R.id.nav_home -> HomeNavKey
+    R.id.nav_search -> SearchHomeNavKey
     R.id.nav_history -> HistoryNavKey
     R.id.nav_favorites -> FavoritesNavKey
     R.id.nav_explore -> ExploreNavKey
@@ -42,6 +44,7 @@ fun topLevelKeyForBottomNavItem(@IdRes itemId: Int): TopLevelNavKey = when (item
 
 fun bottomNavItemIdForTopLevelKey(key: TopLevelNavKey): Int = when (key) {
     HomeNavKey -> R.id.nav_home
+    SearchHomeNavKey -> R.id.nav_search
     HistoryNavKey -> R.id.nav_history
     FavoritesNavKey -> R.id.nav_favorites
     ExploreNavKey -> R.id.nav_explore

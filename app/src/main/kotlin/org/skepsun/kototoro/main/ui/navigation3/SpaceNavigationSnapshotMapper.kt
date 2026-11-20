@@ -48,6 +48,7 @@ private fun MainNavKey.toSpaceRouteSnapshot(): SpaceRouteSnapshot? = when (this)
         advancedAuthor = advancedAuthor,
         pinnedOnly = pinnedOnly,
         hideEmpty = hideEmpty,
+        languagePresetId = languagePresetId,
     )
 }
 
@@ -65,6 +66,7 @@ private fun SpaceRouteSnapshot.toMainNavKey(): MainNavKey? = when (this) {
         advancedAuthor = advancedAuthor,
         pinnedOnly = pinnedOnly,
         hideEmpty = hideEmpty,
+        languagePresetId = languagePresetId,
     )
 }
 

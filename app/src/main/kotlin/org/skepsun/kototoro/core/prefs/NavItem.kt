@@ -10,15 +10,13 @@ import org.skepsun.kototoro.R
 const val MAX_MAIN_NAV_ITEM_COUNT = MainNavigationRules.MAX_ITEMS
 
 /**
- * Default main navigation buttons: Home, History, Favourites, Browse and
- * Subscriptions (主页、历史、收藏、浏览、订阅).
+ * Stable entry points shared by the manga, book and video sections.
  */
 val defaultMainNavItems = listOf(
     NavItem.HOME,
-    NavItem.HISTORY,
+    NavItem.SEARCH,
     NavItem.FAVORITES,
-    NavItem.EXPLORE,
-    NavItem.FEED,
+    NavItem.LOCAL,
 )
 
 /**
@@ -42,8 +40,9 @@ enum class NavItem(
 ) {
 
     HOME(R.id.nav_home, R.string.home, R.drawable.ic_home_selector),
+    SEARCH(R.id.nav_search, R.string.search, R.drawable.ic_search),
     HISTORY(R.id.nav_history, R.string.history, R.drawable.ic_history_selector),
-    FAVORITES(R.id.nav_favorites, R.string.favourites, R.drawable.ic_favourites_selector),
+    FAVORITES(R.id.nav_favorites, R.string.media_library, R.drawable.ic_favourites_selector),
     LOCAL(R.id.nav_local, R.string.on_device, R.drawable.ic_storage_selector),
     EXPLORE(R.id.nav_explore, R.string.explore, R.drawable.ic_explore_selector),
     DISCOVER(R.id.nav_discover, R.string.discover, R.drawable.ic_discover_selector),

@@ -165,6 +165,7 @@ fun KototoroTopBar(
     titleText: String? = null,
     subtitleText: String? = null,
     onSearchClick: () -> Unit = {},
+    showSearch: Boolean = true,
     onOpenListOptions: () -> Unit = {},
     onSettingsClick: () -> Unit = {},
     onHelpClick: () -> Unit = {},
@@ -610,7 +611,12 @@ fun KototoroTopBar(
             horizontalArrangement = Arrangement.spacedBy(CompactTopBarItemSpacing),
             verticalAlignment = Alignment.CenterVertically,
         ) {
-            if (isInlineTabs) {
+            if (!showSearch) {
+                if (!topBarTitle.isNullOrBlank()) {
+                    TopBarTitleBlock(topBarTitle, subtitle = subtitleText, maxWidth = TopBarTitleTvMaxWidth)
+                }
+                Spacer(modifier = Modifier.weight(1f))
+            } else if (isInlineTabs) {
                 AnimatedVisibility(
                     visible = !hidePrimaryControlsForTabs,
                     enter = fadeIn() + expandHorizontally(),

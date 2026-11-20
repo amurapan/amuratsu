@@ -36,14 +36,9 @@ internal object DesktopBookmarksProbe {
                     idle()
                 }
                 if (reading && shelf) {
-                    // Android reaches its bookmarks from the home action and from the rail; the home tile is the
-                    // entry that exists without editing the navigation, so it is the one clicked here.
+                    // Enter the bookmark shelf directly; the personal home no longer has a quick-action grid.
                     System.setProperty("fixture.reader.offline", "true")
-                    runBlocking { controller.home().join() }
-                    waitUntil(timeoutMillis = 15_000) { controller.state.value.screen == DesktopScreen.HOME }
-                    idle()
-                    onNodeWithTag("home-scroll").performScrollToNode(hasTestTag("home-quick:3"))
-                    onNodeWithTag("home-quick:3").performClick()
+                    runBlocking { controller.showBookmarks().join() }
                     waitUntil(timeoutMillis = 15_000) { controller.state.value.screen == DesktopScreen.BOOKMARKS }
                     idle()
                     val group = controller.state.value.bookmarkGroups.single()

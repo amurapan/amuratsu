@@ -1,5 +1,8 @@
 package org.skepsun.kototoro.desktop.app
 
+import androidx.compose.ui.test.hasTestTag
+import androidx.compose.ui.test.performScrollToNode
+
 import androidx.compose.ui.graphics.asSkiaBitmap
 import androidx.compose.ui.test.ExperimentalTestApi
 import androidx.compose.ui.test.captureToImage
@@ -77,13 +80,15 @@ internal object DesktopSuggestionsProbe {
                     }
                 }
                 idle()
-                // Recommendations start switched off, so the rail asks for them exactly like Android's empty card.
+                // Enable recommendations on their dedicated page, then verify the shared home shelf.
                 check(controller.state.value.suggestions.isEmpty()) { "the root starts without suggestions" }
-                onNodeWithTag("home-recommendations-empty").performScrollTo().assertExists()
-                onNodeWithTag("home-recommendations-generate").performScrollTo().performClick(); awaitRun()
+                runBlocking { controller.showSuggestions().join() }; idle()
+                onNodeWithTag("suggestions-enable").performScrollTo().performClick(); awaitRun()
                 waitUntil(timeoutMillis = 30_000) { controller.state.value.suggestions.isNotEmpty() }
                 idle()
-                onNodeWithTag("home-recommendations").performScrollTo().assertExists()
+                runBlocking { controller.home().join() }; idle()
+                onNodeWithTag("media-home-scroll").performScrollToNode(hasTestTag("media-home-recommendations"))
+                onNodeWithTag("media-home-recommendations").assertExists()
                 var stored = controller.state.value.suggestions
                 // Changing the blacklist hides cached works immediately, without asking the source again.
                 val cached = stored.first()
@@ -97,7 +102,8 @@ internal object DesktopSuggestionsProbe {
                 runBlocking { controller.home().join() }; idle()
                 stored = controller.state.value.suggestions
                 // Android's home rail opens the suggestions destination from its "all".
-                onNodeWithTag("home-recommendations-more").performScrollTo().performClick()
+                onNodeWithTag("media-home-scroll").performScrollToNode(hasTestTag("media-home-recommendations"))
+                onNodeWithTag("media-home-recommendations").performClick()
                 waitUntil(timeoutMillis = 15_000) { controller.state.value.screen == DesktopScreen.SUGGESTIONS }
                 idle()
                 onNodeWithTag("suggestions-panel").assertExists()

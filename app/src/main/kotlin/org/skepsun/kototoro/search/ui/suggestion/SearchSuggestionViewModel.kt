@@ -8,6 +8,7 @@ import kotlinx.coroutines.async
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.distinctUntilChanged
@@ -35,7 +36,6 @@ import org.skepsun.kototoro.core.jsonsource.SourceTypeIdentifier
 import org.skepsun.kototoro.explore.data.ContentSourcesRepository
 import org.skepsun.kototoro.explore.data.SourcePreset
 import org.skepsun.kototoro.explore.data.SourcePresetsRepository
-import org.skepsun.kototoro.favourites.domain.GlobalFavoritesState
 import org.skepsun.kototoro.tracking.discovery.domain.EntityType
 import org.skepsun.kototoro.parsers.model.Content
 import org.skepsun.kototoro.parsers.model.ContentSource
@@ -54,7 +54,6 @@ import org.skepsun.kototoro.search.domain.ALL_SOURCE_TYPES
 import org.skepsun.kototoro.search.domain.ALL_SEARCH_CONTENT_KINDS
 import org.skepsun.kototoro.search.domain.SearchContentKind
 import org.skepsun.kototoro.search.domain.matches
-import org.skepsun.kototoro.search.domain.sourceTypesFromTags
 import org.skepsun.kototoro.search.ui.suggestion.model.SearchSuggestionItem
 import org.skepsun.kototoro.search.ui.suggestion.model.TrackingEntity
 import org.skepsun.kototoro.scrobbling.common.domain.model.ScrobblerService
@@ -86,7 +85,6 @@ class SearchSuggestionViewModel @Inject constructor(
     private val sourcesRepository: ContentSourcesRepository,
     private val sourcePresetsRepository: SourcePresetsRepository,
     private val sourceTypeIdentifier: SourceTypeIdentifier,
-    private val globalFavoritesState: GlobalFavoritesState,
     private val trackingSiteDiscoveryService: TrackingSiteDiscoveryService,
     private val preferredTrackingSiteProvider: PreferredTrackingSiteProvider,
     private val historyRepository: HistoryRepository,
@@ -100,16 +98,17 @@ class SearchSuggestionViewModel @Inject constructor(
     /** Non-null while the overlay's page tab narrows suggestions to one library page. */
     private val libraryScope = MutableStateFlow<LibrarySearchScope?>(null)
     private val invalidationTrigger = MutableStateFlow(0)
-    private val sourceTypes = MutableStateFlow(
-        sourceTypesFromTags(globalFavoritesState.selectedSourceTags.value),
-    )
+    private val sourceTypes = MutableStateFlow(ALL_SOURCE_TYPES)
     private val contentKinds = MutableStateFlow(ALL_SEARCH_CONTENT_KINDS)
 
-    private val activeSourcePreset: Flow<SourcePreset?> = settings.observeAsFlow(
-        AppSettings.KEY_ACTIVE_SOURCE_PRESET_ID,
-    ) {
-        activeSourcePresetId
-    }.mapLatest { presetId ->
+    private val _languagePresetId = MutableStateFlow(-1L)
+    val languagePresetId = _languagePresetId.asStateFlow()
+
+    fun setLanguagePresetId(id: Long) {
+        _languagePresetId.value = id.takeIf { it > 0L } ?: -1L
+    }
+
+    private val activeSourcePreset: Flow<SourcePreset?> = languagePresetId.mapLatest { presetId ->
         if (presetId > 0L) {
             sourcePresetsRepository.getById(presetId)
         } else {

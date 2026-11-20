@@ -31,6 +31,12 @@
     <string name="share_s">Поделиться %s</string>
     <string name="search">Поиск</string>
     <string name="search_content">Поиск контента</string>
+    <string name="search_all_media">Поиск манги, книг и аниме</string>
+    <string name="media_books">Книги</string>
+    <string name="media_anime_video">Аниме и видео</string>
+    <string name="media_library">Библиотека</string>
+    <string name="media_search_hint">Что почитать или посмотреть?</string>
+    <string name="media_search_description">Поиск по библиотеке и включённым источникам всех типов медиа. Выбери формат, если хочешь сузить результаты.</string>
     <string name="manga_downloading_">Загрузка…</string>
     <string name="processing_">Обработка…</string>
     <string name="download_complete">Загружено</string>
@@ -4085,4 +4091,18 @@
     <string name="dictionary_rule_url_label">Правило URL</string>
     <string name="migration_health_banner_disable">Больше не показывать</string>
     <string name="migration_health_banner_setting">О сбоях источников</string>
+    <string name="media_home_title">Твои истории</string>
+    <string name="media_home_anime">Аниме</string>
+    <string name="media_home_add">Добавить в коллекцию</string>
+    <string name="media_home_import">Импортировать файл</string>
+    <string name="media_home_empty_title">Твои истории начинаются здесь</string>
+    <string name="media_home_filtered_empty">Здесь пока ничего нет</string>
+    <string name="media_home_empty_description">Подключи источники или импортируй файл. Здесь появится прогресс чтения и просмотра.</string>
+    <string name="media_home_updates">Новые главы и серии</string>
+    <string name="media_home_recommendations">Может понравиться</string>
+    <string name="media_home_page_progress">Стр. %1$d · %2$d%%</string>
+    <string name="media_home_new_chapters">+%1$d глав</string>
+    <string name="media_home_new_episodes">+%1$d серий</string>
+    <string name="media_home_browse_sources">Обзор источников</string>
+    <string name="media_home_video_position">На %1$d:%2$02d</string>
 </resources>

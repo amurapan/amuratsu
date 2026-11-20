@@ -55,6 +55,7 @@ class DefaultSpaceSessionValidator @Inject constructor() : SpaceSessionValidator
         const val DEFAULT_TOP_LEVEL_KEY = "home"
         val VALID_TOP_LEVEL_KEYS = setOf(
             "home",
+            "search_home",
             "history",
             "favorites",
             "explore",

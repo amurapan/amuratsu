@@ -31,6 +31,7 @@ sealed interface SpaceRouteSnapshot {
         val advancedAuthor: String,
         val pinnedOnly: Boolean,
         val hideEmpty: Boolean,
+        val languagePresetId: Long = -1L,
     ) : SpaceRouteSnapshot
 }
 

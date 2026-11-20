@@ -27,7 +27,7 @@ class DesktopHomeMouseGesturesTest {
     @TempDir lateinit var directory: Path
 
     @Test
-    fun `home history, updates and recommendations move under mouse dragging without opening a work`() {
+    fun `personal home scrolls under mouse dragging without opening a work`() {
         // The SDK's process-global Android runtime uses the same isolated JVM/classpath as the other UI probes.
         val log = directory.resolve("home-mouse.log")
         val process = ProcessBuilder(DesktopProbes.javaExecutable,
@@ -71,34 +71,33 @@ class DesktopHomeMouseGesturesTest {
                         }
                     }
                 }
-                fun position(tag: String) = onNodeWithTag(tag).fetchSemanticsNode().config[
-                    SemanticsProperties.HorizontalScrollAxisRange].value()
-                for (tag in listOf("home-history", "home-updates", "home-recommendations")) {
-                    onNodeWithTag("home-scroll").performScrollToNode(hasTestTag(tag))
-                    val before = position(tag)
-                    onNodeWithTag(tag).performMouseInput {
-                        moveTo(center); press()
-                        repeat(10) { advanceEventTime(16); moveBy(Offset(-30f, 0f)) }
-                        release()
-                    }
-                    waitForIdle()
-                    assertTrue(position(tag) > before, "$tag must move when a cover is grabbed and dragged left")
-                    assertEquals(DesktopScreen.HOME, controller.state.value.screen, "Dragging must not open details")
-                    assertNull(controller.state.value.content)
-                    val report = Files.createDirectories(Path.of("build/reports/desktop-smoke")).resolve("$tag-mouse-drag.png")
-                    Image.makeFromBitmap(onRoot().captureToImage().asSkiaBitmap()).use { image ->
-                        image.encodeToData()?.use { Files.write(report, it.bytes) }
-                    }
-                    val forward = position(tag)
-                    onNodeWithTag(tag).performMouseInput {
-                        moveTo(center); press()
-                        repeat(10) { advanceEventTime(16); moveBy(Offset(30f, 0f)) }
-                        release()
-                    }
-                    waitForIdle()
-                    assertTrue(position(tag) < forward, "$tag must also drag back to earlier covers")
-                    assertEquals(DesktopScreen.HOME, controller.state.value.screen)
+                val tag = "media-home-scroll"
+                fun position() = onNodeWithTag(tag).fetchSemanticsNode().config[
+                    SemanticsProperties.VerticalScrollAxisRange].value()
+                val before = position()
+                onNodeWithTag(tag).performMouseInput {
+                    moveTo(Offset(width / 2f, height * .75f)); press()
+                    repeat(10) { advanceEventTime(16); moveBy(Offset(0f, -30f)) }
+                    release()
                 }
+                waitForIdle()
+                assertTrue(position() > before, "Home must scroll when content is grabbed and dragged up")
+                assertEquals(DesktopScreen.HOME, controller.state.value.screen, "Dragging must not open details")
+                assertNull(controller.state.value.content)
+                val report = Files.createDirectories(Path.of("build/reports/desktop-smoke"))
+                    .resolve("media-home-mouse-drag.png")
+                Image.makeFromBitmap(onRoot().captureToImage().asSkiaBitmap()).use { image ->
+                    image.encodeToData()?.use { Files.write(report, it.bytes) }
+                }
+                val forward = position()
+                onNodeWithTag(tag).performMouseInput {
+                    moveTo(Offset(width / 2f, height * .25f)); press()
+                    repeat(10) { advanceEventTime(16); moveBy(Offset(0f, 30f)) }
+                    release()
+                }
+                waitForIdle()
+                assertTrue(position() < forward, "Home must also drag back to the header")
+                assertEquals(DesktopScreen.HOME, controller.state.value.screen)
             }
         } finally { runBlocking { controller.shutdown() } }
     }

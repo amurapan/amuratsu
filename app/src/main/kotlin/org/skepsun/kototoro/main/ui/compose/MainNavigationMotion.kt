@@ -12,8 +12,7 @@ object MainNavigationMotion {
 
     // Kototoro Navigation 3 motion system (docs/architecture/navigation3-motion-system.md)
     const val FadeMillis = 340
-    const val FadeScaleIn = 0.985f
-    const val FadeScaleOut = 0.99f
+    const val TabFadeMillis = 140
 
     const val HierarchicalMillis = 320
     const val HierarchicalEnterDivisor = 3

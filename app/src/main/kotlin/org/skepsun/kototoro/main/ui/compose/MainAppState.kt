@@ -52,6 +52,8 @@ data class MainAppState(
     val initialSearchKind: SearchKind = SearchKind.SIMPLE,
     val initialSearchSourceTypes: Set<SourceType> = emptySet(),
     val initialSearchContentKinds: Set<SearchContentKind> = emptySet(),
+    val searchLanguagePresetId: Long = -1L,
+    val onSearchLanguagePresetSelected: (Long) -> Unit = {},
     val onSearchWithOptions: (
         query: String,
         kind: SearchKind,

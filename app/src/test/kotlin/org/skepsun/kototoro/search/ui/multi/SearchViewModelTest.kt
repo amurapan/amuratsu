@@ -31,7 +31,6 @@ import org.skepsun.kototoro.explore.data.ContentSourcesRepository
 import org.skepsun.kototoro.explore.data.SourcePreset
 import org.skepsun.kototoro.explore.data.SourcePresetsRepository
 import org.skepsun.kototoro.favourites.domain.FavouritesRepository
-import org.skepsun.kototoro.favourites.domain.GlobalFavoritesState
 import org.skepsun.kototoro.history.data.HistoryRepository
 import org.skepsun.kototoro.list.domain.ContentListMapper
 import org.skepsun.kototoro.list.ui.model.ContentListModel
@@ -40,6 +39,7 @@ import org.skepsun.kototoro.parsers.model.ContentListFilter
 import org.skepsun.kototoro.parsers.model.ContentSource
 import org.skepsun.kototoro.parsers.model.ContentType
 import org.skepsun.kototoro.parsers.model.SortOrder
+import org.skepsun.kototoro.search.domain.ALL_SEARCH_CONTENT_KINDS
 import org.skepsun.kototoro.search.domain.ALL_SOURCE_TYPES
 import org.skepsun.kototoro.search.domain.AdvancedSearchParams
 import org.skepsun.kototoro.search.domain.SearchContentKind
@@ -140,7 +140,8 @@ class SearchViewModelTest {
         )
         model.awaitIdle()
 
-        assertEquals(9L, presetId)
+        assertEquals(0L, presetId)
+        assertEquals(9L, model.filters.value.languagePresetId)
         coVerify(exactly = 1) { sources.getEnabledSources() }
         coVerify(exactly = 1) { sources.getPinnedSources() }
         coVerify(exactly = 1) { presets.getById(9L) }
@@ -215,6 +216,38 @@ class SearchViewModelTest {
         assertTrue(state.sections.isEmpty())
     }
 
+    @Test
+    fun `global search ignores a space preset and can narrow then restore all media`() = runBlocking {
+        presetId = 42L // A novel/anime space may have installed a restrictive browsing preset.
+        val novel = source("novel", ContentType.NOVEL)
+        val video = source("video", ContentType.VIDEO)
+        val novelHelper = mockk<SearchV2Helper>()
+        val videoHelper = mockk<SearchV2Helper>()
+        every { factory.create(novel) } returns novelHelper
+        every { factory.create(video) } returns videoHelper
+        coEvery { novelHelper.invoke(any(), any(), any()) } returns result()
+        coEvery { videoHelper.invoke(any(), any(), any()) } returns result()
+        coEvery { sources.getEnabledSources() } returns listOf(firstSource, novel, video)
+
+        val model = model()
+        assertEquals(3, model.awaitIdle().totalSources)
+        assertEquals(ALL_SOURCE_TYPES, model.filters.value.sourceTypes)
+        assertEquals(ALL_SEARCH_CONTENT_KINDS, model.filters.value.contentKinds)
+        assertEquals(-1L, model.filters.value.languagePresetId)
+        coVerify(exactly = 0) { presets.getById(any()) }
+
+        model.applyFilters(model.filters.value.copy(contentKinds = setOf(SearchContentKind.VIDEO)))
+        assertEquals(1, model.awaitIdle().totalSources)
+        coVerify(exactly = 1) { novelHelper.invoke(any(), any(), any()) }
+        coVerify(exactly = 2) { videoHelper.invoke(any(), any(), any()) }
+
+        model.applyFilters(model.filters.value.copy(contentKinds = ALL_SEARCH_CONTENT_KINDS))
+        assertEquals(3, model.awaitIdle().totalSources)
+        coVerify(exactly = 2) { novelHelper.invoke(any(), any(), any()) }
+        coVerify(exactly = 3) { videoHelper.invoke(any(), any(), any()) }
+        assertEquals(42L, presetId)
+    }
+
     private fun model(
         query: String = "query",
         kind: SearchKind = SearchKind.SIMPLE,
@@ -227,15 +260,15 @@ class SearchViewModelTest {
         advancedAuthor = "",
         initialPinnedOnly = false,
         initialHideEmpty = false,
-        sourceTypeNames = ALL_SOURCE_TYPES.map { it.name },
+        sourceTypeNames = null,
         contentKindNames = null,
+        initialLanguagePresetId = -1L,
         mangaListMapper = mapper,
         searchHelperFactory = factory,
         sourcesRepository = sources,
         sourceTypeIdentifier = identifier,
         appSettings = settings,
         sourcePresetsRepository = presets,
-        globalFavoritesState = mockk<GlobalFavoritesState>(),
         historyRepository = history,
         favouritesRepository = favourites,
     ).also { store.put("search", it) }
@@ -265,9 +298,9 @@ class SearchViewModelTest {
         source = firstSource,
     )
 
-    private fun source(name: String) = object : ContentSource {
+    private fun source(name: String, type: ContentType = ContentType.MANGA) = object : ContentSource {
         override val name = name
         override val locale = ""
-        override val contentType = ContentType.MANGA
+        override val contentType = type
     }
 }

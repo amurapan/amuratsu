@@ -236,6 +236,7 @@ class AppRouter(
         advancedAuthor: String? = null,
         pinnedOnly: Boolean = false,
         hideEmpty: Boolean = false,
+        languagePresetId: Long = -1L,
     ) {
         val intent = Intent(contextOrNull() ?: return, SearchActivity::class.java)
             .putExtra(KEY_QUERY, query)
@@ -245,6 +246,7 @@ class AppRouter(
             .putExtra(KEY_ADVANCED_AUTHOR, advancedAuthor)
             .putExtra(KEY_PINNED_ONLY, pinnedOnly)
             .putExtra(KEY_HIDE_EMPTY, hideEmpty)
+            .putExtra(KEY_SEARCH_LANGUAGE_PRESET_ID, languagePresetId)
         if (!sourceTypes.isNullOrEmpty()) {
             intent.putExtra(KEY_SOURCE_TYPES, org.skepsun.kototoro.search.domain.sourceTypesToNames(sourceTypes))
         }
@@ -1625,6 +1627,7 @@ class AppRouter(
         const val KEY_SOURCE_TITLE = "source_title"
         const val KEY_SOURCE_TYPES = "source_types"
         const val KEY_CONTENT_KINDS = "content_kinds"
+        const val KEY_SEARCH_LANGUAGE_PRESET_ID = "search_language_preset_id"
         const val KEY_HIDE_EMPTY = "hide_empty"
         const val KEY_GROUP_TAB = "group_tab"
         const val KEY_GROUP_TITLE = "group_title"

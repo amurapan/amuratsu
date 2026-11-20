@@ -90,8 +90,9 @@ class AppSettingsNavIndicatorMigrationTest {
 	@Test
 	fun `persisted pill with the ios 2_0_1 default full width maps to labels below plus full width`() {
 		val settings = freshSettings()
+		values[AppSettings.KEY_INTERFACE_STYLE] = InterfaceStyle.IOS.name
 		values[AppSettings.KEY_NAV_EXPRESSIVE_PILL] = true
-		// interface style defaults to iOS; the full-width key is absent, which is
+		// The legacy iOS style is explicit now that fresh installations use Material. An absent full-width key is
 		// exactly the 2.0.1 both-on carry-over conflict.
 
 		settings.navIndicatorStyle shouldBe NavIndicatorStyle.LABELS_BELOW

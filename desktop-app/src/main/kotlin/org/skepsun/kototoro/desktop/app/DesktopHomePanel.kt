@@ -1,350 +1,97 @@
 package org.skepsun.kototoro.desktop.app
-import org.skepsun.kototoro.core.library.filter
 
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyRow
-import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.lazy.rememberLazyListState
-import androidx.compose.foundation.gestures.Orientation
-import androidx.compose.foundation.gestures.snapping.SnapPosition
-import androidx.compose.foundation.gestures.snapping.rememberSnapFlingBehavior
-import androidx.compose.foundation.pager.rememberPagerState
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.*
-import androidx.compose.runtime.*
-import androidx.compose.ui.Alignment
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.blur
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.luminance
 import androidx.compose.ui.platform.testTag
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.unit.dp
+import org.skepsun.kototoro.core.library.filter
 import org.skepsun.kototoro.core.source.SourceContent
-import org.skepsun.kototoro.core.ui.adaptive.TabletLayoutClass
-import org.skepsun.kototoro.core.ui.buttons.FilledTonalButton
-import org.skepsun.kototoro.core.ui.buttons.TextButton
-import org.skepsun.kototoro.core.ui.compose.CompactPosterCardStyle
-import org.skepsun.kototoro.core.ui.compose.HeroPagerIndicator
-import org.skepsun.kototoro.core.ui.home.*
-import org.skepsun.kototoro.core.ui.gestures.mouseDragScroll
-import org.skepsun.kototoro.core.ui.topbar.TopBarTitleBlock
-import org.skepsun.kototoro.core.ui.topbar.FloatingTopBarScaffold
-import org.skepsun.kototoro.list.domain.ReadingProgress
-import org.skepsun.kototoro.list.ui.compose.ContentCardBookSpine
-import org.skepsun.kototoro.list.ui.compose.ContentCardBottomProgressBar
-import org.skepsun.kototoro.list.ui.compose.TabletPosterCover
-import org.skepsun.kototoro.list.ui.compose.rememberCoverRimBorderBrush
+import org.skepsun.kototoro.core.ui.home.HomeMediaKind
+import org.skepsun.kototoro.core.ui.home.MediaHomeItem
+import org.skepsun.kototoro.core.ui.home.MediaHomeScreen
+import org.skepsun.kototoro.core.ui.text.LocalUiStrings
+import org.skepsun.kototoro.explore.ui.model.BrowseGroupTab
 
-/** One work on the home page with what its row shows. */
-private data class HomeWork(val content: SourceContent, val progress: Float? = null, val newChapters: Int = 0)
-
-private fun HomeHeroKind.label() = when (this) {
-    HomeHeroKind.RESUME -> desktopText("home.hero.resume")
-    HomeHeroKind.HISTORY -> desktopText("home.hero.history")
-    HomeHeroKind.UPDATE -> desktopText("home.hero.update")
-    HomeHeroKind.RECOMMENDATION -> desktopText("home.hero.recommendation")
-}
-
-private fun HomeHeroKind.icon() = when (this) {
-    HomeHeroKind.RESUME -> "icons/ic_read.svg"
-    HomeHeroKind.HISTORY -> "icons/ic_history.svg"
-    HomeHeroKind.UPDATE -> "icons/ic_updated.svg"
-    HomeHeroKind.RECOMMENDATION -> "icons/ic_suggestion.svg"
-}
-
-/**
- * Android's tablet home on shared components: hero pager, history and updates rails, and quick access.
- * Recommendations come from the shared suggestion rules (DesktopSuggestions), refreshed on demand.
- */
+/** The same personal home as Android. Runtime, source browsing and readers stay with the desktop host. */
 @Composable
 internal fun DesktopHomePanel(controller: DesktopController, state: DesktopAppState, enabled: Boolean) {
+    val strings = LocalUiStrings.current
     val ecosystems = remember(state.sources) { state.sources.associate { it.source.name to it.ecosystem } }
     val filter = state.homeFilter
     val history = remember(state.homeHistory, filter, ecosystems) {
         state.homeHistory.entries
             .filter { filter.accepts(ecosystems[it.content.source.name], it.content.source.contentType) }
             .sortedByDescending { it.lastReadAt ?: it.updatedAt }
-            .map { HomeWork(it.content, it.progressPercent) }
     }
-    // Android's SuggestionsViewModel and UpdatesViewModel both drop works whose tags are blacklisted globally.
     val blacklist = remember(state.sourceSettings.tagBlacklist) { state.sourceSettings.tagBlacklistRules() }
-    val hidden: (SourceContent) -> Boolean = { content ->
-        content.tags.any { blacklist.containsTagTitle(it.title) }
-    }
     val updates = remember(state.feed, state.feedContents, filter, ecosystems, blacklist) {
         state.feed.updateRowsByOwnerId.values
             .sortedByDescending { it.lastChapterDate ?: it.lastCheckTime }
-            .mapNotNull { row ->
-                state.feedContents[row.displayMangaId ?: row.mangaId]?.let { content ->
-                    HomeWork(content, newChapters = row.newChapters)
-                }
-            }
-            .filter { filter.accepts(ecosystems[it.content.source.name], it.content.source.contentType) }
-            .filterNot { hidden(it.content) }
+            .mapNotNull { row -> state.feedContents[row.displayMangaId ?: row.mangaId]?.let { it to row.newChapters } }
+            .filter { (content, _) -> filter.accepts(ecosystems[content.source.name], content.source.contentType) }
+            .filterNot { (content, _) -> content.tags.any { blacklist.containsTagTitle(it.title) } }
     }
     val recommendations = remember(state.suggestions, state.suggestionSettings, filter, ecosystems, blacklist) {
         state.suggestionSettings.preferences().filter(state.suggestions)
             .filter { filter.accepts(ecosystems[it.source.name], it.source.contentType) }
-            .filterNot(hidden)
-            .map { HomeWork(it) }
+            .filterNot { content -> content.tags.any { blacklist.containsTagTitle(it.title) } }
     }
-    val hero = remember(history, updates, recommendations) {
-        buildHomeHeroEntries(
-            resume = history.firstOrNull(),
-            resumeGroupKey = history.firstOrNull()?.content?.id,
-            resumeProgressPercent = history.firstOrNull()?.progress?.let { (it * 100).toInt() },
-            resumeKeyOf = { it.content.id },
-            history = history.map { HomeHeroCandidate(it, it.content.id) },
-            updates = updates.map { HomeHeroCandidate(it, it.content.id, it.newChapters) },
-            recommendations = recommendations.map { HomeHeroCandidate(it, it.content.id) },
+    val contents = (history.map { it.content } + updates.map { it.first } + recommendations).associateBy { it.id }
+    fun model(content: SourceContent, progress: Float? = null, count: Int = 0): MediaHomeItem {
+        val type = DesktopSourceFilter.contentTypeOf(content.source.contentType)
+        val kind = when {
+            BrowseGroupTab.Video.matchesContentType(type) -> HomeMediaKind.ANIME
+            BrowseGroupTab.Novel.matchesContentType(type) -> HomeMediaKind.BOOKS
+            else -> HomeMediaKind.MANGA
+        }
+        val validProgress = progress?.takeIf { it.isFinite() && it in 0f..1f }
+        return MediaHomeItem(
+            id = content.id,
+            title = content.title,
+            kind = kind,
+            progress = validProgress,
+            supportingText = validProgress?.let { strings.format("home_resume_progress", (it * 100).toInt()) }.orEmpty(),
+            updateText = if (count > 0) strings.format(
+                if (kind == HomeMediaKind.ANIME) "media_home_new_episodes" else "media_home_new_chapters", count,
+            ) else "",
         )
     }
-    val open: (SourceContent) -> Unit = { if (enabled) controller.details(it) }
-    // Android's floating home bar: the title and the filter capsule float over the hero and rails, which scroll beneath.
-    val inset = LocalDesktopTopInset.current
-    FloatingTopBarScaffold(
-        modifier = Modifier.fillMaxSize().testTag("home-panel"),
-        backdropColor = Canvas, scrimColor = Canvas,
-        topBar = {
-            Row(Modifier.fillMaxWidth().padding(start = 12.dp, end = 12.dp, top = inset + 8.dp, bottom = 8.dp),
-                verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-                TopBarTitleBlock(desktopText("nav.home"))
-                Spacer(Modifier.weight(1f))
-                DesktopSourceFilterControls(filter, state.sources, controller::homeFilter, enabled, "home")
-            }
+    MediaHomeScreen(
+        selectedKind = when (filter.tab) {
+            BrowseGroupTab.Content -> HomeMediaKind.MANGA
+            BrowseGroupTab.Novel -> HomeMediaKind.BOOKS
+            BrowseGroupTab.Video -> HomeMediaKind.ANIME
+            else -> HomeMediaKind.ALL
         },
-    ) { inner ->
-        val barTop = inner.calculateTopPadding()
-        HomeScreenLayout(
-            hasHero = hero.isNotEmpty(),
-            hasHighlights = true,
-            initialized = true,
-            tabletLayoutEnabled = true,
-            modifier = Modifier.fillMaxSize(),
-            estimatedHeroHeight = HomeHeroCardHeight + 8.dp + barTop,
-            // Without a hero the list itself starts below the bar; with one, the hero's own padding does.
-            contentPadding = PaddingValues(top = if (hero.isEmpty()) barTop else 0.dp, bottom = 12.dp),
-            hero = { modifier, layoutClass ->
-                Box(modifier.fillMaxWidth().padding(top = 8.dp + barTop)) {
-                    HomeHero(controller, hero, layoutClass, open)
-                }
-            },
-            highlights = {
-                Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(HomeScreenSectionGap)) {
-                    if (history.isNotEmpty()) HistoryRail(controller, history, open)
-                    if (updates.isNotEmpty()) UpdatesRail(controller, updates)
-                    RecommendationsRail(controller, recommendations, state.suggestionSettings.enabled,
-                        state.suggestionsGenerating, enabled, open, state.suggestionNotice)
-                    if (history.isEmpty() && updates.isEmpty()) Text(desktopText("home.empty"),
-                        color = MaterialTheme.colorScheme.onSurfaceVariant)
-                }
-            },
-            quickActions = { expanded -> QuickAccess(controller, enabled, expanded) },
-        )
-    }
-}
-
-@Composable
-private fun HomeHero(controller: DesktopController, entries: List<HomeHeroEntry<HomeWork>>,
-    layoutClass: TabletLayoutClass, open: (SourceContent) -> Unit) {
-    val pagerState = rememberPagerState(pageCount = { entries.size })
-    HomeHeroPager(
-        entries = entries,
-        key = { "${it.kind}:${it.groupKey}" },
-        pagerState = pagerState,
-        layoutClass = layoutClass,
-        modifier = Modifier.testTag("home-hero"),
-    ) { page, entry, cardModifier ->
-        val content = entry.content.content
-        HomeHeroCardSurface(
-            onClick = { open(content) },
-            modifier = cardModifier.testTag("home-hero:$page"),
-            background = {
-                DesktopCover(content, controller.session.covers, Modifier.fillMaxSize().blur(24.dp), large = true)
-            },
-        ) {
-            HomeHeroStandardContent(
-                poster = { width, height ->
-                    DesktopCover(content, controller.session.covers,
-                        Modifier.size(width, height).clip(RoundedCornerShape(8.dp)))
-                },
-                text = { textModifier ->
-                    HomeHeroText(
-                        kindLabel = entry.kind.label(),
-                        kindIcon = painterResource(entry.kind.icon()),
-                        title = content.title,
-                        sourceTitle = controller.state.value.sources.firstOrNull { it.source.name == content.source.name }
-                            ?.displayName ?: content.source.name,
-                        supportingText = entry.newChapters.takeIf { it > 0 }?.let { desktopText("home.newChapters", it) }
-                            ?: entry.progressPercent?.let { desktopText("home.readPercent", it) },
-                        compact = true,
-                        textColor = Color.White,
-                        modifier = textModifier,
-                    )
-                },
-            )
-            if (page == pagerState.currentPage && entries.size > 1) HeroPagerIndicator(
-                pageCount = entries.size, currentPage = pagerState.currentPage,
-                activeColor = Color.White.copy(alpha = 0.92f), inactiveColor = Color.White.copy(alpha = 0.38f),
-                modifier = Modifier.align(Alignment.BottomEnd).padding(start = 14.dp, end = 14.dp, bottom = 7.dp),
-            )
-        }
-    }
-}
-
-@Composable
-private fun HistoryRail(controller: DesktopController, works: List<HomeWork>, open: (SourceContent) -> Unit) {
-    val listState = rememberLazyListState()
-    val isIosStyle = LocalDesktopInterfaceStyle.current == DesktopInterfaceStyle.IOS
-    val rim = rememberCoverRimBorderBrush(isIosStyle, isDark = MaterialTheme.colorScheme.background.luminance() < .5f)
-    Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-        HomeSectionHeader(desktopText("home.sectionHistory"), works.size, painterResource("icons/ic_arrow_forward.svg"),
-            onMoreClick = { controller.library(true) }, titleModifier = Modifier.testTag("home-history-more"))
-        LazyRow(state = listState, horizontalArrangement = Arrangement.spacedBy(3.dp),
-            modifier = Modifier.mouseDragScroll(listState, Orientation.Horizontal).testTag("home-history")) {
-            items(works.take(20), key = { it.content.id }) { work ->
-                val style = CompactPosterCardStyle(112.dp, 158.dp, 12.dp)
-                TabletPosterCover(work.content.title, style, rim,
-                    modifier = Modifier.width(112.dp).height(158.dp).clickable { open(work.content) }
-                        .testTag("home-history:${work.content.id}"),
-                    cover = { DesktopCover(work.content, controller.session.covers, Modifier.matchParentSize()) },
-                    progress = {
-                        work.progress?.takeIf { ReadingProgress.isValid(it) }?.let {
-                            ContentCardBottomProgressBar(it, ReadingProgress.isCompleted(it), Modifier.align(Alignment.BottomCenter))
-                        }
-                    })
-            }
-        }
-    }
-}
-
-@Composable
-private fun UpdatesRail(controller: DesktopController, works: List<HomeWork>) {
-    val isIosStyle = LocalDesktopInterfaceStyle.current == DesktopInterfaceStyle.IOS
-    val rim = rememberCoverRimBorderBrush(isIosStyle, isDark = MaterialTheme.colorScheme.background.luminance() < .5f)
-    Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-        HomeSectionHeader(desktopText("home.sectionUpdates"), works.size, painterResource("icons/ic_arrow_forward.svg"),
-            // Android's `onHomeViewAllUpdatesClick` opens the updates destination, not the feed: the rail's summary and
-            // its complete view are the same thing, so "全部" lands on the page that lists every work with new
-            // chapters instead of the timeline that merely mentions them.
-            onMoreClick = { controller.showUpdates() }, titleModifier = Modifier.testTag("home-updates-more"))
-        // Android's list-mode rail: a horizontally scrolling row of pages, each a column of rows, three pages across on
-        // wide windows with the next one peeking in from the right edge.
-        BoxWithConstraints(Modifier.fillMaxWidth()) {
-            val pages = works.take(30).chunked(UPDATES_ROWS_PER_PAGE)
-            val columns = (maxWidth / 300.dp).toInt().coerceIn(1, 3)
-            val spacing = 12.dp
-            val exact = (maxWidth - spacing * (columns - 1)) / columns
-            val pageWidth = if (pages.size > columns) exact * 0.92f else exact
-            val listState = rememberLazyListState()
-            LazyRow(state = listState, horizontalArrangement = Arrangement.spacedBy(spacing),
-                flingBehavior = rememberSnapFlingBehavior(listState, SnapPosition.Start),
-                modifier = Modifier.fillMaxWidth().mouseDragScroll(listState, Orientation.Horizontal)
-                    .testTag("home-updates")) {
-                items(pages, key = { it.first().content.id }) { page ->
-                    Column(Modifier.width(pageWidth), verticalArrangement = Arrangement.spacedBy(10.dp)) {
-                        page.forEach { work ->
-                            HomeListRailRow(
-                                title = work.content.title,
-                                sourceTitle = controller.state.value.sources.firstOrNull { it.source.name == work.content.source.name }
-                                    ?.displayName ?: work.content.source.name,
-                                coverWidth = 64.dp,
-                                coverShape = RoundedCornerShape(10.dp),
-                                rimBorderBrush = rim,
-                                onClick = { controller.openTracked(work.content.id) },
-                                supportingText = desktopText("home.newChapters", work.newChapters),
-                                modifier = Modifier.fillMaxWidth().testTag("home-update:${work.content.id}"),
-                                cover = {
-                                    DesktopCover(work.content, controller.session.covers, Modifier.matchParentSize())
-                                    ContentCardBookSpine(Modifier.align(Alignment.CenterStart), width = 2.5.dp)
-                                },
-                            )
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-private const val UPDATES_ROWS_PER_PAGE = 2
-
-@Composable
-private fun QuickAccess(controller: DesktopController, enabled: Boolean, expanded: Boolean) {
-    val icon: @Composable (String) -> androidx.compose.ui.graphics.painter.Painter = { painterResource("icons/$it.svg") }
-    val actions = listOf(
-        HomeQuickAction(desktopText("home.quick.favourites"), icon("ic_heart"), { controller.library() }, enabled),
-        HomeQuickAction(desktopText("home.quick.history"), icon("ic_history"), { controller.library(true) }, enabled),
-        HomeQuickAction(AndroidStrings["feed"], icon("ic_feed"), { controller.subscriptions() }, enabled),
-        // Android's home screen offers its bookmarks action card next to the shelves.
-        HomeQuickAction(AndroidStrings["notes"], icon("ic_bookmark"), { controller.showBookmarks() }, enabled),
-        HomeQuickAction(desktopText("home.quick.downloads"), icon("ic_download"), { controller.showDownloads() }, enabled),
-        HomeQuickAction(desktopText("home.quick.random"), icon("ic_dice"), { controller.randomFavourite() }, enabled),
-        HomeQuickAction(desktopText("home.quick.extensions"), icon("ic_extension"), { controller.showExtensions() }, enabled),
-        HomeQuickAction(desktopText("home.quick.backups"), icon("ic_backup_restore"), { controller.showBackups() }, enabled),
-        HomeQuickAction(desktopText("home.quick.settings"), icon("ic_settings"), { controller.more() }, enabled),
+        recent = history.map { model(it.content, it.progressPercent) },
+        updates = updates.map { (content, count) -> model(content, count = count) },
+        recommendations = recommendations.map { model(it) },
+        initialized = !state.busy || contents.isNotEmpty(),
+        onKindSelected = { kind ->
+            controller.homeFilter(filter.copy(tab = when (kind) {
+                HomeMediaKind.MANGA -> BrowseGroupTab.Content
+                HomeMediaKind.BOOKS -> BrowseGroupTab.Novel
+                HomeMediaKind.ANIME -> BrowseGroupTab.Video
+                HomeMediaKind.ALL -> BrowseGroupTab.All
+            }))
+        },
+        // Desktop currently searches within a chosen source. Name that capability accurately.
+        searchLabel = strings.string("media_home_browse_sources"),
+        onSearch = { controller.exitSource() },
+        onSettings = { controller.more() },
+        onHistory = { controller.library(true) },
+        onUpdates = { controller.showUpdates() },
+        onRecommendations = { controller.showSuggestions() },
+        onManageSources = { controller.showExtensions() },
+        onOpen = { model -> contents[model.id]?.let { controller.details(it) } },
+        onResume = { model -> contents[model.id]?.let { controller.resumeHomeContent(it) } },
+        cover = { model, modifier ->
+            contents[model.id]?.let { DesktopCover(it, controller.session.covers, modifier) }
+        },
+        contentPadding = PaddingValues(top = LocalDesktopTopInset.current),
+        modifier = Modifier.fillMaxSize().testTag("home-panel"),
+        enabled = enabled,
     )
-    HomeQuickActionsGrid(desktopText("home.quickAccess"), actions, Modifier.fillMaxWidth().testTag("home-quick-access"),
-        preferredTileWidth = if (expanded) 96.dp else 68.dp, isIosStyle = LocalDesktopInterfaceStyle.current == DesktopInterfaceStyle.IOS,
-        tileModifier = { index, _ -> Modifier.testTag("home-quick:$index") })
-}
-
-@Composable
-private fun RecommendationsRail(controller: DesktopController, works: List<HomeWork>, suggestionsEnabled: Boolean,
-    generating: Boolean, enabled: Boolean, open: (SourceContent) -> Unit, notice: String?) {
-    val listState = rememberLazyListState()
-    val isIosStyle = LocalDesktopInterfaceStyle.current == DesktopInterfaceStyle.IOS
-    val rim = rememberCoverRimBorderBrush(isIosStyle, isDark = MaterialTheme.colorScheme.background.luminance() < .5f)
-    Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-        HomeSectionHeader(desktopText("home.sectionRecommendations"), works.size, painterResource("icons/ic_arrow_forward.svg"),
-            // Android's home rail opens the suggestions destination; the refresh stays on the section's own action.
-            onMoreClick = { if (enabled) controller.showSuggestions() },
-            titleModifier = Modifier.testTag("home-recommendations-more"),
-            configureIcon = painterResource("icons/ic_suggestion.svg"), configureLabel = desktopText("home.refreshRecommendations"),
-            configureModifier = Modifier.testTag("home-recommendations-refresh"),
-            onConfigureClick = { if (enabled && !generating) controller.refreshSuggestions() })
-        // Android posts this headline as a notification after the worker stores results; the desktop window shows it
-        // here instead, where the suggestions themselves are, until it is dismissed.
-        if (notice != null) {
-            Surface(shape = RoundedCornerShape(12.dp), color = MaterialTheme.colorScheme.secondaryContainer,
-                modifier = Modifier.fillMaxWidth().testTag("home-suggestion-notice")) {
-                Row(Modifier.padding(start = 16.dp, end = 8.dp, top = 8.dp, bottom = 8.dp),
-                    verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-                    Text(notice, modifier = Modifier.weight(1f), style = MaterialTheme.typography.bodyMedium,
-                        color = MaterialTheme.colorScheme.onSecondaryContainer)
-                    TextButton({ controller.dismissSuggestionNotice() }, modifier = Modifier.testTag(
-                        "home-suggestion-notice-dismiss")) { Text(desktopText("common.close")) }
-                }
-            }
-        }
-        if (works.isEmpty()) {
-            Surface(shape = RoundedCornerShape(16.dp), color = MaterialTheme.colorScheme.surfaceContainerLow,
-                modifier = Modifier.fillMaxWidth().testTag("home-recommendations-empty")) {
-                Row(Modifier.padding(16.dp), verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-                    Text(if (generating) desktopText("message.generatingSuggestions")
-                        else if (suggestionsEnabled) desktopText("home.suggestionsDetail")
-                        else desktopText("home.suggestionsOffDetail"),
-                        modifier = Modifier.weight(1f), color = MaterialTheme.colorScheme.onSurfaceVariant)
-                    FilledTonalButton({ if (suggestionsEnabled) controller.refreshSuggestions() else controller.enableSuggestions() },
-                        enabled = enabled && !generating, modifier = Modifier.testTag("home-recommendations-generate")) {
-                        Text(if (suggestionsEnabled) desktopText("home.generateSuggestions") else desktopText("home.enableSuggestions"))
-                    }
-                }
-            }
-        } else LazyRow(state = listState, horizontalArrangement = Arrangement.spacedBy(3.dp),
-            modifier = Modifier.mouseDragScroll(listState, Orientation.Horizontal, enabled = enabled)
-                .testTag("home-recommendations")) {
-            items(works.take(30), key = { it.content.id }) { work ->
-                val style = CompactPosterCardStyle(112.dp, 158.dp, 12.dp)
-                TabletPosterCover(work.content.title, style, rim,
-                    modifier = Modifier.width(112.dp).height(158.dp).clickable { open(work.content) }
-                        .testTag("home-recommendation:${work.content.id}"),
-                    cover = { DesktopCover(work.content, controller.session.covers, Modifier.matchParentSize()) })
-            }
-        }
-    }
 }

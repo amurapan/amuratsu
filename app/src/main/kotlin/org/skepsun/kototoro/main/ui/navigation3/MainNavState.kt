@@ -81,6 +81,7 @@ class MainNavState internal constructor(
 
 internal fun encodeTopLevelNavKey(key: TopLevelNavKey): String = when (key) {
     HomeNavKey -> "home"
+    SearchHomeNavKey -> "search_home"
     HistoryNavKey -> "history"
     FavoritesNavKey -> "favorites"
     ExploreNavKey -> "explore"
@@ -94,6 +95,7 @@ internal fun encodeTopLevelNavKey(key: TopLevelNavKey): String = when (key) {
 
 internal fun decodeTopLevelNavKey(value: String): TopLevelNavKey? = when (value) {
     "home" -> HomeNavKey
+    "search_home" -> SearchHomeNavKey
     "history" -> HistoryNavKey
     "favorites" -> FavoritesNavKey
     "explore" -> ExploreNavKey
@@ -119,6 +121,7 @@ fun rememberMainNavState(
         mutableStateOf(initialTopLevel)
     }
     val homeStack = rememberTopLevelNavBackStack(HomeNavKey)
+    val searchHomeStack = rememberTopLevelNavBackStack(SearchHomeNavKey)
     val historyStack = rememberTopLevelNavBackStack(HistoryNavKey)
     val favoritesStack = rememberTopLevelNavBackStack(FavoritesNavKey)
     val exploreStack = rememberTopLevelNavBackStack(ExploreNavKey)
@@ -131,6 +134,7 @@ fun rememberMainNavState(
 
     return remember(
         homeStack,
+        searchHomeStack,
         historyStack,
         favoritesStack,
         exploreStack,
@@ -146,6 +150,7 @@ fun rememberMainNavState(
             writeSelectedTopLevel = { selectedTopLevelState.value = it },
             stacks = mapOf(
                 HomeNavKey to homeStack,
+                SearchHomeNavKey to searchHomeStack,
                 HistoryNavKey to historyStack,
                 FavoritesNavKey to favoritesStack,
                 ExploreNavKey to exploreStack,

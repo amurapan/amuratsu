@@ -35,7 +35,7 @@ import org.skepsun.kototoro.home.ui.HomeRecommendationItem
 import org.skepsun.kototoro.home.ui.HomeUpdateItem
 import org.skepsun.kototoro.parsers.model.Content
 
-import org.skepsun.kototoro.home.ui.compose.HOME_SECTION_GAP
+import org.skepsun.kototoro.core.ui.home.HomeScreenSectionGap
 import org.skepsun.kototoro.home.ui.compose.HomeBadge
 import org.skepsun.kototoro.home.ui.compose.toHeroCountLabel
 
@@ -105,7 +105,7 @@ internal fun HomeHighlightsSections(
     Column(
         modifier = modifier
             .fillMaxWidth(),
-        verticalArrangement = Arrangement.spacedBy(HOME_SECTION_GAP),
+            verticalArrangement = Arrangement.spacedBy(HomeScreenSectionGap),
     ) {
         if (historyItems.isNotEmpty()) {
             HomeContentRowSection(

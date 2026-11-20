@@ -68,6 +68,7 @@ class MainStateNavigator(
                 advancedAuthor = request.advancedQuery?.author.orEmpty(),
                 pinnedOnly = request.pinnedOnly,
                 hideEmpty = request.hideEmpty,
+                languagePresetId = request.languagePresetId,
             ),
         )
     }

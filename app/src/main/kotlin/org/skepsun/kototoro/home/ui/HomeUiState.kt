@@ -15,6 +15,7 @@ data class HomeRecentItem(
     val groupKey: Long = content.id,
     val counter: Int = 0,
     val progress: ReadingProgress? = null,
+    val history: org.skepsun.kototoro.core.model.ContentHistory? = null,
 ) {
     val title: String
         get() = content.title

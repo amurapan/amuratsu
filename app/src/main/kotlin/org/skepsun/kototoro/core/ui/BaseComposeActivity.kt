@@ -92,6 +92,12 @@ abstract class BaseComposeActivity :
         super.onNewIntent(intent)
     }
 
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+        // MainActivity handles uiMode without recreation. Keep the system icons in sync with the new theme.
+        configureKototoroEdgeToEdge()
+    }
+
     protected fun setComposeContent(content: @Composable () -> Unit) {
         setContent {
             val cornerRadius by kototoroAppSettings.observeAsState(AppSettings.KEY_POPUP_RADIUS) {

@@ -27,11 +27,16 @@ def desktopIcons = ['ic_bookmark', 'ic_explore_normal', 'ic_history', 'ic_downlo
 def desktopIconResources = layout.buildDirectory.dir('generated/android-icons')
 def prepareDesktopIcons = tasks.register('prepareDesktopIcons') {
     def vectors = desktopIcons.collect { rootProject.file("app/src/main/res/drawable/${it}.xml") }
+    def legadoIcon = rootProject.file('app/src/main/res/drawable-xxhdpi/ic_source_legado_mask.png')
     inputs.files(vectors)
+    inputs.file(legadoIcon)
     outputs.dir(desktopIconResources)
     doLast {
         def target = desktopIconResources.get().dir('icons').asFile
         target.mkdirs()
+        // Legado's Android drawable is a tinted bitmap, rather than a vector.
+        java.nio.file.Files.copy(legadoIcon.toPath(), new File(target, 'ic_source_legado.png').toPath(),
+            java.nio.file.StandardCopyOption.REPLACE_EXISTING)
         vectors.each { vectorFile ->
             def vector = new groovy.xml.XmlParser(false, false).parse(vectorFile)
             def render
@@ -299,9 +304,12 @@ def verifyDesktopStrings = tasks.register('verifyDesktopStrings') {
     // The runtime module reports its messages through these catalogs too, so it is scanned as well.
     def kotlinSources = fileTree('src/main/kotlin') { include '**/*.kt' } +
         fileTree(rootProject.file('desktop-runtime/src/main/kotlin')) { include '**/*.kt' }
+    def sharedLabelSources = files(rootProject.file(
+        'core-domain/src/commonMain/kotlin/org/skepsun/kototoro/core/appearance/VisualPreset.kt'))
     inputs.file(base)
     inputs.files(translations)
     inputs.files(kotlinSources)
+    inputs.files(sharedLabelSources)
     doLast {
         def placeholders = ~/%\d+\$?[-#+ 0,(]*\d*(?:\.\d+)?[a-zA-Z%]/
         def load = { File file ->
@@ -334,6 +342,14 @@ def verifyDesktopStrings = tasks.register('verifyDesktopStrings') {
         // A call may wrap its key onto the next line, so the key scan runs over the whole file; the Chinese literal
         // check stays line based, because it only has to point at the offending line.
         def call = ~/(?:desktopText|DesktopRuntimeStrings\.text)\(\s*"([^"]+)"/
+        // Keys can be selected by if/when or carried by shared preset metadata, then passed to desktopText().
+        // Lookahead also finds nested string literals inside Kotlin interpolation.
+        def literal = ~/(?="([^"\n]+)")/
+        (kotlinSources + sharedLabelSources).files.each { file ->
+            (file.getText('UTF-8') =~ literal).each { match ->
+                if (baseBundle.containsKey(match[1])) used << match[1]
+            }
+        }
         def chinese = ~/"[^"\n]*[\u4e00-\u9fff][^"\n]*"/
         kotlinSources.files.sort { it.path }.each { file ->
             def text = file.getText('UTF-8')

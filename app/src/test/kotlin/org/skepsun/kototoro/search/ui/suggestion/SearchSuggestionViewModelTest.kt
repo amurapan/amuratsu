@@ -34,8 +34,9 @@ import org.skepsun.kototoro.core.prefs.AppSettings
 import org.skepsun.kototoro.core.prefs.SearchSuggestionType
 import org.skepsun.kototoro.explore.data.ContentSourcesRepository
 import org.skepsun.kototoro.explore.data.SourcePresetsRepository
-import org.skepsun.kototoro.favourites.domain.GlobalFavoritesState
 import org.skepsun.kototoro.history.data.HistoryRepository
+import org.skepsun.kototoro.search.domain.ALL_SEARCH_CONTENT_KINDS
+import org.skepsun.kototoro.search.domain.ALL_SOURCE_TYPES
 import org.skepsun.kototoro.search.domain.LibrarySearchScope
 import org.skepsun.kototoro.parsers.model.Content
 import org.skepsun.kototoro.parsers.model.ContentSource
@@ -65,7 +66,6 @@ class SearchSuggestionViewModelTest {
 
         override fun setPreferredSite(service: ScrobblerService) = Unit
     }
-    private val favourites = mockk<GlobalFavoritesState>()
     private val history = mockk<HistoryRepository>()
 
     @BeforeEach
@@ -76,7 +76,6 @@ class SearchSuggestionViewModelTest {
         every { settings.searchSuggestionTypes } returns setOf(SearchSuggestionType.QUERIES_RECENT)
         every { settings.observeChanges() } returns emptyFlow()
         every { sources.observeEnabledSources() } returns MutableStateFlow<List<ContentSourceInfo>>(emptyList())
-        every { favourites.selectedSourceTags } returns MutableStateFlow(emptySet())
         coEvery { repository.getQuerySuggestion(any(), any()) } answers { listOf(firstArg()) }
         coEvery { repository.getContentSuggestion(any(), any(), any()) } returns emptyList()
         coEvery { tracking.search(any()) } coAnswers { awaitCancellation() }
@@ -87,6 +86,20 @@ class SearchSuggestionViewModelTest {
     fun tearDown() {
         store.clear()
         Dispatchers.resetMain()
+    }
+
+    @Test
+    fun `global suggestions do not inherit the active space source preset`() = runBlocking {
+        every { settings.activeSourcePresetId } returns 42L
+        val model = model()
+        model.onQueryChanged("Frieren")
+
+        val suggestions = withTimeout(10_000) { model.suggestion.first() }
+
+        assertEquals(listOf(SearchSuggestionItem.RecentQuery("Frieren")), suggestions)
+        assertEquals(-1L, model.languagePresetId.value)
+        assertEquals(ALL_SOURCE_TYPES, model.getSourceTypes())
+        assertEquals(ALL_SEARCH_CONTENT_KINDS, model.getContentKinds())
     }
 
     @Test
@@ -355,7 +368,6 @@ class SearchSuggestionViewModelTest {
         sourcesRepository = sources,
         sourcePresetsRepository = mockk<SourcePresetsRepository>(),
         sourceTypeIdentifier = sourceTypeIdentifier,
-        globalFavoritesState = favourites,
         trackingSiteDiscoveryService = tracking,
         preferredTrackingSiteProvider = preferredSite,
         historyRepository = history,

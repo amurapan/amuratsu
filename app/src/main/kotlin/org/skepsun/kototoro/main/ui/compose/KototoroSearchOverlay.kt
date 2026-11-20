@@ -128,6 +128,7 @@ import org.skepsun.kototoro.search.ui.compose.SearchAdvancedFields
 import org.skepsun.kototoro.search.ui.compose.SearchCompactChip
 import org.skepsun.kototoro.search.ui.compose.SearchFeedbackCard
 import org.skepsun.kototoro.search.ui.compose.SearchToolsRow
+import org.skepsun.kototoro.search.ui.compose.SearchMediaChips
 import org.skepsun.kototoro.search.ui.suggestion.model.SearchSuggestionItem
 import org.skepsun.kototoro.search.ui.suggestion.model.TrackingEntity
 import org.skepsun.kototoro.search.ui.suggestion.SearchSuggestionState
@@ -542,6 +543,13 @@ fun KototoroSearchOverlay(
                             modifier = Modifier.size(24.dp),
                         )
                     }
+                }
+                if (activeLibraryScope == null) {
+                    SearchMediaChips(
+                        selected = selectedContentKinds,
+                        onSelect = { selectedContentKinds = it },
+                        modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
+                    )
                 }
                 SearchToolsRow(
                     advancedExpanded = showAdvanced,

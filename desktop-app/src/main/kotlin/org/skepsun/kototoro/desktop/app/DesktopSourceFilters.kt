@@ -12,6 +12,7 @@ import org.skepsun.kototoro.core.jsonsource.OriginGroup
 import org.skepsun.kototoro.core.source.SourceEcosystem
 import org.skepsun.kototoro.core.source.SourceListing
 import org.skepsun.kototoro.core.ui.buttons.TextButton
+import org.skepsun.kototoro.core.ui.search.MediaFilterChips
 import org.skepsun.kototoro.core.ui.topbar.SourceTypeMenuEntry
 import org.skepsun.kototoro.core.ui.topbar.SourceTypeMenuItems
 import org.skepsun.kototoro.core.ui.topbar.TopBarIconAction
@@ -61,7 +62,8 @@ internal fun SourceTag.desktopTitle(): String = when (this) {
     else -> id
 }
 
-private fun SourceTag.desktopIcon(): String = "icons/ic_source_$id.svg"
+private fun SourceTag.desktopIcon(): String =
+    if (this == SourceTag.LEGADO) "icons/ic_source_legado.png" else "icons/ic_source_$id.svg"
 
 /** Android's top bar content-type chip values: all, manga, novel and video. */
 internal val DesktopContentTabs: List<BrowseGroupTab> =
@@ -131,16 +133,21 @@ internal fun DesktopSourceFilterControls(filter: DesktopSourceFilter, sources: L
                         if (filter.tab != BrowseGroupTab.All) MaterialTheme.colorScheme.primary
                         else MaterialTheme.colorScheme.onSurfaceVariant)) { Text(filter.tab.desktopTitle()) }
                 DropdownMenu(typeMenu && enabled, { typeMenu = false }) {
-                    DesktopContentTabs.forEach { tab ->
-                        DropdownMenuItem({ Text(tab.desktopTitle()) }, onClick = {
+                    val mediaTabs = DesktopContentTabs.filterNot { it == BrowseGroupTab.All }
+                    MediaFilterChips(
+                        options = mediaTabs,
+                        selected = if (filter.tab == BrowseGroupTab.All) mediaTabs.toSet() else setOf(filter.tab),
+                        label = { it.desktopTitle() },
+                        key = { it.tag() },
+                        onSelect = { selected ->
                             typeMenu = false
-                            onChange(filter.copy(tab = tab))
-                        }, enabled = tab in enabledTabs, modifier = Modifier.testTag("$tagPrefix-content-type:${tab.tag()}"),
-                            trailingIcon = if (tab == filter.tab) {
-                                { Icon(painterResource("icons/ic_check.svg"), null, tint = MaterialTheme.colorScheme.primary,
-                                    modifier = Modifier.size(18.dp)) }
-                            } else null)
-                    }
+                            onChange(filter.copy(tab = selected.singleOrNull() ?: BrowseGroupTab.All))
+                        },
+                        enabled = enabled,
+                        isOptionEnabled = { it in enabledTabs },
+                        tagPrefix = "$tagPrefix-content-type",
+                        modifier = Modifier.widthIn(max = 420.dp).padding(horizontal = 12.dp),
+                    )
                 }
             }
             var tagMenu by remember { mutableStateOf(false) }

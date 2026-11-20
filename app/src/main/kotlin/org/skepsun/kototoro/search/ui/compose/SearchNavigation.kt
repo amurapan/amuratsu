@@ -13,5 +13,6 @@ data class SearchNavigationRequest(
     val advancedQuery: AdvancedSearchParams?,
     val pinnedOnly: Boolean,
     val hideEmpty: Boolean,
+    val languagePresetId: Long = -1L,
     val requestId: Long,
 )

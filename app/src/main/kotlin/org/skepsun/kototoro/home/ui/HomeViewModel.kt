@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.Log
 import androidx.annotation.StringRes
 import androidx.collection.LongObjectMap
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
@@ -35,6 +36,7 @@ import org.skepsun.kototoro.backups.ui.periodical.RemoteNamespace
 import org.skepsun.kototoro.backups.ui.periodical.WebDavBackupUploader
 import org.skepsun.kototoro.core.jsonsource.OriginGroup
 import org.skepsun.kototoro.core.jsonsource.SourceGroup
+import org.skepsun.kototoro.core.model.ContentHistory
 import org.skepsun.kototoro.core.model.GlobalTagBlacklist
 import org.skepsun.kototoro.core.model.getContentType
 import org.skepsun.kototoro.core.model.isNsfw
@@ -64,9 +66,6 @@ import org.skepsun.kototoro.tracking.discovery.data.TrackingSiteCacheRepository
 import org.skepsun.kototoro.tracking.discovery.domain.TrackingSiteItemDetails
 import org.skepsun.kototoro.tracker.domain.TrackingRepository
 import org.skepsun.kototoro.tracker.domain.model.ContentTracking
-import org.skepsun.kototoro.space.ui.SpaceBrowseScope
-import org.skepsun.kototoro.space.ui.SpaceBindableViewModel
-import org.skepsun.kototoro.space.ui.scopedToSpace
 import javax.inject.Inject
 
 @HiltViewModel
@@ -84,14 +83,12 @@ class HomeViewModel @Inject constructor(
     private val backupStorage: ExternalBackupStorage,
     private val repository: BackupRepository,
     private val sourceGroupManager: org.skepsun.kototoro.core.jsonsource.SourceGroupManager,
-    private val globalFavoritesState: org.skepsun.kototoro.favourites.domain.GlobalFavoritesState,
-    private val sourcePresetsRepository: org.skepsun.kototoro.explore.data.SourcePresetsRepository,
     private val contentSearchRepository: ContentSearchRepository,
     private val contentDataRepository: ContentDataRepository,
     private val trackingSiteCacheRepository: TrackingSiteCacheRepository,
     @ApplicationContext private val appContext: Context,
-    spaceBrowseScope: SpaceBrowseScope,
-) : BaseViewModel(), SpaceBindableViewModel {
+    private val savedStateHandle: SavedStateHandle,
+) : BaseViewModel() {
 
     private companion object {
         private const val TAG = "HomeViewModel"
@@ -107,38 +104,12 @@ class HomeViewModel @Inject constructor(
 
     val onActionDone = MutableEventFlow<ReversibleAction>()
 
-    private val spaceBinding = spaceBrowseScope.createBinding(viewModelScope + Dispatchers.Default)
-    private val selectedBrowseGroupTab = globalFavoritesState.selectedGroupTab.scopedToSpace(
-        spaceGroupTab = spaceBinding.groupTab,
-        coroutineScope = viewModelScope + Dispatchers.Default,
-    )
-    private val selectedTabFlow = selectedBrowseGroupTab.map(BrowseGroupTab::toHomeContentTab)
+    // The personal home is global. Selecting a format never changes a media space or library filter.
+    private val selectedTabFlow = savedStateHandle.getStateFlow("home_format", "ALL")
+        .map { name -> HomeContentTab.entries.find { it.name == name } }
         .distinctUntilChanged()
-        .onEach { tab ->
-            logHomeDiag("selectedTabFlow", "tab=$tab")
-        }
-    private val selectedSourceTagsFlow = globalFavoritesState.selectedSourceTags
-        .onStart { emit(globalFavoritesState.selectedSourceTags.value) }
-        .distinctUntilChanged()
-        .onEach { tags ->
-            logHomeDiag("selectedSourceTagsFlow", "tags=${tags.homeTagSignature()}")
-        }
-    private val activePresetFlow = settings.observeAsFlow(AppSettings.KEY_ACTIVE_SOURCE_PRESET_ID) { activeSourcePresetId }
-        .flatMapLatest { id ->
-            if (id == -1L) flowOf(null) else sourcePresetsRepository.observe(id)
-        }
-        .onStart {
-            val presetId = settings.activeSourcePresetId
-            emit(if (presetId == -1L) null else sourcePresetsRepository.getById(presetId))
-        }
-        .distinctUntilChanged()
-        .onEach { preset ->
-            Log.d(TAG, "activePresetFlow presetId=${preset?.id ?: -1L}")
-            logHomeDiag(
-                "activePresetFlow",
-                "presetId=${preset?.id ?: -1L} sourceCount=${preset?.sources?.size ?: 0}",
-            )
-        }
+    private val selectedSourceTagsFlow = flowOf(emptySet<org.skepsun.kototoro.explore.ui.model.SourceTag>())
+    private val activePresetFlow = flowOf<org.skepsun.kototoro.explore.data.SourcePreset?>(null)
     /** The content types of the currently selected home tab, or null for All. */
     private val homeTabTypesFlow = selectedTabFlow
         .map { tab -> tab.toBrowseGroupTab().allowedContentTypes() }
@@ -150,7 +121,6 @@ class HomeViewModel @Inject constructor(
             // novels/videos when the recent global history is manga-heavy.
             historyRepository.observeRecentWithHistory(limit = 64, tabTypes = tabTypes)
         }
-        .onStart { emit(emptyList()) }
         .distinctUntilChanged()
         .flowOn(Dispatchers.Default)
         .shareIn(viewModelScope, SharingStarted.Eagerly, replay = 1)
@@ -315,7 +285,7 @@ class HomeViewModel @Inject constructor(
         .distinctUntilChanged()
     private val contentDataFlow = combine(
         resumeStateFlow,
-        recentHistoryFlow,
+        recentHistoryWithMetadataFlow,
         recentUpdatesFlow,
         recommendationsFlow,
         isHistoryNsfwDisabledFlow,
@@ -323,7 +293,8 @@ class HomeViewModel @Inject constructor(
         globalTagBlacklistFlow,
     ) { values ->
         val resumeState = values[0] as HomeResumeState
-        val recentHistory = values[1] as List<Content>
+        val historyWithMetadata = values[1] as List<ContentWithHistory>
+        val recentHistory = historyWithMetadata.map { it.manga }
         val recentUpdates = values[2] as List<ContentTracking>
         val recommendations = values[3] as List<Content>
         val isHistoryNsfwDisabled = values[4] as Boolean
@@ -335,6 +306,7 @@ class HomeViewModel @Inject constructor(
         ContentDataSnapshot(
             resumeState = resumeState,
             history = globalTagBlacklist.filter(filteredHistory),
+            historyMetadata = historyWithMetadata.associate { it.manga.id to it.history },
             updates = filteredUpdates.filterNot { it.manga in globalTagBlacklist },
             recommendations = globalTagBlacklist.filter(recommendations),
         )
@@ -351,6 +323,7 @@ class HomeViewModel @Inject constructor(
             started = SharingStarted.Eagerly,
             initialValue = ContentDataSnapshot(
                 resumeState = HomeResumeState(),
+                initialized = false,
                 history = emptyList(),
                 updates = emptyList(),
                 recommendations = emptyList(),
@@ -446,7 +419,7 @@ class HomeViewModel @Inject constructor(
             val resumeState = contentData.resumeState
                 .withOverrides(displayContentOverrides)
                 .filtered(
-                    tab = selectedTab,
+                    tab = null, // Already filtered by persisted content type in the history query.
                     sourceTags = selectedSourceTags,
                     sourceGroupManager = sourceGroupManager,
                     preset = preset,
@@ -454,7 +427,10 @@ class HomeViewModel @Inject constructor(
                 .filteredNsfw(false)
             val recentHistory = contentData.history
                 .map { content -> content.withOverride(displayContentOverrides[content.id]) }
-                .map { content -> HomeRecentItem(content = content, groupKey = content.id) }
+                .map { content ->
+                    HomeRecentItem(content = content, groupKey = content.id,
+                        history = contentData.historyMetadata[content.id])
+                }
                 .selectHomeHistoryByTab(selectedTab, selectedSourceTags, sourceGroupManager, preset)
             val recentUpdates = contentData.updates
                 .map { tracking ->
@@ -488,7 +464,7 @@ class HomeViewModel @Inject constructor(
                 enabledSourcesCount = meta.enabledSourcesCount,
                 sourceBreakdown = meta.sourceBreakdown,
                 selectedSourceTags = selectedSourceTags,
-                isInitialized = true,
+                isInitialized = contentData.initialized,
             )
         }.onSuccess { summary ->
             Log.d(
@@ -511,7 +487,7 @@ class HomeViewModel @Inject constructor(
                 enabledSourcesCount = meta.enabledSourcesCount,
                 sourceBreakdown = meta.sourceBreakdown,
                 selectedSourceTags = selectedSourceTags,
-                isInitialized = true,
+                isInitialized = contentData.initialized,
             )
         }
     }
@@ -521,27 +497,12 @@ class HomeViewModel @Inject constructor(
             scope = viewModelScope,
             started = SharingStarted.Eagerly,
             initialValue = HomeSummaryState(
-                selectedTab = selectedBrowseGroupTab.value.toHomeContentTab(),
-                selectedSourceTags = globalFavoritesState.selectedSourceTags.value,
+                selectedTab = HomeContentTab.entries.find { it.name == savedStateHandle.get<String>("home_format") },
             ),
         )
 
     fun setSelectedTab(tab: HomeContentTab?) {
-        val groupTab = when (tab) {
-            HomeContentTab.MANGA -> org.skepsun.kototoro.explore.ui.model.BrowseGroupTab.Content
-            HomeContentTab.NOVEL -> org.skepsun.kototoro.explore.ui.model.BrowseGroupTab.Novel
-            HomeContentTab.VIDEO -> org.skepsun.kototoro.explore.ui.model.BrowseGroupTab.Video
-            null -> org.skepsun.kototoro.explore.ui.model.BrowseGroupTab.All
-        }
-        globalFavoritesState.setSelectedGroupTab(groupTab)
-    }
-
-    override fun bindSpace(spaceId: org.skepsun.kototoro.space.domain.SpaceId?) {
-        spaceBinding.bindSpace(spaceId)
-    }
-
-    fun setSelectedSourceTags(tags: Set<org.skepsun.kototoro.explore.ui.model.SourceTag>) {
-        globalFavoritesState.setSelectedSourceTags(tags)
+        savedStateHandle["home_format"] = tab?.name ?: "ALL"
     }
 
     val isRandomLoading = MutableStateFlow(false)
@@ -695,6 +656,8 @@ private data class Quadruple<A, B, C, D>(
 private data class ContentDataSnapshot(
     val resumeState: HomeResumeState,
     val history: List<Content>,
+    val historyMetadata: Map<Long, ContentHistory> = emptyMap(),
+    val initialized: Boolean = true,
     val updates: List<ContentTracking>,
     val recommendations: List<Content>,
 )

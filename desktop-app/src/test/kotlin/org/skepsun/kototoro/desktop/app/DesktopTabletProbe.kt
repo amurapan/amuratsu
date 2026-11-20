@@ -618,28 +618,24 @@ internal object DesktopTabletProbe {
                 snapshot("feed")
                 onNodeWithTag("nav:主页").performClick(); idle()
                 onNodeWithTag("home-panel").assertExists()
-                onNodeWithTag("home-hero").assertExists()
-                onNodeWithTag("home-history:${content.id}").assertExists()
-                onNodeWithTag("home-update:${content.id}").assertExists()
-                // The shared Android layout lazily composes quick access below the highlights on narrow panes.
-                onNodeWithTag("home-scroll").performScrollToNode(hasTestTag("home-quick-access"))
-                onNodeWithTag("home-quick-access").assertIsDisplayed()
-                onNodeWithTag("home-scroll").performScrollToIndex(0)
-                // Recommendations: Android's suggestion rules over the installed fixture source.
-                // Suggestions are off by default, as on Android; the home button enables and generates them.
+                onNodeWithTag("media-home-resume:${content.id}").assertExists()
+                onNodeWithTag("media-home-details:${content.id}").assertExists()
+                onNodeWithTag("media-home-update:${content.id}").assertExists()
+                // Recommendations are enabled on their dedicated page; home only shows cached suggestions.
                 check(!controller.state.value.suggestionSettings.enabled)
-                onNodeWithText("开启推荐").assertExists()
-                onNodeWithTag("home-recommendations-generate").performScrollTo().performClick(); idle()
+                runBlocking { controller.showSuggestions().join() }; idle()
+                onNodeWithTag("suggestions-enable").performScrollTo().performClick(); idle()
+                waitUntil(timeoutMillis = 30_000) { !controller.state.value.suggestionsGenerating }
+                runBlocking { controller.home().join() }; idle()
                 check(controller.state.value.suggestionSettings.enabled)
                 check((session.storage.preferences.open("desktop_background").snapshot()["suggestions"]
                     as? org.skepsun.kototoro.core.source.SourcePreferenceValue.Toggle)?.value == true)
                 val suggested = controller.state.value.suggestions
                 check(suggested.isNotEmpty()) { "the fixture source yields suggestions" }
                 check(runBlocking { session.storage.database.getSuggestionDao().count() } == suggested.size)
-                onNodeWithTag("home-recommendation:${suggested.first().id}").assertExists()
-                onNodeWithTag("home-recommendations-empty").assertDoesNotExist()
+                onNodeWithTag("media-home-recommendation:${suggested.first().id}").assertExists()
                 snapshot("home")
-                onNodeWithTag("home-update:${content.id}").performScrollTo().performClick(); idle()
+                onNodeWithTag("media-home-update:${content.id}").performScrollTo().performClick(); idle()
                 check(controller.state.value.detailsOrigin == DesktopScreen.HOME)
                 check(controller.state.value.content?.id == content.id)
                 runBlocking { controller.dismissDetails().join() }; idle()
@@ -649,10 +645,9 @@ internal object DesktopTabletProbe {
                 check(controller.state.value.feed.updateRowsByOwnerId.containsKey(content.id)) {
                     "opening an update keeps the pending counter"
                 }
-                onNodeWithTag("home-update:${content.id}").assertExists()
+                onNodeWithTag("media-home-update:${content.id}").assertExists()
                 onNodeWithTag("nav-feed-badge", useUnmergedTree = true).assertExists()
-                onNodeWithTag("home-scroll").performScrollToNode(hasTestTag("home-quick:0"))
-                onNodeWithTag("home-quick:0").performClick(); idle()
+                onNodeWithTag("nav:收藏").performClick(); idle()
                 check(controller.state.value.screen == DesktopScreen.LIBRARY)
 
                 // Settings: Android's tracker frequency is a choice dialog, and the recommendation rules live on their
@@ -963,7 +958,7 @@ internal object DesktopTabletProbe {
                 check(controller.state.value.library.entries.none { it.content.id == content.id })
                 onNodeWithTag("library-selection-count").assertDoesNotExist()
                 onNodeWithTag("nav:主页").performClick(); idle()
-                onNodeWithTag("home-history:${content.id}").assertDoesNotExist()
+                onNodeWithTag("media-home-details:${content.id}").assertDoesNotExist()
                 // The real host hoists shelf positions above routes, so disposing the shelf must not reset it.
                 runBlocking {
                     repeat(40) { index ->

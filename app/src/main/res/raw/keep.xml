@@ -1,3 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- HomeMediaKind supplies these names dynamically to the shared UI string resolver. -->
 <resources xmlns:tools="http://schemas.android.com/tools"
-	tools:keep="@drawable/ic_denied_large,@drawable/ic_alert_outline,@drawable/ic_error_large" />
+	tools:keep="@drawable/ic_denied_large,@drawable/ic_alert_outline,@drawable/ic_error_large,@string/media_home_*" />

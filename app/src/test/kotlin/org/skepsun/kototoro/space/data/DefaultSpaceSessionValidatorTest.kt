@@ -10,6 +10,17 @@ import org.skepsun.kototoro.space.domain.SpaceSessionSnapshot
 
 class DefaultSpaceSessionValidatorTest {
 
+    @Test
+    fun `search tab survives session validation`() = runTest {
+        val routes = listOf(
+            SpaceRouteSnapshot.TopLevel("search_home"),
+            SpaceRouteSnapshot.Search("Frieren", "SIMPLE", "NATIVE", "VIDEO", "", "", "", false, false, 9L),
+        )
+        val saved = snapshot(routes, mapOf("search_home" to routes)).copy(selectedTopLevel = "search_home")
+
+        DefaultSpaceSessionValidator().validate(saved) shouldBe saved
+    }
+
 	@Test
 	fun `unknown top level key is dropped`() = runTest {
 		val validator = DefaultSpaceSessionValidator()

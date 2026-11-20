@@ -31,8 +31,8 @@ class DesktopSourceFilterTest {
     )
 
     @Test
-    fun `parser plugins count as built-in and only Windows ecosystems are offered`() {
-        assertEquals(listOf(SourceTag.BUILTIN, SourceTag.MIHON, SourceTag.ANIYOMI, SourceTag.TVBOX, SourceTag.CLOUDSTREAM,
+    fun `parser plugins count as built-in and supported desktop ecosystems are offered`() {
+        assertEquals(listOf(SourceTag.BUILTIN, SourceTag.MIHON, SourceTag.ANIYOMI, SourceTag.LEGADO, SourceTag.TVBOX, SourceTag.CLOUDSTREAM,
             SourceTag.TSUNDOKU), DesktopSourceTagEntries)
         assertEquals(setOf(SourceTag.BUILTIN, SourceTag.MIHON, SourceTag.TSUNDOKU), DesktopSourceFilter.enabledTags(sources))
         assertEquals(setOf(BrowseGroupTab.All, BrowseGroupTab.Content, BrowseGroupTab.Novel),

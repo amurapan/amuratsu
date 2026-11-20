@@ -96,29 +96,15 @@ internal object KototoroMotionCatalog {
 
     private val fade: FiniteAnimationSpec<Float> = tween(MainNavigationMotion.FadeMillis, easing = LinearEasing)
 
-    // Sibling / space switches: crossfade with a barely visible depth hint.
+    private val tabFade: FiniteAnimationSpec<Float> = tween(MainNavigationMotion.TabFadeMillis, easing = LinearEasing)
+
+    // Sibling / space switches should settle quickly without scaling two full screens.
     private val fadeThrough = preset(
-        enter = { scope ->
-            fadeIn(fade) + scaleIn(
-                initialScale = MainNavigationMotion.FadeScaleIn,
-                animationSpec = fade,
-            ) togetherWith (
-                fadeOut(fade) + scaleOut(
-                    targetScale = MainNavigationMotion.FadeScaleOut,
-                    animationSpec = fade,
-                )
-                )
+        enter = {
+            fadeIn(tabFade) togetherWith fadeOut(tabFade)
         },
-        pop = { scope ->
-            fadeIn(fade) + scaleIn(
-                initialScale = MainNavigationMotion.FadeScaleOut,
-                animationSpec = fade,
-            ) togetherWith (
-                fadeOut(fade) + scaleOut(
-                    targetScale = MainNavigationMotion.FadeScaleIn,
-                    animationSpec = fade,
-                )
-                )
+        pop = {
+            fadeIn(tabFade) togetherWith fadeOut(tabFade)
         },
     )
 

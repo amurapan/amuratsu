@@ -67,12 +67,12 @@ class DesktopFloatingChromeTest {
                     }
                     waitForIdle()
                     val panel = onNodeWithTag("home-panel").fetchSemanticsNode().boundsInRoot
-                    val list = onNodeWithTag("home-scroll").fetchSemanticsNode().boundsInRoot
+                    val list = onNodeWithTag("media-home-scroll").fetchSemanticsNode().boundsInRoot
                     assertEquals(panel.top, list.top, .5f, "$style $appearance: the list must start under the bar, not below it")
-                    val before = onNodeWithTag("home-history").fetchSemanticsNode().boundsInRoot.top
-                    onNodeWithTag("home-scroll").performScrollToIndex(1)
+                    val before = onNodeWithTag("media-home-history").fetchSemanticsNode().boundsInRoot.top
+                    onNodeWithTag("media-home-scroll").performScrollToIndex(1)
                     waitForIdle()
-                    val after = onNodeWithTag("home-history").fetchSemanticsNode().boundsInRoot.top
+                    val after = onNodeWithTag("media-home-history").fetchSemanticsNode().boundsInRoot.top
                     assertTrue(after < before, "$style $appearance: scrolling must move the rows up ($before -> $after)")
                     val name = "floating-chrome-${style.name.lowercase()}-${appearance.name.lowercase()}.png"
                     Image.makeFromBitmap(onRoot().captureToImage().asSkiaBitmap()).use { image ->

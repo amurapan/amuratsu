@@ -200,7 +200,6 @@ fun SearchResultsRoute(
     val searchState by viewModel.searchState.collectAsStateWithLifecycle()
     val filters by viewModel.filters.collectAsStateWithLifecycle()
     val languagePresets by viewModel.languagePresets.collectAsStateWithLifecycle()
-    val activeLanguagePresetId by viewModel.activeLanguagePresetId.collectAsStateWithLifecycle()
     val globalTagBlacklist by viewModel.globalTagBlacklist.collectAsStateWithLifecycle()
     val context = LocalContext.current
     val favouriteMatches by viewModel.favouriteMatches.collectAsStateWithLifecycle()
@@ -369,6 +368,10 @@ fun SearchResultsRoute(
                     },
                     selectedSourceTypes = selectedSourceTypes,
                     selectedContentKinds = selectedContentKinds,
+                    onContentKindsChange = { kinds ->
+                        selectedItemsIds = emptySet()
+                        viewModel.applyFilters(filters.copy(contentKinds = kinds))
+                    },
                     pinnedOnly = pinnedOnly,
                     hideEmpty = hideEmpty,
                     languagePresetTitle = languagePresets.firstOrNull { it.id == filters.languagePresetId }?.title,
@@ -537,7 +540,7 @@ fun SearchResultsRoute(
             pinnedOnly = pinnedOnly,
             hideEmpty = hideEmpty,
             languagePresets = languagePresets,
-            activeLanguagePresetId = activeLanguagePresetId,
+            activeLanguagePresetId = filters.languagePresetId,
             blacklistedTagCount = globalTagBlacklist.size,
             onApply = viewModel::applyFilters,
             onManageLanguagePresets = onManageLanguagePresets,
@@ -623,6 +626,7 @@ private fun SearchResultsTopBar(
     onOptionsClick: () -> Unit,
     selectedSourceTypes: Set<SourceType>,
     selectedContentKinds: Set<SearchContentKind>,
+    onContentKindsChange: (Set<SearchContentKind>) -> Unit,
     pinnedOnly: Boolean,
     hideEmpty: Boolean,
     languagePresetTitle: String?,
@@ -719,6 +723,11 @@ private fun SearchResultsTopBar(
                 }
             }
 
+            SearchMediaChips(
+                selected = selectedContentKinds,
+                onSelect = onContentKindsChange,
+                modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
+            )
             SearchToolsRow(
                 advancedExpanded = isAdvancedExpanded,
                 onAdvancedClick = { onAdvancedExpandedChange(!isAdvancedExpanded) },
