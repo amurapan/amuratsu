@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="branding/readme-hero.svg" alt="Amuratsu — manga, books, and anime. Your stories, all in one place." width="100%" />
+  <img src="branding/readme-hero-en.svg" alt="Amuratsu — manga, books, and anime. Your stories, all in one place." width="100%" />
 </p>
 
 <p align="center">
