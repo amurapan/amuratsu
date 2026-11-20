@@ -1,72 +1,72 @@
 <p align="center">
-  <img src="branding/readme-hero.svg" alt="Amuratsu — манга, книги и аниме. Твои истории в одном месте." width="100%" />
+  <img src="branding/readme-hero.svg" alt="Amuratsu — manga, books, and anime. Your stories, all in one place." width="100%" />
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/статус-alpha-D32F2F?style=flat-square" alt="Статус: alpha" />
-  <img src="https://img.shields.io/badge/Android-8.0%2B-4B6650?style=flat-square" alt="Android 8.0 и новее" />
-  <a href="LICENSE"><img src="https://img.shields.io/badge/лицензия-Apache_2.0-665B63?style=flat-square" alt="Лицензия Apache 2.0" /></a>
+  <img src="https://img.shields.io/badge/status-alpha-D32F2F?style=flat-square" alt="Status: alpha" />
+  <img src="https://img.shields.io/badge/Android-8.0%2B-4B6650?style=flat-square" alt="Android 8.0 or later" />
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache_2.0-665B63?style=flat-square" alt="Apache 2.0 license" /></a>
 </p>
 
 <p align="center">
-  <a href="#возможности">Возможности</a> ·
-  <a href="#начало">Начало</a> ·
-  <a href="#сборка">Сборка</a> ·
-  <a href="https://github.com/amurapan/amuratsu/issues">Обратная связь</a>
+  <a href="#features">Features</a> ·
+  <a href="#getting-started">Getting started</a> ·
+  <a href="#build">Build</a> ·
+  <a href="https://github.com/amurapan/amuratsu/issues">Feedback</a>
 </p>
 
-**Amuratsu** — приложение для манги, ранобэ, фанфиков и аниме.
-Одна библиотека, общий поиск и быстрый возврат к истории, на которой остановился.
-Проект развивается на основе [Kototoro](https://github.com/Kototoro-app/Kototoro)
-с собственной главной страницей и оформлением **Material You**.
+**Amuratsu** is an app for manga, light novels, fanfiction, and anime.
+One library, search across media types, and a quick way to pick up where you left off.
+Built on [Kototoro](https://github.com/Kototoro-app/Kototoro), with its own home screen
+and **Material You** design.
 
-> **Ранняя alpha · 0.1.0-alpha.2**
+> **Early alpha · 0.1.0-alpha.2**
 >
-> Основное направление сейчас — Android. Новая главная, чтение и обновление поверх предыдущей
-> тестовой версии проверены на эмуляторе. Работа сетевых источников, воспроизведение и плавность
-> ещё требуют проверки на реальных устройствах. Публичные сборки Amuratsu пока не опубликованы.
+> Android is the current focus. The new home screen, reading, and upgrades from the previous
+> test version have been checked on an emulator. Online sources, playback, and performance
+> still need testing on physical devices. Public Amuratsu builds have not been published yet.
 
-## Возможности
+## Features
 
 | | |
 | :--- | :--- |
-| **Твои истории**<br>Продолжение чтения и просмотра прямо с главной. Фильтры «Манга», «Книги» и «Аниме». | **Общий поиск**<br>Поиск по подключённым источникам с выбором типа медиа. Для нового запроса не нужно сначала менять раздел. |
-| **Material You**<br>Динамические цвета, округлые карточки и адаптивный интерфейс для разных размеров экрана. | **Чтение под себя**<br>Светлая и тёмная темы, AMOLED и отдельные настройки читалки, включая сепию. |
-| **Своя библиотека**<br>Коллекции, история, загрузки и сохранение прогресса чтения. | **Локальные файлы**<br>Импорт книг, архивов манги и видео. Поддержка расширений и источников из основы Kototoro. |
+| **Your stories**<br>Continue reading or watching from the home screen. Filter by Manga, Books, or Anime. | **One search**<br>Search connected sources across media types without switching sections first. Narrow the results by format when needed. |
+| **Material You**<br>Dynamic colors, rounded cards, and layouts that adapt to different screen sizes. | **Reading your way**<br>Light, dark, and AMOLED themes, plus separate reader settings, including sepia. |
+| **Your library**<br>Collections, history, downloads, and saved reading progress. | **Local files**<br>Import books, manga archives, and videos. Source and extension integrations are inherited from Kototoro. |
 
-### Что можно читать и смотреть
+### What you can read and watch
 
-| Формат | В приложении |
+| Format | In the app |
 | :--- | :--- |
-| Манга и комиксы | Читалка страниц, главы и сохранение позиции |
-| Ранобэ, романы и фанфики | Текстовая читалка, настройка оформления и импорт EPUB/TXT |
-| Аниме и видео | Видеоплеер, эпизоды, субтитры и выбор аудиодорожки |
+| Manga and comics | Page reader, chapters, and saved position |
+| Light novels, novels, and fanfiction | Text reader, appearance settings, and EPUB/TXT import |
+| Anime and video | Video player, episodes, subtitles, and audio track selection |
 
-Доступность произведений и отдельных функций зависит от выбранного источника и формата файла.
-Произведения и подписки в комплект приложения не входят.
+Content availability and individual features depend on the source and file format.
+The app does not include media or subscriptions.
 
-## Начало
+## Getting started
 
-1. Установи тестовую сборку Amuratsu или [собери APK](#сборка) самостоятельно.
-2. Подключи нужные источники в настройках либо импортируй локальный файл.
-3. Найди произведение через общий поиск и добавь его в библиотеку.
-4. Возвращайся к нему через блок **«Продолжить»** на главной.
+1. Install an Amuratsu test build or [build the APK](#build) yourself.
+2. Connect your sources in settings or import a local file.
+3. Find a title through search and add it to your library.
+4. Pick up where you left off through **Continue** on the home screen.
 
-Для Android нужен **Android 8.0 или новее**. Текущая локальная preview-сборка рассчитана на **ARM64**.
-Публичные APK будут появляться в [Releases](https://github.com/amurapan/amuratsu/releases).
-Код desktop и iOS унаследован от Kototoro и адаптируется; собственные пакеты для этих платформ пока не выпущены.
+Requires **Android 8.0 or later**. The current local preview build targets **ARM64**.
+Public APKs will be available in [Releases](https://github.com/amurapan/amuratsu/releases).
+Desktop and iOS code is inherited from Kototoro and is being adapted; Amuratsu packages for those platforms are not yet available.
 
-## Планы
+## Roadmap
 
-- [ ] Доработать отдельные пространства манги, книг и аниме с сохранением общего поиска.
-- [ ] Проверить основные источники и сделать их первоначальную настройку удобнее.
-- [ ] Проверить прокрутку и переключение вкладок на реальных устройствах.
-- [ ] Подготовить публичные сборки и настроить их обновление.
+- [ ] Refine the separate manga, books, and anime spaces while keeping search across media types.
+- [ ] Test the main sources and improve their initial setup.
+- [ ] Check scrolling and tab switching on physical devices.
+- [ ] Prepare public builds and configure app updates.
 
-## Сборка
+## Build
 
-Нужны **JDK 17+** и Android SDK/NDK, указанные в [конфигурации проекта](app/build.gradle).
-Путь к SDK задаётся через `ANDROID_HOME` или локальный `local.properties`.
+You need **JDK 17+** and the Android SDK/NDK specified in the [project configuration](app/build.gradle).
+Set the SDK path through `ANDROID_HOME` or a local `local.properties` file.
 
 ```sh
 git clone https://github.com/amurapan/amuratsu.git
@@ -74,52 +74,52 @@ cd amuratsu
 ./gradlew :app:assemblePreview
 ```
 
-APK появится здесь:
+The APK will be generated at:
 
 ```text
 app/build/outputs/apk/preview/app-arm64-v8a-preview.apk
 ```
 
-Preview использует релизную оптимизацию и локальный тестовый ключ подписи.
-Чтобы установить обновление поверх прежней тестовой версии с сохранением данных,
-используй тот же ключ подписи. Публичные релизы потребуют отдельной настройки подписи.
+Preview uses release optimizations and a local test signing key.
+Use the same signing key to install over a previous test version while keeping its data.
+Public releases will require a separate signing setup.
 
 <details>
-<summary><strong>Для разработки</strong></summary>
+<summary><strong>For development</strong></summary>
 
 ```sh
-# Отладочная сборка
+# Debug build
 ./gradlew :app:assembleDebug
 
-# Проверка компиляции
+# Compile check
 ./gradlew :app:compileDebugKotlin
 
-# JVM-тесты
+# JVM tests
 ./gradlew :app:testDebugUnitTest --no-daemon
 ```
 
-- [Главная и навигация](docs/development/media-navigation.md)
-- [Брендинг и совместимость](docs/development/amuratsu-branding.md)
-- [Общие компоненты интерфейса](docs/architecture/shared-ui-guidelines.md)
+- [Home screen and navigation](docs/development/media-navigation.md)
+- [Branding and compatibility](docs/development/amuratsu-branding.md)
+- [Shared UI guidelines](docs/architecture/shared-ui-guidelines.md)
 
-Часть технической документации описывает исходный Kototoro. Его имена пакетов и форматы
-данных сохранены для совместимости; отображаемое название приложения — Amuratsu.
+Some technical documentation still describes the upstream Kototoro project. Its package names
+and data formats are retained for compatibility; the displayed app name is Amuratsu.
 
 </details>
 
-## Обратная связь
+## Feedback
 
-Нашёл ошибку или придумал улучшение — [создай issue](https://github.com/amurapan/amuratsu/issues).
-Для ошибки пригодятся версия приложения, модель устройства, версия Android и шаги воспроизведения.
+Found a bug or have an idea? [Open an issue](https://github.com/amurapan/amuratsu/issues).
+For bugs, include the app version, device model, Android version, and steps to reproduce the problem.
 
-## Основа проекта
+## Built on
 
-Amuratsu — форк [Kototoro](https://github.com/Kototoro-app/Kototoro), который вырос из
-[Kotatsu](https://github.com/KotatsuApp/Kotatsu). Спасибо skepsun и всем участникам исходных проектов.
-Их работа, история изменений и авторские уведомления сохранены.
+Amuratsu is a fork of [Kototoro](https://github.com/Kototoro-app/Kototoro), which originated from
+[Kotatsu](https://github.com/KotatsuApp/Kotatsu). Thanks to skepsun and everyone who contributed to the upstream projects.
+Their work, commit history, and copyright notices are preserved.
 
 <details>
-<summary><strong>Проекты, на которых основана работа</strong></summary>
+<summary><strong>Projects behind the app</strong></summary>
 
 - [Mihon](https://github.com/mihonapp/mihon)
 - [Yomihon](https://github.com/yomihon/yomihon)
@@ -139,9 +139,9 @@ Amuratsu — форк [Kototoro](https://github.com/Kototoro-app/Kototoro), ко
 
 </details>
 
-## Лицензия
+## License
 
-[Apache License 2.0](LICENSE). Исходное уведомление об авторских правах:
+[Apache License 2.0](LICENSE). Original copyright notice:
 
 ```text
 Copyright © 2024-2026 Kototoro Open Source Project
