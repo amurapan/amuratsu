@@ -72,8 +72,8 @@ xvfb-run -a -s "-screen 0 1600x1200x24 -nolisten tcp" \
     :desktop-app:linuxDebContentsCheck --console=plain --no-configuration-cache
 ```
 
-应用入口为 `desktop-app/build/compose/binaries/main/app/Kototoro/bin/Kototoro`，
-`.deb` 输出在 `desktop-app/build/compose/binaries/main/deb/`。包名为 `kototoro`，
+应用入口为 `desktop-app/build/compose/binaries/main/app/Amuratsu/bin/Amuratsu`，
+`.deb` 输出在 `desktop-app/build/compose/binaries/main/deb/`。包名为 `amuratsu`，
 本地预览默认包版本为 `0.1.0`，可用 `-PdesktopPackageVersion=2.3.2` 显式指定。
 打包复用 Android 的现有应用图标，不附带 Windows 浏览器桥、播放和超分二进制。
 Windows `.ico`、macOS `.icns`、Linux `.deb` 图标与运行窗口图标都从
@@ -90,7 +90,7 @@ AWT 图标尺寸，`:desktop-app:linuxDebContentsCheck` 同时校验 `.deb` 图�
 可直接通过应用入口检查运行时（此模式不需要显示服务）：
 
 ```bash
-"desktop-app/build/compose/binaries/main/app/Kototoro/bin/Kototoro" \
+"desktop-app/build/compose/binaries/main/app/Amuratsu/bin/Amuratsu" \
     --data-dir "/absolute/path/linux-runtime-check-data" \
     --check-runtime "/absolute/path/linux-runtime-check.properties"
 ```
@@ -143,11 +143,11 @@ Gradle 的 `desktopDataDirectory` 可以覆盖；已有 `~/.kototoro` 不自动�
     :desktop-app:createDistributable --console=plain
 ```
 
-输出位于 `desktop-app/build/compose/binaries/main/app/Kototoro.app`。
+输出位于 `desktop-app/build/compose/binaries/main/app/Amuratsu.app`。
 可对实际打包产物执行本地存储、兼容运行时、备份和图片解码检查：
 
 ```bash
-"desktop-app/build/compose/binaries/main/app/Kototoro.app/Contents/MacOS/Kototoro" \
+"desktop-app/build/compose/binaries/main/app/Amuratsu.app/Contents/MacOS/Amuratsu" \
     --data-dir "/absolute/path/runtime-check-data" --check-runtime "/absolute/path/runtime-check.properties"
 ```
 
@@ -463,17 +463,17 @@ WiX 到项目 ignored build 目录，不做全局安装。脚本验证完整选�
 复制并编号，确保打包器排序后 AndroidCompat → server → Android 桩类的优先级仍正确。
 默认 Android/source-host 发行不引入这些产物，桌面普通 runtimeClasspath 也保持原有范围。
 
-输出在 `build/compose/binaries/main`：`app/Kototoro/Kototoro.exe`、
-`portable/Kototoro-Windows-local-preview-0.1.0.zip` 和 `msi/Kototoro-0.1.0.msi`。
+输出在 `build/compose/binaries/main`：`app/Amuratsu/Amuratsu.exe`、
+`portable/Amuratsu-Windows-local-preview-0.1.0.zip` 和 `msi/Amuratsu-0.1.0.msi`。
 ZIP 解压整个目录后运行 EXE，无需系统 JDK或构建时的 API 目录；浏览器需要已安装的 Microsoft
-Edge WebView2 Runtime。MSI 使用当前用户安装权限，将程序放在 `%LOCALAPPDATA%/Kototoro-App`，
+Edge WebView2 Runtime。MSI 使用当前用户安装权限，将程序放在 `%LOCALAPPDATA%/Amuratsu-App`，
 与 `%LOCALAPPDATA%/Kototoro` 用户数据隔离；安装/注册表/快捷方式写入尚未在本轮实际执行。
 安装目录选择关闭；MSI 和 ZIP 都直接使用经过移动目录运行测试的同一份应用目录。
 
 ```powershell
-./Kototoro.exe --data-dir "E:/tmp/独立 preview"
-./Kototoro.exe --data-dir "E:/tmp/runtime-check" --check-runtime "E:/tmp/runtime-check.properties"
-./Kototoro.exe --check-update "E:/tmp/update-check.properties"
+./Amuratsu.exe --data-dir "E:/tmp/独立 preview"
+./Amuratsu.exe --data-dir "E:/tmp/runtime-check" --check-runtime "E:/tmp/runtime-check.properties"
+./Amuratsu.exe --check-update "E:/tmp/update-check.properties"
 ```
 
 运行时检查必须提供独立数据目录，执行本地 Room/备份格式/Skia/浏览器检查，不请求来源网站。
@@ -625,12 +625,12 @@ store 按内容寻址并与阅读索引共享，不会被自动删除；关闭�
 `-PdesktopVersionName`/`-PdesktopChannel` 覆盖），运行时不再猜测自己是什么版本。窗口打开时每 6 小时
 自动检查一次（可关闭），与追踪/推荐任务分属不同协程：慢仓库或下载不会推迟另一项，反之亦然。
 
-检查读取 GitHub Release：稳定频道只看 `Kototoro-app/Kototoro` 的非预发布版本，nightly 频道看
-`Kototoro-app/Kototoro-Nightly` 的 `nightly-<日期>` 标签；比较复用 Android 的版本语义（alpha/beta/rc 权重、
+检查读取 GitHub Release：稳定频道只看 `Kototoro-app/Amuratsu` 的非预发布版本，nightly 频道看
+`Kototoro-app/Amuratsu-Nightly` 的 `nightly-<日期>` 标签；比较复用 Android 的版本语义（alpha/beta/rc 权重、
 `N<日期>` 形式），发布包里的其他平台资产（如 arm64）不会被误判。
 
 下载使用发布附带的 `.sha256`，流式写入 `<数据目录>/updates` 下的 `.part` 文件，核对大小与 SHA-256，
-ZIP 必须包含 `Kototoro.exe`（MSI 校验复合文档头），校验通过才原子改名；随后解压到暂存目录并核对镜像
+ZIP 必须包含 `Amuratsu.exe`（MSI 校验复合文档头），校验通过才原子改名；随后解压到暂存目录并核对镜像
 结构（EXE + `app/` + `runtime/`）。便携版整目录覆盖，MSI 安装改用 `msiexec`；两者都由一个等待本进程
 退出的 PowerShell 脚本执行（日志在 `updates/update.log`），完成后重启应用。程序目录与
 `%LOCALAPPDATA%/Kototoro` 用户数据分离，覆盖不触碰收藏、历史与下载。

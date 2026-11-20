@@ -2,81 +2,46 @@
 layout: home
 
 hero:
-  name: Kototoro Docs
-  text: One app for manga, novels, and video
-  tagline: Android first, with Windows and iOS previews. Setup guides, source integration references, OCR translation notes, sync workflows, and contributor documentation for Kototoro.
+  name: Amuratsu
+  text: Manga, books, and anime in one library
+  tagline: An Android alpha based on Kototoro, with a new Material You home and search across media types.
   image:
     src: /icon.png
-    alt: Kototoro
+    alt: Amuratsu
   actions:
     - theme: brand
-      text: Get Started
-      link: /getting-started
+      text: Project & build instructions
+      link: https://github.com/amurapan/amuratsu
     - theme: alt
-      text: Windows & iOS
-      link: /platforms
+      text: Import local files
+      link: /local-import
     - theme: alt
-      text: Set Up Sources
-      link: /source-integrations
-    - theme: alt
-      text: GitHub
-      link: https://github.com/Kototoro-app/Kototoro
+      text: Report an issue
+      link: https://github.com/amurapan/amuratsu/issues
 
 features:
-  - title: All-in-One Reader
-    details: Understand how Kototoro keeps manga, novels, video, history, favorites, and sync in one Android workflow.
-  - title: Local OCR + Translation
-    details: Configure on-device OCR, model downloads, translation modes, and practical fallback paths inside the reader.
-  - title: Local File Import
-    details: Import CBZ, EPUB, TXT, MKV, MP4 and more — with forced content type selection for reliable import.
-  - title: External Source Ecosystems
-    details: Connect Mihon, Aniyomi, IReader, Legado, and TVBox sources from the same in-app source management flow.
-  - title: Tracking & Discovery
-    details: Discover anime and manga from MAL, Kitsu, AniList, Bangumi, Shikimori, and MangaUpdates directly inside the app.
-  - title: Video Player
-    details: Built-in player with DLNA casting, subtitle and audio track selection, Anime4K / NCNN super-resolution, and seek gestures.
-  - title: Reliable WebDAV Sync
-    details: Set up free or self-hosted WebDAV storage for multi-device backup and synchronization.
-  - title: Windows & iOS Previews
-    details: A shared Kotlin Multiplatform core runs the same library, backup format, and Mihon / Aniyomi / Tsundoku extensions on Windows and iOS.
-  - title: In-App Updates
-    details: Check and download ABI-matched releases directly from GitHub Releases with built-in mirror speed testing.
+  - title: One home, different media
+    details: Continue reading or watching from the home screen, with manga, books, and anime filters.
+  - title: Material You
+    details: Dynamic colors, rounded surfaces, and layouts that adapt to the available screen space.
+  - title: Your library
+    details: Import local files and configure external sources. The app does not include media or subscriptions.
 ---
 
-## Start With The Right Page
+## Development status
 
-> [!IMPORTANT]
-> **Disclaimer:** Kototoro does not bundle, host, or distribute any content sources, media, or copyrighted material. The application is a generic reader and player framework. All content sources are user-provided through third-party extensions, local file imports, or self-configured endpoints. The developers assume no responsibility for content accessed through user-installed sources.
+Amuratsu is an early Android alpha. Desktop and iOS code is inherited from Kototoro and is being adapted;
+Amuratsu packages for those platforms have not been published.
 
-- Start with [Getting Started](./getting-started.md) if you are new to the project.
-- Read [Windows & iOS](./platforms.md) to install the Windows or iOS preview and see what they support.
-- Read [Source Integrations](./source-integrations.md) if you need Mihon, Aniyomi, IReader, Legado, or TVBox ecosystems.
-- Read [TVBox Runtime Compatibility](./reference/tvbox-runtime.md) if you need the current TVBox support matrix for direct media, CMS, JavaScript, ordinary JAR, and Guard-native sources.
-- Read [Local Import Guide](./local-import.md) to learn how to import CBZ, EPUB, video files and structured folders.
-- Read [External Extension Integration Guide](./architecture/external-extension-integration-guide.md) if you are a developer looking to integrate Mihon/Tachiyomi extensions into your own app.
-- Read [Architecture Review](./architecture/architecture-review.md) if you want a project-level architectural assessment before changing major subsystems.
-- Read [Architecture Roadmap](./architecture/architecture-roadmap.md) if you want to understand the active epics and planning.
-- Read [Favourites Library Improvement Plan](./architecture/favourites-komikku-alignment-implementation-plan-2026-09.md) for the full-list snapshot migration inspired by Komikku.
-- Read [Dynamic Plugin System Architecture](./architecture/dynamic_plugin_system.md) to understand how Kototoro and Kotatsu extension JARs are loaded dynamically using zero-overhead ClassLoaders.
-- Read [Plugin Development Guide](./plugin_development_guide.md) to learn how to build and publish third-party plugins in an independent repository using GitHub Actions.
-- Read [UI Improvement](./architecture/ui_improvement.md) to track UI enhancements.
-- Read [Automatic Translation](./automatic-translation.md) if you want local OCR + translation inside the reader.
-- Read [Development](./development.md) and [Contributing](./contributing.md) if you want to build or modify the app.
+The technical guides below come from the upstream project. Some names, download links, and platform
+instructions still describe Kototoro; they are reference material, not an announcement of Amuratsu releases.
 
-## What Makes Kototoro Different
+- [Local import](./local-import.md)
+- [Source integrations](./source-integrations.md)
+- [Architecture](./architecture/architecture-review.md)
+- [Shared UI guidelines](./architecture/shared-ui-guidelines.md)
+- [Amuratsu branding](./development/amuratsu-branding.md)
+- [Development](./development.md)
 
-- One Android app for manga, novels, and video, with Windows and iOS previews on a shared Kotlin Multiplatform core
-- An independent project originally derived from Kotatsu, now a Compose-first multi-format reading/player platform rather than a Kotatsu fork
-- Local OCR + translation directly in the reader
-- Video super-resolution (Anime4K / NCNN), DLNA casting, subtitle and audio track selection
-- Tracking discovery across MAL, Kitsu, AniList, Bangumi, Shikimori, and MangaUpdates
-- Broad source support: built-in, Kotatsu-Redo, Mihon, Aniyomi, IReader, Legado, TVBox
-- Local file import: CBZ, EPUB, TXT, MKV, MP4 and more
-- Dynamic zero-overhead UI plugins via external classloaders
-- In-app updates from GitHub Releases with ABI selection and mirror speed testing
-- Built-in browser with Cloudflare challenge bypass
-- Reading statistics, quick-access widget, and Telegram backup bot
-
-## External Source Setup
-
-Kototoro supports Mihon, Aniyomi, IReader, Legado, TVBox, and CloudStream sources. The app does not ship or recommend any specific repository; add repositories manually from `Settings -> Content Sources`. See [Source Integrations](./source-integrations.md) for the exact steps.
+Amuratsu is a fork of [Kototoro](https://github.com/Kototoro-app/Kototoro), which originated from
+[Kotatsu](https://github.com/KotatsuApp/Kotatsu). Original license notices and contributor credits are retained.

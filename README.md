@@ -1,145 +1,125 @@
-# Kototoro
+<p align="center">
+  <img src="branding/readme-hero.svg" alt="Amuratsu — манга, книги и аниме. Твои истории в одном месте." width="100%" />
+</p>
 
-![App Icon](metadata/en-US/icon.png)
+<p align="center">
+  <img src="https://img.shields.io/badge/статус-alpha-D32F2F?style=flat-square" alt="Статус: alpha" />
+  <img src="https://img.shields.io/badge/Android-8.0%2B-4B6650?style=flat-square" alt="Android 8.0 и новее" />
+  <a href="LICENSE"><img src="https://img.shields.io/badge/лицензия-Apache_2.0-665B63?style=flat-square" alt="Лицензия Apache 2.0" /></a>
+</p>
 
-[![Discord](https://img.shields.io/badge/Discord-Join-5865F2?logo=discord&logoColor=white)](https://discord.gg/xBXvPz7tr7)
-[![Docs](https://img.shields.io/badge/docs-hub-blue)](https://kototoro-app.github.io/Kototoro/)
-[![Getting Started](https://img.shields.io/badge/docs-getting--started-blue)](https://kototoro-app.github.io/Kototoro/getting-started)
-[![Translation Docs](https://img.shields.io/badge/docs-auto--translation-blue)](https://kototoro-app.github.io/Kototoro/automatic-translation)
-[![爱发电赞助我们](https://img.shields.io/badge/❤%20支持我们-爱发电-orange)](https://www.ifdian.net/a/kototoro)
+<p align="center">
+  <a href="#возможности">Возможности</a> ·
+  <a href="#начало">Начало</a> ·
+  <a href="#сборка">Сборка</a> ·
+  <a href="https://github.com/amurapan/amuratsu/issues">Обратная связь</a>
+</p>
 
-Kototoro is an open-source, Compose-first app that brings manga, novels, and video into one reader. It combines broad source compatibility with local OCR + translation, video super-resolution, and WebDAV-based multi-device sync. A shared Kotlin Multiplatform core also powers **Windows** and **iOS** preview builds.
+**Amuratsu** — приложение для манги, ранобэ, фанфиков и аниме.
+Одна библиотека, общий поиск и быстрый возврат к истории, на которой остановился.
+Проект развивается на основе [Kototoro](https://github.com/Kototoro-app/Kototoro)
+с собственной главной страницей и оформлением **Material You**.
 
-*(Kototoro 是一款开源的 Compose 优先应用，将漫画、小说和视频整合到一个阅读器中，兼具广泛的图源兼容性、本地 OCR + 机器翻译、视频超分辨率加载以及基于 WebDAV 的多设备同步能力，并通过同一套 Kotlin Multiplatform 内核提供 **Windows** 与 **iOS** 预览版。)*
-
-> [!NOTE]
-> **Project status:** Originally derived from Kotatsu, Kototoro is now independently developed as an all-Compose, multi-format reading and playback platform — legacy XML, Fragment, and hybrid layers are largely gone, and it is no longer a Kotatsu fork.
+> **Ранняя alpha · 0.1.0-alpha.2**
 >
-> **项目定位：** Kototoro 最初源于 Kotatsu，现已独立开发为全 Jetpack Compose 的多格式阅读与播放平台；旧 XML、Fragment 与混合过渡层已基本清空，不再作为 Kotatsu 的分支项目维护。
+> Основное направление сейчас — Android. Новая главная, чтение и обновление поверх предыдущей
+> тестовой версии проверены на эмуляторе. Работа сетевых источников, воспроизведение и плавность
+> ещё требуют проверки на реальных устройствах. Публичные сборки Amuratsu пока не опубликованы.
 
-## Why Kototoro / 核心特性
+## Возможности
 
-- **A genuinely all-Compose reading experience** — the manga/novel reader and video player are Compose as well as the surrounding UI; legacy XML, Fragment, and transitional hybrid layers are now largely gone
-  *(真正全 Compose 的阅读体验：漫画/小说阅读器和视频播放器与外围界面一样采用 Compose，旧 XML、Fragment 和过渡态混合层已基本清空)*
-- One app for manga, novels, and video 
-  *(一个应用搞定漫画、小说和视频)*
-- Local automatic OCR + translation directly inside the reader 
-  *(阅读器内直接集成强大的本地自动 OCR + 机器翻译)*
-- Video super-resolution (Anime4K / NCNN), DLNA casting, subtitle and audio track selection 
-  *(视频超分加载、DLNA 投屏播放、外挂字幕与音轨选择)*
-- Tracking discovery across MAL, Kitsu, AniList, Bangumi, Shikimori, and MangaUpdates 
-  *(支持 Bangumi 等多平台进度追踪与发现)*
-- Broad source support: Mihon, Aniyomi, IReader, Legado, TVBox, Cloudstream3 extensions + dynamic parsers 
-  *(广泛的图源/插件支持：包含 Mihon、阅读、TVBox、Cloudstream3 等集成)*
-- Custom media Spaces — built-in Manga, Novel, and Anime spaces, plus user-defined scopes filtered by content type, language, and source
-  *(自定义媒体空间：内置漫画/小说/动漫空间，并支持按内容类型、语言与来源自定义浏览范围)*
-- Local file import: CBZ, EPUB, TXT, MKV, MP4 and more 
-  *(本地文件导入，支持 CBZ、EPUB、TXT、MKV 等格式)*
-- Dynamic zero-overhead UI plugins via external classloaders
-  *(通过外部 classloader 实现的零开销动态 UI 插件)*
-- In-app updates from GitHub Releases with ABI selection and mirror speed testing
-  *(应用内通过 GitHub Releases 检查更新，支持按 ABI 匹配与镜像测速)*
-- Site favorites import and synchronization for supported services 
-  *(站点收藏导入与同步)*
-- Built-in browser with Cloudflare challenge bypass, with automatic background handling inspired by kotatsu-redo 
-  *(内置浏览器，支持 Cloudflare 验证绕过)*
-- Reading statistics, quick-access widget, and Telegram backup bot 
-  *(阅读统计、快捷桌面挂件、Telegram 备份机器人)*
+| | |
+| :--- | :--- |
+| **Твои истории**<br>Продолжение чтения и просмотра прямо с главной. Фильтры «Манга», «Книги» и «Аниме». | **Общий поиск**<br>Поиск по подключённым источникам с выбором типа медиа. Для нового запроса не нужно сначала менять раздел. |
+| **Material You**<br>Динамические цвета, округлые карточки и адаптивный интерфейс для разных размеров экрана. | **Чтение под себя**<br>Светлая и тёмная темы, AMOLED и отдельные настройки читалки, включая сепию. |
+| **Своя библиотека**<br>Коллекции, история, загрузки и сохранение прогресса чтения. | **Локальные файлы**<br>Импорт книг, архивов манги и видео. Поддержка расширений и источников из основы Kototoro. |
 
-## Platforms / 平台
+### Что можно читать и смотреть
 
-| Platform | Status | Package |
-| --- | --- | --- |
-| Android | Stable *(正式版)* | APK |
-| Windows x64 | Preview *(预览版)* | Portable ZIP, per-user MSI |
-| iOS / iPadOS 26+ | Preview *(预览版)* | Unsigned IPA for sideloading (AltStore / SideStore) |
+| Формат | В приложении |
+| :--- | :--- |
+| Манга и комиксы | Читалка страниц, главы и сохранение позиции |
+| Ранобэ, романы и фанфики | Текстовая читалка, настройка оформления и импорт EPUB/TXT |
+| Аниме и видео | Видеоплеер, эпизоды, субтитры и выбор аудиодорожки |
 
-Windows and iOS share Android's database, backup format, source protocol and reader logic. Both run Mihon, Tsundoku and Aniyomi extensions plus kototoro / kotatsu / UMA parser plugins in a JVM — bundled with the Windows app and embedded (OpenJDK Mobile) in the iOS app; iOS also runs Apple CMS / TVBox sources natively and Windows adds CloudStream. Sync, OCR / translation and several Android features are not available on them yet; see [Windows & iOS](https://kototoro-app.github.io/Kototoro/platforms) for what works and how to install.
-*(Windows 与 iOS 复用 Android 的数据库、备份格式、源协议与阅读逻辑，可运行 Mihon / Tsundoku / Aniyomi 扩展及 kototoro / kotatsu / UMA 插件；同步、OCR 翻译等功能暂未提供，详见平台说明。)*
+Доступность произведений и отдельных функций зависит от выбранного источника и формата файла.
+Произведения и подписки в комплект приложения не входят.
 
-## Start Here / 开始使用
+## Начало
 
-- Download the latest build from [Releases](https://github.com/Kototoro-app/Kototoro/releases) — Android APK, Windows ZIP/MSI and iOS IPA; daily builds are in [Kototoro-Nightly](https://github.com/Kototoro-app/Kototoro-Nightly/releases) *(下载最新版本；每日构建见 Nightly 仓库)*
-- On Android, complete the in-app **Setup wizard** right after installation to configure GitHub mirrors, download core source plugins, and set up your content types. *(安装后请直接完成向导设置)*
-- Read the [Documentation Website](https://kototoro-app.github.io/Kototoro/)
-- Follow [Getting Started](https://kototoro-app.github.io/Kototoro/getting-started) for detailed wizard instructions and next steps
-- Learn the core product surface in [Reader Features](https://kototoro-app.github.io/Kototoro/reader-features)
-- Set up [Automatic Translation](https://kototoro-app.github.io/Kototoro/automatic-translation)
-- Set up [Source Integrations](https://kototoro-app.github.io/Kototoro/source-integrations)
-- Set up [WebDAV Sync](https://kototoro-app.github.io/Kototoro/webdav-sync)
-- Check [FAQ](https://kototoro-app.github.io/Kototoro/faq) and [Troubleshooting](https://kototoro-app.github.io/Kototoro/troubleshooting) if something does not work
-- Using Windows or iOS? Read [Windows & iOS](https://kototoro-app.github.io/Kototoro/platforms) *(Windows / iOS 安装与功能说明)*
-- See [Development](https://kototoro-app.github.io/Kototoro/development) (including building the Windows and iOS apps) and [Contributing](https://kototoro-app.github.io/Kototoro/contributing) if you want to work on the project
+1. Установи тестовую сборку Amuratsu или [собери APK](#сборка) самостоятельно.
+2. Подключи нужные источники в настройках либо импортируй локальный файл.
+3. Найди произведение через общий поиск и добавь его в библиотеку.
+4. Возвращайся к нему через блок **«Продолжить»** на главной.
 
-## External Source Ecosystems
+Для Android нужен **Android 8.0 или новее**. Текущая локальная preview-сборка рассчитана на **ARM64**.
+Публичные APK будут появляться в [Releases](https://github.com/amurapan/amuratsu/releases).
+Код desktop и iOS унаследован от Kototoro и адаптируется; собственные пакеты для этих платформ пока не выпущены.
 
-Kototoro supports several external source ecosystems: Mihon, Aniyomi, IReader, Legado, TVBox, and CloudStream. The app does not ship or recommend any specific third-party repository.
+## Планы
 
-To add a repository, open `Settings -> Content Sources` and use the repository / import JSON flow described in [Source Integrations](https://kototoro-app.github.io/Kototoro/source-integrations).
+- [ ] Доработать отдельные пространства манги, книг и аниме с сохранением общего поиска.
+- [ ] Проверить основные источники и сделать их первоначальную настройку удобнее.
+- [ ] Проверить прокрутку и переключение вкладок на реальных устройствах.
+- [ ] Подготовить публичные сборки и настроить их обновление.
 
-## Screenshots / 界面截图
+## Сборка
 
-### Android
+Нужны **JDK 17+** и Android SDK/NDK, указанные в [конфигурации проекта](app/build.gradle).
+Путь к SDK задаётся через `ANDROID_HOME` или локальный `local.properties`.
 
-<div align="center">
-    <img src="./metadata/en-US/images/phoneScreenshots/1.png" alt="Favorites shelf" width="190"/>
-    <img src="./metadata/en-US/images/phoneScreenshots/2.png" alt="Details page" width="190"/>
-    <img src="./metadata/en-US/images/phoneScreenshots/3.png" alt="Manga reader" width="190"/>
-    <img src="./metadata/en-US/images/phoneScreenshots/4.png" alt="Novel reader" width="190"/>
-    <br/>
-    <img src="./metadata/en-US/images/phoneScreenshots/5.png" alt="Video player with subtitles" width="600"/>
-</div>
-
-### iOS
-
-<div align="center">
-    <img src="./docs/public/screenshots/ios/1.png" alt="iOS library" width="190"/>
-    <img src="./docs/public/screenshots/ios/2.png" alt="iOS details page" width="190"/>
-    <img src="./docs/public/screenshots/ios/3.png" alt="iOS manga reader" width="190"/>
-    <img src="./docs/public/screenshots/ios/4.png" alt="iOS novel reader" width="190"/>
-    <br/>
-    <img src="./docs/public/screenshots/ios/5.png" alt="iOS video player" width="600"/>
-</div>
-
-### macOS
-
-<div align="center">
-    <img src="./docs/public/screenshots/macos/1.png" alt="macOS favourites shelf" width="800"/>
-    <br/>
-    <img src="./docs/public/screenshots/macos/2.png" alt="macOS details page" width="398"/>
-    <img src="./docs/public/screenshots/macos/3.png" alt="macOS manga reader" width="398"/>
-</div>
-
-*All titles, covers, pages, text and video in these screenshots are made-up demo content generated by [`scripts/readme_screenshots`](scripts/readme_screenshots/README.md).*
-*(截图中的作品、封面、正文与视频均为脚本生成的虚构演示内容)*
-
-## Contributing
-
-Issues and pull requests are welcome. Start with [Contributing](https://kototoro-app.github.io/Kototoro/contributing).
-
-## Disclaimer
-
-The developer(s) of this open-source application does not have any affiliation with the content providers available, nor do the developers maintain or govern any extension repositories. This application hosts and bundles zero content. All content parsing is strictly provided by user-installed, third-party extensions and sources. The developers assume no liability or responsibility for any content accessed through user-configured endpoints.
-
-## License
-
-```text
-Copyright © 2024-2026 Kototoro Open Source Project
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+```sh
+git clone https://github.com/amurapan/amuratsu.git
+cd amuratsu
+./gradlew :app:assemblePreview
 ```
 
-## Acknowledgements
+APK появится здесь:
+
+```text
+app/build/outputs/apk/preview/app-arm64-v8a-preview.apk
+```
+
+Preview использует релизную оптимизацию и локальный тестовый ключ подписи.
+Чтобы установить обновление поверх прежней тестовой версии с сохранением данных,
+используй тот же ключ подписи. Публичные релизы потребуют отдельной настройки подписи.
+
+<details>
+<summary><strong>Для разработки</strong></summary>
+
+```sh
+# Отладочная сборка
+./gradlew :app:assembleDebug
+
+# Проверка компиляции
+./gradlew :app:compileDebugKotlin
+
+# JVM-тесты
+./gradlew :app:testDebugUnitTest --no-daemon
+```
+
+- [Главная и навигация](docs/development/media-navigation.md)
+- [Брендинг и совместимость](docs/development/amuratsu-branding.md)
+- [Общие компоненты интерфейса](docs/architecture/shared-ui-guidelines.md)
+
+Часть технической документации описывает исходный Kototoro. Его имена пакетов и форматы
+данных сохранены для совместимости; отображаемое название приложения — Amuratsu.
+
+</details>
+
+## Обратная связь
+
+Нашёл ошибку или придумал улучшение — [создай issue](https://github.com/amurapan/amuratsu/issues).
+Для ошибки пригодятся версия приложения, модель устройства, версия Android и шаги воспроизведения.
+
+## Основа проекта
+
+Amuratsu — форк [Kototoro](https://github.com/Kototoro-app/Kototoro), который вырос из
+[Kotatsu](https://github.com/KotatsuApp/Kotatsu). Спасибо skepsun и всем участникам исходных проектов.
+Их работа, история изменений и авторские уведомления сохранены.
+
+<details>
+<summary><strong>Проекты, на которых основана работа</strong></summary>
 
 - [Mihon](https://github.com/mihonapp/mihon)
 - [Yomihon](https://github.com/yomihon/yomihon)
@@ -157,8 +137,24 @@ limitations under the License.
 - [AndroidLiquidGlass](https://github.com/Kyant0/AndroidLiquidGlass) for the liquid glass (backdrop) effect
 - [Futon](https://github.com/AppFuton/Futon) for inspiring the global tag blacklist feature
 
-## Contact / 联系方式
-- 欢迎通过 [爱发电](https://www.ifdian.net/a/kototoro) 支持本项目。
-- Discord: [Join Server](https://discord.gg/xBXvPz7tr7)
-- QQ Group: 560955275
-- GitHub Issues: [Issue Tracker](https://github.com/Kototoro-app/Kototoro/issues)
+</details>
+
+## Лицензия
+
+[Apache License 2.0](LICENSE). Исходное уведомление об авторских правах:
+
+```text
+Copyright © 2024-2026 Kototoro Open Source Project
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```

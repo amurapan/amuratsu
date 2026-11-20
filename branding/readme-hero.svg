@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="460" viewBox="0 0 1200 460" role="img" aria-labelledby="title desc">
+  <title id="title">Amuratsu</title>
+  <desc id="desc">Манга, книги и аниме. Твои истории в одном месте.</desc>
+  <defs>
+    <clipPath id="canvas"><rect width="1200" height="460" rx="36"/></clipPath>
+  </defs>
+  <g clip-path="url(#canvas)">
+    <rect width="1200" height="460" fill="#FBF7F5"/>
+    <circle cx="1130" cy="70" r="190" fill="#F8E5E1"/>
+    <circle cx="1030" cy="465" r="210" fill="#F0EAE8"/>
+    <path d="M812 0V460" stroke="#E8DDDA" stroke-width="2"/>
+    <g font-family="Arial, Helvetica, sans-serif">
+      <text x="64" y="74" fill="#9B4B45" font-size="15" font-weight="700" letter-spacing="3">МАНГА · КНИГИ · АНИМЕ</text>
+      <text x="60" y="174" fill="#292020" font-size="84" font-weight="700" letter-spacing="-4">Amuratsu</text>
+      <text x="64" y="231" fill="#625454" font-size="28">Твои истории — в одном месте.</text>
+      <rect x="64" y="290" width="209" height="58" rx="29" fill="#F3D9D5"/>
+      <g transform="translate(88 307)" fill="none" stroke="#7E3430" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect width="24" height="24" rx="4"/>
+        <path d="M0 10H24M10 10V24"/>
+      </g>
+      <text x="130" y="327" fill="#7E3430" font-size="23" font-weight="700">Манга</text>
+      <rect x="289" y="290" width="209" height="58" rx="29" fill="#FFFFFF" stroke="#DACBC7"/>
+      <g transform="translate(313 307)" fill="none" stroke="#625454" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 4C8 0 3 0 0 2V23C4 21 8 21 12 24C16 21 20 21 24 23V2C20 0 16 0 12 4ZM12 4V24"/>
+      </g>
+      <text x="355" y="327" fill="#625454" font-size="23" font-weight="700">Книги</text>
+      <rect x="514" y="290" width="209" height="58" rx="29" fill="#FFFFFF" stroke="#DACBC7"/>
+      <path d="M544 306L563 319L544 332Z" fill="#625454"/>
+      <text x="580" y="327" fill="#625454" font-size="23" font-weight="700">Аниме</text>
+      <text x="64" y="407" fill="#82706C" font-size="17">MATERIAL YOU</text>
+      <circle cx="234" cy="401" r="3" fill="#B9A49E"/>
+      <text x="253" y="407" fill="#82706C" font-size="17">ANDROID</text>
+      <circle cx="356" cy="401" r="3" fill="#B9A49E"/>
+      <text x="375" y="407" fill="#82706C" font-size="17">OPEN SOURCE</text>
+    </g>
+    <rect x="863" y="118" width="278" height="278" rx="79" fill="#E9D4CE"/>
+    <rect x="863" y="106" width="278" height="278" rx="79" fill="#FFFFFF"/>
+    <g transform="translate(821 64) scale(3.35)">
+      <path fill="#D32F2F" fill-rule="evenodd" d="M50 29 Q54 23 58 29 L80 71 Q80 76 77 75 C68 72 62 73 56 78 L56 66 L52 66 L52 78 C46 73 40 72 31 75 Q28 76 28 71 Z M54 41 L46 58 Q54 56 62 58 Z"/>
+    </g>
+  </g>
+</svg>

@@ -1,11 +1,11 @@
 import { defineConfig } from "vitepress";
 
-const base = process.env.GITHUB_ACTIONS ? "/Kototoro/" : "/";
+const base = process.env.GITHUB_ACTIONS ? "/amuratsu/" : "/";
 const editBranch = process.env.DOCS_EDIT_BRANCH || process.env.GITHUB_REF_NAME || "devel";
 
 export default defineConfig({
-  title: "Kototoro Docs",
-  description: "Documentation for Kototoro: manga, novels, video, OCR translation, and source integrations.",
+  title: "Amuratsu Docs",
+  description: "Documentation for Amuratsu: manga, novels, video, OCR translation, and source integrations.",
   lang: "en-US",
   base,
   // Citation links that point outside this docs site can never resolve as pages: local workstation
@@ -46,21 +46,21 @@ export default defineConfig({
   ],
   themeConfig: {
     logo: "/icon.png",
-    siteTitle: "Kototoro Docs",
+    siteTitle: "Amuratsu Docs",
     nav: [
       { text: "Guides", link: "/getting-started" },
       { text: "Reference", link: "/reference/mihon-integration" },
       { text: "Development", link: "/development" },
-      { text: "GitHub", link: "https://github.com/Kototoro-app/Kototoro" },
+      { text: "GitHub", link: "https://github.com/amurapan/amuratsu" },
     ],
     search: {
       provider: "local",
     },
     socialLinks: [
-      { icon: "github", link: "https://github.com/Kototoro-app/Kototoro" },
+      { icon: "github", link: "https://github.com/amurapan/amuratsu" },
     ],
     editLink: {
-      pattern: `https://github.com/Kototoro-app/Kototoro/edit/${editBranch}/docs/:path`,
+      pattern: `https://github.com/amurapan/amuratsu/edit/${editBranch}/docs/:path`,
       text: "Edit this page on GitHub",
     },
     sidebar: [
@@ -119,8 +119,8 @@ export default defineConfig({
       },
     ],
     footer: {
-      message: "Documentation for Kototoro",
-      copyright: "Kototoro contributors",
+      message: "Documentation for Amuratsu",
+      copyright: "Amuratsu contributors · Based on Kototoro",
     },
     outline: {
       level: [2, 3],
