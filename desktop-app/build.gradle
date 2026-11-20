@@ -115,7 +115,7 @@ def prepareDesktopAppIcons = tasks.register('prepareDesktopAppIcons') {
                 offset += images[index].length
             }
             images.each { ico.put(it) }
-            new File(root, 'Kototoro.ico').bytes = ico.array()
+            new File(root, 'Amuratsu.ico').bytes = ico.array()
             // Same element types iconutil writes. Finder garbles PNG data in icp4/icp5/icp6 (icp6 is also 48 px, not
             // 64), so 16/32 px use ic04/ic05: 'ARGB' + per-channel icns RLE, here as literal runs only.
             def argb = { int size ->
@@ -142,7 +142,7 @@ def prepareDesktopAppIcons = tasks.register('prepareDesktopAppIcons') {
             def icns = java.nio.ByteBuffer.allocate(8 + entries.sum { it.length })
             icns.put('icns'.getBytes('US-ASCII')).putInt(icns.capacity())
             entries.each { icns.put(it) }
-            new File(root, 'Kototoro.icns').bytes = icns.array()
+            new File(root, 'Amuratsu.icns').bytes = icns.array()
         } finally { source.flush() }
     }
 }
@@ -722,10 +722,10 @@ compose.desktop {
             dependsOn(prepareDistributionResources.get())
         }
         nativeDistributions {
-            packageName = 'Kototoro'
+            packageName = 'Amuratsu'
             packageVersion = windowsPackageVersion
-            description = 'Kototoro desktop local preview'
-            vendor = 'Kototoro'
+            description = 'Amuratsu desktop preview'
+            vendor = 'Amuratsu'
             includeAllModules = true
             targetFormats(org.jetbrains.compose.desktop.application.dsl.TargetFormat.Msi,
                 org.jetbrains.compose.desktop.application.dsl.TargetFormat.Dmg,
@@ -734,23 +734,23 @@ compose.desktop {
             if (bundleMacosRuntime) appResourcesRootDir.set(macosResources)
             if (bundleLinuxRuntime) appResourcesRootDir.set(linuxResources)
             linux {
-                packageName = 'kototoro'
+                packageName = 'amuratsu'
                 shortcut = true
                 menuGroup = 'Office'
                 iconFile.set(rootProject.layout.projectDirectory.file('app/src/main/ic_launcher-playstore.png'))
             }
             macOS {
                 bundleID = 'org.skepsun.kototoro.desktop'
-                iconFile.set(desktopAppIcons.map { it.file('Kototoro.icns') })
+                iconFile.set(desktopAppIcons.map { it.file('Amuratsu.icns') })
             }
             windows {
-                iconFile.set(desktopAppIcons.map { it.file('Kototoro.ico') })
+                iconFile.set(desktopAppIcons.map { it.file('Amuratsu.ico') })
                 perUserInstall = true
                 // A sibling directory avoids merging program uninstall rules with the user data directory.
-                installationPath = 'Kototoro-App'
+                installationPath = 'Amuratsu-App'
                 dirChooser = false
                 menu = true
-                menuGroup = 'Kototoro'
+                menuGroup = 'Amuratsu'
                 shortcut = true
                 upgradeUuid = '78f89549-27ec-4c2c-8b87-297c43349a44'
             }
@@ -771,7 +771,7 @@ tasks.withType(org.jetbrains.compose.desktop.application.tasks.AbstractJPackageT
 // Compose copies app resources through Kotlin File.copyTo, which drops POSIX mode bits. Restore the helper's
 // executable bit in the generated image before packageDmg consumes it; code bytes and signatures stay unchanged.
 def packagedMacosBridge = layout.buildDirectory.file(
-    'compose/binaries/main/app/Kototoro.app/Contents/app/resources/browser/kototoro-webview-bridge')
+    'compose/binaries/main/app/Amuratsu.app/Contents/app/resources/browser/kototoro-webview-bridge')
 tasks.matching { it.name == 'createDistributable' }.configureEach {
     if (bundleMacosRuntime) doLast {
         def helper = packagedMacosBridge.get().asFile
@@ -891,7 +891,7 @@ tasks.named('test') {
     exclude '**/DesktopDistributionTest.class', '**/LinuxDistributionTest.class', '**/MacosDistributionTest.class'
 }
 if (bundleMacosRuntime) {
-    def macosImage = layout.buildDirectory.dir('compose/binaries/main/app/Kototoro.app')
+    def macosImage = layout.buildDirectory.dir('compose/binaries/main/app/Amuratsu.app')
     tasks.register('macosDistributionTest', Test) {
         dependsOn tasks.named('createDistributable'), tasks.named('testClasses')
         inputs.dir(macosImage)
@@ -909,10 +909,10 @@ if (bundleMacosRuntime) {
         dependsOn 'macosDistributionTest'
     }
     def macUpdateArch = System.getProperty('os.arch') in ['arm64', 'aarch64'] ? 'arm64' : 'x64'
-    def macUpdateStem = desktopVersionName.map { "Kototoro-${it}-macos-${macUpdateArch}-${desktopUpdateChannel}" }
+    def macUpdateStem = desktopVersionName.map { "Amuratsu-${it}-macos-${macUpdateArch}-${desktopUpdateChannel}" }
     def macUpdateDmg = layout.buildDirectory.file(macUpdateStem.map { "compose/binaries/main/update/${it}.dmg" })
     def macUpdateChecksums = layout.buildDirectory.file(macUpdateStem.map { "compose/binaries/main/update/${it}.sha256" })
-    def packagedDmg = layout.buildDirectory.file("compose/binaries/main/dmg/Kototoro-${windowsPackageVersion}.dmg")
+    def packagedDmg = layout.buildDirectory.file("compose/binaries/main/dmg/Amuratsu-${windowsPackageVersion}.dmg")
     tasks.register('macosUpdatePackage') {
         dependsOn 'packageDmg'
         inputs.file(packagedDmg)
@@ -937,16 +937,16 @@ if (bundleMacosRuntime) {
 if (bundleLinuxRuntime) {
     tasks.register('linuxDistributionTest', Test) {
         dependsOn tasks.named('createDistributable'), tasks.named('testClasses')
-        inputs.dir(layout.buildDirectory.dir('compose/binaries/main/app/Kototoro'))
+        inputs.dir(layout.buildDirectory.dir('compose/binaries/main/app/Amuratsu'))
         testClassesDirs = sourceSets.test.output.classesDirs
         classpath = sourceSets.test.runtimeClasspath
         include '**/LinuxDistributionTest.class'
-        systemProperty 'kototoro.desktop.distribution', layout.buildDirectory.dir('compose/binaries/main/app/Kototoro').get().asFile
+        systemProperty 'kototoro.desktop.distribution', layout.buildDirectory.dir('compose/binaries/main/app/Amuratsu').get().asFile
         systemProperty 'kototoro.desktop.probe.classes', sourceSets.test.output.classesDirs.asPath
     }
     tasks.matching { it.name == 'packageDeb' }.configureEach {
         // Ship the same image that passed the relocation/runtime/window checks.
-        appImage.set(layout.buildDirectory.dir('compose/binaries/main/app/Kototoro'))
+        appImage.set(layout.buildDirectory.dir('compose/binaries/main/app/Amuratsu'))
         // With --app-image, Compose omits --icon and jpackage otherwise replaces our icon with Java's default.
         freeArgs.addAll(['--icon', rootProject.file('app/src/main/ic_launcher-playstore.png').absolutePath])
         dependsOn 'linuxDistributionTest'
@@ -955,14 +955,14 @@ if (bundleLinuxRuntime) {
         dependsOn 'packageDeb'
         // jpackage names the architecture after the host; arm64 builds use Debian's arm64 suffix.
         def architecture = System.getProperty('os.arch') in ['aarch64', 'arm64'] ? 'arm64' : 'amd64'
-        def deb = layout.buildDirectory.file("compose/binaries/main/deb/kototoro_${windowsPackageVersion}_${architecture}.deb")
+        def deb = layout.buildDirectory.file("compose/binaries/main/deb/amuratsu_${windowsPackageVersion}_${architecture}.deb")
         inputs.file('inspect-linux-deb.py')
         inputs.file(deb)
         inputs.file(androidAppIcon)
-        inputs.dir(layout.buildDirectory.dir('compose/binaries/main/app/Kototoro'))
+        inputs.dir(layout.buildDirectory.dir('compose/binaries/main/app/Amuratsu'))
         commandLine 'python3', file('inspect-linux-deb.py').absolutePath,
             '--package', deb.get().asFile.absolutePath,
-            '--image', layout.buildDirectory.dir('compose/binaries/main/app/Kototoro').get().asFile.absolutePath,
+            '--image', layout.buildDirectory.dir('compose/binaries/main/app/Amuratsu').get().asFile.absolutePath,
             '--icon', androidAppIcon.absolutePath,
             '--output', layout.buildDirectory.dir('reports/linux-deb').get().asFile.absolutePath
     }
@@ -972,12 +972,12 @@ if (bundleWindowsRuntime) {
     // Give every shipped executable the UTF-8 code page so paths outside the system code page (install directory,
     // data directory, TEMP) still work. Every package (tested image, ZIP, MSI) is built from this image.
     def utf8LauncherScript = file('windows-utf8-launcher.ps1')
-    def windowsImage = layout.buildDirectory.dir('compose/binaries/main/app/Kototoro').get().asFile
+    def windowsImage = layout.buildDirectory.dir('compose/binaries/main/app/Amuratsu').get().asFile
     tasks.matching { it.name == 'createDistributable' }.configureEach {
         inputs.file(utf8LauncherScript)
         doLast {
             // The bundled java/javaw commands (kept for support and probes) locate the runtime the same way.
-            def executables = ['Kototoro.exe', 'runtime/bin/java.exe', 'runtime/bin/javaw.exe'].collect { new File(windowsImage, it) }
+            def executables = ['Amuratsu.exe', 'runtime/bin/java.exe', 'runtime/bin/javaw.exe'].collect { new File(windowsImage, it) }
             def upscale = new File(windowsImage, 'app/resources/upscale')
             if (upscale.isDirectory()) {
                 upscale.eachFileRecurse(groovy.io.FileType.FILES) { if (it.name.endsWith('.exe')) executables << it }
@@ -999,37 +999,37 @@ if (bundleWindowsRuntime) {
         it.name == 'packageMsi'
     }.configureEach {
         // Package the tested image directly: separate Skiko preprocessing creates different JAR names/bytes.
-        appImage.set(layout.buildDirectory.dir('compose/binaries/main/app/Kototoro'))
+        appImage.set(layout.buildDirectory.dir('compose/binaries/main/app/Amuratsu'))
         dependsOn 'windowsDistributionTest'
     }
     tasks.register('windowsMsiContentsCheck', Exec) {
         dependsOn 'packageMsi', 'createDistributable'
         inputs.file('inspect-windows-msi.ps1')
-        inputs.file(layout.buildDirectory.file("compose/binaries/main/msi/Kototoro-${windowsPackageVersion}.msi"))
-        inputs.dir(layout.buildDirectory.dir('compose/binaries/main/app/Kototoro'))
+        inputs.file(layout.buildDirectory.file("compose/binaries/main/msi/Amuratsu-${windowsPackageVersion}.msi"))
+        inputs.dir(layout.buildDirectory.dir('compose/binaries/main/app/Amuratsu'))
         commandLine 'powershell.exe', '-NoProfile', '-ExecutionPolicy', 'Bypass',
             '-File', file('inspect-windows-msi.ps1').absolutePath,
-            '-MsiPath', layout.buildDirectory.file("compose/binaries/main/msi/Kototoro-${windowsPackageVersion}.msi").get().asFile.absolutePath,
-            '-ImageDirectory', layout.buildDirectory.dir('compose/binaries/main/app/Kototoro').get().asFile.absolutePath,
+            '-MsiPath', layout.buildDirectory.file("compose/binaries/main/msi/Amuratsu-${windowsPackageVersion}.msi").get().asFile.absolutePath,
+            '-ImageDirectory', layout.buildDirectory.dir('compose/binaries/main/app/Amuratsu').get().asFile.absolutePath,
             '-WixDirectory', windowsWixDirectory,
             '-OutputDirectory', layout.buildDirectory.dir('reports/windows-msi').get().asFile.absolutePath
     }
     tasks.register('windowsPortableZip', Zip) {
         dependsOn 'windowsDistributionTest'
-        from(layout.buildDirectory.dir('compose/binaries/main/app/Kototoro')) { into 'Kototoro' }
+        from(layout.buildDirectory.dir('compose/binaries/main/app/Amuratsu')) { into 'Amuratsu' }
         destinationDirectory = layout.buildDirectory.dir('compose/binaries/main/portable')
-        archiveFileName = "Kototoro-Windows-local-preview-${windowsPackageVersion}.zip"
+        archiveFileName = "Amuratsu-Windows-local-preview-${windowsPackageVersion}.zip"
     }
     tasks.register('windowsDistributionTest', Test) {
         def distributionTempDirectory = layout.buildDirectory.dir('tmp/windowsDistributionTest').get().asFile
         systemProperty 'java.io.tmpdir', distributionTempDirectory.absolutePath
         doFirst { distributionTempDirectory.mkdirs() }
         dependsOn tasks.named('createDistributable'), tasks.named('testClasses')
-        inputs.dir(layout.buildDirectory.dir('compose/binaries/main/app/Kototoro'))
+        inputs.dir(layout.buildDirectory.dir('compose/binaries/main/app/Amuratsu'))
         testClassesDirs = sourceSets.test.output.classesDirs
         classpath = sourceSets.test.runtimeClasspath
         include '**/DesktopDistributionTest.class'
-        systemProperty 'kototoro.desktop.distribution', layout.buildDirectory.dir('compose/binaries/main/app/Kototoro').get().asFile
+        systemProperty 'kototoro.desktop.distribution', layout.buildDirectory.dir('compose/binaries/main/app/Amuratsu').get().asFile
         systemProperty 'kototoro.desktop.probe.classes', sourceSets.test.output.classesDirs.asPath
     }
 }

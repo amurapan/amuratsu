@@ -15,11 +15,11 @@ class MacosAppUpdateTest {
 
     @Test
     fun `release parsing isolates CPU OS channel and version in a mixed release`() {
-        val names = listOf("Kototoro-9.0.0-windows-x64-release.zip",
-            "Kototoro-2.0.0-macos-arm64-release.dmg", "Kototoro-2.0.0-macos-arm64-release.sha256",
-            "Kototoro-3.0.0-macos-x64-release.dmg", "Kototoro-3.0.0-macos-x64-release.sha256",
-            "Kototoro-N20261028-macos-arm64-nightly.dmg", "Kototoro-N20261028-macos-arm64-nightly.sha256",
-            "Kototoro-2.0.0-macos-arm64-release.msi")
+        val names = listOf("Amuratsu-9.0.0-windows-x64-release.zip",
+            "Amuratsu-2.0.0-macos-arm64-release.dmg", "Amuratsu-2.0.0-macos-arm64-release.sha256",
+            "Amuratsu-3.0.0-macos-x64-release.dmg", "Amuratsu-3.0.0-macos-x64-release.sha256",
+            "Amuratsu-N20261028-macos-arm64-nightly.dmg", "Amuratsu-N20261028-macos-arm64-nightly.sha256",
+            "Amuratsu-2.0.0-macos-arm64-release.msi")
         val json = payload(names)
         val arm = parseReleases(json, DesktopUpdateChannel.RELEASE, DesktopUpdateTarget.MACOS_ARM64).single()
         assertEquals("2.0.0", arm.version.text)
@@ -34,7 +34,7 @@ class MacosAppUpdateTest {
         assertEquals(DesktopUpdateTarget.MACOS_X64, DesktopUpdateTarget.current(DesktopPlatform.MACOS, "x86_64"))
         assertNull(DesktopUpdateTarget.current(DesktopPlatform.LINUX, "amd64"))
         assertNull(DesktopUpdateTarget.current(DesktopPlatform.MACOS, "unknown"))
-        assertTrue(parseReleases(payload(listOf("Kototoro-N20261028/../../escape-macos-arm64-nightly.dmg")),
+        assertTrue(parseReleases(payload(listOf("Amuratsu-N20261028/../../escape-macos-arm64-nightly.dmg")),
             DesktopUpdateChannel.NIGHTLY, DesktopUpdateTarget.MACOS_ARM64).isEmpty())
     }
 
@@ -59,7 +59,7 @@ class MacosAppUpdateTest {
     @Test
     fun `DMG download verifies hash size and UDIF signature and removes failed partial files`() = runBlocking {
         val bytes = ByteArray(1024).apply { "koly".toByteArray().copyInto(this, size - 512) }
-        val name = "Kototoro-2.0.0-macos-arm64-release.dmg"
+        val name = "Amuratsu-2.0.0-macos-arm64-release.dmg"
         var checksum = digest(bytes)
         val server = HttpServer.create(InetSocketAddress("127.0.0.1", 0), 0)
         server.createContext("/package") { exchange ->

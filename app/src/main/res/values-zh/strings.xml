@@ -46,8 +46,8 @@
     <string name="webdav_remote_backups_inspect">检测远端备份</string>
     <string name="webdav_remote_backups_inspect_summary">下载并检查每个远端备份是否可以安全恢复。</string>
     <string name="webdav_remote_backups_clear">清空远端 WebDAV 备份</string>
-    <string name="webdav_remote_backups_clear_summary">删除配置路径下所有 Kototoro 备份文件。本机数据不会改变。</string>
-    <string name="webdav_remote_backups_clear_confirm">确定删除配置路径下所有 Kototoro 备份文件？本机数据不会改变。</string>
+    <string name="webdav_remote_backups_clear_summary">删除配置路径下所有 Amuratsu 备份文件。本机数据不会改变。</string>
+    <string name="webdav_remote_backups_clear_confirm">确定删除配置路径下所有 Amuratsu 备份文件？本机数据不会改变。</string>
     <string name="webdav_remote_backups_loading">正在加载 WebDAV 备份…</string>
     <string name="webdav_remote_backup_status_unknown">未检测</string>
     <string name="webdav_remote_backup_status_restorable">可恢复</string>
@@ -428,7 +428,7 @@
     <string name="aniyomi_source_count">%d 个源可用</string>
     <string name="aniyomi_sources">Aniyomi</string>
     <string name="any">所有</string>
-    <string name="app_name">Kototoro</string>
+    <string name="app_name">Amuratsu</string>
     <string name="app_update_available">发现新版本</string>
     <string name="app_version">版本 %s</string>
     <string name="appearance">外观</string>
@@ -830,7 +830,7 @@
     <string name="discord">Discord</string>
     <string name="discord_logout_summary">清除已保存的 Discord 授权</string>
     <string name="discord_rpc">绑定 Discord 状态</string>
-    <string name="discord_rpc_description">正在 Kototoro - 一个漫画阅读软件上阅读漫画</string>
+    <string name="discord_rpc_description">正在 Amuratsu - 一个漫画阅读软件上阅读漫画</string>
     <string name="discord_rpc_summary">在 Discord 个人信息栏内显示你的阅读状态</string>
     <string name="discord_token">Discord Token</string>
     <string name="discord_token_description">输入你的 Discord Token 或者点击 %s 打开内置浏览器获取 Token</string>
@@ -961,7 +961,7 @@
     <string name="error_corrupted_file">回传的数据无效或文件已损坏</string>
     <string name="error_corrupted_zip">损坏的 ZIP 文件 (%s)</string>
     <string name="error_details">错误详细信息</string>
-    <string name="error_disclaimer_app_outdated">您的 Kototoro 版本过旧，请下载最新版本以修复问题</string>
+    <string name="error_disclaimer_app_outdated">您的 Amuratsu 版本过旧，请下载最新版本以修复问题</string>
     <string name="error_disclaimer_manga">尝试在网络浏览器中打开漫画，以确保此漫画在图源中可用</string>
     <string name="error_disclaimer_report">可向开发者提交错误报告，将会帮助我们定位并修复错误</string>
     <string name="error_filter_locale_genre_not_supported">此图源不支持同时按类别和区域筛选</string>
@@ -1180,7 +1180,7 @@
     <string name="incognito_mode_hint">阅读进度不会保存</string>
     <string name="incognito_mode_hint_nsfw">此漫画可能包含成人内容，需要打开无痕模式继续浏览吗？</string>
     <string name="incompatible_extension">不兼容</string>
-    <string name="incompatible_extension_message">%1$s %2$s 无法安装，因其库版本（%3$s）超出 Kototoro 的支持范围。</string>
+    <string name="incompatible_extension_message">%1$s %2$s 无法安装，因其库版本（%3$s）超出 Amuratsu 的支持范围。</string>
     <string name="incompatible_section">不兼容</string>
     <string name="inline_preference_pattern">%1$s: %2$s</string>
     <string name="install_extension">安装</string>
@@ -1238,7 +1238,7 @@
     <string name="less_than_minute">不到1分钟</string>
     <string name="light">浅色</string>
     <string name="light_indicator">LED指示器</string>
-    <string name="link_to_manga_in_app">在 Kototoro 上连接漫画</string>
+    <string name="link_to_manga_in_app">在 Amuratsu 上连接漫画</string>
     <string name="link_to_manga_on_s">在 %s 上连接漫画</string>
     <string name="list">列表</string>
     <string name="list_ellipsize_pattern">(+%d)</string>
@@ -1301,7 +1301,7 @@
     <string name="manage_sources">内容源管理</string>
     <string name="manga_count_short">漫画 %1$d</string>
     <string name="manga_downloading_">正在下载…</string>
-    <string name="manga_error_description_pattern">错误详情：&amp;lt;br&amp;gt;&amp;lt;tt&amp;gt;%1$s&amp;lt;/tt&amp;gt;&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;1.尝试&amp;lt;a href=%2$s&amp;gt;在浏览器中打开内容&amp;lt;/a&amp;gt;确保内容在内容源中正常显示&amp;lt;br&amp;gt;2.确认正在使用的是&amp;lt;a href=kototoro://about&amp;gt;最新版本的Kototoro&amp;lt;/a&amp;gt;&amp;lt;br&amp;gt;3.若已排除以上问题，请向开发人员发送错误报告。</string>
+    <string name="manga_error_description_pattern">错误详情：&amp;lt;br&amp;gt;&amp;lt;tt&amp;gt;%1$s&amp;lt;/tt&amp;gt;&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;1.尝试&amp;lt;a href=%2$s&amp;gt;在浏览器中打开内容&amp;lt;/a&amp;gt;确保内容在内容源中正常显示&amp;lt;br&amp;gt;2.确认正在使用的是&amp;lt;a href=amuratsu://about&amp;gt;最新版本的Kototoro&amp;lt;/a&amp;gt;&amp;lt;br&amp;gt;3.若已排除以上问题，请向开发人员发送错误报告。</string>
     <string name="manga_fix_prompt">这个功能将会从其他来源寻找你所选择的漫画，此操作耗时较长且会在后台进行</string>
     <string name="manga_list">漫画列表</string>
     <string name="manga_migration">即将换源</string>
@@ -1495,7 +1495,7 @@
     <string name="open_reading_page_in_browser">在浏览器中打开阅读页面</string>
     <string name="open_website">打开网站</string>
     <string name="operation_not_supported">操作无效</string>
-    <string name="cloudstream_newpipe_required">此扩展所需的 NewPipe 组件与 Kototoro 内置的版本不兼容，无法播放视频。请尝试更新扩展或 Kototoro。</string>
+    <string name="cloudstream_newpipe_required">此扩展所需的 NewPipe 组件与 Amuratsu 内置的版本不兼容，无法播放视频。请尝试更新扩展或 Amuratsu。</string>
     <string name="options">选项</string>
     <string name="order_added">添加日期（降序）</string>
     <string name="order_oldest">最旧</string>
@@ -1541,9 +1541,9 @@
     <string name="pin_navigation_ui">固定导航 UI</string>
     <string name="pin_navigation_ui_summary">当上下滑动时不隐藏导航栏和搜索框</string>
     <string name="pinned_sources_only">仅固定源</string>
-    <string name="plugin_incompatible">插件不兼容或出现了外部错误，请确保你已经将 Kototoro 以及插件更新至最新版本</string>
-    <string name="plugin_incompatible_with_cause">插件错误： %s\n请确认正在使用的插件及Kototoro是否为最新版本</string>
-    <string name="plugin_missing_host_classes">无法安装 %1$s，因为它依赖 Kototoro 不支持的 %2$s 宿主类：\n%3$s</string>
+    <string name="plugin_incompatible">插件不兼容或出现了外部错误，请确保你已经将 Amuratsu 以及插件更新至最新版本</string>
+    <string name="plugin_incompatible_with_cause">插件错误： %s\n请确认正在使用的插件及Amuratsu是否为最新版本</string>
+    <string name="plugin_missing_host_classes">无法安装 %1$s，因为它依赖 Amuratsu 不支持的 %2$s 宿主类：\n%3$s</string>
     <string name="popular">热度（降序）</string>
     <string name="popular_in_hour">一小时内热门</string>
     <string name="popular_in_month">本月热门</string>
@@ -1660,7 +1660,7 @@
     <string name="progress">阅读进度</string>
     <string name="protect_application">应用锁</string>
     <string name="protect_application_subtitle">请填写密码</string>
-    <string name="protect_application_summary">在启动Kototoro时要求输入密码</string>
+    <string name="protect_application_summary">在启动Amuratsu时要求输入密码</string>
     <string name="proxy">代理</string>
     <string name="pull_bottom_no_next">到底了</string>
     <string name="pull_to_next_chapter">松开即可阅读下一章</string>
@@ -1758,7 +1758,7 @@
     <string name="replace_rule_disable_all_summary">暂时停止应用替换规则</string>
     <string name="replace_rule_edit">编辑规则</string>
     <string name="replace_rule_import">导入 Legado 规则</string>
-    <string name="replace_rule_import_summary">导入 Legado 或 Kototoro 导出的 JSON 数组</string>
+    <string name="replace_rule_import_summary">导入 Legado 或 Amuratsu 导出的 JSON 数组</string>
     <string name="replace_rule_export">导出规则</string>
     <string name="replace_rule_export_summary">以兼容格式导出规则</string>
     <string name="replace_rule_empty">暂无替换规则</string>
@@ -2455,7 +2455,7 @@
     <string name="sync_backend_switch_webdav_title">切换到 WebDAV 备份？</string>
     <string name="sync_backend_switch_webdav_confirm">当前已启用 Google Drive 同步。启用 WebDAV 备份会关闭 Google Drive 同步，但会保留你的 Google 登录状态。</string>
     <string name="sync_sign_in">准备 Google Drive 同步</string>
-    <string name="sync_sign_in_summary">使用 Google Drive 应用数据空间和最小 drive.appdata 权限同步订阅与更新记录；Kototoro 无法访问你的网盘文件。</string>
+    <string name="sync_sign_in_summary">使用 Google Drive 应用数据空间和最小 drive.appdata 权限同步订阅与更新记录；Amuratsu 无法访问你的网盘文件。</string>
     <string name="google_drive_sync_unregistered_build_error">Google Drive 同步在开发版/Nightly 构建中不受支持。请使用正式发布版或 WebDAV 同步。</string>
     <string name="sync_sign_out">退出登录</string>
     <string name="sync_account">已登录</string>
@@ -2680,7 +2680,7 @@
     <string name="unread_updates">未读更新</string>
     <string name="unstable_feature">不稳定功能</string>
     <string name="unstable_feature_summary">实验性功能，请确保您已备份，以防数据丢失</string>
-    <string name="unsupported_backup_message">请选择正确的 Kototoro 备份文件</string>
+    <string name="unsupported_backup_message">请选择正确的 Amuratsu 备份文件</string>
     <string name="unsupported_novel_source">不支持此小说源</string>
     <string name="unsupported_source">不支持此漫画图源</string>
     <string name="unsupported_video_source">不支持此视频源</string>
@@ -2863,10 +2863,10 @@
     <string name="webtoon_zoom_summary">允许在条漫模式下使用缩放手势</string>
     <string name="week">周</string>
     <string name="welcome">欢迎</string>
-    <string name="welcome_jar_install_failed">Kototoro: 解析器网络装载失败 (%1$s)，请重试或前往设置切换加速镜像</string>
-    <string name="welcome_jar_install_success">Kototoro: 成功从云端网络抓取并挂载了 %1$d 个最新解析器引擎！</string>
-    <string name="welcome_jar_install_up_to_date">Kototoro: 云端校验完成，本地解析器已是最新版本！(总计载入: %1$d 个源)</string>
-    <string name="welcome_plugins_disclaimer">这些扩展仓库由独立的在线社区维护。Kototoro 开发者与这些第三方仓库没有任何控制或关联关系。我知晓并同意，配置这些来源的风险由我自己承担。</string>
+    <string name="welcome_jar_install_failed">Amuratsu: 解析器网络装载失败 (%1$s)，请重试或前往设置切换加速镜像</string>
+    <string name="welcome_jar_install_success">Amuratsu: 成功从云端网络抓取并挂载了 %1$d 个最新解析器引擎！</string>
+    <string name="welcome_jar_install_up_to_date">Amuratsu: 云端校验完成，本地解析器已是最新版本！(总计载入: %1$d 个源)</string>
+    <string name="welcome_plugins_disclaimer">这些扩展仓库由独立的在线社区维护。Amuratsu 开发者与这些第三方仓库没有任何控制或关联关系。我知晓并同意，配置这些来源的风险由我自己承担。</string>
     <string name="welcome_plugins_repo_kototoro">Kototoro 官方库</string>
     <string name="welcome_plugins_repo_redo">Redo 解析库</string>
     <string name="welcome_plugins_repo_uma">UMA（Tsuki 解析库）</string>
@@ -2935,7 +2935,7 @@
     <string name="pref_glass_blur_quality_performance">性能</string>
     <string name="pref_glass_blur_quality_balanced">均衡</string>
     <string name="pref_glass_blur_quality_quality">画质</string>
-    <string name="glass_material_kototoro">Kototoro（推荐）</string>
+    <string name="glass_material_kototoro">Amuratsu（推荐）</string>
     <string name="glass_material_haze_ultra_thin">Haze 超薄</string>
     <string name="glass_material_haze_thin">Haze 薄</string>
     <string name="glass_material_haze_regular">Haze 标准</string>
@@ -3463,8 +3463,8 @@
     <string name="chapter_show_download_button">显示下载按钮</string>
     <string name="chapter_show_translate_button">显示翻译按钮</string>
     <string name="chapter_show_thumbnails">显示章节缩略图</string>
-    <string name="welcome_intro_title">设置 Kototoro</string>
-    <string name="welcome_intro_summary">选择您喜好的阅读和观看方式。Kototoro 现在使用基于插件的漫画、小说和视频源系列，包括 JAR、Mihon、Aniyomi、IReader、Legado、TVBox、LNReader 和 Cloudstream。</string>
+    <string name="welcome_intro_title">设置 Amuratsu</string>
+    <string name="welcome_intro_summary">选择您喜好的阅读和观看方式。Amuratsu 现在使用基于插件的漫画、小说和视频源系列，包括 JAR、Mihon、Aniyomi、IReader、Legado、TVBox、LNReader 和 Cloudstream。</string>
     <string name="welcome_step_start">开始</string>
     <string name="welcome_step_sources">图源</string>
     <string name="welcome_step_preferences">偏好</string>
@@ -3474,11 +3474,11 @@
     <string name="welcome_glass_preset_title">毛玻璃效果</string>
     <string name="welcome_glass_preset_summary">为 iOS 风格选择毛玻璃预设。折射效果为默认值，稍后可在外观设置中进行微调。</string>
     <string name="home_quick_action_wizard">向导</string>
-    <string name="welcome_restore_summary">以前用过 Kototoro？还原备份、登录以同步，或先添加本地文件夹。</string>
+    <string name="welcome_restore_summary">以前用过 Amuratsu？还原备份、登录以同步，或先添加本地文件夹。</string>
     <string name="welcome_source_formats_title">选择内容格式</string>
     <string name="welcome_source_formats_summary">这些过滤器决定了设置后启用哪些源系列。</string>
     <string name="welcome_ecosystems_title">图源生态系统</string>
-    <string name="welcome_ecosystems_summary">Kototoro 支持多个用于阅读和观看的插件源系列。从此处推荐的仓库开始，稍后在扩展管理中进行微调。</string>
+    <string name="welcome_ecosystems_summary">Amuratsu 支持多个用于阅读和观看的插件源系列。从此处推荐的仓库开始，稍后在扩展管理中进行微调。</string>
     <string name="welcome_ecosystem_manga">漫画：JAR 解析器、Mihon、IReader、LNReader</string>
     <string name="welcome_ecosystem_novel">小说：Legado、IReader、LNReader</string>
     <string name="welcome_ecosystem_video">视频：Aniyomi、TVBox、Cloudstream</string>
@@ -3522,7 +3522,7 @@
     <string name="source_untested">未测试</string>
     <string name="source_test_completed">图源测试完成：%1$d 个可用，%2$d 个不可用</string>
     <string name="source_test_completed_with_unverified">图源测试完成：%1$d 个可用，%2$d 个不可用，%3$d 个未验证</string>
-    <string name="welcome_ready_summary">设置已完成。Kototoro 将启用符合您所选语言和格式的图源。您可以随时从 设置 → 内容图源 → 设置向导 再次运行此向导。</string>
+    <string name="welcome_ready_summary">设置已完成。Amuratsu 将启用符合您所选语言和格式的图源。您可以随时从 设置 → 内容图源 → 设置向导 再次运行此向导。</string>
     <plurals name="library_duplicates_entries">
         <item quantity="one">%d 个条目</item>
         <item quantity="other">%d 个条目</item>
@@ -3555,10 +3555,10 @@
     <string name="interface_style_material3_expressive_summary">更大的自适应控件、强调的形状和更大胆的字阶层级</string>
     <string name="import_backup_from_other_apps_combined_summary">%1$s\n%2$s: %3$s</string>
     <string name="export_kotatsu_backup">导出 Kotatsu 备份</string>
-    <string name="export_kotatsu_backup_summary">为 Kotatsu 家族应用创建不包含 Kototoro 特定部分的独立旧版备份。</string>
+    <string name="export_kotatsu_backup_summary">为 Kotatsu 家族应用创建不包含 Amuratsu 特定部分的独立旧版备份。</string>
     <string name="export_kotatsu_backup_saved">Kotatsu 备份已保存</string>
     <string name="restore_kototoro_backup">恢复备份</string>
-    <string name="restore_kototoro_backup_summary">恢复任意版本的 Kototoro 备份或 Kotatsu 备份。格式将自动检测。</string>
+    <string name="restore_kototoro_backup_summary">恢复任意版本的 Amuratsu 备份或 Kotatsu 备份。格式将自动检测。</string>
     <string name="restore_mode_replace_existing">替换现有数据</string>
     <string name="restore_mode_replace_existing_summary">首先清除正在恢复的分区；备份中不存在的收藏和历史记录将被删除</string>
     <string name="restore_mode_merge_with_existing">与现有数据合并</string>
@@ -3768,22 +3768,22 @@
     <string name="welcome_install_system_launch_failed">无法启动系统安装程序：%1$s</string>
     <string name="welcome_install_skip">跳过安装 — 稍后我将在扩展管理中手动安装</string>
     <string name="welcome_install_step_title">批量安装扩展</string>
-    <string name="welcome_install_step_summary">选择要使用的源类型和设置，然后让 Kototoro 在后台下载并安装所有内容。</string>
+    <string name="welcome_install_step_summary">选择要使用的源类型和设置，然后让 Amuratsu 在后台下载并安装所有内容。</string>
     <string name="welcome_install_kinds_title">要安装的源类型</string>
     <string name="welcome_install_kinds_summary">仅处理您勾选的类型。未勾选的类型（例如若您稍后操作的 Mihon）可留待以后在扩展管理中安装。</string>
     <string name="welcome_install_kinds_empty">尚未配置任何仓库。请先返回添加仓库。</string>
     <string name="welcome_install_nsfw_title">包含 NSFW 内容</string>
     <string name="welcome_install_nsfw_summary">默认关闭 — 成人专属软件包将被过滤出安装列表。</string>
-    <string name="welcome_intro_app_title">Kototoro · 开源阅读器</string>
-    <string name="welcome_intro_body">Kototoro 是一款开源多媒体阅读/播放器。它支持广泛的社区扩展生态系统，但自身不捆绑任何内容源。</string>
+    <string name="welcome_intro_app_title">Amuratsu · 开源阅读器</string>
+    <string name="welcome_intro_body">Amuratsu 是一款开源多媒体阅读/播放器。它支持广泛的社区扩展生态系统，但自身不捆绑任何内容源。</string>
     <string name="welcome_intro_concepts_title">三个概念，30 秒了解</string>
     <string name="welcome_intro_repo_label">仓库</string>
     <string name="welcome_intro_repo_body">指向由独立社区维护的第三方扩展集合的 URL（例如 Mihon 仓库、TVBox 列表或 LNReader 插件仓库）。</string>
     <string name="welcome_intro_extension_label">扩展</string>
-    <string name="welcome_intro_extension_body">仓库内的一个可安装包 — JAR、APK 或 JSON 列表。安装扩展后，Kototoro 即具备从网站阅读或播放的能力。</string>
+    <string name="welcome_intro_extension_body">仓库内的一个可安装包 — JAR、APK 或 JSON 列表。安装扩展后，Amuratsu 即具备从网站阅读或播放的能力。</string>
     <string name="welcome_intro_source_label">源</string>
     <string name="welcome_intro_source_body">安装或导入扩展后，您在应用中看到的具体内容源 — 例如特定的漫画或视频网站。</string>
-    <string name="welcome_intro_disclaimer">使用第三方扩展的风险完全由您自行承担：Kototoro 项目不控制其运行时行为、合法性及内容。</string>
+    <string name="welcome_intro_disclaimer">使用第三方扩展的风险完全由您自行承担：Amuratsu 项目不控制其运行时行为、合法性及内容。</string>
     <string name="welcome_intro_continue">我已知晓 — 继续</string>
     <string name="welcome_done_title">即将完成</string>
     <string name="welcome_done_summary">您的设置摘要和一些提示。</string>
@@ -3792,10 +3792,10 @@
     <string name="welcome_done_json_note">基于 JSON 的类型（Legado / TVBox / LNReader）会自动导入；如果您还添加了其他 JSON 仓库，请在扩展管理中导入它们。</string>
     <string name="welcome_done_title_finished">设置完成</string>
     <string name="welcome_done_summary_finished">向导已完成 — 未自动添加任何仓库或源。</string>
-    <string name="welcome_done_body_finished">Kototoro 在设置期间未添加任何源。您随时可以在 设置 › 内容源（扩展管理）中添加自己的仓库和源。</string>
+    <string name="welcome_done_body_finished">Amuratsu 在设置期间未添加任何源。您随时可以在 设置 › 内容源（扩展管理）中添加自己的仓库和源。</string>
     <string name="welcome_done_advice_title">如果源无法正常工作</string>
     <string name="welcome_done_advice_summary">简短的排查路径，以便正确的人员查看报告。</string>
-    <string name="welcome_done_advice_body">1. 使用扩展的原始宿主应用确认问题 — 例如 Mihon 类型的源应在 Mihon 应用中进行测试。\n2. 如果该问题在那里也存在，则属于维护该扩展的仓库：请在该仓库自身的 URL 处提交 Issue。\n3. 如果仅在 Kototoro 中出现，请在 Kototoro 项目仓库中报告，并附上源名称、扩展版本以及您的操作步骤。</string>
+    <string name="welcome_done_advice_body">1. 使用扩展的原始宿主应用确认问题 — 例如 Mihon 类型的源应在 Mihon 应用中进行测试。\n2. 如果该问题在那里也存在，则属于维护该扩展的仓库：请在该仓库自身的 URL 处提交 Issue。\n3. 如果仅在 Amuratsu 中出现，请在 Amuratsu 项目仓库中报告，并附上源名称、扩展版本以及您的操作步骤。</string>
     <string name="welcome_step_counter">第 %1$d / %2$d 步</string>
     <string name="welcome_action_configure_repos">配置所选仓库</string>
     <string name="welcome_action_install_count">安装 %1$d 个扩展</string>
@@ -3829,7 +3829,7 @@
     <string name="welcome_permissions_notifications_title">通知</string>
     <string name="welcome_permissions_notifications_summary">显示下载、更新和播放器通知。</string>
     <string name="welcome_permissions_packages_title">已安装的应用</string>
-    <string name="welcome_permissions_packages_summary">允许 Kototoro 检测已安装的扩展和宿主应用（Mihon、Aniyomi 等）。已在清单中声明并自动授予。</string>
+    <string name="welcome_permissions_packages_summary">允许 Amuratsu 检测已安装的扩展和宿主应用（Mihon、Aniyomi 等）。已在清单中声明并自动授予。</string>
     <string name="welcome_permissions_battery_title">后台运行</string>
     <string name="welcome_permissions_battery_summary">在屏幕关闭或设备闲置时保持后台下载和更新运行。</string>
     <string name="welcome_permissions_battery_action">允许</string>
@@ -3862,7 +3862,7 @@
     <string name="font_download_ready">%1$s 字体已就绪</string>
     <string name="font_download_failed">无法下载 %1$s。将使用系统字体。</string>
     <string name="font_downloads">字体下载</string>
-    <string name="glass_material_family_kototoro">Kototoro（推荐）</string>
+    <string name="glass_material_family_kototoro">Amuratsu（推荐）</string>
     <string name="glass_material_family_haze">朦胧</string>
     <string name="glass_material_family_cupertino">苹果风</string>
     <string name="glass_material_family_fluent">Fluent</string>

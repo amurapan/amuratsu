@@ -47,7 +47,7 @@ class MangaBakaApi(
             query.forEach { (key, value) -> addQueryParameter(key, value) }
         }.build()
         val request = Request.Builder().url(url).header("Accept", "application/json")
-            .header("User-Agent", "Kototoro (Android; https://github.com/Kototoro-app/Kototoro)").apply {
+            .header("User-Agent", "Amuratsu (Android; https://github.com/amurapan/amuratsu)").apply {
             if (token != null) {
                 if (token.startsWith("mb-")) header("x-api-key", token)
                 else header("Authorization", "Bearer $token")

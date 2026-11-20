@@ -120,7 +120,7 @@
     <string name="_import">Importeren</string>
     <string name="delete">Verwijderen</string>
     <string name="operation_not_supported">Deze bewerking wordt niet ondersteund</string>
-    <string name="cloudstream_newpipe_required">Deze extensie vereist NewPipe-klassen die de bij Kototoro geleverde NewPipe niet heeft, waardoor afspelen niet mogelijk is. Probeer de extensie of Kototoro bij te werken.</string>
+    <string name="cloudstream_newpipe_required">Deze extensie vereist NewPipe-klassen die de bij Amuratsu geleverde NewPipe niet heeft, waardoor afspelen niet mogelijk is. Probeer de extensie of Amuratsu bij te werken.</string>
     <string name="text_file_not_supported">Kies een ZIP- of CBZ-bestand.</string>
     <string name="no_description">Geen beschrijving</string>
     <string name="clear_pages_cache">Pagina-cache wissen</string>
@@ -184,7 +184,7 @@
     <string name="replace_rule_disable_all_summary">Vervangingsregels tijdelijk uitschakelen</string>
     <string name="replace_rule_edit">Regel bewerken</string>
     <string name="replace_rule_import">Legado-regels importeren</string>
-    <string name="replace_rule_import_summary">JSON-array exporteren via Legado of Kototoro</string>
+    <string name="replace_rule_import_summary">JSON-array exporteren via Legado of Amuratsu</string>
     <string name="replace_rule_export">Regels exporteren</string>
     <string name="replace_rule_export_summary">Regels exporteren in compatibel JSON-formaat</string>
     <string name="replace_rule_empty">Geen vervangingsregels</string>
@@ -314,7 +314,7 @@
     <string name="enter_password">Voer wachtwoord in</string>
     <string name="wrong_password">Verkeerd wachtwoord</string>
     <string name="protect_application">App beveiligen</string>
-    <string name="protect_application_summary">Vraag om wachtwoord bij starten van Kototoro</string>
+    <string name="protect_application_summary">Vraag om wachtwoord bij starten van Amuratsu</string>
     <string name="repeat_password">Herhaal het wachtwoord</string>
     <string name="passwords_mismatch">Wachtwoorden komen niet overeen</string>
     <string name="about">Over</string>
@@ -421,8 +421,8 @@
     <string name="clear_local_novel_storage_prompt">Alle lokaal opgeslagen en geïmporteerde romanbestanden verwijderen? Dit kan niet ongedaan worden gemaakt.</string>
     <string name="clear_local_video_storage_prompt">Alle lokaal opgeslagen en geïmporteerde videobestanden verwijderen? Dit kan niet ongedaan worden gemaakt.</string>
     <string name="welcome">Welkom</string>
-    <string name="welcome_intro_title">Kototoro instellen</string>
-    <string name="welcome_intro_summary">Kies hoe je wilt lezen en kijken. Kototoro gebruikt nu plug-in-gebaseerde bronfamilies voor manga, romans en video, waaronder JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader en Cloudstream.</string>
+    <string name="welcome_intro_title">Amuratsu instellen</string>
+    <string name="welcome_intro_summary">Kies hoe je wilt lezen en kijken. Amuratsu gebruikt nu plug-in-gebaseerde bronfamilies voor manga, romans en video, waaronder JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader en Cloudstream.</string>
     <string name="welcome_step_start">Start</string>
     <string name="welcome_step_sources">Bronnen</string>
     <string name="welcome_step_preferences">Voorkeuren</string>
@@ -432,11 +432,11 @@
     <string name="welcome_glass_preset_title">Glasafwerking</string>
     <string name="welcome_glass_preset_summary">Kies de glasafwerkingsvoorinstelling voor de iOS-stijl. Breking is de standaard en kan later worden fijngeturnd in de uiterlijk-instellingen.</string>
     <string name="home_quick_action_wizard">Wizard</string>
-    <string name="welcome_restore_summary">Kototoro al eerder gebruikt? Herstel een back-up, log in om te synchroniseren of voeg eerst lokale mappen toe.</string>
+    <string name="welcome_restore_summary">Amuratsu al eerder gebruikt? Herstel een back-up, log in om te synchroniseren of voeg eerst lokale mappen toe.</string>
     <string name="welcome_source_formats_title">Inhoudsformaten kiezen</string>
     <string name="welcome_source_formats_summary">Deze filters bepalen welke bronfamilies worden ingeschakeld na de installatie.</string>
     <string name="welcome_ecosystems_title">Bron-ecosysteem</string>
-    <string name="welcome_ecosystems_summary">Kototoro ondersteunt meerdere plug-inbronfamilies om te lezen en te kijken. Begin hier met de aanbevolen repositories en pas ze later aan bij extensiebeheer.</string>
+    <string name="welcome_ecosystems_summary">Amuratsu ondersteunt meerdere plug-inbronfamilies om te lezen en te kijken. Begin hier met de aanbevolen repositories en pas ze later aan bij extensiebeheer.</string>
     <string name="welcome_ecosystem_manga">Manga: JAR-parsers, Mihon, IReader, LNReader</string>
     <string name="welcome_ecosystem_novel">Roman: Legado, IReader, LNReader</string>
     <string name="welcome_ecosystem_video">Video: Aniyomi, TVBox, Cloudstream</string>
@@ -445,10 +445,10 @@
     <string name="welcome_preferences_summary">Kies talen en inhoudstypen. Dit kun je later wijzigen in de broninstellingen.</string>
     <string name="welcome_spaces_title">Scheid je ruimtes</string>
     <string name="welcome_spaces_summary">Ruimtes geven manga, romans en anime onafhankelijke navigatie, bladervoorkeuren en lees- of afspeelcontext. Geavanceerde opties en aangepaste ruimtes zijn later beschikbaar in Instellingen &gt; Gebruiker &gt; Ruimtes.</string>
-    <string name="welcome_ready_summary">De instelling is voltooid. Kototoro schakelt bronnen in die overeenkomen met je talen en formaten. Je kunt dit opnieuw starten via Instellingen - Bronnen - Installatiewizard.</string>
-    <string name="welcome_jar_install_success">Kototoro: %1$d nieuwste parserengines succesvol opgehaald en geladen vanaf de clouchnetwerk!</string>
-    <string name="welcome_jar_install_up_to_date">Kototoro: Cloudverificatie voltooid, lokale parsers zijn up-to-date! (%1$d bronnen geladen in totaal)</string>
-    <string name="welcome_jar_install_failed">Kototoro: Laden van parsernetwerk mislukt (%1$s). Probeer het opnieuw of ga naar instellingen om proxymirrors te wisselen</string>
+    <string name="welcome_ready_summary">De instelling is voltooid. Amuratsu schakelt bronnen in die overeenkomen met je talen en formaten. Je kunt dit opnieuw starten via Instellingen - Bronnen - Installatiewizard.</string>
+    <string name="welcome_jar_install_success">Amuratsu: %1$d nieuwste parserengines succesvol opgehaald en geladen vanaf de clouchnetwerk!</string>
+    <string name="welcome_jar_install_up_to_date">Amuratsu: Cloudverificatie voltooid, lokale parsers zijn up-to-date! (%1$d bronnen geladen in totaal)</string>
+    <string name="welcome_jar_install_failed">Amuratsu: Laden van parsernetwerk mislukt (%1$s). Probeer het opnieuw of ga naar instellingen om proxymirrors te wisselen</string>
     <string name="home_placeholder_title">Leesoverzicht</string>
     <string name="home_placeholder_subtitle">Bekijk je recente leesgedrag, updates, bibliotheek, synchronisatie en bronnen op één plek.</string>
     <string name="home_hero_local_subtitle">Ga verder waar je gebleven was of open je recent bekeken items opnieuw.</string>
@@ -1026,7 +1026,7 @@
     <string name="import_completed_hint">Je kunt het originele bestand verwijderen om opslagruimte te besparen</string>
     <string name="import_will_start_soon">Importeren start zo</string>
     <string name="feed">Feed</string>
-    <string name="manga_error_description_pattern">Foutdetails:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. Probeer de &lt;a href=\"%2$s\"&gt;manga in een webbrowser te openen&lt;/a&gt; om te controleren of deze beschikbaar is bij de bron&lt;br&gt;2. Zorg ervoor dat je de &lt;a href=\"kototoro://about\"&gt;nieuwste versie van Kototoro&lt;/a&gt; gebruikt&lt;br&gt;3. Als de manga beschikbaar is, stuur dan een foutrapport naar de ontwikkelaars.</string>
+    <string name="manga_error_description_pattern">Foutdetails:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. Probeer de &lt;a href=\"%2$s\"&gt;manga in een webbrowser te openen&lt;/a&gt; om te controleren of deze beschikbaar is bij de bron&lt;br&gt;2. Zorg ervoor dat je de &lt;a href=\"amuratsu://about\"&gt;nieuwste versie van Amuratsu&lt;/a&gt; gebruikt&lt;br&gt;3. Als de manga beschikbaar is, stuur dan een foutrapport naar de ontwikkelaars.</string>
     <string name="history_shortcuts">Snellezelschema\'s tonen</string>
     <string name="history_shortcuts_summary">Maak recente manga beschikbaar door lang op het app-icoon te drukken</string>
     <string name="reader_control_ltr_summary">Pas de paginaomslagrichting niet aan aan de leesmodus (bijv. rechts drukken gaat altijd naar de volgende pagina). Deze optie is alleen van invloed op hardware-invoerapparaten</string>
@@ -1196,7 +1196,7 @@
     <string name="export_backup_for_other_apps_summary">Kies een doelapp en maak een compatibele back-up: Kotatsu, Mihon, Aniyomi of Usagi.</string>
     <string name="export_backup_choose_target_app">Kies doelapp</string>
     <string name="export_kotatsu_backup">Kotatsu-back-up exporteren</string>
-    <string name="export_kotatsu_backup_summary">Maak een afzonderlijke verouderde back-up voor apps uit de Kotatsu-familie zonder Kototoro-specifieke secties.</string>
+    <string name="export_kotatsu_backup_summary">Maak een afzonderlijke verouderde back-up voor apps uit de Kotatsu-familie zonder Amuratsu-specifieke secties.</string>
     <string name="export_kotatsu_backup_saved">Kotatsu-back-up opgeslagen</string>
     <string name="export_mihon_backup">Mihon-back-up exporteren</string>
     <string name="export_mihon_backup_summary">Exporteer alleen favorieten, categorieën en leesvoortgang voor items van Mihon-bronnen.</string>
@@ -1269,7 +1269,7 @@
     <string name="data_and_privacy">Gegevens en privacy</string>
     <string name="restore_summary">Eerder gemaakte back-up herstellen</string>
     <string name="restore_kototoro_backup">Back-up herstellen</string>
-    <string name="restore_kototoro_backup_summary">Herstel een Kototoro-back-up van elke versie, of een Kotatsu-back-up. Het formaat wordt automatisch gedetecteerd.</string>
+    <string name="restore_kototoro_backup_summary">Herstel een Amuratsu-back-up van elke versie, of een Kotatsu-back-up. Het formaat wordt automatisch gedetecteerd.</string>
     <string name="restore_mode_replace_existing">Bestaande gegevens vervangen</string>
     <string name="restore_mode_replace_existing_summary">Te herstellen onderdelen worden eerst gewist; favorieten en geschiedenis die ontbreken in de back-up worden verwijderd</string>
     <string name="restore_mode_merge_with_existing">Samenvoegen met bestaande gegevens</string>
@@ -2006,7 +2006,7 @@
     <string name="show_pages_thumbs">Paginaminiaturen weergeven</string>
     <string name="show_pages_thumbs_summary">Tab \'Pagina\'s\' weergeven op het detailscherm</string>
     <string name="error_no_data_received">Geen gegevens ontvangen van de server</string>
-    <string name="unsupported_backup_message">Selecteer een geldig Kototoro-back-upbestand</string>
+    <string name="unsupported_backup_message">Selecteer een geldig Amuratsu-back-upbestand</string>
     <string name="hours_short">%d u</string>
     <string name="minutes_short">%d m</string>
     <string name="seconds_short">%d s</string>
@@ -2058,8 +2058,8 @@
     <string name="chapters_read">Gelezen hoofdstukken</string>
     <string name="chapters_left">Resterend</string>
     <string name="external_source">Extern/plugin</string>
-    <string name="plugin_incompatible">Incompatibele plugin of interne fout. Zorg ervoor dat je de nieuwste versie van de plugin en Kototoro gebruikt</string>
-    <string name="plugin_incompatible_with_cause">Pluginfout: %s\n Zorg ervoor dat je de nieuwste versie van de plugin en Kototoro gebruikt</string>
+    <string name="plugin_incompatible">Incompatibele plugin of interne fout. Zorg ervoor dat je de nieuwste versie van de plugin en Amuratsu gebruikt</string>
+    <string name="plugin_incompatible_with_cause">Pluginfout: %s\n Zorg ervoor dat je de nieuwste versie van de plugin en Amuratsu gebruikt</string>
     <string name="plugin_missing_host_classes">%1$s kan niet worden geïnstalleerd omdat deze afhankelijk is van niet-ondersteunde %2$s-hostklassen:\n%3$s</string>
     <string name="connection_ok">Verbinding is in orde</string>
     <string name="invalid_proxy_configuration">Ongeldige proxyconfiguratie</string>
@@ -2259,7 +2259,7 @@
     <string name="search_disabled_sources">Doorzoeken van uitgeschakelde bronnen</string>
     <string name="error_details">Foutdetails</string>
     <string name="error_disclaimer_manga">Probeer de manga in een webbrowser te openen om te controleren of deze beschikbaar is op de bron.</string>
-    <string name="error_disclaimer_app_outdated">Het lijkt erop dat je versie van Kototoro verouderd is. Installeer de nieuwste versie om alle beschikbare fixes te ontvangen.</string>
+    <string name="error_disclaimer_app_outdated">Het lijkt erop dat je versie van Amuratsu verouderd is. Installeer de nieuwste versie om alle beschikbare fixes te ontvangen.</string>
     <string name="error_disclaimer_report">Je kunt een foutrapport naar de ontwikkelaars sturen om ons te helpen de fout op te sporen en te verhelpen</string>
     <string name="enable_source_manga">Mangabron inschakelen</string>
     <string name="enable_source_novel">Romanbron inschakelen</string>
@@ -2277,7 +2277,7 @@
     <string name="recommendation_novel">aanbevolen romans</string>
     <string name="recommendation_video">aanbevolen video\'s</string>
     <string name="link_to_manga_on_s">Link naar manga op %s</string>
-    <string name="link_to_manga_in_app">Link naar manga in Kototoro</string>
+    <string name="link_to_manga_in_app">Link naar manga in Amuratsu</string>
     <string name="clear_browser_data">Browsergegevens wissen</string>
     <string name="clear_browser_data_summary">Browsergegevens zoals cache en cookies wissen. Waarschuwing: autorisatie in bronnen kan ongeldig worden</string>
     <string name="no_write_permission_to_file">Geen schrijfrechten voor het bestand</string>
@@ -2327,7 +2327,7 @@
     <string name="discord_token_hint">Plak je Discord-token hier</string>
     <string name="discord_rpc_summary">Toon je leesstatus op Discord</string>
     <string name="obtain">Verkrijgen</string>
-    <string name="discord_rpc_description">Manga lezen op Kototoro - een mangalezer-app</string>
+    <string name="discord_rpc_description">Manga lezen op Amuratsu - een mangalezer-app</string>
     <string name="discord_logout_summary">Wis de opgeslagen Discord-autorisatie</string>
     <string name="reading_s">%s lezen</string>
     <string name="read_on_s">Lezen op %s</string>
@@ -2355,7 +2355,7 @@
     <string name="sync_backend_switch_webdav_title">Overschakelen naar WebDAV-back-up?</string>
     <string name="sync_backend_switch_webdav_confirm">Google Drive-synchronisatie is momenteel ingeschakeld. Het inschakelen van WebDAV-back-up schakelt Google Drive-synchronisatie uit en behoudt je Google-aanmelding.</string>
     <string name="sync_sign_in">Google Drive-synchronisatie voorbereiden</string>
-    <string name="sync_sign_in_summary">Gebruikt Google Drive-appgegevens met de minimale Drive-appdata-toestemming om abonnementen en updaterecords te synchroniseren. Kototoro heeft geen toegang tot je Drive-bestanden.</string>
+    <string name="sync_sign_in_summary">Gebruikt Google Drive-appgegevens met de minimale Drive-appdata-toestemming om abonnementen en updaterecords te synchroniseren. Amuratsu heeft geen toegang tot je Drive-bestanden.</string>
     <string name="google_drive_sync_unregistered_build_error">Google Drive-synchronisatie wordt niet ondersteund in ontwikkelings- of nightly-builds. Gebruik officiële releases of WebDAV-synchronisatie.</string>
     <string name="sync_sign_out">Uitloggen</string>
     <string name="sync_account">Ingelogd</string>
@@ -2410,8 +2410,8 @@
     <string name="webdav_remote_backups_inspect">Externe back-ups controleren</string>
     <string name="webdav_remote_backups_inspect_summary">Download en verifieer of elke externe back-up veilig kan worden hersteld.</string>
     <string name="webdav_remote_backups_clear">Externe WebDAV-back-ups wissen</string>
-    <string name="webdav_remote_backups_clear_summary">Verwijder alle Kototoro-back-upbestanden op het ingestelde WebDAV-pad. Lokale gegevens worden niet gewijzigd.</string>
-    <string name="webdav_remote_backups_clear_confirm">Alle Kototoro-back-upbestanden van het ingestelde WebDAV-pad verwijderen? Lokale gegevens worden niet gewijzigd.</string>
+    <string name="webdav_remote_backups_clear_summary">Verwijder alle Amuratsu-back-upbestanden op het ingestelde WebDAV-pad. Lokale gegevens worden niet gewijzigd.</string>
+    <string name="webdav_remote_backups_clear_confirm">Alle Amuratsu-back-upbestanden van het ingestelde WebDAV-pad verwijderen? Lokale gegevens worden niet gewijzigd.</string>
     <string name="webdav_remote_backups_loading">WebDAV-back-ups laden…</string>
     <string name="webdav_remote_backup_status_unknown">Niet gecontroleerd</string>
     <string name="webdav_remote_backup_status_restorable">Herstelbaar</string>
@@ -2819,7 +2819,7 @@
     <string name="trust_and_add">Vertrouw en voeg toe</string>
     <string name="trust_extension_repository_message">Repository: %1$s\nWebsite: %2$s\nSHA-256-vingerafdruk:\n%3$s\n\nVerifieer deze vingerafdruk bij de uitgever voordat je deze repository vertrouwt.</string>
     <string name="untrusted_extension_message">%1$s (%2$s) is geïnstalleerd, maar de handtekening komt niet overeen met de geselecteerde repository-vingerafdruk.\n\nRepository-vingerafdruk: %3$s\n\nVerwijder het geïnstalleerde pakket voordat je het opnieuw installeert vanuit deze repository.</string>
-    <string name="incompatible_extension_message">%1$s %2$s kan niet worden geïnstalleerd omdat de bibliotheekversie (%3$s) buiten het door Kototoro ondersteunde bereik valt.</string>
+    <string name="incompatible_extension_message">%1$s %2$s kan niet worden geïnstalleerd omdat de bibliotheekversie (%3$s) buiten het door Amuratsu ondersteunde bereik valt.</string>
     <string name="built_in_sources">Ingebouwd</string>
     <string name="select_all">Alles selecteren</string>
     <string name="deselect_all">Selectie opheffen</string>
@@ -2859,7 +2859,7 @@
     <string name="welcome_plugins_repo_yakateam">Yakateam-parsers</string>
     <string name="welcome_plugins_repo_redo">Redo-parsers</string>
     <string name="welcome_plugins_repo_uma">UMA (Tsuki-parsers)</string>
-    <string name="welcome_plugins_disclaimer">Deze extensieopslagplaatsen worden onderhouden door onafhankelijke online gemeenschappen. De ontwikkelaars van Kototoro hebben geen enkele band, controle of associatie met deze opslagplaatsen van derden. Ik erken dat ik deze bronnen op eigen risico configureer.</string>
+    <string name="welcome_plugins_disclaimer">Deze extensieopslagplaatsen worden onderhouden door onafhankelijke online gemeenschappen. De ontwikkelaars van Amuratsu hebben geen enkele band, controle of associatie met deze opslagplaatsen van derden. Ik erken dat ik deze bronnen op eigen risico configureer.</string>
     <string name="welcome_plugins_start_btn">Opslagplaatsen configureren</string>
     <string name="welcome_plugins_configured">%1$d nieuw(e) brontype(n)/opslagplaats(en) geconfigureerd: %2$s. Pakketten zijn nog niet gedownload — installeer overeenkomende pakketten in de volgende stap.</string>
     <string name="welcome_plugins_configured_none">Er kon geen bron of opslagplaats worden geconfigureerd. Controleer je netwerk of kies andere opslagplaatsen en probeer het opnieuw.</string>
@@ -2889,22 +2889,22 @@
     <string name="welcome_install_system_launch_failed">Kan het systeeminstallatieprogramma niet starten: %1$s</string>
     <string name="welcome_install_skip">Installatie overslaan — ik doe het later via Extensiebeheer</string>
     <string name="welcome_install_step_title">Extensies batchgewijs installeren</string>
-    <string name="welcome_install_step_summary">Kies welke brontypes en instellingen je wilt gebruiken en laat Kototoro alles op de achtergrond downloaden en installeren.</string>
+    <string name="welcome_install_step_summary">Kies welke brontypes en instellingen je wilt gebruiken en laat Amuratsu alles op de achtergrond downloaden en installeren.</string>
     <string name="welcome_install_kinds_title">Brontypes om te installeren</string>
     <string name="welcome_install_kinds_summary">Alleen de aangevinkte types worden verwerkt. Niet-aangevinkte types (bijv. Mihon, als je dit liever later doet) blijven staan om te installeren via Extensiebeheer.</string>
     <string name="welcome_install_kinds_empty">Nog geen opslagplaatsen geconfigureerd. Ga terug en voeg eerst opslagplaatsen toe.</string>
     <string name="welcome_install_nsfw_title">NSFW-inhoud opnemen</string>
     <string name="welcome_install_nsfw_summary">Standaard uitgeschakeld — pakketten voor volwassenen worden gefilterd uit de installatielijst.</string>
-    <string name="welcome_intro_app_title">Kototoro · Open-source lezer</string>
-    <string name="welcome_intro_body">Kototoro is een open-source multimedialezer / speler. Het ondersteunt een breed ecosysteem van community-extensies, maar bevat zelf geen inhoudsbronnen.</string>
+    <string name="welcome_intro_app_title">Amuratsu · Open-source lezer</string>
+    <string name="welcome_intro_body">Amuratsu is een open-source multimedialezer / speler. Het ondersteunt een breed ecosysteem van community-extensies, maar bevat zelf geen inhoudsbronnen.</string>
     <string name="welcome_intro_concepts_title">Drie concepten in 30 seconden</string>
     <string name="welcome_intro_repo_label">Opslagplaats</string>
     <string name="welcome_intro_repo_body">Een URL naar een verzameling extensies van derden, onderhouden door een onafhankelijke community (bijvoorbeeld Mihon-opslagplaatsen, TVBox-lijsten of LNReader-plugin-opslagplaatsen).</string>
     <string name="welcome_intro_extension_label">Extensie</string>
-    <string name="welcome_intro_extension_body">Eén installeerbaar pakket in een opslagplaats — een JAR, APK of JSON-lijst. Geïnstalleerde extensies geven Kototoro de mogelijkheid om van een site te lezen of af te spelen.</string>
+    <string name="welcome_intro_extension_body">Eén installeerbaar pakket in een opslagplaats — een JAR, APK of JSON-lijst. Geïnstalleerde extensies geven Amuratsu de mogelijkheid om van een site te lezen of af te spelen.</string>
     <string name="welcome_intro_source_label">Bron</string>
     <string name="welcome_intro_source_body">Eén concrete inhoudsbron die je in de app ziet nadat een extensie is geïnstalleerd of geïmporteerd — bijvoorbeeld een specifieke manga- of videowebsite.</string>
-    <string name="welcome_intro_disclaimer">Het gebruik van extensies van derden is geheel op eigen risico: runtime-gedrag, legaliteit en inhoud worden niet beheerd door het Kototoro-project.</string>
+    <string name="welcome_intro_disclaimer">Het gebruik van extensies van derden is geheel op eigen risico: runtime-gedrag, legaliteit en inhoud worden niet beheerd door het Amuratsu-project.</string>
     <string name="welcome_intro_continue">Ik begrijp het — doorgaan</string>
     <string name="welcome_done_title">Bijna klaar</string>
     <string name="welcome_done_summary">Je installatieoverzicht en een paar tips.</string>
@@ -2913,10 +2913,10 @@
     <string name="welcome_done_json_note">Op JSON gebaseerde types (Legado / TVBox / LNReader) worden automatisch geïmporteerd; als je ook andere JSON-opslagplaatsen hebt toegevoegd, importeer deze dan in Extensiebeheer.</string>
     <string name="welcome_done_title_finished">Installatie voltooid</string>
     <string name="welcome_done_summary_finished">De assistent is klaar — er zijn geen opslagplaatsen of bronnen automatisch toegevoegd.</string>
-    <string name="welcome_done_body_finished">Kototoro heeft tijdens de installatie geen bronnen toegevoegd. Je kunt op elk moment je eigen opslagplaatsen en bronnen toevoegen via Instellingen → Inhoudsbronnen (Extensiebeheer).</string>
+    <string name="welcome_done_body_finished">Amuratsu heeft tijdens de installatie geen bronnen toegevoegd. Je kunt op elk moment je eigen opslagplaatsen en bronnen toevoegen via Instellingen → Inhoudsbronnen (Extensiebeheer).</string>
     <string name="welcome_done_advice_title">Als een bron niet werkt</string>
     <string name="welcome_done_advice_summary">Een kort stappenplan voor probleemoplossing, zodat de juiste personen het rapport zien.</string>
-    <string name="welcome_done_advice_body">1. Bevestig het probleem met de originele host-app van de extensie — een bron van het type Mihon moet bijvoorbeeld in de Mihon-app worden getest.\n2. Als het probleem zich daar ook voordoet, behoort dit tot de opslagplaats die de extensie onderhoudt: open een issue op de URL van de opslagplaats zelf.\n3. Als het alleen in Kototoro optreedt, meld dit dan in de opslagplaats van het Kototoro-project en vermeld de bronnaam, de extensieversie en wat je hebt geprobeerd.</string>
+    <string name="welcome_done_advice_body">1. Bevestig het probleem met de originele host-app van de extensie — een bron van het type Mihon moet bijvoorbeeld in de Mihon-app worden getest.\n2. Als het probleem zich daar ook voordoet, behoort dit tot de opslagplaats die de extensie onderhoudt: open een issue op de URL van de opslagplaats zelf.\n3. Als het alleen in Amuratsu optreedt, meld dit dan in de opslagplaats van het Amuratsu-project en vermeld de bronnaam, de extensieversie en wat je hebt geprobeerd.</string>
     <string name="welcome_step_counter">Stap %1$d van %2$d</string>
     <string name="welcome_action_configure_repos">Geselecteerde opslagplaatsen configureren</string>
     <string name="welcome_action_install_count">%1$d extensies installeren</string>
@@ -2950,7 +2950,7 @@
     <string name="welcome_permissions_notifications_title">Meldingen</string>
     <string name="welcome_permissions_notifications_summary">Toont meldingen voor downloads, updates en de speler.</string>
     <string name="welcome_permissions_packages_title">Geïnstalleerde apps</string>
-    <string name="welcome_permissions_packages_summary">Hiermee kan Kototoro reeds geïnstalleerde extensies en host-apps (Mihon, Aniyomi, …) detecteren. Vermeld in het manifest en automatisch verleend.</string>
+    <string name="welcome_permissions_packages_summary">Hiermee kan Amuratsu reeds geïnstalleerde extensies en host-apps (Mihon, Aniyomi, …) detecteren. Vermeld in het manifest en automatisch verleend.</string>
     <string name="welcome_permissions_battery_title">Achtergrondbehoud</string>
     <string name="welcome_permissions_battery_summary">Houdt downloads en updates op de achtergrond actief wanneer het scherm uit is of het apparaat niet wordt gebruikt.</string>
     <string name="welcome_permissions_battery_action">Toestaan</string>
@@ -3364,11 +3364,11 @@
     <string name="pref_glass_blur_quality_summary">Resolutie waarop glas- en randvervaging worden berekend. Lager bespaart GPU en batterij; hoger houdt tekst die de vervaging verlaat scherper</string>
     <string name="pref_glass_blur_quality_performance">Prestaties</string>
     <string name="pref_glass_blur_quality_quality">Kwaliteit</string>
-    <string name="glass_material_family_kototoro">Kototoro (Aanbevolen)</string>
+    <string name="glass_material_family_kototoro">Amuratsu (Aanbevolen)</string>
     <string name="glass_material_family_haze">Haze</string>
     <string name="glass_material_family_cupertino">Cupertino</string>
     <string name="glass_material_family_fluent">Fluent</string>
-    <string name="glass_material_kototoro">Kototoro (Aanbevolen)</string>
+    <string name="glass_material_kototoro">Amuratsu (Aanbevolen)</string>
     <string name="glass_material_haze_ultra_thin">Haze Ultrabestand</string>
     <string name="glass_material_haze_thin">Haze Dun</string>
     <string name="glass_material_haze_regular">Haze Normaal</string>

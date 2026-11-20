@@ -33,10 +33,10 @@ composeCompiler {
 
 def allAbiFilters = ['arm64-v8a', 'armeabi-v7a', 'x86_64', 'x86']
 def requestedTaskNames = gradle.startParameter.taskNames.collect { it.toLowerCase(Locale.ROOT) }
-def debugOnlyAbiBuild = !requestedTaskNames.isEmpty() &&
-	requestedTaskNames.any { it.contains('debug') } &&
+def singleAbiBuild = !requestedTaskNames.isEmpty() &&
+	requestedTaskNames.any { it.contains('debug') || it.contains('preview') } &&
 	requestedTaskNames.every { !it.contains('release') && !it.contains('nightly') }
-def activeAbiFilters = debugOnlyAbiBuild ? ['arm64-v8a'] : allAbiFilters
+def activeAbiFilters = singleAbiBuild ? ['arm64-v8a'] : allAbiFilters
 
 android {
 	// Phase B: Compose 1.12 requires compileSdk 37; targetSdk stays 36
@@ -67,8 +67,8 @@ android {
 		// Phase E: targetSdk 37. Large-screen orientation locks are skipped in
 		// ScreenOrientationHelper to match Android 17 behavior.
 		targetSdk = 37
-		versionCode = 1263
-		versionName = '2.4.6'
+		versionCode = 1264
+		versionName = '0.1.0-alpha.2'
 		manifestPlaceholders = [
 			appClassName: 'org.skepsun.kototoro.KototoroApp'
 		]
@@ -123,6 +123,13 @@ android {
 				signingConfig signingConfigs.release
 			}
 		}
+		preview {
+			initWith release
+			// Update the existing test install without clearing its library or progress.
+			applicationIdSuffix = '.debug'
+			signingConfig signingConfigs.debug
+			matchingFallbacks = ['release']
+		}
 		benchmark {
 			initWith release
 			signingConfig signingConfigs.debug
@@ -139,7 +146,7 @@ android {
 			enable true
 			reset()
 			include(*activeAbiFilters)
-			universalApk !debugOnlyAbiBuild
+			universalApk !singleAbiBuild
 		}
 	}
 	buildFeatures {
@@ -179,6 +186,8 @@ android {
 	sourceSets {
 		androidTest.assets.srcDirs += files("$projectDir/schemas".toString())
 		main.java.srcDirs += 'src/main/kotlin/'
+		preview.kotlin.srcDirs += 'src/release/kotlin/'
+		preview.res.srcDirs += 'src/release/res/'
 		benchmark.kotlin.srcDirs += 'src/release/kotlin/'
 		benchmark.res.srcDirs += 'src/release/res/'
 		test.java.srcDirs += 'src/test/kotlin/'

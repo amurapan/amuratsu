@@ -189,7 +189,7 @@
     <string name="manga_downloading_">Laadin alla…</string>
     <string name="screenshots_block_all">Alati blokeeri</string>
     <string name="new_sources_text">Uued manga allikad on saadaval</string>
-    <string name="manga_error_description_pattern">Vea detailid:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. Proovi &lt;a href=%2$s&gt;avada mangat oma browseris&lt;/a&gt; et olla kindel et see manga on saadaval allikast &lt;br&gt;2. tee kindlaks et sa kasutad &lt;a href=kototoro://about&gt;kõige uuemat versiooni Kototorot&lt;/a&gt;&lt;br&gt;3. Kui see on saadaval, saada vea raport arendajatele.</string>
+    <string name="manga_error_description_pattern">Vea detailid:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. Proovi &lt;a href=%2$s&gt;avada mangat oma browseris&lt;/a&gt; et olla kindel et see manga on saadaval allikast &lt;br&gt;2. tee kindlaks et sa kasutad &lt;a href=amuratsu://about&gt;kõige uuemat versiooni Amuratsut&lt;/a&gt;&lt;br&gt;3. Kui see on saadaval, saada vea raport arendajatele.</string>
     <string name="open_in_browser">Ava veebibrauser</string>
     <string name="about_app_translation">Tõlge</string>
     <string name="zoom_mode_fit_height">Sobita kõrgusele</string>
@@ -266,7 +266,7 @@
     <string name="check_for_updates">Otsi uuendusi</string>
     <string name="exclude_nsfw_from_history_summary">Manga märkitud kui NSFW kungai ei lisata sinu ajalukku ja progressi ei salvestata</string>
     <string name="mark_as_current">Margi kui präegune</string>
-    <string name="protect_application_summary">Kusi parooli avades Kototorot</string>
+    <string name="protect_application_summary">Kusi parooli avades Amuratsut</string>
     <string name="right_to_left">Paremalt-vasakule</string>
     <string name="show_reading_indicators_summary">Näita mitu protsenti on loetud ajaloos ja lemmikutes</string>
     <string name="random">Suvakas</string>
@@ -599,7 +599,7 @@
     <string name="appearance_mode">Välimuse režiim</string>
     <string name="page_save_manga_title_length">Manga pealkirja pikkus failinimedes</string>
     <string name="page_save_manga_title_length_summary">Salvestatud pildifailides säilitatavate manga pealkirja märkide arv (12–64)</string>
-    <string name="cloudstream_newpipe_required">See laiend vajab NewPipe\'i klasse, mida Kototoro sisseehitatud NewPipe ei sisalda, mistõttu ei saa see videosid esitada. Proovige laiendust või Kototoro värskendada.</string>
+    <string name="cloudstream_newpipe_required">See laiend vajab NewPipe\'i klasse, mida Amuratsu sisseehitatud NewPipe ei sisalda, mistõttu ei saa see videosid esitada. Proovige laiendust või Amuratsu värskendada.</string>
     <string name="clear_chapter_thumbnails">Tühjenda peatükkide pisipildid</string>
     <string name="continuous_horizontal">Pidev horisontaalne</string>
     <string name="continuous_horizontal_reversed">Loe paremalt vasakule</string>
@@ -651,7 +651,7 @@
     <string name="replace_rule_disable_all_summary">Peata ajutiselt asendusreeglite rakendamine</string>
     <string name="replace_rule_edit">Muuda reeglit</string>
     <string name="replace_rule_import">Impordi Legado reeglid</string>
-    <string name="replace_rule_import_summary">Impordi Legado või Kototoro eksporditud JSON-massiiv</string>
+    <string name="replace_rule_import_summary">Impordi Legado või Amuratsu eksporditud JSON-massiiv</string>
     <string name="replace_rule_export">Ekspordi reeglid</string>
     <string name="replace_rule_export_summary">Ekspordi reeglid ühilduvas JSON-vormingus</string>
     <string name="replace_rule_empty">Asendusreeglid puuduvad</string>
@@ -784,8 +784,8 @@
     <string name="clear_local_manga_storage_prompt">Kustutada kõik kohapeal salvestatud ja imporditud mangafailid? Seda tegevust ei saa tagasi võtta.</string>
     <string name="clear_local_novel_storage_prompt">Kustutada kõik kohapeal salvestatud ja imporditud romaanifailid? Seda tegevust ei saa tagasi võtta.</string>
     <string name="clear_local_video_storage_prompt">Kustutada kõik kohapeal salvestatud ja imporditud videofailid? Seda tegevust ei saa tagasi võtta.</string>
-    <string name="welcome_intro_title">Seadista Kototoro</string>
-    <string name="welcome_intro_summary">Vali, kuidas soovid lugeda ja vaadata. Kototoro kasutab nüüd pluginapõhiseid allikaperekondi manga, romaanide ja videote jaoks, sealhulgas JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader ja Cloudstream.</string>
+    <string name="welcome_intro_title">Seadista Amuratsu</string>
+    <string name="welcome_intro_summary">Vali, kuidas soovid lugeda ja vaadata. Amuratsu kasutab nüüd pluginapõhiseid allikaperekondi manga, romaanide ja videote jaoks, sealhulgas JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader ja Cloudstream.</string>
     <string name="welcome_step_start">Alusta</string>
     <string name="welcome_step_sources">Allikad</string>
     <string name="welcome_step_preferences">Eelistused</string>
@@ -795,11 +795,11 @@
     <string name="welcome_glass_preset_title">Klaasviimistlus</string>
     <string name="welcome_glass_preset_summary">Vali iOS-i stiili klaasviimistluse eelseadistus. Murdumine on vaikimisi valik ja seda saab hiljem välimuse sätetes täpsemalt häälestada.</string>
     <string name="home_quick_action_wizard">Viisard</string>
-    <string name="welcome_restore_summary">Kasutasid Kototoro varem? Taasta varukoopia, logi sisse sünkroonimiseks või lisa esmalt kohalikud kaustad.</string>
+    <string name="welcome_restore_summary">Kasutasid Amuratsu varem? Taasta varukoopia, logi sisse sünkroonimiseks või lisa esmalt kohalikud kaustad.</string>
     <string name="welcome_source_formats_title">Vali sisuvormingud</string>
     <string name="welcome_source_formats_summary">Need filtrid otsustavad, millised allikaperekonnad pärast häälestust lubatakse.</string>
     <string name="welcome_ecosystems_title">Allikate ökosüsteem</string>
-    <string name="welcome_ecosystems_summary">Kototoro toetab lugemiseks ja vaatamiseks mitut pluginaallikate perekonda. Alusta siinsetest soovitatud hoidlatest ja häälesta need hiljem laienduste halduses täpsemalt.</string>
+    <string name="welcome_ecosystems_summary">Amuratsu toetab lugemiseks ja vaatamiseks mitut pluginaallikate perekonda. Alusta siinsetest soovitatud hoidlatest ja häälesta need hiljem laienduste halduses täpsemalt.</string>
     <string name="welcome_ecosystem_manga">Manga: JAR-parserid, Mihon, IReader, LNReader</string>
     <string name="welcome_ecosystem_novel">Romaan: Legado, IReader, LNReader</string>
     <string name="welcome_ecosystem_video">Video: Aniyomi, TVBox, Cloudstream</string>
@@ -808,10 +808,10 @@
     <string name="welcome_preferences_summary">Vali keeled ja sisutüübid. Seda saad hiljem allika sätetes muuta.</string>
     <string name="welcome_spaces_title">Eralda oma ruumid</string>
     <string name="welcome_spaces_summary">Ruumid annavad mangadele, romaanidele ja animedele sõltumatu navigeerimise, sirvimiseelistused ning lugemis- või esituskonteksti. Täpsemad valikud ja kohandatud ruumid on hiljem saadaval jaotises Seaded &gt; Kasutaja &gt; Ruumid.</string>
-    <string name="welcome_ready_summary">Häälestus on valmis. Kototoro lubab valitud keeltele ja vormingutele vastavad allikad. Saate viisardi uuesti avada seadetest.</string>
-    <string name="welcome_jar_install_success">Kototoro: Viimased %1$d parseri mootorit on pilvevõrgust edukalt alla laaditud ja rakendatud!</string>
-    <string name="welcome_jar_install_up_to_date">Kototoro: Pilvekontroll on valmis, kohalikud parserid on ajakohased! (Laaditud kokku %1$d allikat)</string>
-    <string name="welcome_jar_install_failed">Kototoro: Parseri võrgu laadimine ebaõnnestus (%1$s), proovi uuesti või mine sätetesse, et vahetada puhverserveri peegleid</string>
+    <string name="welcome_ready_summary">Häälestus on valmis. Amuratsu lubab valitud keeltele ja vormingutele vastavad allikad. Saate viisardi uuesti avada seadetest.</string>
+    <string name="welcome_jar_install_success">Amuratsu: Viimased %1$d parseri mootorit on pilvevõrgust edukalt alla laaditud ja rakendatud!</string>
+    <string name="welcome_jar_install_up_to_date">Amuratsu: Pilvekontroll on valmis, kohalikud parserid on ajakohased! (Laaditud kokku %1$d allikat)</string>
+    <string name="welcome_jar_install_failed">Amuratsu: Parseri võrgu laadimine ebaõnnestus (%1$s), proovi uuesti või mine sätetesse, et vahetada puhverserveri peegleid</string>
     <string name="home_placeholder_title">Lugemise juhtpaneel</string>
     <string name="home_placeholder_subtitle">Vaata oma viimast lugemist, värskendusi, teeki, sünkroonimist ja allikaid ühes kohas.</string>
     <string name="home_hero_local_subtitle">Jätka pooleli jäänud kohast või hüppa tagasi hiljuti avatud sisu juurde.</string>
@@ -1366,7 +1366,7 @@
     <string name="export_backup_for_other_apps_summary">Valige sihtrakendus ja looge ühilduv varukoopia: Kotatsu, Mihon, Aniyomi või Usagi.</string>
     <string name="export_backup_choose_target_app">Vali sihtrakendus</string>
     <string name="export_kotatsu_backup">Ekspordi Kotatsu varukoopia</string>
-    <string name="export_kotatsu_backup_summary">Looge eraldi pärandvarukoopia Kotatsu-perekonna rakendustele ilma Kototoro-spetsiifiliste jaotisteta.</string>
+    <string name="export_kotatsu_backup_summary">Looge eraldi pärandvarukoopia Kotatsu-perekonna rakendustele ilma Amuratsu-spetsiifiliste jaotisteta.</string>
     <string name="export_kotatsu_backup_saved">Kotatsu varukoopia salvestatud</string>
     <string name="export_mihon_backup">Ekspordi Mihoni varukoopia</string>
     <string name="export_mihon_backup_summary">Ekspordi ainult Mihoni allika kirjete lemmikud, kategooriad ja lugemisprogress.</string>
@@ -1395,7 +1395,7 @@
     <string name="import_backup_started_background">Väline varukoopia imporditakse taustal</string>
     <string name="username_password_enter_hint">Jätkamiseks sisestage kasutajanimi ja parool</string>
     <string name="restore_kototoro_backup">Taasta varukoopia</string>
-    <string name="restore_kototoro_backup_summary">Taasta Kototoro varukoopia mis tahes versioonist või Kotatsu varukoopia. Vorming tuvastatakse automaatselt.</string>
+    <string name="restore_kototoro_backup_summary">Taasta Amuratsu varukoopia mis tahes versioonist või Kotatsu varukoopia. Vorming tuvastatakse automaatselt.</string>
     <string name="restore_mode_replace_existing">Asenda olemasolevad andmed</string>
     <string name="restore_mode_replace_existing_summary">Taastatavad jaotised tühjendatakse esmalt; varukoopiast puuduvad lemmikud ja ajalugu eemaldatakse</string>
     <string name="restore_mode_merge_with_existing">Ühenda olemasolevate andmetega</string>
@@ -2014,7 +2014,7 @@
     <string name="show_pages_thumbs">Kuva lehtede pisipilte</string>
     <string name="show_pages_thumbs_summary">Luba üksikasjade kuval vahekaart „Lehed“</string>
     <string name="error_no_data_received">Serverist ei saanud andmeid</string>
-    <string name="unsupported_backup_message">Valige sobiv Kototoro varukoopiafail</string>
+    <string name="unsupported_backup_message">Valige sobiv Amuratsu varukoopiafail</string>
     <string name="hours_short">%d t</string>
     <string name="minutes_short">%d m</string>
     <string name="seconds_short">%d s</string>
@@ -2066,8 +2066,8 @@
     <string name="chapters_read">Loetud peatükke</string>
     <string name="chapters_left">Peatükke jäänud</string>
     <string name="external_source">Väline / plugin</string>
-    <string name="plugin_incompatible">Ühildumatu plugin või sisemine tõrge. Veenduge, et kasutate plugina ja Kototoro uusimat versiooni</string>
-    <string name="plugin_incompatible_with_cause">Plugina tõrge: %s\n Veenduge, et kasutate plugina ja Kototoro uusimat versiooni</string>
+    <string name="plugin_incompatible">Ühildumatu plugin või sisemine tõrge. Veenduge, et kasutate plugina ja Amuratsu uusimat versiooni</string>
+    <string name="plugin_incompatible_with_cause">Plugina tõrge: %s\n Veenduge, et kasutate plugina ja Amuratsu uusimat versiooni</string>
     <string name="plugin_missing_host_classes">Faili %1$s ei saa paigaldada, kuna see sõltub toetamata %2$s hostiklassidest:\n%3$s</string>
     <string name="connection_ok">Ühendus on korras</string>
     <string name="invalid_proxy_configuration">Vigane puhverserveri häälestus</string>
@@ -2263,7 +2263,7 @@
     <string name="search_disabled_sources">Otsi keelatud allikatest</string>
     <string name="error_details">Vea üksikasjad</string>
     <string name="error_disclaimer_manga">Proovige manga veebibrauseris avada, et veenduda selle kättesaadavuses allikas.</string>
-    <string name="error_disclaimer_app_outdated">Teie Kototoro versioon näib olevat aegunud. Kõigi saadaolevate paranduste saamiseks installige uusim versioon.</string>
+    <string name="error_disclaimer_app_outdated">Teie Amuratsu versioon näib olevat aegunud. Kõigi saadaolevate paranduste saamiseks installige uusim versioon.</string>
     <string name="error_disclaimer_report">Saate saata vearaporti arendajatele, see aitab meil vea leida ja parandada</string>
     <string name="enable_source_manga">Luba manga allikas</string>
     <string name="enable_source_novel">Luba romaani allikas</string>
@@ -2281,7 +2281,7 @@
     <string name="recommendation_novel">soovitatud romaanid</string>
     <string name="recommendation_video">soovitatud videod</string>
     <string name="link_to_manga_on_s">Viide mangale lehel %s</string>
-    <string name="link_to_manga_in_app">Ava manga Kototoros</string>
+    <string name="link_to_manga_in_app">Ava manga Amuratsus</string>
     <string name="clear_browser_data">Tühjenda brauseri andmed</string>
     <string name="clear_browser_data_summary">Tühjenda brauseri andmed, nagu vahemälu ja küpsised. Hoiatus: autoriseerimine sisupakkuja juures võib aeguda</string>
     <string name="no_write_permission_to_file">Faili kirjutamise õigus puudub</string>
@@ -2331,7 +2331,7 @@
     <string name="discord_token_hint">Kleebi oma Discordi luba siia</string>
     <string name="discord_rpc_summary">Kuva oma lugemisolekut Discordis</string>
     <string name="obtain">Hangi</string>
-    <string name="discord_rpc_description">Manga lugemine rakenduses Kototoro – mangalugeja</string>
+    <string name="discord_rpc_description">Manga lugemine rakenduses Amuratsu – mangalugeja</string>
     <string name="discord_logout_summary">Puhasta salvestatud Discordi autoriseering</string>
     <string name="reading_s">Loen: %s</string>
     <string name="read_on_s">Loe (%s)</string>
@@ -2359,7 +2359,7 @@
     <string name="sync_backend_switch_webdav_title">Kas lülituda WebDAV-varundusele?</string>
     <string name="sync_backend_switch_webdav_confirm">Google Drive\'i sünkroonimine on praegu lubatud. WebDAV-varunduse lubamine lülitab välja Google Drive\'i sünkroonimise, jättes samal ajal teie Google\'i sisselogimise alles.</string>
     <string name="sync_sign_in">Valmista ette Google Drive\'i sünkro</string>
-    <string name="sync_sign_in_summary">Kasutab Google Drive\'i rakenduse andmeid minimaalse Drive\'i rakenduse andmete õigusega tellimuste ja värskenduste sünkroonimiseks. Kototoro ei pääse teie Drive\'i failidele juurde.</string>
+    <string name="sync_sign_in_summary">Kasutab Google Drive\'i rakenduse andmeid minimaalse Drive\'i rakenduse andmete õigusega tellimuste ja värskenduste sünkroonimiseks. Amuratsu ei pääse teie Drive\'i failidele juurde.</string>
     <string name="google_drive_sync_unregistered_build_error">Google Drive\'i sünkroonimine ei ole arendus-/öistes versioonides toetatud. Kasutage ametlikke väljalaskeid või WebDAV-sünkroonimist.</string>
     <string name="sync_sign_out">Logi välja</string>
     <string name="sync_account">Sisse logitud</string>
@@ -2414,8 +2414,8 @@
     <string name="webdav_remote_backups_inspect">Kontrolli kaugtõmmiseid</string>
     <string name="webdav_remote_backups_inspect_summary">Laadige alla ja kontrollige, kas iga kaugtõmmist saab ohutult taastada.</string>
     <string name="webdav_remote_backups_clear">Tühjenda kaugvarukoopiad WebDAV-is</string>
-    <string name="webdav_remote_backups_clear_summary">Kustuta kõik Kototoro varukoopiafailid konfigureeritud WebDAV rajal. Kohalikke andmeid ei muudeta.</string>
-    <string name="webdav_remote_backups_clear_confirm">Kas kustutada kõik Kototoro varukoopiafailid konfigureeritud WebDAV rajalt? Kohalikke andmeid ei muudeta.</string>
+    <string name="webdav_remote_backups_clear_summary">Kustuta kõik Amuratsu varukoopiafailid konfigureeritud WebDAV rajal. Kohalikke andmeid ei muudeta.</string>
+    <string name="webdav_remote_backups_clear_confirm">Kas kustutada kõik Amuratsu varukoopiafailid konfigureeritud WebDAV rajalt? Kohalikke andmeid ei muudeta.</string>
     <string name="webdav_remote_backups_loading">WebDAV varukoopiate laadimine…</string>
     <string name="webdav_remote_backup_status_unknown">Kontrollimata</string>
     <string name="webdav_remote_backup_status_restorable">Taastatav</string>
@@ -2823,7 +2823,7 @@
     <string name="trust_and_add">Usalda ja lisa</string>
     <string name="trust_extension_repository_message">Hoidla: %1$s\nVeebisait: %2$s\nSHA-256 sõrmejälg:\n%3$s\n\nEnne hoidla usaldamist kontrolli seda sõrmejälge väljaandjalt.</string>
     <string name="untrusted_extension_message">%1$s (%2$s) on installitud, kuid selle allkiri ei vasta valitud hoidla sõrmejäljele.\n\nHoidla sõrmejälg: %3$s\n\nEnne hoidlast uuesti installimist eemalda installitud pakett.</string>
-    <string name="incompatible_extension_message">Paketti %1$s %2$s ei saa installida, kuna selle teegi versioon (%3$s) jääb Kototoro toetatud vahemikust välja.</string>
+    <string name="incompatible_extension_message">Paketti %1$s %2$s ei saa installida, kuna selle teegi versioon (%3$s) jääb Amuratsu toetatud vahemikust välja.</string>
     <string name="built_in_sources">Sisseehitatud</string>
     <string name="select_all">Vali kõik</string>
     <string name="deselect_all">Tühista valik</string>
@@ -2863,7 +2863,7 @@
     <string name="welcome_plugins_repo_yakateam">Yakateam parserid</string>
     <string name="welcome_plugins_repo_redo">Redo parserid</string>
     <string name="welcome_plugins_repo_uma">UMA (Tsuki parserid)</string>
-    <string name="welcome_plugins_disclaimer">Neid laienduste hoidlaid haldavad sõltumatud veebikogukonnad. Kototoro arendajatel puudub nende kolmanda osapoole hoidlatega seos, kontroll või ühendus. Kinnitan, et konfigureerin neid allikaid omal vastutusel.</string>
+    <string name="welcome_plugins_disclaimer">Neid laienduste hoidlaid haldavad sõltumatud veebikogukonnad. Amuratsu arendajatel puudub nende kolmanda osapoole hoidlatega seos, kontroll või ühendus. Kinnitan, et konfigureerin neid allikaid omal vastutusel.</string>
     <string name="welcome_plugins_start_btn">Konfigureeri hoidlad</string>
     <string name="welcome_plugins_configured">Konfigureeriti %1$d uut allika-/hoidlatüüpi: %2$s. Pakette pole veel alla laaditud — installi sobivad järgmises etapis.</string>
     <string name="welcome_plugins_configured_none">Ühtegi allikat ega hoidlat ei saanud konfigureerida. Kontrolli võrguühendust või vali teised hoidlad ja proovi uuesti.</string>
@@ -2893,22 +2893,22 @@
     <string name="welcome_install_system_launch_failed">Süsteemi paigaldaja käivitamine ebaõnnestus: %1$s</string>
     <string name="welcome_install_skip">Jäta paigaldus vahele — teen seda hiljem laiendite halduses</string>
     <string name="welcome_install_step_title">Laiendite pakettinstallatsioon</string>
-    <string name="welcome_install_step_summary">Valige allika tüübid ja seaded, seejärel laske Kototoro\'l kõik taustal alla laadida ja paigaldada.</string>
+    <string name="welcome_install_step_summary">Valige allika tüübid ja seaded, seejärel laske Amuratsu\'l kõik taustal alla laadida ja paigaldada.</string>
     <string name="welcome_install_kinds_title">Paigaldatavad allikatüübid</string>
     <string name="welcome_install_kinds_summary">Käsitledakse ainult märgitud tüüpe. Märkimata tüübid (nt Mihon, kui eelistate seda teha hiljem) jäävad laiendite halduses ise paigaldamiseks.</string>
     <string name="welcome_install_kinds_empty">Hoidlaid pole veel konfigureeritud. Minge tagasi ja lisage esmalt hoidlad.</string>
     <string name="welcome_install_nsfw_title">Kaasa NSFW sisu</string>
     <string name="welcome_install_nsfw_summary">Vaikimisi väljas — täiskasvanutele mõeldud paketid filtreeritakse paigaldusloendist välja.</string>
-    <string name="welcome_intro_app_title">Kototoro · Avatud lähtekoodiga lugeja</string>
-    <string name="welcome_intro_body">Kototoro on avatud lähtekoodiga multimeedialugeja / -mängija. See toetab laia kogukonna laiendite ökosüsteemi, kuid ei sisalda ühtegi oma sisuhoidlat.</string>
+    <string name="welcome_intro_app_title">Amuratsu · Avatud lähtekoodiga lugeja</string>
+    <string name="welcome_intro_body">Amuratsu on avatud lähtekoodiga multimeedialugeja / -mängija. See toetab laia kogukonna laiendite ökosüsteemi, kuid ei sisalda ühtegi oma sisuhoidlat.</string>
     <string name="welcome_intro_concepts_title">Kolm kontseptsiooni 30 sekundiga</string>
     <string name="welcome_intro_repo_label">Hoidla</string>
     <string name="welcome_intro_repo_body">URL kolmanda osapoole laiendite kogusse, mida haldab sõltumatu kogukond (näiteks Mihoni hoidlad, TVBoxi loendid või LNReaderi pluginate hoidlad).</string>
     <string name="welcome_intro_extension_label">Laiend</string>
-    <string name="welcome_intro_extension_body">Üks paigaldatav pakett hoidlas — JAR, APK või JSON-loend. Paigaldatud laiendid annavad Kototoro\'le võimaluse saidilt lugeda või esitada.</string>
+    <string name="welcome_intro_extension_body">Üks paigaldatav pakett hoidlas — JAR, APK või JSON-loend. Paigaldatud laiendid annavad Amuratsu\'le võimaluse saidilt lugeda või esitada.</string>
     <string name="welcome_intro_source_label">Allikas</string>
     <string name="welcome_intro_source_body">Üks konkreetne sisuhallikas, mida näete rakenduses pärast laiendi paigaldamist või importimist — näiteks konkreetne manga- või videoveebisait.</string>
-    <string name="welcome_intro_disclaimer">Kolmandate osapoolte laiendite kasutamine on täielikult teie omal vastutusel: käituskäitumist, seaduslikkust ja sisu ei kontrolli Kototoro projekt.</string>
+    <string name="welcome_intro_disclaimer">Kolmandate osapoolte laiendite kasutamine on täielikult teie omal vastutusel: käituskäitumist, seaduslikkust ja sisu ei kontrolli Amuratsu projekt.</string>
     <string name="welcome_intro_continue">Saan aru — jätka</string>
     <string name="welcome_done_title">Peaaegu valmis</string>
     <string name="welcome_done_summary">Teie häälestuse kokkuvõte ja mõned näpunäited.</string>
@@ -2917,10 +2917,10 @@
     <string name="welcome_done_json_note">JSON-põhised tüübid (Legado / TVBox / LNReader) imporditakse automaatselt; kui lisasite ka teisi JSON-hoidlaid, impordige need laiendite halduris.</string>
     <string name="welcome_done_title_finished">Häälestus valmis</string>
     <string name="welcome_done_summary_finished">Viisard on lõpetatud — ühtegi hoidlat ega allikat ei lisatud automaatselt.</string>
-    <string name="welcome_done_body_finished">Kototoro ei lisanud häälestuse käigus ühtegi allikat. Saate lisada oma hoidlaid ja allikaid igal ajal jaotises Seaded › Sisuhallikad (Laiendite haldus).</string>
+    <string name="welcome_done_body_finished">Amuratsu ei lisanud häälestuse käigus ühtegi allikat. Saate lisada oma hoidlaid ja allikaid igal ajal jaotises Seaded › Sisuhallikad (Laiendite haldus).</string>
     <string name="welcome_done_advice_title">Kui allikas ei tööta</string>
     <string name="welcome_done_advice_summary">Lühike veaotsingu teekond, et õiged inimesed aruannet näeksid.</string>
-    <string name="welcome_done_advice_body">1. Kinnitage probleem laiendi algse hostrakenduse abil — näiteks Mihoni tüüpi allikat tuleks testida Mihoni rakenduses.\n2. Kui probleem esineb ka seal, kuulub see hoidlale, mis laiendit haldab: avage probleem hoidla enda URL-il.\n3. Kui see juhtub ainultKototoro\'s, teatage sellest Kototoro projekti hoidlas ja lisage allika nimi, laiendi versioon ja see, mida proovisite.</string>
+    <string name="welcome_done_advice_body">1. Kinnitage probleem laiendi algse hostrakenduse abil — näiteks Mihoni tüüpi allikat tuleks testida Mihoni rakenduses.\n2. Kui probleem esineb ka seal, kuulub see hoidlale, mis laiendit haldab: avage probleem hoidla enda URL-il.\n3. Kui see juhtub ainultAmuratsu\'s, teatage sellest Amuratsu projekti hoidlas ja lisage allika nimi, laiendi versioon ja see, mida proovisite.</string>
     <string name="welcome_step_counter">Samm %1$d / %2$d</string>
     <string name="welcome_action_configure_repos">Konfigureeri valitud hoidlad</string>
     <string name="welcome_action_install_count">Paigalda %1$d laiendit</string>
@@ -2954,7 +2954,7 @@
     <string name="welcome_permissions_notifications_title">Teated</string>
     <string name="welcome_permissions_notifications_summary">Kuvab allalaadimiste, värskenduste ja pleieri teateid.</string>
     <string name="welcome_permissions_packages_title">Installitud rakendused</string>
-    <string name="welcome_permissions_packages_summary">Võimaldab Kototoro-l tuvastada juba installitud laiendeid ja hostrakendusi (Mihon, Aniyomi, …). Deklareeritud manifestis ja antakse automaatselt.</string>
+    <string name="welcome_permissions_packages_summary">Võimaldab Amuratsu-l tuvastada juba installitud laiendeid ja hostrakendusi (Mihon, Aniyomi, …). Deklareeritud manifestis ja antakse automaatselt.</string>
     <string name="welcome_permissions_battery_title">Taustal töös püsivus</string>
     <string name="welcome_permissions_battery_summary">Hoiab taustal allalaadimised ja värskendused töös, kui ekraan on välja lülitatud või seade tühikäigul.</string>
     <string name="welcome_permissions_battery_action">Luba</string>
@@ -3369,11 +3369,11 @@
     <string name="pref_glass_blur_quality_performance">Jõudlus</string>
     <string name="pref_glass_blur_quality_balanced">Tasakaalus</string>
     <string name="pref_glass_blur_quality_quality">Kvaliteet</string>
-    <string name="glass_material_family_kototoro">Kototoro (soovitatav)</string>
+    <string name="glass_material_family_kototoro">Amuratsu (soovitatav)</string>
     <string name="glass_material_family_haze">Haze</string>
     <string name="glass_material_family_cupertino">Cupertino</string>
     <string name="glass_material_family_fluent">Fluent</string>
-    <string name="glass_material_kototoro">Kototoro (soovitatav)</string>
+    <string name="glass_material_kototoro">Amuratsu (soovitatav)</string>
     <string name="glass_material_haze_ultra_thin">Haze Ultra Thin</string>
     <string name="glass_material_haze_thin">Haze Thin</string>
     <string name="glass_material_haze_regular">Haze Regular</string>

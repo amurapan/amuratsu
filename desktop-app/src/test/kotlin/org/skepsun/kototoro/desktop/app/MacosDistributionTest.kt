@@ -18,14 +18,14 @@ class MacosDistributionTest {
     @Test
     fun `relocated macOS image runs WKWebView checks storage and renders video with its own JVM`() {
         val original = Path.of(System.getProperty("kototoro.desktop.distribution"))
-        val image = directory.resolve("中文 macOS preview/Kototoro.app")
+        val image = directory.resolve("中文 macOS preview/Amuratsu.app")
         Files.walk(original).use { paths -> paths.forEach { source ->
             val target = image.resolve(original.relativize(source))
             if (Files.isDirectory(source, LinkOption.NOFOLLOW_LINKS)) Files.createDirectories(target)
             else Files.copy(source, target, LinkOption.NOFOLLOW_LINKS, StandardCopyOption.COPY_ATTRIBUTES)
         } }
         val contents = image.resolve("Contents")
-        val launcher = contents.resolve("MacOS/Kototoro")
+        val launcher = contents.resolve("MacOS/Amuratsu")
         val resources = contents.resolve("app/resources")
         assertTrue(Files.isExecutable(launcher))
         assertTrue(Files.isExecutable(resources.resolve("browser/kototoro-webview-bridge")), "WKWebView helper lost its executable bit")

@@ -26,7 +26,7 @@ class DesktopDistributionTest {
             if (Files.isDirectory(source)) Files.createDirectories(target) else Files.copy(source, target)
         } }
         val app = image.resolve("app")
-        val cfg = Files.readAllLines(app.resolve("Kototoro.cfg"))
+        val cfg = Files.readAllLines(app.resolve("Amuratsu.cfg"))
         val classpath = cfg.filter { it.startsWith("app.classpath=") }.map {
             assertTrue(it.startsWith("app.classpath=\$APPDIR\\"), "Classpath must be relative to the installed image")
             val name = it.substringAfter("\$APPDIR\\")
@@ -45,7 +45,7 @@ class DesktopDistributionTest {
         val fixture = Path.of(System.getProperty("kototoro.desktop.fixture.jar"))
         val root = directory.resolve("中文 ไทย native EXE data")
         val report = directory.resolve("check.properties")
-        execute(listOf(image.resolve("Kototoro.exe").toString(), "--data-dir", root.toString(), "--import", fixture.toString(),
+        execute(listOf(image.resolve("Amuratsu.exe").toString(), "--data-dir", root.toString(), "--import", fixture.toString(),
             "--check-runtime", report.toString()), "native-exe")
         val result = Properties().apply { Files.newBufferedReader(report).use { load(it) } }
         assertEquals("ok", result.getProperty("status"))
@@ -67,7 +67,7 @@ class DesktopDistributionTest {
         awaitRelease(root)
         // A failing check must end the native process instead of leaving the launcher hung.
         val failedReport = directory.resolve("failed-check.properties")
-        val failedExit = execute(listOf(image.resolve("Kototoro.exe").toString(), "--data-dir", directory.resolve("中文 ไทย failed data").toString(),
+        val failedExit = execute(listOf(image.resolve("Amuratsu.exe").toString(), "--data-dir", directory.resolve("中文 ไทย failed data").toString(),
             "--import", directory.resolve("missing.jar").toString(), "--check-runtime", failedReport.toString()), "native-exe-failure",
             expectSuccess = false)
         assertNotEquals(0, failedExit)

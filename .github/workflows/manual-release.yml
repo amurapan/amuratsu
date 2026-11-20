@@ -116,9 +116,9 @@ jobs:
           fi
           if [ "$abi" = "universal" ]; then
             # Keep legacy filename for compatibility with old update clients.
-            target="release/Kototoro-${{ steps.version.outputs.version_name }}-release.apk"
+            target="release/Amuratsu-${{ steps.version.outputs.version_name }}-release.apk"
           else
-            target="release/Kototoro-${{ steps.version.outputs.version_name }}-${abi}-release.apk"
+            target="release/Amuratsu-${{ steps.version.outputs.version_name }}-${abi}-release.apk"
           fi
           cp "$apk" "$target"
         done
@@ -127,7 +127,7 @@ jobs:
       uses: softprops/action-gh-release@v2
       with:
         tag_name: ${{ inputs.release_tag }}
-        name: Kototoro ${{ steps.version.outputs.version_name }}
+        name: Amuratsu ${{ steps.version.outputs.version_name }}
         files: |
           release/*.apk
         body: ${{ inputs.release_notes != '' && inputs.release_notes || steps.changelog.outputs.changelog }}

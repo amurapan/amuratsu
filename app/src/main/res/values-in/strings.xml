@@ -211,7 +211,7 @@
     <string name="rotate_screen">Putar layar</string>
     <string name="feed_will_update_soon">Pembaruan umpan akan dimulai</string>
     <string name="enter_password">Masukkan kata sandi</string>
-    <string name="protect_application_summary">Tanya kata sandi ketika memulai Kototoro</string>
+    <string name="protect_application_summary">Tanya kata sandi ketika memulai Amuratsu</string>
     <string name="about">Tentang</string>
     <string name="check_for_updates">Periksa pembaruan</string>
     <string name="passwords_mismatch">Kata sandi tidak sama</string>
@@ -282,7 +282,7 @@
     <string name="folder_with_images">Folder dengan gambar</string>
     <string name="import_completed_hint">Anda bisa menghapus berkas asli dari penyimpanan untuk menghemat ruang</string>
     <string name="feed">Umpan</string>
-    <string name="manga_error_description_pattern">Rincian galat:&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. Coba &lt;a href=%2$s&gt;buka manga di peramban web&lt;/a&gt; untuk memastikan manga tersebut tersedia di sumbernya&lt;/a&gt;2. Pastikan Anda menggunakan Kototoro &lt;a href=kototoro://about&gt;versi terbaru&lt;/a&gt;&lt;br&gt;3. Jika itu tersedia, kirimkan laporan kesalahan ke pengembang.</string>
+    <string name="manga_error_description_pattern">Rincian galat:&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. Coba &lt;a href=%2$s&gt;buka manga di peramban web&lt;/a&gt; untuk memastikan manga tersebut tersedia di sumbernya&lt;/a&gt;2. Pastikan Anda menggunakan Amuratsu &lt;a href=amuratsu://about&gt;versi terbaru&lt;/a&gt;&lt;br&gt;3. Jika itu tersedia, kirimkan laporan kesalahan ke pengembang.</string>
     <string name="brightness">Kecerahan</string>
     <string name="contrast">Kontras</string>
     <string name="reset">Atur Ulang</string>
@@ -597,7 +597,7 @@
     <string name="migrate_confirmation">Manga \"%1$s\" dari \"%2$s\" akan diganti dengan \"%3$s\" dari \"%4$s\" di riwayat dan favorit Anda (jika ada)</string>
     <string name="unread">Belum dibaca</string>
     <string name="show_pages_thumbs_summary">Aktifkan tab \"Halaman\" pada layar detail</string>
-    <string name="unsupported_backup_message">Pilih file cadangan Kototoro yang tepat</string>
+    <string name="unsupported_backup_message">Pilih file cadangan Amuratsu yang tepat</string>
     <string name="fix">Memperbaiki</string>
     <string name="missing_storage_permission">Tidak ada izin untuk mengakses manga di penyimpanan eksternal</string>
     <string name="disable_nsfw_notifications_summary">Jangan tampilkan notifikasi tentang pembaruan manga dewasa</string>
@@ -672,7 +672,7 @@
     <string name="sfw">SFW</string>
     <string name="skip_all">Lewati semua</string>
     <string name="not_in_favorites">Tidak di kesukaan</string>
-    <string name="plugin_incompatible">Plugin yang tidak kompatibel atau kesalahan internal. Pastikan Anda menggunakan versi terbaru dari plugin dan Kototoro</string>
+    <string name="plugin_incompatible">Plugin yang tidak kompatibel atau kesalahan internal. Pastikan Anda menggunakan versi terbaru dari plugin dan Amuratsu</string>
     <string name="updated_long_ago">Diperbarui sejak lama</string>
     <string name="unpopular">Tidak populer</string>
     <string name="low_rating">Rating rendah</string>
@@ -770,7 +770,7 @@
     <string name="handle_links_summary">Menangani tautan manga dari aplikasi eksternal (misalnya browser web). Anda mungkin juga perlu mengaktifkannya secara manual di pengaturan sistem aplikasi</string>
     <string name="any">Setiap</string>
     <string name="author">Pengarang</string>
-    <string name="plugin_incompatible_with_cause">Kesalahan plugin: %s\n.Pastikan Anda menggunakan plugin dan Kototoro versi terbaru</string>
+    <string name="plugin_incompatible_with_cause">Kesalahan plugin: %s\n.Pastikan Anda menggunakan plugin dan Amuratsu versi terbaru</string>
     <string name="restoring_backup">Memulihkan Cadangan</string>
     <string name="backup_restored_background">Pencadangan akan dipulihkan di latar belakang</string>
     <string name="clear_browser_data">Hapus data peramban</string>
@@ -792,7 +792,7 @@
     <string name="pages_slider">Penggeser pengalih halaman</string>
     <string name="screen_rotation_locked">Rotasi layar dikunci</string>
     <string name="screen_rotation_unlocked">Rotasi layar telah dibuka kuncinya</string>
-    <string name="error_disclaimer_app_outdated">Sepertinya versi Kototoro Anda sudah kedaluwarsa. Harap instal versi terbaru untuk mendapatkan semua perbaikan yang tersedia.</string>
+    <string name="error_disclaimer_app_outdated">Sepertinya versi Amuratsu Anda sudah kedaluwarsa. Harap instal versi terbaru untuk mendapatkan semua perbaikan yang tersedia.</string>
     <string name="nsfw_16">16+</string>
     <string name="link_to_manga_on_s">Tautan ke manga di%s</string>
     <string name="link_to_manga_in_app">Tautan ke manga di kototoro</string>
@@ -845,7 +845,7 @@
     <string name="discord_token_description">Masukkan Token Discord Anda atau klik %s untuk mendapatkannya melalui browser</string>
     <string name="discord_token_hint">Tempelkan Token Discord Anda di sini</string>
     <string name="discord_rpc_summary">Tampilkan status membaca Anda di Discord</string>
-    <string name="discord_rpc_description">Membaca manga di Kototoro - aplikasi pembaca manga</string>
+    <string name="discord_rpc_description">Membaca manga di Amuratsu - aplikasi pembaca manga</string>
     <string name="manga_restricted_description">Manga ini tidak tersedia untuk dibaca di sumber ini. Coba cari di sumber lain atau buka di browser untuk informasi lebih lanjut</string>
     <string name="chapters_load_failed">Gagal memuat daftar bab</string>
     <string name="rpc_skip_nsfw_summary">Jangan gunakan RPC untuk konten dewasa</string>
@@ -944,7 +944,7 @@
     <string name="appearance_mode">Mode tampilan</string>
     <string name="page_save_manga_title_length">Panjang judul manga di nama file</string>
     <string name="page_save_manga_title_length_summary">Jumlah karakter judul manga yang disimpan dalam nama file gambar (12–64)</string>
-    <string name="cloudstream_newpipe_required">Ekstensi ini memerlukan kelas NewPipe yang tidak dimiliki oleh NewPipe bawaan Kototoro, sehingga tidak dapat memutar video. Coba perbarui ekstensi atau Kototoro.</string>
+    <string name="cloudstream_newpipe_required">Ekstensi ini memerlukan kelas NewPipe yang tidak dimiliki oleh NewPipe bawaan Amuratsu, sehingga tidak dapat memutar video. Coba perbarui ekstensi atau Amuratsu.</string>
     <string name="clear_chapter_thumbnails">Hapus thumbnail bab</string>
     <string name="continuous_horizontal">Horisontal bersambung</string>
     <string name="continuous_horizontal_reversed">Baca kanan ke kiri</string>
@@ -995,7 +995,7 @@
     <string name="replace_rule_disable_all_summary">Hentikan sementara penerapan aturan penggantian</string>
     <string name="replace_rule_edit">Ubah aturan</string>
     <string name="replace_rule_import">Impor aturan Legado</string>
-    <string name="replace_rule_import_summary">Impor susunan JSON yang diekspor oleh Legado atau Kototoro</string>
+    <string name="replace_rule_import_summary">Impor susunan JSON yang diekspor oleh Legado atau Amuratsu</string>
     <string name="replace_rule_export">Ekspor aturan</string>
     <string name="replace_rule_export_summary">Ekspor aturan dalam format JSON yang kompatibel</string>
     <string name="replace_rule_empty">Tidak ada aturan penggantian</string>
@@ -1128,8 +1128,8 @@
     <string name="clear_local_manga_storage_prompt">Hapus semua file manga yang disimpan dan diimpor secara lokal? Tindakan ini tidak dapat dibatalkan.</string>
     <string name="clear_local_novel_storage_prompt">Hapus semua file novel yang disimpan dan diimpor secara lokal? Tindakan ini tidak dapat dibatalkan.</string>
     <string name="clear_local_video_storage_prompt">Hapus semua file video yang disimpan dan diimpor secara lokal? Tindakan ini tidak dapat dibatalkan.</string>
-    <string name="welcome_intro_title">Atur Kototoro</string>
-    <string name="welcome_intro_summary">Pilih cara Anda ingin membaca dan menonton. Kototoro sekarang menggunakan keluarga sumber berbasis plugin untuk manga, novel, dan video, termasuk JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader, dan Cloudstream.</string>
+    <string name="welcome_intro_title">Atur Amuratsu</string>
+    <string name="welcome_intro_summary">Pilih cara Anda ingin membaca dan menonton. Amuratsu sekarang menggunakan keluarga sumber berbasis plugin untuk manga, novel, dan video, termasuk JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader, dan Cloudstream.</string>
     <string name="welcome_step_start">Mulai</string>
     <string name="welcome_step_sources">Sumber</string>
     <string name="welcome_step_preferences">Preferensi</string>
@@ -1139,11 +1139,11 @@
     <string name="welcome_glass_preset_title">Lapisan kaca</string>
     <string name="welcome_glass_preset_summary">Pilih prasetel lapisan kaca untuk gaya iOS. Refraksi adalah bawaan dan dapat disesuaikan nanti di pengaturan Tampilan.</string>
     <string name="home_quick_action_wizard">Panduan</string>
-    <string name="welcome_restore_summary">Sudah pernah menggunakan Kototoro sebelumnya? Pulihkan cadangan, masuk untuk menyinkronkan, atau tambahkan folder lokal terlebih dahulu.</string>
+    <string name="welcome_restore_summary">Sudah pernah menggunakan Amuratsu sebelumnya? Pulihkan cadangan, masuk untuk menyinkronkan, atau tambahkan folder lokal terlebih dahulu.</string>
     <string name="welcome_source_formats_title">Pilih format konten</string>
     <string name="welcome_source_formats_summary">Filter ini menentukan keluarga sumber mana yang diaktifkan setelah penyiapan.</string>
     <string name="welcome_ecosystems_title">Ekosistem sumber</string>
-    <string name="welcome_ecosystems_summary">Kototoro mendukung beberapa keluarga sumber plugin untuk membaca dan menonton. Mulailah dengan repositori yang direkomendasikan di sini, lalu sesuaikan nanti di manajemen ekstensi.</string>
+    <string name="welcome_ecosystems_summary">Amuratsu mendukung beberapa keluarga sumber plugin untuk membaca dan menonton. Mulailah dengan repositori yang direkomendasikan di sini, lalu sesuaikan nanti di manajemen ekstensi.</string>
     <string name="welcome_ecosystem_manga">Manga: Parser JAR, Mihon, IReader, LNReader</string>
     <string name="welcome_ecosystem_novel">Novel: Legado, IReader, LNReader</string>
     <string name="welcome_ecosystem_video">Video: Aniyomi, TVBox, Cloudstream</string>
@@ -1152,9 +1152,9 @@
     <string name="welcome_preferences_summary">Pilih bahasa dan jenis konten. Anda dapat mengubahnya nanti di pengaturan sumber.</string>
     <string name="welcome_spaces_title">Pisahkan ruang Anda</string>
     <string name="welcome_spaces_summary">Ruang memberi manga, novel, dan anime navigasi independen, preferensi penjelajahan, serta konteks baca atau pemutaran. Opsi lanjutan dan ruang kustom tersedia nanti di Pengaturan &gt; Pengguna &gt; Ruang.</string>
-    <string name="welcome_jar_install_success">Kototoro: Berhasil mengambil dan memasang %1$d mesin parser terbaru dari jaringan cloud!</string>
-    <string name="welcome_jar_install_up_to_date">Kototoro: Verifikasi cloud selesai, parser lokal sudah yang terbaru! (Memuat total %1$d sumber)</string>
-    <string name="welcome_jar_install_failed">Kototoro: Pemuatan jaringan parser gagal (%1$s), coba lagi atau buka pengaturan untuk beralih cermin proksi</string>
+    <string name="welcome_jar_install_success">Amuratsu: Berhasil mengambil dan memasang %1$d mesin parser terbaru dari jaringan cloud!</string>
+    <string name="welcome_jar_install_up_to_date">Amuratsu: Verifikasi cloud selesai, parser lokal sudah yang terbaru! (Memuat total %1$d sumber)</string>
+    <string name="welcome_jar_install_failed">Amuratsu: Pemuatan jaringan parser gagal (%1$s), coba lagi atau buka pengaturan untuk beralih cermin proksi</string>
     <string name="home_placeholder_title">Dasbor baca</string>
     <string name="home_placeholder_subtitle">Lihat bacaan terbaru, pembaruan, pustaka, sinkronisasi, dan sumber Anda di satu tempat.</string>
     <string name="home_hero_local_subtitle">Lanjutkan dari bagian terakhir, atau buka kembali apa yang baru saja Anda buka.</string>
@@ -1604,7 +1604,7 @@
     <string name="source_empty_badge_short">Kosong</string>
     <string name="show_empty_sources">Tampilkan sumber kosong</string>
     <string name="reader_a11y_next_page">Halaman selanjutnya</string>
-    <string name="welcome_ready_summary">Pengaturan selesai. Kototoro akan mengaktifkan sumber yang cocok dengan bahasa dan format pilihan Anda. Anda dapat menjalankan panduan ini lagi dari Pengaturan → Sumber konten → Panduan pengaturan.</string>
+    <string name="welcome_ready_summary">Pengaturan selesai. Amuratsu akan mengaktifkan sumber yang cocok dengan bahasa dan format pilihan Anda. Anda dapat menjalankan panduan ini lagi dari Pengaturan → Sumber konten → Panduan pengaturan.</string>
     <string name="home_sync_status_auto">Sinkronisasi Otomatis WebDAV</string>
     <string name="browse_display_options_summary">Opsi ini telah dipindahkan ke bilah pencarian halaman Jelajah → Lainnya → Opsi tampilan.</string>
     <plurals name="library_duplicates_entries">
@@ -1706,7 +1706,7 @@
     <string name="export_backup_for_other_apps_summary">Pilih aplikasi target dan buat cadangan yang kompatibel: Kotatsu, Mihon, Aniyomi, atau Usagi.</string>
     <string name="export_backup_choose_target_app">Pilih aplikasi target</string>
     <string name="export_kotatsu_backup">Ekspor cadangan Kotatsu</string>
-    <string name="export_kotatsu_backup_summary">Buat cadangan warisan terpisah untuk aplikasi keluarga Kotatsu tanpa bagian khusus Kototoro.</string>
+    <string name="export_kotatsu_backup_summary">Buat cadangan warisan terpisah untuk aplikasi keluarga Kotatsu tanpa bagian khusus Amuratsu.</string>
     <string name="export_kotatsu_backup_saved">Cadangan Kotatsu disimpan</string>
     <string name="export_mihon_backup">Ekspor cadangan Mihon</string>
     <string name="export_mihon_backup_summary">Ekspor favorit, kategori, dan progres baca khusus untuk entri sumber Mihon.</string>
@@ -1735,7 +1735,7 @@
     <string name="import_backup_started_background">Cadangan eksternal akan diimpor di latar belakang</string>
     <string name="username_password_enter_hint">Masukkan nama pengguna dan kata sandi untuk melanjutkan</string>
     <string name="restore_kototoro_backup">Pulihkan cadangan</string>
-    <string name="restore_kototoro_backup_summary">Pulihkan cadangan Kototoro dari versi apa pun, atau cadangan Kotatsu. Format akan terdeteksi secara otomatis.</string>
+    <string name="restore_kototoro_backup_summary">Pulihkan cadangan Amuratsu dari versi apa pun, atau cadangan Kotatsu. Format akan terdeteksi secara otomatis.</string>
     <string name="restore_mode_replace_existing">Ganti data yang ada</string>
     <string name="restore_mode_replace_existing_summary">Bagian yang dipulihkan akan dibersihkan terlebih dahulu; favorit dan riwayat yang tidak ada di cadangan akan dihapus</string>
     <string name="restore_mode_merge_with_existing">Gabungkan dengan data yang ada</string>
@@ -2376,7 +2376,7 @@
     <string name="sync_backend_switch_webdav_title">Beralih ke cadangan WebDAV?</string>
     <string name="sync_backend_switch_webdav_confirm">Sinkronisasi Google Drive sedang diaktifkan. Mengaktifkan cadangan WebDAV akan menonaktifkan sinkronisasi Google Drive sambil mempertahankan masuk Google Anda.</string>
     <string name="sync_sign_in">Siapkan sinkronisasi Google Drive</string>
-    <string name="sync_sign_in_summary">Menggunakan data aplikasi Google Drive dengan izin minimum appdata Drive untuk menyinkronkan langganan dan memperbarui catatan. Kototoro tidak dapat mengakses file Drive Anda.</string>
+    <string name="sync_sign_in_summary">Menggunakan data aplikasi Google Drive dengan izin minimum appdata Drive untuk menyinkronkan langganan dan memperbarui catatan. Amuratsu tidak dapat mengakses file Drive Anda.</string>
     <string name="google_drive_sync_unregistered_build_error">Sinkronisasi Google Drive tidak didukung pada versi pengembangan/nightly. Gunakan versi rilis resmi atau sinkronisasi WebDAV.</string>
     <string name="sync_sign_out">Keluar</string>
     <string name="sync_account">Sudah masuk</string>
@@ -2431,8 +2431,8 @@
     <string name="webdav_remote_backups_inspect">Periksa cadangan jarak jauh</string>
     <string name="webdav_remote_backups_inspect_summary">Unduh dan verifikasi apakah setiap cadangan jarak jauh dapat dipulihkan secara aman.</string>
     <string name="webdav_remote_backups_clear">Hapus cadangan WebDAV jarak jauh</string>
-    <string name="webdav_remote_backups_clear_summary">Hapus semua file cadangan Kototoro pada path WebDAV yang dikonfigurasi. Data lokal tidak diubah.</string>
-    <string name="webdav_remote_backups_clear_confirm">Hapus semua file cadangan Kototoro dari path WebDAV yang dikonfigurasi? Data lokal tidak akan diubah.</string>
+    <string name="webdav_remote_backups_clear_summary">Hapus semua file cadangan Amuratsu pada path WebDAV yang dikonfigurasi. Data lokal tidak diubah.</string>
+    <string name="webdav_remote_backups_clear_confirm">Hapus semua file cadangan Amuratsu dari path WebDAV yang dikonfigurasi? Data lokal tidak akan diubah.</string>
     <string name="webdav_remote_backups_loading">Memuat cadangan WebDAV...</string>
     <string name="webdav_remote_backup_status_unknown">Belum diperiksa</string>
     <string name="webdav_remote_backup_status_restorable">Dapat dipulihkan</string>
@@ -2827,7 +2827,7 @@
     <string name="trust_and_add">Percayai dan tambah</string>
     <string name="trust_extension_repository_message">Repositori: %1$s\nSitus web: %2$s\nSidik jari SHA-256:\n%3$s\n\nVerifikasi sidik jari ini dengan penerbit sebelum mempercayai repositori ini.</string>
     <string name="untrusted_extension_message">%1$s (%2$s) terpasang, tetapi tanda tangannya tidak cocok dengan sidik jari repositori yang dipilih.\n\nSidik jari repositori: %3$s\n\nHapus paket yang terpasang sebelum memasang ulang dari repositori ini.</string>
-    <string name="incompatible_extension_message">%1$s %2$s tidak dapat dipasang karena versi pustakanya (%3$s) berada di luar rentang yang didukung Kototoro.</string>
+    <string name="incompatible_extension_message">%1$s %2$s tidak dapat dipasang karena versi pustakanya (%3$s) berada di luar rentang yang didukung Amuratsu.</string>
     <string name="built_in_sources">Bawaan</string>
     <string name="select_all">Pilih semua</string>
     <string name="deselect_all">Batalkan pilihan</string>
@@ -2867,7 +2867,7 @@
     <string name="welcome_plugins_repo_yakateam">Parser Yakateam</string>
     <string name="welcome_plugins_repo_redo">Parser Redo</string>
     <string name="welcome_plugins_repo_uma">UMA (Parser Tsuki)</string>
-    <string name="welcome_plugins_disclaimer">Repositori ekstensi ini dikelola oleh komunitas online independen. Pengembang Kototoro tidak memiliki afiliasi, kendali, atau hubungan apa pun dengan repositori pihak ketiga ini. Saya menyatakan bahwa saya mengonfigurasi sumber-sumber ini atas risiko saya sendiri.</string>
+    <string name="welcome_plugins_disclaimer">Repositori ekstensi ini dikelola oleh komunitas online independen. Pengembang Amuratsu tidak memiliki afiliasi, kendali, atau hubungan apa pun dengan repositori pihak ketiga ini. Saya menyatakan bahwa saya mengonfigurasi sumber-sumber ini atas risiko saya sendiri.</string>
     <string name="welcome_plugins_start_btn">Konfigurasi repositori</string>
     <string name="welcome_plugins_configured">Mengonfigurasi %1$d jenis sumber/repositori baru: %2$s. Paket belum diunduh — instal yang cocok pada langkah berikutnya.</string>
     <string name="welcome_plugins_configured_none">Tidak ada sumber atau repositori yang dapat dikonfigurasi. Periksa jaringan Anda atau pilih repositori lain dan coba lagi.</string>
@@ -2897,22 +2897,22 @@
     <string name="welcome_install_system_launch_failed">Tidak dapat meluncurkan pemasang sistem: %1$s</string>
     <string name="welcome_install_skip">Lewati instalasi — Saya akan melakukannya nanti di Manajemen Ekstensi</string>
     <string name="welcome_install_step_title">Instal ekstensi massal</string>
-    <string name="welcome_install_step_summary">Pilih jenis sumber dan pengaturan yang akan digunakan, lalu biarkan Kototoro mengunduh dan menginstal semuanya di latar belakang.</string>
+    <string name="welcome_install_step_summary">Pilih jenis sumber dan pengaturan yang akan digunakan, lalu biarkan Amuratsu mengunduh dan menginstal semuanya di latar belakang.</string>
     <string name="welcome_install_kinds_title">Jenis sumber untuk diinstal</string>
     <string name="welcome_install_kinds_summary">Hanya jenis yang Anda centang yang akan diproses. Jenis yang tidak dicentang (mis. Mihon, jika Anda ingin melakukannya nanti) tetap ada untuk Anda instal di Manajemen Ekstensi.</string>
     <string name="welcome_install_kinds_empty">Belum ada repositori yang dikonfigurasi. Kembali dan tambahkan repositori terlebih dahulu.</string>
     <string name="welcome_install_nsfw_title">Sertakan konten NSFW</string>
     <string name="welcome_install_nsfw_summary">Nonaktif secara default — paket khusus dewasa difilter keluar dari daftar instalasi.</string>
-    <string name="welcome_intro_app_title">Kototoro · Pembaca sumber terbuka</string>
-    <string name="welcome_intro_body">Kototoro adalah pembaca / pemutar multimedia sumber terbuka. Aplikasi ini mendukung ekosistem ekstensi komunitas yang luas, tetapi tidak menyertakan sumber konten bawaan.</string>
+    <string name="welcome_intro_app_title">Amuratsu · Pembaca sumber terbuka</string>
+    <string name="welcome_intro_body">Amuratsu adalah pembaca / pemutar multimedia sumber terbuka. Aplikasi ini mendukung ekosistem ekstensi komunitas yang luas, tetapi tidak menyertakan sumber konten bawaan.</string>
     <string name="welcome_intro_concepts_title">Tiga konsep dalam 30 detik</string>
     <string name="welcome_intro_repo_label">Repositori</string>
     <string name="welcome_intro_repo_body">URL ke kumpulan ekstensi pihak ketiga yang dikelola oleh komunitas independen (misalnya repositori Mihon, daftar TVBox, atau repositori plugin LNReader).</string>
     <string name="welcome_intro_extension_label">Ekstensi</string>
-    <string name="welcome_intro_extension_body">Satu paket yang dapat dipasang di dalam repositori — berupa JAR, APK, atau daftar JSON. Ekstensi yang dipasang memberikan kemampuan bagi Kototoro untuk membaca atau memutar dari sebuah situs.</string>
+    <string name="welcome_intro_extension_body">Satu paket yang dapat dipasang di dalam repositori — berupa JAR, APK, atau daftar JSON. Ekstensi yang dipasang memberikan kemampuan bagi Amuratsu untuk membaca atau memutar dari sebuah situs.</string>
     <string name="welcome_intro_source_label">Sumber</string>
     <string name="welcome_intro_source_body">Satu sumber konten konkret yang Anda lihat di aplikasi setelah ekstensi dipasang atau diimpor — misalnya situs web manga atau video tertentu.</string>
-    <string name="welcome_intro_disclaimer">Penggunaan ekstensi pihak ketiga sepenuhnya merupakan risiko Anda sendiri: perilaku waktu proses, legalitas, dan konten tidak dikendalikan oleh proyek Kototoro.</string>
+    <string name="welcome_intro_disclaimer">Penggunaan ekstensi pihak ketiga sepenuhnya merupakan risiko Anda sendiri: perilaku waktu proses, legalitas, dan konten tidak dikendalikan oleh proyek Amuratsu.</string>
     <string name="welcome_intro_continue">Saya mengerti — lanjutkan</string>
     <string name="welcome_done_title">Hampir selesai</string>
     <string name="welcome_done_summary">Ringkasan penyiapan Anda dan beberapa tips.</string>
@@ -2921,10 +2921,10 @@
     <string name="welcome_done_json_note">Jenis berbasis JSON (Legado / TVBox / LNReader) diimpor secara otomatis; jika Anda juga menambahkan repositori JSON lainnya, impor di Pengelolaan Ekstensi.</string>
     <string name="welcome_done_title_finished">Penyiapan selesai</string>
     <string name="welcome_done_summary_finished">Panduan selesai — tidak ada repositori atau sumber yang ditambahkan secara otomatis.</string>
-    <string name="welcome_done_body_finished">Kototoro tidak menambahkan sumber apa pun selama penyiapan. Anda dapat menambahkan repositori dan sumber Anda sendiri kapan saja di Pengaturan › Sumber konten (Pengelolaan Ekstensi).</string>
+    <string name="welcome_done_body_finished">Amuratsu tidak menambahkan sumber apa pun selama penyiapan. Anda dapat menambahkan repositori dan sumber Anda sendiri kapan saja di Pengaturan › Sumber konten (Pengelolaan Ekstensi).</string>
     <string name="welcome_done_advice_title">Jika sumber tidak berfungsi</string>
     <string name="welcome_done_advice_summary">Alur pemecahan masalah singkat agar laporan dilihat oleh pihak yang tepat.</string>
-    <string name="welcome_done_advice_body">1. Konfirmasi masalah menggunakan aplikasi host asli dari ekstensi tersebut — misalnya sumber tipe Mihon harus diuji di aplikasi Mihon.\n2. Jika masalah tersebut juga terjadi di sana, itu adalah tanggung jawab repositori yang memelihara ekstensi: buat isu di URL repositori tersebut.\n3. Jika itu hanya terjadi di Kototoro, laporkan di repositori proyek Kototoro dan sertakan nama sumber, versi ekstensi, serta apa yang telah Anda coba.</string>
+    <string name="welcome_done_advice_body">1. Konfirmasi masalah menggunakan aplikasi host asli dari ekstensi tersebut — misalnya sumber tipe Mihon harus diuji di aplikasi Mihon.\n2. Jika masalah tersebut juga terjadi di sana, itu adalah tanggung jawab repositori yang memelihara ekstensi: buat isu di URL repositori tersebut.\n3. Jika itu hanya terjadi di Amuratsu, laporkan di repositori proyek Amuratsu dan sertakan nama sumber, versi ekstensi, serta apa yang telah Anda coba.</string>
     <string name="welcome_step_counter">Langkah %1$d dari %2$d</string>
     <string name="welcome_action_configure_repos">Konfigurasikan repositori terpilih</string>
     <string name="welcome_action_install_count">Pasang %1$d ekstensi</string>
@@ -2958,7 +2958,7 @@
     <string name="welcome_permissions_notifications_title">Notifikasi</string>
     <string name="welcome_permissions_notifications_summary">Menampilkan notifikasi unduhan, pembaruan, dan pemutar.</string>
     <string name="welcome_permissions_packages_title">Aplikasi terpasang</string>
-    <string name="welcome_permissions_packages_summary">Memungkinkan Kototoro mendeteksi ekstensi yang sudah terpasang dan aplikasi induk (Mihon, Aniyomi, …). Dinyatakan dalam manifest dan diberikan secara otomatis.</string>
+    <string name="welcome_permissions_packages_summary">Memungkinkan Amuratsu mendeteksi ekstensi yang sudah terpasang dan aplikasi induk (Mihon, Aniyomi, …). Dinyatakan dalam manifest dan diberikan secara otomatis.</string>
     <string name="welcome_permissions_battery_title">Ketahanan latar belakang</string>
     <string name="welcome_permissions_battery_summary">Menjaga unduhan dan pembaruan latar belakang tetap berjalan saat layar mati atau perangkat idle.</string>
     <string name="welcome_permissions_battery_action">Izinkan</string>
@@ -3374,11 +3374,11 @@
     <string name="pref_glass_blur_quality_performance">Performa</string>
     <string name="pref_glass_blur_quality_balanced">Seimbang</string>
     <string name="pref_glass_blur_quality_quality">Kualitas</string>
-    <string name="glass_material_family_kototoro">Kototoro (Disarankan)</string>
+    <string name="glass_material_family_kototoro">Amuratsu (Disarankan)</string>
     <string name="glass_material_family_haze">Haze</string>
     <string name="glass_material_family_cupertino">Cupertino</string>
     <string name="glass_material_family_fluent">Fluent</string>
-    <string name="glass_material_kototoro">Kototoro (Disarankan)</string>
+    <string name="glass_material_kototoro">Amuratsu (Disarankan)</string>
     <string name="glass_material_haze_ultra_thin">Haze Sangat Tipis</string>
     <string name="glass_material_haze_thin">Haze Tipis</string>
     <string name="glass_material_haze_regular">Haze Standar</string>

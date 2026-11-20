@@ -120,7 +120,7 @@
     <string name="_import">ထည့်သွင်းရန်</string>
     <string name="delete">ဖျက်ရန်</string>
     <string name="operation_not_supported">ဤလုပ်ဆောင်ချက်ကို မထောက်ပံ့ပါ</string>
-    <string name="cloudstream_newpipe_required">ဤတိုးချဲ့မှုသည် Kototoro တွင်ပါရှိသော NewPipe တွင်မပါဝင်သည့် NewPipe အတန်းအစားများ လိုအပ်သောကြောင့် ဗီဒီယိုများကို မဖွင့်နိုင်ပါ။ တိုးချဲ့မှု သို့မဟုတ် Kototoro ကို အပ်ဒိတ်လုပ်ကြည့်ပါ။</string>
+    <string name="cloudstream_newpipe_required">ဤတိုးချဲ့မှုသည် Amuratsu တွင်ပါရှိသော NewPipe တွင်မပါဝင်သည့် NewPipe အတန်းအစားများ လိုအပ်သောကြောင့် ဗီဒီယိုများကို မဖွင့်နိုင်ပါ။ တိုးချဲ့မှု သို့မဟုတ် Amuratsu ကို အပ်ဒိတ်လုပ်ကြည့်ပါ။</string>
     <string name="text_file_not_supported">ZIP သို့မဟုတ် CBZ ဖိုင်ကို ရွေးပါ။</string>
     <string name="no_description">ဖော်ပြချက် မရှိပါ</string>
     <string name="clear_pages_cache">စာမျက်နှာ ကက်ရှ်ရှင်း</string>
@@ -184,7 +184,7 @@
     <string name="replace_rule_disable_all_summary">စာသားအစားထိုးခြင်း စည်းမျဉ်းများကို ခဏရပ်ထားပါ</string>
     <string name="replace_rule_edit">စည်းမျဉ်းပြင်</string>
     <string name="replace_rule_import">Legado တင်သွင်း</string>
-    <string name="replace_rule_import_summary">Legado သို့မဟုတ် Kototoro မှ ထုတ်ယူထားသော JSON စာရင်းများကို တင်သွင်းပါ</string>
+    <string name="replace_rule_import_summary">Legado သို့မဟုတ် Amuratsu မှ ထုတ်ယူထားသော JSON စာရင်းများကို တင်သွင်းပါ</string>
     <string name="replace_rule_export">စည်းမျဉ်းထုတ်</string>
     <string name="replace_rule_export_summary">ကိုက်ညီသော JSON ပုံစံဖြင့် စည်းမျဉ်းများကို ထုတ်ယူပါ</string>
     <string name="replace_rule_empty">အစားထိုးစည်းမျဉ်းများ မရှိပါ</string>
@@ -315,7 +315,7 @@
     <string name="enter_password">စကားဝှက် ထည့်ပါ</string>
     <string name="wrong_password">စကားဝှက် မှားယွင်းနေသည်</string>
     <string name="protect_application">အက်ပ်ကို ကာကွယ်ရန်</string>
-    <string name="protect_application_summary">Kototoro ကို စတင်သည့်အခါ စကားဝှက် တောင်းခံပါ</string>
+    <string name="protect_application_summary">Amuratsu ကို စတင်သည့်အခါ စကားဝှက် တောင်းခံပါ</string>
     <string name="repeat_password">စကားဝှက်ကို ထပ်ထည့်ပါ</string>
     <string name="passwords_mismatch">စကားဝှက်များ မကိုက်ညီပါ</string>
     <string name="about">အကြောင်း</string>
@@ -422,8 +422,8 @@
     <string name="clear_local_novel_storage_prompt">ဒေသတွင်း သိမ်းထားသော နိုဗယ်ဖိုင်အားလုံး ဖျက်မည်လား။ ဤလုပ်ဆောင်ချက်ကို ပြန်မပြင်နိုင်ပါ။</string>
     <string name="clear_local_video_storage_prompt">ဒေသတွင်း သိမ်းထားသော ဗီဒီယိုဖိုင်အားလုံး ဖျက်မည်လား။ ဤလုပ်ဆောင်ချက်ကို ပြန်မပြင်နိုင်ပါ။</string>
     <string name="welcome">ကြိုဆိုပါတယ်</string>
-    <string name="welcome_intro_title">Kototoro ကို သတ်မှတ်ရန်</string>
-    <string name="welcome_intro_summary">သင်ဖတ်လို၊ ကြည့်လိုသည့်ပုံစံကို ရွေးချယ်ပါ။ Kototoro တွင် ယခုအခါ JAR၊ Mihon၊ Aniyomi၊ IReader၊ Legado၊ TVBox၊ LNReader နှင့် Cloudstream အပါအဝင် မန်ဂါ၊ နိုဗယ်နှင့် ဗီဒီယိုတို့အတွက် ပလပ်အ的 ဖောင်ဒေရှင်းများကို အသုံးပြုထားသည်။</string>
+    <string name="welcome_intro_title">Amuratsu ကို သတ်မှတ်ရန်</string>
+    <string name="welcome_intro_summary">သင်ဖတ်လို၊ ကြည့်လိုသည့်ပုံစံကို ရွေးချယ်ပါ။ Amuratsu တွင် ယခုအခါ JAR၊ Mihon၊ Aniyomi၊ IReader၊ Legado၊ TVBox၊ LNReader နှင့် Cloudstream အပါအဝင် မန်ဂါ၊ နိုဗယ်နှင့် ဗီဒီယိုတို့အတွက် ပလပ်အ的 ဖောင်ဒေရှင်းများကို အသုံးပြုထားသည်။</string>
     <string name="welcome_step_start">စတင်ရန်</string>
     <string name="welcome_step_sources">ရင်းမြစ်များ</string>
     <string name="welcome_step_preferences">ဦးစားပေးများ</string>
@@ -433,11 +433,11 @@
     <string name="welcome_glass_preset_title">မှန်သားပြင် ပုံစံ</string>
     <string name="welcome_glass_preset_summary">iOS စတိုင်အတွက် မှန်သားပြင် ကြိုတင်ပြင်ဆင်မှုကို ရွေးချယ်ပါ။ ရေယိုစိမ့်မှုကို မူလအတိုင်း သတ်မှတ်ထားပြီး အသွင်အပြင် ဆက်တင်များတွင် နောက်မှ အသေးစိတ် ချိန်ညှိနိုင်သည်။</string>
     <string name="home_quick_action_wizard">ဝizard</string>
-    <string name="welcome_restore_summary">Kototoro ကို သုံးဖူးပြီးပြီလား။ အရန်သိမ်းဆည်းမှုကို ပြန်ယူပါ၊ စင့်ခ်လုပ်ရန် အကောင့်ဝင်ပါ သို့မဟုတ် ဖိုင်တွဲထည့်ပါ။</string>
+    <string name="welcome_restore_summary">Amuratsu ကို သုံးဖူးပြီးပြီလား။ အရန်သိမ်းဆည်းမှုကို ပြန်ယူပါ၊ စင့်ခ်လုပ်ရန် အကောင့်ဝင်ပါ သို့မဟုတ် ဖိုင်တွဲထည့်ပါ။</string>
     <string name="welcome_source_formats_title">ဖော်မတ်များ ရွေးပါ</string>
     <string name="welcome_source_formats_summary">ဤစစ်ထုတ်မှုများသည် စနစ်ထည့်သွင်းပြီးနောက် မည်သည့်ရင်းမြစ်အုပ်စုများကို ဖွင့်မည်ကို ဆုံးဖြတ်ပေးသည်။</string>
     <string name="welcome_ecosystems_title">ရင်းမြစ် ဂေဟစနစ်</string>
-    <string name="welcome_ecosystems_summary">Kototoro သည် ဖတ်ရှုခြင်းနှင့် ကြည့်ရှုခြင်းအတွက် ပလပ်အင် ရရင်းမြစ်အုပ်စုများစွာကို ပံ့ပိုးပေးသည်။ ဤနေရာရှိ အကြံပြုထားသော ရရင်းမြစ်များဖြင့် စတင်ပြီးနောက် တိုးချဲ့မှု စီမံခန့်ခွဲမှုတွင် ၎င်းတို့ကို ပြန်လည်ညှိပါ။</string>
+    <string name="welcome_ecosystems_summary">Amuratsu သည် ဖတ်ရှုခြင်းနှင့် ကြည့်ရှုခြင်းအတွက် ပလပ်အင် ရရင်းမြစ်အုပ်စုများစွာကို ပံ့ပိုးပေးသည်။ ဤနေရာရှိ အကြံပြုထားသော ရရင်းမြစ်များဖြင့် စတင်ပြီးနောက် တိုးချဲ့မှု စီမံခန့်ခွဲမှုတွင် ၎င်းတို့ကို ပြန်လည်ညှိပါ။</string>
     <string name="welcome_ecosystem_manga">မန်ဂါ- JAR ပာ်ဆာများ၊ Mihon၊ IReader၊ LNReader</string>
     <string name="welcome_ecosystem_novel">နိုဗယ်- Legado၊ IReader၊ LNReader</string>
     <string name="welcome_ecosystem_video">ဗီဒီယို- Aniyomi၊ TVBox၊ Cloudstream</string>
@@ -446,10 +446,10 @@
     <string name="welcome_preferences_summary">ဘာသာစကားများနှင့် အကြောင်းအရာ အမျိုးအစားများကို ရွေးပါ။ ၎င်းကို ရရင်းမြစ် ဆက်တင်များတွင် နောက်မှ ပြောင်းလဲနိုင်သည်။</string>
     <string name="welcome_spaces_title">နေရာများကို ခွဲခြားပါ</string>
     <string name="welcome_spaces_summary">နေရာများသည် မန်ဂါ၊ နိုဗယ်နှင့် အန်နီမေးတို့အတွက် သီးခြား လမ်းညွှန်မှု၊ ကြည့်ရှုမှု ဦးစားပေးများနှင့် ဖတ်ရှုခြင်း သို့မဟုတ် ပြန်ဖွင့်ခြင်း အခြေအနေတို့ကို ပေးသည်။ အဆင့်မြင့် ရွေးချယ်စရာများနှင့် စိတ်ကြိုက်နေရာများကို ဆက်တင်များ &gt; အသုံးပြုသူ &gt; နေရာများ တွင် ရနိုင်သည်။</string>
-    <string name="welcome_ready_summary">စနစ်ထည့်သွင်းမှု ပြီးပါပြီ။ Kototoro သည် သင်ရွေးချယ်ထားသော ဘာသာစကားများနှင့် ကိုက်ညီသော ရင်းမြစ်များကို ဖွင့်ပေးမည်။ ဤဝီဇာတ်ကို ဆက်တင်များ &gt; အကြောင်းအရာ ရင်းမြစ်များ &gt; စနစ်ထည့်သွင်းမှု ဝီဇာတ် မှတစ်ဆင့် ထပ်လုပ်နိုင်သည်။</string>
-    <string name="welcome_jar_install_success">Kototoro- အတိမ်အနက် ကွန်ရက်မှ နောက်ဆုံးပေါ် ပာ်ဆာ အင်ဂျင် %1$d ခုကို အောင်မြင်စွာ ရယူပြီး တပ်ဆင်ပြီးပါပြီ။</string>
-    <string name="welcome_jar_install_up_to_date">Kototoro- ကလောက် အတည်ပြုခြင်း ပြီးပါပြီ၊ ဒေသတွင်း ပာ်ဆာများ နောက်ဆုံးပေါ် ဖြစ်နေပါပြီ။ (ရင်းမြစ် စုစုပေါင်း %1$d ခု ဖွင့်ထားသည်)</string>
-    <string name="welcome_jar_install_failed">Kototoro- ပာ်ဆာ ကွန်ရက် တင်ဆောင်ခြင်း မအောင်မြင်ပါ (%1$s)၊ ကျေးဇူးပြု၍ ထပ်ကြိုးစားပါ သို့မဟုတ် ပရောက်စီ မိရ်များကို ပြောင်းရန် ဆက်တင်များသို့ သွားပါ။</string>
+    <string name="welcome_ready_summary">စနစ်ထည့်သွင်းမှု ပြီးပါပြီ။ Amuratsu သည် သင်ရွေးချယ်ထားသော ဘာသာစကားများနှင့် ကိုက်ညီသော ရင်းမြစ်များကို ဖွင့်ပေးမည်။ ဤဝီဇာတ်ကို ဆက်တင်များ &gt; အကြောင်းအရာ ရင်းမြစ်များ &gt; စနစ်ထည့်သွင်းမှု ဝီဇာတ် မှတစ်ဆင့် ထပ်လုပ်နိုင်သည်။</string>
+    <string name="welcome_jar_install_success">Amuratsu- အတိမ်အနက် ကွန်ရက်မှ နောက်ဆုံးပေါ် ပာ်ဆာ အင်ဂျင် %1$d ခုကို အောင်မြင်စွာ ရယူပြီး တပ်ဆင်ပြီးပါပြီ။</string>
+    <string name="welcome_jar_install_up_to_date">Amuratsu- ကလောက် အတည်ပြုခြင်း ပြီးပါပြီ၊ ဒေသတွင်း ပာ်ဆာများ နောက်ဆုံးပေါ် ဖြစ်နေပါပြီ။ (ရင်းမြစ် စုစုပေါင်း %1$d ခု ဖွင့်ထားသည်)</string>
+    <string name="welcome_jar_install_failed">Amuratsu- ပာ်ဆာ ကွန်ရက် တင်ဆောင်ခြင်း မအောင်မြင်ပါ (%1$s)၊ ကျေးဇူးပြု၍ ထပ်ကြိုးစားပါ သို့မဟုတ် ပရောက်စီ မိရ်များကို ပြောင်းရန် ဆက်တင်များသို့ သွားပါ။</string>
     <string name="home_placeholder_title">ဖတ်ရှုခြင်း ဒိုင်ခွက်</string>
     <string name="home_placeholder_subtitle">သင်၏ မကြာသေးမီက ဖတ်ရှုမှု၊ အပ်ဒိတ်များ၊ စာကြည့်တိုက်၊ စင့်ခ်နှင့် ရရင်းမြစ်များကို တစ်နေရာတည်းတွင် ကြည့်ပါ။</string>
     <string name="home_hero_local_subtitle">သင်ရပ်ထားခဲ့သည့်နေရာမှ ဆက်လုပ်ပါ သို့မဟုတ် မကြာသေးမီက ဖွင့်ခဲ့သည့်အရာသို့ ပြန်သွားပါ။</string>
@@ -1026,7 +1026,7 @@
     <string name="import_completed_hint">နေရာလွတ်ရရှိရန် မူရင်းဖိုင်ကို သိုလှောင်မှုမှ ဖျက်ပစ်နိုင်သည်</string>
     <string name="import_will_start_soon">တင်သွင်းမှု မကြာမီ စတင်ပါမည်</string>
     <string name="feed">ဖိဒ်</string>
-    <string name="manga_error_description_pattern">အမှားအယွင်း အသေးစိတ်:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;၁။ ၎င်း၏ ရင်းမြစ်တွင် ရရှိနိုင်မှု ရှိမရှိ စစ်ဆေးရန် &lt;a href=\"%2$s\"&gt;ဝဘ်ဘရောက်ဇာတွင် မန်ဂါကို ဖွင့်ကြည့်ပါ&lt;/a&gt;&lt;br&gt;၂။ &lt;a href=\"kototoro://about\"&gt;Kototoro ၏ နောက်ဆုံးဗားရှင်း&lt;/a&gt;ကို အသုံးပြုနေကြောင်း သေချာစေပါ&lt;br&gt;၃။ ရရှိနိုင်ပါက တီထွင်သူများထံ အမှားအယွင်း အစီရင်ခံစာ ပို့ပါ။</string>
+    <string name="manga_error_description_pattern">အမှားအယွင်း အသေးစိတ်:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;၁။ ၎င်း၏ ရင်းမြစ်တွင် ရရှိနိုင်မှု ရှိမရှိ စစ်ဆေးရန် &lt;a href=\"%2$s\"&gt;ဝဘ်ဘရောက်ဇာတွင် မန်ဂါကို ဖွင့်ကြည့်ပါ&lt;/a&gt;&lt;br&gt;၂။ &lt;a href=\"amuratsu://about\"&gt;Amuratsu ၏ နောက်ဆုံးဗားရှင်း&lt;/a&gt;ကို အသုံးပြုနေကြောင်း သေချာစေပါ&lt;br&gt;၃။ ရရှိနိုင်ပါက တီထွင်သူများထံ အမှားအယွင်း အစီရင်ခံစာ ပို့ပါ။</string>
     <string name="history_shortcuts">လတ်တလော မန်ဂါ အတိုကောက်များကို ပြရန်</string>
     <string name="history_shortcuts_summary">အပလီကေးရှင်း အိုင်ကွန်ကို ကြာရှည်စွာ ဖိထားခြင်းဖြင့် လတ်တလော မန်ဂါများကို ရယူသုံးစွဲနိုင်စေရန်</string>
     <string name="reader_control_ltr_summary">စာမျက်နှာပြောင်းသည့် দিকကို ဖတ်ရှုသည့်မုဒ်သို့ မညှိပါနှင့် ဥပမာ- ညာဘက်ခလုတ်ကို နှိပ်ခြင်းက နောက်စာမျက်နှာသို့ အမြဲပြောင်းသည်။ ဤရွေးချယ်မှုသည် ဟာ့ဒ်ဝဲ ထည့်သွင်းသည့် ကိရိယာများကိုသာ သက်ရောက်သည်</string>
@@ -1196,7 +1196,7 @@
     <string name="export_backup_for_other_apps_summary">ပစ်မှတ်အက်ပ်ကို ရွေးချယ်ပြီး လိုက်ဖက်သော အရန်ဖိုင်ကို ဖန်တီးပါ - Kotatsu, Mihon, Aniyomi သို့မဟုတ် Usagi။</string>
     <string name="export_backup_choose_target_app">ပစ်မှတ်အက်ပ်ကို ရွေးချယ်ပါ</string>
     <string name="export_kotatsu_backup">Kotatsu အရန်ဖိုင်ကို ထုတ်ယူရန်</string>
-    <string name="export_kotatsu_backup_summary">Kototoro သီးသန့် အပိုင်းများမပါဘဲ Kotatsu မိသားစုအက်ပ်များအတွက် သီးခြား ရှေးဟောင်းအရန်ဖိုင်ကို ဖန်တီးပါ။</string>
+    <string name="export_kotatsu_backup_summary">Amuratsu သီးသန့် အပိုင်းများမပါဘဲ Kotatsu မိသားစုအက်ပ်များအတွက် သီးခြား ရှေးဟောင်းအရန်ဖိုင်ကို ဖန်တီးပါ။</string>
     <string name="export_kotatsu_backup_saved">Kotatsu အရန်ဖိုင် သိမ်းပြီး</string>
     <string name="export_mihon_backup">Mihon အရန်ဖိုင်ကို ထုတ်ယူရန်</string>
     <string name="export_mihon_backup_summary">Mihon ရရင်းနစ်ထည့်သွင်းမှုများအတွက်သာ အကြိုက်ဆုံးများ၊ အမျိုးအစားများနှင့် ဖတ်ရှုမှု တိုးတက်မှုကို ထုတ်ယူပါ။</string>
@@ -1269,7 +1269,7 @@
     <string name="data_and_privacy">ဒေတာနှင့် လုံခြုံမှု</string>
     <string name="restore_summary">ယခင်က ဖန်တီးထားသော အရန်သိမ်းဆည်းမှုကို ပြန်လည်ရယူရန်</string>
     <string name="restore_kototoro_backup">အရန်ဖိုင် ပြန်ယူရန်</string>
-    <string name="restore_kototoro_backup_summary">မည်သည့် ဗားရှင်းမှမဆို Kototoro အရန်သိမ်းဆည်းမှု သို့မဟုတ် Kotatsu အရန်သိမ်းဆည်းမှုကို ပြန်လည်ရယူပါ။ ပုံစံကို အလိုအလျောက် ရှာဖွေတွေ့ရှိမည် ဖြစ်သည်။</string>
+    <string name="restore_kototoro_backup_summary">မည်သည့် ဗားရှင်းမှမဆို Amuratsu အရန်သိမ်းဆည်းမှု သို့မဟုတ် Kotatsu အရန်သိမ်းဆည်းမှုကို ပြန်လည်ရယူပါ။ ပုံစံကို အလိုအလျောက် ရှာဖွေတွေ့ရှိမည် ဖြစ်သည်။</string>
     <string name="restore_mode_replace_existing">လက်ရှိ ဒေတာများကို အစားထိုးရန်</string>
     <string name="restore_mode_replace_existing_summary">ပြန်လည်ရယူနေသော အပိုင်းများကို ဦးစွာ ရှင်းလင်းမည်။ အရန်သိမ်းဆည်းမှုတွင် မပါဝင်တော့သော အကြိုက်ဆုံးများနှင့် မှတ်တမ်းများကို ဖယ်ရှားမည်</string>
     <string name="restore_mode_merge_with_existing">လက်ရှိ ဒေတာများနှင့် ပေါင်းထည့်ရန်</string>
@@ -2006,7 +2006,7 @@
     <string name="show_pages_thumbs">စာမျက်နှာ ပုံငယ်များကို ပြမည်</string>
     <string name="show_pages_thumbs_summary">အသေးစိတ်မျက်နှာပြင်တွင် \"စာမျက်နှာများ\" တက်ဘ်ကို ဖွင့်ပါ</string>
     <string name="error_no_data_received">ဆာဗာမှ အချက်အလက် မရရှိပါ</string>
-    <string name="unsupported_backup_message">မှန်ကန်သော Kototoro အရန်ဖိုင်ကို ရွေးချယ်ပါ</string>
+    <string name="unsupported_backup_message">မှန်ကန်သော Amuratsu အရန်ဖိုင်ကို ရွေးချယ်ပါ</string>
     <string name="hours_short">%d နာရီ</string>
     <string name="minutes_short">%d မိနစ်</string>
     <string name="seconds_short">%d စက္ကန့်</string>
@@ -2058,8 +2058,8 @@
     <string name="chapters_read">ဖတ်ပြီးသော အခန်းများ</string>
     <string name="chapters_left">ကျန်ရှိသော အခန်းများ</string>
     <string name="external_source">ပြင်ပရင်းမြစ်/ပလပ်အင်</string>
-    <string name="plugin_incompatible">ပလပ်အင် မကိုက်ညီပါ သို့မဟုတ် အတွင်းပိုင်း အမှားအယွင်းရှိသည်။ ပလပ်အင်နှင့် Kototoro ၏ နောက်ဆုံးဗားရှင်းကို သုံးနေကြောင်း အတည်ပြုပါ</string>
-    <string name="plugin_incompatible_with_cause">ပလပ်အင် အမှားအယွင်း: %s\n ပလပ်အင်နှင့် Kototoro ၏ နောက်ဆုံးဗားရှင်းကို အသုံးပြုနေကြောင်း သေချာစေပါ</string>
+    <string name="plugin_incompatible">ပလပ်အင် မကိုက်ညီပါ သို့မဟုတ် အတွင်းပိုင်း အမှားအယွင်းရှိသည်။ ပလပ်အင်နှင့် Amuratsu ၏ နောက်ဆုံးဗားရှင်းကို သုံးနေကြောင်း အတည်ပြုပါ</string>
+    <string name="plugin_incompatible_with_cause">ပလပ်အင် အမှားအယွင်း: %s\n ပလပ်အင်နှင့် Amuratsu ၏ နောက်ဆုံးဗားရှင်းကို အသုံးပြုနေကြောင်း သေချာစေပါ</string>
     <string name="plugin_missing_host_classes">ပံ့ပိုးမထားသော %2$s host အတန်းအစားများပေါ် မူတည်နေသောကြောင့် %1$s ကို ထည့်သွင်း၍မရပါ:\n%3$s</string>
     <string name="connection_ok">ချိတ်ဆက်မှု အဆင်ပြေပါသည်</string>
     <string name="invalid_proxy_configuration">ပရောက်စီ ပုံစံသတ်မှတ်ချက် မမှန်ကန်ပါ</string>
@@ -2259,7 +2259,7 @@
     <string name="search_disabled_sources">ပိတ်ထားသော ရရင်းမြစ်များမှတဆင့် ရှာဖွေရန်</string>
     <string name="error_details">အမှားအယွင်း အသေးစိတ်</string>
     <string name="error_disclaimer_manga">ရင်းမြစ်တွင် ရရှိနိုင်မှု ရှိမရှိ သေချာစေရန် မန်ဂါကို ဝက်ဘ်ဘရောက်ဆာတွင် ဖွင့်ကြည့်ပါ။</string>
-    <string name="error_disclaimer_app_outdated">သင်၏ Kototoro ဗားရှင်းသည် ခေတ်နောက်ကျနေပုံရသည်။ ရရှိနိုင်သော ပြင်ဆင်မှုများအားလုံးကို ရယူရန် နောက်ဆုံးထွက်ဗားရှင်းကို ထည့်သွင်းပါ။</string>
+    <string name="error_disclaimer_app_outdated">သင်၏ Amuratsu ဗားရှင်းသည် ခေတ်နောက်ကျနေပုံရသည်။ ရရှိနိုင်သော ပြင်ဆင်မှုများအားလုံးကို ရယူရန် နောက်ဆုံးထွက်ဗားရှင်းကို ထည့်သွင်းပါ။</string>
     <string name="error_disclaimer_report">ဆော့ဖ်ဝဲရေးသားသူများထံ အမှားအယွင်း အစီရင်ခံစာ ပေးပို့နိုင်ပြီး ၎င်းသည် အမှားကို ရှာဖွေပြင်ဆင်ရန် ကူညီပေးပါမည်</string>
     <string name="enable_source_manga">မန်ဂါ ရရင်းမြစ်ကို ဖွင့်ရန်</string>
     <string name="enable_source_novel">ဝတ္ထု ရရင်းမြစ်ကို ဖွင့်ရန်</string>
@@ -2277,7 +2277,7 @@
     <string name="recommendation_novel">အကြံပြုထားသော ဝတ္ထုများ</string>
     <string name="recommendation_video">အကြံပြုထားသော ဗီဒီယိုများ</string>
     <string name="link_to_manga_on_s">%s ပေါ်ရှိ မန်ဂါသို့ လင့်ခ်</string>
-    <string name="link_to_manga_in_app">Kototoro ရှိ မန်ဂါသို့ လင့်ခ်</string>
+    <string name="link_to_manga_in_app">Amuratsu ရှိ မန်ဂါသို့ လင့်ခ်</string>
     <string name="clear_browser_data">ဘရောက်ဆာအချက်အလက် ရှင်းရန်</string>
     <string name="clear_browser_data_summary">ကက်ရှ်နှင့် ကွတ်ကီးများကဲ့သို့သော ဘရောက်ဆာ အချက်အလက်များကို ရှင်းလင်းပါ။ သတိပေးချက်- အကြောင်းအရာ ရရင်းမြစ်များတွင် အကောင့်ဝင်ထားမှုများ ပျက်ပြယ်သွားနိုင်သည်</string>
     <string name="no_write_permission_to_file">ဖိုင်ကို ရေးသားရန် ခွင့်ပြုချက် မရှိပါ</string>
@@ -2327,7 +2327,7 @@
     <string name="discord_token_hint">သင့် Discord တိုကင်ကို ဤနေရာတွင် ကူးထည့်ပါ</string>
     <string name="discord_rpc_summary">သင်၏ ဖတ်ရှုနေသည့် အခြေအနေကို Discord တွင် ပြသရန်</string>
     <string name="obtain">ရယူရန်</string>
-    <string name="discord_rpc_description">Kototoro - မန်ဂါဖတ်ရှုသည့်အက်ပ်တွင် မန်ဂါဖတ်နေသည်</string>
+    <string name="discord_rpc_description">Amuratsu - မန်ဂါဖတ်ရှုသည့်အက်ပ်တွင် မန်ဂါဖတ်နေသည်</string>
     <string name="discord_logout_summary">သိမ်းဆည်းထားသော Discord အတည်ပြုမှုကို ရှင်းလင်းရန်</string>
     <string name="reading_s">%s ကို ဖတ်နေသည်</string>
     <string name="read_on_s">%s တွင် ဖတ်ရန်</string>
@@ -2354,7 +2354,7 @@
     <string name="sync_backend_switch_webdav_title">WebDAV သို့ ပြောင်းမလား</string>
     <string name="sync_backend_switch_webdav_confirm">Google Drive စင့်ခ်လုပ်ခြင်းကို လက်ရှိတွင် ဖွင့်ထားသည်။ WebDAV အရန်သိမ်းဆည်းမှုကို ဖွင့်ခြင်းဖြင့် သင့် Google ဝင်ရောက်မှုကို ဆက်လက်ထိန်းသိမ်းထားပြီး Google Drive စင့်ခ်လုပ်ခြင်းကို ပိတ်သွားပါမည်။</string>
     <string name="sync_sign_in">Google Drive စင့်ခ်လုပ်ရန် ပြင်ဆင်ပါ</string>
-    <string name="sync_sign_in_summary">စာရင်းသွင်းမှုများနှင့် အပ်ဒိတ်မှတ်တမ်းများကို စင့်ခ်လုပ်ရန် အနည်းဆုံး Drive appdata ခွင့်ပြုချက်ဖြင့် Google Drive အက်ပ်အချက်အလက်ကို အသုံးပြုသည်။ Kototoro သည် သင်၏ Drive ဖိုင်များကို ဝင်ရောက်ကြည့်ရှု၍မရပါ။</string>
+    <string name="sync_sign_in_summary">စာရင်းသွင်းမှုများနှင့် အပ်ဒိတ်မှတ်တမ်းများကို စင့်ခ်လုပ်ရန် အနည်းဆုံး Drive appdata ခွင့်ပြုချက်ဖြင့် Google Drive အက်ပ်အချက်အလက်ကို အသုံးပြုသည်။ Amuratsu သည် သင်၏ Drive ဖိုင်များကို ဝင်ရောက်ကြည့်ရှု၍မရပါ။</string>
     <string name="google_drive_sync_unregistered_build_error">ဖွံ့ဖြိုးရေး/ညဘက် ဗားရှင်းများတွင် Google Drive စင့်ခ်လုပ်ခြင်းကို မထောက်ပံ့ပါ။ တရားဝင် ထွက်ရှိထားသော ဗားရှင်းများ သို့မဟုတ် WebDAV စင့်ခ်လုပ်ခြင်းကို အသုံးပြုပါ။</string>
     <string name="sync_sign_out">ထွက်မည်</string>
     <string name="sync_account">ဝင်ရောက်ပြီး</string>
@@ -2408,8 +2408,8 @@
     <string name="webdav_remote_backups_inspect">အဝေးရောက် အရန်များကို စစ်ဆေးရန်</string>
     <string name="webdav_remote_backups_inspect_summary">အဝေးရောက် အရန်တစ်ခုချင်းစီကို ဘေးကင်းစွာ ပြန်ယူနိုင်ခြင်း ရှိမရှိ ဒေါင်းလုဒ်လုပ်ပြီး အတည်ပြုပါ။</string>
     <string name="webdav_remote_backups_clear">အဝေးရောက် WebDAV အရန်များကို ရှင်းလင်းရန်</string>
-    <string name="webdav_remote_backups_clear_summary">သတ်မှတ်ထားသော WebDAV လမ်းကြောင်းပေါ်ရှိ Kototoro အရန်ဖိုင်အားလုံးကို ဖျက်ပါ။ ဒေသတွင်း အချက်အလက်များ မပြောင်းလဲပါ။</string>
-    <string name="webdav_remote_backups_clear_confirm">သတ်မှတ်ထားသော WebDAV လမ်းကြောင်းမှ Kototoro အရန်ဖိုင်အားလုံးကို ဖျက်မည်လား။ ဒေသတွင်း အချက်အလက်များ ပြောင်းလဲမည် မဟုတ်ပါ။</string>
+    <string name="webdav_remote_backups_clear_summary">သတ်မှတ်ထားသော WebDAV လမ်းကြောင်းပေါ်ရှိ Amuratsu အရန်ဖိုင်အားလုံးကို ဖျက်ပါ။ ဒေသတွင်း အချက်အလက်များ မပြောင်းလဲပါ။</string>
+    <string name="webdav_remote_backups_clear_confirm">သတ်မှတ်ထားသော WebDAV လမ်းကြောင်းမှ Amuratsu အရန်ဖိုင်အားလုံးကို ဖျက်မည်လား။ ဒေသတွင်း အချက်အလက်များ ပြောင်းလဲမည် မဟုတ်ပါ။</string>
     <string name="webdav_remote_backups_loading">WebDAV အရန်များကို ဖွင့်နေသည်…</string>
     <string name="webdav_remote_backup_status_unknown">မစစ်ဆေးရသေးပါ</string>
     <string name="webdav_remote_backup_status_restorable">ပြန်ယူနိုင်သည်</string>
@@ -2814,7 +2814,7 @@
     <string name="trust_and_add">ယုံကြည်ပြီး ထည့်မည်</string>
     <string name="trust_extension_repository_message">ရာဇဝင်: %1$s\nဝဘ်ဆိုက်: %2$s\nSHA-256 လက်ဗွေရာ:\n%3$s\n\nဤရာဇဝင်ကို မယုံကြည်မီ ထုတ်ဝေသူနှင့် ဤလက်ဗွေရာကို အတည်ပြုပါ။</string>
     <string name="untrusted_extension_message">%1$s (%2$s) ကို ထည့်သွင်းထားသော်လည်း ၎င်း၏ လက်မှတ်သည် ရွေးချယ်ထားသော ရာဇဝင် လက်ဗွေရာနှင့် မကိုက်ညီပါ။\n\nရာဇဝင် လက်ဗွေရာ: %3$s\n\nဤရာဇဝင်မှ ပြန်လည်မထည့်သွင်းမီ ထည့်သွင်းထားသော ပက်ကေ့ဂျ်ကို ဖယ်ရှားပါ။</string>
-    <string name="incompatible_extension_message">%1$s %2$s ၏ စာကြည့်တိုက် ဗားရှင်း (%3$s) သည် Kototoro ပံ့ပိုးပေးသော အတိုင်းအတာပြင်ပတွင် ရှိနေသောကြောင့် ထည့်သွင်း၍မရပါ။</string>
+    <string name="incompatible_extension_message">%1$s %2$s ၏ စာကြည့်တိုက် ဗားရှင်း (%3$s) သည် Amuratsu ပံ့ပိုးပေးသော အတိုင်းအတာပြင်ပတွင် ရှိနေသောကြောင့် ထည့်သွင်း၍မရပါ။</string>
     <string name="built_in_sources">ပါရှိပြီးသား</string>
     <string name="select_all">အားလုံး ရွေးမည်</string>
     <string name="deselect_all">အားလုံး ဖြုတ်မည်</string>
@@ -2854,7 +2854,7 @@
     <string name="welcome_plugins_repo_yakateam">Yakateam Parsers</string>
     <string name="welcome_plugins_repo_redo">Redo Parsers</string>
     <string name="welcome_plugins_repo_uma">UMA (Tsuki Parsers)</string>
-    <string name="welcome_plugins_disclaimer">ဤတိုးချဲ့မှု ရင်းမြစ်များကို လွတ်လပ်သော အွန်လိုင်းအသိုင်းအဝိုင်းများက ထိန်းသိမ်းထားခြင်း ဖြစ်သည်။ Kototoro တည်ဆောက်သူများသည် ဤပြင်ပရင်းမြစ်များနှင့် မည်သို့မျှ မသက်ဆိုင်ပါ။ ဤရင်းမြစ်များကို ကိုယ်ပိုင်တာဝန်ဖြင့် အသုံးပြုမည်ဖြစ်ကြောင်း သဘောတူပါသည်။</string>
+    <string name="welcome_plugins_disclaimer">ဤတိုးချဲ့မှု ရင်းမြစ်များကို လွတ်လပ်သော အွန်လိုင်းအသိုင်းအဝိုင်းများက ထိန်းသိမ်းထားခြင်း ဖြစ်သည်။ Amuratsu တည်ဆောက်သူများသည် ဤပြင်ပရင်းမြစ်များနှင့် မည်သို့မျှ မသက်ဆိုင်ပါ။ ဤရင်းမြစ်များကို ကိုယ်ပိုင်တာဝန်ဖြင့် အသုံးပြုမည်ဖြစ်ကြောင်း သဘောတူပါသည်။</string>
     <string name="welcome_plugins_start_btn">ရင်းမြစ်များကို ပြင်ဆင်မည်</string>
     <string name="welcome_plugins_configured">အသစ် ပြင်ဆင်ပြီးသော ရင်းမြစ်အမျိုးအစား %1$d ခု: %2$s။ පැကေ့ချ်များကို မဒေါင်းလုဒ်ဆွဲရသေးပါ - နောက်အဆင့်တွင် ကိုက်ညီသည်များကို ထည့်သွင်းပါ။</string>
     <string name="welcome_plugins_configured_none">ရင်းမြစ် သို့မဟုတ် သိုလှောင်မှုကို ပြင်ဆင်၍မရပါ။ သင်၏ အင်တာနက်ကို စစ်ဆေးပါ သို့မဟုတ် အခြားရင်းမြစ်များကို ရွေးချယ်ပြီး ထပ်ကြိုးစားပါ။</string>
@@ -2884,22 +2884,22 @@
     <string name="welcome_install_system_launch_failed">စနစ်ထည့်သွင်းမှုကို စတင်၍မရပါ - %1$s</string>
     <string name="welcome_install_skip">ထည့်သွင်းမှုကို ကျော်မည် — တိုးချဲ့မှု စီမံခန့်ခွဲမှုတွင် နောင်မှလုပ်မည်</string>
     <string name="welcome_install_step_title">တိုးချဲ့မှုများကို အစုလိုက် တပ်ဆင်</string>
-    <string name="welcome_install_step_summary">အသုံးပြုရန် ရင်းမြစ် အမျိုးအစားများနှင့် ဆက်တင်များကို ရွေးချယ်ပါ၊ ထို့နောက် Kototoro ကို နောက်ကွယ်တွင် အားလုံး ဒေါင်းလုပ်လုပ်ပြီး ထည့်သွင်းခွင့်ပြုပါ။</string>
+    <string name="welcome_install_step_summary">အသုံးပြုရန် ရင်းမြစ် အမျိုးအစားများနှင့် ဆက်တင်များကို ရွေးချယ်ပါ၊ ထို့နောက် Amuratsu ကို နောက်ကွယ်တွင် အားလုံး ဒေါင်းလုပ်လုပ်ပြီး ထည့်သွင်းခွင့်ပြုပါ။</string>
     <string name="welcome_install_kinds_title">ထည့်သွင်းမည့် ရင်းမြစ် အမျိုးအစားများ</string>
     <string name="welcome_install_kinds_summary">သင်အမှန်ခြစ်ထားသော အမျိုးအစားများကိုသာ ဆောင်ရွက်ပေးပါမည်။ အမှန်ခြစ်မထားသော အမျိုးအစားများ (ဥပမာ- နောင်မှလုပ်လိုပါက Mihon) ကို တိုးချဲ့မှု စီမံခန့်ခွဲမှုတွင် သင်ကိုယ်တိုင် ထည့်သွင်းရန် ကျန်ရှိနေမည်ဖြစ်သည်။</string>
     <string name="welcome_install_kinds_empty">သိမ်းဆည်းရာနေရာများကို မချိတ်ရသေးပါ။ နောက်သို့ပြန်သွားပြီး သိမ်းဆည်းရာနေရာများကို ဦးစွာထည့်ပါ။</string>
     <string name="welcome_install_nsfw_title">NSFW အကြောင်းအရာ ပါဝင်ရန်</string>
     <string name="welcome_install_nsfw_summary">မူလအားဖြင့် ပိတ်ထားသည် — အရွယ်ရောက်ပြီးသူများအတွက်သာ ပါကေ့ဂျ်များကို ထည့်သွင်းမှုစာရင်းမှ ဖယ်ထုတ်ထားသည်။</string>
-    <string name="welcome_intro_app_title">Kototoro · အင်းဝဒေါင်းလုဒ် ဖတ်ရှုသူ</string>
-    <string name="welcome_intro_body">Kototoro သည် ပွင့်လင်းမြင်သာသော မာလ်တီမီဒီယာ ဖတ်ရှုသူ/ဖွင့်စက် တစ်ခုဖြစ်သည်။ ၎င်းသည် ရပ်ရွာအသိုက်အဝန်း တိုးချဲ့မှု ဂေဟစနစ် ကြီးမားစွာကို ပံ့ပိုးပေးသော်လည်း ၎င်း၏ကိုယ်ပိုင် အကြောင်းအရာရင်းမြစ်များကို ထည့်သွင်းမပေးထားပါ။</string>
+    <string name="welcome_intro_app_title">Amuratsu · အင်းဝဒေါင်းလုဒ် ဖတ်ရှုသူ</string>
+    <string name="welcome_intro_body">Amuratsu သည် ပွင့်လင်းမြင်သာသော မာလ်တီမီဒီယာ ဖတ်ရှုသူ/ဖွင့်စက် တစ်ခုဖြစ်သည်။ ၎င်းသည် ရပ်ရွာအသိုက်အဝန်း တိုးချဲ့မှု ဂေဟစနစ် ကြီးမားစွာကို ပံ့ပိုးပေးသော်လည်း ၎င်း၏ကိုယ်ပိုင် အကြောင်းအရာရင်းမြစ်များကို ထည့်သွင်းမပေးထားပါ။</string>
     <string name="welcome_intro_concepts_title">သဘောတရား သုံးခု၊ စက္ကန့် ၃၀ အတွင်း</string>
     <string name="welcome_intro_repo_label">သိမ်းဆည်းရာနေရာ</string>
     <string name="welcome_intro_repo_body">သီးခြားရပ်ရွာအသိုက်အဝန်းတစ်ခုမှ ထိန်းသိမ်းထားသော ပြင်ပတိုးချဲ့မှု စုစည်းမှုတစ်ခုသို့ URL တစ်ခု (ဥပမာ- Mihon သိမ်းဆည်းရာနေရာများ၊ TVBox စာရင်းများ သို့မဟုတ် LNReader ပလပ်အင် သိမ်းဆည်းရာနေရာများ)။</string>
     <string name="welcome_intro_extension_label">တိုးချဲ့မှု</string>
-    <string name="welcome_intro_extension_body">သိမ်းဆည်းရာနေရာတစ်ခုအတွင်း ထည့်သွင်းနိုင်သော ပါကေ့ဂျ်တစ်ခု — JAR၊ APK သို့မဟုတ် JSON စာရင်းတစ်ခု။ ထည့်သွင်းထားသော တိုးချဲ့မှုများက Kototoro အား ဆိုက်တစ်ခုမှ ဖတ်ရှုရန် သို့မဟုတ် ဖွင့်ရန် စွမ်းဆောင်ရည်ကို ပေးသည်။</string>
+    <string name="welcome_intro_extension_body">သိမ်းဆည်းရာနေရာတစ်ခုအတွင်း ထည့်သွင်းနိုင်သော ပါကေ့ဂျ်တစ်ခု — JAR၊ APK သို့မဟုတ် JSON စာရင်းတစ်ခု။ ထည့်သွင်းထားသော တိုးချဲ့မှုများက Amuratsu အား ဆိုက်တစ်ခုမှ ဖတ်ရှုရန် သို့မဟုတ် ဖွင့်ရန် စွမ်းဆောင်ရည်ကို ပေးသည်။</string>
     <string name="welcome_intro_source_label">ရင်းမြစ်</string>
     <string name="welcome_intro_source_body">တိုးချဲ့မှုကို ထည့်သွင်း သို့မဟုတ် တင်သွင်းပြီးနောက် အက်ပ်တွင် သင်မြင်ရသည့် တိကျသောအကြောင်းအရာ ရင်းမြစ်တစ်ခု — ဥပမာ- သီးသန့် မန်ဂါ သို့မဟုတ် ဗီဒီယို ဝဘ်ဆိုက်တစ်ခု။</string>
-    <string name="welcome_intro_disclaimer">ပြင်ပတိုးချဲ့မှုများကို အသုံးပြုခြင်းသည် သင့်ကိုယ်ပိုင်အန္တရာယ်ဖြင့်သာ ဖြစ်သည် - လုပ်ဆောင်ချိန် အပြုအမူ၊ ဥပဒေနှင့် အကြောင်းအရာများကို Kototoro ပရောဂျက်မှ ထိန်းချုပ်ထားခြင်း မရှိပါ။</string>
+    <string name="welcome_intro_disclaimer">ပြင်ပတိုးချဲ့မှုများကို အသုံးပြုခြင်းသည် သင့်ကိုယ်ပိုင်အန္တရာယ်ဖြင့်သာ ဖြစ်သည် - လုပ်ဆောင်ချိန် အပြုအမူ၊ ဥပဒေနှင့် အကြောင်းအရာများကို Amuratsu ပရောဂျက်မှ ထိန်းချုပ်ထားခြင်း မရှိပါ။</string>
     <string name="welcome_intro_continue">နားလည်ပါပြီ — ဆက်လုပ်ရန်</string>
     <string name="welcome_done_title">ပြီးခါနီးပါပြီ</string>
     <string name="welcome_done_summary">စနစ်ထည့်သွင်းမှု အကျဉ်းချုပ်နှင့် အကြံပြုချက်များ။</string>
@@ -2908,10 +2908,10 @@
     <string name="welcome_done_json_note">JSON အခြေခံ အမျိုးအစားများကို (Legado / TVBox / LNReader) အလိုအလျောက် တင်သွင်းပါသည်။ အခြား JSON သိမ်းဆည်းရာနေရာများကိုပါ ထည့်သွင်းထားပါက ၎င်းတို့ကို တိုးချဲ့မှု စီမံခန့်ခွဲမှုတွင် တင်သွင်းပါ။</string>
     <string name="welcome_done_title_finished">စနစ်ထည့်သွင်းပြီး</string>
     <string name="welcome_done_summary_finished">ဝဇတ် ပြီးဆုံးသွားပါပြီ — သိမ်းဆည်းရာနေရာ သို့မဟုတ် ရင်းမြစ်များကို အလိုအလျောက် မထည့်သွင်းပါ။</string>
-    <string name="welcome_done_body_finished">Kototoro သည် စနစ်ထည့်သွင်းစဉ်အတွင်း မည်သည့်ရင်းမြစ်ကိုမျှ မထည့်သွင်းပါ။ ဆက်တင်များ → အကြောင်းအရာ ရင်းမြစ်များ (တိုးချဲ့မှု စီမံခန့်ခွဲမှု) တွင် အချိန်မရွေး သင်၏ကိုယ်ပိုင် သိမ်းဆည်းရာနေရာများနှင့် ရင်းမြစ်များကို ထည့်သွင်းနိုင်သည်။</string>
+    <string name="welcome_done_body_finished">Amuratsu သည် စနစ်ထည့်သွင်းစဉ်အတွင်း မည်သည့်ရင်းမြစ်ကိုမျှ မထည့်သွင်းပါ။ ဆက်တင်များ → အကြောင်းအရာ ရင်းမြစ်များ (တိုးချဲ့မှု စီမံခန့်ခွဲမှု) တွင် အချိန်မရွေး သင်၏ကိုယ်ပိုင် သိမ်းဆည်းရာနေရာများနှင့် ရင်းမြစ်များကို ထည့်သွင်းနိုင်သည်။</string>
     <string name="welcome_done_advice_title">ရင်းမြစ်တစ်ခု အလုပ်မလုပ်ပါက</string>
     <string name="welcome_done_advice_summary">မှန်ကန်သောသူများ အစီရင်ခံစာကို မြင်တွေ့နိုင်ရန် ပြဿနာဖြေရှင်းသည့် နည်းလမ်းတို။</string>
-    <string name="welcome_done_advice_body">1. တိုးချဲ့မှု၏ မူရင်းအိမ်ရှင်အက်ပ်ကို အသုံးပြု၍ ပြဿနာကို အတည်ပြုပါ — ဥပမာ- Mihon အမျိုးအစား ရင်းမြစ်ကို Mihon အက်ပ်တွင် စမ်းသပ်သင့်သည်။\n2. ပြဿနာသည် ထိုနေရာတွင်လည်း ဖြစ်ပေါ်ပါက ၎င်းသည် တိုးချဲ့မှုကို ထိန်းသိမ်းသည့် သိမ်းဆည်းရာနေရာနှင့် သက်ဆိုင်သည် - သိမ်းဆည်းရာနေရာ၏ ကိုယ်ပိုင် URL တွင် ပြဿနာတစ်ခု ဖွင့်ပါ။\n3. Kototoro တွင်သာ ဖြစ်ပေါ်ပါက Kototoro ပရောဂျက် သိမ်းဆည်းရာနေရာတွင် အစီရင်ခံပြီး ရင်းမြစ်အမည်၊ တိုးချဲ့မှု ဗားရှင်းနှင့် သင်စမ်းသပ်ခဲ့သည်များကို ထည့်သွင်းပါ။</string>
+    <string name="welcome_done_advice_body">1. တိုးချဲ့မှု၏ မူရင်းအိမ်ရှင်အက်ပ်ကို အသုံးပြု၍ ပြဿနာကို အတည်ပြုပါ — ဥပမာ- Mihon အမျိုးအစား ရင်းမြစ်ကို Mihon အက်ပ်တွင် စမ်းသပ်သင့်သည်။\n2. ပြဿနာသည် ထိုနေရာတွင်လည်း ဖြစ်ပေါ်ပါက ၎င်းသည် တိုးချဲ့မှုကို ထိန်းသိမ်းသည့် သိမ်းဆည်းရာနေရာနှင့် သက်ဆိုင်သည် - သိမ်းဆည်းရာနေရာ၏ ကိုယ်ပိုင် URL တွင် ပြဿနာတစ်ခု ဖွင့်ပါ။\n3. Amuratsu တွင်သာ ဖြစ်ပေါ်ပါက Amuratsu ပရောဂျက် သိမ်းဆည်းရာနေရာတွင် အစီရင်ခံပြီး ရင်းမြစ်အမည်၊ တိုးချဲ့မှု ဗားရှင်းနှင့် သင်စမ်းသပ်ခဲ့သည်များကို ထည့်သွင်းပါ။</string>
     <string name="welcome_step_counter">အဆင့် %1$d / %2$d</string>
     <string name="welcome_action_configure_repos">ရွေးချယ်ထားသော သိမ်းဆည်းရာနေရာများကို ပြင်ဆင်ရန်</string>
     <string name="welcome_action_install_count">တိုးချဲ့မှု %1$d ခုကို ထည့်သွင်းရန်</string>
@@ -2945,7 +2945,7 @@
     <string name="welcome_permissions_notifications_title">အသိပေးချက်များ</string>
     <string name="welcome_permissions_notifications_summary">ဒေါင်းလုဒ်၊ အပ်ဒိတ်နှင့် ပလေယာ အသိပေးချက်များကို ပြသသည်။</string>
     <string name="welcome_permissions_packages_title">ထည့်သွင်းထားသော အက်ပ်</string>
-    <string name="welcome_permissions_packages_summary">Kototoro တွင် ထည့်သွင်းပြီးသား တိုးချဲ့ဖိုင်များနှင့် ပင်မအက်ပ်များကို (Mihon၊ Aniyomi၊ …) သိရှိစေသည်။ မန်နီဖက်စ်တွင် ကြေညာထားပြီး အလိုအလျောက် ခွင့်ပြုပေးသည်။</string>
+    <string name="welcome_permissions_packages_summary">Amuratsu တွင် ထည့်သွင်းပြီးသား တိုးချဲ့ဖိုင်များနှင့် ပင်မအက်ပ်များကို (Mihon၊ Aniyomi၊ …) သိရှိစေသည်။ မန်နီဖက်စ်တွင် ကြေညာထားပြီး အလိုအလျောက် ခွင့်ပြုပေးသည်။</string>
     <string name="welcome_permissions_battery_title">နောက်ခံ လုပ်ဆောင်ချက်</string>
     <string name="welcome_permissions_battery_summary">ဖန်သားပြင် ပိတ်ထားချိန် သို့မဟုတ် စက်ပစ္စည်း အလုပ်မလုပ်ဘဲနေချိန်တွင် နောက်ခံ ဒေါင်းလုဒ်များနှင့် အပ်ဒိတ်များကို ဆက်လက်လုပ်ဆောင်စေသည်။</string>
     <string name="welcome_permissions_battery_action">ခွင့်ပြုရန်</string>
@@ -3362,11 +3362,11 @@
     <string name="pref_glass_blur_quality_performance">စွမ်းဆောင်ရည်</string>
     <string name="pref_glass_blur_quality_balanced">မျှတသော</string>
     <string name="pref_glass_blur_quality_quality">အရည်အသွေး</string>
-    <string name="glass_material_family_kototoro">Kototoro (အကြံပြုသည်)</string>
+    <string name="glass_material_family_kototoro">Amuratsu (အကြံပြုသည်)</string>
     <string name="glass_material_family_haze">Haze</string>
     <string name="glass_material_family_cupertino">Cupertino</string>
     <string name="glass_material_family_fluent">Fluent</string>
-    <string name="glass_material_kototoro">Kototoro (အကြံပြုသည်)</string>
+    <string name="glass_material_kototoro">Amuratsu (အကြံပြုသည်)</string>
     <string name="glass_material_haze_ultra_thin">Haze အလွန်ပါး</string>
     <string name="glass_material_haze_thin">Haze ပါး</string>
     <string name="glass_material_haze_regular">Haze ပုံမှန်</string>

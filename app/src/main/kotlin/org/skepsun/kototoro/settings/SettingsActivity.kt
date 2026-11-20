@@ -2206,25 +2206,10 @@ class SettingsActivity :
     }
 
     private fun openAboutLink(key: String): Boolean {
-        val urlRes = when (key) {
-            org.skepsun.kototoro.core.prefs.AppSettings.KEY_LINK_WEBLATE -> R.string.url_weblate
-            org.skepsun.kototoro.core.prefs.AppSettings.KEY_LINK_GITHUB -> R.string.url_github
-            org.skepsun.kototoro.core.prefs.AppSettings.KEY_LINK_DONATE -> R.string.url_donate
-            org.skepsun.kototoro.core.prefs.AppSettings.KEY_LINK_AFDIAN -> R.string.url_afdian
-            org.skepsun.kototoro.core.prefs.AppSettings.KEY_LINK_MANUAL -> R.string.url_user_manual
-            org.skepsun.kototoro.core.prefs.AppSettings.KEY_LINK_DISCORD -> R.string.url_discord
-            else -> return false
-        }
-        val title = when (key) {
-            org.skepsun.kototoro.core.prefs.AppSettings.KEY_LINK_WEBLATE -> getString(R.string.about_app_translation_summary)
-            org.skepsun.kototoro.core.prefs.AppSettings.KEY_LINK_GITHUB -> getString(R.string.source_code)
-            org.skepsun.kototoro.core.prefs.AppSettings.KEY_LINK_DONATE -> getString(R.string.about_donate)
-            org.skepsun.kototoro.core.prefs.AppSettings.KEY_LINK_AFDIAN -> getString(R.string.about_donate_afdian)
-            org.skepsun.kototoro.core.prefs.AppSettings.KEY_LINK_MANUAL -> getString(R.string.user_manual)
-            org.skepsun.kototoro.core.prefs.AppSettings.KEY_LINK_DISCORD -> getString(R.string.about_discord)
-            else -> null
-        }
-        return if (router.openExternalBrowser(getString(urlRes), title)) {
+        val link = org.skepsun.kototoro.core.ui.text.AppProjectLink.entries
+            .firstOrNull { it.preferenceKey == key } ?: return false
+        val strings = org.skepsun.kototoro.core.ui.text.AndroidUiStrings(this)
+        return if (router.openExternalBrowser(strings.string(link.urlKey), strings.string(link.titleKey))) {
             true
         } else {
             Toast.makeText(this, R.string.operation_not_supported, Toast.LENGTH_SHORT).show()

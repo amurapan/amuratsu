@@ -12,10 +12,10 @@ import tempfile
 
 def verify(package: Path, image: Path, icon: Path, output: Path) -> None:
     output.mkdir(parents=True, exist_ok=True)
-    with tempfile.TemporaryDirectory(prefix="kototoro-deb-") as temporary:
+    with tempfile.TemporaryDirectory(prefix="amuratsu-deb-") as temporary:
         root = Path(temporary)
         subprocess.run(["dpkg-deb", "-x", str(package), str(root / "extracted")], check=True)
-        installed = root / "extracted/opt/kototoro"
+        installed = root / "extracted/opt/amuratsu"
         checked = 0
         for source in image.rglob("*"):
             relative = source.relative_to(image)
@@ -34,11 +34,11 @@ def verify(package: Path, image: Path, icon: Path, output: Path) -> None:
                 if source.stat().st_mode & 0o111 != target.stat().st_mode & 0o111:
                     raise ValueError(f"Packaged executable permissions changed: {relative}")
                 checked += 1
-        desktop = (installed / "lib/kototoro-Kototoro.desktop").read_text()
-        for entry in ("Exec=/opt/kototoro/bin/Kototoro", "Icon=/opt/kototoro/lib/Kototoro.png", "Type=Application"):
+        desktop = (installed / "lib/amuratsu-Amuratsu.desktop").read_text()
+        for entry in ("Exec=/opt/amuratsu/bin/Amuratsu", "Icon=/opt/amuratsu/lib/Amuratsu.png", "Type=Application"):
             if entry not in desktop.splitlines():
                 raise ValueError(f"Invalid desktop entry: {entry}")
-        packaged_icon = installed / "lib/Kototoro.png"
+        packaged_icon = installed / "lib/Amuratsu.png"
         if hashlib.sha256(icon.read_bytes()).digest() != hashlib.sha256(packaged_icon.read_bytes()).digest():
             raise ValueError(f"Packaged icon is not Android's app icon: {packaged_icon}")
         environment = dict(os.environ)
@@ -47,7 +47,7 @@ def verify(package: Path, image: Path, icon: Path, output: Path) -> None:
         environment["PATH"] = "/usr/bin:/bin"
         report = output.resolve() / "runtime-check.properties"
         with (output / "runtime-check.log").open("w") as log:
-            subprocess.run([str(installed / "bin/Kototoro"), "--data-dir", str(root / "data"),
+            subprocess.run([str(installed / "bin/Amuratsu"), "--data-dir", str(root / "data"),
                             "--check-runtime", str(report)], env=environment, stdout=log,
                            stderr=subprocess.STDOUT, check=True, timeout=60)
         (output / "contents.json").write_text(json.dumps({

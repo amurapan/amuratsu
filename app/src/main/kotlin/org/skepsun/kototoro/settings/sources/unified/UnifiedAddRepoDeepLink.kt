@@ -48,7 +48,7 @@ object UnifiedAddRepoDeepLinkParser {
     fun kindFromScheme(scheme: String?): UnifiedSourceKind? {
         return when (scheme?.trim()?.lowercase(Locale.ROOT)) {
             "aniyomi", "anikku" -> UnifiedSourceKind.ANIYOMI
-            "tachiyomi", "kototoro" -> UnifiedSourceKind.MIHON
+            "tachiyomi", "kototoro", "amuratsu" -> UnifiedSourceKind.MIHON
             else -> null
         }
     }

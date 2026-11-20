@@ -913,12 +913,12 @@
         }
       }
     },
-    "Google 授权已失效，打开 Kototoro 重新连接账号后继续同步。": {
+    "Google 授权已失效，打开 Amuratsu 重新连接账号后继续同步。": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Google authorization has expired. Open Kototoro and reconnect your account to resume syncing."
+            "value": "Google authorization has expired. Open Amuratsu and reconnect your account to resume syncing."
           }
         }
       }
@@ -963,12 +963,12 @@
         }
       }
     },
-    "Kototoro 已锁定": {
+    "Amuratsu 已锁定": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Kototoro is locked"
+            "value": "Amuratsu is locked"
           }
         }
       }
@@ -8226,13 +8226,13 @@
         }
       }
     },
-    "所选 ZIP 既不是 Kototoro 备份，也不是 Venera 备份": {
+    "所选 ZIP 既不是 Amuratsu 备份，也不是 Venera 备份": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "The selected ZIP is neither a Kototoro nor a Venera backup"
+            "value": "The selected ZIP is neither a Amuratsu nor a Venera backup"
           }
         }
       }
@@ -8258,13 +8258,13 @@
         }
       }
     },
-    "所选文件没有 Kototoro/Kotatsu 备份索引": {
+    "所选文件没有 Amuratsu/Kotatsu 备份索引": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "The selected file has no Kototoro/Kotatsu backup index"
+            "value": "The selected file has no Amuratsu/Kotatsu backup index"
           }
         }
       }
@@ -10009,13 +10009,13 @@
         }
       }
     },
-    "无法识别的备份文件：支持 Kototoro/Kotatsu、Mihon/Tachiyomi、Aniyomi 和 Venera 备份": {
+    "无法识别的备份文件：支持 Amuratsu/Kotatsu、Mihon/Tachiyomi、Aniyomi 和 Venera 备份": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Unrecognized backup file. Kototoro/Kotatsu, Mihon/Tachiyomi, Aniyomi and Venera backups are supported."
+            "value": "Unrecognized backup file. Amuratsu/Kotatsu, Mihon/Tachiyomi, Aniyomi and Venera backups are supported."
           }
         }
       }
@@ -15781,12 +15781,12 @@
         }
       }
     },
-    "解锁 Kototoro": {
+    "解锁 Amuratsu": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Unlock Kototoro"
+            "value": "Unlock Amuratsu"
           }
         }
       }

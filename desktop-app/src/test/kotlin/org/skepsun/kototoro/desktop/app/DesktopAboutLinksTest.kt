@@ -37,7 +37,9 @@ class DesktopAboutLinksTest {
     fun `the support group lists Android's five rows with absolute addresses`() {
         val links = desktopAboutLinks()
 
-        assertEquals(listOf("manual", "github", "donate", "afdian", "discord"), links.map { it.key })
+        assertEquals(listOf("manual", "github", "issues", "kototoro", "kotatsu"), links.map { it.key })
+        assertEquals("https://github.com/amurapan/amuratsu", links.first { it.key == "github" }.url)
+        assertEquals("https://github.com/amurapan/amuratsu/issues", links.first { it.key == "issues" }.url)
         assertEquals(links.size, links.map { it.key }.toSet().size)
         links.forEach { link ->
             assertTrue(link.title.isNotBlank(), "${link.key} has no label")

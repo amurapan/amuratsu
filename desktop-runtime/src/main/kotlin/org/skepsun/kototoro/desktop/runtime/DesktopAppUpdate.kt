@@ -26,9 +26,9 @@ import java.util.zip.ZipInputStream
 import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
 
-/** Where the release packages are published; the nightly channel keeps its own repository, as on Android. */
-const val DESKTOP_UPDATE_REPOSITORY = "Kototoro-app/Kototoro"
-const val DESKTOP_NIGHTLY_REPOSITORY = "Kototoro-app/Kototoro-Nightly"
+/** Both channels publish in the fork's repository; release tags and asset names distinguish them. */
+const val DESKTOP_UPDATE_REPOSITORY = "amurapan/amuratsu"
+const val DESKTOP_NIGHTLY_REPOSITORY = "amurapan/amuratsu"
 
 fun desktopUpdateRepository(channel: DesktopUpdateChannel): String = when (channel) {
     DesktopUpdateChannel.RELEASE -> DESKTOP_UPDATE_REPOSITORY
@@ -43,7 +43,7 @@ data class DesktopUpdateSettings(
     /** Applies an already downloaded package when the window closes instead of waiting for the button. */
     val installOnExit: Boolean = false,
     /**
-     * Android's `allow_unstable_updates`: a stable copy may follow the nightly repository instead. A nightly copy is
+     * Android's `allow_unstable_updates`: a stable copy may follow the nightly channel instead. A nightly copy is
      * always unstable, so this value only matters for a release build.
      */
     val unstable: Boolean = false,
@@ -92,7 +92,7 @@ class DesktopUpdateException(message: String, cause: Throwable? = null) : IOExce
  * * only this channel's assets (`…-windows-x64-release` / `…-windows-x64-nightly`), never a foreign artifact;
  * * the highest release strictly newer than the running version wins; a stable build is never offered a pre-release;
  * * a package is only accepted after its size and SHA-256 match the release's published `.sha256` file, and its
- *   container is actually a Kototoro image.
+ *   container is actually an Amuratsu image.
  *
  * Everything except the HTTP calls is pure, so the selection rules are tested with recorded release JSON.
  */
@@ -225,7 +225,7 @@ class DesktopAppUpdateClient(
             }
         }
         if (!image) throw DesktopUpdateException(
-            DesktopRuntimeStrings.text("runtime.update.notAnImage", "the package is not a Kototoro image"))
+            DesktopRuntimeStrings.text("runtime.update.notAnImage", "the package is not a Amuratsu image"))
     }
 
     private suspend fun readBytes(uri: URI, limit: Int): ByteArray = withContext(Dispatchers.IO) {
@@ -293,8 +293,8 @@ class DesktopAppUpdateClient(
         const val MAXIMUM_CHECKSUM_BYTES = 64 * 1024
         const val DOWNLOAD_BUFFER_BYTES = 64 * 1024
         const val PROGRESS_STEP_BYTES = 256 * 1024L
-        const val USER_AGENT = "Kototoro-Desktop"
-        val IMAGE_ENTRY = Regex("(^|.*/)Kototoro\\.exe", RegexOption.IGNORE_CASE)
+        const val USER_AGENT = "Amuratsu-Desktop"
+        val IMAGE_ENTRY = Regex("(^|.*/)Amuratsu\\.exe", RegexOption.IGNORE_CASE)
         val MSI_SIGNATURE = byteArrayOf(0xD0.toByte(), 0xCF.toByte(), 0x11, 0xE0.toByte(),
             0xA1.toByte(), 0xB1.toByte(), 0x1A, 0xE1.toByte())
 
@@ -326,7 +326,7 @@ private data class GithubRelease(
 /**
  * Parses the GitHub releases payload into the packages this channel can install.
  *
- * Assets are recognised by their published name — `Kototoro-<version>-windows-x64-<channel>.zip|.msi` — and the
+ * Assets are recognised by their published name — `Amuratsu-<version>-windows-x64-<channel>.zip|.msi` — and the
  * checksum file by the same stem with `.sha256`. Anything else in a release (APKs, iOS builds, patches, the other
  * channel) is ignored instead of guessed at.
  */
@@ -342,10 +342,10 @@ internal fun parseReleases(json: String, channel: DesktopUpdateChannel,
 }
 
 private fun GithubRelease.toUpdateRelease(channel: DesktopUpdateChannel, target: DesktopUpdateTarget): DesktopUpdateRelease? {
-    val expression = Regex("^Kototoro-([A-Za-z0-9][A-Za-z0-9.+-]*)-${target.assetSegment}-${channel.assetSegment}\\.(?:zip|msi|dmg)$", RegexOption.IGNORE_CASE)
+    val expression = Regex("^Amuratsu-([A-Za-z0-9][A-Za-z0-9.+-]*)-${target.assetSegment}-${channel.assetSegment}\\.(?:zip|msi|dmg)$", RegexOption.IGNORE_CASE)
     val version = assets.firstNotNullOfOrNull { expression.matchEntire(it.name)?.groupValues?.get(1) }
         ?.let(DesktopPackageVersion::parse)?.takeUnless { it == DesktopPackageVersion.UNKNOWN } ?: return null
-    val stem = "Kototoro-${version.text}-${target.assetSegment}-${channel.assetSegment}"
+    val stem = "Amuratsu-${version.text}-${target.assetSegment}-${channel.assetSegment}"
     val packages = assets.mapNotNull { asset ->
         val kind = when {
             asset.name.endsWith(".zip", ignoreCase = true) -> DesktopUpdatePackage.PORTABLE_ZIP

@@ -114,7 +114,7 @@ final class GoogleDriveSyncModel: ObservableObject {
     private static func notifyAuthorizationNeeded() async {
         let content = UNMutableNotificationContent()
         content.title = String(localized: "Google Drive 同步已暂停")
-        content.body = String(localized: "Google 授权已失效，打开 Kototoro 重新连接账号后继续同步。")
+        content.body = String(localized: "Google 授权已失效，打开 Amuratsu 重新连接账号后继续同步。")
         try? await UNUserNotificationCenter.current().add(
             UNNotificationRequest(identifier: "googleDrive.authorization", content: content, trigger: nil))
     }

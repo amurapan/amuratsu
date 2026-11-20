@@ -11,7 +11,7 @@ import java.net.HttpURLConnection
 private const val HEADER_SIMKL_API_KEY = "simkl-api-key"
 private const val JSON = "application/json"
 private const val SIMKL_HOST = "api.simkl.com"
-private const val APP_NAME = "Kototoro"
+private const val APP_NAME = "Amuratsu"
 
 class SimklInterceptor(
     private val storage: ScrobblerStorage,

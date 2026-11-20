@@ -183,7 +183,7 @@ jobs:
           # The self-update compares this copy against the published releases, so what the image says about itself has
           # to match the asset it is published as. The probe asks GitHub, but it writes its report even when the runner
           # cannot reach it, so the assertions below only read the stamp and the install layout.
-          $imageExe = 'desktop-app/build/compose/binaries/main/app/Kototoro/Kototoro.exe'
+          $imageExe = 'desktop-app/build/compose/binaries/main/app/Amuratsu/Amuratsu.exe'
           if (!(Test-Path -LiteralPath $imageExe)) { throw 'The packaged image has no launcher.' }
           $updateReport = Join-Path $env:RUNNER_TEMP 'update-check.properties'
           $probe = Start-Process -FilePath $imageExe -ArgumentList @('--check-update', $updateReport, '--channel', $env:CHANNEL) -PassThru
@@ -201,10 +201,10 @@ jobs:
           }
           Get-Content -LiteralPath $updateReport
           New-Item -ItemType Directory -Path 'release-windows' -Force | Out-Null
-          $assetStem = "Kototoro-$versionName-windows-x64-$env:CHANNEL"
-          Copy-Item -LiteralPath "desktop-app/build/compose/binaries/main/portable/Kototoro-Windows-local-preview-$packageVersion.zip" -Destination "release-windows/$assetStem.zip"
+          $assetStem = "Amuratsu-$versionName-windows-x64-$env:CHANNEL"
+          Copy-Item -LiteralPath "desktop-app/build/compose/binaries/main/portable/Amuratsu-Windows-local-preview-$packageVersion.zip" -Destination "release-windows/$assetStem.zip"
           if ($env:CHANNEL -eq 'release') {
-            Copy-Item -LiteralPath "desktop-app/build/compose/binaries/main/msi/Kototoro-$packageVersion.msi" -Destination "release-windows/$assetStem.msi"
+            Copy-Item -LiteralPath "desktop-app/build/compose/binaries/main/msi/Amuratsu-$packageVersion.msi" -Destination "release-windows/$assetStem.msi"
           }
           $checksums = Get-ChildItem -LiteralPath 'release-windows' -File | Sort-Object Name | ForEach-Object {
             "$((Get-FileHash -LiteralPath "$($_.FullName)" -Algorithm SHA256).Hash.ToLowerInvariant())  $($_.Name)"

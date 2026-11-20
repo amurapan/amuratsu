@@ -120,7 +120,7 @@
     <string name="_import">Inportatu</string>
     <string name="delete">Ezabatu</string>
     <string name="operation_not_supported">Eragiketa hau ez da onartzen</string>
-    <string name="cloudstream_newpipe_required">Hedapen honek Kototororekin datorren NewPipe-k ez dituen NewPipe klaseak behar ditu, eta ezin ditu bideoak erreproduzitu. Saiatu hedapena edo Kototoro eguneratzen.</string>
+    <string name="cloudstream_newpipe_required">Hedapen honek Amuratsurekin datorren NewPipe-k ez dituen NewPipe klaseak behar ditu, eta ezin ditu bideoak erreproduzitu. Saiatu hedapena edo Amuratsu eguneratzen.</string>
     <string name="text_file_not_supported">Aukeratu ZIP edo CBZ fitxategi bat.</string>
     <string name="no_description">Deskribapenik ez</string>
     <string name="clear_pages_cache">Garbitu orrialdeen katxea</string>
@@ -184,7 +184,7 @@
     <string name="replace_rule_disable_all_summary">Utzi behin-behinean arauak aplikatzeari</string>
     <string name="replace_rule_edit">Editatu araua</string>
     <string name="replace_rule_import">Inportatu Legado arauak</string>
-    <string name="replace_rule_import_summary">Inportatu Legado edo Kototoro bidez esportatutako JSON bat</string>
+    <string name="replace_rule_import_summary">Inportatu Legado edo Amuratsu bidez esportatutako JSON bat</string>
     <string name="replace_rule_export">Esportatu arauak</string>
     <string name="replace_rule_export_summary">Esportatu arauak JSON formatu bateragarrian</string>
     <string name="replace_rule_empty">Ez dago ordezteko araurik</string>
@@ -315,7 +315,7 @@
     <string name="enter_password">Sartu pasahitza</string>
     <string name="wrong_password">Pasahitz okerra</string>
     <string name="protect_application">Babestu aplikazioa</string>
-    <string name="protect_application_summary">Eskatu pasahitza Kototoro abiaraztean</string>
+    <string name="protect_application_summary">Eskatu pasahitza Amuratsu abiaraztean</string>
     <string name="repeat_password">Errepikatu pasahitza</string>
     <string name="passwords_mismatch">Pasahitzak ez datoz bat</string>
     <string name="about">Honi buruz</string>
@@ -421,8 +421,8 @@
     <string name="clear_local_novel_storage_prompt">Ezabatu lokalean gordetako eleberri fitxategi guztiak? Ezin izango da desegin.</string>
     <string name="clear_local_video_storage_prompt">Ezabatu lokalean gordetako bideo fitxategi guztiak? Ezin izango da desegin.</string>
     <string name="welcome">Ongi etorri</string>
-    <string name="welcome_intro_title">Konfiguratu Kototoro</string>
-    <string name="welcome_intro_summary">Aukeratu nola irakurri eta ikusi nahi duzun. Kototoro-k pluginetan oinarritutako iturri-familiak erabiltzen ditu manga, eleberri eta bideoetarako, besteak beste: JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader eta Cloudstream.</string>
+    <string name="welcome_intro_title">Konfiguratu Amuratsu</string>
+    <string name="welcome_intro_summary">Aukeratu nola irakurri eta ikusi nahi duzun. Amuratsu-k pluginetan oinarritutako iturri-familiak erabiltzen ditu manga, eleberri eta bideoetarako, besteak beste: JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader eta Cloudstream.</string>
     <string name="welcome_step_start">Hasi</string>
     <string name="welcome_step_sources">Iturriak</string>
     <string name="welcome_step_preferences">Hobespenak</string>
@@ -432,11 +432,11 @@
     <string name="welcome_glass_preset_title">Beira-amarrua</string>
     <string name="welcome_glass_preset_summary">Aukeratu iOS estiloaren beira-akaberaren aurrezarpena. Errefrakzioa da lehenetsia eta geroago doi daiteke Itxuraren ezarpenetan.</string>
     <string name="home_quick_action_wizard">Sorgailua</string>
-    <string name="welcome_restore_summary">Kototoro erabili duzu lehenago? Lehenetsi babeskopia bat, hasi saioa sinkronizatzeko, edo gehitu tokiko karpetak lehenik.</string>
+    <string name="welcome_restore_summary">Amuratsu erabili duzu lehenago? Lehenetsi babeskopia bat, hasi saioa sinkronizatzeko, edo gehitu tokiko karpetak lehenik.</string>
     <string name="welcome_source_formats_title">Aukeratu eduki-formatuak</string>
     <string name="welcome_source_formats_summary">Iragazki hauek zehazten dute zein iturri-familia aktibatuko diren konfigurazioaren ostean.</string>
     <string name="welcome_ecosystems_title">Iturrien ekosistema</string>
-    <string name="welcome_ecosystems_summary">Kototoro-k hainbat plugin-iturri familia onartzen ditu irakurtzeko eta ikusteko. Hasi gomendatutako biltegi hauekin eta doitu geroago hedapenen kudeaketan.</string>
+    <string name="welcome_ecosystems_summary">Amuratsu-k hainbat plugin-iturri familia onartzen ditu irakurtzeko eta ikusteko. Hasi gomendatutako biltegi hauekin eta doitu geroago hedapenen kudeaketan.</string>
     <string name="welcome_ecosystem_manga">Manga: JAR analizatzaileak, Mihon, IReader, LNReader</string>
     <string name="welcome_ecosystem_novel">Eleberria: Legado, IReader, LNReader</string>
     <string name="welcome_ecosystem_video">Bideoa: Aniyomi, TVBox, Cloudstream</string>
@@ -445,10 +445,10 @@
     <string name="welcome_preferences_summary">Aukeratu hizkuntzak eta eduki motak. Hau geroago alda dezakezu iturriaren ezarpenetan.</string>
     <string name="welcome_spaces_title">Bereizi zure espazioak</string>
     <string name="welcome_spaces_summary">Espazioek manga, eleberri eta animeei nabigazio independentea, arakatze-hobespenak eta irakurtze- zein erreprodukzio-testuingurua ematen diete. Aukera aurreratuak eta pertsonalizatuak Ezarpenak &gt; Erabiltzailea &gt; Espazioak atalean daude.</string>
-    <string name="welcome_ready_summary">Konfigurazioa osatu da. Kototoro-k hautatutako hizkuntza eta formatuekin bat datozen iturriak aktibatuko ditu. Sorgailua berriro exekutatu dezakezu Ezarpenak &gt; Eduki-iturriak &gt; Konfigurazioa ataletik.</string>
-    <string name="welcome_jar_install_success">Kototoro: %1$d analizatzaile-motor berriren eskuratzea eta muntatzea arrakastatsua izan da hodeiko saretik!</string>
-    <string name="welcome_jar_install_up_to_date">Kototoro: Hodeiko egiaztapena osatuta, tokiko analizatzaileak eguneratuta daude! (%1$d iturri kargatu dira guztira)</string>
-    <string name="welcome_jar_install_failed">Kototoro: Analizatzaileen sare-kargatzeak huts egin du (%1$s), saiatu berriro edo joan ezarpenetara proxy-ispiluak aldatzeko</string>
+    <string name="welcome_ready_summary">Konfigurazioa osatu da. Amuratsu-k hautatutako hizkuntza eta formatuekin bat datozen iturriak aktibatuko ditu. Sorgailua berriro exekutatu dezakezu Ezarpenak &gt; Eduki-iturriak &gt; Konfigurazioa ataletik.</string>
+    <string name="welcome_jar_install_success">Amuratsu: %1$d analizatzaile-motor berriren eskuratzea eta muntatzea arrakastatsua izan da hodeiko saretik!</string>
+    <string name="welcome_jar_install_up_to_date">Amuratsu: Hodeiko egiaztapena osatuta, tokiko analizatzaileak eguneratuta daude! (%1$d iturri kargatu dira guztira)</string>
+    <string name="welcome_jar_install_failed">Amuratsu: Analizatzaileen sare-kargatzeak huts egin du (%1$s), saiatu berriro edo joan ezarpenetara proxy-ispiluak aldatzeko</string>
     <string name="home_placeholder_title">Irakurketa-arbela</string>
     <string name="home_placeholder_subtitle">Ikusi zure azken irakurketak, eguneraketak, liburutegia, sinkronizazioa eta iturriak leku bakarrean.</string>
     <string name="home_hero_local_subtitle">Jarraitu utzi duzun lekutik, edo itzuli berriki ireki dituzunetara.</string>
@@ -1026,7 +1026,7 @@
     <string name="import_completed_hint">Jatorrizko fitxategia ezabatu dezakezu biltegian lekua aurrezteko</string>
     <string name="import_will_start_soon">Inportazioa laster hasiko da</string>
     <string name="feed">Jarioa</string>
-    <string name="manga_error_description_pattern">Errorearen xehetasunak:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. Saiatu &lt;a href=\"%2$s\"&gt;manga web-nabigatzaile batean irekitzen&lt;/a&gt; iturrietan erabilgarri dagoela ziurtatzeko&lt;br&gt;2. Ziurtatu &lt;a href=\"kototoro://about\"&gt;Kototoro-ren azken bertsioa&lt;/a&gt; erabiltzen ari zarela&lt;br&gt;3. Erabilgarri badago, bidali errore-txosten bat garatzaileei.</string>
+    <string name="manga_error_description_pattern">Errorearen xehetasunak:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. Saiatu &lt;a href=\"%2$s\"&gt;manga web-nabigatzaile batean irekitzen&lt;/a&gt; iturrietan erabilgarri dagoela ziurtatzeko&lt;br&gt;2. Ziurtatu &lt;a href=\"amuratsu://about\"&gt;Amuratsu-ren azken bertsioa&lt;/a&gt; erabiltzen ari zarela&lt;br&gt;3. Erabilgarri badago, bidali errore-txosten bat garatzaileei.</string>
     <string name="history_shortcuts">Erakutsi azken mangen lasterbideak</string>
     <string name="history_shortcuts_summary">Jarri azken mangak eskuragarri aplikazioaren ikonoari luze sakatuta</string>
     <string name="reader_control_ltr_summary">Ez egokitu orrialdeak aldatzeko norabidea irakurle-modura, adibidez, eskuineko tekla sakatzean beti hurrengo orrialdera pasatzen da. Aukera honek hardware bidezko sarrera-gailuei bakarrik eragiten die</string>
@@ -1196,7 +1196,7 @@
     <string name="export_backup_for_other_apps_summary">Aukeratu helburuko aplikazio bat eta sortu babeskopia bateragarri bat: Kotatsu, Mihon, Aniyomi edo Usagi.</string>
     <string name="export_backup_choose_target_app">Aukeratu helburu-aplikazioa</string>
     <string name="export_kotatsu_backup">Esportatu Kotatsu babeskopia</string>
-    <string name="export_kotatsu_backup_summary">Sortu herentziazko babeskopia bereizi bat Kotatsu-family aplikazioetarako, Kototoro-ren berariazko atalik gabe.</string>
+    <string name="export_kotatsu_backup_summary">Sortu herentziazko babeskopia bereizi bat Kotatsu-family aplikazioetarako, Amuratsu-ren berariazko atalik gabe.</string>
     <string name="export_kotatsu_backup_saved">Kotatsu babeskopia gordeta</string>
     <string name="export_mihon_backup">Esportatu Mihon babeskopia</string>
     <string name="export_mihon_backup_summary">Esportatu gogokoak, kategoriak eta irakurketa-aurrerapena Mihon iturburuko sarreretarako soilik.</string>
@@ -1269,7 +1269,7 @@
     <string name="data_and_privacy">Datuak eta pribatutasuna</string>
     <string name="restore_summary">Leheneratu aurretik sortutako babeskopia</string>
     <string name="restore_kototoro_backup">Leheneratu babeskopia</string>
-    <string name="restore_kototoro_backup_summary">Leheneratu edozein bertsioatako Kototoro babeskopia edo Kotatsu babeskopia bat. Formatua automatikoki hautematen da.</string>
+    <string name="restore_kototoro_backup_summary">Leheneratu edozein bertsioatako Amuratsu babeskopia edo Kotatsu babeskopia bat. Formatua automatikoki hautematen da.</string>
     <string name="restore_mode_replace_existing">Ordeztu dauden datuak</string>
     <string name="restore_mode_replace_existing_summary">Leheneratzen ari diren atalak garbitu egiten dira lehenbizi; babeskopian ez dauden gogokoenak eta historia ezabatuko dira</string>
     <string name="restore_mode_merge_with_existing">Batu dauden datuekin</string>
@@ -2005,7 +2005,7 @@
     <string name="show_pages_thumbs">Erakutsi irudi txikiak</string>
     <string name="show_pages_thumbs_summary">Gaitu \"Orriak\" fitxa xehetasunen pantailan</string>
     <string name="error_no_data_received">Ez da daturik jaso zerbitzaritik</string>
-    <string name="unsupported_backup_message">Hautatu baliozko Kototoro babeskopia-fitxategi bat</string>
+    <string name="unsupported_backup_message">Hautatu baliozko Amuratsu babeskopia-fitxategi bat</string>
     <string name="hours_short">oh %d</string>
     <string name="minutes_short">min %d</string>
     <string name="seconds_short">s %d</string>
@@ -2057,8 +2057,8 @@
     <string name="chapters_read">Irakurritakoak</string>
     <string name="chapters_left">Kapitulu falta</string>
     <string name="external_source">Kanpokoa/plugina</string>
-    <string name="plugin_incompatible">Plugin bateraezina edo barne-errorea. Ziurtatu pluginaren eta Kototoro-ren azken bertsioa erabiltzen ari zarela</string>
-    <string name="plugin_incompatible_with_cause">Pluginaren errorea: %s\n Ziurtatu pluginaren eta Kototoro-ren azken bertsioa erabiltzen ari zarela</string>
+    <string name="plugin_incompatible">Plugin bateraezina edo barne-errorea. Ziurtatu pluginaren eta Amuratsu-ren azken bertsioa erabiltzen ari zarela</string>
+    <string name="plugin_incompatible_with_cause">Pluginaren errorea: %s\n Ziurtatu pluginaren eta Amuratsu-ren azken bertsioa erabiltzen ari zarela</string>
     <string name="plugin_missing_host_classes">%1$s ezin da instalatu onartzen ez diren %2$s ostalari-klase hauen mende dagoelako:\n%3$s</string>
     <string name="connection_ok">Konexioa ondo dago</string>
     <string name="invalid_proxy_configuration">Proxy konfigurazio baliogabea</string>
@@ -2259,7 +2259,7 @@
     <string name="search_disabled_sources">Bilatu desgaitutako iturrietan</string>
     <string name="error_details">Errorearen xehetasunak</string>
     <string name="error_disclaimer_manga">Saiatu manga web-nabigatzaile batean irekitzen bere iturrian erabilgarri dagoela ziurtatzeko.</string>
-    <string name="error_disclaimer_app_outdated">Badirudi Kototoro-ren bertsio zaharkitua erabiltzen ari zarela. Instalatu azken bertsioa konponketa guztiak eskuratzeko.</string>
+    <string name="error_disclaimer_app_outdated">Badirudi Amuratsu-ren bertsio zaharkitua erabiltzen ari zarela. Instalatu azken bertsioa konponketa guztiak eskuratzeko.</string>
     <string name="error_disclaimer_report">Errore-txosten bat bidali diezaiekezu garatzaileei; horrek errorea aurkitzen eta konpontzen lagunduko digu</string>
     <string name="enable_source_manga">Gaitu manga-iturria</string>
     <string name="enable_source_novel">Gaitu eleberri-iturria</string>
@@ -2277,7 +2277,7 @@
     <string name="recommendation_novel">gomendatutako eleberriak</string>
     <string name="recommendation_video">gomendatutako bideoak</string>
     <string name="link_to_manga_on_s">Esteka honetako mangara: %s</string>
-    <string name="link_to_manga_in_app">Esteka Kototoro-ko mangara</string>
+    <string name="link_to_manga_in_app">Esteka Amuratsu-ko mangara</string>
     <string name="clear_browser_data">Garbitu nabigatzaile-datuak</string>
     <string name="clear_browser_data_summary">Garbitu nabigatzailearen datuak, hala nola cachea eta cookieak. Kontuz: eduki-iturrietako baimenak baliogabe bihur daitezke</string>
     <string name="no_write_permission_to_file">Ez duzu fitxategiak idazteko baimenik</string>
@@ -2327,7 +2327,7 @@
     <string name="discord_token_hint">Itsatsi zure Discord tokena hemen</string>
     <string name="discord_rpc_summary">Erakutsi zure irakurketa-egoera Discord-en</string>
     <string name="obtain">Lortu</string>
-    <string name="discord_rpc_description">Manga irakurtzen Kototoro aplikazioan</string>
+    <string name="discord_rpc_description">Manga irakurtzen Amuratsu aplikazioan</string>
     <string name="discord_logout_summary">Garbitu gordetako Discord baimena</string>
     <string name="reading_s">%s irakurtzen</string>
     <string name="read_on_s">%s(e)n irakurri</string>
@@ -2355,7 +2355,7 @@
     <string name="sync_backend_switch_webdav_title">WebDAV babeskopiara aldatu?</string>
     <string name="sync_backend_switch_webdav_confirm">Google Drive sinkronizazioa gaituta dago orain. WebDAV babeskopia gaitzeak Google Drive sinkronizazioa desaktibatuko du, zure Google-ko saioari eutsi bitartean.</string>
     <string name="sync_sign_in">Prestatu Google Drive sinkronizazioa</string>
-    <string name="sync_sign_in_summary">Google Drive aplikazioaren datuak erabiltzen ditu Drive appdata baimen minimoarekin harpidetzak eta eguneratze-erregistroak sinkronizatzeko. Kototoro-k ezin ditu atzitu zure Drive-ko fitxategiak.</string>
+    <string name="sync_sign_in_summary">Google Drive aplikazioaren datuak erabiltzen ditu Drive appdata baimen minimoarekin harpidetzak eta eguneratze-erregistroak sinkronizatzeko. Amuratsu-k ezin ditu atzitu zure Drive-ko fitxategiak.</string>
     <string name="google_drive_sync_unregistered_build_error">Google Drive sinkronizazioa ez da onartzen garapeneko/gaueko bertsioetan. Erabili argitalpen-bertsio ofizialak edo WebDAV sinkronizazioa.</string>
     <string name="sync_sign_out">Hasi saioa</string>
     <string name="sync_account">Saioa hasita</string>
@@ -2410,8 +2410,8 @@
     <string name="webdav_remote_backups_inspect">Egiaztatu urruneko babeskopiak</string>
     <string name="webdav_remote_backups_inspect_summary">Deskargatu eta egiaztatu urruneko babeskopia bakoitza segurtasunez lehenera daitekeen.</string>
     <string name="webdav_remote_backups_clear">Garbitu WebDAV urruneko babeskopiak</string>
-    <string name="webdav_remote_backups_clear_summary">Ezabatu Kototoro babeskopia-fitxategi guztiak konfiguratutako WebDAV bidean. Tokiko datuak ez dira aldatzen.</string>
-    <string name="webdav_remote_backups_clear_confirm">Ezabatu Kototoro babeskopia-fitxategi guztiak konfiguratutako WebDAV bidean? Tokiko datuak ez dira aldatuko.</string>
+    <string name="webdav_remote_backups_clear_summary">Ezabatu Amuratsu babeskopia-fitxategi guztiak konfiguratutako WebDAV bidean. Tokiko datuak ez dira aldatzen.</string>
+    <string name="webdav_remote_backups_clear_confirm">Ezabatu Amuratsu babeskopia-fitxategi guztiak konfiguratutako WebDAV bidean? Tokiko datuak ez dira aldatuko.</string>
     <string name="webdav_remote_backups_loading">WebDAV babeskopiak kargatzen…</string>
     <string name="webdav_remote_backup_status_unknown">Egiaztatu gabe</string>
     <string name="webdav_remote_backup_status_restorable">Leheneragarria</string>
@@ -2819,7 +2819,7 @@
     <string name="trust_and_add">Fidatu eta gehitu</string>
     <string name="trust_extension_repository_message">Biltegia: %1$s\nWebgunea: %2$s\nSHA-256 hatz-marka:\n%3$s\n\nEgiaztatu hatz-marka hau argitaratzailearekin biltegi honetaz fidatu aurretik.</string>
     <string name="untrusted_extension_message">%1$s (%2$s) instalatuta dago, baina bere sinadura ez dator bat hautatutako biltegiaren hatz-markarekin.\n\nBiltegiaren hatz-marka: %3$s\n\nKendu instalatutako paketea biltegi honetatik berriro instalatu aurretik.</string>
-    <string name="incompatible_extension_message">Ezin da %1$s %2$s instalatu bere liburutegi-bertsioa (%3$s) Kototoro-ren onartutako barrutitik kanpo dagoelako.</string>
+    <string name="incompatible_extension_message">Ezin da %1$s %2$s instalatu bere liburutegi-bertsioa (%3$s) Amuratsu-ren onartutako barrutitik kanpo dagoelako.</string>
     <string name="built_in_sources">Barnekoa</string>
     <string name="select_all">Hautatu denak</string>
     <string name="deselect_all">Kendu hautapena</string>
@@ -2859,7 +2859,7 @@
     <string name="welcome_plugins_repo_yakateam">Yakateam analizatzaileak</string>
     <string name="welcome_plugins_repo_redo">Redo analizatzaileak</string>
     <string name="welcome_plugins_repo_uma">UMA (Tsuki analizatzaileak)</string>
-    <string name="welcome_plugins_disclaimer">Luzapenen biltegi hauek lineako komunitate independenteek mantentzen dituzte. Kototoro-ren garatzaileek ez dute inolako loturarik, kontrolik edo kidetasunik hirugarrenen biltegi horiekin. Onartzen dut iturri hauek nire ardurapean konfiguratzen ari naizela.</string>
+    <string name="welcome_plugins_disclaimer">Luzapenen biltegi hauek lineako komunitate independenteek mantentzen dituzte. Amuratsu-ren garatzaileek ez dute inolako loturarik, kontrolik edo kidetasunik hirugarrenen biltegi horiekin. Onartzen dut iturri hauek nire ardurapean konfiguratzen ari naizela.</string>
     <string name="welcome_plugins_start_btn">Konfiguratu biltegiak</string>
     <string name="welcome_plugins_configured">%1$d iturri/biltegi mota berri konfiguratu dira: %2$s. Paketeak ez dira oraindik deskargatu; instalatu bat datozenak hurrengo urratsean.</string>
     <string name="welcome_plugins_configured_none">Ezin izan da iturri edo biltegirik konfiguratu. Egiaztatu sarea edo aukeratu beste biltegi batzuk eta saiatu berriro.</string>
@@ -2889,22 +2889,22 @@
     <string name="welcome_install_system_launch_failed">Ezin izan da sistemaren instalatzailea abiarazi: %1$s</string>
     <string name="welcome_install_skip">Saltatu instalazioa — Geroago egingo dut Hedapenen kudeaketan</string>
     <string name="welcome_install_step_title">Hedapenen instalazio sorta</string>
-    <string name="welcome_install_step_summary">Aukeratu zer iturri mota eta ezarpen erabili, eta utzi Kototoro-ri dena atzeko planoan deskargatzen eta instalatzen.</string>
+    <string name="welcome_install_step_summary">Aukeratu zer iturri mota eta ezarpen erabili, eta utzi Amuratsu-ri dena atzeko planoan deskargatzen eta instalatzen.</string>
     <string name="welcome_install_kinds_title">Instalatu beharreko iturri motak</string>
     <string name="welcome_install_kinds_summary">Markatu dituzun motak bakarrik kudeatuko dira. Markatu gabekoak (adib. Mihon, geroago egitea nahiago baduzu) Hedapenen kudeaketan instalatu ditzakezu.</string>
     <string name="welcome_install_kinds_empty">Ez dago biltegirik konfiguratuta oraindik. Joan atzera eta gehitu biltegiak lehenbizi.</string>
     <string name="welcome_install_nsfw_title">Sartu NSFW edukiak</string>
     <string name="welcome_install_nsfw_summary">Desaktibatuta lehenespenez — helduentzako paketeak instalazio-zerrendatik iragazten dira.</string>
-    <string name="welcome_intro_app_title">Kototoro · Iturburu irekiko irakurlea</string>
-    <string name="welcome_intro_body">Kototoro iturburu irekiko multimedia irakurle / erreproduzitzailea da. Komunitatearen hedapenen ekosistema zabala onartzen du, baina ez du berezko eduki-iturririk ekartzen.</string>
+    <string name="welcome_intro_app_title">Amuratsu · Iturburu irekiko irakurlea</string>
+    <string name="welcome_intro_body">Amuratsu iturburu irekiko multimedia irakurle / erreproduzitzailea da. Komunitatearen hedapenen ekosistema zabala onartzen du, baina ez du berezko eduki-iturririk ekartzen.</string>
     <string name="welcome_intro_concepts_title">Hiru kontzeptu, 30 segundotan</string>
     <string name="welcome_intro_repo_label">Biltegia</string>
     <string name="welcome_intro_repo_body">Komunitate independente batek mantendutako hirugarrenen hedapen bilduma baterako URL bat (adibidez, Mihon biltegiak, TVBox zerrendak edo LNReader plugin biltegiak).</string>
     <string name="welcome_intro_extension_label">Hedapena</string>
-    <string name="welcome_intro_extension_body">Biltegi bateko instalatu daitekeen pakete bat — JAR, APK edo JSON zerrenda bat. Instalatutako hedapenei esker, Kototoro-k gune batetik irakurri edo erreproduzi dezake.</string>
+    <string name="welcome_intro_extension_body">Biltegi bateko instalatu daitekeen pakete bat — JAR, APK edo JSON zerrenda bat. Instalatutako hedapenei esker, Amuratsu-k gune batetik irakurri edo erreproduzi dezake.</string>
     <string name="welcome_intro_source_label">Iturria</string>
     <string name="welcome_intro_source_body">Hedapena instalatu edo inportatu ondoren aplikazioan ikusten duzun eduki-iturri zehatz bat — adibidez, manga edo bideo webgune jakin bat.</string>
-    <string name="welcome_intro_disclaimer">Hirugarrenen hedapenak erabiltzea zure ardura da erabat: exekuzio-jokabidea, legezkotasuna eta edukia ez ditu Kototoro proiektuak kontrolatzen.</string>
+    <string name="welcome_intro_disclaimer">Hirugarrenen hedapenak erabiltzea zure ardura da erabat: exekuzio-jokabidea, legezkotasuna eta edukia ez ditu Amuratsu proiektuak kontrolatzen.</string>
     <string name="welcome_intro_continue">Ulertu dut — jarraitu</string>
     <string name="welcome_done_title">Ia amaituta</string>
     <string name="welcome_done_summary">Zure konfigurazioaren laburpena eta aholku batzuk.</string>
@@ -2913,10 +2913,10 @@
     <string name="welcome_done_json_note">JSON oinarritutako motak (Legado / TVBox / LNReader) automatikoki inportatzen dira; beste JSON biltegi batzuk ere gehitu badituzu, inportatu itzazu Hedapenen kudeaketan.</string>
     <string name="welcome_done_title_finished">Konfigurazioa osatuta</string>
     <string name="welcome_done_summary_finished">Morroia amaitu da — ez da biltegi edo iturririk gehiago gehitu automatikoki.</string>
-    <string name="welcome_done_body_finished">Kototoro-k ez du iturririk gehitu konfigurazioan zehar. Zure biltegi eta iturriak nahi duzunean gehi ditzakezu Ezarpenak → Eduki-iturriak (Hedapenen kudeaketa) atalean.</string>
+    <string name="welcome_done_body_finished">Amuratsu-k ez du iturririk gehitu konfigurazioan zehar. Zure biltegi eta iturriak nahi duzunean gehi ditzakezu Ezarpenak → Eduki-iturriak (Hedapenen kudeaketa) atalean.</string>
     <string name="welcome_done_advice_title">Iturri batek funtzionatzen ez badu</string>
     <string name="welcome_done_advice_summary">Arazoak konpontzeko bide labur bat, pertsona egokiek txostena ikus dezaten.</string>
-    <string name="welcome_done_advice_body">1. Berretsi arazoa hedapenaren jatorrizko ostalari-aplikazioa erabiliz — adibidez, Mihon motako iturri bat Mihon aplikazioan probatu behar da.\n2. Arazoa bertan ere gertatzen bada, hedapena mantentzen duen biltegiarena da: ireki arazo bat biltegiaren URLan.\n3. Kototoro-n bakarrik gertatzen bada, eman arazoaren berri Kototoro proiektuaren biltegian eta sartu iturriaren izena, hedapenaren bertsioa eta zer probatu duzun.</string>
+    <string name="welcome_done_advice_body">1. Berretsi arazoa hedapenaren jatorrizko ostalari-aplikazioa erabiliz — adibidez, Mihon motako iturri bat Mihon aplikazioan probatu behar da.\n2. Arazoa bertan ere gertatzen bada, hedapena mantentzen duen biltegiarena da: ireki arazo bat biltegiaren URLan.\n3. Amuratsu-n bakarrik gertatzen bada, eman arazoaren berri Amuratsu proiektuaren biltegian eta sartu iturriaren izena, hedapenaren bertsioa eta zer probatu duzun.</string>
     <string name="welcome_step_counter">Step %1$d of %2$d</string>
     <string name="welcome_action_configure_repos">Konfiguratu hautatutako biltegiak</string>
     <string name="welcome_action_install_count">Instalatu %1$d hedapen</string>
@@ -2950,7 +2950,7 @@
     <string name="welcome_permissions_notifications_title">Jakinarazpenak</string>
     <string name="welcome_permissions_notifications_summary">Deskarga, eguneratze eta erreproduzitzailearen oharrak.</string>
     <string name="welcome_permissions_packages_title">Instalatutakoak</string>
-    <string name="welcome_permissions_packages_summary">Kototoro-ri instalatuta dauden luzapenak eta aplikazio ostalariak detektatzen utzi (Mihon, Aniyomi, …). Manifestuan adierazita dago eta automatikoki ematen da.</string>
+    <string name="welcome_permissions_packages_summary">Amuratsu-ri instalatuta dauden luzapenak eta aplikazio ostalariak detektatzen utzi (Mihon, Aniyomi, …). Manifestuan adierazita dago eta automatikoki ematen da.</string>
     <string name="welcome_permissions_battery_title">Atzeko planoko iraupena</string>
     <string name="welcome_permissions_battery_summary">Atzeko planoko deskargak eta eguneratzeak martxan mantentzen ditu pantaila itzalita dagoenean edo gailua geltoan dagoenean.</string>
     <string name="welcome_permissions_battery_action">Baimendu</string>
@@ -3347,11 +3347,11 @@
     <string name="pref_glass_blur_quality_summary">Beira eta ertzak lausotzeko bereizmena. Baxuak GPUa eta bateria aurrezten ditu; altuak lausotzetik ateratzen den testua zorrotzago mantentzen du</string>
     <string name="pref_glass_blur_quality_balanced">Orekatua</string>
     <string name="pref_glass_blur_quality_quality">Kalitatea</string>
-    <string name="glass_material_family_kototoro">Kototoro (Gomendatua)</string>
+    <string name="glass_material_family_kototoro">Amuratsu (Gomendatua)</string>
     <string name="glass_material_family_haze">Haze</string>
     <string name="glass_material_family_cupertino">Cupertino</string>
     <string name="glass_material_family_fluent">Fluent</string>
-    <string name="glass_material_kototoro">Kototoro (Gomendatua)</string>
+    <string name="glass_material_kototoro">Amuratsu (Gomendatua)</string>
     <string name="glass_material_haze_ultra_thin">Haze Ultra Thin</string>
     <string name="glass_material_haze_thin">Haze Thin</string>
     <string name="glass_material_haze_regular">Haze Regular</string>

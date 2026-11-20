@@ -179,7 +179,7 @@
     <string name="appearance_mode">రూపశైలి మోడ్</string>
     <string name="page_save_manga_title_length">సేవ్ చేసిన ఫైల్‌పేర్లలో మాంగా శీర్షిక పొడవు</string>
     <string name="page_save_manga_title_length_summary">సేవ్ చేసిన ఇమేజ్ ఫైల్‌పేర్లలో ఉంచబడిన మాంగా శీర్షిక అక్షరాల సంఖ్య (12–64)</string>
-    <string name="cloudstream_newpipe_required">Kototoroతో చేర్చబడిన NewPipe కలిగి లేని NewPipe తరగతులు ఈ ఎక్స్‌టెన్షన్‌కు అవసరం, కాబట్టి ఇది వీడియోలను ప్లే చేయలేదు. ఎక్స్‌టెన్షన్ లేదా Kototoroను అప్‌డేట్ చేసి ప్రయత్నించండి.</string>
+    <string name="cloudstream_newpipe_required">Amuratsuతో చేర్చబడిన NewPipe కలిగి లేని NewPipe తరగతులు ఈ ఎక్స్‌టెన్షన్‌కు అవసరం, కాబట్టి ఇది వీడియోలను ప్లే చేయలేదు. ఎక్స్‌టెన్షన్ లేదా Amuratsuను అప్‌డేట్ చేసి ప్రయత్నించండి.</string>
     <string name="clear_chapter_thumbnails">అధ్యాయం థంబ్‌నెయి్‌లను క్లియర్ చేయి</string>
     <string name="continuous_horizontal">నిరంతర అడ్డంగా</string>
     <string name="continuous_horizontal_reversed">కుడి నుండి ఎడమకు చదవండి</string>
@@ -231,7 +231,7 @@
     <string name="replace_rule_disable_all_summary">ప్రత్యామ్నాయ నియమాలను తాత్కాలికంగా వర్తింపజేయడం ఆపివేయండి</string>
     <string name="replace_rule_edit">నియమం సవరించు</string>
     <string name="replace_rule_import">Legado నియమాలను దిగుమతి చేయి</string>
-    <string name="replace_rule_import_summary">Legado లేదా Kototoro ద్వారా ఎగుమతి చేయబడిన JSON శ్రేణిని దిగుమతి చేయండి</string>
+    <string name="replace_rule_import_summary">Legado లేదా Amuratsu ద్వారా ఎగుమతి చేయబడిన JSON శ్రేణిని దిగుమతి చేయండి</string>
     <string name="replace_rule_export">నియమాలను ఎగుమతి చేయి</string>
     <string name="replace_rule_export_summary">అనుకూలమైన JSON ఆకృతిలో నియమాలను ఎగుమతి చేయండి</string>
     <string name="replace_rule_empty">ప్రత్యామ్నాయ నియమాలు లేవు</string>
@@ -315,7 +315,7 @@
     <string name="enter_password">పాస్‌వర్డ్ ఇవ్వండి</string>
     <string name="wrong_password">తప్పు పాస్‌వర్డ్</string>
     <string name="protect_application">యాప్‌ను రక్షించండి</string>
-    <string name="protect_application_summary">Kototoro ప్రారంభించినప్పుడు పాస్‌వర్డ్ అడుగుతుంది</string>
+    <string name="protect_application_summary">Amuratsu ప్రారంభించినప్పుడు పాస్‌వర్డ్ అడుగుతుంది</string>
     <string name="repeat_password">పాస్‌వర్డ్ మళ్లీ ఇవ్వండి</string>
     <string name="passwords_mismatch">పాస్‌వర్డ్‌లు సరిపోలడం లేదు</string>
     <string name="about">గురించి</string>
@@ -422,8 +422,8 @@
     <string name="clear_local_novel_storage_prompt">స్థానికంగా సేవ్ చేసిన మరియు దిగుమతి చేసుకున్న అన్ని నవల ఫైల్‌లను తొలగించాలా? దీన్ని వెనక్కి తీసుకోవడం కుదరదు.</string>
     <string name="clear_local_video_storage_prompt">స్థానికంగా సేవ్ చేసిన మరియు దిగుమతి చేసుకున్న అన్ని వీడియో ఫైల్‌లను తొలగించాలా? దీన్ని వెనక్కి తీసుకోవడం కుదరదు.</string>
     <string name="welcome">స్వాగతం</string>
-    <string name="welcome_intro_title">Kototoroని సెటప్ చేయండి</string>
-    <string name="welcome_intro_summary">మీరు ఎలా చదవాలనుకుంటున్నారో మరియు చూడాలనుకుంటున్నారో ఎంచుకోండి. Kototoro ఇప్పుడు మంగా, నవలలు మరియు వీడియోల కోసం JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader మరియు Cloudstream সহ ప్లగిన్-ఆధారిత సోర్స్ ఫ్యామిలీలను ఉపయోగిస్తుంది.</string>
+    <string name="welcome_intro_title">Amuratsuని సెటప్ చేయండి</string>
+    <string name="welcome_intro_summary">మీరు ఎలా చదవాలనుకుంటున్నారో మరియు చూడాలనుకుంటున్నారో ఎంచుకోండి. Amuratsu ఇప్పుడు మంగా, నవలలు మరియు వీడియోల కోసం JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader మరియు Cloudstream সহ ప్లగిన్-ఆధారిత సోర్స్ ఫ్యామిలీలను ఉపయోగిస్తుంది.</string>
     <string name="welcome_step_start">ప్రారంభించు</string>
     <string name="welcome_step_sources">సోర్సెస్</string>
     <string name="welcome_step_preferences">ప్రాధాన్యతలు</string>
@@ -433,11 +433,11 @@
     <string name="welcome_glass_preset_title">గ్లాస్ ఫినిష్</string>
     <string name="welcome_glass_preset_summary">iOS శైలి కోసం గ్లాస్ ఫినిష్ ప్రీసెట్‌ను ఎంచుకోండి. రిఫ్రాక్షన్ అనేది డిఫాల్ట్ మరియు దీన్ని తర్వాత అప్పియరెన్స్ సెట్టింగ్‌లలో చక్కగా ట్యూన్ చేయవచ్చు.</string>
     <string name="home_quick_action_wizard">విజార్డ్</string>
-    <string name="welcome_restore_summary">ఇప్పటికే Kototoroని ఉపయోగించారా? బ్యాకప్‌ను పునరుద్ధరించండి, సింక్ చేయడానికి సైన్ ఇన్ చేయండి లేదా ముందుగా స్థానిక ఫోల్డర్‌లను జోడించండి.</string>
+    <string name="welcome_restore_summary">ఇప్పటికే Amuratsuని ఉపయోగించారా? బ్యాకప్‌ను పునరుద్ధరించండి, సింక్ చేయడానికి సైన్ ఇన్ చేయండి లేదా ముందుగా స్థానిక ఫోల్డర్‌లను జోడించండి.</string>
     <string name="welcome_source_formats_title">కంటెంట్ ఫార్మాట్‌లను ఎంచుకోండి</string>
     <string name="welcome_source_formats_summary">సెటప్ తర్వాత ఏ సోర్స్ ఫ్యామిలీలు ఎనేబుల్ చేయాలో ఈ ఫిల్టర్‌లు నిర్ణయిస్తాయి.</string>
     <string name="welcome_ecosystems_title">సోర్స్ ఎకోసిస్టమ్</string>
-    <string name="welcome_ecosystems_summary">చదవడానికి మరియు చూడటానికి Kototoro బహుళ ప్లగిన్ సోర్స్ ఫ్యామిలీలకు మద్దతు ఇస్తుంది. ఇక్కడ సిఫార్సు చేయబడిన రెపాసిటరీలతో ప్రారంభించండి, ఆపై ఎక్స్‌టెన్షన్ మేనేజ్‌మెంట్‌లో వాటిని చక్కగా ట్యూన్ చేయండి.</string>
+    <string name="welcome_ecosystems_summary">చదవడానికి మరియు చూడటానికి Amuratsu బహుళ ప్లగిన్ సోర్స్ ఫ్యామిలీలకు మద్దతు ఇస్తుంది. ఇక్కడ సిఫార్సు చేయబడిన రెపాసిటరీలతో ప్రారంభించండి, ఆపై ఎక్స్‌టెన్షన్ మేనేజ్‌మెంట్‌లో వాటిని చక్కగా ట్యూన్ చేయండి.</string>
     <string name="welcome_ecosystem_manga">మంగా: JAR పార్సర్‌లు, Mihon, IReader, LNReader</string>
     <string name="welcome_ecosystem_novel">నవల: Legado, IReader, LNReader</string>
     <string name="welcome_ecosystem_video">వీడియో: Aniyomi, TVBox, Cloudstream</string>
@@ -446,10 +446,10 @@
     <string name="welcome_preferences_summary">భాషలు మరియు కంటెంట్ రకాలను ఎంచుకోండి. మీరు దీన్ని సోర్స్ సెట్టింగ్‌లలో తర్వాత మార్చుకోవచ్చు.</string>
     <string name="welcome_spaces_title">మీ స్పేస్‌లను వేరు చేయండి</string>
     <string name="welcome_spaces_summary">స్పేస్‌లు స్వతంత్ర నావిగేషన్, బ్రౌజింగ్ మరియు ప్లేబ్యాక్‌ను అందిస్తాయి. సెట్టింగ్‌లు &gt; యూజర్ &gt; స్పేస్‌లలో మరిన్ని అందుబాటులో ఉన్నాయి.</string>
-    <string name="welcome_ready_summary">సెటప్ పూర్తయింది. Kototoro మీ భాషలకు తగిన సోర్స్‌లను తెరుస్తుంది. దీన్ని Settings &gt; Content sources &gt; Setup wizard నుండి మళ్లీ రన్ చేయవచ్చు.</string>
-    <string name="welcome_jar_install_success">Kototoro: క్లౌడ్ నెట్‌వర్క్ నుండి తాజా %1$d పార్సర్ ఇంజిన్‌లు విజయవంతంగా పొందబడ్డాయి మరియు మౌంట్ చేయబడ్డాయి!</string>
-    <string name="welcome_jar_install_up_to_date">Kototoro: క్లౌడ్ వెరిఫికేషన్ పూర్తయింది, స్థానిక పార్సర్‌లు తాజాగా ఉన్నాయి! (మొత్తం %1$d సోర్సులు లోడ్ చేయబడ్డాయి)</string>
-    <string name="welcome_jar_install_failed">Kototoro: పార్సర్ నెట్‌వర్క్ లోడింగ్ విఫలమైంది (%1$s), దయచేసి మళ్లీ ప్రయత్నించండి లేదా ప్రాక్సీ మిర్రర్‌లకు మారడానికి సెట్టింగ్‌లకు వెళ్లండి</string>
+    <string name="welcome_ready_summary">సెటప్ పూర్తయింది. Amuratsu మీ భాషలకు తగిన సోర్స్‌లను తెరుస్తుంది. దీన్ని Settings &gt; Content sources &gt; Setup wizard నుండి మళ్లీ రన్ చేయవచ్చు.</string>
+    <string name="welcome_jar_install_success">Amuratsu: క్లౌడ్ నెట్‌వర్క్ నుండి తాజా %1$d పార్సర్ ఇంజిన్‌లు విజయవంతంగా పొందబడ్డాయి మరియు మౌంట్ చేయబడ్డాయి!</string>
+    <string name="welcome_jar_install_up_to_date">Amuratsu: క్లౌడ్ వెరిఫికేషన్ పూర్తయింది, స్థానిక పార్సర్‌లు తాజాగా ఉన్నాయి! (మొత్తం %1$d సోర్సులు లోడ్ చేయబడ్డాయి)</string>
+    <string name="welcome_jar_install_failed">Amuratsu: పార్సర్ నెట్‌వర్క్ లోడింగ్ విఫలమైంది (%1$s), దయచేసి మళ్లీ ప్రయత్నించండి లేదా ప్రాక్సీ మిర్రర్‌లకు మారడానికి సెట్టింగ్‌లకు వెళ్లండి</string>
     <string name="home_placeholder_title">పఠన డ్యాష్‌బోర్డ్</string>
     <string name="home_placeholder_subtitle">మీ ఇటీవలి పఠనం, అప్‌డేట్‌లు, లైబ్రరీ, సింక్ మరియు సోర్స్‌లను ఒకే చోట చూడండి.</string>
     <string name="home_hero_local_subtitle">మీరు ఆపివేసిన చోటు నుండి కొనసాగించండి లేదా ఇటీవల తెరిచిన వాటికి వెళ్లండి.</string>
@@ -1027,7 +1027,7 @@
     <string name="import_completed_hint">స్థలాన్ని ఖాళీ చేయడానికి నిల్వ నుండి అసలు ఫైల్‌ను తొలగించవచ్చు</string>
     <string name="import_will_start_soon">దిగుమతి త్వరలో ప్రారంభమవుతుంది</string>
     <string name="feed">ఫీడ్</string>
-    <string name="manga_error_description_pattern">లోపం వివరాలు:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. ఇది మూలంలో అందుబాటులో ఉందో లేదో తనిఖీ చేయడానికి &lt;a href=\"%2$s\"&gt;వెబ్ బ్రౌజర్‌లో మంగాను తెరవండి&lt;/a&gt;&lt;br&gt;2. మీరు &lt;a href=\"kototoro://about\"&gt;Kototoro తాజా వెర్షన్‌ను&lt;/a&gt; ఉపయోగిస్తున్నారని నిర్ధారించుకోండి&lt;br&gt;3. ఇది అందుబాటులో ఉంటే, డెవలపర్‌లకు లోప నివేదికను పంపండి.</string>
+    <string name="manga_error_description_pattern">లోపం వివరాలు:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. ఇది మూలంలో అందుబాటులో ఉందో లేదో తనిఖీ చేయడానికి &lt;a href=\"%2$s\"&gt;వెబ్ బ్రౌజర్‌లో మంగాను తెరవండి&lt;/a&gt;&lt;br&gt;2. మీరు &lt;a href=\"amuratsu://about\"&gt;Amuratsu తాజా వెర్షన్‌ను&lt;/a&gt; ఉపయోగిస్తున్నారని నిర్ధారించుకోండి&lt;br&gt;3. ఇది అందుబాటులో ఉంటే, డెవలపర్‌లకు లోప నివేదికను పంపండి.</string>
     <string name="history_shortcuts">ఇటీవలి మంగా షార్ట్‌కట్‌లను చూపు</string>
     <string name="history_shortcuts_summary">అప్లికేషన్ ఐకాన్‌ను ఎక్కువసేపు నొక్కడం ద్వారా ఇటీవలి మంగాను అందుబాటులో ఉంచు</string>
     <string name="reader_control_ltr_summary">పేజీ మార్చే దిశను రీడర్ మోడ్‌కు సర్దుబాటు చేయవద్దు, ఉదా. కుడి కీని నొక్కితే ఎల్లప్పుడూ తదుపరి పేజీకి వెళ్తుంది. ఈ ఎంపిక హార్డ్‌వేర్ ఇన్‌పుట్ పరికరాలను మాత్రమే ప్రభావితం చేస్తుంది</string>
@@ -1196,7 +1196,7 @@
     <string name="export_backup_for_other_apps_summary">లక్ష్య యాప్‌ను ఎంచుకోండి మరియు అనుకూల బ్యాకప్‌ను సృష్టించండి: Kotatsu, Mihon, Aniyomi, లేదా Usagi.</string>
     <string name="export_backup_choose_target_app">లక్ష్య యాప్‌ను ఎంచుకోండి</string>
     <string name="export_kotatsu_backup">Kotatsu బ్యాకప్‌ను ఎగుమతి చేయి</string>
-    <string name="export_kotatsu_backup_summary">Kototoro-ప్రత్యేక విభాగాలతో సంబంధం లేకుండా Kotatsu-కుటుంబ యాప్‌ల కోసం ప్రత్యేక లెగసీ బ్యాకప్‌ను సృష్టించండి.</string>
+    <string name="export_kotatsu_backup_summary">Amuratsu-ప్రత్యేక విభాగాలతో సంబంధం లేకుండా Kotatsu-కుటుంబ యాప్‌ల కోసం ప్రత్యేక లెగసీ బ్యాకప్‌ను సృష్టించండి.</string>
     <string name="export_kotatsu_backup_saved">Kotatsu బ్యాకప్ సేవ్ చేయబడింది</string>
     <string name="export_mihon_backup">Mihon బ్యాకప్‌ను ఎగుమతి చేయి</string>
     <string name="export_mihon_backup_summary">Mihon-సోర్స్ ఎంట్రీల కోసం మాత్రమే ఇష్టమైనవి, వర్గాలు మరియు పఠన పురోగతిని ఎగుమతి చేయండి.</string>
@@ -1269,7 +1269,7 @@
     <string name="data_and_privacy">డేటా మరియు గోప్యత</string>
     <string name="restore_summary">పూర్వం సృష్టించిన బ్యాకప్‌ను పునరుద్ధరించండి</string>
     <string name="restore_kototoro_backup">బ్యాకప్ పునరుద్ధరించు</string>
-    <string name="restore_kototoro_backup_summary">ఏదైనా వెర్షన్ నుండి Kototoro బ్యాకప్‌ను లేదా Kotatsu బ్యాకప్‌ను పునరుద్ధరించండి. ఫార్మాట్ స్వయంచాలకంగా గుర్తించబడుతుంది.</string>
+    <string name="restore_kototoro_backup_summary">ఏదైనా వెర్షన్ నుండి Amuratsu బ్యాకప్‌ను లేదా Kotatsu బ్యాకప్‌ను పునరుద్ధరించండి. ఫార్మాట్ స్వయంచాలకంగా గుర్తించబడుతుంది.</string>
     <string name="restore_mode_replace_existing">ఉన్న డేటాను భర్తీ చేయండి</string>
     <string name="restore_mode_replace_existing_summary">పునరుద్ధరిస్తున్న విభాగాలు మొదట తొలగించబడతాయి; బ్యాకప్‌లో లేని ఇష్టమైనవి మరియు హిస్టరీ తొలగించబడతాయి</string>
     <string name="restore_mode_merge_with_existing">ఉన్న డేటాతో విలీనం చేయండి</string>
@@ -2003,7 +2003,7 @@
     <string name="show_pages_thumbs">పేజీల థంబ్‌నెయిల్‌లను చూపించు</string>
     <string name="show_pages_thumbs_summary">వివరాల తెరపై \"పేజీలు\" ట్యాబ్‌ను ప్రారంభించు</string>
     <string name="error_no_data_received">సర్వర్ నుండి ఎలాంటి డేటా అందలేదు</string>
-    <string name="unsupported_backup_message">దయచేసి సరైన Kototoro బ్యాకప్ ఫైల్‌ను ఎంచుకోండి</string>
+    <string name="unsupported_backup_message">దయచేసి సరైన Amuratsu బ్యాకప్ ఫైల్‌ను ఎంచుకోండి</string>
     <string name="hours_short">%d గం</string>
     <string name="minutes_short">%d ని</string>
     <string name="seconds_short">%d సె</string>
@@ -2055,8 +2055,8 @@
     <string name="chapters_read">చదివిన చాప్టర్లు</string>
     <string name="chapters_left">మిగిలిన చాప్టర్లు</string>
     <string name="external_source">బాహ్య/ప్లగిన్</string>
-    <string name="plugin_incompatible">అనుకూలత లేని ప్లగిన్ లేదా అంతర్గత లోపం. దయచేసి తాజా వెర్షన్ ప్లగిన్ మరియు Kototoro ఉపయోగిస్తున్నారని నిర్ధారించుకోండి</string>
-    <string name="plugin_incompatible_with_cause">ప్లగిన్ లోపం: %s\n దయచేసి తాజా వెర్షన్ ప్లగిన్ మరియు Kototoro ఉపయోగిస్తున్నారని నిర్ధారించుకోండి</string>
+    <string name="plugin_incompatible">అనుకూలత లేని ప్లగిన్ లేదా అంతర్గత లోపం. దయచేసి తాజా వెర్షన్ ప్లగిన్ మరియు Amuratsu ఉపయోగిస్తున్నారని నిర్ధారించుకోండి</string>
+    <string name="plugin_incompatible_with_cause">ప్లగిన్ లోపం: %s\n దయచేసి తాజా వెర్షన్ ప్లగిన్ మరియు Amuratsu ఉపయోగిస్తున్నారని నిర్ధారించుకోండి</string>
     <string name="plugin_missing_host_classes">%1$s ఇన్‌స్టాల్ చేయడం కుదరదు, ఎందుకంటే ఇది మద్దతు లేని %2$s హోస్ట్ క్లాసులపై ఆధారపడి ఉంది:\n%3$s</string>
     <string name="connection_ok">కనెక్షన్ సరిగ్గా ఉంది</string>
     <string name="invalid_proxy_configuration">చెల్లని ప్రాక్సీ కాన్ఫిగరేషన్</string>
@@ -2259,7 +2259,7 @@
     <string name="search_disabled_sources">నిలిపివేయబడిన సోర్సుల ద్వారా వెతుకు</string>
     <string name="error_details">లోపం వివరాలు</string>
     <string name="error_disclaimer_manga">మాంగా దాని సోర్స్‌లో అందుబాటులో ఉందని నిర్ధారించుకోవడానికి వెబ్ బ్రౌజర్‌లో తెరవడానికి ప్రయత్నించండి.</string>
-    <string name="error_disclaimer_app_outdated">మీ Kototoro వెర్షన్ పాతదిగా కనిపిస్తోంది. అందుబాటులో ఉన్న అన్ని పరిష్కారాలను పొందడానికి దయచేసి తాజా వెర్షన్‌ను ఇన్‌స్టాల్ చేయండి.</string>
+    <string name="error_disclaimer_app_outdated">మీ Amuratsu వెర్షన్ పాతదిగా కనిపిస్తోంది. అందుబాటులో ఉన్న అన్ని పరిష్కారాలను పొందడానికి దయచేసి తాజా వెర్షన్‌ను ఇన్‌స్టాల్ చేయండి.</string>
     <string name="error_disclaimer_report">మీరు డెవలపర్‌లకు లోప నివేదికను పంపலாம், లోపాన్ని గుర్తించి పరిష్కరించడంలో ఇది మాకు సహాయపడుతుంది</string>
     <string name="enable_source_manga">మాంగా సోర్స్‌ను ప్రారంభించు</string>
     <string name="enable_source_novel">నవల సోర్స్‌ను ప్రారంభించు</string>
@@ -2277,7 +2277,7 @@
     <string name="recommendation_novel">సిఫార్సు చేయబడిన నవలలు</string>
     <string name="recommendation_video">సిఫార్సు చేయబడిన వీడియోలు</string>
     <string name="link_to_manga_on_s">%s లోని మాంగాకు లింక్</string>
-    <string name="link_to_manga_in_app">Kototoro లోని మాంగాకు లింక్</string>
+    <string name="link_to_manga_in_app">Amuratsu లోని మాంగాకు లింక్</string>
     <string name="clear_browser_data">బ్రౌజర్ డేటాను క్లియర్ చేయి</string>
     <string name="clear_browser_data_summary">కాష్ మరియు కూకీల వంటి బ్రౌజర్ డేటాను క్లియర్ చేయండి. హెచ్చరిక: కంటెంట్ సోర్సులలో ఆథరైజేషన్ చెల్లకపోవచ్చు</string>
     <string name="no_write_permission_to_file">ఫైల్‌ను వ్రాసే అనుమతి లేదు</string>
@@ -2327,7 +2327,7 @@
     <string name="discord_token_hint">మీ Discord టోకెన్‌ను ఇక్కడ పేస్ట్ చేయండి</string>
     <string name="discord_rpc_summary">Discordలో మీ పఠన స్థితిని చూపు</string>
     <string name="obtain">పొందండి</string>
-    <string name="discord_rpc_description">Kototoroలో manga చదువుతున్నారు - ఒక manga రీడర్ యాప్</string>
+    <string name="discord_rpc_description">Amuratsuలో manga చదువుతున్నారు - ఒక manga రీడర్ యాప్</string>
     <string name="discord_logout_summary">సేవ్ చేసిన Discord ఆథరైజేషన్‌ను క్లియర్ చేయి</string>
     <string name="reading_s">%s చదువుతున్నారు</string>
     <string name="read_on_s">%sలో చదవండి</string>
@@ -2354,7 +2354,7 @@
     <string name="sync_backend_switch_webdav_title">WebDAV బ్యాకప్‌కి మారాలా?</string>
     <string name="sync_backend_switch_webdav_confirm">ప్రస్తుతం Google Drive సింక్ ప్రారంభించబడింది. WebDAV బ్యాకప్‌ని ప్రారంభించడం వల్ల మీ Google సైన్-ఇన్ అలాగే ఉంటూ Google Drive సింక్ నిలిపివేయబడుతుంది.</string>
     <string name="sync_sign_in">Google Drive సింక్‌ని సిద్ధం చేయి</string>
-    <string name="sync_sign_in_summary">సబ్‌స్క్రిప్షన్‌లు మరియు అప్‌డేట్ రికార్డ్‌లను సింక్ చేయడానికి కనీస Drive appdata అనుమతితో Google Drive యాప్ డేటాను ఉపయోగిస్తుంది. Kototoro మీ Drive ఫైల్‌లను యాసెస్ చేయలేదు.</string>
+    <string name="sync_sign_in_summary">సబ్‌స్క్రిప్షన్‌లు మరియు అప్‌డేట్ రికార్డ్‌లను సింక్ చేయడానికి కనీస Drive appdata అనుమతితో Google Drive యాప్ డేటాను ఉపయోగిస్తుంది. Amuratsu మీ Drive ఫైల్‌లను యాసెస్ చేయలేదు.</string>
     <string name="google_drive_sync_unregistered_build_error">డెవలప్‌మెంట్/నైట్లీ బిల్డ్‌లలో Google Drive సింక్ సపోర్ట్ చేయబడదు. దయచేసి అధికారిక విడుదల బిల్డ్‌లను లేదా WebDAV సింక్‌ని ఉపయోగించండి.</string>
     <string name="sync_sign_out">సైన్ అవుట్</string>
     <string name="sync_account">సైన్ ఇన్ అయ్యారు</string>
@@ -2409,8 +2409,8 @@
     <string name="webdav_remote_backups_inspect">రిమోట్ బ్యాకప్‌లను తనిఖీ చేయండి</string>
     <string name="webdav_remote_backups_inspect_summary">ప్రతి రిమోట్ బ్యాకప్ సురక్షితంగా రీస్టోర్ చేయగలదో లేదో డౌన్‌లోడ్ చేసి నిర్ధారించండి.</string>
     <string name="webdav_remote_backups_clear">రిమోట్ WebDAV బ్యాకప్‌లను క్లియర్ చేయి</string>
-    <string name="webdav_remote_backups_clear_summary">కాన్ఫిగర్ చేసిన WebDAV పాత్‌లోని అన్ని Kototoro బ్యాకప్ ఫైల్‌లను తొలగించండి. స్థానిక డేటా మార్చబడదు.</string>
-    <string name="webdav_remote_backups_clear_confirm">కాన్ఫిగర్ చేసిన WebDAV పాత్ నుండి అన్ని Kototoro బ్యాకప్ ఫైల్‌లను తొలగించాలా? స్థానిక డేటా మార్చబడదు.</string>
+    <string name="webdav_remote_backups_clear_summary">కాన్ఫిగర్ చేసిన WebDAV పాత్‌లోని అన్ని Amuratsu బ్యాకప్ ఫైల్‌లను తొలగించండి. స్థానిక డేటా మార్చబడదు.</string>
+    <string name="webdav_remote_backups_clear_confirm">కాన్ఫిగర్ చేసిన WebDAV పాత్ నుండి అన్ని Amuratsu బ్యాకప్ ఫైల్‌లను తొలగించాలా? స్థానిక డేటా మార్చబడదు.</string>
     <string name="webdav_remote_backups_loading">WebDAV బ్యాకప్‌లను లోడ్ చేస్తోంది…</string>
     <string name="webdav_remote_backup_status_unknown">తనిఖీ చేయలేదు</string>
     <string name="webdav_remote_backup_status_restorable">రీస్టోర్ చేయవచ్చు</string>
@@ -2818,7 +2818,7 @@
     <string name="trust_and_add">విశ్వసించి జోడించు</string>
     <string name="trust_extension_repository_message">రిపాజిటరీ: %1$s\nవెబ్‌సైట్: %2$s\nSHA-256 ఫింగర్‌ప్రింట్:\n%3$s\n\nఈ రిపాజిటరీని విశ్వసించే ముందు ప్రచురణకర్తతో ఈ ఫింగర్‌ప్రింట్‌ను ధృవీకరించండి.</string>
     <string name="untrusted_extension_message">%1$s (%2$s) ఇన్‌స్టాల్ చేయబడింది, కానీ దీని సంతకం ఎంచుకున్న రిపాజిటరీ ఫింగర్‌ప్రింట్‌తో సరిపోలడం లేదు.\n\nరిపాజిటరీ ఫింగర్‌ప్రింట్: %3$s\n\nఈ రిపాజిటరీ నుండి మళ్లీ ఇన్‌స్టాల్ చేయడానికి ముందు ఇన్‌స్టాల్ చేసిన ప్యాకేజీని తీసివేయండి.</string>
-    <string name="incompatible_extension_message">Kototoro మద్దతు ఇచ్చే పరిధిలో లైబ్రరీ వెర్షన్ (%3$s) లేనందున %1$s %2$sని ఇన్‌స్టాల్ చేయలేరు.</string>
+    <string name="incompatible_extension_message">Amuratsu మద్దతు ఇచ్చే పరిధిలో లైబ్రరీ వెర్షన్ (%3$s) లేనందున %1$s %2$sని ఇన్‌స్టాల్ చేయలేరు.</string>
     <string name="built_in_sources">అంతర్నిర్మిత</string>
     <string name="select_all">అన్నీ ఎంచుకోండి</string>
     <string name="deselect_all">అన్నీ తీసివేయండి</string>
@@ -2858,7 +2858,7 @@
     <string name="welcome_plugins_repo_yakateam">Yakateam పార్సర్లు</string>
     <string name="welcome_plugins_repo_redo">Redo పార్సర్లు</string>
     <string name="welcome_plugins_repo_uma">UMA (Tsuki పార్సర్లు)</string>
-    <string name="welcome_plugins_disclaimer">ఈ ఎక్స్‌టెన్షన్ రిపోజిటరీలు స్వతంత్ర ఆన్‌లైన్ కమ్యూనిటీల ద్వారా నిర్వహించబడతాయి. Kototoro డెవలపర్‌లకు ఈ మూడవ పక్ష రిపోజిటరీలతో ఎలాంటి సంబంధం, నియంత్రణ లేదా ప్రమేయం లేదు. నేను నా సొంత రిస్క్‌తో ఈ మూలాలను కాన్ఫిగర్ చేస్తున్నానని అంగీకరిస్తున్నాను.</string>
+    <string name="welcome_plugins_disclaimer">ఈ ఎక్స్‌టెన్షన్ రిపోజిటరీలు స్వతంత్ర ఆన్‌లైన్ కమ్యూనిటీల ద్వారా నిర్వహించబడతాయి. Amuratsu డెవలపర్‌లకు ఈ మూడవ పక్ష రిపోజిటరీలతో ఎలాంటి సంబంధం, నియంత్రణ లేదా ప్రమేయం లేదు. నేను నా సొంత రిస్క్‌తో ఈ మూలాలను కాన్ఫిగర్ చేస్తున్నానని అంగీకరిస్తున్నాను.</string>
     <string name="welcome_plugins_start_btn">రిపోజిటరీలను కాన్ఫిగర్ చేయండి</string>
     <string name="welcome_plugins_configured">%1$d కొత్త మూల/రిపోజిటరీ రకం(లు) కాన్ఫిగర్ చేయబడ్డాయి: %2$s. ప్యాకేజీలు ఇంకా డౌన్‌లోడ్ చేయబడలేదు — తదుపరి దశలో సరిపోలే వాటిని ఇన్‌స్టాల్ చేయండి.</string>
     <string name="welcome_plugins_configured_none">ఏ మూలం లేదా రిపోజిటరీని కాన్ఫిగర్ చేయడం సాధ్యం కాలేదు. మీ నెట్‌వర్క్‌ను తనిఖీ చేయండి లేదా వేరే రిపోజిటరీలను ఎంచుకుని మళ్లీ ప్రయత్నించండి.</string>
@@ -2887,22 +2887,22 @@
     <string name="welcome_install_system_launch_failed">సిస్టమ్ ఇన్‌స్టాలర్‌ను ప్రారంభించలేకపోయింది: %1$s</string>
     <string name="welcome_install_skip">ఇన్‌స్టాలేషన్‌ను దాటవేయి — తర్వాత ఎక్స్‌టెన్షన్ మేనేజ్‌మెంట్‌లో చేస్తాను</string>
     <string name="welcome_install_step_title">ఎక్స్‌టెన్షన్లు ఇన్‌స్టాల్</string>
-    <string name="welcome_install_step_summary">ఏ సోర్స్ రకాలు మరియు సెట్టింగ్‌లను వాడాలో ఎంచుకోండి, ఆపై Kototoro బ్యాక్‌గ్రౌండ్‌లో అన్నింటినీ డౌన్‌లోడ్ చేసి ఇన్‌స్టాల్ చేయనివ్వండి.</string>
+    <string name="welcome_install_step_summary">ఏ సోర్స్ రకాలు మరియు సెట్టింగ్‌లను వాడాలో ఎంచుకోండి, ఆపై Amuratsu బ్యాక్‌గ్రౌండ్‌లో అన్నింటినీ డౌన్‌లోడ్ చేసి ఇన్‌స్టాల్ చేయనివ్వండి.</string>
     <string name="welcome_install_kinds_title">ఇన్‌స్టాల్ చేయవలసిన సోర్స్ రకాలు</string>
     <string name="welcome_install_kinds_summary">మీరు టిక్ చేసిన రకాలు మాత్రమే నిర్వహించబడతాయి. టిక్ చేయనివి (ఉదా. Mihon, మీరు దీన్ని తర్వాత చేయాలనుకుంటే) ఎక్స్‌టెన్షన్ మేనేజ్‌మెంట్‌లో మీరే ఇన్‌స్టాల్ చేసుకునేలా ఉండిపోతాయి.</string>
     <string name="welcome_install_kinds_empty">ఇంకా రిపోజిటరీలు కాన్ఫిగర్ చేయబడలేదు. వెనక్కి వెళ్లి ముందుగా రిపోజిటరీలను జోడించండి.</string>
     <string name="welcome_install_nsfw_title">NSFW కంటెంట్‌ను చేర్చు</string>
     <string name="welcome_install_nsfw_summary">డిఫాల్ట్‌గా ఆఫ్‌లో ఉంటుంది — పెద్దల కోసం మాత్రమే ఉండే ప్యాకేజీలు ఇన్‌స్టాలేషన్ జాబితా నుండి ఫిల్టర్ చేయబడతాయి.</string>
-    <string name="welcome_intro_app_title">Kototoro · ఓపెన్-సోర్స్ రీడర్</string>
-    <string name="welcome_intro_body">Kototoro అనేది ఒక ఓపెన్-సోర్స్ మల్టీమీడియా రీడర్ / ప్లేయర్. ఇది కమ్యూనిటీ ఎక్స్‌టెన్షన్‌ల విస్తృత పర్యావరణ వ్యవస్థకు మద్దతు ఇస్తుంది, కానీ ఇది సొంతంగా ఎటువంటి కంటెంట్ సోర్స్‌లను అందించదు.</string>
+    <string name="welcome_intro_app_title">Amuratsu · ఓపెన్-సోర్స్ రీడర్</string>
+    <string name="welcome_intro_body">Amuratsu అనేది ఒక ఓపెన్-సోర్స్ మల్టీమీడియా రీడర్ / ప్లేయర్. ఇది కమ్యూనిటీ ఎక్స్‌టెన్షన్‌ల విస్తృత పర్యావరణ వ్యవస్థకు మద్దతు ఇస్తుంది, కానీ ఇది సొంతంగా ఎటువంటి కంటెంట్ సోర్స్‌లను అందించదు.</string>
     <string name="welcome_intro_concepts_title">మూడు భావనలు, 30 సెకన్లలో</string>
     <string name="welcome_intro_repo_label">రిపోజిటరీ</string>
     <string name="welcome_intro_repo_body">స్వతంత్ర కమ్యూనిటీ నిర్వహించే థర్డ్-పార్టీ ఎక్స్‌టెన్షన్‌ల సేకరణకు సంబంధించిన URL (ఉదాహరణకు Mihon రిపోలు, TVBox జాబితాలు లేదా LNReader ప్లగిన్ రిపోలు).</string>
     <string name="welcome_intro_extension_label">ఎక్స్‌టెన్షన్</string>
-    <string name="welcome_intro_extension_body">రిపోజిటరీలోని ఇన్‌స్టాల్ చేసుకోదగిన ఒక ప్యాకేజీ — JAR, APK లేదా JSON జాబితా. ఇన్‌స్టాల్ చేయబడిన ఎక్స్‌టెన్షన్‌లు ఏదైనా సైట్ నుండి చదవడానికి లేదా ప్లే చేయడానికి Kototoroకి సామర్థ్యాన్ని ఇస్తాయి.</string>
+    <string name="welcome_intro_extension_body">రిపోజిటరీలోని ఇన్‌స్టాల్ చేసుకోదగిన ఒక ప్యాకేజీ — JAR, APK లేదా JSON జాబితా. ఇన్‌స్టాల్ చేయబడిన ఎక్స్‌టెన్షన్‌లు ఏదైనా సైట్ నుండి చదవడానికి లేదా ప్లే చేయడానికి Amuratsuకి సామర్థ్యాన్ని ఇస్తాయి.</string>
     <string name="welcome_intro_source_label">సోర్స్</string>
     <string name="welcome_intro_source_body">ఎక్స్‌టెన్షన్ ఇన్‌స్టాల్ చేయబడిన తర్వాత లేదా ఇంపోర్ట్ చేయబడిన తర్వాత యాప్‌లో కనిపించే ఒక నిర్దిష్ట కంటెంట్ సోర్స్ — ఉదాహరణకు నిర్దిష్ట మాంగా లేదా వీడియో వెబ్‌సైట్.</string>
-    <string name="welcome_intro_disclaimer">థర్డ్-పార్టీ ఎక్స్‌టెన్షన్‌ల వినియోగం పూర్తిగా మీ స్వంత పూచీకే: రన్‌టైమ్ ప్రవర్తనా తీరు, చట్టబద్ధత మరియు కంటెంట్ Kototoro ప్రాజెక్ట్ నియంత్రణలో ఉండవు.</string>
+    <string name="welcome_intro_disclaimer">థర్డ్-పార్టీ ఎక్స్‌టెన్షన్‌ల వినియోగం పూర్తిగా మీ స్వంత పూచీకే: రన్‌టైమ్ ప్రవర్తనా తీరు, చట్టబద్ధత మరియు కంటెంట్ Amuratsu ప్రాజెక్ట్ నియంత్రణలో ఉండవు.</string>
     <string name="welcome_intro_continue">నాకు అర్థమైంది — కొనసాగించు</string>
     <string name="welcome_done_title">దాదాపు పూర్తయింది</string>
     <string name="welcome_done_summary">మీ సెటప్ సారాంశం మరియు కొన్ని చిట్కాలు.</string>
@@ -2911,10 +2911,10 @@
     <string name="welcome_done_json_note">JSON-ఆధారిత రకాలు (Legado / TVBox / LNReader) స్వయంచాలకంగా ఇంపోర్ట్ చేయబడతాయి; మీరు ఇతర JSON రిపోజిటరీలను కూడా జోడించి ఉంటే, వాటిని ఎక్స్‌టెన్షన్ మేనేజ్‌మెంట్‌లో ఇంపోర్ట్ చేయండి.</string>
     <string name="welcome_done_title_finished">సెటప్ పూర్తయింది</string>
     <string name="welcome_done_summary_finished">విజార్డ్ పూర్తయింది — రిపోజిటరీలు లేదా సోర్స్‌లు ఏవీ స్వయంచాలకంగా జోడించబడలేదు.</string>
-    <string name="welcome_done_body_finished">సెటప్ సమయంలో Kototoro ఎటువంటి సోర్స్‌లను జోడించలేదు. మీరు సెట్టింగ్‌లు → కంటెంట్ సోర్సెస్ (ఎక్స్‌టెన్షన్ మేనేజ్‌మెంట్)లో ఎప్పుడైనా మీ స్వంత రిపోజిటరీలు మరియు సోర్స్‌లను జోడించవచ్చు.</string>
+    <string name="welcome_done_body_finished">సెటప్ సమయంలో Amuratsu ఎటువంటి సోర్స్‌లను జోడించలేదు. మీరు సెట్టింగ్‌లు → కంటెంట్ సోర్సెస్ (ఎక్స్‌టెన్షన్ మేనేజ్‌మెంట్)లో ఎప్పుడైనా మీ స్వంత రిపోజిటరీలు మరియు సోర్స్‌లను జోడించవచ్చు.</string>
     <string name="welcome_done_advice_title">ఒక సోర్స్ పని చేయకపోతే</string>
     <string name="welcome_done_advice_summary">సమస్య పరిష్కారానికి ఒక చిన్న మార్గం, తద్వారా సరైన వ్యక్తులు నివేదికను చూస్తారు.</string>
-    <string name="welcome_done_advice_body">1. ఎక్స్‌టెన్షన్ యొక్క అసలు హోస్ట్ యాప్‌ని ఉపయోగించి సమస్యను నిర్ధారించండి — ఉదాహరణకు Mihon-రకం సోర్స్‌ను Mihon యాప్‌లో పరీక్షించాలి.\n2. సమస్య అక్కడ కూడా వస్తే, అది ఎక్స్‌టెన్షన్‌ను నిర్వహించే రిపోజిటరీకి చెందింది: రిపోజిటరీ స్వంత URL వద్ద ఒక ఇష్యూను తెరవండి.\n3. ఇది కేవలం Kototoroలోనే జరిగితే, దాన్ని Kototoro ప్రాజెక్ట్ రిపోజిటరీలో నివేదించండి మరియు సోర్స్ పేరు, ఎక్స్‌టెన్షన్ వెర్షన్ మరియు మీరు ఏమి ప్రయత్నించారో చేర్చండి.</string>
+    <string name="welcome_done_advice_body">1. ఎక్స్‌టెన్షన్ యొక్క అసలు హోస్ట్ యాప్‌ని ఉపయోగించి సమస్యను నిర్ధారించండి — ఉదాహరణకు Mihon-రకం సోర్స్‌ను Mihon యాప్‌లో పరీక్షించాలి.\n2. సమస్య అక్కడ కూడా వస్తే, అది ఎక్స్‌టెన్షన్‌ను నిర్వహించే రిపోజిటరీకి చెందింది: రిపోజిటరీ స్వంత URL వద్ద ఒక ఇష్యూను తెరవండి.\n3. ఇది కేవలం Amuratsuలోనే జరిగితే, దాన్ని Amuratsu ప్రాజెక్ట్ రిపోజిటరీలో నివేదించండి మరియు సోర్స్ పేరు, ఎక్స్‌టెన్షన్ వెర్షన్ మరియు మీరు ఏమి ప్రయత్నించారో చేర్చండి.</string>
     <string name="welcome_step_counter">స్టెప్ %1$d / %2$d</string>
     <string name="welcome_action_configure_repos">ఎంచుకున్న రిపోజిటరీలను కాన్ఫిగర్ చేయి</string>
     <string name="welcome_action_install_count">%1$d ఎక్స్‌టెన్షన్లు ఇన్‌స్టాల్</string>
@@ -2948,7 +2948,7 @@
     <string name="welcome_permissions_notifications_title">ప్రకటనలు</string>
     <string name="welcome_permissions_notifications_summary">డౌన్‌లోడ్, అప్‌డేట్ మరియు ప్లేయర్ నోటిఫికేషన్‌లను చూపుతుంది.</string>
     <string name="welcome_permissions_packages_title">యాప్‌లు</string>
-    <string name="welcome_permissions_packages_summary">ఇప్పటికే ఇన్‌స్టాల్ చేసిన ఎక్స్‌టెన్షన్‌లను మరియు హోస్ట్ యాప్‌లను గుర్తించడానికి Kototoroని అనుమతిస్తుంది. మేనిఫెట్‌లో ప్రకటించబడింది మరియు స్వయంచాలకంగా మంజూరు చేయబడుతుంది.</string>
+    <string name="welcome_permissions_packages_summary">ఇప్పటికే ఇన్‌స్టాల్ చేసిన ఎక్స్‌టెన్షన్‌లను మరియు హోస్ట్ యాప్‌లను గుర్తించడానికి Amuratsuని అనుమతిస్తుంది. మేనిఫెట్‌లో ప్రకటించబడింది మరియు స్వయంచాలకంగా మంజూరు చేయబడుతుంది.</string>
     <string name="welcome_permissions_battery_title">బ్యాక్‌గ్రౌండ్ రక్షణ</string>
     <string name="welcome_permissions_battery_summary">స్క్రీన్ ఆఫ్‌లో ఉన్నప్పుడు లేదా పరికరం ఐిల్‌లో ఉన్నప్పుడు బ్యాక్‌గ్రౌండ్ డౌన్‌లోడ్‌లు మరియు అప్‌డేట్‌లను రన్ అయ్యేలా ఉంచుతుంది.</string>
     <string name="welcome_permissions_battery_action">అనుమతించు</string>
@@ -3366,10 +3366,10 @@
     <string name="pref_glass_blur_quality_performance">పనితీరు</string>
     <string name="pref_glass_blur_quality_balanced">సమతుల్య</string>
     <string name="pref_glass_blur_quality_quality">నాణ్యత</string>
-    <string name="glass_material_family_kototoro">Kototoro (సిఫార్సు)</string>
+    <string name="glass_material_family_kototoro">Amuratsu (సిఫార్సు)</string>
     <string name="glass_material_family_haze">హేజ్</string>
     <string name="glass_material_family_fluent">ఫ్లూయెంట్</string>
-    <string name="glass_material_kototoro">Kototoro (సిఫార్సు)</string>
+    <string name="glass_material_kototoro">Amuratsu (సిఫార్సు)</string>
     <string name="glass_material_haze_ultra_thin">హేజ్ అల్ట్రా థిన్</string>
     <string name="glass_material_haze_thin">హేజ్ థిన్</string>
     <string name="glass_material_haze_regular">హేజ్ రెగ్యులర్</string>

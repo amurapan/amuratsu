@@ -121,9 +121,9 @@ jobs:
           fi
           if [ "$abi" = "universal" ]; then
             # Keep legacy filename for compatibility with old update clients.
-            target="release/Kototoro-${{ steps.version.outputs.version_name }}-release.apk"
+            target="release/Amuratsu-${{ steps.version.outputs.version_name }}-release.apk"
           else
-            target="release/Kototoro-${{ steps.version.outputs.version_name }}-${abi}-release.apk"
+            target="release/Amuratsu-${{ steps.version.outputs.version_name }}-${abi}-release.apk"
           fi
           cp "$apk" "$target"
         done
@@ -272,4 +272,4 @@ jobs:
       - name: Refresh AltStore sources
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh workflow run docs-pages.yml --repo "${{ github.repository }}" --ref devel
+        run: gh workflow run docs-pages.yml --repo "${{ github.repository }}" --ref main

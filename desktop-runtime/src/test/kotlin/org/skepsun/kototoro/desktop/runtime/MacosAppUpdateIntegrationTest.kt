@@ -25,7 +25,7 @@ class MacosAppUpdateIntegrationTest {
             "supply -PmacosUpdateDmg and -PmacosUpdateImage on macOS")
         val source = Path.of(original!!)
         val parent = Files.createDirectories(directory.resolve("中文 O'Reilly ${'$'}bundle"))
-        val installed = parent.resolve("Kototoro.app")
+        val installed = parent.resolve("Amuratsu.app")
         run(listOf("/usr/bin/ditto", source.toString(), installed.toString()))
         val version = Files.newDirectoryStream(source.resolve("Contents/app"), "*.jar").use { jars ->
             jars.firstNotNullOf { jar -> ZipFile(jar.toFile()).use { zip ->
@@ -44,7 +44,7 @@ class MacosAppUpdateIntegrationTest {
             emptyMap(), null)
         val download = DesktopDownloadedUpdate(release, DesktopUpdatePackage.DMG, dmg,
             digest.digest().joinToString("") { "%02x".format(it) })
-        val executable = installed.resolve("Contents/MacOS/Kototoro")
+        val executable = installed.resolve("Contents/MacOS/Amuratsu")
         val layout = requireNotNull(locateInstallLayout(executable.toString(), registryQuery = { null }))
         assertEquals(DesktopInstallKind.MACOS_APP, layout.kind)
         val installer = DesktopUpdateInstaller(layout)

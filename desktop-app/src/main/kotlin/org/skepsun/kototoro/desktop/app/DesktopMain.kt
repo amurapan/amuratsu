@@ -97,7 +97,7 @@ internal fun runDesktop(args: Array<String>) {
             finally { withContext(NonCancellable + Dispatchers.IO) { acquired?.close() } }
         }
         Window(
-            title = "Kototoro · ${DesktopPlatform.current.displayName}",
+            title = "Amuratsu · ${DesktopPlatform.current.displayName}",
             icon = painterResource("icons/app.png"),
             state = windowState,
             onCloseRequest = requestExit,

@@ -678,14 +678,10 @@ class SettingsSearchHelper @Inject constructor(
             "app_version" to R.string.check_for_updates,
             "updates_unstable" to R.string.allow_unstable_updates,
             "changelog" to R.string.changelog,
-            "about_help" to R.string.user_manual,
-            "about_github" to R.string.source_code,
-            "about_donate" to R.string.about_donate,
-            "about_donate_afdian" to R.string.about_donate_afdian,
-            "about_app_translation" to R.string.about_app_translation_summary,
-            "about_discord" to R.string.about_discord,
-            "crash_logs" to R.string.crash_logs
-        )
+            "crash_logs" to R.string.crash_logs,
+        ) + org.skepsun.kototoro.core.ui.text.AppProjectLink.entries.map { link ->
+            link.preferenceKey to org.skepsun.kototoro.core.ui.text.AndroidUiStringIds.stringId(link.titleKey)
+        }
         aboutKeys.forEach { (key, titleRes) ->
             result.add(
                 SettingsItem(

@@ -18,6 +18,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import org.skepsun.kototoro.BuildConfig
+import org.skepsun.kototoro.core.ui.text.AppProjectLink
+import org.skepsun.kototoro.core.ui.text.uiString
 import org.skepsun.kototoro.R
 import org.skepsun.kototoro.core.github.VersionId
 import org.skepsun.kototoro.core.github.isStable
@@ -120,45 +122,19 @@ fun AboutSettingsScreen(
             }
             item(key = "about_links") {
                 SettingsPreferenceGroup(title = stringResource(R.string.about_group_support)) {
-                    item {
-                        SettingsActionPreference(
-                            title = stringResource(R.string.user_manual),
-                            iconRes = R.drawable.ic_read,
-                            summary = stringResource(R.string.url_user_manual),
-                            onClick = { onLinkClick(AppSettings.KEY_LINK_MANUAL) },
-                        )
-                    }
-                    item {
-                        SettingsActionPreference(
-                            title = stringResource(R.string.source_code),
-                            iconRes = R.drawable.ic_code,
-                            summary = stringResource(R.string.url_github),
-                            onClick = { onLinkClick(AppSettings.KEY_LINK_GITHUB) },
-                        )
-                    }
-                    item {
-                        SettingsActionPreference(
-                            title = stringResource(R.string.about_donate),
-                            iconRes = R.drawable.ic_heart_outline,
-                            summary = stringResource(R.string.url_donate),
-                            onClick = { onLinkClick(AppSettings.KEY_LINK_DONATE) },
-                        )
-                    }
-                    item {
-                        SettingsActionPreference(
-                            title = stringResource(R.string.about_donate_afdian),
-                            iconRes = R.drawable.ic_heart_outline,
-                            summary = stringResource(R.string.url_afdian),
-                            onClick = { onLinkClick(AppSettings.KEY_LINK_AFDIAN) },
-                        )
-                    }
-                    item {
-                        SettingsActionPreference(
-                            title = stringResource(R.string.about_discord),
-                            iconRes = R.drawable.ic_discord,
-                            summary = stringResource(R.string.url_discord),
-                            onClick = { onLinkClick(AppSettings.KEY_LINK_DISCORD) },
-                        )
+                    AppProjectLink.entries.forEach { link ->
+                        item {
+                            SettingsActionPreference(
+                                title = uiString(link.titleKey),
+                                summary = uiString(link.urlKey),
+                                iconRes = when (link) {
+                                    AppProjectLink.MANUAL -> R.drawable.ic_read
+                                    AppProjectLink.ISSUES -> R.drawable.ic_error_small
+                                    else -> R.drawable.ic_code
+                                },
+                                onClick = { onLinkClick(link.preferenceKey) },
+                            )
+                        }
                     }
                 }
             }
@@ -205,6 +181,11 @@ private fun AboutBanner() {
                 Text(
                     text = stringResource(R.string.app_name),
                     style = MaterialTheme.typography.headlineSmall,
+                    color = MaterialTheme.colorScheme.onPrimaryContainer,
+                )
+                Text(
+                    text = stringResource(R.string.about_author),
+                    style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onPrimaryContainer,
                 )
             }

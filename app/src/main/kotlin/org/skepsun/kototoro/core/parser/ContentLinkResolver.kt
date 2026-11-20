@@ -26,7 +26,7 @@ class ContentLinkResolver @Inject constructor(
 ) {
 
     suspend fun resolve(uri: Uri): Content {
-        return if (uri.scheme == "kototoro" || uri.host == "kototoro.app") {
+        return if (uri.scheme == "amuratsu" || uri.scheme == "kototoro" || uri.host == "kototoro.app") {
             resolveAppLink(uri)
         } else {
             resolveExternalLink(uri.toString())
@@ -122,7 +122,8 @@ class ContentLinkResolver @Inject constructor(
     companion object {
 
         fun isValidLink(str: String): Boolean {
-            return str.isHttpUrl() || str.startsWith("kototoro://", ignoreCase = true)
+            return str.isHttpUrl() || str.startsWith("amuratsu://", ignoreCase = true) ||
+                str.startsWith("kototoro://", ignoreCase = true)
         }
     }
 }

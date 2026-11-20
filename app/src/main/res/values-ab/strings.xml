@@ -315,7 +315,7 @@
     <string name="enter_password">Иҭажәаҭа лаҵа</string>
     <string name="wrong_password">Ажәаҭа гәылоуп</string>
     <string name="protect_application">Апрограмма ахьчара</string>
-    <string name="protect_application_summary">Kototoro аҿыцра аан ажәаҭа аҭара</string>
+    <string name="protect_application_summary">Amuratsu аҿыцра аан ажәаҭа аҭара</string>
     <string name="repeat_password">Ажәаҭа аҿыцҟаашьа</string>
     <string name="passwords_mismatch">Ажәаҭақәа реиқәшәом</string>
     <string name="about">Иазку</string>
@@ -422,8 +422,8 @@
     <string name="clear_local_novel_storage_prompt">Ианыхит абжьарақәеи арҩыратәқәеи? Ари аҽеиԥшра аҟнытә ықәым.</string>
     <string name="clear_local_video_storage_prompt">Ианыхит абжьарақәеи авидеоқәеи? Ари аҽеиԥшра аҟнытә ықәым.</string>
     <string name="welcome">Иаҵшьуп</string>
-    <string name="welcome_intro_title">Kototoro аҿыцра</string>
-    <string name="welcome_intro_summary">Иалх аԥшреи ахәаԥшреи. Kototoro ахархәара амоуп аплагинқәа рыҟны аманга, арҩыратәқәа, авидеоқәа рыҟны.</string>
+    <string name="welcome_intro_title">Amuratsu аҿыцра</string>
+    <string name="welcome_intro_summary">Иалх аԥшреи ахәаԥшреи. Amuratsu ахархәара амоуп аплагинқәа рыҟны аманга, арҩыратәқәа, авидеоқәа рыҟны.</string>
     <string name="welcome_step_start">Иалагоит</string>
     <string name="welcome_step_sources">Ахыҵхырҭақәа</string>
     <string name="welcome_step_preferences">Аҟазаарақәа</string>
@@ -433,11 +433,11 @@
     <string name="welcome_glass_preset_title">Абжаҟәырҭа аҵыхәтәа</string>
     <string name="welcome_glass_preset_summary">Иалх абжаҟәырҭа iOS астиль аҵыхәтәа.</string>
     <string name="home_quick_action_wizard">Амаҷахырҭа</string>
-    <string name="welcome_restore_summary">Kototoro ихархәама иахьатәи? Ирҿыц акамплект, иҭаҩит асинхронизациазы.</string>
+    <string name="welcome_restore_summary">Amuratsu ихархәама иахьатәи? Ирҿыц акамплект, иҭаҩит асинхронизациазы.</string>
     <string name="welcome_source_formats_title">Иалх аформатқәа</string>
     <string name="welcome_source_formats_summary">Ари аԥхьарҩцәа аҽԥсахуеит ахыҵхырҭақәа рыҟны.</string>
     <string name="welcome_ecosystems_title">Ахыҵхырҭа аэкосистема</string>
-    <string name="welcome_ecosystems_summary">Kototoro ацхыраара аҭоит аплагинқәа рыҟны аԥхьареи ахәаԥшреи.</string>
+    <string name="welcome_ecosystems_summary">Amuratsu ацхыраара аҭоит аплагинқәа рыҟны аԥхьареи ахәаԥшреи.</string>
     <string name="welcome_ecosystem_manga">Аманга: JAR, Mihon, IReader, LNReader</string>
     <string name="welcome_ecosystem_novel">Арҩыратә: Legado, IReader, LNReader</string>
     <string name="welcome_ecosystem_video">Авидео: Aniyomi, TVBox, Cloudstream</string>
@@ -446,10 +446,10 @@
     <string name="welcome_preferences_summary">Иалх абызшәақәеи аформатқәеи.</string>
     <string name="welcome_spaces_title">Иԥсахи аҭыԥқәа</string>
     <string name="welcome_spaces_summary">Аҭыԥқәа аманга, арҩыратәқәа, авидеоқәа рыҟны ахархәара рыҭоит.</string>
-    <string name="welcome_ready_summary">Аҿыцра иҟаҵоуп. Kototoro ахыҵхырҭақәа иаҿыхуеит.</string>
-    <string name="welcome_jar_install_success">Kototoro: Иаԥхьахеит %1$d апарсерқәа ашьҭаҵара аҟны!</string>
-    <string name="welcome_jar_install_up_to_date">Kototoro: Ашьҭаҵара аиқәыршәара иазгоуп! (%1$d ахыҵхырҭақәа)</string>
-    <string name="welcome_jar_install_failed">Kototoro: Апарсерқәа рышьҭаҵара шыҟам (%1$s), иҽеиԥшра аҩынтәала</string>
+    <string name="welcome_ready_summary">Аҿыцра иҟаҵоуп. Amuratsu ахыҵхырҭақәа иаҿыхуеит.</string>
+    <string name="welcome_jar_install_success">Amuratsu: Иаԥхьахеит %1$d апарсерқәа ашьҭаҵара аҟны!</string>
+    <string name="welcome_jar_install_up_to_date">Amuratsu: Ашьҭаҵара аиқәыршәара иазгоуп! (%1$d ахыҵхырҭақәа)</string>
+    <string name="welcome_jar_install_failed">Amuratsu: Апарсерқәа рышьҭаҵара шыҟам (%1$s), иҽеиԥшра аҩынтәала</string>
     <string name="home_placeholder_title">Аҧхьаразы ахәҭа</string>
     <string name="home_placeholder_subtitle">Шәыҧхьара ҿыцқәа, аҿыцрақәа, шәблиотека, асинхронизациа аҧхьаҟа.</string>
     <string name="home_hero_local_subtitle">Иҟалаз аҧхьараҟны шәхынҳәыр ҟалап.</string>
@@ -1027,7 +1027,7 @@
     <string name="import_completed_hint">Аҭагалагҵа аҵәаҳәартә маҷны ахәҭақәа ҟьаҟьала</string>
     <string name="import_will_start_soon">Аҭаара еиҭахәыр</string>
     <string name="feed">Алента</string>
-    <string name="manga_error_description_pattern">Агхақәа:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. Иҽеиҭа &lt;a href=\"%2$s\"&gt;адаҟьа абраузер аҟны&lt;/a&gt; иаԥхьа&lt;br&gt;2. Иаԥхьа &lt;a href=\"kototoro://about\"&gt;Kototoro аверсиа аҵыхәтәантәи&lt;/a&gt;&lt;br&gt;3. Агхақәа рыҟнытәи иҟалазар, адырра аҵаҟаҵарақәа изыҟәҵа.</string>
+    <string name="manga_error_description_pattern">Агхақәа:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. Иҽеиҭа &lt;a href=\"%2$s\"&gt;адаҟьа абраузер аҟны&lt;/a&gt; иаԥхьа&lt;br&gt;2. Иаԥхьа &lt;a href=\"amuratsu://about\"&gt;Amuratsu аверсиа аҵыхәтәантәи&lt;/a&gt;&lt;br&gt;3. Агхақәа рыҟнытәи иҟалазар, адырра аҵаҟаҵарақәа изыҟәҵа.</string>
     <string name="history_shortcuts">Аманга аҵыхәтәантәи ашьаҿақәа</string>
     <string name="history_shortcuts_summary">Иҟалап аманга аҵыхәтәантәи абыҷрала аҟны</string>
     <string name="reader_control_ltr_summary">Аҭагылазаашьа уахәаԥшынзаареитеи. Ари аԥҵара акьыԥхь рыхьӡ</string>
@@ -1196,7 +1196,7 @@
     <string name="export_backup_for_other_apps_summary">Иалх апрограмма-ныҟәгаҩы даҽа арезервтә копия аҟаҵаразы: Kotatsu, Mihon, Aniyomi, ма Usagi.</string>
     <string name="export_backup_choose_target_app">Иалх апрограмма-ныҟәгаҩы</string>
     <string name="export_kotatsu_backup">Kotatsu арезервтә копия экспорт</string>
-    <string name="export_kotatsu_backup_summary">Аԥҵара асаламтә резервтә копия Kotatsu-family рпрограммақәа рзы Kototoro еиԥшшьҭаҵарақәада.</string>
+    <string name="export_kotatsu_backup_summary">Аԥҵара асаламтә резервтә копия Kotatsu-family рпрограммақәа рзы Amuratsu еиԥшшьҭаҵарақәада.</string>
     <string name="export_kotatsu_backup_saved">Kotatsu арезервтә копия иеиқәырхоуп</string>
     <string name="export_mihon_backup">Mihon арезервтә копия экспорт</string>
     <string name="export_mihon_backup_summary">Адасақәа, акатегорияқәа, аԥхьара аиҿкаара Mihon-source затәаҵәа рзы.</string>
@@ -1269,7 +1269,7 @@
     <string name="data_and_privacy">Адыррақәа</string>
     <string name="restore_summary">Иҟаҵан аԥхьаҟауа ахьчара</string>
     <string name="restore_kototoro_backup">Иҟаҵан ахьчара</string>
-    <string name="restore_kototoro_backup_summary">Kototoro ахьчара</string>
+    <string name="restore_kototoro_backup_summary">Amuratsu ахьчара</string>
     <string name="restore_mode_replace_existing">Ахыҵра аҭыԥ</string>
     <string name="restore_mode_replace_existing_summary">Иҟаз адыррақәа рықәхра</string>
     <string name="restore_mode_merge_with_existing">Ахьчара рыбжьара</string>
@@ -2006,7 +2006,7 @@
     <string name="show_pages_thumbs">Адаҟьақәа рминиатюрақәа рырбара</string>
     <string name="show_pages_thumbs_summary">Аҭҵаара «Даҟаҿқәа» айнаҨыгаҿы иаҿызшәа аҟаҵара</string>
     <string name="error_no_data_received">Серверитәи адыррақәа рымҩаԥхьаӡоуп</string>
-    <string name="unsupported_backup_message">Иалҟоу Kototoro аиҩызара афаил</string>
+    <string name="unsupported_backup_message">Иалҟоу Amuratsu аиҩызара афаил</string>
     <string name="hours_short">%d с</string>
     <string name="minutes_short">%d м</string>
     <string name="seconds_short">%d с</string>
@@ -2058,8 +2058,8 @@
     <string name="chapters_read">Иҧхьаз аглаҭқәа</string>
     <string name="chapters_left">Иҟаз аглаҭқәа</string>
     <string name="external_source">Аҭыҵратә аҵыҵырҭа</string>
-    <string name="plugin_incompatible">Аҵыҵырҭа зҵазкуам ма аиشتیара маҷк амоуп. Ишәаргәҟьа аҵыҵырҭа аҵыхәтәантәи аверсиа ишеиҭагылоу Kototoro аҿы</string>
-    <string name="plugin_incompatible_with_cause">Аҵыҵырҭа аиشتیара: %s\n Ишәаргәҟьа аҵыҵырҭа аҵыхәтәантәи аверсиа ишеиҭагылоу Kototoro аҿы</string>
+    <string name="plugin_incompatible">Аҵыҵырҭа зҵазкуам ма аиشتیара маҷк амоуп. Ишәаргәҟьа аҵыҵырҭа аҵыхәтәантәи аверсиа ишеиҭагылоу Amuratsu аҿы</string>
+    <string name="plugin_incompatible_with_cause">Аҵыҵырҭа аиشتیара: %s\n Ишәаргәҟьа аҵыҵырҭа аҵыхәтәантәи аверсиа ишеиҭагылоу Amuratsu аҿы</string>
     <string name="plugin_missing_host_classes">%1$s амонтаж зумҭуаз %2$s аhost классқәа рыхьчара рыҟаӡам азы:\n%3$s</string>
     <string name="connection_ok">Ахьԥшра иҧшӡоуп</string>
     <string name="invalid_proxy_configuration">Апрокси аконфигурациа зумҭуа</string>
@@ -2259,7 +2259,7 @@
     <string name="search_disabled_sources">Аҽеиԥшра аиҿкаарақәа</string>
     <string name="error_details">Аиҟәша аҭҵаара</string>
     <string name="error_disclaimer_manga">Манга веб-браузер аҟны аԥхьаразы аҽашәҟәыҵаауатәуп</string>
-    <string name="error_disclaimer_app_outdated">Kototoro аверсиа аӡбахәык иаԥхьаӡоуп. Аверсиа ҿыц аҭаҵатәуп</string>
+    <string name="error_disclaimer_app_outdated">Amuratsu аверсиа аӡбахәык иаԥхьаӡоуп. Аверсиа ҿыц аҭаҵатәуп</string>
     <string name="error_disclaimer_report">Аиҟәша адырра ашьҭырҵәатәуп</string>
     <string name="enable_source_manga">Манга ахыҵхырҭа аҿыхтәуп</string>
     <string name="enable_source_novel">Роман ахыҵхырҭа аҿыхтәуп</string>
@@ -2277,7 +2277,7 @@
     <string name="recommendation_novel">иҟаҵоу романқәа</string>
     <string name="recommendation_video">иҟаҵоу видеоқәа</string>
     <string name="link_to_manga_on_s">Манга %s аҟны ахьыԧшра</string>
-    <string name="link_to_manga_in_app">Манга Kototoro аҟны ахьыԧшра</string>
+    <string name="link_to_manga_in_app">Манга Amuratsu аҟны ахьыԧшра</string>
     <string name="clear_browser_data">Абраузер адыррақәа рықәхра</string>
     <string name="clear_browser_data_summary">Абраузер адыррақәа рықәхра. Ахәыԧшра: Аавторизациа аԥхьаӡара иаҟәыҵыр ҳәа ауеит</string>
     <string name="no_write_permission_to_file">Аҧҵамҭаҟны аҩыразы азин ыҟam</string>
@@ -2327,7 +2327,7 @@
     <string name="discord_token_hint">Уҽ Discord Token уаҟны аҧsra</string>
     <string name="discord_rpc_summary">Уԥхьaҩшara астатус Discord аҟны ааԥshara</string>
     <string name="obtain">Аҧshara</string>
-    <string name="discord_rpc_description">Аманга аԥхьaҩшara Kototoro аҟны - аманга аԥхьaҩ aプリкеишн</string>
+    <string name="discord_rpc_description">Аманга аԥхьaҩшara Amuratsu аҟны - аманга аԥхьaҩ aプリкеишн</string>
     <string name="discord_logout_summary">Discord ахьҧshara аҭwcra</string>
     <string name="reading_s">Уԥхьaҩшara %s</string>
     <string name="read_on_s">Аҩыра %s</string>
@@ -2410,8 +2410,8 @@
     <string name="webdav_remote_backups_inspect">Ихаҭәаау ахьыҭәаарақәа хәаԥшлара</string>
     <string name="webdav_remote_backups_inspect_summary">WebDAV ахьыҭәаарақәа хәаԥшлара.</string>
     <string name="webdav_remote_backups_clear">WebDAV ахьыҭәаарақәа рыӡхра</string>
-    <string name="webdav_remote_backups_clear_summary">Kototoro WebDAV ахьыҭәаарақәа рыӡхра.</string>
-    <string name="webdav_remote_backups_clear_confirm">Kototoro WebDAV ахьыҭәаарақәа рыӡхра?</string>
+    <string name="webdav_remote_backups_clear_summary">Amuratsu WebDAV ахьыҭәаарақәа рыӡхра.</string>
+    <string name="webdav_remote_backups_clear_confirm">Amuratsu WebDAV ахьыҭәаарақәа рыӡхра?</string>
     <string name="webdav_remote_backups_loading">WebDAV ахьыҭәаарақәа иҭаwлоит...</string>
     <string name="webdav_remote_backup_status_unknown">Ихәаԥшым</string>
     <string name="webdav_remote_backup_status_restorable">Еиҭашьақәыргылоуп</string>
@@ -2819,7 +2819,7 @@
     <string name="trust_and_add">Иахәҭаны ацҵара</string>
     <string name="trust_extension_repository_message">Аҭагаларатә: %1$s\nАбкаҟра: %2$s\nSHA-256 ауаҵара:\n%3$s\n\nИхыҵәаа ари ауаҵара аҭагаларатә ахәҭаҟаҵаҩ дҟамҵанӡа.</string>
     <string name="untrusted_extension_message">%1$s (%2$s) иҵырҵәоуп, аха иаԥхьаҵара аҭагаларатә ауаҵара иашьҭашәашьам.\n\nАҭагаларатә ауаҵара: %3$s\n\nИаныха апакет аҵырҵәоу аҭагаларатә аҟынтә арҿыцра аҟынӡа.</string>
-    <string name="incompatible_extension_message">%1$s %2$s аҵырҵәара алшамҳәоит, избан акәзар абиблиотека аверсиа (%3$s) Kototoro аԥҟарақәа рҿы иҟам.</string>
+    <string name="incompatible_extension_message">%1$s %2$s аҵырҵәара алшамҳәоит, избан акәзар абиблиотека аверсиа (%3$s) Amuratsu аԥҟарақәа рҿы иҟам.</string>
     <string name="built_in_sources">Иҵыҵәоуп</string>
     <string name="select_all">Зегьы рыҟаҵара</string>
     <string name="deselect_all">Зегьы рыҟаҵара мап</string>
@@ -2859,7 +2859,7 @@
     <string name="welcome_plugins_repo_yakateam">Yakateam апарсерқәа</string>
     <string name="welcome_plugins_repo_redo">Аҧҵамҭақәа аҿыц ахьчара (Redo)</string>
     <string name="welcome_plugins_repo_uma">UMA (Tsuki аҧҵамҭақәа)</string>
-    <string name="welcome_plugins_disclaimer">Ари арепозиториқәа абжьара иҟоу акомуникациақәа рыҟны ирыхьыҵуеит. Kototoro аԥҵаҩцәа уи аҟны акы рымоӡам. Сиашьҭоуп ари схы зхьызҵаз.</string>
+    <string name="welcome_plugins_disclaimer">Ари арепозиториқәа абжьара иҟоу акомуникациақәа рыҟны ирыхьыҵуеит. Amuratsu аԥҵаҩцәа уи аҟны акы рымоӡам. Сиашьҭоуп ари схы зхьызҵаз.</string>
     <string name="welcome_plugins_start_btn">Арепозиториқәа реиқәыршәара</string>
     <string name="welcome_plugins_configured">Иаԥҵоуп %1$d ахыҵхырҭақәа: %2$s. Апакетқәа зыӡым — ашьҭа зышьҭа аҭыԥан иалага.</string>
     <string name="welcome_plugins_configured_none">Ахыҵхырҭа ма арепозитори израԥҵаӡом. Уара ауадақәа раԥҵара уҽазышәа ма аҽаԥшцәа алҵ.</string>
@@ -2895,8 +2895,8 @@
     <string name="welcome_install_kinds_empty">Арепозиториқәа ыҟам.</string>
     <string name="welcome_install_nsfw_title">NSFW акәшара</string>
     <string name="welcome_install_nsfw_summary">Иҽеит.</string>
-    <string name="welcome_intro_app_title">Kototoro · Аԥхьаҩы</string>
-    <string name="welcome_intro_body">Kototoro - аудио-видео ажәаҳәарақәа рыԥхьаҩы.</string>
+    <string name="welcome_intro_app_title">Amuratsu · Аԥхьаҩы</string>
+    <string name="welcome_intro_body">Amuratsu - аудио-видео ажәаҳәарақәа рыԥхьаҩы.</string>
     <string name="welcome_intro_concepts_title">Иаҵшьахаз ахәҭақәа</string>
     <string name="welcome_intro_repo_label">Арепозитори</string>
     <string name="welcome_intro_repo_body">Арепозитори ассылка.</string>
@@ -2913,10 +2913,10 @@
     <string name="welcome_done_json_note">Арепозиториқәа рыҩызақәа аусура иалагалоит.</string>
     <string name="welcome_done_title_finished">Аҟәыҵара анҵәамҭа</string>
     <string name="welcome_done_summary_finished">Ажәаҳәарақәа ыҟам.</string>
-    <string name="welcome_done_body_finished">Kototoro ажәаҳәарақәа мҩаԥигоит.</string>
+    <string name="welcome_done_body_finished">Amuratsu ажәаҳәарақәа мҩаԥигоит.</string>
     <string name="welcome_done_advice_title">Ажәаҳәара аусура даҽазҟәыҵоит</string>
     <string name="welcome_done_advice_summary">Ахәҭақәа рыҩызақәа.</string>
-    <string name="welcome_done_advice_body">1. Аҿагылара аԥшаара.\n2. Арепозитори ассылка.\n3. Kototoro апроект.</string>
+    <string name="welcome_done_advice_body">1. Аҿагылара аԥшаара.\n2. Арепозитори ассылка.\n3. Amuratsu апроект.</string>
     <string name="welcome_step_counter">Ашьаҿа %1$d - %2$d</string>
     <string name="welcome_action_configure_repos">Арепозиториқәа рыҽеит</string>
     <string name="welcome_action_install_count">Иҟаҵа %1$d ажәаҳәарақәа</string>
@@ -3365,11 +3365,11 @@
     <string name="pref_glass_blur_quality_performance">Апродуктивра</string>
     <string name="pref_glass_blur_quality_balanced">Ибалансхаз</string>
     <string name="pref_glass_blur_quality_quality">Акачество</string>
-    <string name="glass_material_family_kototoro">Kototoro (Рекомендуемо)</string>
+    <string name="glass_material_family_kototoro">Amuratsu (Рекомендуемо)</string>
     <string name="glass_material_family_haze">Haze</string>
     <string name="glass_material_family_cupertino">Cupertino</string>
     <string name="glass_material_family_fluent">Fluent</string>
-    <string name="glass_material_kototoro">Kototoro (Рекомендуемо)</string>
+    <string name="glass_material_kototoro">Amuratsu (Рекомендуемо)</string>
     <string name="glass_material_haze_ultra_thin">Ашәара аҵыхәтәа ҵакыс имаҷу</string>
     <string name="glass_material_haze_thin">Џьаԥсҭа ҷыԥхьа</string>
     <string name="glass_material_haze_regular">Џьаԥсҭа хада</string>

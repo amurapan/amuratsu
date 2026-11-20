@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name" translatable="false">Kototoro</string>
-    <string name="about_author" translatable="false">by skepsun</string>
+    <string name="app_name" translatable="false">Amuratsu</string>
+    <string name="about_author" translatable="false">by amurapan</string>
     <string name="quick_access">Quick access</string>
     <string name="home">Home</string>
     <string name="local_storage">Local storage</string>
@@ -131,7 +131,7 @@
     <string name="_import">Import</string>
     <string name="delete">Delete</string>
     <string name="operation_not_supported">This operation is not supported</string>
-    <string name="cloudstream_newpipe_required">This extension needs NewPipe classes that the NewPipe bundled with Kototoro does not have, so it cannot play videos. Try updating the extension or Kototoro.</string>
+    <string name="cloudstream_newpipe_required">This extension needs NewPipe classes that the NewPipe bundled with Amuratsu does not have, so it cannot play videos. Try updating the extension or Amuratsu.</string>
     <string name="text_file_not_supported">Either pick a ZIP or CBZ file.</string>
     <string name="no_description">No description</string>
     <string name="clear_pages_cache">Clear page cache</string>
@@ -197,7 +197,7 @@
     <string name="replace_rule_disable_all_summary">Temporarily stop applying replacement rules</string>
     <string name="replace_rule_edit">Edit rule</string>
     <string name="replace_rule_import">Import Legado rules</string>
-    <string name="replace_rule_import_summary">Import a JSON array exported by Legado or Kototoro</string>
+    <string name="replace_rule_import_summary">Import a JSON array exported by Legado, Amuratsu or Kototoro</string>
     <string name="replace_rule_export">Export rules</string>
     <string name="replace_rule_export_summary">Export rules in a compatible JSON format</string>
     <string name="replace_rule_empty">No replacement rules</string>
@@ -328,7 +328,7 @@
     <string name="enter_password">Enter password</string>
     <string name="wrong_password">Wrong password</string>
     <string name="protect_application">Protect the app</string>
-    <string name="protect_application_summary">Ask for password when starting Kototoro</string>
+    <string name="protect_application_summary">Ask for password when starting Amuratsu</string>
     <string name="repeat_password">Repeat the password</string>
     <string name="passwords_mismatch">Mismatching passwords</string>
     <string name="about">About</string>
@@ -436,8 +436,8 @@
     <string name="clear_local_novel_storage_prompt">Delete all locally saved and imported novel files? This cannot be undone.</string>
     <string name="clear_local_video_storage_prompt">Delete all locally saved and imported video files? This cannot be undone.</string>
     <string name="welcome">Welcome</string>
-    <string name="welcome_intro_title">Set up Kototoro</string>
-    <string name="welcome_intro_summary">Choose how you want to read and watch. Kototoro now uses plugin-based source families for manga, novels, and video, including JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader, and Cloudstream.</string>
+    <string name="welcome_intro_title">Set up Amuratsu</string>
+    <string name="welcome_intro_summary">Choose how you want to read and watch. Amuratsu now uses plugin-based source families for manga, novels, and video, including JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader, and Cloudstream.</string>
     <string name="welcome_step_start">Start</string>
     <string name="welcome_step_sources">Sources</string>
     <string name="welcome_step_preferences">Preferences</string>
@@ -447,11 +447,11 @@
     <string name="welcome_glass_preset_title">Glass finish</string>
     <string name="welcome_glass_preset_summary">Pick the glass finish preset for the iOS style. Refraction is the default and can be fine-tuned later in Appearance settings.</string>
     <string name="home_quick_action_wizard">Wizard</string>
-    <string name="welcome_restore_summary">Already used Kototoro before? Restore a backup, sign in to sync, or add local folders first.</string>
+    <string name="welcome_restore_summary">Already used Amuratsu before? Restore a backup, sign in to sync, or add local folders first.</string>
     <string name="welcome_source_formats_title">Pick content formats</string>
     <string name="welcome_source_formats_summary">These filters decide which source families are enabled after setup.</string>
     <string name="welcome_ecosystems_title">Source ecosystem</string>
-    <string name="welcome_ecosystems_summary">Kototoro supports multiple plugin source families for reading and watching. Start with the recommended repositories here, then fine-tune them later in extension management.</string>
+    <string name="welcome_ecosystems_summary">Amuratsu supports multiple plugin source families for reading and watching. Start with the recommended repositories here, then fine-tune them later in extension management.</string>
     <string name="welcome_ecosystem_manga">Manga: JAR parsers, Mihon, IReader, LNReader</string>
     <string name="welcome_ecosystem_novel">Novel: Legado, IReader, LNReader</string>
     <string name="welcome_ecosystem_video">Video: Aniyomi, TVBox, Cloudstream</string>
@@ -460,10 +460,10 @@
     <string name="welcome_preferences_summary">Choose languages and content types. You can change this later in source settings.</string>
     <string name="welcome_spaces_title">Separate your spaces</string>
     <string name="welcome_spaces_summary">Spaces give manga, novels, and anime independent navigation, browsing preferences, and reading or playback context. Advanced options and custom spaces are available later in Settings &gt; User &gt; Spaces.</string>
-    <string name="welcome_ready_summary">Setup is complete. Kototoro will enable sources matching your selected languages and formats. You can run this wizard again from Settings > Content sources > Setup wizard.</string>
-    <string name="welcome_jar_install_success">Kototoro: Successfully fetched and mounted %1$d latest parser engines from cloud network!</string>
-    <string name="welcome_jar_install_up_to_date">Kototoro: Cloud verification complete, local parsers are up to date! (Loaded %1$d sources in total)</string>
-    <string name="welcome_jar_install_failed">Kototoro: Parser network loading failed (%1$s), please try again or go to settings to switch proxy mirrors</string>
+    <string name="welcome_ready_summary">Setup is complete. Amuratsu will enable sources matching your selected languages and formats. You can run this wizard again from Settings > Content sources > Setup wizard.</string>
+    <string name="welcome_jar_install_success">Amuratsu: Successfully fetched and mounted %1$d latest parser engines from cloud network!</string>
+    <string name="welcome_jar_install_up_to_date">Amuratsu: Cloud verification complete, local parsers are up to date! (Loaded %1$d sources in total)</string>
+    <string name="welcome_jar_install_failed">Amuratsu: Parser network loading failed (%1$s), please try again or go to settings to switch proxy mirrors</string>
     <string name="home_placeholder_title">Reading dashboard</string>
     <string name="home_placeholder_subtitle">See your recent reading, updates, library, sync, and sources in one place.</string>
     <string name="home_hero_local_subtitle">Pick up where you left off, or jump back into what you opened recently.</string>
@@ -1052,7 +1052,7 @@
     <string name="import_completed_hint">You can delete the original file from storage to save space</string>
     <string name="import_will_start_soon">Import will start soon</string>
     <string name="feed">Feed</string>
-    <string name="manga_error_description_pattern">Error details:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. Try to &lt;a href="%2$s"&gt;open manga in a web browser&lt;/a&gt; to ensure it is available on its source&lt;br&gt;2. Make sure you are using the &lt;a href="kototoro://about"&gt;latest version of Kototoro&lt;/a&gt;&lt;br&gt;3. If it is available, send an error report to the developers.</string>
+    <string name="manga_error_description_pattern">Error details:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. Try to &lt;a href="%2$s"&gt;open manga in a web browser&lt;/a&gt; to ensure it is available on its source&lt;br&gt;2. Make sure you are using the &lt;a href="amuratsu://about"&gt;latest version of Amuratsu&lt;/a&gt;&lt;br&gt;3. If it is available, send an error report to the developers.</string>
     <string name="history_shortcuts">Show recent manga shortcuts</string>
     <string name="history_shortcuts_summary">Make recent manga available by long pressing on application icon</string>
     <string name="reader_control_ltr_summary">Do not adjust the page switching direction to the reader mode, e. g. pressing the right key always switches to the next page. This option affects only hardware input devices</string>
@@ -1188,7 +1188,7 @@
     <string name="export_backup_for_other_apps_summary">Choose a target app and create a compatible backup: Kotatsu, Mihon, Aniyomi, or Usagi.</string>
     <string name="export_backup_choose_target_app">Choose target app</string>
     <string name="export_kotatsu_backup">Export Kotatsu backup</string>
-    <string name="export_kotatsu_backup_summary">Create a separate legacy backup for Kotatsu-family apps without Kototoro-specific sections.</string>
+    <string name="export_kotatsu_backup_summary">Create a separate legacy backup for Kotatsu-family apps without Amuratsu-specific sections.</string>
     <string name="export_kotatsu_backup_saved">Kotatsu backup saved</string>
     <string name="export_mihon_backup">Export Mihon backup</string>
     <string name="export_mihon_backup_summary">Export favorites, categories, and reading progress for Mihon-source entries only.</string>
@@ -1265,7 +1265,7 @@
     <string name="data_and_privacy">Data and privacy</string>
     <string name="restore_summary">Restore previously created backup</string>
     <string name="restore_kototoro_backup">Restore backup</string>
-    <string name="restore_kototoro_backup_summary">Restore a Kototoro backup from any version, or a Kotatsu backup. The format is detected automatically.</string>
+    <string name="restore_kototoro_backup_summary">Restore an Amuratsu, Kototoro or Kotatsu backup. The format is detected automatically.</string>
     <string name="restore_mode_replace_existing">Replace existing data</string>
     <string name="restore_mode_replace_existing_summary">Sections being restored are cleared first; favourites and history missing from the backup are removed</string>
     <string name="restore_mode_merge_with_existing">Merge with existing data</string>
@@ -2030,7 +2030,7 @@
     <string name="show_pages_thumbs">Show pages thumbnails</string>
     <string name="show_pages_thumbs_summary">Enable the \"Pages\" tab on the details screen</string>
     <string name="error_no_data_received">No data was received from server</string>
-    <string name="unsupported_backup_message">Please select a proper Kototoro backup file</string>
+    <string name="unsupported_backup_message">Please select a proper Amuratsu backup file</string>
     <string name="list_ellipsize_pattern" translatable="false">(+%d)</string>
     <!-- Short hours format pattern -->
     <string name="hours_short">%d h</string>
@@ -2092,8 +2092,8 @@
     <string name="chapters_read">Chapters read</string>
     <string name="chapters_left">Chapters left</string>
     <string name="external_source">External/plugin</string>
-    <string name="plugin_incompatible">Incompatible plugin or internal error. Make sure you are using the latest version of the plugin and Kototoro</string>
-    <string name="plugin_incompatible_with_cause">Plugin error: %s\n Make sure you are using the latest version of the plugin and Kototoro</string>
+    <string name="plugin_incompatible">Incompatible plugin or internal error. Make sure you are using the latest version of the plugin and Amuratsu</string>
+    <string name="plugin_incompatible_with_cause">Plugin error: %s\n Make sure you are using the latest version of the plugin and Amuratsu</string>
     <string name="plugin_missing_host_classes">%1$s cannot be installed because it depends on unsupported %2$s host classes:\n%3$s</string>
     <string name="connection_ok">Connection is OK</string>
     <string name="invalid_proxy_configuration">Invalid proxy configuration</string>
@@ -2290,7 +2290,7 @@
     <string name="search_disabled_sources">Search through disabled sources</string>
     <string name="error_details">Error details</string>
     <string name="error_disclaimer_manga">Try to open manga in a web browser to ensure it is available on its source.</string>
-    <string name="error_disclaimer_app_outdated">It looks like your version of Kototoro is out of date. Please install the latest version to get all available fixes.</string>
+    <string name="error_disclaimer_app_outdated">It looks like your version of Amuratsu is out of date. Please install the latest version to get all available fixes.</string>
     <string name="error_disclaimer_report">You can send an error report to developers, this will help us locate and fix the error</string>
 
     <string name="enable_source_manga">Enable manga source</string>
@@ -2313,7 +2313,7 @@
     <string name="recommendation_novel">recommended novels</string>
     <string name="recommendation_video">recommended videos</string>
     <string name="link_to_manga_on_s">Link to manga on %s</string>
-    <string name="link_to_manga_in_app">Link to manga in Kototoro</string>
+    <string name="link_to_manga_in_app">Link to manga in Amuratsu</string>
     <string name="clear_browser_data">Clear browser data</string>
     <string name="clear_browser_data_summary">Clear browser data such as cache and cookies. Warning: Authorization in content sources may become invalid</string>
     <string name="no_write_permission_to_file">Does not have permission to write a file</string>
@@ -2369,7 +2369,7 @@
     <string name="discord_token_hint">Paste your Discord Token here</string>
     <string name="discord_rpc_summary">Show your reading status on Discord</string>
     <string name="obtain">Obtain</string>
-    <string name="discord_rpc_description">Reading manga on Kototoro - a manga reader app</string>
+    <string name="discord_rpc_description">Reading manga on Amuratsu - a manga reader app</string>
     <string name="discord_logout_summary">Clear the saved Discord authorization</string>
     <string name="reading_s">Reading %s</string>
     <string name="read_on_s">Read on %s</string>
@@ -2398,7 +2398,7 @@
     <string name="sync_backend_switch_webdav_title">Switch to WebDAV backup?</string>
     <string name="sync_backend_switch_webdav_confirm">Google Drive sync is currently enabled. Enabling WebDAV backup will turn off Google Drive sync while keeping your Google sign-in.</string>
     <string name="sync_sign_in">Prepare Google Drive sync</string>
-    <string name="sync_sign_in_summary">Uses Google Drive app data with the minimum Drive appdata permission to sync subscriptions and update records. Kototoro cannot access your Drive files.</string>
+    <string name="sync_sign_in_summary">Uses Google Drive app data with the minimum Drive appdata permission to sync subscriptions and update records. Amuratsu cannot access your Drive files.</string>
     <string name="google_drive_sync_unregistered_build_error">Google Drive sync is not supported in development/nightly builds. Please use official release builds or WebDAV sync.</string>
     <string name="sync_sign_out">Sign out</string>
     <string name="sync_account">Signed in</string>
@@ -2453,8 +2453,8 @@
     <string name="webdav_remote_backups_inspect">Check remote backups</string>
     <string name="webdav_remote_backups_inspect_summary">Download and verify whether each remote backup can be safely restored.</string>
     <string name="webdav_remote_backups_clear">Clear remote WebDAV backups</string>
-    <string name="webdav_remote_backups_clear_summary">Delete all Kototoro backup files on the configured WebDAV path. Local data is not changed.</string>
-    <string name="webdav_remote_backups_clear_confirm">Delete all Kototoro backup files from the configured WebDAV path? Local data will not be changed.</string>
+    <string name="webdav_remote_backups_clear_summary">Delete all Amuratsu backup files on the configured WebDAV path. Local data is not changed.</string>
+    <string name="webdav_remote_backups_clear_confirm">Delete all Amuratsu backup files from the configured WebDAV path? Local data will not be changed.</string>
     <string name="webdav_remote_backups_loading">Loading WebDAV backups…</string>
     <string name="webdav_remote_backup_status_unknown">Not checked</string>
     <string name="webdav_remote_backup_status_restorable">Restorable</string>
@@ -2892,7 +2892,7 @@
     <string name="trust_and_add">Trust and add</string>
     <string name="trust_extension_repository_message">Repository: %1$s\nWebsite: %2$s\nSHA-256 fingerprint:\n%3$s\n\nVerify this fingerprint with the publisher before trusting this repository.</string>
     <string name="untrusted_extension_message">%1$s (%2$s) is installed, but its signature does not match the selected repository fingerprint.\n\nRepository fingerprint: %3$s\n\nRemove the installed package before reinstalling from this repository.</string>
-    <string name="incompatible_extension_message">%1$s %2$s cannot be installed because its library version (%3$s) is outside Kototoro\'s supported range.</string>
+    <string name="incompatible_extension_message">%1$s %2$s cannot be installed because its library version (%3$s) is outside Amuratsu\'s supported range.</string>
     <string name="eighteen_plus">18+</string>
     <plurals name="source_count">
         <item quantity="one">%d source</item>
@@ -2941,7 +2941,7 @@
     <string name="welcome_plugins_repo_yakateam">Yakateam Parsers</string>
     <string name="welcome_plugins_repo_redo">Redo Parsers</string>
     <string name="welcome_plugins_repo_uma">UMA (Tsuki Parsers)</string>
-    <string name="welcome_plugins_disclaimer">These extension repositories are maintained by independent online communities. The Kototoro developers have no affiliation, control, or association with these third-party repositories. I acknowledge that I am configuring these sources at my own risk.</string>
+    <string name="welcome_plugins_disclaimer">These extension repositories are maintained by independent online communities. The Amuratsu developers have no affiliation, control, or association with these third-party repositories. I acknowledge that I am configuring these sources at my own risk.</string>
     <string name="welcome_plugins_start_btn">Configure repositories</string>
     <string name="welcome_plugins_configured">Configured %1$d new source/repository type(s): %2$s. Packages are not downloaded yet — install matchings ones on the next step.</string>
     <string name="welcome_plugins_configured_none">No source or repository could be configured. Check your network or pick different repositories and try again.</string>
@@ -2972,23 +2972,23 @@
     <string name="welcome_install_system_launch_failed">Could not launch the system installer: %1$s</string>
     <string name="welcome_install_skip">Skip installation — I\'ll do it in Extension Management later</string>
     <string name="welcome_install_step_title">Batch install extensions</string>
-    <string name="welcome_install_step_summary">Pick which source types and settings to use, then let Kototoro download and install everything in the background.</string>
+    <string name="welcome_install_step_summary">Pick which source types and settings to use, then let Amuratsu download and install everything in the background.</string>
     <string name="welcome_install_kinds_title">Source types to install</string>
     <string name="welcome_install_kinds_summary">Only the types you checked will be handled. Unchecked ones (e.g. Mihon, if you prefer doing it later) stay for you to install in Extension Management.</string>
     <string name="welcome_install_kinds_empty">No repositories configured yet. Go back and add repositories first.</string>
     <string name="welcome_install_nsfw_title">Include NSFW content</string>
     <string name="welcome_install_nsfw_summary">Off by default — adult-only packages are filtered out of the installation list.</string>
 
-    <string name="welcome_intro_app_title">Kototoro · Open-source reader</string>
-    <string name="welcome_intro_body">Kototoro is an open-source multimedia reader / player. It supports a wide ecosystem of community extensions, but it does not bundle any content sources of its own.</string>
+    <string name="welcome_intro_app_title">Amuratsu · Open-source reader</string>
+    <string name="welcome_intro_body">Amuratsu is an open-source multimedia reader / player. It supports a wide ecosystem of community extensions, but it does not bundle any content sources of its own.</string>
     <string name="welcome_intro_concepts_title">Three concepts, in 30 seconds</string>
     <string name="welcome_intro_repo_label">Repository</string>
     <string name="welcome_intro_repo_body">A URL to a third-party collection of extensions, maintained by an independent community (for example Mihon repos, TVBox lists or LNReader plugin repos).</string>
     <string name="welcome_intro_extension_label">Extension</string>
-    <string name="welcome_intro_extension_body">One installable package inside a repository — a JAR, an APK or a JSON list. Installed extensions give Kototoro the ability to read or play from a site.</string>
+    <string name="welcome_intro_extension_body">One installable package inside a repository — a JAR, an APK or a JSON list. Installed extensions give Amuratsu the ability to read or play from a site.</string>
     <string name="welcome_intro_source_label">Source</string>
     <string name="welcome_intro_source_body">One concrete content source you see in the app after an extension is installed or imported — for example a specific manga or video website.</string>
-    <string name="welcome_intro_disclaimer">Use of third-party extensions is entirely at your own risk: runtime behaviour, legality and content are not controlled by the Kototoro project.</string>
+    <string name="welcome_intro_disclaimer">Use of third-party extensions is entirely at your own risk: runtime behaviour, legality and content are not controlled by the Amuratsu project.</string>
     <string name="welcome_intro_continue">I understand — continue</string>
 
     <string name="welcome_done_title">Almost there</string>
@@ -2998,10 +2998,10 @@
     <string name="welcome_done_json_note">JSON-based types (Legado / TVBox / LNReader) are imported automatically; if you also added other JSON repositories, import them in Extension Management.</string>
     <string name="welcome_done_title_finished">Setup complete</string>
     <string name="welcome_done_summary_finished">The wizard is done — no repositories or sources were added automatically.</string>
-    <string name="welcome_done_body_finished">Kototoro did not add any sources during setup. You can add your own repositories and sources any time in Settings › Content sources (Extension Management).</string>
+    <string name="welcome_done_body_finished">Amuratsu did not add any sources during setup. You can add your own repositories and sources any time in Settings › Content sources (Extension Management).</string>
     <string name="welcome_done_advice_title">If a source does not work</string>
     <string name="welcome_done_advice_summary">A short troubleshooting path, so the right people see the report.</string>
-    <string name="welcome_done_advice_body">1. Confirm the issue using the original host app of the extension — for example a Mihon-type source should be tested in the Mihon app.\n2. If the problem also happens there, it belongs to the repository that maintains the extension: open an issue at the repository\'s own URL.\n3. If it only happens in Kototoro, report it in the Kototoro project repository and include the source name, the extension version and what you tried.</string>
+    <string name="welcome_done_advice_body">1. Confirm the issue using the original host app of the extension — for example a Mihon-type source should be tested in the Mihon app.\n2. If the problem also happens there, it belongs to the repository that maintains the extension: open an issue at the repository\'s own URL.\n3. If it only happens in Amuratsu, report it in the Amuratsu project repository and include the source name, the extension version and what you tried.</string>
 
     <!-- Wizard unified header / bottom bar -->
     <string name="welcome_step_counter">Step %1$d of %2$d</string>
@@ -3044,7 +3044,7 @@
     <string name="welcome_permissions_notifications_title">Notifications</string>
     <string name="welcome_permissions_notifications_summary">Shows download, update and player notifications.</string>
     <string name="welcome_permissions_packages_title">Installed apps</string>
-    <string name="welcome_permissions_packages_summary">Lets Kototoro detect already-installed extensions and the host apps (Mihon, Aniyomi, …). Declared in the manifest and granted automatically.</string>
+    <string name="welcome_permissions_packages_summary">Lets Amuratsu detect already-installed extensions and the host apps (Mihon, Aniyomi, …). Declared in the manifest and granted automatically.</string>
     <string name="welcome_permissions_battery_title">Background survival</string>
     <string name="welcome_permissions_battery_summary">Keeps background downloads and updates running when the screen is off or the device is idle.</string>
     <string name="welcome_permissions_battery_action">Allow</string>
@@ -3486,11 +3486,11 @@
     <string name="pref_glass_blur_quality_performance">Performance</string>
     <string name="pref_glass_blur_quality_balanced">Balanced</string>
     <string name="pref_glass_blur_quality_quality">Quality</string>
-    <string name="glass_material_family_kototoro">Kototoro (Recommended)</string>
+    <string name="glass_material_family_kototoro">Amuratsu (Recommended)</string>
     <string name="glass_material_family_haze">Haze</string>
     <string name="glass_material_family_cupertino">Cupertino</string>
     <string name="glass_material_family_fluent">Fluent</string>
-    <string name="glass_material_kototoro">Kototoro (Recommended)</string>
+    <string name="glass_material_kototoro">Amuratsu (Recommended)</string>
     <string name="glass_material_haze_ultra_thin">Haze Ultra Thin</string>
     <string name="glass_material_haze_thin">Haze Thin</string>
     <string name="glass_material_haze_regular">Haze Regular</string>
@@ -4313,4 +4313,7 @@
     <string name="media_home_new_episodes">+%1$d episodes</string>
     <string name="media_home_browse_sources">Browse sources</string>
     <string name="media_home_video_position">At %1$d:%2$02d</string>
+    <string name="about_report_issue">Report an issue</string>
+    <string name="about_upstream_kototoro">Built on Kototoro</string>
+    <string name="about_upstream_kotatsu">Original project: Kotatsu</string>
 </resources>

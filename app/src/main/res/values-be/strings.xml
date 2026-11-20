@@ -299,7 +299,7 @@
     <string name="email_enter_hint">Каб працягнуць, увядзіце свой адрас электроннай пошты</string>
     <string name="import_completed_hint">Вы можаце выдаліць зыходны файл са сховішча, каб зэканоміць месца</string>
     <string name="import_will_start_soon">Хутка пачнецца імпарт</string>
-    <string name="manga_error_description_pattern">Дэталі памылкі:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. Паспрабуйце &lt;a href=%2$s&gt;адкрыць мангу ў вэб-браўзеры&lt;/a&gt;, каб пераканацца, што яна даступная ў крыніцы&lt;br&gt;2. Упэўніцеся, што вы выкарыстоўваеце &lt;a href=kototoro://about&gt;апошнюю версію Kototoro&lt;/a&gt;&lt;br&gt;3. Калі ён даступны, адпраўце распрацоўнікам справаздачу аб памылцы.</string>
+    <string name="manga_error_description_pattern">Дэталі памылкі:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. Паспрабуйце &lt;a href=%2$s&gt;адкрыць мангу ў вэб-браўзеры&lt;/a&gt;, каб пераканацца, што яна даступная ў крыніцы&lt;br&gt;2. Упэўніцеся, што вы выкарыстоўваеце &lt;a href=amuratsu://about&gt;апошнюю версію Amuratsu&lt;/a&gt;&lt;br&gt;3. Калі ён даступны, адпраўце распрацоўнікам справаздачу аб памылцы.</string>
     <string name="history_shortcuts">Паказаць апошнія ярлыкі мангі</string>
     <string name="history_shortcuts_summary">Зрабіце нядаўнюю мангу даступнай, доўга націскаючы на значок праграмы</string>
     <string name="reader_control_ltr_summary">Не настройвайце кірунак пераключэння старонак у рэжым чытання, напрыклад, націск правай клавішы заўсёды перамыкае на наступную старонку. Гэтая опцыя ўплывае толькі на апаратныя прылады ўводу</string>
@@ -609,7 +609,7 @@
     <string name="show_pages_thumbs">Паказаць мініяцюры старонак</string>
     <string name="show_pages_thumbs_summary">Уключыце ўкладку «Старонкі» на экране звестак</string>
     <string name="error_no_data_received">Ніякія дадзеныя не былі атрыманы з сервера</string>
-    <string name="unsupported_backup_message">Абярыце правільны файл рэзервовай копіі Kototoro</string>
+    <string name="unsupported_backup_message">Абярыце правільны файл рэзервовай копіі Amuratsu</string>
     <string name="last_used">Апошні раз выкарыстоўваўся</string>
     <string name="hours_minutes_short">%1$d гз. %2$d хв.</string>
     <string name="minutes_short">%d хв.</string>
@@ -656,7 +656,7 @@
     <string name="chapters_read">Прачытаныя раздзелы</string>
     <string name="chapters_left">Астатнія раздзелы</string>
     <string name="external_source">Знешні/плагін</string>
-    <string name="plugin_incompatible">Несумяшчальны плягін або ўнутраная памылка. Пераканайцеся, што вы карыстаецеся апошнюю версію плагіна і Kototoro</string>
+    <string name="plugin_incompatible">Несумяшчальны плягін або ўнутраная памылка. Пераканайцеся, што вы карыстаецеся апошнюю версію плагіна і Amuratsu</string>
     <string name="text_empty_holder_secondary_filtered">Няма мангі, якая адпавядае абраным вамі фільтрам</string>
     <string name="connection_ok">Злучэнне ў парадку</string>
     <string name="invalid_proxy_configuration">Няправільная канфігурацыя проксі</string>
@@ -727,7 +727,7 @@
     <string name="save_manga">Захаваць мангу</string>
     <string name="genre">Жанр</string>
     <string name="landscape">Ландшафтная</string>
-    <string name="plugin_incompatible_with_cause">Памылка плагіна: %s\nПераканайцеся, што вы карыстаецеся апошнюю версію плагіна і Kototoro</string>
+    <string name="plugin_incompatible_with_cause">Памылка плагіна: %s\nПераканайцеся, што вы карыстаецеся апошнюю версію плагіна і Amuratsu</string>
     <string name="download_added">Загрузка дададзена</string>
     <string name="more_options">Больш опцый</string>
     <string name="destination_directory">Каталог прызначэння</string>
@@ -792,7 +792,7 @@
     <string name="search_everywhere">Пошук паўсюль</string>
     <string name="badges_in_lists">Значкі ў спісах</string>
     <string name="link_to_manga_on_s">Спасылка на мангу на %s</string>
-    <string name="link_to_manga_in_app">Спасылка на мангу ў Kototoro</string>
+    <string name="link_to_manga_in_app">Спасылка на мангу ў Amuratsu</string>
     <string name="clear_browser_data">Ачысціць дадзеныя браўзэра</string>
     <string name="include_disabled_sources">Уключыць адключаныя крыніцы</string>
     <string name="suggestions_disabled_sources_summary">Адлюстроўваць рэкамендацыі з усіх крыніц мангі, у тым ліку адключаныя</string>
@@ -807,7 +807,7 @@
     <string name="no_write_permission_to_file">Няма правоў на запіс у файл</string>
     <string name="use_default_cover">Выкарыстоўваць вокладку па змаўчанні</string>
     <string name="error_disclaimer_report">Вы можаце адправіць справаздачу аб памылцы распрацоўшчыкам. Гэта дапаможа нам выправіць праблему.</string>
-    <string name="error_disclaimer_app_outdated">Падобна, што Ваша версія Kototoro састарэлая. Калі ласка, усталюйце апошнюю версію, каб атрымаць усе даступныя выпраўленні.</string>
+    <string name="error_disclaimer_app_outdated">Падобна, што Ваша версія Amuratsu састарэлая. Калі ласка, усталюйце апошнюю версію, каб атрымаць усе даступныя выпраўленні.</string>
     <string name="exclude_nsfw_from_suggestions_summary">Дарослая манга не будзе адлюстроўвацца ў рэкамендацыях. Гэтая опцыя можа не працаваць з некаторымі крыніцамі</string>
     <string name="disable_captcha_notifications_summary">Вы не будзеце атрымліваць апавяшчэнняў аб рашэнні CAPTCHA для гэтай крыніцы, але гэта можа прывесці да парушэння фонавых аперацый (праверкі новых раздзелаў, атрымання рэкамендацый і г.д.)</string>
     <string name="error_disclaimer_manga">Паспрабуйце адкрыць мангу ў браўзэры, каб пераканацца, што яна даступная ў крыніцы.</string>
@@ -847,7 +847,7 @@
     <string name="discord_token_hint">Устаўце сюды свой токен Discord</string>
     <string name="discord_rpc_summary">Пакажыце свой статус чытання ў Discord</string>
     <string name="obtain">Атрымаць</string>
-    <string name="discord_rpc_description">Чытанне мангі на Kototoro - праграма для чытання мангі</string>
+    <string name="discord_rpc_description">Чытанне мангі на Amuratsu - праграма для чытання мангі</string>
     <string name="reading_s">Чытанне %s</string>
     <string name="read_on_s">Чытаць далей %s</string>
     <string name="rpc_skip_nsfw_summary">Не выкарыстоўваць RPC для дарослага кантэнту</string>
@@ -924,7 +924,7 @@
     <string name="appearance_mode">Рэжым знешняга выгляду</string>
     <string name="page_save_manga_title_length">Даўжыня назвы манга ў файлах</string>
     <string name="page_save_manga_title_length_summary">Колькасць сімвалаў назвы манга ў захаваных файлавых выявах (12–64)</string>
-    <string name="cloudstream_newpipe_required">Гэтаму пашырэнню патрэбныя класы NewPipe, якіх няма ў складзе Kototoro, таму яно не можа прайграваць відэа. Паспрабуйце абнавіць пашырэнне або Kototoro.</string>
+    <string name="cloudstream_newpipe_required">Гэтаму пашырэнню патрэбныя класы NewPipe, якіх няма ў складзе Amuratsu, таму яно не можа прайграваць відэа. Паспрабуйце абнавіць пашырэнне або Amuratsu.</string>
     <string name="clear_chapter_thumbnails">Ачысціць мініяцюры раздзелаў</string>
     <string name="continuous_horizontal">Бесперапынны гарызантальны</string>
     <string name="continuous_horizontal_reversed">Чытаць справа налева</string>
@@ -976,7 +976,7 @@
     <string name="replace_rule_disable_all_summary">Часова спыніць ужыванне правілаў замены</string>
     <string name="replace_rule_edit">Змяніць</string>
     <string name="replace_rule_import">Імпартаваць правілы Legado</string>
-    <string name="replace_rule_import_summary">Імпартаваць масіў JSON, экспартаваны Legado ці Kototoro</string>
+    <string name="replace_rule_import_summary">Імпартаваць масіў JSON, экспартаваны Legado ці Amuratsu</string>
     <string name="replace_rule_export">Экспартаваць правілы</string>
     <string name="replace_rule_export_summary">Экспартаваць правілы ў сумяшчальным фармаце JSON</string>
     <string name="replace_rule_empty">Няма правілаў замены</string>
@@ -1109,8 +1109,8 @@
     <string name="clear_local_manga_storage_prompt">Выдаліць усе лакальна захаваныя і імпартаваныя файлы манга? Гэта дзеянне нельга адмяніць.</string>
     <string name="clear_local_novel_storage_prompt">Выдаліць усе лакальна захаваныя і імпартаваныя файлы раманаў? Гэта дзеянне нельга адмяніць.</string>
     <string name="clear_local_video_storage_prompt">Выдаліць усе лакальна захаваныя і імпартаваныя відэафайлы? Гэта дзеянне нельга адмяніць.</string>
-    <string name="welcome_intro_title">Наладзіць Kototoro</string>
-    <string name="welcome_intro_summary">Выберыце, як вы хочаце чытаць і глядзець. Цяпер Kototoro выкарыстоўвае сямействы крыніц на аснове плагінаў для манга, раманаў і відэа, уключаючы JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader і Cloudstream.</string>
+    <string name="welcome_intro_title">Наладзіць Amuratsu</string>
+    <string name="welcome_intro_summary">Выберыце, як вы хочаце чытаць і глядзець. Цяпер Amuratsu выкарыстоўвае сямействы крыніц на аснове плагінаў для манга, раманаў і відэа, уключаючы JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader і Cloudstream.</string>
     <string name="welcome_step_start">Пачаць</string>
     <string name="welcome_step_sources">Крыніцы</string>
     <string name="welcome_step_preferences">Налады</string>
@@ -1120,11 +1120,11 @@
     <string name="welcome_glass_preset_title">Шкляное аздабленне</string>
     <string name="welcome_glass_preset_summary">Выберыце шаблон шклянога аздаблення для стылю iOS. Праламленне выкарыстоўваецца па змаўчанні і можа быць наладжана пазней у наладах знешняга выгляду.</string>
     <string name="home_quick_action_wizard">Майстар</string>
-    <string name="welcome_restore_summary">Ужо карысталіся Kototoro раней? Аднавіце рэзервовую копію, увайдзіце для сінхранізацыі або дадайце лакальныя папкі.</string>
+    <string name="welcome_restore_summary">Ужо карысталіся Amuratsu раней? Аднавіце рэзервовую копію, увайдзіце для сінхранізацыі або дадайце лакальныя папкі.</string>
     <string name="welcome_source_formats_title">Выберыце фарматы кантэнту</string>
     <string name="welcome_source_formats_summary">Гэтыя фільтры вызначаюць, якія сямействы крыніц уключаюцца пасля наладкі.</string>
     <string name="welcome_ecosystems_title">Экасістэма крыніц</string>
-    <string name="welcome_ecosystems_summary">Kototoro падтрымлівае некалькі сямействаў плагінаў-крыніц для чытання і прагляду. Пачніце з рэкамендаваных рэпазітарыяў тут, а затым наладзьце іх у кіраванні пашырэннямі.</string>
+    <string name="welcome_ecosystems_summary">Amuratsu падтрымлівае некалькі сямействаў плагінаў-крыніц для чытання і прагляду. Пачніце з рэкамендаваных рэпазітарыяў тут, а затым наладзьце іх у кіраванні пашырэннямі.</string>
     <string name="welcome_ecosystem_manga">Манга: JAR-парсеры, Mihon, IReader, LNReader</string>
     <string name="welcome_ecosystem_novel">Раманы: Legado, IReader, LNReader</string>
     <string name="welcome_ecosystem_video">Відэа: Aniyomi, TVBox, Cloudstream</string>
@@ -1133,10 +1133,10 @@
     <string name="welcome_preferences_summary">Выберыце мовы і тыпы кантэнту. Гэта можна змяніць пазней у наладах крыніц.</string>
     <string name="welcome_spaces_title">Раздзяляйце прасторы</string>
     <string name="welcome_spaces_summary">Прасторы забяспечваюць незалежную навігацыю, налады прагляду і кантэкст чытання або прайгравання для мангі, раманаў і анімэ. Дадатковыя параметры і карыстальніцкія прасторы даступныя пазней у раздзеле Налады &gt; Карыстальнік &gt; Прасторы.</string>
-    <string name="welcome_ready_summary">Setup is complete. Kototoro will enable sources matching your selected languages and formats. You can run this wizard again from Settings › Content sources › Setup wizard.</string>
-    <string name="welcome_jar_install_success">Kototoro: паспяхова загружана і падключана апошніх рухавічкоў парсераў: %1$d з воблачнай сеткі!</string>
-    <string name="welcome_jar_install_up_to_date">Kototoro: воблачная праверка завершана, лакальныя парсеры актуальныя! (Загружана крыніц: %1$d)</string>
-    <string name="welcome_jar_install_failed">Kototoro: не ўдалося загрузіць сетку парсераў (%1$s), паўтарыце спробу або перайдзіце ў налады, каб змяніць прораксі-зеркалы</string>
+    <string name="welcome_ready_summary">Setup is complete. Amuratsu will enable sources matching your selected languages and formats. You can run this wizard again from Settings › Content sources › Setup wizard.</string>
+    <string name="welcome_jar_install_success">Amuratsu: паспяхова загружана і падключана апошніх рухавічкоў парсераў: %1$d з воблачнай сеткі!</string>
+    <string name="welcome_jar_install_up_to_date">Amuratsu: воблачная праверка завершана, лакальныя парсеры актуальныя! (Загружана крыніц: %1$d)</string>
+    <string name="welcome_jar_install_failed">Amuratsu: не ўдалося загрузіць сетку парсераў (%1$s), паўтарыце спробу або перайдзіце ў налады, каб змяніць прораксі-зеркалы</string>
     <string name="home_placeholder_title">Панэль чытання</string>
     <string name="home_placeholder_subtitle">Глядзіце нядаўняе чытанне, абнаўленні, бібліятэку, сінхранізацыю і крыніцы ў адным месцы.</string>
     <string name="home_hero_local_subtitle">Працягніце з таго месца, дзе спыніліся, або вярніцеся да нядаўна адкрытага.</string>
@@ -1689,7 +1689,7 @@
     <string name="export_backup_for_other_apps_summary">Выберыце мэтавую праграму і стварыце сумяшчальную рэзервовую копію: Kotatsu, Mihon, Aniyomi або Usagi.</string>
     <string name="export_backup_choose_target_app">Выберыце мэтавую праграму</string>
     <string name="export_kotatsu_backup">Экспарт копіі Kotatsu</string>
-    <string name="export_kotatsu_backup_summary">Стварыце асобную састарэлую рэзервовую копію для праграм сям\'і Kotatsu без раздзелаў, спецыфічных для Kototoro.</string>
+    <string name="export_kotatsu_backup_summary">Стварыце асобную састарэлую рэзервовую копію для праграм сям\'і Kotatsu без раздзелаў, спецыфічных для Amuratsu.</string>
     <string name="export_kotatsu_backup_saved">Копія Kotatsu захавана</string>
     <string name="export_mihon_backup">Экспарт копіі Mihon</string>
     <string name="export_mihon_backup_summary">Экспарт абранага, катэгорый і прагрэсу чытання толькі для запісаў з крыніц Mihon.</string>
@@ -1718,7 +1718,7 @@
     <string name="import_backup_started_background">Знешняя рэзервовая копія будзе імпартавана ў фонавым рэжыме</string>
     <string name="username_password_enter_hint">Каб працягнуць, увядзіце імя карыстальніка і пароль</string>
     <string name="restore_kototoro_backup">Аднавіць копію</string>
-    <string name="restore_kototoro_backup_summary">Аднавіце рэзервовую копію Kototoro з любой версіі або рэзервовую копію Kotatsu. фармат вызначаецца аўтаматычна.</string>
+    <string name="restore_kototoro_backup_summary">Аднавіце рэзервовую копію Amuratsu з любой версіі або рэзервовую копію Kotatsu. фармат вызначаецца аўтаматычна.</string>
     <string name="restore_mode_replace_existing">Замяніць існуючыя даныя</string>
     <string name="restore_mode_replace_existing_summary">Адноўленыя раздзелы спачатку ачышчаюцца; абранае і гісторыя, якіх няма ў рэзервовай копіі, выдаляюцца</string>
     <string name="restore_mode_merge_with_existing">Аб\'яднаць з існуючымі данымі</string>
@@ -2365,7 +2365,7 @@
     <string name="sync_backend_switch_webdav_title">Перайсці на WebDAV?</string>
     <string name="sync_backend_switch_webdav_confirm">Сінхранізацыя з Google Drive зараз уключана. Уключэнне рэзервовага капіравання WebDAV адключыць сінхранізацыю з Google Drive, але захавае ваш увод у Google.</string>
     <string name="sync_sign_in">Падрыхтаваць Google Drive</string>
-    <string name="sync_sign_in_summary">Выкарыстоўвае даныя праграмы на Google Drive з мінімальным дазволам appdata для сінхранізацыі падпісак і запісаў абнаўленняў. Kototoro не мае доступу да вашых файлаў Drive.</string>
+    <string name="sync_sign_in_summary">Выкарыстоўвае даныя праграмы на Google Drive з мінімальным дазволам appdata для сінхранізацыі падпісак і запісаў абнаўленняў. Amuratsu не мае доступу да вашых файлаў Drive.</string>
     <string name="google_drive_sync_unregistered_build_error">Сінхранізацыя з Google Drive не падтрымліваецца ў распрацоўніцкіх / начных зборках. Калі ласка, выкарыстоўвайце афіцыйныя версіі або WebDAV.</string>
     <string name="sync_sign_out">Выйсці</string>
     <string name="sync_account">Вы ўвайшлі</string>
@@ -2420,8 +2420,8 @@
     <string name="webdav_remote_backups_inspect">Праверыць аддаленыя копіі</string>
     <string name="webdav_remote_backups_inspect_summary">Спампаваць і праверыць, ці можна бяспечна аднавіць кожную аддаленую копію.</string>
     <string name="webdav_remote_backups_clear">Ачысціць аддаленыя копіі WebDAV</string>
-    <string name="webdav_remote_backups_clear_summary">Выдаліць усе файлы рэзервовых копій Kototoro па наладжаным шляху WebDAV. Лакальныя дадзеныя не мяняюцца.</string>
-    <string name="webdav_remote_backups_clear_confirm">Выдаліць усе файлы рэзервовых копій Kototoro па наладжаным шляху WebDAV? Лакальныя дадзеныя не заменяцца.</string>
+    <string name="webdav_remote_backups_clear_summary">Выдаліць усе файлы рэзервовых копій Amuratsu па наладжаным шляху WebDAV. Лакальныя дадзеныя не мяняюцца.</string>
+    <string name="webdav_remote_backups_clear_confirm">Выдаліць усе файлы рэзервовых копій Amuratsu па наладжаным шляху WebDAV? Лакальныя дадзеныя не заменяцца.</string>
     <string name="webdav_remote_backups_loading">Загрузка рэзервовых копій WebDAV…</string>
     <string name="webdav_remote_backup_status_unknown">Не праверана</string>
     <string name="webdav_remote_backup_status_restorable">Адноўлена</string>
@@ -2828,7 +2828,7 @@
     <string name="trust_and_add">Давяраць і дадаць</string>
     <string name="trust_extension_repository_message">Рэпазіторый: %1$s\nСайт: %2$s\nАдбітак SHA-256:\n%3$s\n\nПраверце гэты адбітак з выдаўцом перад тым, як давяраць рэпазіторыю.</string>
     <string name="untrusted_extension_message">%1$s (%2$s) устаноўлена, але яго подпіс не супадае з адбіткам выбранага рэпазіторыя.\n\nАдбітак рэпазіторыя: %3$s\n\nВыдаліце ўсталяваны пакет перад пераўсталяваннем з гэтага рэпазіторыя.</string>
-    <string name="incompatible_extension_message">Не ўдаецца ўсталяваць %1$s %2$s, бо версія бібліятэкі (%3$s) па-за межамі падтрымоўванага Kototoro дыяпазону.</string>
+    <string name="incompatible_extension_message">Не ўдаецца ўсталяваць %1$s %2$s, бо версія бібліятэкі (%3$s) па-за межамі падтрымоўванага Amuratsu дыяпазону.</string>
     <string name="built_in_sources">Убудаваныя</string>
     <string name="select_all">Выбраць усё</string>
     <string name="deselect_all">Зняць выбар</string>
@@ -2868,7 +2868,7 @@
     <string name="welcome_plugins_repo_yakateam">Парсеры Yakateam</string>
     <string name="welcome_plugins_repo_redo">Парсеры Redo</string>
     <string name="welcome_plugins_repo_uma">UMA (парсеры Tsuki)</string>
-    <string name="welcome_plugins_disclaimer">Гэтыя рэпазіторыі пашырэнняў абслугоўваюцца незалежнымі онлайн-супольнасцямі. Распрацоўшчыкі Kototoro не маюць дачынення да гэтых старонніх рэпазітарыяў і не кантралююць іх. Я пацвярджаю, што наладжваю гэтыя крыніцы на свой страх і рызыку.</string>
+    <string name="welcome_plugins_disclaimer">Гэтыя рэпазіторыі пашырэнняў абслугоўваюцца незалежнымі онлайн-супольнасцямі. Распрацоўшчыкі Amuratsu не маюць дачынення да гэтых старонніх рэпазітарыяў і не кантралююць іх. Я пацвярджаю, што наладжваю гэтыя крыніцы на свой страх і рызыку.</string>
     <string name="welcome_plugins_start_btn">Наладзіць рэпазіторыі</string>
     <string name="welcome_plugins_configured">Наладжана новых тыпаў крыніц/рэпазітарыяў: %1$d (%2$s). Пакеты яшчэ не спампаваныя — усталюйце падыходныя на наступным кроку.</string>
     <string name="welcome_plugins_configured_none">Не ўдалося наладзіць ніводную крыніцу ці рэпазіторый. Праверце сетку або выберыце іншыя рэпазіторыі і паспрабуйце зноў.</string>
@@ -2898,22 +2898,22 @@
     <string name="welcome_install_system_launch_failed">Не ўдалося запусціць сістэмны ўсталёўшчык: %1$s</string>
     <string name="welcome_install_skip">Прапусціць усталёўку — зраблю гэта пазней у кіраўніцтве пашырэнняў</string>
     <string name="welcome_install_step_title">Пакетная ўсталёўка пашырэнняў</string>
-    <string name="welcome_install_step_summary">Абярыце тыпы крыніц і налады, а затым дазвольце Kototoro спампаваць і ўсталяваць усё ў фонавым рэжыме.</string>
+    <string name="welcome_install_step_summary">Абярыце тыпы крыніц і налады, а затым дазвольце Amuratsu спампаваць і ўсталяваць усё ў фонавым рэжыме.</string>
     <string name="welcome_install_kinds_title">Тыпы крыніц для ўсталёўкі</string>
     <string name="welcome_install_kinds_summary">Апрацоўваюцца толькі тыпы, якія вы адзначылі галачкай. Неадзначаныя (напрыклад, Mihon, калі вы хочаце зрабіць гэта пазней) застануцца для ўсталёўкі ў кіраўніцтве пашырэнняў.</string>
     <string name="welcome_install_kinds_empty">Рэпазіторыі яшчэ не наладжаныя. Вярніцеся назад і спачатку дадайце рэпазіторыі.</string>
     <string name="welcome_install_nsfw_title">Уключыць кантэнт NSFW</string>
     <string name="welcome_install_nsfw_summary">Адключана па змаўчанні — пакеты толькі для дарослых фільтруюцца са спісу ўсталёўкі.</string>
-    <string name="welcome_intro_app_title">Kototoro · Чыталка з адкрытым зыходным кодам</string>
-    <string name="welcome_intro_body">Kototoro — гэта мультымедыйная чыталка / плэер з адкрытым зыходным кодам. Яна падтрымлівае шырокую экасістэму супольных пашырэнняў, але не ўключае ніякіх уласных крыніц кантэнту.</string>
+    <string name="welcome_intro_app_title">Amuratsu · Чыталка з адкрытым зыходным кодам</string>
+    <string name="welcome_intro_body">Amuratsu — гэта мультымедыйная чыталка / плэер з адкрытым зыходным кодам. Яна падтрымлівае шырокую экасістэму супольных пашырэнняў, але не ўключае ніякіх уласных крыніц кантэнту.</string>
     <string name="welcome_intro_concepts_title">Тры паняцці за 30 секунд</string>
     <string name="welcome_intro_repo_label">Рэпазіторый</string>
     <string name="welcome_intro_repo_body">URL-адрас калекцыі пашырэнняў старонніх распрацоўнікаў, якую падтрымлівае незалежная супольнасць (напрыклад, рэпазіторыі Mihon, спісы TVBox або рэпазітарыі плагінаў LNReader).</string>
     <string name="welcome_intro_extension_label">Пашырэнне</string>
-    <string name="welcome_intro_extension_body">Адзін усталёўваны пакет унутры рэпазіторыя — JAR, APK ці спіс JSON. Усталяваныя пашырэнні даюць Kototoro магчымасць чытаць або прайграваць з сайта.</string>
+    <string name="welcome_intro_extension_body">Адзін усталёўваны пакет унутры рэпазіторыя — JAR, APK ці спіс JSON. Усталяваныя пашырэнні даюць Amuratsu магчымасць чытаць або прайграваць з сайта.</string>
     <string name="welcome_intro_source_label">Крыніца</string>
     <string name="welcome_intro_source_body">Адна канкрэтная крыніца кантэнту, якую вы бачыце ў праграме пасля ўсталёўкі ці імпарту пашырэння — напрыклад, пэўны вэб-сайт мангі ці відэа.</string>
-    <string name="welcome_intro_disclaimer">Выкарыстанне пашырэнняў трэціх асоб ажыццяўляецца цалкам на ваш уласны страх і рызыку: праект Kototoro не кантралюе паводзіны ў часы выканання, законнасць і кантэнт.</string>
+    <string name="welcome_intro_disclaimer">Выкарыстанне пашырэнняў трэціх асоб ажыццяўляецца цалкам на ваш уласны страх і рызыку: праект Amuratsu не кантралюе паводзіны ў часы выканання, законнасць і кантэнт.</string>
     <string name="welcome_intro_continue">Мне ўсё зразумела — працягнуць</string>
     <string name="welcome_done_title">Амаль гатова</string>
     <string name="welcome_done_summary">Зводка налад і некалькі парад.</string>
@@ -2922,10 +2922,10 @@
     <string name="welcome_done_json_note">Тыпы на аснове JSON (Legado / TVBox / LNReader) імпартуюцца аўтаматычна; калі вы таксама дадалі іншыя рэпазіторыі JSON, імпартуйце іх у кіраўніцтве пашырэнняў.</string>
     <string name="welcome_done_title_finished">Налада завершана</string>
     <string name="welcome_done_summary_finished">Майстар налады завершаны — рэпазіторыі і крыніцы не былі дададзены аўтаматычна.</string>
-    <string name="welcome_done_body_finished">Kototoro не дадавала ніякіх крыніц падчас налады. Вы можаце дадаць уласныя рэпазіторыі і крыніцы ў любы момант у Наладах → Крыніцы кантэнту (Кіраўніцтва пашырэнняў).</string>
+    <string name="welcome_done_body_finished">Amuratsu не дадавала ніякіх крыніц падчас налады. Вы можаце дадаць уласныя рэпазіторыі і крыніцы ў любы момант у Наладах → Крыніцы кантэнту (Кіраўніцтва пашырэнняў).</string>
     <string name="welcome_done_advice_title">Калі крыніца не працуе</string>
     <string name="welcome_done_advice_summary">Кароткі шлях ліквідацыі непаладак, каб правільныя людзі ўбачылі справаздачу.</string>
-    <string name="welcome_done_advice_body">1. Праверце праблему з дапамогай арыгінальнай праграмы-гаспадара пашырэння — напрыклад, крыніцу тыпу Mihon варта праверыць у праграме Mihon.\n2. Калі праблема ўзнікае і там, яна належыць рэпазіторыю, які падтрымлівае пашырэнне: стварыце задачу па ўласным URL-адрасе рэпазіторыя.\n3. Калі яна ўзнікае толькі ў Kototoro, паведаміце пра гэта ў рэпазітарыі праекта Kototoro і ўключыце назву крыніцы, версію пашырэння і тое, што вы спрабавалі.</string>
+    <string name="welcome_done_advice_body">1. Праверце праблему з дапамогай арыгінальнай праграмы-гаспадара пашырэння — напрыклад, крыніцу тыпу Mihon варта праверыць у праграме Mihon.\n2. Калі праблема ўзнікае і там, яна належыць рэпазіторыю, які падтрымлівае пашырэнне: стварыце задачу па ўласным URL-адрасе рэпазіторыя.\n3. Калі яна ўзнікае толькі ў Amuratsu, паведаміце пра гэта ў рэпазітарыі праекта Amuratsu і ўключыце назву крыніцы, версію пашырэння і тое, што вы спрабавалі.</string>
     <string name="welcome_step_counter">Крок %1$d з %2$d</string>
     <string name="welcome_action_configure_repos">Наладзіць абраныя рэпазіторыі</string>
     <string name="welcome_action_install_count">Усталяваць пашырэнні: %1$d</string>
@@ -2959,7 +2959,7 @@
     <string name="welcome_permissions_notifications_title">Апавяшчэнні</string>
     <string name="welcome_permissions_notifications_summary">Паказвае апавяшчэнні аб спампоўцы, абнаўленнях і плэеры.</string>
     <string name="welcome_permissions_packages_title">Усталяваныя праграмы</string>
-    <string name="welcome_permissions_packages_summary">Дазваляе Kototoro знаходзіць ужо ўсталяваныя пашырэнні і праграмы (Mihon, Aniyomi, …). Аб\'яўлена ў маніфесце і даецца аўтаматычна.</string>
+    <string name="welcome_permissions_packages_summary">Дазваляе Amuratsu знаходзіць ужо ўсталяваныя пашырэнні і праграмы (Mihon, Aniyomi, …). Аб\'яўлена ў маніфесце і даецца аўтаматычна.</string>
     <string name="welcome_permissions_battery_title">Фонавы рэжым</string>
     <string name="welcome_permissions_battery_summary">Падтрымлівае фонавую спампоўку і абнаўленні пры выключаным экране або чаканні прылады.</string>
     <string name="welcome_permissions_battery_action">Дазволіць</string>
@@ -3375,11 +3375,11 @@
     <string name="pref_glass_blur_quality_performance">Прадукцыйнасць</string>
     <string name="pref_glass_blur_quality_balanced">Баланс</string>
     <string name="pref_glass_blur_quality_quality">Якасць</string>
-    <string name="glass_material_family_kototoro">Kototoro (Рэкамендавана)</string>
+    <string name="glass_material_family_kototoro">Amuratsu (Рэкамендавана)</string>
     <string name="glass_material_family_haze">Haze</string>
     <string name="glass_material_family_cupertino">Cupertino</string>
     <string name="glass_material_family_fluent">Fluent</string>
-    <string name="glass_material_kototoro">Kototoro (Рэкамендавана)</string>
+    <string name="glass_material_kototoro">Amuratsu (Рэкамендавана)</string>
     <string name="glass_material_haze_ultra_thin">Haze Ultra Thin</string>
     <string name="glass_material_haze_thin">Haze Thin</string>
     <string name="glass_material_haze_regular">Haze Regular</string>

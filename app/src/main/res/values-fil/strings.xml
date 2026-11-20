@@ -56,7 +56,7 @@
     <string name="feed_will_update_soon">Ang pag update ng feed ay magsisimula sa lalong madaling panahon</string>
     <string name="track_sources">Maghanap ng mga update</string>
     <string name="enter_password">Ilagay ang password</string>
-    <string name="protect_application_summary">Humingi ng password kapag sinimulan ang Kototoro</string>
+    <string name="protect_application_summary">Humingi ng password kapag sinimulan ang Amuratsu</string>
     <string name="about">Tungkol rito</string>
     <string name="check_for_updates">Maghanap ng update</string>
     <string name="right_to_left">Kanan sa kaliwa</string>
@@ -334,7 +334,7 @@
     <string name="network_unavailable_hint">I-on ang Wi-Fi o mobile network para magbasa ng manga online</string>
     <string name="reader_control_ltr_summary">Huwag i-adjust ang direksyon ng pagpalit ng pahina sa reader mode, hal. kapag pindutin ang kanan (right) na key ay palaging lumilipat sa susunod na pahina. Ang opsyong ito ay nakakaapekto lamang sa mga hardware input device</string>
     <string name="reader_slider">Ipakita ang slider ng paglipat ng pahina</string>
-    <string name="manga_error_description_pattern">Mga detalye ng error:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. Subukang &lt;a href=%2$s&gt;magbukas ng manga sa isang web browser&lt;/a&gt; upang matiyak na available ito sa souce&lt;br&gt;2. Tiyaking ginagamit mo ang &lt;a href=kototoro://about&gt;pinakabagong bersyon ng Kototoro&lt;/a&gt;&lt;br&gt;3. Kung available ito, magpadala ng ulat ng error sa mga developer.</string>
+    <string name="manga_error_description_pattern">Mga detalye ng error:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. Subukang &lt;a href=%2$s&gt;magbukas ng manga sa isang web browser&lt;/a&gt; upang matiyak na available ito sa souce&lt;br&gt;2. Tiyaking ginagamit mo ang &lt;a href=amuratsu://about&gt;pinakabagong bersyon ng Amuratsu&lt;/a&gt;&lt;br&gt;3. Kung available ito, magpadala ng ulat ng error sa mga developer.</string>
     <string name="enable_logging">Paganahin ang pag-log</string>
     <string name="source_disabled">Di pinagana ang source</string>
     <string name="importing_manga">Pag-import ng manga</string>
@@ -609,7 +609,7 @@
     <string name="show_pages_thumbs">Ipakita ang mga thumbnail ng pahina</string>
     <string name="show_pages_thumbs_summary">Paganahin ang tab na \"Mga Pahina\" sa screen ng mga detalye</string>
     <string name="error_no_data_received">Walang natanggap na data mula sa server</string>
-    <string name="unsupported_backup_message">Pumili ng wastong backup file ng Kototoro</string>
+    <string name="unsupported_backup_message">Pumili ng wastong backup file ng Amuratsu</string>
     <string name="hours_short">%d o</string>
     <string name="minutes_short">%d m</string>
     <string name="hours_minutes_short">%1$d o %2$d m</string>
@@ -655,7 +655,7 @@
     <string name="chapters_left">Kabanatang natitira</string>
     <string name="percent_read">Porsyentong nabasa</string>
     <string name="chapters_read">Kabanatang nabasa</string>
-    <string name="plugin_incompatible">Hindi tugmang plugin o internal na error. Tiyaking ginagamit mo ang pinakabagong bersyon ng plugin at Kototoro</string>
+    <string name="plugin_incompatible">Hindi tugmang plugin o internal na error. Tiyaking ginagamit mo ang pinakabagong bersyon ng plugin at Amuratsu</string>
     <string name="text_empty_holder_secondary_filtered">Walang manga na tumutugma sa mga filter na iyong pinili</string>
     <string name="connection_ok">Maayos ang koneksyon</string>
     <string name="invalid_proxy_configuration">Imbalidong configuaration sa proxy</string>
@@ -740,7 +740,7 @@
     <string name="screen_orientation">Oryentasyon ng screen</string>
     <string name="portrait">Patayo (portrait)</string>
     <string name="landscape">Pahalang (landscape)</string>
-    <string name="plugin_incompatible_with_cause">Plugin error: %s\n Tiyaking ginagamit mo ang pinakabagong bersyon ng plugin at Kototoro</string>
+    <string name="plugin_incompatible_with_cause">Plugin error: %s\n Tiyaking ginagamit mo ang pinakabagong bersyon ng plugin at Amuratsu</string>
     <string name="error_not_image">Imbalidong pormat: inaasahang larawan ngunit nakakuha ng %s</string>
     <string name="access_denied_403">Tinanggihan ang pag-access (403)</string>
     <string name="max_backups_count">Pinakamataas na bilang ng mga backup</string>
@@ -790,7 +790,7 @@
     <string name="chapter_volume_number">Vol %1$s Kabanata %2$s</string>
     <string name="chapter_number">Kabanata %s</string>
     <string name="unnamed_chapter">Walang pangalan na kabanata</string>
-    <string name="error_disclaimer_app_outdated">Mukhang luma na ang bersyon mo ng Kototoro. Mangyaring i-install ang pinakabagong bersyon upang makuha ang lahat ng magagamit na mga pag-aayos.</string>
+    <string name="error_disclaimer_app_outdated">Mukhang luma na ang bersyon mo ng Amuratsu. Mangyaring i-install ang pinakabagong bersyon upang makuha ang lahat ng magagamit na mga pag-aayos.</string>
     <string name="error_disclaimer_report">Maaari kang magsumite ng ulat ng bug sa mga developer. Makakatulong ito sa amin na magsiyasat at ayusin ang isyu.</string>
     <string name="tags_warnings">I-highlight ang mga mapanganib na genre</string>
     <string name="nsfw_16">16+</string>
@@ -800,7 +800,7 @@
     <string name="include_disabled_sources">Isama ang mga hindi pinagana na source</string>
     <string name="suggestions_disabled_sources_summary">Magpakita ng mga mungkahi mula sa lahat ng manga source, kabilang ang mga hindi napagana</string>
     <string name="tags_warnings_summary">I-highlight ang mga genre na maaaring hindi naaangkop para sa karamihan ng mga user</string>
-    <string name="link_to_manga_in_app">Link sa manga sa Kototoro</string>
+    <string name="link_to_manga_in_app">Link sa manga sa Amuratsu</string>
     <string name="simple">Pinasimple</string>
     <string name="link_to_manga_on_s">Link sa manga sa %s</string>
     <string name="clear_browser_data_summary">Linisin ang data ng browser tulad ng cache at mga cookie. Babala: Ang awtorisasyon sa mga source ng manga ay maaaring maging di-balido</string>
@@ -836,7 +836,7 @@
     <string name="rpc_skip_nsfw_summary">Huwag gamitin ang RPC para sa pangmatandang content</string>
     <string name="read_on_s">Basahin sa %s</string>
     <string name="reading_s">Binabasa ng %s</string>
-    <string name="discord_rpc_description">Bumamasa ng manga sa Kototoro - isang manga reader app</string>
+    <string name="discord_rpc_description">Bumamasa ng manga sa Amuratsu - isang manga reader app</string>
     <string name="obtain">Kumuha</string>
     <string name="discord_rpc_summary">Ipakita ng status ng pagbabasa sa Discord</string>
     <string name="discord_token_hint">I-paste ang Discord Token dito</string>
@@ -922,7 +922,7 @@
     <string name="appearance_mode">Mode ng anyo</string>
     <string name="page_save_manga_title_length">Haba ng pamagat ng manga sa mga naka-save na filename</string>
     <string name="page_save_manga_title_length_summary">Bilang ng mga karakter ng pamagat ng manga na pinapanatili sa mga naka-save na filename ng larawan (12–64)</string>
-    <string name="cloudstream_newpipe_required">Kailangan ng extension na ito ang mga klase ng NewPipe na wala sa NewPipe na kasama ng Kototoro, kaya hindi ito makapag-play ng mga video. Subukang i-update ang extension o ang Kototoro.</string>
+    <string name="cloudstream_newpipe_required">Kailangan ng extension na ito ang mga klase ng NewPipe na wala sa NewPipe na kasama ng Amuratsu, kaya hindi ito makapag-play ng mga video. Subukang i-update ang extension o ang Amuratsu.</string>
     <string name="clear_chapter_thumbnails">I-clear ang mga thumbnail ng kabanata</string>
     <string name="continuous_horizontal">Tuloy-tuloy na pahalang</string>
     <string name="continuous_horizontal_reversed">Magbasa mula pakanan pakaliwa</string>
@@ -974,7 +974,7 @@
     <string name="replace_rule_disable_all_summary">Pansamantalang itigil ang paglalapat ng mga patakaran</string>
     <string name="replace_rule_edit">I-edit ang panuntunan</string>
     <string name="replace_rule_import">Mag-import ng Legado rules</string>
-    <string name="replace_rule_import_summary">Mag-import ng JSON array na na-export mula sa Legado o Kototoro</string>
+    <string name="replace_rule_import_summary">Mag-import ng JSON array na na-export mula sa Legado o Amuratsu</string>
     <string name="replace_rule_export">I-export ang mga panuntunan</string>
     <string name="replace_rule_export_summary">I-export ang mga patakaran sa compatible na format ng JSON</string>
     <string name="replace_rule_empty">Walang replacement rules</string>
@@ -1107,8 +1107,8 @@
     <string name="clear_local_manga_storage_prompt">Burahin ang lahat ng nai-save at na-import na file ng manga? Hindi na ito maibabalik.</string>
     <string name="clear_local_novel_storage_prompt">Burahin ang lahat ng nai-save at na-import na file ng novel? Hindi na ito maibabalik.</string>
     <string name="clear_local_video_storage_prompt">Burahin ang lahat ng nai-save at na-import na file ng video? Hindi na ito maibabalik.</string>
-    <string name="welcome_intro_title">I-setup ang Kototoro</string>
-    <string name="welcome_intro_summary">Piliin kung paano mo gustong magbasa at manood. Gumagamit na ngayon ang Kototoro ng mga source family na nakabase sa plugin para sa manga, novel, at video, kabilang ang JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader, at Cloudstream.</string>
+    <string name="welcome_intro_title">I-setup ang Amuratsu</string>
+    <string name="welcome_intro_summary">Piliin kung paano mo gustong magbasa at manood. Gumagamit na ngayon ang Amuratsu ng mga source family na nakabase sa plugin para sa manga, novel, at video, kabilang ang JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader, at Cloudstream.</string>
     <string name="welcome_step_start">Magsimula</string>
     <string name="welcome_step_sources">Mga Pinagmulan</string>
     <string name="welcome_step_preferences">Mga Kagustuhan</string>
@@ -1118,11 +1118,11 @@
     <string name="welcome_glass_preset_title">Glass finish</string>
     <string name="welcome_glass_preset_summary">Piliin ang glass finish preset para sa istilong iOS. Refraction ang default at maaari itong i-fine-tune mamaya sa mga setting ng Appearance.</string>
     <string name="home_quick_action_wizard">Wizard</string>
-    <string name="welcome_restore_summary">Gumamit na ba ng Kototoro noon? Mag-restore ng backup, mag-sign in para mag-sync, o magdagdag muna ng mga lokal na folder.</string>
+    <string name="welcome_restore_summary">Gumamit na ba ng Amuratsu noon? Mag-restore ng backup, mag-sign in para mag-sync, o magdagdag muna ng mga lokal na folder.</string>
     <string name="welcome_source_formats_title">Pumili ng mga format</string>
     <string name="welcome_source_formats_summary">Tinutukoy ng mga filter na ito kung aling mga pamilya ng source ang naka-enable pagkatapos ng setup.</string>
     <string name="welcome_ecosystems_title">Source ecosystem</string>
-    <string name="welcome_ecosystems_summary">Sinusuportahan ng Kototoro ang maraming pamilya ng plugin source para sa pagbabasa at panonood. Magsimula sa mga inirekomendang repository dito, pagkatapos ay i-fine-tune ang mga ito sa pamamahala ng extension.</string>
+    <string name="welcome_ecosystems_summary">Sinusuportahan ng Amuratsu ang maraming pamilya ng plugin source para sa pagbabasa at panonood. Magsimula sa mga inirekomendang repository dito, pagkatapos ay i-fine-tune ang mga ito sa pamamahala ng extension.</string>
     <string name="welcome_ecosystem_manga">Manga: JAR parsers, Mihon, IReader, LNReader</string>
     <string name="welcome_ecosystem_novel">Novel: Legado, IReader, LNReader</string>
     <string name="welcome_ecosystem_video">Video: Aniyomi, TVBox, Cloudstream</string>
@@ -1131,10 +1131,10 @@
     <string name="welcome_preferences_summary">Pumili ng mga wika at uri ng nilalaman. Maaari mo itong baguhin mamaya sa mga setting ng source.</string>
     <string name="welcome_spaces_title">Paghiwalayin ang iyong mga space</string>
     <string name="welcome_spaces_summary">Ang spaces ay nagbibigay sa manga, novels, at anime ng hiwalay na navigation, browsing preferences, at reading o playback context. Makikita ang advanced options at custom spaces sa Settings &gt; User &gt; Spaces.</string>
-    <string name="welcome_ready_summary">Tapos na ang setup. Paganahin ng Kototoro ang sources na tugma sa iyong wika at format. Pwedeng ulitin ito sa Settings &gt; Content sources &gt; Setup wizard.</string>
-    <string name="welcome_jar_install_success">Kototoro: Matagumpay na nakuha at na-mount ang %1$d pinakabagong parser engine mula sa cloud network!</string>
-    <string name="welcome_jar_install_up_to_date">Kototoro: Tapos na ang pag-verify sa cloud, huling-huli sa ngayon ang mga lokal na parser! (Nag-load ng %1$d na source sa kabuuan)</string>
-    <string name="welcome_jar_install_failed">Kototoro: Nabigo ang pag-load ng parser network (%1$s), pakisubukang muli o pumunta sa mga setting para magpalit ng proxy mirror</string>
+    <string name="welcome_ready_summary">Tapos na ang setup. Paganahin ng Amuratsu ang sources na tugma sa iyong wika at format. Pwedeng ulitin ito sa Settings &gt; Content sources &gt; Setup wizard.</string>
+    <string name="welcome_jar_install_success">Amuratsu: Matagumpay na nakuha at na-mount ang %1$d pinakabagong parser engine mula sa cloud network!</string>
+    <string name="welcome_jar_install_up_to_date">Amuratsu: Tapos na ang pag-verify sa cloud, huling-huli sa ngayon ang mga lokal na parser! (Nag-load ng %1$d na source sa kabuuan)</string>
+    <string name="welcome_jar_install_failed">Amuratsu: Nabigo ang pag-load ng parser network (%1$s), pakisubukang muli o pumunta sa mga setting para magpalit ng proxy mirror</string>
     <string name="home_placeholder_title">Dashboard sa pagbasa</string>
     <string name="home_placeholder_subtitle">Tingnan ang iyong kamakailang pagbasa, mga update, library, sync, and mga source sa isang lugar.</string>
     <string name="home_hero_local_subtitle">Ituloy kung saan ka tumigil, o bumalik sa iyong kamakailang binuksan.</string>
@@ -1687,7 +1687,7 @@
     <string name="export_backup_for_other_apps_summary">Pumili ng target na app at gumawa ng katugmang backup: Kotatsu, Mihon, Aniyomi, o Usagi.</string>
     <string name="export_backup_choose_target_app">Pumili ng target na app</string>
     <string name="export_kotatsu_backup">I-export ang backup ng Kotatsu</string>
-    <string name="export_kotatsu_backup_summary">Gumawa ng hiwalay na legacy backup para sa mga app na pampamilya ng Kotatsu nang walang mga seksyong para sa Kototoro.</string>
+    <string name="export_kotatsu_backup_summary">Gumawa ng hiwalay na legacy backup para sa mga app na pampamilya ng Kotatsu nang walang mga seksyong para sa Amuratsu.</string>
     <string name="export_kotatsu_backup_saved">Nai-save ang backup ng Kotatsu</string>
     <string name="export_mihon_backup">I-export ang backup ng Mihon</string>
     <string name="export_mihon_backup_summary">I-export ang mga paborito, kategorya, at progreso sa pagbasa para sa mga entry na mula sa Mihon lamang.</string>
@@ -1716,7 +1716,7 @@
     <string name="import_backup_started_background">Ang panlabas na backup ay iaangkat sa background</string>
     <string name="username_password_enter_hint">Ilagay ang iyong username at password para magpatuloy</string>
     <string name="restore_kototoro_backup">Ibalik ang backup</string>
-    <string name="restore_kototoro_backup_summary">Ibalik ang backup ng Kototoro mula sa anumang bersyon, o backup ng Kotatsu. Awtomatikong natutukoy ang format.</string>
+    <string name="restore_kototoro_backup_summary">Ibalik ang backup ng Amuratsu mula sa anumang bersyon, o backup ng Kotatsu. Awtomatikong natutukoy ang format.</string>
     <string name="restore_mode_replace_existing">Palitan ang kasalukuyang data</string>
     <string name="restore_mode_replace_existing_summary">Ang mga nire-restore na seksyon ay aalisin muna; ang mga paborito at kasaysayan na wala sa backup ay tatanggalin</string>
     <string name="restore_mode_merge_with_existing">Pagsamahin sa kasalukuyang data</string>
@@ -2364,7 +2364,7 @@
     <string name="sync_backend_switch_webdav_title">Lumipat sa WebDAV backup?</string>
     <string name="sync_backend_switch_webdav_confirm">Kasalukuyang naka-enable ang pag-sync sa Google Drive. Ang pag-enable sa WebDAV backup ay mag-a-off sa pag-sync sa Google Drive habang pinapanatili ang iyong pag-sign-in sa Google.</string>
     <string name="sync_sign_in">Ihanda ang pag-sync sa Google Drive</string>
-    <string name="sync_sign_in_summary">Gumagamit ng data ng app sa Google Drive na may minimum na pahintulot sa Drive appdata upang i-sync ang mga suskripsyon at i-update ang mga record. Hindi ma-access ng Kototoro ang iyong mga file sa Drive.</string>
+    <string name="sync_sign_in_summary">Gumagamit ng data ng app sa Google Drive na may minimum na pahintulot sa Drive appdata upang i-sync ang mga suskripsyon at i-update ang mga record. Hindi ma-access ng Amuratsu ang iyong mga file sa Drive.</string>
     <string name="google_drive_sync_unregistered_build_error">Hindi sinusuportahan ang pag-sync sa Google Drive sa mga build na pampag-unlad/nightly. Mangyaring gumamit ng mga opisyal na release build o pag-sync sa WebDAV.</string>
     <string name="sync_sign_out">Mag-sign out</string>
     <string name="sync_account">Naka-sign in</string>
@@ -2419,8 +2419,8 @@
     <string name="webdav_remote_backups_inspect">Suriin ang mga malayong backup</string>
     <string name="webdav_remote_backups_inspect_summary">I-download at i-verify kung ligtas na maibabalik ang bawat malayong backup.</string>
     <string name="webdav_remote_backups_clear">I-clear ang mga malayong WebDAV backup</string>
-    <string name="webdav_remote_backups_clear_summary">Tanggalin ang lahat ng Kototoro backup file sa naka-configure na landas ng WebDAV. Hindi babaguhin ang lokal na data.</string>
-    <string name="webdav_remote_backups_clear_confirm">Tanggalin ang lahat ng Kototoro backup file mula sa naka-configure na landas ng WebDAV? Hindi babaguhin ang lokal na data.</string>
+    <string name="webdav_remote_backups_clear_summary">Tanggalin ang lahat ng Amuratsu backup file sa naka-configure na landas ng WebDAV. Hindi babaguhin ang lokal na data.</string>
+    <string name="webdav_remote_backups_clear_confirm">Tanggalin ang lahat ng Amuratsu backup file mula sa naka-configure na landas ng WebDAV? Hindi babaguhin ang lokal na data.</string>
     <string name="webdav_remote_backups_loading">Naglo-load ng mga WebDAV backup…</string>
     <string name="webdav_remote_backup_status_unknown">Hindi nasuri</string>
     <string name="webdav_remote_backup_status_restorable">Naibabalik</string>
@@ -2828,7 +2828,7 @@
     <string name="trust_and_add">Magtiwala at idagdag</string>
     <string name="trust_extension_repository_message">Repository: %1$s\nWebsite: %2$s\nSHA-256 fingerprint:\n%3$s\n\nI-verify ang fingerprint na ito sa publisher bago ito katiwalaan.</string>
     <string name="untrusted_extension_message">Naka-install ang %1$s (%2$s), pero hindi tugma ang lagda nito sa napiling fingerprint ng repository.\n\nFingerprint ng repository: %3$s\n\nAlisin ang naka-install na package bago muling mag-install mula rito.</string>
-    <string name="incompatible_extension_message">Hindi ma-install ang %1$s %2$s dahil ang bersyon ng library nito (%3$s) ay wala sa sinusuportahang saklaw ng Kototoro.</string>
+    <string name="incompatible_extension_message">Hindi ma-install ang %1$s %2$s dahil ang bersyon ng library nito (%3$s) ay wala sa sinusuportahang saklaw ng Amuratsu.</string>
     <string name="built_in_sources">Built-in</string>
     <string name="select_all">Piliin lahat</string>
     <string name="deselect_all">Alisin ang pagpili sa lahat</string>
@@ -2868,7 +2868,7 @@
     <string name="welcome_plugins_repo_yakateam">Mga Parser ng Yakateam</string>
     <string name="welcome_plugins_repo_redo">Mga Parser ng Redo</string>
     <string name="welcome_plugins_repo_uma">UMA (Mga Parser ng Tsuki)</string>
-    <string name="welcome_plugins_disclaimer">Ang mga repositoryong ito ng extension ay pinapanatili ng mga independiyenteng online na komunidad. Walang kaugnayan, kontrol, o asosasyon ang mga developer ng Kototoro sa mga third-party na repositoryong ito. Kinikilala ko na isinasaayos ko ang mga pinagmulang ito sa sarili kong panganib.</string>
+    <string name="welcome_plugins_disclaimer">Ang mga repositoryong ito ng extension ay pinapanatili ng mga independiyenteng online na komunidad. Walang kaugnayan, kontrol, o asosasyon ang mga developer ng Amuratsu sa mga third-party na repositoryong ito. Kinikilala ko na isinasaayos ko ang mga pinagmulang ito sa sarili kong panganib.</string>
     <string name="welcome_plugins_start_btn">I-configure ang mga repositoryo</string>
     <string name="welcome_plugins_configured">Na-configure ang %1$d bagong uri ng pinagmulan/repositoryo: %2$s. Hindi pa na-download ang mga pakete — i-install ang mga tumutugma sa susunod na hakbang.</string>
     <string name="welcome_plugins_configured_none">Walang na-configure na pinagmulan o repositoryo. Suriin ang iyong network o pumili ng ibang repositoryo at subukang muli.</string>
@@ -2898,22 +2898,22 @@
     <string name="welcome_install_system_launch_failed">Hindi mabuksan ang installer ng sistema: %1$s</string>
     <string name="welcome_install_skip">Laktawan ang pag-install — Gagawin ko ito mamaya sa Pamamahala ng Extension</string>
     <string name="welcome_install_step_title">Mag-install ng mga extension nang maramihan</string>
-    <string name="welcome_install_step_summary">Piliin kung aling mga uri ng pinagmulan at setting ang gagamitin, pagkatapos ay hayaang i-download at i-install ng Kototoro ang lahat sa background.</string>
+    <string name="welcome_install_step_summary">Piliin kung aling mga uri ng pinagmulan at setting ang gagamitin, pagkatapos ay hayaang i-download at i-install ng Amuratsu ang lahat sa background.</string>
     <string name="welcome_install_kinds_title">Mga uri ng pinagmulan na ia-install</string>
     <string name="welcome_install_kinds_summary">Ang mga tsek mo lang na uri ang aaksyunan. Ang mga hindi tinsek (hal. Mihon, kung gusto mong gawin mamaya) ay maiiwan para i-install mo sa Pamamahala ng Extension.</string>
     <string name="welcome_install_kinds_empty">Wala pang naka-configure na repository. Bumalik at magdagdag muna ng mga repository.</string>
     <string name="welcome_install_nsfw_title">Isama ang NSFW na nilalaman</string>
     <string name="welcome_install_nsfw_summary">Naka-off bilang default — naka-filter ang mga pampaswerteng pang-matanda mula sa listahan ng pag-install.</string>
-    <string name="welcome_intro_app_title">Kototoro · Open-source na reader</string>
-    <string name="welcome_intro_body">Ang Kototoro ay isang open-source na multimedia reader / player. Sinusuportahan nito ang malawak na ekosistema ng mga extension ng komunidad, ngunit wala itong sariling mga pinagmulan ng nilalaman.</string>
+    <string name="welcome_intro_app_title">Amuratsu · Open-source na reader</string>
+    <string name="welcome_intro_body">Ang Amuratsu ay isang open-source na multimedia reader / player. Sinusuportahan nito ang malawak na ekosistema ng mga extension ng komunidad, ngunit wala itong sariling mga pinagmulan ng nilalaman.</string>
     <string name="welcome_intro_concepts_title">Tatlong konsepto, sa loob ng 30 segundo</string>
     <string name="welcome_intro_repo_label">Repository</string>
     <string name="welcome_intro_repo_body">Isang URL sa koleksyon ng extension ng third-party, na pinapanatili ng isang malayang komunidad (halimbawa, mga Mihon repo, listahan ng TVBox, o mga repo ng plugin ng LNReader).</string>
     <string name="welcome_intro_extension_label">Extension</string>
-    <string name="welcome_intro_extension_body">Isang mai-install na pakete sa loob ng isang repository — isang JAR, APK, o JSON na listahan. Binibigyan ng mga naka-install na extension ang Kototoro ng kakayahang magbasa o mag-play mula sa isang site.</string>
+    <string name="welcome_intro_extension_body">Isang mai-install na pakete sa loob ng isang repository — isang JAR, APK, o JSON na listahan. Binibigyan ng mga naka-install na extension ang Amuratsu ng kakayahang magbasa o mag-play mula sa isang site.</string>
     <string name="welcome_intro_source_label">Pinagmulan</string>
     <string name="welcome_intro_source_body">Isang tiyak na pinagmulan ng nilalaman na nakikita mo sa app pagkatapos ma-install o ma-import ang isang extension — halimbawa, isang partikular na manga o video website.</string>
-    <string name="welcome_intro_disclaimer">Ang paggamit ng mga extension ng third-party ay nasa sarili mong pananagutan: ang pag-uugali sa runtime, legalidad, at nilalaman ay hindi kinokontrol ng proyekto ng Kototoro.</string>
+    <string name="welcome_intro_disclaimer">Ang paggamit ng mga extension ng third-party ay nasa sarili mong pananagutan: ang pag-uugali sa runtime, legalidad, at nilalaman ay hindi kinokontrol ng proyekto ng Amuratsu.</string>
     <string name="welcome_intro_continue">Naiintindihan ko — magpatuloy</string>
     <string name="welcome_done_title">Malapit na</string>
     <string name="welcome_done_summary">Buod ng iyong pag-setup at ilang tip.</string>
@@ -2922,10 +2922,10 @@
     <string name="welcome_done_json_note">Awtomatikong na-import ang mga uri na batay sa JSON (Legado / TVBox / LNReader); kung nagdagdag ka rin ng iba pang JSON repository, i-import ang mga ito sa Pamamahala ng Extension.</string>
     <string name="welcome_done_title_finished">Kumpleto na ang setup</string>
     <string name="welcome_done_summary_finished">Tapos na ang wizard — walang idinagdag na repository o pinagmulan nang awtomatiko.</string>
-    <string name="welcome_done_body_finished">Hindi nagdagdag ang Kototoro ng anumang pinagmulan sa panahon ng pag-setup. Maaari kang magdagdag ng sarili mong mga repository at pinagmulan anumang oras sa Mga Setting › Mga pinagmulan ng nilalaman (Pamamahala ng Extension).</string>
+    <string name="welcome_done_body_finished">Hindi nagdagdag ang Amuratsu ng anumang pinagmulan sa panahon ng pag-setup. Maaari kang magdagdag ng sarili mong mga repository at pinagmulan anumang oras sa Mga Setting › Mga pinagmulan ng nilalaman (Pamamahala ng Extension).</string>
     <string name="welcome_done_advice_title">Kung hindi gumagana ang isang pinagmulan</string>
     <string name="welcome_done_advice_summary">Isang maikling hakbang sa pag-troubleshoot, para makita ng mga tamang tao ang ulat.</string>
-    <string name="welcome_done_advice_body">1. Kumpirmahin ang isyu gamit ang orihinal na host app ng extension — halimbawa, ang isang pinagmulang uri ng Mihon ay dapat subukan sa Mihon app.\n2. Kung nangyayari rin ang problema doon, pagmamay-ari ito ng repository na nagpapanatili sa extension: magbukas ng isyu sa sariling URL ng repository.\n3. Kung nangyayari lang ito sa Kototoro, iulat ito sa repository ng proyekto ng Kototoro at isama ang pangalan ng pinagmulan, bersyon ng extension, at kung ano ang sinubukan mo.</string>
+    <string name="welcome_done_advice_body">1. Kumpirmahin ang isyu gamit ang orihinal na host app ng extension — halimbawa, ang isang pinagmulang uri ng Mihon ay dapat subukan sa Mihon app.\n2. Kung nangyayari rin ang problema doon, pagmamay-ari ito ng repository na nagpapanatili sa extension: magbukas ng isyu sa sariling URL ng repository.\n3. Kung nangyayari lang ito sa Amuratsu, iulat ito sa repository ng proyekto ng Amuratsu at isama ang pangalan ng pinagmulan, bersyon ng extension, at kung ano ang sinubukan mo.</string>
     <string name="welcome_step_counter">Hakbang %1$d ng %2$d</string>
     <string name="welcome_action_configure_repos">I-configure ang mga napiling repository</string>
     <string name="welcome_action_install_count">I-install ang %1$d na extension</string>
@@ -2959,7 +2959,7 @@
     <string name="welcome_permissions_notifications_title">Mga Notipikasyon</string>
     <string name="welcome_permissions_notifications_summary">Nagpapakita ng mga notipikasyon sa pag-download, update, at player.</string>
     <string name="welcome_permissions_packages_title">Mga naka-install na app</string>
-    <string name="welcome_permissions_packages_summary">Nagbibigay-daan sa Kototoro na matukoy ang mga naka-install na extension at host app (Mihon, Aniyomi, …).</string>
+    <string name="welcome_permissions_packages_summary">Nagbibigay-daan sa Amuratsu na matukoy ang mga naka-install na extension at host app (Mihon, Aniyomi, …).</string>
     <string name="welcome_permissions_battery_title">Pagtatakbo sa background</string>
     <string name="welcome_permissions_battery_summary">Pinapanatiling tumatakbo ang mga pag-download at update kahit naka-off ang screen o idle ang device.</string>
     <string name="welcome_permissions_battery_action">Payagan</string>
@@ -3363,11 +3363,11 @@
     <string name="pref_glass_blur_quality_performance">Performance</string>
     <string name="pref_glass_blur_quality_balanced">Balanced</string>
     <string name="pref_glass_blur_quality_quality">Quality</string>
-    <string name="glass_material_family_kototoro">Kototoro (Inirerekomenda)</string>
+    <string name="glass_material_family_kototoro">Amuratsu (Inirerekomenda)</string>
     <string name="glass_material_family_haze">Haze</string>
     <string name="glass_material_family_cupertino">Cupertino</string>
     <string name="glass_material_family_fluent">Fluent</string>
-    <string name="glass_material_kototoro">Kototoro (Inirerekomenda)</string>
+    <string name="glass_material_kototoro">Amuratsu (Inirerekomenda)</string>
     <string name="glass_material_haze_ultra_thin">Haze Ultra Thin</string>
     <string name="glass_material_haze_thin">Haze Thin</string>
     <string name="glass_material_haze_regular">Haze Regular</string>

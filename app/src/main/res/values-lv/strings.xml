@@ -96,7 +96,7 @@
     <string name="enter_password">Ievadi paroli</string>
     <string name="wrong_password">Nepareiza parole</string>
     <string name="protect_application">Pasargāt aplikāciju</string>
-    <string name="protect_application_summary">Prasīt paroli, kad atver Kototoro</string>
+    <string name="protect_application_summary">Prasīt paroli, kad atver Amuratsu</string>
     <string name="repeat_password">Atkārto paroli</string>
     <string name="passwords_mismatch">Nesakrīt paroles</string>
     <string name="about">Par</string>
@@ -223,7 +223,7 @@
     <string name="page_save_manga_title_length">Mangas nosaukuma garums faila nosaukumā</string>
     <string name="page_save_manga_title_length_summary">Saglabātajos attēlu failu nosaukumos saglabāto mangas nosaukuma zīmju skaits (12–64)</string>
     <string name="pages_saved">Lapas saglabātas</string>
-    <string name="cloudstream_newpipe_required">Šim paplašinājumam ir nepieciešamas NewPipe klases, kuru Kototoro komplektācijā iekļautajā NewPipe nav, tāpēc tas nevar atskaņot videoklipus. Mēģiniet atjaunināt paplašinājumu vai Kototoro.</string>
+    <string name="cloudstream_newpipe_required">Šim paplašinājumam ir nepieciešamas NewPipe klases, kuru Amuratsu komplektācijā iekļautajā NewPipe nav, tāpēc tas nevar atskaņot videoklipus. Mēģiniet atjaunināt paplašinājumu vai Amuratsu.</string>
     <string name="clear_chapter_thumbnails">Notīrīt nodaļu sīktēlus</string>
     <string name="continuous_horizontal">Nepārtraukts horizontālais</string>
     <string name="continuous_horizontal_reversed">Lasīt no labās uz kreiso</string>
@@ -275,7 +275,7 @@
     <string name="replace_rule_disable_all_summary">Īslaicīgi pārtraukt aizvietošanas likumu piemērošanu</string>
     <string name="replace_rule_edit">Rediģēt likumu</string>
     <string name="replace_rule_import">Importēt Legado likumus</string>
-    <string name="replace_rule_import_summary">Importēt JSON masīvu, ko eksportējis Legado vai Kototoro</string>
+    <string name="replace_rule_import_summary">Importēt JSON masīvu, ko eksportējis Legado vai Amuratsu</string>
     <string name="replace_rule_export">Eksportēt likumus</string>
     <string name="replace_rule_export_summary">Eksportēt likumus saderīgā JSON formātā</string>
     <string name="replace_rule_empty">Nav aizvietošanas likumu</string>
@@ -422,8 +422,8 @@
     <string name="clear_local_novel_storage_prompt">Vai dzēst visus lokāli saglabātos un importētos romānu failus? To nevarēs atcelt.</string>
     <string name="clear_local_video_storage_prompt">Vai dzēst visus lokāli saglabātos un importētos video failus? To nevarēs atcelt.</string>
     <string name="welcome">Laipni lūdzam</string>
-    <string name="welcome_intro_title">Iestatīt Kototoro</string>
-    <string name="welcome_intro_summary">Izvēlieties, kā vēlaties lasīt un skatīties. Kototoro tagad izmanto spraudņos balstītas avotu saimes mangai, romāniem un video, tostarp JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader un Cloudstream.</string>
+    <string name="welcome_intro_title">Iestatīt Amuratsu</string>
+    <string name="welcome_intro_summary">Izvēlieties, kā vēlaties lasīt un skatīties. Amuratsu tagad izmanto spraudņos balstītas avotu saimes mangai, romāniem un video, tostarp JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader un Cloudstream.</string>
     <string name="welcome_step_start">Sākt</string>
     <string name="welcome_step_sources">Avoti</string>
     <string name="welcome_step_preferences">Iestatījumi</string>
@@ -433,11 +433,11 @@
     <string name="welcome_glass_preset_title">Stikla apdare</string>
     <string name="welcome_glass_preset_summary">Izvēlieties stikla apdares iepriekšējo iestatījumu iOS stilam. Refrakcija ir noklusējuma opcija, ko vēlāk var precizēt izskata iestatījumos.</string>
     <string name="home_quick_action_wizard">Vednis</string>
-    <string name="welcome_restore_summary">Vai jau iepriekš esat izmantojis Kototoro? Vispirms atjaunojiet dublējumu, pierakstieties sinhronizācijai vai pievienojiet lokālās mapes.</string>
+    <string name="welcome_restore_summary">Vai jau iepriekš esat izmantojis Amuratsu? Vispirms atjaunojiet dublējumu, pierakstieties sinhronizācijai vai pievienojiet lokālās mapes.</string>
     <string name="welcome_source_formats_title">Izvēlēties satura formātus</string>
     <string name="welcome_source_formats_summary">Šie filtri nosaka, kuras avotu saimes tiek iespējotas pēc iestatīšanas.</string>
     <string name="welcome_ecosystems_title">Avotu ekosistēma</string>
-    <string name="welcome_ecosystems_summary">Kototoro atbalsta vairākas spraudņu avotu saimes lasīšanai un skatīšanai. Sāciet ar ieteiktajām krātuvēm šeit, pēc tam precizējiet tās paplašinājumu pārvaldībā.</string>
+    <string name="welcome_ecosystems_summary">Amuratsu atbalsta vairākas spraudņu avotu saimes lasīšanai un skatīšanai. Sāciet ar ieteiktajām krātuvēm šeit, pēc tam precizējiet tās paplašinājumu pārvaldībā.</string>
     <string name="welcome_ecosystem_manga">Manga: JAR parsētāji, Mihon, IReader, LNReader</string>
     <string name="welcome_ecosystem_novel">Romāni: Legado, IReader, LNReader</string>
     <string name="welcome_ecosystem_video">Video: Aniyomi, TVBox, Cloudstream</string>
@@ -446,10 +446,10 @@
     <string name="welcome_preferences_summary">Izvēlieties valodas un satura veidus. To vēlāk varat mainīt avota iestatījumos.</string>
     <string name="welcome_spaces_title">Atsevišķas telpas</string>
     <string name="welcome_spaces_summary">Telpas nodrošina mangai, romāniem un anime neatkarīgu navigāciju un lasīšanas vai atskaņošanas kontekstu. Papildu opcijas ir pieejamākas iestatījumos.</string>
-    <string name="welcome_ready_summary">Iestatīšana ir pabeigta. Kototoro iespējos avotus, kas atbilst izvēlētajām valodām. Vedni var palaist atkārtoti sadaļā Iestatīšanas vednis.</string>
-    <string name="welcome_jar_install_success">Kototoro: Sekmīgi iegūti un iemontēti %1$d jaunākie parsētāja dzinņi no mākoņtīkla!</string>
-    <string name="welcome_jar_install_up_to_date">Kototoro: Mākoņa pārbaude pabeigta, lokālie parsētāji ir jaunākie! (Kopumā ielādēti %1$d avoti)</string>
-    <string name="welcome_jar_install_failed">Kototoro: Parsētājtīkla ielāde neizdevās (%1$s), lūdzu, mēģiniet vēlreiz vai dodieties uz iestatījumiem, lai mainītu starpniekservera spoguļus</string>
+    <string name="welcome_ready_summary">Iestatīšana ir pabeigta. Amuratsu iespējos avotus, kas atbilst izvēlētajām valodām. Vedni var palaist atkārtoti sadaļā Iestatīšanas vednis.</string>
+    <string name="welcome_jar_install_success">Amuratsu: Sekmīgi iegūti un iemontēti %1$d jaunākie parsētāja dzinņi no mākoņtīkla!</string>
+    <string name="welcome_jar_install_up_to_date">Amuratsu: Mākoņa pārbaude pabeigta, lokālie parsētāji ir jaunākie! (Kopumā ielādēti %1$d avoti)</string>
+    <string name="welcome_jar_install_failed">Amuratsu: Parsētājtīkla ielāde neizdevās (%1$s), lūdzu, mēģiniet vēlreiz vai dodieties uz iestatījumiem, lai mainītu starpniekservera spoguļus</string>
     <string name="home_placeholder_title">Lasīšanas panelis</string>
     <string name="home_placeholder_subtitle">Skatiet neseno lasīto, atjauninājumus, bibliotēku, sinhronizāciju un avotus vienuviet.</string>
     <string name="home_hero_local_subtitle">Turpiniet no vietas, kur pārtraucāt, vai atgriezieties pie nesen atvērtā.</string>
@@ -1025,7 +1025,7 @@
     <string name="import_completed_hint">Varat dzēst oriģinālo failu no krātuves, lai ietaupītu vietu</string>
     <string name="import_will_start_soon">Importēšana drīz sāksies</string>
     <string name="feed">Plūsma</string>
-    <string name="manga_error_description_pattern">Kļūdas detalizēta informācija:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. Mēģiniet &lt;a href=\"%2$s\"&gt;atvērt mangu tīmekļa pārlūkprogrammā&lt;/a&gt;, lai pārliecinātos, ka tā ir pieejama tās avotā&lt;br&gt;2. Pārliecinieties, ka izmantojat &lt;a href=\"kototoro://about\"&gt;jaunāko Kototoro versiju&lt;/a&gt;&lt;br&gt;3. Ja tā ir pieejama, nosūtiet kļūdas ziņojumu izstrādātājiem.</string>
+    <string name="manga_error_description_pattern">Kļūdas detalizēta informācija:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. Mēģiniet &lt;a href=\"%2$s\"&gt;atvērt mangu tīmekļa pārlūkprogrammā&lt;/a&gt;, lai pārliecinātos, ka tā ir pieejama tās avotā&lt;br&gt;2. Pārliecinieties, ka izmantojat &lt;a href=\"amuratsu://about\"&gt;jaunāko Amuratsu versiju&lt;/a&gt;&lt;br&gt;3. Ja tā ir pieejama, nosūtiet kļūdas ziņojumu izstrādātājiem.</string>
     <string name="history_shortcuts">Rādīt neseno Mangu īsceļus</string>
     <string name="history_shortcuts_summary">Padarīt neseno mangu pieejamu, ilgi nospiežot lietotnes ikonkar</string>
     <string name="reader_control_ltr_summary">Nepielāgot lapu pārslēgšanas virzienu lasītāja režīmam, piemēram, nospiežot labo taustiņu, vienmēr tiek pārslēgts uz nākamo lapu. Šī opcija ietekmē tikai aparatūras ievades ierīces</string>
@@ -1196,7 +1196,7 @@
     <string name="export_backup_for_other_apps_summary">Izvēlieties mērķa lietotni un izveidojiet saderīgu dublējumu: Kotatsu, Mihon, Aniyomi vai Usagi.</string>
     <string name="export_backup_choose_target_app">Izvēlēties mērķa lietotni</string>
     <string name="export_kotatsu_backup">Eksportēt Kotatsu dublējumu</string>
-    <string name="export_kotatsu_backup_summary">Izveidot atsevišķu mantoto dublējumu Kotatsu saimes lietotnēm bez Kototoro specifiskajām sadaļām.</string>
+    <string name="export_kotatsu_backup_summary">Izveidot atsevišķu mantoto dublējumu Kotatsu saimes lietotnēm bez Amuratsu specifiskajām sadaļām.</string>
     <string name="export_kotatsu_backup_saved">Kotatsu dublējums saglabāts</string>
     <string name="export_mihon_backup">Eksportēt Mihon dublējumu</string>
     <string name="export_mihon_backup_summary">Eksportēt izlasi, kategorijas un lasīšanas progresu tikai Mihon avota ierakstiem.</string>
@@ -1269,7 +1269,7 @@
     <string name="data_and_privacy">Dati un privātums</string>
     <string name="restore_summary">Atjaunot iepriekš izveidotu dublējumu</string>
     <string name="restore_kototoro_backup">Atjaunot dublējumu</string>
-    <string name="restore_kototoro_backup_summary">Atjaunot Kototoro dublējumu no jebkuras versijas vai Kotatsu dublējumu. Formāts tiek noteikts automātiski.</string>
+    <string name="restore_kototoro_backup_summary">Atjaunot Amuratsu dublējumu no jebkuras versijas vai Kotatsu dublējumu. Formāts tiek noteikts automātiski.</string>
     <string name="restore_mode_replace_existing">Aizstāt esošos datus</string>
     <string name="restore_mode_replace_existing_summary">Atjaunotās sadaļas vispirms tiek notīrītas; izlase un vēsture, kuru nav dublējumā, tiek dzēsta</string>
     <string name="restore_mode_merge_with_existing">Sapludināt ar esošajiem datiem</string>
@@ -2006,7 +2006,7 @@
     <string name="show_pages_thumbs">Rādīt lapu sīktēlus</string>
     <string name="show_pages_thumbs_summary">Iespējot cilni „Lapas“ detalizētajā skatā</string>
     <string name="error_no_data_received">No servera netika saņemti dati</string>
-    <string name="unsupported_backup_message">Lūdzu, atlasiet derīgu Kototoro dublējuma failu</string>
+    <string name="unsupported_backup_message">Lūdzu, atlasiet derīgu Amuratsu dublējuma failu</string>
     <string name="hours_short">%d st.</string>
     <string name="minutes_short">%d min.</string>
     <string name="seconds_short">%d s</string>
@@ -2058,8 +2058,8 @@
     <string name="chapters_read">Izlasītās nodaļas</string>
     <string name="chapters_left">Atlikušās nodaļas</string>
     <string name="external_source">Ārējais / spraudnis</string>
-    <string name="plugin_incompatible">Nesaderīgs spraudnis vai iekšēja kļūda. Pārliecinieties, ka izmantojat jaunāko spraudņa un Kototoro versiju</string>
-    <string name="plugin_incompatible_with_cause">Spraudņa kļūda: %s\n Pārliecinieties, ka izmantojat jaunāko spraudņa un Kototoro versiju</string>
+    <string name="plugin_incompatible">Nesaderīgs spraudnis vai iekšēja kļūda. Pārliecinieties, ka izmantojat jaunāko spraudņa un Amuratsu versiju</string>
+    <string name="plugin_incompatible_with_cause">Spraudņa kļūda: %s\n Pārliecinieties, ka izmantojat jaunāko spraudņa un Amuratsu versiju</string>
     <string name="plugin_missing_host_classes">%1$s nevar instalēt, jo tas ir atkarīgs no neatbalstītām %2$s resursdatora klasēm:\n%3$s</string>
     <string name="connection_ok">Savienojums ir kārtībā</string>
     <string name="invalid_proxy_configuration">Nederīga starpniekservera konfigurācija</string>
@@ -2258,7 +2258,7 @@
     <string name="unnamed_chapter">Nenosaukta nodaļa</string>
     <string name="search_disabled_sources">Meklēt starp atspējotajiem avotiem</string>
     <string name="error_disclaimer_manga">Mēģiniet atvērt mangu tīmekļa pārlūkprogrammā, lai pārliecinātos, ka tā ir pieejama tās avotā.</string>
-    <string name="error_disclaimer_app_outdated">Izskatās, ka jūsu Kototoro versija ir vecāka par jaunāko. Lūdzu, instalējiet jaunāko versiju, lai saņemtu visus labojumus.</string>
+    <string name="error_disclaimer_app_outdated">Izskatās, ka jūsu Amuratsu versija ir vecāka par jaunāko. Lūdzu, instalējiet jaunāko versiju, lai saņemtu visus labojumus.</string>
     <string name="error_disclaimer_report">Varat nosūtīt kļūdas ziņojumu izstrādātājiem, tas palīdzēs mums atrast un novērst kļūdu</string>
     <string name="enable_source_manga">Iespējot mangas avotu</string>
     <string name="enable_source_novel">Iespējot romānu avotu</string>
@@ -2276,7 +2276,7 @@
     <string name="recommendation_novel">ieteicamie romāni</string>
     <string name="recommendation_video">ieteicamie video</string>
     <string name="link_to_manga_on_s">Saite uz mangu vietnē %s</string>
-    <string name="link_to_manga_in_app">Saite uz mangu lietotnē Kototoro</string>
+    <string name="link_to_manga_in_app">Saite uz mangu lietotnē Amuratsu</string>
     <string name="clear_browser_data">Notīrīt pārlūka datus</string>
     <string name="clear_browser_data_summary">Notīrīt pārlūka datus, piemēram, kešatmiņu un sīkfailus. Brīdinājums: autorizācija satura avotos var kļūt nederīga</string>
     <string name="no_write_permission_to_file">Nav atļaujas rakstīt failā</string>
@@ -2325,7 +2325,7 @@
     <string name="discord_token_hint">Ielīmējiet savu Discord pilnvaru šeit</string>
     <string name="discord_rpc_summary">Rādīt savu lasīšanas statusu pakalpojumā Discord</string>
     <string name="obtain">Iegūt</string>
-    <string name="discord_rpc_description">Lasa mangu lietotnē Kototoro — mangas lasītājā</string>
+    <string name="discord_rpc_description">Lasa mangu lietotnē Amuratsu — mangas lasītājā</string>
     <string name="discord_logout_summary">Notīrīt saglabāto Discord autorizāciju</string>
     <string name="reading_s">Lasa: %s</string>
     <string name="read_on_s">Lasīt %s</string>
@@ -2352,7 +2352,7 @@
     <string name="sync_backend_switch_webdav_title">Pārslēgties uz WebDAV dublējumu?</string>
     <string name="sync_backend_switch_webdav_confirm">Google Drive sinhronizācija pašlaik ir iespējota. Iespējojot WebDAV dublējumu, tiks izslēgta Google Drive sinhronizācija, saglabājot jūsu Google pieteikumvārdu.</string>
     <string name="sync_sign_in">Sagatavot Google Drive sinhronizāciju</string>
-    <string name="sync_sign_in_summary">Izmanto Google Drive lietotnes datus ar minimālo Drive appdata atļauju, lai sinhronizētu abonementus un atjauninātu ierakstus. Kototoro nevar piekļūt jūsu Drive failiem.</string>
+    <string name="sync_sign_in_summary">Izmanto Google Drive lietotnes datus ar minimālo Drive appdata atļauju, lai sinhronizētu abonementus un atjauninātu ierakstus. Amuratsu nevar piekļūt jūsu Drive failiem.</string>
     <string name="google_drive_sync_unregistered_build_error">Google Drive sinhronizācija netiek atbalstīta izstrādes/nakts laidienos. Lūdzu, izmantojiet oficiālos laidienus vai WebDAV sinhronizāciju.</string>
     <string name="sync_sign_out">Izrakstīties</string>
     <string name="sync_account">Pierakstījies</string>
@@ -2399,8 +2399,8 @@
     <string name="webdav_remote_backups_inspect">Pārbaudīt attālinātos dublējumus</string>
     <string name="webdav_remote_backups_inspect_summary">Lejupielādēt un pārbaudīt, vai katru attālināto dublējumu var droši atjaunot.</string>
     <string name="webdav_remote_backups_clear">Notīrīt attālinātos WebDAV dublējumus</string>
-    <string name="webdav_remote_backups_clear_summary">Dzēst visus Kototoro dublējuma failus konfigurētajā WebDAV ceļā. Vietējie dati netiek mainīti.</string>
-    <string name="webdav_remote_backups_clear_confirm">Dzēst visus Kototoro dublējuma failus no konfigurētā WebDAV ceļa? Vietējie dati netiks mainīti.</string>
+    <string name="webdav_remote_backups_clear_summary">Dzēst visus Amuratsu dublējuma failus konfigurētajā WebDAV ceļā. Vietējie dati netiek mainīti.</string>
+    <string name="webdav_remote_backups_clear_confirm">Dzēst visus Amuratsu dublējuma failus no konfigurētā WebDAV ceļa? Vietējie dati netiks mainīti.</string>
     <string name="webdav_remote_backups_loading">Ielādē WebDAV dublējumus…</string>
     <string name="webdav_remote_backup_status_unknown">Nav pārbaudīts</string>
     <string name="webdav_remote_backup_status_restorable">Atjaunojams</string>
@@ -2768,7 +2768,7 @@
     <string name="trust_extension_repository">Uzticēties krātuves pirkstspiedumam</string>
     <string name="trust_extension_repository_message">Krātuve: %1$s\nTīmekļa vietne: %2$s\nSHA-256 pirkstspiediens:\n%3$s\n\nPirms uzticaties šai krātuvei, pārbaudiet šo pirkstspiedienu pie izdevēja.</string>
     <string name="untrusted_extension_message">%1$s (%2$s) ir instalēts, bet tā paraksts neatbilst izvēlētajam krātuves pirkstspiedienam.\n\nKrātuves pirkstspiediens: %3$s\n\nPirms atkārtotas instalēšanas no šīs krātuves noņemiet instalēto pakotni.</string>
-    <string name="incompatible_extension_message">%1$s %2$s nevar instalēt, jo tā bibliotēkas versija (%3$s) ir ārpus Kototoro atbalstītā diapazona.</string>
+    <string name="incompatible_extension_message">%1$s %2$s nevar instalēt, jo tā bibliotēkas versija (%3$s) ir ārpus Amuratsu atbalstītā diapazona.</string>
     <string name="built_in_sources">Iebūvētie</string>
     <string name="select_all">Atlasīt visu</string>
     <string name="deselect_all">Atsaukt visu</string>
@@ -2808,7 +2808,7 @@
     <string name="welcome_plugins_repo_yakateam">Yakateam parsētāji</string>
     <string name="welcome_plugins_repo_redo">Redo parsētāji</string>
     <string name="welcome_plugins_repo_uma">UMA (Tsuki parsētāji)</string>
-    <string name="welcome_plugins_disclaimer">Šīs paplašinājumu krātuves uztur neatkarīgas tiešsaistes kopienas. Kototoro izstrādātājiem nav nekādas saistības, kontroles vai asociācijas ar šīm trešo pušu krātuvēm. Es apstiprinu, ka konfigurēju šos avotus uz savu risku.</string>
+    <string name="welcome_plugins_disclaimer">Šīs paplašinājumu krātuves uztur neatkarīgas tiešsaistes kopienas. Amuratsu izstrādātājiem nav nekādas saistības, kontroles vai asociācijas ar šīm trešo pušu krātuvēm. Es apstiprinu, ka konfigurēju šos avotus uz savu risku.</string>
     <string name="welcome_plugins_start_btn">Konfigurēt krātuves</string>
     <string name="welcome_plugins_configured">Konfigurēti %1$d jauni avota/krātuves veidi: %2$s. Pakotnes vēl nav lejupielādētas — instalējiet atbilstošās nākamajā solī.</string>
     <string name="welcome_plugins_configured_none">Neizdevās konfigurēt nevienu avotu vai krātuvi. Pārbaudiet tīklu vai izvēlieties citas krātuves un mēģiniet vēlreiz.</string>
@@ -2838,22 +2838,22 @@
     <string name="welcome_install_system_launch_failed">Nevarēja palaist sistēmas instalētāju: %1$s</string>
     <string name="welcome_install_skip">Izlaist instalēšanu — izdarīšu to paplašinājumu pārvaldībā vēlāk</string>
     <string name="welcome_install_step_title">Paketinstalēt paplašinājumus</string>
-    <string name="welcome_install_step_summary">Izvēlieties avotu veidus un iestatījumus, pēc tam ļaujiet Kototoro lejupielādēt un instalēt visu fonā.</string>
+    <string name="welcome_install_step_summary">Izvēlieties avotu veidus un iestatījumus, pēc tam ļaujiet Amuratsu lejupielādēt un instalēt visu fonā.</string>
     <string name="welcome_install_kinds_title">Instalējamie avotu veidi</string>
     <string name="welcome_install_kinds_summary">Tiks apstrādāti tikai atzīmētie veidi. Neatzīmētie (piemēram, Mihon, ja dodat priekšroku tam vēlāk) paliek instalēšanai paplašinājumu pārvaldībā.</string>
     <string name="welcome_install_kinds_empty">Krātuves vēl nav konfigurētas. Atgriezieties un vispirms pievienojiet krātuves.</string>
     <string name="welcome_install_nsfw_title">Iekļaut NSFW saturu</string>
     <string name="welcome_install_nsfw_summary">Pēc noklusējuma izslēgts — pieaugušajiem paredzētās pakotnes tiek filtrētas no instalēšanas saraksta.</string>
-    <string name="welcome_intro_app_title">Kototoro · Atvērtā pirmkoda lasītājs</string>
-    <string name="welcome_intro_body">Kototoro ir atvērtā pirmkoda multivides lasītājs / atskaņotājs. Tas atbalsta plašu kopienas paplašinājumu ekosistēmu, taču neietver savus satura avotus.</string>
+    <string name="welcome_intro_app_title">Amuratsu · Atvērtā pirmkoda lasītājs</string>
+    <string name="welcome_intro_body">Amuratsu ir atvērtā pirmkoda multivides lasītājs / atskaņotājs. Tas atbalsta plašu kopienas paplašinājumu ekosistēmu, taču neietver savus satura avotus.</string>
     <string name="welcome_intro_concepts_title">Trīs koncepcijas 30 sekundēs</string>
     <string name="welcome_intro_repo_label">Krātuve</string>
     <string name="welcome_intro_repo_body">URL uz trešās puses paplašinājumu kolekciju, ko uztur neatkarīga kopiena (piemēram, Mihon krātuves, TVBox saraksti vai LNReader spraudņu krātuves).</string>
     <string name="welcome_intro_extension_label">Paplašinājums</string>
-    <string name="welcome_intro_extension_body">Viena instalējama pakotne krātuvē — JAR, APK vai JSON saraksts. Instalētie paplašinājumi nodrošina Kototoro iespēju lasīt vai atskaņot no vietnes.</string>
+    <string name="welcome_intro_extension_body">Viena instalējama pakotne krātuvē — JAR, APK vai JSON saraksts. Instalētie paplašinājumi nodrošina Amuratsu iespēju lasīt vai atskaņot no vietnes.</string>
     <string name="welcome_intro_source_label">Avots</string>
     <string name="welcome_intro_source_body">Viens konkrēts satura avots, ko redzat lietotnē pēc paplašinājuma instalēšanas vai importēšanas — piemēram, konkrēta mangas vai video vietne.</string>
-    <string name="welcome_intro_disclaimer">Trešo pušu paplašinājumu izmantošana notiek uz jūsu pašu risku: Kototoro projekts nekontrolē izpildes laika uzvedību, likumību un saturu.</string>
+    <string name="welcome_intro_disclaimer">Trešo pušu paplašinājumu izmantošana notiek uz jūsu pašu risku: Amuratsu projekts nekontrolē izpildes laika uzvedību, likumību un saturu.</string>
     <string name="welcome_intro_continue">Es saprotu — turpināt</string>
     <string name="welcome_done_title">Gandrīz gatavs</string>
     <string name="welcome_done_summary">Iestatīšanas kopsavilkums un daži padomi.</string>
@@ -2862,10 +2862,10 @@
     <string name="welcome_done_json_note">JSON balstīti veidi (Legado / TVBox / LNReader) tiek importēti automātiski; ja pievienojāt arī citas JSON krātuves, importējiet tās paplašinājumu pārvaldībā.</string>
     <string name="welcome_done_title_finished">Iestatīšana pabeigta</string>
     <string name="welcome_done_summary_finished">Vednis ir beidzis darbu — krātuves vai avoti netika pievienoti automātiski.</string>
-    <string name="welcome_done_body_finished">Kototoro nepievienoja nevienu avotu iestatīšanas laikā. Varat jebkurā laikā pievienot savas krātuves un avotus sadaļā Iestatījumi › Satura avoti (paplašinājumu pārvaldība).</string>
+    <string name="welcome_done_body_finished">Amuratsu nepievienoja nevienu avotu iestatīšanas laikā. Varat jebkurā laikā pievienot savas krātuves un avotus sadaļā Iestatījumi › Satura avoti (paplašinājumu pārvaldība).</string>
     <string name="welcome_done_advice_title">Ja avots nedarbojas</string>
     <string name="welcome_done_advice_summary">Īss problēmu novēršanas ceļš, lai pareizie cilvēki redzētu pārskatu.</string>
-    <string name="welcome_done_advice_body">1. Apstipriniet problēmu, izmantojot paplašinājuma sākotnējo resursdatora lietotni — piemēram, Mihon tipa avots ir jāpārbauda Mihon lietotnē.\n2. Ja problēma rodas arī tur, tā pieder krātuvei, kas uztur paplašinājumu: atveriet problēmu pieteikumu (issue) krātuves URL.\n3. Ja tas notiek tikai Kototoro, ziņojiet par to Kototoro projekta krātuvē un norādiet avota nosaukumu, paplašinājuma versiju un to, ko mēģinājāt darīt.</string>
+    <string name="welcome_done_advice_body">1. Apstipriniet problēmu, izmantojot paplašinājuma sākotnējo resursdatora lietotni — piemēram, Mihon tipa avots ir jāpārbauda Mihon lietotnē.\n2. Ja problēma rodas arī tur, tā pieder krātuvei, kas uztur paplašinājumu: atveriet problēmu pieteikumu (issue) krātuves URL.\n3. Ja tas notiek tikai Amuratsu, ziņojiet par to Amuratsu projekta krātuvē un norādiet avota nosaukumu, paplašinājuma versiju un to, ko mēģinājāt darīt.</string>
     <string name="welcome_step_counter">Solis %1$d no %2$d</string>
     <string name="welcome_action_configure_repos">Konfigurēt atlasītās krātuves</string>
     <string name="welcome_action_install_count">Instalēt %1$d paplašinājumus</string>
@@ -2899,7 +2899,7 @@
     <string name="welcome_permissions_notifications_title">Paziņojumi</string>
     <string name="welcome_permissions_notifications_summary">Rāda lejupielādes, atjauninājumu un atskaņotāja paziņojumus.</string>
     <string name="welcome_permissions_packages_title">Instalētās lietotnes</string>
-    <string name="welcome_permissions_packages_summary">Ļauj Kototoro atpazīt jau instalētos paplašinājumus un resursdatora lietotnes (Mihon, Aniyomi, …). Norādīts manifestā un piešķirts automātiski.</string>
+    <string name="welcome_permissions_packages_summary">Ļauj Amuratsu atpazīt jau instalētos paplašinājumus un resursdatora lietotnes (Mihon, Aniyomi, …). Norādīts manifestā un piešķirts automātiski.</string>
     <string name="welcome_permissions_battery_title">Fona darbība</string>
     <string name="welcome_permissions_battery_summary">Nodrošina fona lejupielādes un atjauninājumus, kad ekrāns ir izslēgts vai ierīce dīkstāvē.</string>
     <string name="welcome_permissions_battery_action">Atļaut</string>
@@ -3365,11 +3365,11 @@
     <string name="pref_glass_blur_quality_summary">Izšķirtspēja, no kuras aprēķina stikla un malu aizmiglojumu. Zemāka taupa GPU un akumulatoru, augstāka saglabā tekstu asāku</string>
     <string name="pref_glass_blur_quality_performance">Veiktspēja</string>
     <string name="pref_glass_blur_quality_quality">Kvalitāte</string>
-    <string name="glass_material_family_kototoro">Kototoro (Ieteicams)</string>
+    <string name="glass_material_family_kototoro">Amuratsu (Ieteicams)</string>
     <string name="glass_material_family_haze">Haze</string>
     <string name="glass_material_family_cupertino">Cupertino</string>
     <string name="glass_material_family_fluent">Fluent</string>
-    <string name="glass_material_kototoro">Kototoro (Ieteicams)</string>
+    <string name="glass_material_kototoro">Amuratsu (Ieteicams)</string>
     <string name="glass_material_haze_ultra_thin">Haze ultra plāns</string>
     <string name="glass_material_haze_thin">Haze plāns</string>
     <string name="glass_material_haze_regular">Haze parasts</string>

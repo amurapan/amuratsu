@@ -36,7 +36,7 @@ class CrashLogDetailActivity : BaseComposeActivity() {
                     ShareCompat.IntentBuilder(this)
                         .setType("text/plain")
                         .setText(logContent)
-                        .setSubject("Kototoro Crash Log")
+                        .setSubject("Amuratsu Crash Log")
                         .startChooser()
                 },
                 onCopy = {

@@ -323,7 +323,7 @@
     <string name="saved_manga">Сачувана манга</string>
     <string name="screenshots_block_all">Увек блокирај</string>
     <string name="new_sources_text">Доступни су нови извори манге</string>
-    <string name="manga_error_description_pattern">Детаљи о грешци:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. Покушај да &lt;a href=%2$s&gt;отвориш мангу у веб прегледачу&lt;/a&gt; да би био сигуран да је доступна на извору&lt;br&gt;2. Увери се да користите &lt;a href=kototoro://about&gt;latest version of Kototoro&gt;најновију верзију Котатсу-а&lt;/a&gt;&lt;br&gt;3. Ако је доступно, пошаљи извештај о грешци програмерима.</string>
+    <string name="manga_error_description_pattern">Детаљи о грешци:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. Покушај да &lt;a href=%2$s&gt;отвориш мангу у веб прегледачу&lt;/a&gt; да би био сигуран да је доступна на извору&lt;br&gt;2. Увери се да користите &lt;a href=amuratsu://about&gt;latest version of Amuratsu&gt;најновију верзију Котатсу-а&lt;/a&gt;&lt;br&gt;3. Ако је доступно, пошаљи извештај о грешци програмерима.</string>
     <string name="state_abandoned">Напуштен</string>
     <string name="zoom_mode_fit_height">Уклопи по висини</string>
     <string name="not_available">Није доступно</string>
@@ -609,7 +609,7 @@
     <string name="show_pages_thumbs">Прикажи сличице страница</string>
     <string name="error_no_data_received">Никакви подаци нису примљени са послуживача</string>
     <string name="show_pages_thumbs_summary">Омогући картицу узраста на екрану са детаљима</string>
-    <string name="unsupported_backup_message">Изабери одговарајућу Kototoro датотеку резервне копије</string>
+    <string name="unsupported_backup_message">Изабери одговарајућу Amuratsu датотеку резервне копије</string>
     <string name="hours_short">%d ч</string>
     <string name="hours_minutes_short">%1$d ч %2$d м</string>
     <string name="minutes_short">%d м</string>
@@ -926,7 +926,7 @@
     <string name="appearance_mode">Režim izgleda</string>
     <string name="page_save_manga_title_length">Dužina naslova mange u sačuvanim fajlovima</string>
     <string name="page_save_manga_title_length_summary">Broj znakova naslova mange sačuvanih u nazivima slika (12–64)</string>
-    <string name="cloudstream_newpipe_required">Ovoj ekstenziji su potrebne NewPipe klase koje NewPipe ugrađen u Kototoro nema, tako da ne može da pušta video zapise. Pokušajte da ažurirate ekstenziju ili Kototoro.</string>
+    <string name="cloudstream_newpipe_required">Ovoj ekstenziji su potrebne NewPipe klase koje NewPipe ugrađen u Amuratsu nema, tako da ne može da pušta video zapise. Pokušajte da ažurirate ekstenziju ili Amuratsu.</string>
     <string name="clear_chapter_thumbnails">Obriši sličice poglavlja</string>
     <string name="continuous_horizontal">Kontinualno horizontalno</string>
     <string name="continuous_horizontal_reversed">Čitaj s desna na levo</string>
@@ -978,7 +978,7 @@
     <string name="replace_rule_disable_all_summary">Privremeno zaustavi primenu pravila zamene</string>
     <string name="replace_rule_edit">Uredi pravilo</string>
     <string name="replace_rule_import">Uvezi Legado pravila</string>
-    <string name="replace_rule_import_summary">Uvezi JSON niz koji su izvezli Legado ili Kototoro</string>
+    <string name="replace_rule_import_summary">Uvezi JSON niz koji su izvezli Legado ili Amuratsu</string>
     <string name="replace_rule_export">Izvezi pravila</string>
     <string name="replace_rule_export_summary">Izvezi pravila u kompatibilnom JSON formatu</string>
     <string name="replace_rule_empty">Nema pravila zamene</string>
@@ -1111,8 +1111,8 @@
     <string name="clear_local_manga_storage_prompt">Izbrisati sve lokalno sačuvane i uvezene fajlove mangi? Ova radnja se ne može opozvati.</string>
     <string name="clear_local_novel_storage_prompt">Izbrisati sve lokalno sačuvane i uvezene fajlove romana? Ova radnja se ne može opozvati.</string>
     <string name="clear_local_video_storage_prompt">Izbrisati sve lokalno sačuvane i uvezene video fajlove? Ova radnja se ne može opozvati.</string>
-    <string name="welcome_intro_title">Podesite Kototoro</string>
-    <string name="welcome_intro_summary">Izaberite kako želite da čitate i gledate. Kototoro sada koristi porodice izvora zasnovane na dodacima za mange, romane i video, uključujući JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader i Cloudstream.</string>
+    <string name="welcome_intro_title">Podesite Amuratsu</string>
+    <string name="welcome_intro_summary">Izaberite kako želite da čitate i gledate. Amuratsu sada koristi porodice izvora zasnovane na dodacima za mange, romane i video, uključujući JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader i Cloudstream.</string>
     <string name="welcome_step_start">Početak</string>
     <string name="welcome_step_sources">Izvori</string>
     <string name="welcome_step_preferences">Postavke</string>
@@ -1122,11 +1122,11 @@
     <string name="welcome_glass_preset_title">Stakleni finiš</string>
     <string name="welcome_glass_preset_summary">Izaberite šablon staklenog finiša za iOS stil. Prelamanje je podrazumevano i može se naknadno podesiti u postavkama izgleda.</string>
     <string name="home_quick_action_wizard">Čarobnjak</string>
-    <string name="welcome_restore_summary">Već ste koristili Kototoro? Vratite rezervnu kopiju, prijavite se radi sinhronizacije ili prvo dodajte lokalne fascikle.</string>
+    <string name="welcome_restore_summary">Već ste koristili Amuratsu? Vratite rezervnu kopiju, prijavite se radi sinhronizacije ili prvo dodajte lokalne fascikle.</string>
     <string name="welcome_source_formats_title">Izaberite formate sadržaja</string>
     <string name="welcome_source_formats_summary">Ovi filteri određuju koje porodice izvora su omogućene nakon podešavanja.</string>
     <string name="welcome_ecosystems_title">Ekosistem izvora</string>
-    <string name="welcome_ecosystems_summary">Kototoro podržava više porodica izvora dodataka za čitanje i gledanje. Počnite sa preporučenim skladištima ovde, a zatim ih prilagodite u upravljanju ekstenzijama.</string>
+    <string name="welcome_ecosystems_summary">Amuratsu podržava više porodica izvora dodataka za čitanje i gledanje. Počnite sa preporučenim skladištima ovde, a zatim ih prilagodite u upravljanju ekstenzijama.</string>
     <string name="welcome_ecosystem_manga">Manga: JAR parseri, Mihon, IReader, LNReader</string>
     <string name="welcome_ecosystem_novel">Roman: Legado, IReader, LNReader</string>
     <string name="welcome_ecosystem_video">Видео: Aniyomi, TVBox, Cloudstream</string>
@@ -1135,10 +1135,10 @@
     <string name="welcome_preferences_summary">Izaberite jezike i tipove sadržaja. Ovo možete kasnije promeniti u postavkama izvora.</string>
     <string name="welcome_spaces_title">Odvojite svoje prostore</string>
     <string name="welcome_spaces_summary">Простори омогућавају мангама, романима и анимеима независну навигацију, подешавања прегледања и контекст читања или пуштања. Напредне опције и прилагођени простори доступни су касније у Подешавања &gt; Корисник &gt; Простори.</string>
-    <string name="welcome_ready_summary">Setup is complete. Kototoro will enable sources matching your selected languages and formats. You can run this wizard again from Settings &gt; Content sources &gt; Setup wizard.</string>
-    <string name="welcome_jar_install_success">Kototoro: Uspešno preuzeti i montirani %1$d najnoviji parseri sa oblačne mreže!</string>
-    <string name="welcome_jar_install_up_to_date">Kototoro: Provera u oblaku završena, lokalni parseri su ažurni! (Učitano %1$d izvora ukupno)</string>
-    <string name="welcome_jar_install_failed">Kototoro: Učitavanje mreže parsera nije uspelo (%1$s), pokušajte ponovo ili idite u postavke da promenite proksi ogledala</string>
+    <string name="welcome_ready_summary">Setup is complete. Amuratsu will enable sources matching your selected languages and formats. You can run this wizard again from Settings &gt; Content sources &gt; Setup wizard.</string>
+    <string name="welcome_jar_install_success">Amuratsu: Uspešno preuzeti i montirani %1$d najnoviji parseri sa oblačne mreže!</string>
+    <string name="welcome_jar_install_up_to_date">Amuratsu: Provera u oblaku završena, lokalni parseri su ažurni! (Učitano %1$d izvora ukupno)</string>
+    <string name="welcome_jar_install_failed">Amuratsu: Učitavanje mreže parsera nije uspelo (%1$s), pokušajte ponovo ili idite u postavke da promenite proksi ogledala</string>
     <string name="home_placeholder_title">Kontrolna tabla čitanja</string>
     <string name="home_placeholder_subtitle">Pogledajte nedavno čitanje, ažuriranja, biblioteku, sinhronizaciju i izvore na jednom mestu.</string>
     <string name="home_hero_local_subtitle">Nastavite tamo gde ste stali ili se vratite na ono što ste skoro otvorili.</string>
@@ -1691,7 +1691,7 @@
     <string name="export_backup_for_other_apps_summary">Izaberite ciljnu aplikaciju i napravite kompatibilnu rezervnu kopiju: Kotatsu, Mihon, Aniyomi ili Usagi.</string>
     <string name="export_backup_choose_target_app">Izaberite ciljnu aplikaciju</string>
     <string name="export_kotatsu_backup">Izvezi Kotatsu rezervnu kopiju</string>
-    <string name="export_kotatsu_backup_summary">Napravite zasebnu rezervnu kopiju za Kotatsu porodicu aplikacija bez odeljaka specifičnih za Kototoro.</string>
+    <string name="export_kotatsu_backup_summary">Napravite zasebnu rezervnu kopiju za Kotatsu porodicu aplikacija bez odeljaka specifičnih za Amuratsu.</string>
     <string name="export_kotatsu_backup_saved">Kotatsu rezervna kopija sačuvana</string>
     <string name="export_mihon_backup">Izvezi Mihon rezervnu kopiju</string>
     <string name="export_mihon_backup_summary">Izvezi omiljene stavke, kategorije i napredak čitanja samo za unose iz Mihon izvora.</string>
@@ -1720,7 +1720,7 @@
     <string name="import_backup_started_background">Spoljna rezervna kopija biće uvezena u pozadini</string>
     <string name="username_password_enter_hint">Unesite korisničko ime i lozinku da biste nastavili</string>
     <string name="restore_kototoro_backup">Vrati rezervnu kopiju</string>
-    <string name="restore_kototoro_backup_summary">Vratite Kototoro rezervnu kopiju iz bilo koje verzije ili Kotatsu rezervnu kopiju. Format se automatski detektuje.</string>
+    <string name="restore_kototoro_backup_summary">Vratite Amuratsu rezervnu kopiju iz bilo koje verzije ili Kotatsu rezervnu kopiju. Format se automatski detektuje.</string>
     <string name="restore_mode_replace_existing">Zameni postojeće podatke</string>
     <string name="restore_mode_replace_existing_summary">Odeljci koji se vraćaju se prvo brišu; omiljene stavke i istorija koji nedostaju u rezervnoj kopiji se uklanjaju</string>
     <string name="restore_mode_merge_with_existing">Spoji sa postojećim podacima</string>
@@ -2365,7 +2365,7 @@
     <string name="sync_backend_switch_webdav_title">Prebaciti na WebDAV rezervnu kopiju?</string>
     <string name="sync_backend_switch_webdav_confirm">Google Drive sinhronizacija je trenutno omogućena. Omogućavanje WebDAV rezervne kopije isključiće Google Drive sinhronizaciju uz zadržavanje vaše Google prijave.</string>
     <string name="sync_sign_in">Pripremi Google Drive sinhronizaciju</string>
-    <string name="sync_sign_in_summary">Koristi podatke aplikacije Google Drive sa minimalnom dozvolom za aplikacijske podatke Drive-a za sinhronizaciju pretplata i evidencije ažuriranja. Kototoro ne može pristupiti vašim Drive datotekama.</string>
+    <string name="sync_sign_in_summary">Koristi podatke aplikacije Google Drive sa minimalnom dozvolom za aplikacijske podatke Drive-a za sinhronizaciju pretplata i evidencije ažuriranja. Amuratsu ne može pristupiti vašim Drive datotekama.</string>
     <string name="google_drive_sync_unregistered_build_error">Google Drive sinhronizacija nije podržana u razvojnim/noćnim izdanjima. Koristite zvanična izdanja ili WebDAV sinhronizaciju.</string>
     <string name="sync_sign_out">Odjavi se</string>
     <string name="sync_account">Prijavljeni ste</string>
@@ -2420,8 +2420,8 @@
     <string name="webdav_remote_backups_inspect">Proveri udaljene kopije</string>
     <string name="webdav_remote_backups_inspect_summary">Preuzmi i proveri da li se svaka udaljena kopija može bezbedno vratiti.</string>
     <string name="webdav_remote_backups_clear">Obriši udaljene WebDAV kopije</string>
-    <string name="webdav_remote_backups_clear_summary">Briše sve Kototoro rezervne kopije na podešenoj WebDAV putanji. Lokalni podaci se ne menjaju.</string>
-    <string name="webdav_remote_backups_clear_confirm">Obrisati sve Kototoro rezervne kopije sa podešene WebDAV putanje? Lokalni podaci neće biti promenjeni.</string>
+    <string name="webdav_remote_backups_clear_summary">Briše sve Amuratsu rezervne kopije na podešenoj WebDAV putanji. Lokalni podaci se ne menjaju.</string>
+    <string name="webdav_remote_backups_clear_confirm">Obrisati sve Amuratsu rezervne kopije sa podešene WebDAV putanje? Lokalni podaci neće biti promenjeni.</string>
     <string name="webdav_remote_backups_loading">Učitavanje WebDAV rezervnih kopija…</string>
     <string name="webdav_remote_backup_status_unknown">Nije provereno</string>
     <string name="webdav_remote_backup_status_restorable">Može se vratiti</string>
@@ -2828,7 +2828,7 @@
     <string name="trust_and_add">Potvrdi i dodaj</string>
     <string name="trust_extension_repository_message">Skladište: %1$s\nVeb-sajt: %2$s\nSHA-256 otisak:\n%3$s\n\nProverite ovaj otisak sa izdavačem pre nego što verujete ovom skladištu.</string>
     <string name="untrusted_extension_message">%1$s (%2$s) je instalirano, ali se njegov potpis ne poklapa sa izabranim otiskom skladišta.\n\nOtisak skladišta: %3$s\n\nUklonite instalirani paket pre ponovne instalacije iz ovog skladišta.</string>
-    <string name="incompatible_extension_message">%1$s %2$s se ne može instalirati jer je verzija njegove biblioteke (%3$s) van opsega koji Kototoro podržava.</string>
+    <string name="incompatible_extension_message">%1$s %2$s se ne može instalirati jer je verzija njegove biblioteke (%3$s) van opsega koji Amuratsu podržava.</string>
     <string name="built_in_sources">Ugrađeno</string>
     <string name="select_all">Izaberi sve</string>
     <string name="deselect_all">Poništi izbor</string>
@@ -2868,7 +2868,7 @@
     <string name="welcome_plugins_repo_yakateam">Yakateam parseri</string>
     <string name="welcome_plugins_repo_redo">Redo parseri</string>
     <string name="welcome_plugins_repo_uma">UMA (Tsuki parseri)</string>
-    <string name="welcome_plugins_disclaimer">Ove riznice ekstenzija održavaju nezavisne onlajn zajednice. Programeri Kototoro-a nemaju nikakvu povezanost, kontrolu ili udruženje sa ovim riznicama trećih strana. Potvrđujem da ove izvore podešavam na sopstvenu odgovornost.</string>
+    <string name="welcome_plugins_disclaimer">Ove riznice ekstenzija održavaju nezavisne onlajn zajednice. Programeri Amuratsu-a nemaju nikakvu povezanost, kontrolu ili udruženje sa ovim riznicama trećih strana. Potvrđujem da ove izvore podešavam na sopstvenu odgovornost.</string>
     <string name="welcome_plugins_start_btn">Konfiguriši riznice</string>
     <string name="welcome_plugins_configured">Konfigurisano %1$d novih tipova izvora/riznica: %2$s. Paketi još nisu preuzeti — instalirajte odgovarajuće u sledećem koraku.</string>
     <string name="welcome_plugins_configured_none">Nijedan izvor ili riznica nisu mogli biti konfigurisani. Proverite mrežu ili izaberite druge riznice pa pokušajte ponovo.</string>
@@ -2898,22 +2898,22 @@
     <string name="welcome_install_system_launch_failed">Pokretanje sistemskog instalatera nije uspelo: %1$s</string>
     <string name="welcome_install_skip">Preskoči instalaciju — uradiću to kasnije u upravljanju ekstenzijama</string>
     <string name="welcome_install_step_title">Grupna instalacija ekstenzija</string>
-    <string name="welcome_install_step_summary">Izaberite tipove izvora i podešavanja, a zatim pustite Kototoro da preuzme i instalira sve u pozadini.</string>
+    <string name="welcome_install_step_summary">Izaberite tipove izvora i podešavanja, a zatim pustite Amuratsu da preuzme i instalira sve u pozadini.</string>
     <string name="welcome_install_kinds_title">Tipovi izvora za instalaciju</string>
     <string name="welcome_install_kinds_summary">Obrađivaće se samo tipovi koje ste označili. Označeni (npr. Mihon, ako želite kasnije) ostaju za instalaciju u upravljanju ekstenzijama.</string>
     <string name="welcome_install_kinds_empty">Još uvek nema podešenih riznica. Vratite se nazad i prvo dodajte riznice.</string>
     <string name="welcome_install_nsfw_title">Uključi NSFW sadržaj</string>
     <string name="welcome_install_nsfw_summary">Isključeno podrazumevano — paketi samo za odrasle se filtriraju iz liste za instalaciju.</string>
-    <string name="welcome_intro_app_title">Kototoro · Čitač otvorenog koda</string>
-    <string name="welcome_intro_body">Kototoro je multimedijalni čitač / plejer otvorenog koda. Podržava širok ekosistem ekstenzija zajednice, ali ne sadrži sopstvene izvore sadržaja.</string>
+    <string name="welcome_intro_app_title">Amuratsu · Čitač otvorenog koda</string>
+    <string name="welcome_intro_body">Amuratsu je multimedijalni čitač / plejer otvorenog koda. Podržava širok ekosistem ekstenzija zajednice, ali ne sadrži sopstvene izvore sadržaja.</string>
     <string name="welcome_intro_concepts_title">Tri koncepta za 30 sekundi</string>
     <string name="welcome_intro_repo_label">Riznica</string>
     <string name="welcome_intro_repo_body">URL adresa do kolekcije ekstenzija treće strane, koju održava nezavisna zajednica (na primer Mihon riznice, TVBox liste ili LNReader riznice dodataka).</string>
     <string name="welcome_intro_extension_label">Ekstenzija</string>
-    <string name="welcome_intro_extension_body">Jedan instalirati paket unutar riznice — JAR, APK ili JSON lista. Instalirane ekstenzije omogućavaju Kototoro-u čitanje ili reprodukciju sa sajta.</string>
+    <string name="welcome_intro_extension_body">Jedan instalirati paket unutar riznice — JAR, APK ili JSON lista. Instalirane ekstenzije omogućavaju Amuratsu-u čitanje ili reprodukciju sa sajta.</string>
     <string name="welcome_intro_source_label">Izvor</string>
     <string name="welcome_intro_source_body">Jedan konkretan izvor sadržaja koji vidite u aplikaciji nakon instalacije ili uvoza ekstenzije — na primer određeni sajt sa mangama ili video zapisima.</string>
-    <string name="welcome_intro_disclaimer">Korišćenje ekstenzija trećih strana je u potpunosti na sopstvenu odgovornost: rad u toku izvršavanja, zakonitost i sadržaj nisu pod kontrolom Kototoro projekta.</string>
+    <string name="welcome_intro_disclaimer">Korišćenje ekstenzija trećih strana je u potpunosti na sopstvenu odgovornost: rad u toku izvršavanja, zakonitost i sadržaj nisu pod kontrolom Amuratsu projekta.</string>
     <string name="welcome_intro_continue">Razumem — nastavi</string>
     <string name="welcome_done_title">Još malo</string>
     <string name="welcome_done_summary">Rezime podešavanja i nekoliko saveta.</string>
@@ -2922,10 +2922,10 @@
     <string name="welcome_done_json_note">Tipovi bazirani na JSON-u (Legado / TVBox / LNReader) se uvoze automatski; ako ste dodali i druge JSON riznice, uvezite ih u upravljanju ekstenzijama.</string>
     <string name="welcome_done_title_finished">Podešavanje završeno</string>
     <string name="welcome_done_summary_finished">Čarobnjak je završen — nijedna riznica ili izvor nisu automatski dodati.</string>
-    <string name="welcome_done_body_finished">Kototoro nije dodao nijedan izvor tokom podešavanja. Možete dodati sopstvene riznice i izvore u bilo kom trenutku u Podešavanja › Izvori sadržaja (Upravljanje ekstenzijama).</string>
+    <string name="welcome_done_body_finished">Amuratsu nije dodao nijedan izvor tokom podešavanja. Možete dodati sopstvene riznice i izvore u bilo kom trenutku u Podešavanja › Izvori sadržaja (Upravljanje ekstenzijama).</string>
     <string name="welcome_done_advice_title">Ako izvor ne radi</string>
     <string name="welcome_done_advice_summary">Kratak put za rešavanje problema, kako bi pravi ljudi videli izveštaj.</string>
-    <string name="welcome_done_advice_body">1. Potvrdite problem pomoću originalne matične aplikacije ekstenzije — na primer izvor tipa Mihon treba testirati u Mihon aplikaciji.\n2. Ako se problem dešava i tamo, on pripada riznici koja održava ekstenziju: otvorite problem na URL adresi same riznice.\n3. Ako se dešava samo u Kototoro-u, prijavite ga u riznici Kototoro projekta i uključite naziv izvora, verziju ekstenzije i šta ste pokušali.</string>
+    <string name="welcome_done_advice_body">1. Potvrdite problem pomoću originalne matične aplikacije ekstenzije — na primer izvor tipa Mihon treba testirati u Mihon aplikaciji.\n2. Ako se problem dešava i tamo, on pripada riznici koja održava ekstenziju: otvorite problem na URL adresi same riznice.\n3. Ako se dešava samo u Amuratsu-u, prijavite ga u riznici Amuratsu projekta i uključite naziv izvora, verziju ekstenzije i šta ste pokušali.</string>
     <string name="welcome_step_counter">Korak %1$d od %2$d</string>
     <string name="welcome_action_configure_repos">Konfiguriši izabrane riznice</string>
     <string name="welcome_action_install_count">Instaliraj %1$d ekstenzija</string>
@@ -2959,7 +2959,7 @@
     <string name="welcome_permissions_notifications_title">Obaveštenja</string>
     <string name="welcome_permissions_notifications_summary">Prikazuje obaveštenja o preuzimanjima, ažuriranjima i plejeru.</string>
     <string name="welcome_permissions_packages_title">Instalirane aplikacije</string>
-    <string name="welcome_permissions_packages_summary">Omogućava aplikaciji Kototoro da detektuje već instalirane ekstenzije i matične aplikacije (Mihon, Aniyomi, …). Deklarisano u manifestu i odobreno automatski.</string>
+    <string name="welcome_permissions_packages_summary">Omogućava aplikaciji Amuratsu da detektuje već instalirane ekstenzije i matične aplikacije (Mihon, Aniyomi, …). Deklarisano u manifestu i odobreno automatski.</string>
     <string name="welcome_permissions_battery_title">Rad u pozadini</string>
     <string name="welcome_permissions_battery_summary">Omogućava preuzimanja i ažuriranja u pozadini kada je ekran isključen ili uređaj neaktivan.</string>
     <string name="welcome_permissions_battery_action">Dozvoli</string>
@@ -3375,11 +3375,11 @@
     <string name="pref_glass_blur_quality_performance">Performanse</string>
     <string name="pref_glass_blur_quality_balanced">Uravnotež.</string>
     <string name="pref_glass_blur_quality_quality">Kvalitet</string>
-    <string name="glass_material_family_kototoro">Kototoro (Preporučeno)</string>
+    <string name="glass_material_family_kototoro">Amuratsu (Preporučeno)</string>
     <string name="glass_material_family_haze">Haze</string>
     <string name="glass_material_family_cupertino">Cupertino</string>
     <string name="glass_material_family_fluent">Fluent</string>
-    <string name="glass_material_kototoro">Kototoro (Preporučeno)</string>
+    <string name="glass_material_kototoro">Amuratsu (Preporučeno)</string>
     <string name="glass_material_haze_ultra_thin">Ултра танка измаглица</string>
     <string name="glass_material_haze_thin">Танка измаглица</string>
     <string name="glass_material_haze_regular">Обична измаглица</string>

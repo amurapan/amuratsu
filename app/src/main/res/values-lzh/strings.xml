@@ -120,7 +120,7 @@
     <string name="_import">入</string>
     <string name="delete">去</string>
     <string name="operation_not_supported">不許此事</string>
-    <string name="cloudstream_newpipe_required">此外掛需NewPipe之類，而Kototoro內嵌之NewPipe無之，故不能播影。請更外掛或Kototoro。</string>
+    <string name="cloudstream_newpipe_required">此外掛需NewPipe之類，而Amuratsu內嵌之NewPipe無之，故不能播影。請更外掛或Amuratsu。</string>
     <string name="text_file_not_supported">擇ZIP或CBZ檔。</string>
     <string name="no_description">無敘</string>
     <string name="clear_pages_cache">清頁緩存</string>
@@ -184,7 +184,7 @@
     <string name="replace_rule_disable_all_summary">暫置諸易例勿施</string>
     <string name="replace_rule_edit">改例</string>
     <string name="replace_rule_import">引Legado例</string>
-    <string name="replace_rule_import_summary">自Legado或Kototoro所出之JSON陣列引之</string>
+    <string name="replace_rule_import_summary">自Legado或Amuratsu所出之JSON陣列引之</string>
     <string name="replace_rule_export">出例</string>
     <string name="replace_rule_export_summary">以協於JSON之式出例</string>
     <string name="replace_rule_empty">無易例</string>
@@ -315,7 +315,7 @@
     <string name="enter_password">入密碼</string>
     <string name="wrong_password">誤密碼</string>
     <string name="protect_application">防護應用</string>
-    <string name="protect_application_summary">啟Kototoro時問密碼</string>
+    <string name="protect_application_summary">啟Amuratsu時問密碼</string>
     <string name="repeat_password">重入密碼</string>
     <string name="passwords_mismatch">密碼不合</string>
     <string name="about">關於</string>
@@ -422,8 +422,8 @@
     <string name="clear_local_novel_storage_prompt">刪除所有本地保存與導入之小說檔乎？此舉難返。</string>
     <string name="clear_local_video_storage_prompt">刪除所有本地保存與導入之視頻檔乎？此舉難返。</string>
     <string name="welcome">迎</string>
-    <string name="welcome_intro_title">設置Kototoro</string>
-    <string name="welcome_intro_summary">選其所欲閱觀之法。Kototoro今用插件源系以治漫畫、小說與視頻，包羅JAR、Mihon、Aniyomi、IReader、Legado、TVBox、LNReader及Cloudstream。</string>
+    <string name="welcome_intro_title">設置Amuratsu</string>
+    <string name="welcome_intro_summary">選其所欲閱觀之法。Amuratsu今用插件源系以治漫畫、小說與視頻，包羅JAR、Mihon、Aniyomi、IReader、Legado、TVBox、LNReader及Cloudstream。</string>
     <string name="welcome_step_start">始</string>
     <string name="welcome_step_sources">源</string>
     <string name="welcome_step_preferences">偏好</string>
@@ -433,11 +433,11 @@
     <string name="welcome_glass_preset_title">玻璃質感</string>
     <string name="welcome_glass_preset_summary">選iOS風之玻璃質感預設。折射為本預設，異日猶可調於「外觀」之中。</string>
     <string name="home_quick_action_wizard">向導</string>
-    <string name="welcome_restore_summary">既用Kototoro乎？可還原備份、登入同步，或先增本地資料夾。</string>
+    <string name="welcome_restore_summary">既用Amuratsu乎？可還原備份、登入同步，或先增本地資料夾。</string>
     <string name="welcome_source_formats_title">選取內容格式</string>
     <string name="welcome_source_formats_summary">此諸過濾器決定建置後所啟之源類。</string>
     <string name="welcome_ecosystems_title">源之生態</string>
-    <string name="welcome_ecosystems_summary">Kototoro支援多種插件源類以供閱覽。宜先取此推薦之倉庫，異日再調於擴充管理之中。</string>
+    <string name="welcome_ecosystems_summary">Amuratsu支援多種插件源類以供閱覽。宜先取此推薦之倉庫，異日再調於擴充管理之中。</string>
     <string name="welcome_ecosystem_manga">漫畫：JAR解析器、Mihon、IReader、LNReader</string>
     <string name="welcome_ecosystem_novel">小說：Legado、IReader、LNReader</string>
     <string name="welcome_ecosystem_video">影片：Aniyomi、TVBox、Cloudstream</string>
@@ -446,10 +446,10 @@
     <string name="welcome_preferences_summary">選取語言與內容類別。異日猶可改於源之設定。</string>
     <string name="welcome_spaces_title">分其空間</string>
     <string name="welcome_spaces_summary">空間使漫畫、小說與動畫得享獨立之導航、瀏覽偏好及閱播脈絡。進階選項與自訂空間異日可見於「設定 → 用戶 → 空間」。</string>
-    <string name="welcome_ready_summary">設置既畢。Kototoro將啟符所選語言與格式之源。汝可自「設定 → 內容源 → 設置向導」復行此向導。</string>
-    <string name="welcome_jar_install_success">Kototoro：自雲端成功擷取並掛載 %1$d 個最新解析引擎！</string>
-    <string name="welcome_jar_install_up_to_date">Kototoro：雲端校驗既畢，本地解析器皆屬最新！(共載 %1$d 源)</string>
-    <string name="welcome_jar_install_failed">Kototoro：解析器網路載入失敗 (%1$s)，請復試或往設定以切換代理鏡像</string>
+    <string name="welcome_ready_summary">設置既畢。Amuratsu將啟符所選語言與格式之源。汝可自「設定 → 內容源 → 設置向導」復行此向導。</string>
+    <string name="welcome_jar_install_success">Amuratsu：自雲端成功擷取並掛載 %1$d 個最新解析引擎！</string>
+    <string name="welcome_jar_install_up_to_date">Amuratsu：雲端校驗既畢，本地解析器皆屬最新！(共載 %1$d 源)</string>
+    <string name="welcome_jar_install_failed">Amuratsu：解析器網路載入失敗 (%1$s)，請復試或往設定以切換代理鏡像</string>
     <string name="home_placeholder_title">閱讀儀表板</string>
     <string name="home_placeholder_subtitle">一覽近讀、更新、書庫、同步與源。</string>
     <string name="home_hero_local_subtitle">接續前讀，或重返近啟之物。</string>
@@ -1027,7 +1027,7 @@
     <string name="import_completed_hint">可刪原檔以省儲位</string>
     <string name="import_will_start_soon">將載</string>
     <string name="feed">饋送</string>
-    <string name="manga_error_description_pattern">誤情：&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. 試&lt;a href=\"%2$s\"&gt;於網覽器開漫畫&lt;a&gt;以察其源尚存否&lt;br&gt;2. 審爾用者乃&lt;a href=\"kototoro://about\"&gt;Kototoro之最末版&lt;/a&gt;&lt;br&gt;3. 若存，宜報誤於匠人。</string>
+    <string name="manga_error_description_pattern">誤情：&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. 試&lt;a href=\"%2$s\"&gt;於網覽器開漫畫&lt;a&gt;以察其源尚存否&lt;br&gt;2. 審爾用者乃&lt;a href=\"amuratsu://about\"&gt;Amuratsu之最末版&lt;/a&gt;&lt;br&gt;3. 若存，宜報誤於匠人。</string>
     <string name="history_shortcuts">示近讀捷徑</string>
     <string name="history_shortcuts_summary">長按應用圖標以速覽近閱之漫畫</string>
     <string name="reader_control_ltr_summary">讀者模式不改頁面遷化之向，如按右鍵常趨次頁。此選僅涉硬體輸入之具</string>
@@ -1160,7 +1160,7 @@
     <string name="export_backup_for_other_apps_summary">擇的器而造合用備分： Kotatsu、 Mihon、 Aniyomi 或 Usagi。</string>
     <string name="export_backup_choose_target_app">擇目標器</string>
     <string name="export_kotatsu_backup">出 Kotatsu 備分</string>
-    <string name="export_kotatsu_backup_summary">爲 Kotatsu 派器別造舊制備分，無涉 Kototoro 之專文。</string>
+    <string name="export_kotatsu_backup_summary">爲 Kotatsu 派器別造舊制備分，無涉 Amuratsu 之專文。</string>
     <string name="export_kotatsu_backup_saved">Kotatsu 備分已存</string>
     <string name="export_mihon_backup">出 Mihon 備分</string>
     <string name="export_mihon_backup_summary">僅出 Mihon 源條目之愛好、品類與閲歷。</string>
@@ -1233,7 +1233,7 @@
     <string name="data_and_privacy">數據與隱私</string>
     <string name="restore_summary">還原既有之備份</string>
     <string name="restore_kototoro_backup">還原備份</string>
-    <string name="restore_kototoro_backup_summary">還原 Kototoro 或 Kotatsu 之備份。其式自動辨識。</string>
+    <string name="restore_kototoro_backup_summary">還原 Amuratsu 或 Kotatsu 之備份。其式自動辨識。</string>
     <string name="restore_mode_replace_existing">替換現有數據</string>
     <string name="restore_mode_replace_existing_summary">所還原之分段先行清除；備份所無之收藏與歷史皆革除</string>
     <string name="restore_mode_merge_with_existing">與現有數據合併</string>
@@ -1970,7 +1970,7 @@
     <string name="show_pages_thumbs">示頁縮圖</string>
     <string name="show_pages_thumbs_summary">於詳情幕啟「頁」籤</string>
     <string name="error_no_data_received">未自伺服器得數</string>
-    <string name="unsupported_backup_message">請擇合宜之Kototoro備份檔</string>
+    <string name="unsupported_backup_message">請擇合宜之Amuratsu備份檔</string>
     <string name="hours_short">%d時</string>
     <string name="minutes_short">%d分</string>
     <string name="seconds_short">%d秒</string>
@@ -2022,8 +2022,8 @@
     <string name="chapters_read">已讀章節</string>
     <string name="chapters_left">剩餘章節</string>
     <string name="external_source">外部／插件</string>
-    <string name="plugin_incompatible">插件不兼容或內部錯誤。請確用插件與Kototoro之最新版</string>
-    <string name="plugin_incompatible_with_cause">插件出錯：%s\n 請確用插件與Kototoro之最新版</string>
+    <string name="plugin_incompatible">插件不兼容或內部錯誤。請確用插件與Amuratsu之最新版</string>
+    <string name="plugin_incompatible_with_cause">插件出錯：%s\n 請確用插件與Amuratsu之最新版</string>
     <string name="plugin_missing_host_classes">%1$s 無法安裝，因其依賴不受支援之 %2$s 主機類別：\n%3$s</string>
     <string name="connection_ok">連線正常</string>
     <string name="invalid_proxy_configuration">代理配置無效</string>
@@ -2214,7 +2214,7 @@
     <string name="search_disabled_sources">Search through disabled sources</string>
     <string name="error_details">Error details</string>
     <string name="error_disclaimer_manga">Try to open manga in a web browser to ensure it is available on its source.</string>
-    <string name="error_disclaimer_app_outdated">It looks like your version of Kototoro is out of date. Please install the latest version to get all available fixes.</string>
+    <string name="error_disclaimer_app_outdated">It looks like your version of Amuratsu is out of date. Please install the latest version to get all available fixes.</string>
     <string name="error_disclaimer_report">You can send an error report to developers, this will help us locate and fix the error</string>
     <string name="enable_source_manga">Enable manga source</string>
     <string name="enable_source_novel">Enable novel source</string>
@@ -2232,7 +2232,7 @@
     <string name="recommendation_novel">推薦小說</string>
     <string name="recommendation_video">推薦影片</string>
     <string name="link_to_manga_on_s">連於%s之漫畫</string>
-    <string name="link_to_manga_in_app">連於Kototoro之漫畫</string>
+    <string name="link_to_manga_in_app">連於Amuratsu之漫畫</string>
     <string name="clear_browser_data">清除瀏覽器數據</string>
     <string name="clear_browser_data_summary">清除快取及曲奇等瀏覽器數據。告：源中之授權或失效</string>
     <string name="no_write_permission_to_file">無寫入檔案之權限</string>
@@ -2282,7 +2282,7 @@
     <string name="discord_token_hint">置Discord憑證於此</string>
     <string name="discord_rpc_summary">於Discord顯其讀書之狀</string>
     <string name="obtain">取</string>
-    <string name="discord_rpc_description">於Kototoro閱漫畫——一覽漫之用具</string>
+    <string name="discord_rpc_description">於Amuratsu閱漫畫——一覽漫之用具</string>
     <string name="discord_logout_summary">除所存之Discord授權</string>
     <string name="reading_s">讀%s</string>
     <string name="read_on_s">讀於%s</string>
@@ -2310,7 +2310,7 @@
     <string name="sync_backend_switch_webdav_title">切至WebDAV備份乎？</string>
     <string name="sync_backend_switch_webdav_confirm">Google Drive同布今啟。啟WebDAV備份將息Google Drive同布，而留Google登錄。</string>
     <string name="sync_sign_in">預備Google Drive同布</string>
-    <string name="sync_sign_in_summary">用Google Drive應用數據及最小Drive appdata權限以同布訂閱與更新記錄。Kototoro弗得存閣下之Drive檔。</string>
+    <string name="sync_sign_in_summary">用Google Drive應用數據及最小Drive appdata權限以同布訂閱與更新記錄。Amuratsu弗得存閣下之Drive檔。</string>
     <string name="google_drive_sync_unregistered_build_error">開發或夜行版不支援Google Drive同布。請用官方發布版或WebDAV同布。</string>
     <string name="sync_sign_out">登出</string>
     <string name="sync_account">已登錄</string>
@@ -2365,8 +2365,8 @@
     <string name="webdav_remote_backups_inspect">檢遠端備份</string>
     <string name="webdav_remote_backups_inspect_summary">下載並核各遠端備份可否安還原。</string>
     <string name="webdav_remote_backups_clear">清遠端WebDAV備份</string>
-    <string name="webdav_remote_backups_clear_summary">刪所置WebDAV徑之Kototoro備份檔。本地數據不改。</string>
-    <string name="webdav_remote_backups_clear_confirm">自所置WebDAV徑刪諸Kototoro備份檔歟？本地數據不改。</string>
+    <string name="webdav_remote_backups_clear_summary">刪所置WebDAV徑之Amuratsu備份檔。本地數據不改。</string>
+    <string name="webdav_remote_backups_clear_confirm">自所置WebDAV徑刪諸Amuratsu備份檔歟？本地數據不改。</string>
     <string name="webdav_remote_backups_loading">正在載WebDAV備份…</string>
     <string name="webdav_remote_backup_status_unknown">未檢</string>
     <string name="webdav_remote_backup_status_restorable">可還原</string>
@@ -2774,7 +2774,7 @@
     <string name="trust_and_add">信而加之</string>
     <string name="trust_extension_repository_message">庫：%1$s\n網址：%2$s\nSHA-256 指模：\n%3$s\n\n信此庫前，宜與刊行者核其指模。</string>
     <string name="untrusted_extension_message">%1$s (%2$s) 既裝，然其符印弗符所擇之庫指模。\n\n庫指模：%3$s\n\n自此庫重裝前，宜先除既裝之包。</string>
-    <string name="incompatible_extension_message">%1$s %2$s 不得安裝，因其書庫版次 (%3$s) 出 Kototoro 容受之域。</string>
+    <string name="incompatible_extension_message">%1$s %2$s 不得安裝，因其書庫版次 (%3$s) 出 Amuratsu 容受之域。</string>
     <string name="built_in_sources">內建</string>
     <string name="select_all">擇其悉</string>
     <string name="deselect_all">皆勿擇</string>
@@ -2814,7 +2814,7 @@
     <string name="welcome_plugins_repo_yakateam">Yakateam解析器</string>
     <string name="welcome_plugins_repo_redo">Redo解析器</string>
     <string name="welcome_plugins_repo_uma">UMA（Tsuki解析器）</string>
-    <string name="welcome_plugins_disclaimer">此等擴充庫乃獨立網絡社群所維護。Kototoro開發者與此等第三方庫無涉、無控、無關。吾知之而自擔其責。</string>
+    <string name="welcome_plugins_disclaimer">此等擴充庫乃獨立網絡社群所維護。Amuratsu開發者與此等第三方庫無涉、無控、無關。吾知之而自擔其責。</string>
     <string name="welcome_plugins_start_btn">設定倉庫</string>
     <string name="welcome_plugins_configured">已設 %1$d 新源庫類別：%2$s。套件尚末載 — 於次步裝其合者。</string>
     <string name="welcome_plugins_configured_none">未能設定源或庫。察網絡或擇他庫再試。</string>
@@ -2844,22 +2844,22 @@
     <string name="welcome_install_system_launch_failed">未能啟統裝器：%1$s</string>
     <string name="welcome_install_skip">略過安裝 — 餘者後於擴充管理治之</string>
     <string name="welcome_install_step_title">批量安裝擴充</string>
-    <string name="welcome_install_step_summary">擇源類與設，令 Kototoro 背景下載並安裝諸物。</string>
+    <string name="welcome_install_step_summary">擇源類與設，令 Amuratsu 背景下載並安裝諸物。</string>
     <string name="welcome_install_kinds_title">欲裝之源類</string>
     <string name="welcome_install_kinds_summary">僅理所勾之類。未勾者（如 Mihon 類若欲後裝）留待擴充管理自裝。</string>
     <string name="welcome_install_kinds_empty">未設藏處。請回前納藏處。</string>
     <string name="welcome_install_nsfw_title">含 NSFW 容</string>
     <string name="welcome_install_nsfw_summary">預設關 — 成人專用套件已自裝列濾去。</string>
-    <string name="welcome_intro_app_title">Kototoro · 開源讀器</string>
-    <string name="welcome_intro_body">Kototoro 乃開源多媒體讀器／播放器。其支衆社群擴充，然未自帶任何內容源。</string>
+    <string name="welcome_intro_app_title">Amuratsu · 開源讀器</string>
+    <string name="welcome_intro_body">Amuratsu 乃開源多媒體讀器／播放器。其支衆社群擴充，然未自帶任何內容源。</string>
     <string name="welcome_intro_concepts_title">三念，三十秒解</string>
     <string name="welcome_intro_repo_label">藏處</string>
     <string name="welcome_intro_repo_body">三方擴充集之 URL，由獨立社群維護（如 Mihon 藏、TVBox 單或 LNReader 插件藏）。</string>
     <string name="welcome_intro_extension_label">擴充</string>
-    <string name="welcome_intro_extension_body">藏處中之一可裝套件 — JAR、APK 或 JSON 單。得擴充則 Kototoro 能讀或播站中物。</string>
+    <string name="welcome_intro_extension_body">藏處中之一可裝套件 — JAR、APK 或 JSON 單。得擴充則 Amuratsu 能讀或播站中物。</string>
     <string name="welcome_intro_source_label">源</string>
     <string name="welcome_intro_source_body">擴充安裝或引入後，於應用所見之一具體內容源 — 如某漫畫或影視網。</string>
-    <string name="welcome_intro_disclaimer">用三方擴充任其自責：運作、合法性與內容非 Kototoro 專案所控。</string>
+    <string name="welcome_intro_disclaimer">用三方擴充任其自責：運作、合法性與內容非 Amuratsu 專案所控。</string>
     <string name="welcome_intro_continue">吾曉 — 續</string>
     <string name="welcome_done_title">近竣矣</string>
     <string name="welcome_done_summary">設要與數言。</string>
@@ -2868,10 +2868,10 @@
     <string name="welcome_done_json_note">基於 JSON 之類（Legado / TVBox / LNReader）自動引入；若復增他 JSON 藏，於擴充管理引之。</string>
     <string name="welcome_done_title_finished">設畢</string>
     <string name="welcome_done_summary_finished">向導已竣 — 未自動增藏或源。</string>
-    <string name="welcome_done_body_finished">Kototoro 設時未增源。君可隨時於設定 → 內容源（擴充管理）自增藏與源。</string>
+    <string name="welcome_done_body_finished">Amuratsu 設時未增源。君可隨時於設定 → 內容源（擴充管理）自增藏與源。</string>
     <string name="welcome_done_advice_title">源不作時</string>
     <string name="welcome_done_advice_summary">簡短排難徑，以便有司察報。</string>
-    <string name="welcome_done_advice_body">1. 以擴充原主應用證之 — 如 Mihon 類源當試於 Mihon App。\n2. 若彼亦然，則屬維護擴充之藏：於藏處 URL 開稟告。\n3. 若唯 Kototoro 然，則告於 Kototoro 專案藏，並附源名、擴充版號與所試。</string>
+    <string name="welcome_done_advice_body">1. 以擴充原主應用證之 — 如 Mihon 類源當試於 Mihon App。\n2. 若彼亦然，則屬維護擴充之藏：於藏處 URL 開稟告。\n3. 若唯 Amuratsu 然，則告於 Amuratsu 專案藏，並附源名、擴充版號與所試。</string>
     <string name="welcome_step_counter">第 %1$d 步，共 %2$d</string>
     <string name="welcome_action_configure_repos">設所選藏</string>
     <string name="welcome_action_install_count">裝擴充 %1$d 個</string>
@@ -2905,7 +2905,7 @@
     <string name="welcome_permissions_notifications_title">告警</string>
     <string name="welcome_permissions_notifications_summary">示下載、更新及奏者之告警。</string>
     <string name="welcome_permissions_packages_title">已裝之應用</string>
-    <string name="welcome_permissions_packages_summary">使 Kototoro 得察既裝之外掛及主應用（Mihon、Aniyomi 等）。載於清單且自動授之。</string>
+    <string name="welcome_permissions_packages_summary">使 Amuratsu 得察既裝之外掛及主應用（Mihon、Aniyomi 等）。載於清單且自動授之。</string>
     <string name="welcome_permissions_battery_title">背景存續</string>
     <string name="welcome_permissions_battery_summary">屏熄或機閒時，使背景下載與更新弗替。</string>
     <string name="welcome_permissions_battery_action">允之</string>
@@ -3321,11 +3321,11 @@
     <string name="pref_glass_blur_quality_performance">效能</string>
     <string name="pref_glass_blur_quality_balanced">平衡</string>
     <string name="pref_glass_blur_quality_quality">品質</string>
-    <string name="glass_material_family_kototoro">Kototoro（推薦）</string>
+    <string name="glass_material_family_kototoro">Amuratsu（推薦）</string>
     <string name="glass_material_family_haze">朦朧</string>
     <string name="glass_material_family_cupertino">Cupertino</string>
     <string name="glass_material_family_fluent">Fluent</string>
-    <string name="glass_material_kototoro">Kototoro（推薦）</string>
+    <string name="glass_material_kototoro">Amuratsu（推薦）</string>
     <string name="glass_material_haze_ultra_thin">極薄朦朧</string>
     <string name="glass_material_haze_thin">薄霧朦朧</string>
     <string name="glass_material_haze_regular">標準朦朧</string>

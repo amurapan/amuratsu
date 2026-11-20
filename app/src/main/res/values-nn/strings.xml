@@ -450,7 +450,7 @@
     <string name="page_save_manga_title_length">Mangatitellengd i lagra filnamn</string>
     <string name="page_save_manga_title_length_summary">Talet på mangatitelteikn som vert tekne vare på i lagra biletefilnamn (12–64)</string>
     <string name="pages_saved">Sider lagra</string>
-    <string name="cloudstream_newpipe_required">Denne utvidinga krev NewPipe-klasser som NewPipe-pakken i Kototoro ikkje har, så ho kan ikkje spela av videoar. Prøv å oppdater utvidinga eller Kototoro.</string>
+    <string name="cloudstream_newpipe_required">Denne utvidinga krev NewPipe-klasser som NewPipe-pakken i Amuratsu ikkje har, så ho kan ikkje spela av videoar. Prøv å oppdater utvidinga eller Amuratsu.</string>
     <string name="clear_chapter_thumbnails">Tøm miniatyrbilete for kapittel</string>
     <string name="continuous_horizontal">Kontinuerleg horisontalt</string>
     <string name="continuous_horizontal_reversed">Les frå høgre til venstre</string>
@@ -502,7 +502,7 @@
     <string name="replace_rule_disable_all_summary">Slutt mellombels å bruka erstatningsreglar</string>
     <string name="replace_rule_edit">Rediger regel</string>
     <string name="replace_rule_import">Importer Legado-reglar</string>
-    <string name="replace_rule_import_summary">Importer ei JSON-matrise eksportert av Legado eller Kototoro</string>
+    <string name="replace_rule_import_summary">Importer ei JSON-matrise eksportert av Legado eller Amuratsu</string>
     <string name="replace_rule_export">Eksporter reglar</string>
     <string name="replace_rule_export_summary">Eksporter reglar i eit kompatibelt JSON-format</string>
     <string name="replace_rule_empty">Ingen erstatningsreglar</string>
@@ -641,8 +641,8 @@
     <string name="clear_local_manga_storage_prompt">Vil du sletta alle lokalt lagra og importerta mangafiler? Dette kan ikkje gjerast om att.</string>
     <string name="clear_local_novel_storage_prompt">Vil du sletta alle lokalt lagra og importerta romandokument? Dette kan ikkje gjerast om att.</string>
     <string name="clear_local_video_storage_prompt">Vil du sletta alle lokalt lagra og importerta videofiler? Dette kan ikkje gjerast om att.</string>
-    <string name="welcome_intro_title">Konfigurer Kototoro</string>
-    <string name="welcome_intro_summary">Vel korleis du vil lesa og sjå på. Kototoro brukar no utvidelser basert på kjeldefamiliar for manga, romanar og video, inkludert JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader og Cloudstream.</string>
+    <string name="welcome_intro_title">Konfigurer Amuratsu</string>
+    <string name="welcome_intro_summary">Vel korleis du vil lesa og sjå på. Amuratsu brukar no utvidelser basert på kjeldefamiliar for manga, romanar og video, inkludert JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader og Cloudstream.</string>
     <string name="welcome_step_start">Start</string>
     <string name="welcome_step_sources">Kjelder</string>
     <string name="welcome_step_preferences">Eigenskapar</string>
@@ -652,11 +652,11 @@
     <string name="welcome_glass_preset_title">Glasfinish</string>
     <string name="welcome_glass_preset_summary">Vel førehandstilt glasfinish for iOS-stilen. Bryting er standard og kan finjusterast seinare i utsjånadsinnstillingane.</string>
     <string name="home_quick_action_wizard">Veiviser</string>
-    <string name="welcome_restore_summary">Har du brukt Kototoro før? Gjenopprett ei tryggingseining, logg inn for synkronisering, eller legg til lokale mapper først.</string>
+    <string name="welcome_restore_summary">Har du brukt Amuratsu før? Gjenopprett ei tryggingseining, logg inn for synkronisering, eller legg til lokale mapper først.</string>
     <string name="welcome_source_formats_title">Vel innhaldsformat</string>
     <string name="welcome_source_formats_summary">Desse filtera avgjer kva kjeldefamiliar som er aktiverte etter oppsettet.</string>
     <string name="welcome_ecosystems_title">Kjeldeøkosystem</string>
-    <string name="welcome_ecosystems_summary">Kototoro støttar fleire utvidingskjeldefamiliar for lesing og titting. Start med dei tilrådde arkiva her, og finjuster dei seinare i utvidingseininga.</string>
+    <string name="welcome_ecosystems_summary">Amuratsu støttar fleire utvidingskjeldefamiliar for lesing og titting. Start med dei tilrådde arkiva her, og finjuster dei seinare i utvidingseininga.</string>
     <string name="welcome_ecosystem_manga">Manga: JAR-tolkarar, Mihon, IReader, LNReader</string>
     <string name="welcome_ecosystem_novel">Roman: Legado, IReader, LNReader</string>
     <string name="welcome_ecosystem_video">Video: Aniyomi, TVBox, Cloudstream</string>
@@ -665,10 +665,10 @@
     <string name="welcome_preferences_summary">Vel språk og innhaldstypar. Du kan endre dette seinare i kjeldeinnstillingane.</string>
     <string name="welcome_spaces_title">Skiljrom for romma dine</string>
     <string name="welcome_spaces_summary">Rom gjev manga, romanar og anime uavhengig navigering, blaing og lesebruk. Avanserte alternativ og tilpassa rom er tilgjengelege seinare under Innstillingar &gt; Brukar &gt; Rom.</string>
-    <string name="welcome_ready_summary">Oppsettet er fullført. Kototoro vil aktivere kjelder som passar språka og formata dine. Du kan køyre veivisaren igjen under Innstillingar &gt; Innhaldskjelder &gt; Oppsettsveiviser.</string>
-    <string name="welcome_jar_install_success">Kototoro: Henta og installerte %1$d nyaste tolkningsmotorar frå nettskyen!</string>
-    <string name="welcome_jar_install_up_to_date">Kototoro: Skyverifisering fullført, lokale tolkarar er oppdaterte! (Last inn %1$d kjelder totalt)</string>
-    <string name="welcome_jar_install_failed">Kototoro: Feil ved lasting av tolkarar frå nettverket (%1$s), prøv igjen eller gå til innstillingar for å byte mellommellom-server</string>
+    <string name="welcome_ready_summary">Oppsettet er fullført. Amuratsu vil aktivere kjelder som passar språka og formata dine. Du kan køyre veivisaren igjen under Innstillingar &gt; Innhaldskjelder &gt; Oppsettsveiviser.</string>
+    <string name="welcome_jar_install_success">Amuratsu: Henta og installerte %1$d nyaste tolkningsmotorar frå nettskyen!</string>
+    <string name="welcome_jar_install_up_to_date">Amuratsu: Skyverifisering fullført, lokale tolkarar er oppdaterte! (Last inn %1$d kjelder totalt)</string>
+    <string name="welcome_jar_install_failed">Amuratsu: Feil ved lasting av tolkarar frå nettverket (%1$s), prøv igjen eller gå til innstillingar for å byte mellommellom-server</string>
     <string name="home_placeholder_title">Leseoversikt</string>
     <string name="home_placeholder_subtitle">Sjå nyleg lesing, oppdateringar, bibliotek, synkronisering og kjelder på éin stad.</string>
     <string name="home_hero_local_subtitle">Hald fram der du slapp, eller gå tilbake til det du opna nyleg.</string>
@@ -1112,7 +1112,7 @@
     <string name="import_content_type_auto">Auto-oppdag</string>
     <string name="import_completed_with_count">Importerte %1$d teikneserier</string>
     <string name="feed">Kjelde</string>
-    <string name="manga_error_description_pattern">Feildetaljer:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. Prøv å &lt;a href=\"%2$s\"&gt;opna mangaen i ein nettlesar&lt;/a&gt; for å sjå om han er tilgjengeleg frå kjelda&lt;br&gt;2. Kontroller at du brukar den &lt;a href=\"kototoro://about\"&gt;siste versjonen av Kototoro&lt;/a&gt;&lt;br&gt;3. Om han er tilgjengeleg, send ein feilrapport til utviklarane.</string>
+    <string name="manga_error_description_pattern">Feildetaljer:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. Prøv å &lt;a href=\"%2$s\"&gt;opna mangaen i ein nettlesar&lt;/a&gt; for å sjå om han er tilgjengeleg frå kjelda&lt;br&gt;2. Kontroller at du brukar den &lt;a href=\"amuratsu://about\"&gt;siste versjonen av Amuratsu&lt;/a&gt;&lt;br&gt;3. Om han er tilgjengeleg, send ein feilrapport til utviklarane.</string>
     <string name="history_shortcuts_summary">Gjer nylege mangaer tilgjengelege ved å halda inne appikonet</string>
     <string name="reader_control_ltr">Ergonomisk lesarkontroll</string>
     <string name="image_post_processing">Etterbehandling av bilete</string>
@@ -1232,7 +1232,7 @@
     <string name="export_backup_for_other_apps_summary">Vel ein målapp og lag ein kompatibel tryggleikskopi: Kotatsu, Mihon, Aniyomi eller Usagi.</string>
     <string name="export_backup_choose_target_app">Vel målapp</string>
     <string name="export_kotatsu_backup">Eksporter Kotatsu-tryggleikskopi</string>
-    <string name="export_kotatsu_backup_summary">Lag ein separat eldre tryggleikskopi for Kotatsu-familieappar utan Kototoro-spesifikke seksjonar.</string>
+    <string name="export_kotatsu_backup_summary">Lag ein separat eldre tryggleikskopi for Kotatsu-familieappar utan Amuratsu-spesifikke seksjonar.</string>
     <string name="export_kotatsu_backup_saved">Kotatsu-tryggleikskopi lagra</string>
     <string name="export_mihon_backup">Eksporter Mihon-tryggleikskopi</string>
     <string name="export_mihon_backup_summary">Eksporter favorittar, kategoriar og lese framdrift berre for Mihon-kjeldeoppføringar.</string>
@@ -1273,7 +1273,7 @@
     <string name="images_procy_description">Bruk wsrv.nl-tenesta til å redusera databruk og skunda på bildeframvising viss mogleg</string>
     <string name="invalid_port_number">Ugyldig portnummer</string>
     <string name="restore_kototoro_backup">Gjenopprett kopi</string>
-    <string name="restore_kototoro_backup_summary">Gjenopprett ein Kototoro-tryggingskopi frå kva som helst versjon, eller ein Kotatsu-tryggingskopi. Formatet vert oppdaga automatisk.</string>
+    <string name="restore_kototoro_backup_summary">Gjenopprett ein Amuratsu-tryggingskopi frå kva som helst versjon, eller ein Kotatsu-tryggingskopi. Formatet vert oppdaga automatisk.</string>
     <string name="restore_mode_replace_existing">Erstatt eksisterande data</string>
     <string name="restore_mode_replace_existing_summary">Seksjonar som vert gjenoppretta vert tømde først; favoritsar og historikk som manglar i tryggingskopien vert fjerna</string>
     <string name="restore_mode_merge_with_existing">Slå saman med eksisterande data</string>
@@ -2008,7 +2008,7 @@
     <string name="show_pages_thumbs">Vis miniatyrbilete for sider</string>
     <string name="show_pages_thumbs_summary">Aktiver \"Sider\"-fana på detaljvisninga</string>
     <string name="error_no_data_received">Mottok ingen data frå tenaren</string>
-    <string name="unsupported_backup_message">Vel ei gyldig Kototoro-tryggleikskopi</string>
+    <string name="unsupported_backup_message">Vel ei gyldig Amuratsu-tryggleikskopi</string>
     <string name="hours_short">%d t</string>
     <string name="minutes_short">%d m</string>
     <string name="seconds_short">%d s</string>
@@ -2060,8 +2060,8 @@
     <string name="chapters_read">Kapitler lest</string>
     <string name="chapters_left">Kapitler igjen</string>
     <string name="external_source">Ekstern/tillegg</string>
-    <string name="plugin_incompatible">Uforenelig tillegg eller intern feil. Forsikre deg om at du bruker den nyeste versjonen av tillegget og Kototoro</string>
-    <string name="plugin_incompatible_with_cause">Tilleggsfeil: %s\n Forsikre deg om at du bruker den nyeste versjonen av tillegget og Kototoro</string>
+    <string name="plugin_incompatible">Uforenelig tillegg eller intern feil. Forsikre deg om at du bruker den nyeste versjonen av tillegget og Amuratsu</string>
+    <string name="plugin_incompatible_with_cause">Tilleggsfeil: %s\n Forsikre deg om at du bruker den nyeste versjonen av tillegget og Amuratsu</string>
     <string name="plugin_missing_host_classes">%1$s kan ikke installeres fordi den avhenger av ustøttede %2$s-vertsklasser:\n%3$s</string>
     <string name="connection_ok">Tilkoblingen er OK</string>
     <string name="invalid_proxy_configuration">Ugyldig proxy-konfigurasjon</string>
@@ -2261,7 +2261,7 @@
     <string name="search_disabled_sources">Søk gjennom deaktiverte kjelder</string>
     <string name="error_details">Feildetaljar</string>
     <string name="error_disclaimer_manga">Prøv å opne mangaen i ein nettlesar for å forsikre deg om at han er tilgjengeleg frå kjelda si.</string>
-    <string name="error_disclaimer_app_outdated">Det ser ut til at Kototoro-versjonen din er utdatert. Installer den siste versjonen for å få alle tilgjengelege feilrettingar.</string>
+    <string name="error_disclaimer_app_outdated">Det ser ut til at Amuratsu-versjonen din er utdatert. Installer den siste versjonen for å få alle tilgjengelege feilrettingar.</string>
     <string name="error_disclaimer_report">Du kan sende ein feilrapport til utviklarane, dette hjelper oss å finne og rette feilen</string>
     <string name="enable_source_manga">Aktiver mangakjelde</string>
     <string name="enable_source_novel">Aktiver romankjelde</string>
@@ -2279,7 +2279,7 @@
     <string name="recommendation_novel">tilrådde romanar</string>
     <string name="recommendation_video">tilrådde videoar</string>
     <string name="link_to_manga_on_s">Lenkje til manga på %s</string>
-    <string name="link_to_manga_in_app">Lenkje til manga i Kototoro</string>
+    <string name="link_to_manga_in_app">Lenkje til manga i Amuratsu</string>
     <string name="clear_browser_data">Tøm nettlesardata</string>
     <string name="clear_browser_data_summary">Tøm nettlesardata som mellomlager og infokapslar. Åtvaring: Autorisering i innhaldskjelder kan bli ugyldig</string>
     <string name="no_write_permission_to_file">Har ikkje skriveløyve til ei fil</string>
@@ -2329,7 +2329,7 @@
     <string name="discord_token_hint">Lim inn Discord-polletten din her</string>
     <string name="discord_rpc_summary">Vis leseatusen din på Discord</string>
     <string name="obtain">Hent</string>
-    <string name="discord_rpc_description">Les manga på Kototoro – ein mangalesar-app</string>
+    <string name="discord_rpc_description">Les manga på Amuratsu – ein mangalesar-app</string>
     <string name="discord_logout_summary">Tøm den lagra Discord-autorisasjonen</string>
     <string name="reading_s">Les %s</string>
     <string name="read_on_s">Les på %s</string>
@@ -2357,7 +2357,7 @@
     <string name="sync_backend_switch_webdav_title">Byta til WebDAV-tryggleikskopi?</string>
     <string name="sync_backend_switch_webdav_confirm">Google Drive-synkronisering er for tida aktivert. Aktivering av WebDAV-tryggleikskopi vil slå av Google Drive-synkronisering samtidig som Google-pålogginga di vert behaldt.</string>
     <string name="sync_sign_in">Klargjer Google Drive-synkronisering</string>
-    <string name="sync_sign_in_summary">Brukar Google Drive-appdata med minimum tilgang til Drive-appdata for å synkronisera abonnement og oppdatera oppføringar. Kototoro kan ikkje få tilgang til Drive-filene dine.</string>
+    <string name="sync_sign_in_summary">Brukar Google Drive-appdata med minimum tilgang til Drive-appdata for å synkronisera abonnement og oppdatera oppføringar. Amuratsu kan ikkje få tilgang til Drive-filene dine.</string>
     <string name="google_drive_sync_unregistered_build_error">Google Drive-synkronisering er ikkje støtta i utviklings- eller nattversjonar. Bruk offisielle utgjevingar eller WebDAV-synkronisering.</string>
     <string name="sync_sign_out">Logg ut</string>
     <string name="sync_account">Innlogga</string>
@@ -2412,8 +2412,8 @@
     <string name="webdav_remote_backups_inspect">Sjekk eksterne kopier</string>
     <string name="webdav_remote_backups_inspect_summary">Last ned og stadfest om kvar eksterne tryggingskopiering kan gjenopprettast trygt.</string>
     <string name="webdav_remote_backups_clear">Tøm eksterne WebDAV-tryggingskopier</string>
-    <string name="webdav_remote_backups_clear_summary">Slett alle Kototoro-tryggingskopifiler på den oppsette WebDAV-banen. Lokale data vert ikkje endra.</string>
-    <string name="webdav_remote_backups_clear_confirm">Vil du slette alle Kototoro-tryggingskopifiler frå den oppsette WebDAV-banen? Lokale data vert ikkje endra.</string>
+    <string name="webdav_remote_backups_clear_summary">Slett alle Amuratsu-tryggingskopifiler på den oppsette WebDAV-banen. Lokale data vert ikkje endra.</string>
+    <string name="webdav_remote_backups_clear_confirm">Vil du slette alle Amuratsu-tryggingskopifiler frå den oppsette WebDAV-banen? Lokale data vert ikkje endra.</string>
     <string name="webdav_remote_backups_loading">Lastar WebDAV-tryggingskopier…</string>
     <string name="webdav_remote_backup_status_unknown">Ikkje kontrollert</string>
     <string name="webdav_remote_backup_status_restorable">Kan rettast</string>
@@ -2821,7 +2821,7 @@
     <string name="trust_and_add">Stol på og legg til</string>
     <string name="trust_extension_repository_message">Kjelde: %1$s\nNettside: %2$s\nSHA-256-fingeravtrykk:\n%3$s\n\nVerifiser dette fingeravtrykket med utgjevaren før du stolar på kjelda.</string>
     <string name="untrusted_extension_message">%1$s (%2$s) er installert, men signaturen samsvarar ikkje med det valde kjeldefingeravtrykket.\n\nKjeldefingeravtrykk: %3$s\n\nFjern den installerte pakken før du installerer på nytt frå denne kjelda.</string>
-    <string name="incompatible_extension_message">%1$s %2$s kan ikkje installeras fordi bibliotekversjonen (%3$s) er utanfor det støtta området til Kototoro.</string>
+    <string name="incompatible_extension_message">%1$s %2$s kan ikkje installeras fordi bibliotekversjonen (%3$s) er utanfor det støtta området til Amuratsu.</string>
     <string name="built_in_sources">Innebygd</string>
     <string name="select_all">Vel alle</string>
     <string name="deselect_all">Vel vekk alle</string>
@@ -2861,7 +2861,7 @@
     <string name="welcome_plugins_repo_yakateam">Yakateam-parserar</string>
     <string name="welcome_plugins_repo_redo">Redo-parserar</string>
     <string name="welcome_plugins_repo_uma">UMA (Tsuki-parserar)</string>
-    <string name="welcome_plugins_disclaimer">Desse tilleggsarkiva blir vedlikehaldne av uavhengige nettsamfunn. Utviklarane av Kototoro har ingen tilknytning, kontroll eller assosiasjon med desse tredjepartsarkiva. Eg stadfestar at eg set opp desse kjeldene på eige ansvar.</string>
+    <string name="welcome_plugins_disclaimer">Desse tilleggsarkiva blir vedlikehaldne av uavhengige nettsamfunn. Utviklarane av Amuratsu har ingen tilknytning, kontroll eller assosiasjon med desse tredjepartsarkiva. Eg stadfestar at eg set opp desse kjeldene på eige ansvar.</string>
     <string name="welcome_plugins_start_btn">Set opp arkiv</string>
     <string name="welcome_plugins_configured">Set opp %1$d nye kjelde-/arkivtypar: %2$s. Pakkar er ikkje lasta ned enno – installer tilhøyrande i neste steg.</string>
     <string name="welcome_plugins_configured_none">Ingen kjelde eller arkiv kunne setjast opp. Sjekk nettverket eller vel andre arkiv og prøv igjen.</string>
@@ -2891,22 +2891,22 @@
     <string name="welcome_install_system_launch_failed">Klarte ikkje å starte systeminstallasjonsprogrammet: %1$s</string>
     <string name="welcome_install_skip">Hopp over installasjonen – eg gjer det i utvidingsbehandlinga seinare</string>
     <string name="welcome_install_step_title">Installer utvidingar i bunt</string>
-    <string name="welcome_install_step_summary">Vel kjeldetpar og innstillingar, og la Kototoro laste ned og installere alt i bakgrunnen.</string>
+    <string name="welcome_install_step_summary">Vel kjeldetpar og innstillingar, og la Amuratsu laste ned og installere alt i bakgrunnen.</string>
     <string name="welcome_install_kinds_title">Kjeldetpar å installere</string>
     <string name="welcome_install_kinds_summary">Berre typane du har kryssa av for, blir handterte. Dei som ikkje er kryssa av for (t.d. Mihon, om du føretrekker det seinare), ligg att slik at du kan installere dei i utvidingsbehandlinga.</string>
     <string name="welcome_install_kinds_empty">Ingen lagre er konfigurierte enno. Gå tilbake og legg til lagre først.</string>
     <string name="welcome_install_nsfw_title">Inkluder NSFW-innhald</string>
     <string name="welcome_install_nsfw_summary">Av som standard – vakseninnhald blir filtrert bort frå installasjonslista.</string>
-    <string name="welcome_intro_app_title">Kototoro · Open kjeldekode-lesar</string>
-    <string name="welcome_intro_body">Kototoro er ein open kjeldekode-multimedielæsar/-spelar. Han støttar eit breitt økosystem av fellesskapsutvidingar, men inneheld ingen eigne innhaldskjelder.</string>
+    <string name="welcome_intro_app_title">Amuratsu · Open kjeldekode-lesar</string>
+    <string name="welcome_intro_body">Amuratsu er ein open kjeldekode-multimedielæsar/-spelar. Han støttar eit breitt økosystem av fellesskapsutvidingar, men inneheld ingen eigne innhaldskjelder.</string>
     <string name="welcome_intro_concepts_title">Tre konsept på 30 sekund</string>
     <string name="welcome_intro_repo_label">Lager</string>
     <string name="welcome_intro_repo_body">Ei nettadresse til ei tredjepartssamling av utvidingar, vedlikehalden av eit uavhengig fellesskap (t.d. Mihon-lagre, TVBox-lister eller LNReader-tilleggslagre).</string>
     <string name="welcome_intro_extension_label">Utviding</string>
-    <string name="welcome_intro_extension_body">Ei installerbar pakke i eit lager – ei JAR-fil, APK-fil eller JSON-liste. Installerte utvidingar gjev Kototoro evna til å lese eller spela av frå eit nettstad.</string>
+    <string name="welcome_intro_extension_body">Ei installerbar pakke i eit lager – ei JAR-fil, APK-fil eller JSON-liste. Installerte utvidingar gjev Amuratsu evna til å lese eller spela av frå eit nettstad.</string>
     <string name="welcome_intro_source_label">Kjelde</string>
     <string name="welcome_intro_source_body">Ei konkrete innhaldskjelde du ser i appen etter at ei utviding er installert eller importert – til dømes ei spesiell manga- eller videonettstad.</string>
-    <string name="welcome_intro_disclaimer">Bruk av tredjepartsutvidingar er heilt på eige ansvar: Køyretidsåtferd, lovlegkap og innhald blir ikkje kontrollerte av Kototoro-prosjektet.</string>
+    <string name="welcome_intro_disclaimer">Bruk av tredjepartsutvidingar er heilt på eige ansvar: Køyretidsåtferd, lovlegkap og innhald blir ikkje kontrollerte av Amuratsu-prosjektet.</string>
     <string name="welcome_intro_continue">Eg forstår – fortset</string>
     <string name="welcome_done_title">Nesten ferdig</string>
     <string name="welcome_done_summary">Oppsettoppsummeringa di og nokre tips.</string>
@@ -2915,10 +2915,10 @@
     <string name="welcome_done_json_note">JSON-baserte typar (Legado / TVBox / LNReader) blir importerte automatisk; dersom du òg la til andre JSON-lagre, må du importere dei i utvidingsbehandlinga.</string>
     <string name="welcome_done_title_finished">Oppsett fullført</string>
     <string name="welcome_done_summary_finished">Vegvisaren er ferdig – ingen lagre eller kjelder vart lagde til automatisk.</string>
-    <string name="welcome_done_body_finished">Kototoro la ikkje til nokon kjelder under oppsettet. Du kan leggje til eigne lagre og kjelder når som helst under Innstillingar → Innhaldskjelder (utvidingsbehandling).</string>
+    <string name="welcome_done_body_finished">Amuratsu la ikkje til nokon kjelder under oppsettet. Du kan leggje til eigne lagre og kjelder når som helst under Innstillingar → Innhaldskjelder (utvidingsbehandling).</string>
     <string name="welcome_done_advice_title">Om ei kjelde ikkje fungerer</string>
     <string name="welcome_done_advice_summary">Ein kort feilsøkingsveg, slik at dei rette personane får sjå rapporten.</string>
-    <string name="welcome_done_advice_body">1. Stadfest problemet ved å bruke den opphavlege vertsapplikasjonen til utvidinga – til dømes bør ei Mihon-kjelde testast i Mihon-appen.\n2. Om problemet skjer der òg, høyrer det til lageret som vedlikeheld utvidinga: opne ei sak på lageret si eiga nettadresse.\n3. Om det berre skjer i Kototoro, kan du rapportere det i Kototoro-prosjektlageret og inkludere kjeldenamnet, utvidingsversjonen og kva du prøvde.</string>
+    <string name="welcome_done_advice_body">1. Stadfest problemet ved å bruke den opphavlege vertsapplikasjonen til utvidinga – til dømes bør ei Mihon-kjelde testast i Mihon-appen.\n2. Om problemet skjer der òg, høyrer det til lageret som vedlikeheld utvidinga: opne ei sak på lageret si eiga nettadresse.\n3. Om det berre skjer i Amuratsu, kan du rapportere det i Amuratsu-prosjektlageret og inkludere kjeldenamnet, utvidingsversjonen og kva du prøvde.</string>
     <string name="welcome_step_counter">Steg %1$d av %2$d</string>
     <string name="welcome_action_configure_repos">Konfigurer valde lagre</string>
     <string name="welcome_action_install_count">Installer %1$d utvidingar</string>
@@ -2952,7 +2952,7 @@
     <string name="welcome_permissions_notifications_title">Varsel</string>
     <string name="welcome_permissions_notifications_summary">Viser varsel for nedlastingar, oppdateringar og avspelaren.</string>
     <string name="welcome_permissions_packages_title">Installerte appar</string>
-    <string name="welcome_permissions_packages_summary">Lèt Kototoro oppdaga allereie installerte utvidingar og vertsappar (Mihon, Aniyomi, …). Erklært i manifestet og gjeve automatisk.</string>
+    <string name="welcome_permissions_packages_summary">Lèt Amuratsu oppdaga allereie installerte utvidingar og vertsappar (Mihon, Aniyomi, …). Erklært i manifestet og gjeve automatisk.</string>
     <string name="welcome_permissions_battery_title">Bakgrunnsdrift</string>
     <string name="welcome_permissions_battery_summary">Hald nedlastingar og oppdateringar i bakgrunnen køyrande når skjermen er av eller enheten er inaktiv.</string>
     <string name="welcome_permissions_battery_action">Tillat</string>
@@ -3368,11 +3368,11 @@
     <string name="pref_glass_blur_quality_performance">Yting</string>
     <string name="pref_glass_blur_quality_balanced">Balansert</string>
     <string name="pref_glass_blur_quality_quality">Kvalitet</string>
-    <string name="glass_material_family_kototoro">Kototoro (Anbefalt)</string>
+    <string name="glass_material_family_kototoro">Amuratsu (Anbefalt)</string>
     <string name="glass_material_family_haze">Haze</string>
     <string name="glass_material_family_cupertino">Cupertino</string>
     <string name="glass_material_family_fluent">Fluent</string>
-    <string name="glass_material_kototoro">Kototoro (Anbefalt)</string>
+    <string name="glass_material_kototoro">Amuratsu (Anbefalt)</string>
     <string name="glass_material_haze_ultra_thin">Haze ultrakunst</string>
     <string name="glass_material_haze_thin">Haze tynn</string>
     <string name="glass_material_haze_regular">Haze vanleg</string>

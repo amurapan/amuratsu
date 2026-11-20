@@ -26,7 +26,7 @@ $taskProduct = $taskXml.Wix.Product
 if ($taskProduct.Package.InstallPrivileges -ne "limited") { throw "Installer must require only per-user privileges." }
 if ($taskProduct.UpgradeCode -ne "{78F89549-27EC-4C2C-8B87-297C43349A44}") { throw "Unexpected installer upgrade identity." }
 $taskInstall = $taskXml.SelectSingleNode('//*[local-name()="Directory" and @Id="INSTALLDIR"]')
-if ($taskInstall.Name -ne "Kototoro-App" -or $taskInstall.ParentNode.Id -ne "LocalAppDataFolder") {
+if ($taskInstall.Name -ne "Amuratsu-App" -or $taskInstall.ParentNode.Id -ne "LocalAppDataFolder") {
     throw "Program installation must be separated from LOCALAPPDATA/Kototoro user data."
 }
 $taskRegistry = @($taskXml.SelectNodes('//*[local-name()="RegistryValue"]'))
@@ -53,7 +53,7 @@ foreach ($taskFile in $taskFiles) {
     }
     # jpackage replaces build-only app/.jpackage.xml with this installed-package name marker.
     if ($taskRelative -eq "app\.package") {
-        if ([System.IO.File]::ReadAllText($taskExtractedFile) -cne "Kototoro") { throw "Unexpected installed-package marker." }
+        if ([System.IO.File]::ReadAllText($taskExtractedFile) -cne "Amuratsu") { throw "Unexpected installed-package marker." }
         $taskPackageMarkers++
         continue
     }
@@ -71,7 +71,7 @@ $taskImageCount = @(Get-ChildItem -LiteralPath "$taskImageRoot" -Recurse -File -
     Where-Object { $_.FullName -ne $taskImageMetadata.Replace('/', '\') }).Count
 if ($taskChecked -ne $taskImageCount) { throw "MSI omitted application image files: MSI=$taskChecked image=$taskImageCount" }
 $taskReport = @("MSI_CONTENTS_OK=$taskChecked", "JPACKAGE_METADATA=1 validated package marker; build-only image metadata omitted",
-    "INSTALL_DIRECTORY=LOCALAPPDATA/Kototoro-App",
+    "INSTALL_DIRECTORY=LOCALAPPDATA/Amuratsu-App",
     "USER_DATA_DIRECTORY=LOCALAPPDATA/Kototoro", "REGISTRY=HKCU", "UPGRADE_CODE=$($taskProduct.UpgradeCode)")
 $taskReport | Set-Content -LiteralPath (Join-Path "$taskOutputRoot" "result.txt") -Encoding UTF8
 $taskReport | Write-Output

@@ -41,7 +41,7 @@ def fetch(spec, pins, cache, supplied=None):
     with tempfile.NamedTemporaryFile(dir=cache, prefix="mpv-", suffix=".part", delete=False) as output:
         partial = Path(output.name)
         try:
-            request = urllib.request.Request(url, headers={"User-Agent": "Kototoro-macOS-build"})
+            request = urllib.request.Request(url, headers={"User-Agent": "Amuratsu-macOS-build"})
             with urllib.request.urlopen(request, timeout=120) as response:
                 shutil.copyfileobj(response, output)
             output.close()
@@ -174,7 +174,7 @@ def prepare(archive_path, output, pins, architecture):
             f'Pinned release: {pins["tag"]}; build profile: {pins["profile"]}.\n\n'
             "libmpv and its complete non-system dylib dependency closure are dynamically loaded from this directory.\n"
             "Exact component versions are in build-info.json; upstream licence texts are in licenses/.\n"
-            "The library may be replaced by a compatible build. Kototoro changes only install names, rpaths and\n"
+            "The library may be replaced by a compatible build. Amuratsu changes only install names, rpaths and\n"
             "local ad-hoc code signatures; runtime-manifest.json lists the resulting hashes and dependencies.\n"
         )
         # Replace only this build task's generated directory, after verification has completed.

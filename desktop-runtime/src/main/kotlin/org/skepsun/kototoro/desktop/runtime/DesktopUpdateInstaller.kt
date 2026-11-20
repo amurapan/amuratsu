@@ -19,7 +19,7 @@ enum class DesktopInstallKind {
     MACOS_APP,
 }
 
-/** The installed application image: `<root>/Kototoro.exe` beside `app/` and `runtime/`. */
+/** The installed application image: `<root>/Amuratsu.exe` beside `app/` and `runtime/`. */
 data class DesktopInstallLayout(val root: Path, val executable: Path, val kind: DesktopInstallKind)
 
 /**
@@ -40,7 +40,7 @@ data class DesktopStagedUpdate(
  * Finds the installed image and replaces it with a downloaded update.
  *
  * The application image and the user data live apart (`DesktopDataPaths` keeps the database, images and preferences
- * under `%LOCALAPPDATA%/Kototoro`, the program under `%LOCALAPPDATA%/Kototoro-App`), so replacing the image touches no
+ * under `%LOCALAPPDATA%/Kototoro`, the program under `%LOCALAPPDATA%/Amuratsu-App`), so replacing the image touches no
  * user data. The image cannot replace itself while it is running, so [apply] hands the swap to a small PowerShell
  * script that waits for this process to exit, copies the new image, and starts the app again.
  */
@@ -115,7 +115,7 @@ class DesktopUpdateInstaller(
         return script
     }
 
-    /** Expands the portable ZIP and returns the directory that holds `Kototoro.exe`. */
+    /** Expands the portable ZIP and returns the directory that holds `Amuratsu.exe`. */
     private fun expand(zip: Path, staging: Path): Path {
         if (Files.exists(staging, LinkOption.NOFOLLOW_LINKS)) staging.toFile().deleteRecursively()
         Files.createDirectories(staging)
@@ -137,13 +137,13 @@ class DesktopUpdateInstaller(
             }
         }
         return findImageRoot(normalizedStaging) ?: throw DesktopUpdateException(
-            DesktopRuntimeStrings.text("runtime.update.notAnImage", "the package is not a Kototoro image"))
+            DesktopRuntimeStrings.text("runtime.update.notAnImage", "the package is not a Amuratsu image"))
     }
 }
 
-/** The directory inside an expanded package that holds `Kototoro.exe`, at most one level down (`Kototoro/`). */
+/** The directory inside an expanded package that holds `Amuratsu.exe`, at most one level down (`Amuratsu/`). */
 internal fun findImageRoot(expanded: Path): Path? {
-    fun isImage(directory: Path) = Files.isRegularFile(directory.resolve("Kototoro.exe"), LinkOption.NOFOLLOW_LINKS) &&
+    fun isImage(directory: Path) = Files.isRegularFile(directory.resolve("Amuratsu.exe"), LinkOption.NOFOLLOW_LINKS) &&
         Files.isDirectory(directory.resolve("app"), LinkOption.NOFOLLOW_LINKS) &&
         Files.isDirectory(directory.resolve("runtime"), LinkOption.NOFOLLOW_LINKS)
     if (isImage(expanded)) return expanded
@@ -153,9 +153,9 @@ internal fun findImageRoot(expanded: Path): Path? {
 }
 
 /**
- * Reads the `reg query HKCU\Software\Microsoft\Windows\CurrentVersion\Uninstall /s /f Kototoro` output for the
+ * Reads the `reg query HKCU\Software\Microsoft\Windows\CurrentVersion\Uninstall /s /f Amuratsu` output for the
  * install location of a per-user package. The MSI writes `InstallLocation`, which is how an MSI installation is
- * told apart from an unpacked portable image: the two look identical on disk, both under `%LOCALAPPDATA%/Kototoro-App`.
+ * told apart from an unpacked portable image: the two look identical on disk, both under `%LOCALAPPDATA%/Amuratsu-App`.
  */
 internal fun parseMsiInstallLocation(output: String): Path? = output.lineSequence()
     .mapNotNull { line ->
@@ -172,7 +172,7 @@ fun locateInstallLayout(
     registryQuery: () -> String? = ::queryUninstallRegistry,
 ): DesktopInstallLayout? {
     val executable = executableFromAppPath(appPath) ?: executableFromClassPath() ?: return null
-    if (executable.fileName.toString() == "Kototoro") return macosInstallLayout(executable)
+    if (executable.fileName.toString() == "Amuratsu") return macosInstallLayout(executable)
     val root = executable.parent ?: return null
     val kind = if (registryQuery()?.let(::parseMsiInstallLocation)?.let { it == root.toAbsolutePath().normalize() } == true) {
         DesktopInstallKind.MSI
@@ -197,15 +197,15 @@ private fun executableFromClassPath(): Path? {
     if (appDirectory.fileName?.toString() != "app" || !Files.isDirectory(appDirectory)) return null
     val root = appDirectory.parent ?: return null
     if (root.fileName?.toString() == "Contents") {
-        return root.resolve("MacOS/Kototoro").takeIf { Files.isRegularFile(it, LinkOption.NOFOLLOW_LINKS) }
+        return root.resolve("MacOS/Amuratsu").takeIf { Files.isRegularFile(it, LinkOption.NOFOLLOW_LINKS) }
     }
-    return root.resolve("Kototoro.exe").takeIf { Files.isRegularFile(it, LinkOption.NOFOLLOW_LINKS) }
+    return root.resolve("Amuratsu.exe").takeIf { Files.isRegularFile(it, LinkOption.NOFOLLOW_LINKS) }
 }
 
 private fun queryUninstallRegistry(): String? = runCatching {
     val systemRoot = System.getenv("SystemRoot") ?: return@runCatching null
     val process = ProcessBuilder("$systemRoot\\System32\\reg.exe", "query",
-        "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall", "/s", "/f", "Kototoro")
+        "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall", "/s", "/f", "Amuratsu")
         .redirectErrorStream(true).start()
     val output = process.inputStream.bufferedReader().use { it.readText() }
     if (!process.waitFor(15, TimeUnit.SECONDS)) process.destroyForcibly()
@@ -226,7 +226,7 @@ internal fun updateScript(staged: DesktopStagedUpdate, log: Path, restart: Boole
         DesktopInstallKind.MACOS_APP -> error("macOS uses macosUpdateScript")
         DesktopInstallKind.PORTABLE -> """
             |${'$'}source = '${staged.packagePath.toString().escapeForPowerShell()}'
-            |if (!(Test-Path -LiteralPath (Join-Path ${'$'}source 'Kototoro.exe'))) { throw 'the staged image has no Kototoro.exe' }
+            |if (!(Test-Path -LiteralPath (Join-Path ${'$'}source 'Amuratsu.exe'))) { throw 'the staged image has no Amuratsu.exe' }
             |if (!(Test-Path -LiteralPath (Join-Path ${'$'}source 'app'))) { throw 'the staged image has no app directory' }
             |${'$'}copy = Start-Process -FilePath 'robocopy.exe' -ArgumentList @(
             |    ${'$'}source, '${root.escapeForPowerShell()}', '/E', '/R:2', '/W:1', '/NP', '/NFL', '/NDL', '/NJH', '/NJS'

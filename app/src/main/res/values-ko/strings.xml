@@ -87,7 +87,7 @@
     <string name="text_local_holder_primary">먼저 아무거나 저장해보세요</string>
     <string name="text_feed_holder">여기서 읽고 있는 만화의 새로운 챕터들을 확인할 수 있습니다</string>
     <string name="protect_application">앱 잠금 활성화</string>
-    <string name="protect_application_summary">Kototoro를 실행할 때마다 비밀번호 묻기</string>
+    <string name="protect_application_summary">Amuratsu를 실행할 때마다 비밀번호 묻기</string>
     <string name="check_for_updates">업데이트 확인하기</string>
     <string name="right_to_left">오른쪽에서 왼쪽</string>
     <string name="zoom_mode_fit_center">가운데 맞춤</string>
@@ -334,7 +334,7 @@
     <string name="contrast">차이</string>
     <string name="reset">초기화</string>
     <string name="text_unsaved_changes_prompt">저장되지 않은 변경 사항을 저장하거나 삭제하시겠습니까\?</string>
-    <string name="manga_error_description_pattern">오류 세부정보:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. &lt;a href=%2$s&gt;웹 브라우저에서 만화를 열어&lt;/a&gt; 소스에서 사용할 수 있는지 확인하세요&lt;br&gt;2. &lt;a href=kototoro://about&gt;최신 버전의 Kototoro&lt;/a&gt;&lt;br&gt;를 사용하고 있는지 확인하세요.3. 사용 가능한 경우 개발자에게 오류 보고서를 보냅니다.</string>
+    <string name="manga_error_description_pattern">오류 세부정보:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. &lt;a href=%2$s&gt;웹 브라우저에서 만화를 열어&lt;/a&gt; 소스에서 사용할 수 있는지 확인하세요&lt;br&gt;2. &lt;a href=amuratsu://about&gt;최신 버전의 Amuratsu&lt;/a&gt;&lt;br&gt;를 사용하고 있는지 확인하세요.3. 사용 가능한 경우 개발자에게 오류 보고서를 보냅니다.</string>
     <string name="quick_access">빠른 접근</string>
     <string name="home">홈</string>
     <string name="video_player_native_init_failed">이 기기에서 비디오 재생 엔진을 초기화하지 못했습니다. 번들 네이티브 라이브러리 및 C++ 런타임 패키징을 확인하세요.</string>
@@ -398,7 +398,7 @@
     <string name="page_save_manga_title_length">저장된 파일명의 만화 제목 길이</string>
     <string name="page_save_manga_title_length_summary">저장된 이미지 파일명에 유지할 만화 제목 글자수 (12–64)</string>
     <string name="pages_saved">페이지가 저장됨</string>
-    <string name="cloudstream_newpipe_required">이 확장에 Kototoro에 포함된 NewPipe에 없는 NewPipe 클래스가 필요하여 동영상을 재생할 수 없습니다. 확장이나 Kototoro를 업데이트해 보세요.</string>
+    <string name="cloudstream_newpipe_required">이 확장에 Amuratsu에 포함된 NewPipe에 없는 NewPipe 클래스가 필요하여 동영상을 재생할 수 없습니다. 확장이나 Amuratsu를 업데이트해 보세요.</string>
     <string name="clear_chapter_thumbnails">챕터 썸네일 삭제</string>
     <string name="continuous_horizontal">연속 가로 방향</string>
     <string name="continuous_horizontal_reversed">오른쪽에서 왼쪽으로 읽기</string>
@@ -450,7 +450,7 @@
     <string name="replace_rule_disable_all_summary">대체 규칙 적용을 일시적으로 중지</string>
     <string name="replace_rule_edit">규칙 편집</string>
     <string name="replace_rule_import">Legado 규칙 가져오기</string>
-    <string name="replace_rule_import_summary">Legado 또는 Kototoro에서 내보낸 JSON 배열 가져오기</string>
+    <string name="replace_rule_import_summary">Legado 또는 Amuratsu에서 내보낸 JSON 배열 가져오기</string>
     <string name="replace_rule_export">규칙 내보내기</string>
     <string name="replace_rule_export_summary">호환되는 JSON 형식으로 규칙 내보내기</string>
     <string name="replace_rule_empty">대체 규칙 없음</string>
@@ -586,8 +586,8 @@
     <string name="clear_local_manga_storage_prompt">로컬에 저장되고 가져온 모든 만화 파일을 삭제하시겠습니까? 이 작업은 취소할 수 없습니다.</string>
     <string name="clear_local_novel_storage_prompt">로컬에 저장되고 가져온 모든 소설 파일을 삭제하시겠습니까? 이 작업은 취소할 수 없습니다.</string>
     <string name="clear_local_video_storage_prompt">로컬에 저장 및 가져온 모든 동영상 파일을 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.</string>
-    <string name="welcome_intro_title">Kototoro 설정</string>
-    <string name="welcome_intro_summary">읽고 시청할 방식을 선택하세요. Kototoro는 이제 JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader 및 Cloudstream을 포함한 만화, 소설, 동영상용 플러그인 기반 소스 패밀리를 지원합니다.</string>
+    <string name="welcome_intro_title">Amuratsu 설정</string>
+    <string name="welcome_intro_summary">읽고 시청할 방식을 선택하세요. Amuratsu는 이제 JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader 및 Cloudstream을 포함한 만화, 소설, 동영상용 플러그인 기반 소스 패밀리를 지원합니다.</string>
     <string name="welcome_step_start">시작</string>
     <string name="welcome_step_sources">소스</string>
     <string name="welcome_step_preferences">환경 설정</string>
@@ -597,11 +597,11 @@
     <string name="welcome_glass_preset_title">글래스 피니시</string>
     <string name="welcome_glass_preset_summary">iOS 스타일의 글래스 피니시 프리셋을 선택하세요. 굴절 효과가 기본값이며 나중에 외관 설정에서 세부 조정할 수 있습니다.</string>
     <string name="home_quick_action_wizard">마법사</string>
-    <string name="welcome_restore_summary">Kototoro를 이전에 사용하셨나요? 백업을 복원하거나, 동기화를 위해 로그인하거나, 로컬 폴더를 먼저 추가하세요.</string>
+    <string name="welcome_restore_summary">Amuratsu를 이전에 사용하셨나요? 백업을 복원하거나, 동기화를 위해 로그인하거나, 로컬 폴더를 먼저 추가하세요.</string>
     <string name="welcome_source_formats_title">콘텐츠 형식 선택</string>
     <string name="welcome_source_formats_summary">이 필터는 설정 후 활성화할 소스 패밀리를 결정합니다.</string>
     <string name="welcome_ecosystems_title">소스 생태계</string>
-    <string name="welcome_ecosystems_summary">Kototoro는 읽기와 시청을 위한 여러 플러그인 소스 패밀리를 지원합니다. 여기서 추천 저장소로 시작한 후, 나중에 확장 프로그램 관리에서 세부 조정하세요.</string>
+    <string name="welcome_ecosystems_summary">Amuratsu는 읽기와 시청을 위한 여러 플러그인 소스 패밀리를 지원합니다. 여기서 추천 저장소로 시작한 후, 나중에 확장 프로그램 관리에서 세부 조정하세요.</string>
     <string name="welcome_ecosystem_manga">만화: JAR 파서, Mihon, IReader, LNReader</string>
     <string name="welcome_ecosystem_novel">소설: Legado, IReader, LNReader</string>
     <string name="welcome_ecosystem_video">동영상: Aniyomi, TVBox, Cloudstream</string>
@@ -610,10 +610,10 @@
     <string name="welcome_preferences_summary">언어와 콘텐츠 유형을 선택하세요. 나중에 소스 설정에서 변경할 수 있습니다.</string>
     <string name="welcome_spaces_title">공간 분리</string>
     <string name="welcome_spaces_summary">공간을 통해 만화, 소설, 애니메이션의 독립적인 탐색, 찾아보기 환경 설정, 읽기 또는 재생 컨텍스트를 유지할 수 있습니다. 고급 옵션과 사용자 지정 공간은 나중에 설정 ➔ 사용자 ➔ 공간에서 이용할 수 있습니다.</string>
-    <string name="welcome_ready_summary">설정이 완료되었습니다. Kototoro에서 선택한 언어 및 형식과 일치하는 소스가 활성화됩니다. 설정 ➔ 콘텐츠 소스 ➔ 설정 마법사에서 이 마법사를 다시 실행할 수 있습니다.</string>
-    <string name="welcome_jar_install_success">Kototoro: 클라우드 네트워크에서 최신 파서 엔진 %1$d개를 성공적으로 가져와 마운트했습니다!</string>
-    <string name="welcome_jar_install_up_to_date">Kototoro: 클라우드 확인 완료, 로컬 파서가 최신 버전입니다! (총 %1$d개 소스 로드됨)</string>
-    <string name="welcome_jar_install_failed">Kototoro: 파서 네트워크 로드 실패 (%1$s). 다시 시도하거나 설정에서 프록시 미러를 변경하세요.</string>
+    <string name="welcome_ready_summary">설정이 완료되었습니다. Amuratsu에서 선택한 언어 및 형식과 일치하는 소스가 활성화됩니다. 설정 ➔ 콘텐츠 소스 ➔ 설정 마법사에서 이 마법사를 다시 실행할 수 있습니다.</string>
+    <string name="welcome_jar_install_success">Amuratsu: 클라우드 네트워크에서 최신 파서 엔진 %1$d개를 성공적으로 가져와 마운트했습니다!</string>
+    <string name="welcome_jar_install_up_to_date">Amuratsu: 클라우드 확인 완료, 로컬 파서가 최신 버전입니다! (총 %1$d개 소스 로드됨)</string>
+    <string name="welcome_jar_install_failed">Amuratsu: 파서 네트워크 로드 실패 (%1$s). 다시 시도하거나 설정에서 프록시 미러를 변경하세요.</string>
     <string name="home_placeholder_title">읽기 대시보드</string>
     <string name="home_placeholder_subtitle">최근 읽은 내용, 업데이트, 라이브러리, 동기화 및 소스를 한곳에서 확인하세요.</string>
     <string name="home_hero_local_subtitle">이어서 읽거나 최근에 연 항목으로 바로 이동하세요.</string>
@@ -1217,7 +1217,7 @@
     <string name="export_backup_for_other_apps_summary">대상 앱을 선택하고 호환되는 백업 생성: Kotatsu, Mihon, Aniyomi, Usagi.</string>
     <string name="export_backup_choose_target_app">대상 앱 선택</string>
     <string name="export_kotatsu_backup">Kotatsu 백업 내보내기</string>
-    <string name="export_kotatsu_backup_summary">Kototoro 전용 섹션 없이 Kotatsu 계열 앱을 위한 별도의 레거시 백업을 생성합니다.</string>
+    <string name="export_kotatsu_backup_summary">Amuratsu 전용 섹션 없이 Kotatsu 계열 앱을 위한 별도의 레거시 백업을 생성합니다.</string>
     <string name="export_kotatsu_backup_saved">Kotatsu 백업이 저장되었습니다</string>
     <string name="export_mihon_backup">Mihon 백업 내보내기</string>
     <string name="export_mihon_backup_summary">Mihon 소스 항목에 대해서만 즐겨찾기, 카테고리, 읽기 진행 상황을 내보냅니다.</string>
@@ -1279,7 +1279,7 @@
     <string name="invert_colors">색상 반전</string>
     <string name="restore_summary">이전에 만든 백업 복원</string>
     <string name="restore_kototoro_backup">백업 복원</string>
-    <string name="restore_kototoro_backup_summary">모든 버전의 Kototoro 백업 또는 Kotatsu 백업을 복원합니다. 형식이 자동으로 감지됩니다.</string>
+    <string name="restore_kototoro_backup_summary">모든 버전의 Amuratsu 백업 또는 Kotatsu 백업을 복원합니다. 형식이 자동으로 감지됩니다.</string>
     <string name="restore_mode_replace_existing">기존 데이터 교체</string>
     <string name="restore_mode_replace_existing_summary">복원 중인 섹션이 먼저 지워지며 백업에 없는 즐겨찾기와 기록은 제거됩니다</string>
     <string name="restore_mode_merge_with_existing">기존 데이터와 병합</string>
@@ -2008,7 +2008,7 @@
     <string name="show_pages_thumbs">페이지 썸네일 표시</string>
     <string name="show_pages_thumbs_summary">상세 정보 화면에 \"페이지\" 탭 활성화</string>
     <string name="error_no_data_received">서버로부터 데이터를 받지 못했습니다</string>
-    <string name="unsupported_backup_message">올바른 Kototoro 백업 파일을 선택하세요</string>
+    <string name="unsupported_backup_message">올바른 Amuratsu 백업 파일을 선택하세요</string>
     <string name="hours_short">%d시간</string>
     <string name="minutes_short">%d분</string>
     <string name="seconds_short">%d초</string>
@@ -2060,8 +2060,8 @@
     <string name="chapters_read">읽은 챕터</string>
     <string name="chapters_left">남은 챕터</string>
     <string name="external_source">외부/플러그인</string>
-    <string name="plugin_incompatible">호환되지 않는 플러그인 또는 내부 오류입니다. 최신 버전의 플러그인과 Kototoro를 사용하고 있는지 확인하세요</string>
-    <string name="plugin_incompatible_with_cause">플러그인 오류: %s\n 최신 버전의 플러그인과 Kototoro를 사용하고 있는지 확인하세요</string>
+    <string name="plugin_incompatible">호환되지 않는 플러그인 또는 내부 오류입니다. 최신 버전의 플러그인과 Amuratsu를 사용하고 있는지 확인하세요</string>
+    <string name="plugin_incompatible_with_cause">플러그인 오류: %s\n 최신 버전의 플러그인과 Amuratsu를 사용하고 있는지 확인하세요</string>
     <string name="plugin_missing_host_classes">지원되지 않는 %2$s 호스트 클래스에 의존하므로 %1$s을(를) 설치할 수 없습니다:\n%3$s</string>
     <string name="connection_ok">연결 상태 양호</string>
     <string name="invalid_proxy_configuration">잘못된 프록시 설정</string>
@@ -2261,7 +2261,7 @@
     <string name="search_disabled_sources">비활성화된 소스에서 검색</string>
     <string name="error_details">오류 세부정보</string>
     <string name="error_disclaimer_manga">웹 브라우저에서 만화를 열어 소스에서 이용 가능한지 확인하세요.</string>
-    <string name="error_disclaimer_app_outdated">현재 사용 중인 Kototoro 버전이 구버전입니다. 모든 수정 사항을 적용하려면 최신 버전을 설치하세요.</string>
+    <string name="error_disclaimer_app_outdated">현재 사용 중인 Amuratsu 버전이 구버전입니다. 모든 수정 사항을 적용하려면 최신 버전을 설치하세요.</string>
     <string name="error_disclaimer_report">개발자에게 오류 보고서를 보내면 오류를 찾고 수정하는 데 도움이 됩니다</string>
     <string name="enable_source_manga">만화 소스 활성화</string>
     <string name="enable_source_novel">소설 소스 활성화</string>
@@ -2279,7 +2279,7 @@
     <string name="recommendation_novel">추천 소설</string>
     <string name="recommendation_video">추천 비디오</string>
     <string name="link_to_manga_on_s">%s의 만화 링크</string>
-    <string name="link_to_manga_in_app">Kototoro의 만화 링크</string>
+    <string name="link_to_manga_in_app">Amuratsu의 만화 링크</string>
     <string name="clear_browser_data">브라우저 데이터 지우기</string>
     <string name="clear_browser_data_summary">캐시 및 쿠키 같은 브라우저 데이터를 지웁니다. 경고: 콘텐츠 소스의 인증이 해제될 수 있습니다</string>
     <string name="no_write_permission_to_file">파일을 작성할 권한이 없습니다</string>
@@ -2329,7 +2329,7 @@
     <string name="discord_token_hint">여기에 Discord 토큰을 붙여넣으세요</string>
     <string name="discord_rpc_summary">Discord에 읽기 상태 표시</string>
     <string name="obtain">가져오기</string>
-    <string name="discord_rpc_description">Kototoro - 만화 리더 앱으로 만화 읽는 중</string>
+    <string name="discord_rpc_description">Amuratsu - 만화 리더 앱으로 만화 읽는 중</string>
     <string name="discord_logout_summary">저장된 Discord 인증 지우기</string>
     <string name="reading_s">%s 읽는 중</string>
     <string name="read_on_s">%s에서 읽기</string>
@@ -2357,7 +2357,7 @@
     <string name="sync_backend_switch_webdav_title">WebDAV 백업으로 전환하시겠습니까?</string>
     <string name="sync_backend_switch_webdav_confirm">현재 Google Drive 동기화가 활성화되어 있습니다. WebDAV 백업을 사용 설정하면 Google 로그인 상태는 유지되면서 Google Drive 동기화가 꺼집니다.</string>
     <string name="sync_sign_in">Google Drive 동기화 준비</string>
-    <string name="sync_sign_in_summary">구독 및 업데이트 기록을 동기화하기 위해 최소한의 Drive appdata 권한으로 Google Drive 앱 데이터를 사용합니다. Kototoro는 사용자의 Drive 파일에 접근할 수 없습니다.</string>
+    <string name="sync_sign_in_summary">구독 및 업데이트 기록을 동기화하기 위해 최소한의 Drive appdata 권한으로 Google Drive 앱 데이터를 사용합니다. Amuratsu는 사용자의 Drive 파일에 접근할 수 없습니다.</string>
     <string name="google_drive_sync_unregistered_build_error">개발 및 야간 빌드에서는 Google Drive 동기화가 지원되지 않습니다. 공식 릴리스 빌드나 WebDAV 동기화를 사용하세요.</string>
     <string name="sync_sign_out">로그아웃</string>
     <string name="sync_account">로그인됨</string>
@@ -2412,8 +2412,8 @@
     <string name="webdav_remote_backups_inspect">원격 백업 확인</string>
     <string name="webdav_remote_backups_inspect_summary">각 원격 백업을 다운로드하여 안전하게 복원할 수 있는지 확인합니다.</string>
     <string name="webdav_remote_backups_clear">원격 WebDAV 백업 지우기</string>
-    <string name="webdav_remote_backups_clear_summary">설정된 WebDAV 경로의 모든 Kototoro 백업 파일을 삭제합니다. 로컬 데이터는 변경되지 않습니다.</string>
-    <string name="webdav_remote_backups_clear_confirm">설정된 WebDAV 경로에서 모든 Kototoro 백업 파일을 삭제하시겠습니까? 로컬 데이터는 변경되지 않습니다.</string>
+    <string name="webdav_remote_backups_clear_summary">설정된 WebDAV 경로의 모든 Amuratsu 백업 파일을 삭제합니다. 로컬 데이터는 변경되지 않습니다.</string>
+    <string name="webdav_remote_backups_clear_confirm">설정된 WebDAV 경로에서 모든 Amuratsu 백업 파일을 삭제하시겠습니까? 로컬 데이터는 변경되지 않습니다.</string>
     <string name="webdav_remote_backups_loading">WebDAV 백업 불러오는 중…</string>
     <string name="webdav_remote_backup_status_unknown">확인되지 않음</string>
     <string name="webdav_remote_backup_status_restorable">복원 가능</string>
@@ -2821,7 +2821,7 @@
     <string name="trust_and_add">신뢰하고 추가</string>
     <string name="trust_extension_repository_message">저장소: %1$s\n웹사이트: %2$s\nSHA-256 지문:\n%3$s\n\n이 저장소를 신뢰하기 전에 게시자에게 지문을 확인하세요.</string>
     <string name="untrusted_extension_message">%1$s (%2$s)이(가) 설치되어 있으나 서명이 선택한 저장소 지문과 일치하지 않습니다.\n\n저장소 지문: %3$s\n\n이 저장소에서 다시 설치하려면 설치된 패키지를 제거하세요.</string>
-    <string name="incompatible_extension_message">%1$s %2$s의 라이브러리 버전(%3$s)이 Kototoro에서 지원하는 범위를 벗어나므로 설치할 수 없습니다.</string>
+    <string name="incompatible_extension_message">%1$s %2$s의 라이브러리 버전(%3$s)이 Amuratsu에서 지원하는 범위를 벗어나므로 설치할 수 없습니다.</string>
     <string name="built_in_sources">내장</string>
     <string name="select_all">모두 선택</string>
     <string name="deselect_all">모두 선택 해제</string>
@@ -2861,7 +2861,7 @@
     <string name="welcome_plugins_repo_yakateam">Yakateam 파서</string>
     <string name="welcome_plugins_repo_redo">Redo 파서</string>
     <string name="welcome_plugins_repo_uma">UMA (Tsuki 파서)</string>
-    <string name="welcome_plugins_disclaimer">이 확장 기능 저장소는 독립된 온라인 커뮤니티에서 유지 관리합니다. Kototoro 개발자는 이러한 타사 저장소와 어떠한 제휴, 제어 또는 연관도 없습니다. 본인은 이에 대한 책임이 본인에게 있음을 인지하고 이 소스들을 구성합니다.</string>
+    <string name="welcome_plugins_disclaimer">이 확장 기능 저장소는 독립된 온라인 커뮤니티에서 유지 관리합니다. Amuratsu 개발자는 이러한 타사 저장소와 어떠한 제휴, 제어 또는 연관도 없습니다. 본인은 이에 대한 책임이 본인에게 있음을 인지하고 이 소스들을 구성합니다.</string>
     <string name="welcome_plugins_start_btn">저장소 구성</string>
     <string name="welcome_plugins_configured">%1$d개의 새 소스/저장소 유형이 구성되었습니다: %2$s. 패키지가 아직 다운로드되지 않았습니다. 다음 단계에서 일치하는 패키지를 설치하세요.</string>
     <string name="welcome_plugins_configured_none">소스나 저장소를 구성할 수 없습니다. 네트워크를 확인하거나 다른 저장소를 선택하고 다시 시도하세요.</string>
@@ -2891,22 +2891,22 @@
     <string name="welcome_install_system_launch_failed">시스템 설치 프로그램을 실행할 수 없음: %1$s</string>
     <string name="welcome_install_skip">설치 건너뛰기 — 나중에 확장 관리에서 하겠습니다</string>
     <string name="welcome_install_step_title">확장 일괄 설치</string>
-    <string name="welcome_install_step_summary">사용할 소스 유형과설정을 선택하면 Kototoro가 백그라운드에서 모든 것을 다운로드하고 설치합니다.</string>
+    <string name="welcome_install_step_summary">사용할 소스 유형과설정을 선택하면 Amuratsu가 백그라운드에서 모든 것을 다운로드하고 설치합니다.</string>
     <string name="welcome_install_kinds_title">설치할 소스 유형</string>
     <string name="welcome_install_kinds_summary">체크한 유형만 처리됩니다. 체크하지 않은 항목(나중에 하려는 경우 Mihon 등)은 확장 관리에서 직접 설치할 수 있도록 유지됩니다.</string>
     <string name="welcome_install_kinds_empty">구성된 저장소가 없습니다. 돌아가서 저장소를 먼저 추가하세요.</string>
     <string name="welcome_install_nsfw_title">NSFW 콘텐츠 포함</string>
     <string name="welcome_install_nsfw_summary">기본적으로 꺼져 있음 — 성인 전용 패키지는 설치 목록에서 제외됩니다.</string>
-    <string name="welcome_intro_app_title">Kototoro · 오픈소스 리더</string>
-    <string name="welcome_intro_body">Kototoro는 오픈소스 멀티미디어 리더 / 플레이어입니다. 다양한 커뮤니티 확장 생태계를 지원하지만, 자체 콘텐츠 소스는 포함하지 않습니다.</string>
+    <string name="welcome_intro_app_title">Amuratsu · 오픈소스 리더</string>
+    <string name="welcome_intro_body">Amuratsu는 오픈소스 멀티미디어 리더 / 플레이어입니다. 다양한 커뮤니티 확장 생태계를 지원하지만, 자체 콘텐츠 소스는 포함하지 않습니다.</string>
     <string name="welcome_intro_concepts_title">30초 만에 알아보는 3가지 개념</string>
     <string name="welcome_intro_repo_label">저장소</string>
     <string name="welcome_intro_repo_body">독립적인 커뮤니티에서 유지 관리하는 타사 확장 컬렉션의 URL입니다(예: Mihon 저장소, TVBox 목록 또는 LNReader 플러그인 저장소).</string>
     <string name="welcome_intro_extension_label">확장</string>
-    <string name="welcome_intro_extension_body">저장소 내의 설치 가능한 패키지(JAR, APK 또는 JSON 목록)입니다. 설치된 확장을 통해 Kototoro에서 사이트의 콘텐츠를 읽거나 재생할 수 있습니다.</string>
+    <string name="welcome_intro_extension_body">저장소 내의 설치 가능한 패키지(JAR, APK 또는 JSON 목록)입니다. 설치된 확장을 통해 Amuratsu에서 사이트의 콘텐츠를 읽거나 재생할 수 있습니다.</string>
     <string name="welcome_intro_source_label">소스</string>
     <string name="welcome_intro_source_body">확장이 설치되거나 가져와진 후 앱에서 볼 수 있는 구체적인 콘텐츠 소스입니다(예: 특정 만화 또는 동영상 웹사이트).</string>
-    <string name="welcome_intro_disclaimer">타사 확장 사용에 따른 위험은 전적으로 사용자 본인에게 있습니다. 런타임 동작, 합법성 및 콘텐츠는 Kototoro 프로젝트에서 제어하지 않습니다.</string>
+    <string name="welcome_intro_disclaimer">타사 확장 사용에 따른 위험은 전적으로 사용자 본인에게 있습니다. 런타임 동작, 합법성 및 콘텐츠는 Amuratsu 프로젝트에서 제어하지 않습니다.</string>
     <string name="welcome_intro_continue">이해했습니다 — 계속</string>
     <string name="welcome_done_title">거의 완료되었습니다</string>
     <string name="welcome_done_summary">설정 요약 및 몇 가지 팁입니다.</string>
@@ -2915,10 +2915,10 @@
     <string name="welcome_done_json_note">JSON 기반 유형(Legado / TVBox / LNReader)은 자동으로 가져와집니다. 다른 JSON 저장소도 추가한 경우 확장 관리에서 가져오세요.</string>
     <string name="welcome_done_title_finished">설정 완료</string>
     <string name="welcome_done_summary_finished">마법사가 완료되었습니다. 저장소나 소스가 자동으로 추가되지 않았습니다.</string>
-    <string name="welcome_done_body_finished">Kototoro는 설정 중에 소스를 추가하지 않았습니다. 설정 → 콘텐츠 소스(확장 관리)에서 언제든지 자신만의 저장소와 소스를 추가할 수 있습니다.</string>
+    <string name="welcome_done_body_finished">Amuratsu는 설정 중에 소스를 추가하지 않았습니다. 설정 → 콘텐츠 소스(확장 관리)에서 언제든지 자신만의 저장소와 소스를 추가할 수 있습니다.</string>
     <string name="welcome_done_advice_title">소스가 작동하지 않는 경우</string>
     <string name="welcome_done_advice_summary">담당자가 문제를 올바르게 파악할 수 있도록 간단한 문제 해결 절차를 안내합니다.</string>
-    <string name="welcome_done_advice_body">1. 확장의 원래 호스트 앱을 사용하여 문제를 확인합니다. 예를 들어 Mihon 형식 소스는 Mihon 앱에서 테스트해야 합니다.\n2. 거기서도 문제가 발생한다면 해당 확장을 유지 관리하는 저장소의 문제입니다. 저장소의 URL에 이슈를 제기하세요.\n3. Kototoro에서만 발생하는 경우 Kototoro 프로젝트 저장소에 소스 이름, 확장 버전, 시도한 내용을 포함하여 신고해 주세요.</string>
+    <string name="welcome_done_advice_body">1. 확장의 원래 호스트 앱을 사용하여 문제를 확인합니다. 예를 들어 Mihon 형식 소스는 Mihon 앱에서 테스트해야 합니다.\n2. 거기서도 문제가 발생한다면 해당 확장을 유지 관리하는 저장소의 문제입니다. 저장소의 URL에 이슈를 제기하세요.\n3. Amuratsu에서만 발생하는 경우 Amuratsu 프로젝트 저장소에 소스 이름, 확장 버전, 시도한 내용을 포함하여 신고해 주세요.</string>
     <string name="welcome_step_counter">%2$d단계 중 %1$d단계</string>
     <string name="welcome_action_configure_repos">선택한 저장소 구성</string>
     <string name="welcome_action_install_count">확장 %1$d개 설치</string>
@@ -2952,7 +2952,7 @@
     <string name="welcome_permissions_notifications_title">알림</string>
     <string name="welcome_permissions_notifications_summary">다운로드, 업데이트 및 플레이어 알림을 표시합니다.</string>
     <string name="welcome_permissions_packages_title">설치된 앱</string>
-    <string name="welcome_permissions_packages_summary">Kototoro가 이미 설치된 확장 프로그램 및 호스트 앱(Mihon, Aniyomi 등)을 감지할 수 있도록 합니다. 매니페스트에 선언되어 자동으로 부여됩니다.</string>
+    <string name="welcome_permissions_packages_summary">Amuratsu가 이미 설치된 확장 프로그램 및 호스트 앱(Mihon, Aniyomi 등)을 감지할 수 있도록 합니다. 매니페스트에 선언되어 자동으로 부여됩니다.</string>
     <string name="welcome_permissions_battery_title">백그라운드 유지</string>
     <string name="welcome_permissions_battery_summary">화면이 꺼지거나 기기가 유휴 상태일 때 백그라운드 다운로드 및 업데이트가 계속 실행되도록 합니다.</string>
     <string name="welcome_permissions_battery_action">허용</string>
@@ -3368,11 +3368,11 @@
     <string name="pref_glass_blur_quality_performance">성능 우선</string>
     <string name="pref_glass_blur_quality_balanced">균형</string>
     <string name="pref_glass_blur_quality_quality">품질 우선</string>
-    <string name="glass_material_family_kototoro">Kototoro (권장)</string>
+    <string name="glass_material_family_kototoro">Amuratsu (권장)</string>
     <string name="glass_material_family_haze">Haze</string>
     <string name="glass_material_family_cupertino">Cupertino</string>
     <string name="glass_material_family_fluent">Fluent</string>
-    <string name="glass_material_kototoro">Kototoro (권장)</string>
+    <string name="glass_material_kototoro">Amuratsu (권장)</string>
     <string name="glass_material_haze_ultra_thin">Haze 울트라 씬</string>
     <string name="glass_material_haze_thin">Haze 씬</string>
     <string name="glass_material_haze_regular">Haze 레귤러</string>

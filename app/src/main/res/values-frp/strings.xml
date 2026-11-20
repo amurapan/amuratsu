@@ -120,7 +120,7 @@
     <string name="_import">Emportar</string>
     <string name="delete">Suprimir</string>
     <string name="operation_not_supported">Ceta oficioun n\'est pas sotengua</string>
-    <string name="cloudstream_newpipe_required">Cesta èstension bessonye des classes NewPipe que lo NewPipe de Kototoro at pas, donc el pôt pas juar los vidiyos. Proveâd de betar a jorn l\'èstension ou Kototoro.</string>
+    <string name="cloudstream_newpipe_required">Cesta èstension bessonye des classes NewPipe que lo NewPipe de Amuratsu at pas, donc el pôt pas juar los vidiyos. Proveâd de betar a jorn l\'èstension ou Amuratsu.</string>
     <string name="text_file_not_supported">Chouèsisséd un fichiér ZIP ou CBZ.</string>
     <string name="no_description">Pâ de d\'èscrizion</string>
     <string name="clear_pages_cache">Èfaciér lo cache des pâges</string>
@@ -315,7 +315,7 @@
     <string name="enter_password">Entrer le mot de passe</string>
     <string name="wrong_password">Mot de passe fautive</string>
     <string name="protect_application">Protéder l\'appli</string>
-    <string name="protect_application_summary">Demander le mot de passe oû d\'arriver Kototoro</string>
+    <string name="protect_application_summary">Demander le mot de passe oû d\'arriver Amuratsu</string>
     <string name="repeat_password">Répéter le mot de passe</string>
     <string name="passwords_mismatch">Mot de passe désaccordantes</string>
     <string name="about">A propos</string>
@@ -422,8 +422,8 @@
     <string name="clear_local_novel_storage_prompt">Suprimir totes los fichièrs de roman enregistrats e importats localament ? Aquò se pòt pas anullar.</string>
     <string name="clear_local_video_storage_prompt">Suprimir totes los fichièrs de vidèo enregistrats e importats localament ? Aquò se pòt pas anullar.</string>
     <string name="welcome">Benvenguda</string>
-    <string name="welcome_intro_title">Configurar Kototoro</string>
-    <string name="welcome_intro_summary">Causissètz vòstre biais de legir e de veire. Kototoro utiliza ara de familhas de fonts basadas sus de gredons per los mangas, romans e vidèos, incluent JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader e Cloudstream.</string>
+    <string name="welcome_intro_title">Configurar Amuratsu</string>
+    <string name="welcome_intro_summary">Causissètz vòstre biais de legir e de veire. Amuratsu utiliza ara de familhas de fonts basadas sus de gredons per los mangas, romans e vidèos, incluent JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader e Cloudstream.</string>
     <string name="welcome_step_start">Començar</string>
     <string name="welcome_step_sources">Fonts</string>
     <string name="welcome_step_preferences">Preferéncias</string>
@@ -433,11 +433,11 @@
     <string name="welcome_glass_preset_title">Acabament de vèire</string>
     <string name="welcome_glass_preset_summary">Causissètz lo predefini d\'acabament de vèire per l\'estil iOS. La refraccion es per defaut e se pòt afinar mai tard dins los reglatges d\'aparéncia.</string>
     <string name="home_quick_action_wizard">Assistent</string>
-    <string name="welcome_restore_summary">Ja avètz utilizat Kototoro abans ? Restauratz una sauvararda, connectatz-vos per sincronizar o apondètz de dorsièrs locals primièr.</string>
+    <string name="welcome_restore_summary">Ja avètz utilizat Amuratsu abans ? Restauratz una sauvararda, connectatz-vos per sincronizar o apondètz de dorsièrs locals primièr.</string>
     <string name="welcome_source_formats_title">Causir los formats de contengut</string>
     <string name="welcome_source_formats_summary">Aquestes filtres decidisson quinas familhas de fonts son activadas un còp la configuracion feita.</string>
     <string name="welcome_ecosystems_title">Ecosistèma de fonts</string>
-    <string name="welcome_ecosystems_summary">Kototoro subrevesís mantuna familha de fonts de gredons per legir e veire. Començatz amb los repertòris recomandats aicí, puèi afinatz-los mai tard dins la gestion de las extensions.</string>
+    <string name="welcome_ecosystems_summary">Amuratsu subrevesís mantuna familha de fonts de gredons per legir e veire. Començatz amb los repertòris recomandats aicí, puèi afinatz-los mai tard dins la gestion de las extensions.</string>
     <string name="welcome_ecosystem_manga">Manga : analizaires JAR, Mihon, IReader, LNReader</string>
     <string name="welcome_ecosystem_novel">Roman : Legado, IReader, LNReader</string>
     <string name="welcome_ecosystem_video">Vidèo : Aniyomi, TVBox, Cloudstream</string>
@@ -446,10 +446,10 @@
     <string name="welcome_preferences_summary">Causissètz las lengas e los tipes de contengut. O podètz modificar mai tard dins los reglatges de font.</string>
     <string name="welcome_spaces_title">Separar vòstres espacis</string>
     <string name="welcome_spaces_summary">Los espacis donan als mangas, romans e animes una navigacion independenta. Opcions avançadas dins Reglatges / Utilizaire / Espacis.</string>
-    <string name="welcome_ready_summary">Configuracion acabada. Kototoro activarà las fonts de vòstras lengas. Podètz lo refar dins Reglatges / Fonts de contengut / Assistent.</string>
-    <string name="welcome_jar_install_success">Kototoro : %1$d motors d\'analisi recuperats e montats amb succès dempuèi lo ret !</string>
-    <string name="welcome_jar_install_up_to_date">Kototoro : Verificacion pel ret acabada, los analizaires locals son a jorn ! (%1$d fonts cargadas en tot)</string>
-    <string name="welcome_jar_install_failed">Kototoro : Fracàs del cargament pel ret dels analizaires (%1$s), tornatz ensajar o anatz dins los reglatges per cambiar de miralh de proxy</string>
+    <string name="welcome_ready_summary">Configuracion acabada. Amuratsu activarà las fonts de vòstras lengas. Podètz lo refar dins Reglatges / Fonts de contengut / Assistent.</string>
+    <string name="welcome_jar_install_success">Amuratsu : %1$d motors d\'analisi recuperats e montats amb succès dempuèi lo ret !</string>
+    <string name="welcome_jar_install_up_to_date">Amuratsu : Verificacion pel ret acabada, los analizaires locals son a jorn ! (%1$d fonts cargadas en tot)</string>
+    <string name="welcome_jar_install_failed">Amuratsu : Fracàs del cargament pel ret dels analizaires (%1$s), tornatz ensajar o anatz dins los reglatges per cambiar de miralh de proxy</string>
     <string name="home_placeholder_title">Tableau de lèktur</string>
     <string name="home_placeholder_subtitle">Vèyè le lèktur réçant, le mizajou, la bibliotèk, la sinkronizasyon é le sours an un sèl lèv.</string>
     <string name="home_hero_local_subtitle">Repran la oou tu l\'a lésé, ou rètoun anou su se ki tu a wè réçaman.</string>
@@ -1027,7 +1027,7 @@
     <string name="import_completed_hint">Vos pouede suprimar lo fichiér d\'origine du depôs por gendar de la place</string>
     <string name="import_will_start_soon">L\'importacion va començar bientôt</string>
     <string name="feed"> Flux</string>
-    <string name="manga_error_description_pattern">Dètaly de l\'èror :&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. Èprovar de &lt;a href=\"%2$s\"&gt;s\'ovrir lo manga dens un navigator web&lt;/a&gt; por sè vèrifiér s\'il est disponiblo sur sa sôrsa&lt;br&gt;2. S\'assurance que vos utiliseye la &lt;a href=\"kototoro://about\"&gt;darniér vèrsion de Kototoro&lt;/a&gt;&lt;br&gt;3. S\'il est disponiblo, mandar un rapôrt d\'èror ux dèvelopors.</string>
+    <string name="manga_error_description_pattern">Dètaly de l\'èror :&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. Èprovar de &lt;a href=\"%2$s\"&gt;s\'ovrir lo manga dens un navigator web&lt;/a&gt; por sè vèrifiér s\'il est disponiblo sur sa sôrsa&lt;br&gt;2. S\'assurance que vos utiliseye la &lt;a href=\"amuratsu://about\"&gt;darniér vèrsion de Amuratsu&lt;/a&gt;&lt;br&gt;3. S\'il est disponiblo, mandar un rapôrt d\'èror ux dèvelopors.</string>
     <string name="history_shortcuts">Fichie des darins mangas</string>
     <string name="history_shortcuts_summary">Fâre los darins mangas disponiblos en tenant appuié sur l\'icôna de l\'aplicacion</string>
     <string name="reader_control_ltr_summary">Pas changiér lo sens de cambiament de pâja d\'aprés lo mode lèiseur, p. èx. l\'apuyament sur la tuche drêta passe adè mès a la pâja siuventa. Ceti ôpzion afècte solament los aPARelys de sôrt matèrièl</string>
@@ -1196,7 +1196,7 @@
     <string name="export_backup_for_other_apps_summary">Chwazi yon aplikasyon sib epi kreye yon sekou konpatib: Kotatsu, Mihon, Aniyomi, oswa Usagi.</string>
     <string name="export_backup_choose_target_app">Chwazi aplikasyon sib</string>
     <string name="export_kotatsu_backup">Ekspòte sekou Kotatsu</string>
-    <string name="export_kotatsu_backup_summary">Kreye yon sekou eritaj separe pou aplikasyon fanmi Kotatsu san seksyon espesifik Kototoro.</string>
+    <string name="export_kotatsu_backup_summary">Kreye yon sekou eritaj separe pou aplikasyon fanmi Kotatsu san seksyon espesifik Amuratsu.</string>
     <string name="export_kotatsu_backup_saved">Sekou Kotatsu anrejistre</string>
     <string name="export_mihon_backup">Ekspòte sekou Mihon</string>
     <string name="export_mihon_backup_summary">Ekspòte sèlman favè, kategori, ak pwogrè lekti pou antre sous Mihon yo.</string>
@@ -1268,7 +1268,7 @@
     <string name="data_and_privacy">Donès et confidensialitat</string>
     <string name="restore_summary">Restaurar una sôvgèrda prècedenta</string>
     <string name="restore_kototoro_backup">Restaurar la sôvgèrda</string>
-    <string name="restore_kototoro_backup_summary">Restaurar una sôvgèrda de Kototoro de totes botes versions, ou ben una sôvgèrda de Kotatsu. Lo format est dètèctè otonomicament.</string>
+    <string name="restore_kototoro_backup_summary">Restaurar una sôvgèrda de Amuratsu de totes botes versions, ou ben una sôvgèrda de Kotatsu. Lo format est dètèctè otonomicament.</string>
     <string name="restore_mode_replace_existing">Remplaciér les donès ègzistentes</string>
     <string name="restore_mode_replace_existing_summary">Les sions a restaurar sont nètiyès d\'abòrd ; los favorits et l\'historico absents de la sôvgèrda sont suprimès</string>
     <string name="restore_mode_merge_with_existing">Fusionar avouéc les donès ègzistentes</string>
@@ -2005,7 +2005,7 @@
     <string name="show_pages_thumbs">Afficher les vignettes des pages</string>
     <string name="show_pages_thumbs_summary">Activer l\'onglel « Pâges » dens l\'écrans des détails</string>
     <string name="error_no_data_received">Niona baleta l\'est arçujue de la servèra</string>
-    <string name="unsupported_backup_message">Volès chaessir un bon fichiér de sôvgarda Kototoro</string>
+    <string name="unsupported_backup_message">Volès chaessir un bon fichiér de sôvgarda Amuratsu</string>
     <string name="hours_short">%d h</string>
     <string name="minutes_short">%d m</string>
     <string name="seconds_short">%d s</string>
@@ -2057,8 +2057,8 @@
     <string name="chapters_read">Chapitres leus</string>
     <string name="chapters_left">Chapitres restants</string>
     <string name="external_source">Èkstèrnal/plugin</string>
-    <string name="plugin_incompatible">Plugin enkontipatib ou eror entèrn. Asse-vou ki vos tolere drî djiyon d\' el vèsion di l\' plugin eyet di Kototoro</string>
-    <string name="plugin_incompatible_with_cause">Eror do plugin : %s\n Asse-vou ki vos tolere drî djiyon d\' el vèsion di l\' plugin eyet di Kototoro</string>
+    <string name="plugin_incompatible">Plugin enkontipatib ou eror entèrn. Asse-vou ki vos tolere drî djiyon d\' el vèsion di l\' plugin eyet di Amuratsu</string>
+    <string name="plugin_incompatible_with_cause">Eror do plugin : %s\n Asse-vou ki vos tolere drî djiyon d\' el vèsion di l\' plugin eyet di Amuratsu</string>
     <string name="plugin_missing_host_classes">%1$s n\' pout nén esse instalé paski l\' depind di classes d\' hôte %2$s nén sopotchous :\n%3$s</string>
     <string name="connection_ok">Coneksion est divyinne</string>
     <string name="invalid_proxy_configuration">Måva configüråcion do procsî</string>
@@ -2259,7 +2259,7 @@
     <string name="search_disabled_sources">Recercar dins las fonts desactivadas</string>
     <string name="error_details">Detalhs de l\'error</string>
     <string name="error_disclaimer_manga">Ensajatz d\'dobrir lo manga dins un navigador web per vos assegurar qu\'es disponible sus sa font.</string>
-    <string name="error_disclaimer_app_outdated">Sembla que vòstra version de Kototoro siá obsolèta. Installatz la darrièra version per aver totas las correccions.</string>
+    <string name="error_disclaimer_app_outdated">Sembla que vòstra version de Amuratsu siá obsolèta. Installatz la darrièra version per aver totas las correccions.</string>
     <string name="error_disclaimer_report">Podètz enviar un rapòrt d\'error als desvolopaires, aquò nos ajudarà a trobar e corregir l\'error</string>
     <string name="enable_source_manga">Activar la font de manga</string>
     <string name="enable_source_novel">Activar la font de roman</string>
@@ -2277,7 +2277,7 @@
     <string name="recommendation_novel">romans recomandats</string>
     <string name="recommendation_video">vidèos recomandadas</string>
     <string name="link_to_manga_on_s">Lien vers ech manga dseur %s</string>
-    <string name="link_to_manga_in_app">Ligam cap al manga dins Kototoro</string>
+    <string name="link_to_manga_in_app">Ligam cap al manga dins Amuratsu</string>
     <string name="clear_browser_data">Escafar donadas navigador</string>
     <string name="clear_browser_data_summary">Escafar las donadas del navigador coma lo cachièr e los cookies. Atencion : L\'autorizacion dins las fonts de contengut pòt venir invalida</string>
     <string name="no_write_permission_to_file">Pà d dèt d pèrmisyon d skriyri o fichié</string>
@@ -2327,7 +2327,7 @@
     <string name="discord_token_hint">Kolé ton jeton Discord isi</string>
     <string name="discord_rpc_summary">Montré ton éta di lèktur anlèr Discord</string>
     <string name="obtain">Gen</string>
-    <string name="discord_rpc_description">Lèktur manga an Kototoro - aplikasyon lèrèdè di manga</string>
+    <string name="discord_rpc_description">Lèktur manga an Amuratsu - aplikasyon lèrèdè di manga</string>
     <string name="discord_logout_summary">Nètway autorizasyon Discord anrèjistré</string>
     <string name="reading_s">Lèktur %s</string>
     <string name="read_on_s">Legere en %s</string>
@@ -2355,7 +2355,7 @@
     <string name="sync_backend_switch_webdav_title">Passar a copia WebDAV?</string>
     <string name="sync_backend_switch_webdav_confirm">Le synchronisation Google Drive es currently habilitate. Habiliter le copia de securitate WebDAV disactivara le synchronisation Google Drive durante que tu session de Google remane aperte.</string>
     <string name="sync_sign_in">Preparar synchronisation Google Drive</string>
-    <string name="sync_sign_in_summary">Usa datos de application de Google Drive con le permission minime de appdata de Drive pro synchronisar subscriptiones e actualizar registros. Kototoro non pote acceder a tu files de Drive.</string>
+    <string name="sync_sign_in_summary">Usa datos de application de Google Drive con le permission minime de appdata de Drive pro synchronisar subscriptiones e actualizar registros. Amuratsu non pote acceder a tu files de Drive.</string>
     <string name="google_drive_sync_unregistered_build_error">Le synchronisation Google Drive non es supportate in versiones de disveloppamento o nocturne. Per favor usa versiones official o synchronisation WebDAV.</string>
     <string name="sync_sign_out">Desconnectar</string>
     <string name="sync_account">Session aperte</string>
@@ -2410,8 +2410,8 @@
     <string name="webdav_remote_backups_inspect">Verificar còpias distantas</string>
     <string name="webdav_remote_backups_inspect_summary">Telecargar e verificar se cada salvament distant pòt èsser restaurat segurament.</string>
     <string name="webdav_remote_backups_clear">Escafar los salvaments WebDAV distants</string>
-    <string name="webdav_remote_backups_clear_summary">Suprimir totes los fichièrs de salvament Kototoro sul camin WebDAV configurat. Las donadas localas son pas modificadas.</string>
-    <string name="webdav_remote_backups_clear_confirm">Suprimir totes los fichièrs de salvament Kototoro del camin WebDAV configurat ? Las donadas localas seràn pas modificadas.</string>
+    <string name="webdav_remote_backups_clear_summary">Suprimir totes los fichièrs de salvament Amuratsu sul camin WebDAV configurat. Las donadas localas son pas modificadas.</string>
+    <string name="webdav_remote_backups_clear_confirm">Suprimir totes los fichièrs de salvament Amuratsu del camin WebDAV configurat ? Las donadas localas seràn pas modificadas.</string>
     <string name="webdav_remote_backups_loading">Cargament dels salvaments WebDAV…</string>
     <string name="webdav_remote_backup_status_unknown">Non verificat</string>
     <string name="webdav_remote_backup_status_restorable">Restaurable</string>
@@ -2819,7 +2819,7 @@
     <string name="trust_and_add">Fisar e apondre</string>
     <string name="trust_extension_repository_message">Depaus : %1$s\nSit web : %2$s\nEmprenta SHA-256 :\n%3$s\n\nVerificatz aquesta emprenta amb l\'editor abans de fisar aqueste depaus.</string>
     <string name="untrusted_extension_message">%1$s (%2$s) es enstalat, mas sa signatura correspond pas a l\'emprenta del depaus seleccionat.\n\nEmprenta del depaus : %3$s\n\nTolissatz lo paquet enstalat abans de lo tornar enstalar dempuèi aqueste depaus.</string>
-    <string name="incompatible_extension_message">%1$s %2$s se pòt pas enstalar pr\'amor que sa version de librariá (%3$s) es fòra de la gama suportada per Kototoro.</string>
+    <string name="incompatible_extension_message">%1$s %2$s se pòt pas enstalar pr\'amor que sa version de librariá (%3$s) es fòra de la gama suportada per Amuratsu.</string>
     <string name="built_in_sources">Integrat</string>
     <string name="select_all">Seleccionar tot</string>
     <string name="deselect_all">Deseleccionar tot</string>
@@ -2859,7 +2859,7 @@
     <string name="welcome_plugins_repo_yakateam">Prizè Yakateam</string>
     <string name="welcome_plugins_repo_redo">Prizè Redo</string>
     <string name="welcome_plugins_repo_uma">UMA (Prizè Tsuki)</string>
-    <string name="welcome_plugins_disclaimer">Repozitwa ekstansyon sa yo antretyen pa kominote an liy endepandan. Devlopè Kototoro yo pa gen okenn afilyasyon, kontwòl, oswa asosyasyon ak repozitwa twazyèm pati sa yo. Mwen rekonèt ke m ap konfigure sous sa yo sou pwòp ris mwen.</string>
+    <string name="welcome_plugins_disclaimer">Repozitwa ekstansyon sa yo antretyen pa kominote an liy endepandan. Devlopè Amuratsu yo pa gen okenn afilyasyon, kontwòl, oswa asosyasyon ak repozitwa twazyèm pati sa yo. Mwen rekonèt ke m ap konfigure sous sa yo sou pwòp ris mwen.</string>
     <string name="welcome_plugins_start_btn">Konfigure repozitwa yo</string>
     <string name="welcome_plugins_configured">Configurat %1$d tipe(s): %2$s. Installatz los compatibles a l\'etapa seguenta.</string>
     <string name="welcome_plugins_configured_none">Okenn sous oswa repozitwa nèt pa t kapab konfigure. Tcheke rezo ou oswa chwazi lòt repozitwa epi eseye ankò.</string>
@@ -2889,22 +2889,22 @@
     <string name="welcome_install_system_launch_failed">Enposib pou lanse enstalatè sistèm lan: %1$s</string>
     <string name="welcome_install_skip">Omet enstalasyon an — m ap fè l pita nan Jesyon Ekstansyon</string>
     <string name="welcome_install_step_title">Enstale ekstansyon an lo</string>
-    <string name="welcome_install_step_summary">Chwazi ki kalite sous ak paramèt pou itilize, epi kite Kototoro telechaje epi enstale tout bagay an tèt.</string>
+    <string name="welcome_install_step_summary">Chwazi ki kalite sous ak paramèt pou itilize, epi kite Amuratsu telechaje epi enstale tout bagay an tèt.</string>
     <string name="welcome_install_kinds_title">Kalite sous pou enstale</string>
     <string name="welcome_install_kinds_summary">Sèlman kalite ou tcheke yo pral jere. Sa yo ki pa tcheke (pa egzanp Mihon, si ou pito fè l pita) ap rete pou ou enstale nan Jesyon Ekstansyon.</string>
     <string name="welcome_install_kinds_empty">Pa gen repozitwa ki konfigure ankò. Retounen epi ajoute repozitwa an premye.</string>
     <string name="welcome_install_nsfw_title">Mete kontni NSFW</string>
     <string name="welcome_install_nsfw_summary">Dezaktive pa defo — pake pou granmoun sèlman yo filtre soti nan lis enstalasyon an.</string>
-    <string name="welcome_intro_app_title">Kototoro · Lektè ak sous louvri</string>
-    <string name="welcome_intro_body">Kototoro se yon lektè ak jwè miltimedya ak sous louvri. Li sipòte yon gwo ekosistèm ekstansyon kominotè, men li pa vini ak okenn sous kontni pa l.</string>
+    <string name="welcome_intro_app_title">Amuratsu · Lektè ak sous louvri</string>
+    <string name="welcome_intro_body">Amuratsu se yon lektè ak jwè miltimedya ak sous louvri. Li sipòte yon gwo ekosistèm ekstansyon kominotè, men li pa vini ak okenn sous kontni pa l.</string>
     <string name="welcome_intro_concepts_title">Twa konsèp, nan 30 segonn</string>
     <string name="welcome_intro_repo_label">Repozitwa</string>
     <string name="welcome_intro_repo_body">Yon URL nan yon koleksyon ekstansyon twazyèm pati, ki kenbe pa yon kominote endepandan (pa egzanp repozitwa Mihon, lis TVBox oswa repozitwa plogeğin LNReader).</string>
     <string name="welcome_intro_extension_label">Ekstansyon</string>
-    <string name="welcome_intro_extension_body">Yon pake ki ka enstale andedan yon repozitwa — yon JAR, yon APK oswa yon lis JSON. Ekstansyon enstale bay Kototoro kapasite pou li oswa jwe nan yon sit.</string>
+    <string name="welcome_intro_extension_body">Yon pake ki ka enstale andedan yon repozitwa — yon JAR, yon APK oswa yon lis JSON. Ekstansyon enstale bay Amuratsu kapasite pou li oswa jwe nan yon sit.</string>
     <string name="welcome_intro_source_label">Sous</string>
     <string name="welcome_intro_source_body">Yon sous kontni konkret ou wè nan aplikasyon an apre yon ekstansyon enstale oswa enpòte — pa egzanp yon sit entènèt manga oswa videyo espesifik.</string>
-    <string name="welcome_intro_disclaimer">Itilizasyon ekstansyon twazyèm pati se antyèman sou pwòp risk ou: konpòtman nan egzekisyon, legalite ak kontni pa kontwole pa pwojè Kototoro a.</string>
+    <string name="welcome_intro_disclaimer">Itilizasyon ekstansyon twazyèm pati se antyèman sou pwòp risk ou: konpòtman nan egzekisyon, legalite ak kontni pa kontwole pa pwojè Amuratsu a.</string>
     <string name="welcome_intro_continue">Mwen konprann — kontinye</string>
     <string name="welcome_done_title">Preske fini</string>
     <string name="welcome_done_summary">Rezime konfigirasyon ou ak kèk konsèy.</string>
@@ -2913,10 +2913,10 @@
     <string name="welcome_done_json_note">Kalite ki baze sou JSON (Legado / TVBox / LNReader) yo enpòte otomatikman; si ou te ajoute tou lòt repozitwa JSON, enpòte yo nan Jesyon Ekstansyon.</string>
     <string name="welcome_done_title_finished">Konfigirasyon fini</string>
     <string name="welcome_done_summary_finished">Asistan an fini — okenn repozitwa oswa sous pa te ajoute otomatikman.</string>
-    <string name="welcome_done_body_finished">Kototoro pa te ajoute okenn sous pandan konfigirasyon an. Ou ka ajoute pwòp repozitwa ak sous ou nenpòt ki lè nan Anviwònman → Sous kontni (Jesyon Ekstansyon).</string>
+    <string name="welcome_done_body_finished">Amuratsu pa te ajoute okenn sous pandan konfigirasyon an. Ou ka ajoute pwòp repozitwa ak sous ou nenpòt ki lè nan Anviwònman → Sous kontni (Jesyon Ekstansyon).</string>
     <string name="welcome_done_advice_title">Si yon sous pa mache</string>
     <string name="welcome_done_advice_summary">Yon kout chemen depanaj, pou bon moun yo wè rapò a.</string>
-    <string name="welcome_done_advice_body">1. Konfime pwoblèm nan lè l sèvi avèk aplikasyon orijinal lame ekstansyon an — pa egzanp yon sous tip Mihon dwe teste nan aplikasyon Mihon an.\n2. Si pwoblèm nan rive la tou, li fè pati repozitwa ki kenbe ekstansyon an: louvri yon pwoblèm nan URL repozitwa a.\n3. Si li sèlman rive nan Kototoro, rapòte li nan repozitwa pwojè Kototoro a epi mete non sous la, vèsyon ekstansyon an ak sa ou te eseye.</string>
+    <string name="welcome_done_advice_body">1. Konfime pwoblèm nan lè l sèvi avèk aplikasyon orijinal lame ekstansyon an — pa egzanp yon sous tip Mihon dwe teste nan aplikasyon Mihon an.\n2. Si pwoblèm nan rive la tou, li fè pati repozitwa ki kenbe ekstansyon an: louvri yon pwoblèm nan URL repozitwa a.\n3. Si li sèlman rive nan Amuratsu, rapòte li nan repozitwa pwojè Amuratsu a epi mete non sous la, vèsyon ekstansyon an ak sa ou te eseye.</string>
     <string name="welcome_step_counter">Etap %1$d sou %2$d</string>
     <string name="welcome_action_configure_repos">Konfigure repozitwa seleksyone yo</string>
     <string name="welcome_action_install_count">Enstale %1$d ekstansyon</string>
@@ -2950,7 +2950,7 @@
     <string name="welcome_permissions_notifications_title">Notificaçouns</string>
     <string name="welcome_permissions_notifications_summary">Affiche les notificaçouns de téléchargemint, mîse à jour et litcheur.</string>
     <string name="welcome_permissions_packages_title">Aplicâçouns enstalèyes</string>
-    <string name="welcome_permissions_packages_summary">Permet à Kototoro de détekta les èxtensliouns jà enstalèyes et les apôtres hôtes (Mihon, Aniyomi, …). Décllarèye dauns le manifèste et akodiye otoumatique.</string>
+    <string name="welcome_permissions_packages_summary">Permet à Amuratsu de détekta les èxtensliouns jà enstalèyes et les apôtres hôtes (Mihon, Aniyomi, …). Décllarèye dauns le manifèste et akodiye otoumatique.</string>
     <string name="welcome_permissions_battery_title">Survie en ârriére-plan</string>
     <string name="welcome_permissions_battery_summary">Fait founciouna les téléchargemints et mîses à jour en ârriére-plan quand l\'écra est étiint ou l\'apôtre au repôs.</string>
     <string name="welcome_permissions_battery_action">Permète</string>
@@ -3358,11 +3358,11 @@
     <string name="pref_glass_blur_quality_performance">Performance</string>
     <string name="pref_glass_blur_quality_balanced">Équilibré</string>
     <string name="pref_glass_blur_quality_quality">Qualité</string>
-    <string name="glass_material_family_kototoro">Kototoro (Recommandé)</string>
+    <string name="glass_material_family_kototoro">Amuratsu (Recommandé)</string>
     <string name="glass_material_family_haze">Haze</string>
     <string name="glass_material_family_cupertino">Cupertino</string>
     <string name="glass_material_family_fluent">Fluent</string>
-    <string name="glass_material_kototoro">Kototoro (Recommandé)</string>
+    <string name="glass_material_kototoro">Amuratsu (Recommandé)</string>
     <string name="glass_material_haze_ultra_thin">Haze Ultra Thin</string>
     <string name="glass_material_haze_thin">Haze Thin</string>
     <string name="glass_material_haze_regular">Haze Regular</string>

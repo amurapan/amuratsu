@@ -120,7 +120,7 @@
     <string name="_import">Importen</string>
     <string name="delete">Do awey</string>
     <string name="operation_not_supported">This dede is not suffred</string>
-    <string name="cloudstream_newpipe_required">This extension nedeth NewPipe classes that the NewPipe bundled with Kototoro hath not, so hit may not play videos. Assay updating the extension or Kototoro.</string>
+    <string name="cloudstream_newpipe_required">This extension nedeth NewPipe classes that the NewPipe bundled with Amuratsu hath not, so hit may not play videos. Assay updating the extension or Amuratsu.</string>
     <string name="text_file_not_supported">Chese eithir a ZIP or CBZ file.</string>
     <string name="no_description">No descrivyng</string>
     <string name="clear_pages_cache">Clense page cache</string>
@@ -184,7 +184,7 @@
     <string name="replace_rule_disable_all_summary">Halt whyle applyng chaunging rewles</string>
     <string name="replace_rule_edit">Amend rewle</string>
     <string name="replace_rule_import">Bringe in Legado rewles</string>
-    <string name="replace_rule_import_summary">Bringe in a JSON array sent out by Legado or Kototoro</string>
+    <string name="replace_rule_import_summary">Bringe in a JSON array sent out by Legado or Amuratsu</string>
     <string name="replace_rule_export">Sende rewles</string>
     <string name="replace_rule_export_summary">Sende out rewles in a semyng JSON forme</string>
     <string name="replace_rule_empty">No chaunging rewles</string>
@@ -315,7 +315,7 @@
     <string name="enter_password">Put in passeword</string>
     <string name="wrong_password">Wikked passeword</string>
     <string name="protect_application">Shilde þe app</string>
-    <string name="protect_application_summary">Aske for passeword whan Kototoro bygynneth</string>
+    <string name="protect_application_summary">Aske for passeword whan Amuratsu bygynneth</string>
     <string name="repeat_password">Reherce þe passeword</string>
     <string name="passwords_mismatch">Accordynge-not passewordes</string>
     <string name="about">Bi þe boke</string>
@@ -422,8 +422,8 @@
     <string name="clear_local_novel_storage_prompt">Do away with alle here-wonynge novel fyles? This may not be undon.</string>
     <string name="clear_local_video_storage_prompt">Do away with alle here-wonynge video fyles? This may not be undon.</string>
     <string name="welcome">Willecome</string>
-    <string name="welcome_intro_title">Dight Kototoro</string>
-    <string name="welcome_intro_summary">Chese how thou wilt rede and beholde. Kototoro now usith plesaunce-welle kyndes for manga, novels, and video, beringe JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader, and Cloudstream.</string>
+    <string name="welcome_intro_title">Dight Amuratsu</string>
+    <string name="welcome_intro_summary">Chese how thou wilt rede and beholde. Amuratsu now usith plesaunce-welle kyndes for manga, novels, and video, beringe JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader, and Cloudstream.</string>
     <string name="welcome_step_start">Bigynne</string>
     <string name="welcome_step_sources">Wellis</string>
     <string name="welcome_step_preferences">Chesinges</string>
@@ -433,11 +433,11 @@
     <string name="welcome_glass_preset_title">Glese ende</string>
     <string name="welcome_glass_preset_summary">Chese the glese ende for iOS guyse. Refraction is the woned and may be fetled after in Semblaunce ordinaunces.</string>
     <string name="home_quick_action_wizard">Sorcier</string>
-    <string name="welcome_restore_summary">Hast thou used Kototoro biforen? Restouren a bakup, signe in to acorde, or sette here-wonynge foldes first.</string>
+    <string name="welcome_restore_summary">Hast thou used Amuratsu biforen? Restouren a bakup, signe in to acorde, or sette here-wonynge foldes first.</string>
     <string name="welcome_source_formats_title">Chese matere formes</string>
     <string name="welcome_source_formats_summary">These fyltres decreve what welle kyndes ben leten after dightynge.</string>
     <string name="welcome_ecosystems_title">Welle kynde</string>
-    <string name="welcome_ecosystems_summary">Kototoro berith many plesaunce welle kyndes for redynge and beholdingne. Bigynne with the radde hordis here, sithen fete hem after in eche-crevis.</string>
+    <string name="welcome_ecosystems_summary">Amuratsu berith many plesaunce welle kyndes for redynge and beholdingne. Bigynne with the radde hordis here, sithen fete hem after in eche-crevis.</string>
     <string name="welcome_ecosystem_manga">Manga: JAR parsers, Mihon, IReader, LNReader</string>
     <string name="welcome_ecosystem_novel">Novel: Legado, IReader, LNReader</string>
     <string name="welcome_ecosystem_video">Video: Aniyomi, TVBox, Cloudstream</string>
@@ -446,10 +446,10 @@
     <string name="welcome_preferences_summary">Chese speches and matere kyndes. Thou may chaunge this after in welle ordinaunces.</string>
     <string name="welcome_spaces_title">To-delte thy spaces</string>
     <string name="welcome_spaces_summary">Spaces yeven manga, novels, and anime departyd goinges, sechinge chesinges, and redynge or pleiinge. Hie poyntes and custom spaces ben founde after in Ordinaunces → User → Spaces.</string>
-    <string name="welcome_ready_summary">Setup is complete. Kototoro will enable sources matching your selected languages and formats. You can run this wizard again from Settings → Content sources → Setup wizard.</string>
-    <string name="welcome_jar_install_success">Kototoro: Sospedely fet and set %1$d newe parser engynes from cloude wolk!</string>
-    <string name="welcome_jar_install_up_to_date">Kototoro: Cloude provinge ydo, here parsers ben up to date! (Laded %1$d wellis in al)</string>
-    <string name="welcome_jar_install_failed">Kototoro: Parser wolk lodinge failde (%1$s), biseche eft or wende to ordinaunces to chaunge proxy mirours</string>
+    <string name="welcome_ready_summary">Setup is complete. Amuratsu will enable sources matching your selected languages and formats. You can run this wizard again from Settings → Content sources → Setup wizard.</string>
+    <string name="welcome_jar_install_success">Amuratsu: Sospedely fet and set %1$d newe parser engynes from cloude wolk!</string>
+    <string name="welcome_jar_install_up_to_date">Amuratsu: Cloude provinge ydo, here parsers ben up to date! (Laded %1$d wellis in al)</string>
+    <string name="welcome_jar_install_failed">Amuratsu: Parser wolk lodinge failde (%1$s), biseche eft or wende to ordinaunces to chaunge proxy mirours</string>
     <string name="home_placeholder_title">Lerking boorde</string>
     <string name="home_placeholder_subtitle">Se thin late lerking, newes, library, sync, and welles in oon stede.</string>
     <string name="home_hero_local_subtitle">Tak up where thow laft, or lepe eft into that thow late opned.</string>
@@ -1027,7 +1027,7 @@
     <string name="import_completed_hint">Thou mayst do-don old wrytinges fro horde to save rome</string>
     <string name="import_will_start_soon">Inbringynge shal bygynne</string>
     <string name="feed">Mete</string>
-    <string name="manga_error_description_pattern">Wemmys tawht:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. Assay to &lt;a href=\"%2$s\"&gt;open manga in a web browser&lt;/a&gt; to ensure it is available on its source&lt;br&gt;2. Make sure you are using the &lt;a href=\"kototoro://about\"&gt;latest version of Kototoro&lt;/a&gt;&lt;br&gt;3. If it is available, send an error report to the developers.</string>
+    <string name="manga_error_description_pattern">Wemmys tawht:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. Assay to &lt;a href=\"%2$s\"&gt;open manga in a web browser&lt;/a&gt; to ensure it is available on its source&lt;br&gt;2. Make sure you are using the &lt;a href=\"amuratsu://about\"&gt;latest version of Amuratsu&lt;/a&gt;&lt;br&gt;3. If it is available, send an error report to the developers.</string>
     <string name="history_shortcuts">Shew late manga gylts</string>
     <string name="history_shortcuts_summary">Make late manga redy by long pressyng on app token</string>
     <string name="reader_control_ltr_summary">Do not chaunge page tournynge way to redere wise, e. g. pressyng ryght key ay tourneth to next page. This taketh onely hardware tooles</string>
@@ -1160,7 +1160,7 @@
     <string name="export_backup_for_other_apps_summary">Chese a target app and make a couenable hukke: Kotatsu, Mihon, Aniyomi, othere Usagi.</string>
     <string name="export_backup_choose_target_app">Chese target app</string>
     <string name="export_kotatsu_backup">Eksporteer Kotatsu hukke</string>
-    <string name="export_kotatsu_backup_summary">Make a sondry olde hukke for Kotatsu appis withoute Kototoro partes.</string>
+    <string name="export_kotatsu_backup_summary">Make a sondry olde hukke for Kotatsu appis withoute Amuratsu partes.</string>
     <string name="export_kotatsu_backup_saved">Kotatsu hukke saved</string>
     <string name="export_mihon_backup">Eksporteer Mihon hukke</string>
     <string name="export_mihon_backup_summary">Eksporteer leefthynges, gynnynces, and redyng progresse for Mihon soures.</string>
@@ -1233,7 +1233,7 @@
     <string name="data_and_privacy">Thing and priveee</string>
     <string name="restore_summary">Reliven old up-hord</string>
     <string name="restore_kototoro_backup">Relive up-hord</string>
-    <string name="restore_kototoro_backup_summary">Relive a Kototoro up-hord of any age, or Kotatsu. The forme is yfound anon.</string>
+    <string name="restore_kototoro_backup_summary">Relive a Amuratsu up-hord of any age, or Kotatsu. The forme is yfound anon.</string>
     <string name="restore_mode_replace_existing">Chaunge old thing</string>
     <string name="restore_mode_replace_existing_summary">Partys yrelived ben clensed first; leefs and story missing ben doon awey</string>
     <string name="restore_mode_merge_with_existing">Knit with old thing</string>
@@ -1970,7 +1970,7 @@
     <string name="show_pages_thumbs">Schewe pagis thombnayls</string>
     <string name="show_pages_thumbs_summary">Make þe \"Pagis\" tab on þe avisement schene able</string>
     <string name="error_no_data_received">No data was take from þe seruer</string>
-    <string name="unsupported_backup_message">Wyle chese a convenable Kototoro backup file</string>
+    <string name="unsupported_backup_message">Wyle chese a convenable Amuratsu backup file</string>
     <string name="hours_short">%d h</string>
     <string name="minutes_short">%d m</string>
     <string name="seconds_short">%d s</string>
@@ -2022,8 +2022,8 @@
     <string name="chapters_read">Chapitres y-read</string>
     <string name="chapters_left">Leaves bileft</string>
     <string name="external_source">Outward plugin</string>
-    <string name="plugin_incompatible">Uncovenable plugin oþer prive defaute. Do so þat þou usest þe lateste version of þe plugin and Kototoro</string>
-    <string name="plugin_incompatible_with_cause">Plugin defaute: %s\n Do so þat þou usest þe lateste version of þe plugin and Kototoro</string>
+    <string name="plugin_incompatible">Uncovenable plugin oþer prive defaute. Do so þat þou usest þe lateste version of þe plugin and Amuratsu</string>
+    <string name="plugin_incompatible_with_cause">Plugin defaute: %s\n Do so þat þou usest þe lateste version of þe plugin and Amuratsu</string>
     <string name="plugin_missing_host_classes">%1$s ne may nat be sett because it hangeth on unfandyd %2$s host-classes:\n%3$s</string>
     <string name="connection_ok">Knytting is wel</string>
     <string name="invalid_proxy_configuration">Unrightful proxy-ordenaunce</string>
@@ -2214,7 +2214,7 @@
     <string name="search_disabled_sources">Sechen thurgh deed welles</string>
     <string name="error_details">Fault tokens</string>
     <string name="error_disclaimer_manga">Asay to open manga in a web-brouker to witen if it is redy on his welle.</string>
-    <string name="error_disclaimer_app_outdated">It semeth thin Kototoro is old. Bidde the neweste version to haue alle medes.</string>
+    <string name="error_disclaimer_app_outdated">It semeth thin Amuratsu is old. Bidde the neweste version to haue alle medes.</string>
     <string name="error_disclaimer_report">Ye may senden a defaute tale to makeres, this shal helpen us to finde it</string>
     <string name="enable_source_manga">Leve manga welle</string>
     <string name="enable_source_novel">Leve novel welle</string>
@@ -2232,7 +2232,7 @@
     <string name="recommendation_novel">rad novels</string>
     <string name="recommendation_video">rad videos</string>
     <string name="link_to_manga_on_s">Knit to manga on %s</string>
-    <string name="link_to_manga_in_app">Knit to manga in Kototoro</string>
+    <string name="link_to_manga_in_app">Knit to manga in Amuratsu</string>
     <string name="clear_browser_data">Clensen brouker data</string>
     <string name="clear_browser_data_summary">Clensen data such as hord and kakes. Warnyng: In welles ye may lese power</string>
     <string name="no_write_permission_to_file">Nis nought leve to wryten a file</string>
@@ -2282,7 +2282,7 @@
     <string name="discord_token_hint">Paste thy Discord Token here</string>
     <string name="discord_rpc_summary">Shewe thy redynge state on Discord</string>
     <string name="obtain">Geten</string>
-    <string name="discord_rpc_description">Redynge manga on Kototoro - a manga reader app</string>
+    <string name="discord_rpc_description">Redynge manga on Amuratsu - a manga reader app</string>
     <string name="discord_logout_summary">Clense the sauved Discord power</string>
     <string name="reading_s">Redynge %s</string>
     <string name="read_on_s">Rede on %s</string>
@@ -2310,7 +2310,7 @@
     <string name="sync_backend_switch_webdav_title">Wende to WebDAV backup?</string>
     <string name="sync_backend_switch_webdav_confirm">Google Drive accord is nou yiuen leue. Yiuing leue to WebDAV backup shal don of Google Drive accord while keping þi Google signyng.</string>
     <string name="sync_sign_in">Yare to Google Drive accord</string>
-    <string name="sync_sign_in_summary">Brueþ Google Drive app data with þe leest Drive appdata leue to accord subscripciounes and make newe recordez. Kototoro may nat come to þi Drive fyles.</string>
+    <string name="sync_sign_in_summary">Brueþ Google Drive app data with þe leest Drive appdata leue to accord subscripciounes and make newe recordez. Amuratsu may nat come to þi Drive fyles.</string>
     <string name="google_drive_sync_unregistered_build_error">Google Drive accord is nat sustened in makyng/nightly bildes. Biseche brue official relees bildes oþer WebDAV accord.</string>
     <string name="sync_sign_out">Go out</string>
     <string name="sync_account">Signed in</string>
@@ -2365,8 +2365,8 @@
     <string name="webdav_remote_backups_inspect">Proeven remote backups</string>
     <string name="webdav_remote_backups_inspect_summary">Download and verify whether each remote backup can be safely restored.</string>
     <string name="webdav_remote_backups_clear">Clense remote WebDAV backups</string>
-    <string name="webdav_remote_backups_clear_summary">Delete all Kototoro backup files on the configured WebDAV path. Local data is not changed.</string>
-    <string name="webdav_remote_backups_clear_confirm">Delete all Kototoro backup files from the configured WebDAV path? Local data will not be changed.</string>
+    <string name="webdav_remote_backups_clear_summary">Delete all Amuratsu backup files on the configured WebDAV path. Local data is not changed.</string>
+    <string name="webdav_remote_backups_clear_confirm">Delete all Amuratsu backup files from the configured WebDAV path? Local data will not be changed.</string>
     <string name="webdav_remote_backups_loading">Chargynge WebDAV backups…</string>
     <string name="webdav_remote_backup_status_unknown">Nought asayed</string>
     <string name="webdav_remote_backup_status_restorable">Restorable</string>
@@ -2774,7 +2774,7 @@
     <string name="trust_and_add">Trost and eke</string>
     <string name="trust_extension_repository_message">Hordi: %1$s\nWebstede: %2$s\nSHA-256 tokene:\n%3$s\n\nProeve þis tokene with þe maker er þou trost þis hordi.</string>
     <string name="untrusted_extension_message">%1$s (%2$s) is yset, but his tokene acordeþ nat to þe chosen hordi tokene.\n\nHordi tokene: %3$s\n\nDo awey þe ysette fardel er þou eft-sette it of þis hordi.</string>
-    <string name="incompatible_extension_message">%1$s %2$s may nat be yset for his boke-meynee (%3$s) is outwith Kototoro suffraunce.</string>
+    <string name="incompatible_extension_message">%1$s %2$s may nat be yset for his boke-meynee (%3$s) is outwith Amuratsu suffraunce.</string>
     <string name="built_in_sources">In-bore</string>
     <string name="select_all">Chese alle</string>
     <string name="deselect_all">Un-chese alle</string>
@@ -2814,7 +2814,7 @@
     <string name="welcome_plugins_repo_yakateam">Yakateam Parsers</string>
     <string name="welcome_plugins_repo_redo">Redo Parsers</string>
     <string name="welcome_plugins_repo_uma">UMA (Tsuki Parsers)</string>
-    <string name="welcome_plugins_disclaimer">These extension repositories are maintained by independent online communities. The Kototoro developers have no affiliation, control, or association with these third-party repositories. I acknowledge that I am configuring these sources at my own risk.</string>
+    <string name="welcome_plugins_disclaimer">These extension repositories are maintained by independent online communities. The Amuratsu developers have no affiliation, control, or association with these third-party repositories. I acknowledge that I am configuring these sources at my own risk.</string>
     <string name="welcome_plugins_start_btn">Configurer repositories</string>
     <string name="welcome_plugins_configured">Configured %1$d new source/repository type(s): %2$s. Packages are not downloaded yet — install matchings ones on the next step.</string>
     <string name="welcome_plugins_configured_none">No source or repository could be configured. Check your network or pick different repositories and try again.</string>
@@ -2844,22 +2844,22 @@
     <string name="welcome_install_system_launch_failed">Could not launch the system installer: %1$s</string>
     <string name="welcome_install_skip">Let be — I\'ll do it in Extension Management later</string>
     <string name="welcome_install_step_title">Batch install extensions</string>
-    <string name="welcome_install_step_summary">Pick which source types and settings to use, then let Kototoro download and install everything in the background.</string>
+    <string name="welcome_install_step_summary">Pick which source types and settings to use, then let Amuratsu download and install everything in the background.</string>
     <string name="welcome_install_kinds_title">Source types to install</string>
     <string name="welcome_install_kinds_summary">Only the types you checked will be handled. Unchecked ones (e.g. Mihon, if you prefer doing it later) stay for you to install in Extension Management.</string>
     <string name="welcome_install_kinds_empty">No repositories configured yet. Go back and add repositories first.</string>
     <string name="welcome_install_nsfw_title">Include NSFW content</string>
     <string name="welcome_install_nsfw_summary">Off by default — adult-only packages are filtered out of the installation list.</string>
-    <string name="welcome_intro_app_title">Kototoro · Open-source redere</string>
-    <string name="welcome_intro_body">Kototoro is an open-source multimedia redere / player. It supporteth a wide ecosystem of communyte extensions, but it berith no content sources of its owne.</string>
+    <string name="welcome_intro_app_title">Amuratsu · Open-source redere</string>
+    <string name="welcome_intro_body">Amuratsu is an open-source multimedia redere / player. It supporteth a wide ecosystem of communyte extensions, but it berith no content sources of its owne.</string>
     <string name="welcome_intro_concepts_title">Thre concepts, in 30 seconds</string>
     <string name="welcome_intro_repo_label">Repository</string>
     <string name="welcome_intro_repo_body">A URL to a thrid-party collection of extensions, mayntened by an independent communyte (for ensample Mihon repos, TVBox listes or LNReader plugin repos).</string>
     <string name="welcome_intro_extension_label">Extension</string>
-    <string name="welcome_intro_extension_body">On installable package withyn a repository — a JAR, an APK or a JSON list. Installed extensions yeven Kototoro the myght to rede or pleye fro a site.</string>
+    <string name="welcome_intro_extension_body">On installable package withyn a repository — a JAR, an APK or a JSON list. Installed extensions yeven Amuratsu the myght to rede or pleye fro a site.</string>
     <string name="welcome_intro_source_label">Source</string>
     <string name="welcome_intro_source_body">On certeyn content source ye see in the app aftir an extension is installed or imported — for ensample a specific manga or video website.</string>
-    <string name="welcome_intro_disclaimer">Use of thrid-party extensions is hoolly at youre owne peril: runtime behavynge, lawfulnesse and content be nat governed by the Kototoro project.</string>
+    <string name="welcome_intro_disclaimer">Use of thrid-party extensions is hoolly at youre owne peril: runtime behavynge, lawfulnesse and content be nat governed by the Amuratsu project.</string>
     <string name="welcome_intro_continue">I understonde — forth</string>
     <string name="welcome_done_title">Nihil to go</string>
     <string name="welcome_done_summary">Your ordynaunce summary and a few avyses.</string>
@@ -2868,10 +2868,10 @@
     <string name="welcome_done_json_note">JSON-grounded kyndes (Legado / TVBox / LNReader) be imported anon; if ye eek added other JSON repositories, import hem in Extension Management.</string>
     <string name="welcome_done_title_finished">Ordynaunce doon</string>
     <string name="welcome_done_summary_finished">The craft is ended — no repositories or sources were added by default.</string>
-    <string name="welcome_done_body_finished">Kototoro added no sources durynge ordynaunce. Ye may adde youre owne repositories and sources any tyme in Settings → Content sources (Extension Management).</string>
+    <string name="welcome_done_body_finished">Amuratsu added no sources durynge ordynaunce. Ye may adde youre owne repositories and sources any tyme in Settings → Content sources (Extension Management).</string>
     <string name="welcome_done_advice_title">If a source worketh nat</string>
     <string name="welcome_done_advice_summary">A short tribulacioun path, so the right folc see the reporte.</string>
-    <string name="welcome_done_advice_body">1. Affirme the defaute usynge the origynal host app of the extension — for ensample a Mihon-kynde source sholde be tested in the Mihon app.\n2. If the grief eek bifalleth there, it perteyneth to the repository that maynteneth the extension: opene an issue at the repository\'s owne URL.\n3. If it onlich bifalleth in Kototoro, reporte it in the Kototoro project repository and comprehende the source name, the extension versioun and what ye assayed.</string>
+    <string name="welcome_done_advice_body">1. Affirme the defaute usynge the origynal host app of the extension — for ensample a Mihon-kynde source sholde be tested in the Mihon app.\n2. If the grief eek bifalleth there, it perteyneth to the repository that maynteneth the extension: opene an issue at the repository\'s owne URL.\n3. If it onlich bifalleth in Amuratsu, reporte it in the Amuratsu project repository and comprehende the source name, the extension versioun and what ye assayed.</string>
     <string name="welcome_step_counter">Degre %1$d of %2$d</string>
     <string name="welcome_action_configure_repos">Ordre chosen repositories</string>
     <string name="welcome_action_install_count">Install %1$d extensions</string>
@@ -2905,7 +2905,7 @@
     <string name="welcome_permissions_notifications_title">Tidynges</string>
     <string name="welcome_permissions_notifications_summary">Sheweth dovnloadyng, updaten and player tidynges.</string>
     <string name="welcome_permissions_packages_title">Sett appus</string>
-    <string name="welcome_permissions_packages_summary">Lat Kototoro aspien appus alreody sett and host appus (Mihon, Aniyomi, …). Declarid in manefest and grauntid anon.</string>
+    <string name="welcome_permissions_packages_summary">Lat Amuratsu aspien appus alreody sett and host appus (Mihon, Aniyomi, …). Declarid in manefest and grauntid anon.</string>
     <string name="welcome_permissions_battery_title">Bakgrund lyves</string>
     <string name="welcome_permissions_battery_summary">Holdeth bakgrund dovnloadyngs and updaten rennynge whan screen is out or deuyce ydel.</string>
     <string name="welcome_permissions_battery_action">Suffren</string>
@@ -3321,11 +3321,11 @@
     <string name="pref_glass_blur_quality_performance">Spede</string>
     <string name="pref_glass_blur_quality_balanced">Evenyd</string>
     <string name="pref_glass_blur_quality_quality">Qualite</string>
-    <string name="glass_material_family_kototoro">Kototoro (Conseiled)</string>
+    <string name="glass_material_family_kototoro">Amuratsu (Conseiled)</string>
     <string name="glass_material_family_haze">Myste</string>
     <string name="glass_material_family_cupertino">Cupertino</string>
     <string name="glass_material_family_fluent">Fluent</string>
-    <string name="glass_material_kototoro">Kototoro (Conseiled)</string>
+    <string name="glass_material_kototoro">Amuratsu (Conseiled)</string>
     <string name="glass_material_haze_ultra_thin">Myste Ful Thin</string>
     <string name="glass_material_haze_thin">Myste Thin</string>
     <string name="glass_material_haze_regular">Myste Vsuel</string>

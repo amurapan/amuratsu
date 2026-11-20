@@ -18,8 +18,8 @@ import java.util.Properties
 class DesktopAppUpdateCheckTest {
     @Test
     fun `macOS report names the DMG and its native installation kind`() {
-        val app = layout.root.resolve("Kototoro.app")
-        val mac = layout.copy(root = app, executable = app.resolve("Contents/MacOS/Kototoro"),
+        val app = layout.root.resolve("Amuratsu.app")
+        val mac = layout.copy(root = app, executable = app.resolve("Contents/MacOS/Amuratsu"),
             kind = DesktopInstallKind.MACOS_APP)
         val report = report(version, mac, release("9.0.0", DesktopUpdatePackage.DMG), null)
         assertEquals("macos_app", report.getProperty("install.kind"))
@@ -28,8 +28,8 @@ class DesktopAppUpdateCheckTest {
     }
     private val version = DesktopAppVersion("2.3.1", "2.3.1", DesktopUpdateChannel.RELEASE)
     private val layout = DesktopInstallLayout(
-        root = Path.of("C:/Users/me/AppData/Local/Kototoro-App"),
-        executable = Path.of("C:/Users/me/AppData/Local/Kototoro-App/Kototoro.exe"),
+        root = Path.of("C:/Users/me/AppData/Local/Amuratsu-App"),
+        executable = Path.of("C:/Users/me/AppData/Local/Amuratsu-App/Amuratsu.exe"),
         kind = DesktopInstallKind.PORTABLE,
     )
 
@@ -45,12 +45,12 @@ class DesktopAppUpdateCheckTest {
         assertEquals("2.3.2", report.getProperty("channel.newest"))
         assertEquals("2.3.2", report.getProperty("available.version"))
         assertEquals("v2.3.2", report.getProperty("available.tag"))
-        assertEquals("Kototoro-2.3.2-windows-x64-release.zip", report.getProperty("available.asset"))
-        assertEquals("https://example.invalid/Kototoro-2.3.2-windows-x64-release.zip",
+        assertEquals("Amuratsu-2.3.2-windows-x64-release.zip", report.getProperty("available.asset"))
+        assertEquals("https://example.invalid/Amuratsu-2.3.2-windows-x64-release.zip",
             report.getProperty("available.url"))
         assertEquals("portable_zip,msi", report.getProperty("available.packages"))
         assertEquals("2048", report.getProperty("available.size"))
-        assertEquals("https://example.invalid/Kototoro-2.3.2-windows-x64-release.sha256",
+        assertEquals("https://example.invalid/Amuratsu-2.3.2-windows-x64-release.sha256",
             report.getProperty("available.checksums"))
     }
 
@@ -162,13 +162,13 @@ class DesktopAppUpdateCheckTest {
                     DesktopUpdatePackage.DMG -> "dmg"
                 }
                 DesktopUpdateAsset(
-                    name = "Kototoro-$version-$platform-release.$suffix",
-                    downloadUrl = "https://example.invalid/Kototoro-$version-$platform-release.$suffix",
+                    name = "Amuratsu-$version-$platform-release.$suffix",
+                    downloadUrl = "https://example.invalid/Amuratsu-$version-$platform-release.$suffix",
                     sizeBytes = if (kind == DesktopUpdatePackage.MSI) 4096 else 2048,
                     kind = kind,
                 )
             },
-            checksumsUrl = "https://example.invalid/Kototoro-$version-$platform-release.sha256",
+            checksumsUrl = "https://example.invalid/Amuratsu-$version-$platform-release.sha256",
         )
     }
 }

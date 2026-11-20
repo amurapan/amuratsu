@@ -209,7 +209,7 @@
     <string name="text_feed_holder">Az általad olvasott mangák új fejezetei itt jelennek meg</string>
     <string name="feed_will_update_soon">A hírfolyam frissítése hamarosan elkezdődik</string>
     <string name="protect_application">Alkalmazás védése</string>
-    <string name="protect_application_summary">Jelszó kérése a Kototoro indításakor</string>
+    <string name="protect_application_summary">Jelszó kérése a Amuratsu indításakor</string>
     <string name="repeat_password">Ismételd meg a jelszót</string>
     <string name="backup_information">Létrehozhatsz egy biztonsági másolatot az előzményeidről és kedvenceidről, majd visszaállíthatod</string>
     <string name="reader_mode_hint">A választott beállításokat megjegyezzük ehhez a mangához</string>
@@ -374,7 +374,7 @@
     <string name="server_error">Szerver hiba (%1$d). Próbálkozz később</string>
     <string name="clear_new_chapters_counters">Valamint új fejezetekről szóló információk törlése</string>
     <string name="show_in_grid_view">Rács nézetben megjelenít</string>
-    <string name="manga_error_description_pattern">Hiba részletei:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. Próbáld meg &lt;a href=%2$s&gt;megnyitni a mangát egy webböngészőben&lt;/a&gt;, hogy megbizonyosodj róla, hogy elérhető-e az eredeti forrásáról.&lt;br&gt;2. Győződj meg arról, hogy a &lt;a href=kototoro://about&gt;Kototoro legfrissebb verzióját&lt;/a&gt; használod.&lt;br&gt;3. Ha elérhető, küldj egy hibajelentést a fejlesztőknek.</string>
+    <string name="manga_error_description_pattern">Hiba részletei:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. Próbáld meg &lt;a href=%2$s&gt;megnyitni a mangát egy webböngészőben&lt;/a&gt;, hogy megbizonyosodj róla, hogy elérhető-e az eredeti forrásáról.&lt;br&gt;2. Győződj meg arról, hogy a &lt;a href=amuratsu://about&gt;Kototoro legfrissebb verzióját&lt;/a&gt; használod.&lt;br&gt;3. Ha elérhető, küldj egy hibajelentést a fejlesztőknek.</string>
     <string name="scrobbling_empty_hint">Az olvasási előrehaladás követéséhez válaszd a Menü → Követés lehetőséget a manga részletek képernyőn.</string>
     <string name="enable_logging_summary">Rögzít néhány műveletet hibakeresési célokra. Ne kapcsold be, ha nem vagy biztos benne, hogy mit csinálsz</string>
     <string name="services">Szolgáltatások</string>
@@ -572,7 +572,7 @@
     <string name="reading_time_estimation">Becsült olvasási idő megjelenítése</string>
     <string name="reading_time_estimation_summary">Az időbecslés értéke lehet, hogy pontatlan</string>
     <string name="location">Helyzet</string>
-    <string name="unsupported_backup_message">Kérlek válassz ki egy megfelelő Kototoro visszaállítási fájlt</string>
+    <string name="unsupported_backup_message">Kérlek válassz ki egy megfelelő Amuratsu visszaállítási fájlt</string>
     <string name="delete_read_chapters_prompt">Ez véglegesen törölni fogja a telefonodról, azokat a fejezeteket amelyeket megjelöltél. Újra letöltheted őket később, de az importált fejezetek örökre elveszhetnek.</string>
     <string name="delete_read_chapters_auto">Törölje automatikusan az elolvasott fejezeteket</string>
     <string name="error_no_data_received">Semmilyen adat nem érkezett a szervertől</string>
@@ -699,7 +699,7 @@
     <string name="appearance_mode">Megjelenítési mód</string>
     <string name="page_save_manga_title_length">Mangacím hossza a mentett fájlnevekben</string>
     <string name="page_save_manga_title_length_summary">A mentett képfájlok nevében megtartott mangacím-karakterek száma (12–64)</string>
-    <string name="cloudstream_newpipe_required">Ez a kiterjesztés olyan NewPipe-osztályokat igényel, amelyek nincsenek benne a Kototoro által csomagolt NewPipe-ban, így nem tud videókat lejátszani. Próbáld meg frissíteni a kiterjesztést vagy a Kototoro-t.</string>
+    <string name="cloudstream_newpipe_required">Ez a kiterjesztés olyan NewPipe-osztályokat igényel, amelyek nincsenek benne a Amuratsu által csomagolt NewPipe-ban, így nem tud videókat lejátszani. Próbáld meg frissíteni a kiterjesztést vagy a Amuratsu-t.</string>
     <string name="clear_chapter_thumbnails">Fejezetbélyegképek törlése</string>
     <string name="continuous_horizontal">Folyamatos vízszintes</string>
     <string name="continuous_horizontal_reversed">Olvasás jobbról balra</string>
@@ -751,7 +751,7 @@
     <string name="replace_rule_disable_all_summary">A helyettesítési szabályok ideiglenes leállítása</string>
     <string name="replace_rule_edit">Szabály szerk.</string>
     <string name="replace_rule_import">Legado-szabályok importálása</string>
-    <string name="replace_rule_import_summary">A Legado vagy Kototoro által exportált JSON-tömb importálása</string>
+    <string name="replace_rule_import_summary">A Legado vagy Amuratsu által exportált JSON-tömb importálása</string>
     <string name="replace_rule_export">Szabály exportálása</string>
     <string name="replace_rule_export_summary">Szabályok exportálása kompatibilis JSON-formátumban</string>
     <string name="replace_rule_empty">Nincsenek csere-szabályok</string>
@@ -884,8 +884,8 @@
     <string name="clear_local_manga_storage_prompt">Törlöd az összes helyben mentett és importált mangafájlt? Ez nem vonható vissza.</string>
     <string name="clear_local_novel_storage_prompt">Törlöd az összes helyben mentett és importált regényfájlt? Ez nem vonható vissza.</string>
     <string name="clear_local_video_storage_prompt">Törlöd az összes helyben mentett és importált videófájlt? Ez nem vonható vissza.</string>
-    <string name="welcome_intro_title">A Kototoro beállítása</string>
-    <string name="welcome_intro_summary">Válaszd ki, hogyan szeretnél olvasni és nézni. A Kototoro mostantól beépülő modul alapú forráscsaládokat használ mangákhoz, regényekhez és videókhoz, beleértve a következőket: JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader és Cloudstream.</string>
+    <string name="welcome_intro_title">A Amuratsu beállítása</string>
+    <string name="welcome_intro_summary">Válaszd ki, hogyan szeretnél olvasni és nézni. A Amuratsu mostantól beépülő modul alapú forráscsaládokat használ mangákhoz, regényekhez és videókhoz, beleértve a következőket: JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader és Cloudstream.</string>
     <string name="welcome_step_start">Indítás</string>
     <string name="welcome_step_sources">Források</string>
     <string name="welcome_step_preferences">Beállítások</string>
@@ -895,11 +895,11 @@
     <string name="welcome_glass_preset_title">Üveghatás</string>
     <string name="welcome_glass_preset_summary">Válaszd ki az iOS-stílusú üveghatás előbeállítását. A fénytörés az alapértelmezett, és később finomhangolható a Megjelenés beállításainál.</string>
     <string name="home_quick_action_wizard">Varázsló</string>
-    <string name="welcome_restore_summary">Használtad már a Kototoro-t? Állíts vissza egy biztonsági mentést, jelentkezz be a szinkronizáláshoz, vagy adj hozzá helyi mappákat.</string>
+    <string name="welcome_restore_summary">Használtad már a Amuratsu-t? Állíts vissza egy biztonsági mentést, jelentkezz be a szinkronizáláshoz, vagy adj hozzá helyi mappákat.</string>
     <string name="welcome_source_formats_title">Tartalomformátumok kiválasztása</string>
     <string name="welcome_source_formats_summary">Ezek a szűrők határozzák meg, mely forráscsaládok engedélyezettek a beállítás után.</string>
     <string name="welcome_ecosystems_title">Forrás ökoszisztéma</string>
-    <string name="welcome_ecosystems_summary">A Kototoro több bővítmény-forráscsaládot támogat olvasáshoz és videónézéshez. Kezdd az ajánlott tárolókkal, majd finomhangold őket a bővítménykezelésben.</string>
+    <string name="welcome_ecosystems_summary">A Amuratsu több bővítmény-forráscsaládot támogat olvasáshoz és videónézéshez. Kezdd az ajánlott tárolókkal, majd finomhangold őket a bővítménykezelésben.</string>
     <string name="welcome_ecosystem_manga">Manga: JAR-elemzők, Mihon, IReader, LNReader</string>
     <string name="welcome_ecosystem_novel">Regény: Legado, IReader, LNReader</string>
     <string name="welcome_ecosystem_video">Videó: Aniyomi, TVBox, Cloudstream</string>
@@ -907,9 +907,9 @@
     <string name="welcome_plugin_acknowledge">Megértettem, hogy ezen harmadik féltől származó tárak beállítása saját felelősségemre történik.</string>
     <string name="welcome_preferences_summary">Válassz nyelveket és tartalomtípusokat. Ezt később a forrás beállításaiban módosíthatod.</string>
     <string name="welcome_spaces_title">Terek szétválasztása</string>
-    <string name="welcome_jar_install_success">Kototoro: A legújabb %1$d elemzőmotor sikeresen lekérve és betöltve a felhőhálózatból!</string>
-    <string name="welcome_jar_install_up_to_date">Kototoro: Felhőellenőrzés kész, a helyi elemzők naprakészek! (Összesen %1$d forrás betöltve)</string>
-    <string name="welcome_jar_install_failed">Kototoro: Az elemzőhálózat betöltése sikertelen (%1$s), próbáld újra, vagy válts proxy tükörre a beállításokban</string>
+    <string name="welcome_jar_install_success">Amuratsu: A legújabb %1$d elemzőmotor sikeresen lekérve és betöltve a felhőhálózatból!</string>
+    <string name="welcome_jar_install_up_to_date">Amuratsu: Felhőellenőrzés kész, a helyi elemzők naprakészek! (Összesen %1$d forrás betöltve)</string>
+    <string name="welcome_jar_install_failed">Amuratsu: Az elemzőhálózat betöltése sikertelen (%1$s), próbáld újra, vagy válts proxy tükörre a beállításokban</string>
     <string name="home_placeholder_title">Olvasói irányítópult</string>
     <string name="home_placeholder_subtitle">Tekintsd meg a legutóbbi olvasásokat, frissítéseket, a könyvtárat, a szinkronizálást és a forrásokat egy helyen.</string>
     <string name="home_hero_local_subtitle">Folytasd ott, ahol abbahagytad, vagy ugorj vissza a legutóbb megnyitott tartalmaidhoz.</string>
@@ -1363,7 +1363,7 @@
     <string name="source_empty_badge_short">Üres</string>
     <string name="show_empty_sources">Üres források megjelenítése</string>
     <string name="welcome_spaces_summary">A Terek független navigációt, böngészési beállításokat, valamint olvasási vagy lejátszási környezetet biztosítanak a mangák, regények és animék számára. A speciális beállítások és az egyéni Terek később a Beállítások → Felhasználó → Terek menüpontban érhetők el.</string>
-    <string name="welcome_ready_summary">A beállítás kész. A Kototoro engedélyezi a kiválasztott nyelveknek és formátumoknak megfelelő forrásokat. Ezt a varázslót a Beállítások → Tartalomforrások → Beállítási varázsló menüpontból futtathatja újra.</string>
+    <string name="welcome_ready_summary">A beállítás kész. A Amuratsu engedélyezi a kiválasztott nyelveknek és formátumoknak megfelelő forrásokat. Ezt a varázslót a Beállítások → Tartalomforrások → Beállítási varázsló menüpontból futtathatja újra.</string>
     <string name="browse_display_options_summary">Ez a opció átkerült ide: Böngészés oldal keresősáv → Egyebek → Megjelenítési beállítások.</string>
     <plurals name="library_duplicates_entries">
         <item quantity="one">%d bejegyzés</item>
@@ -1465,7 +1465,7 @@
     <string name="export_backup_for_other_apps_summary">Válasszon ki egy célalkalmazást és hozzon létre kompatibilis mentést: Kotatsu, Mihon, Aniyomi vagy Usagi.</string>
     <string name="export_backup_choose_target_app">Célalkalmazás kiválasztása</string>
     <string name="export_kotatsu_backup">Kotatsu-mentés exportálása</string>
-    <string name="export_kotatsu_backup_summary">Külön örökölt mentés létrehozása a Kotatsu-alapú appokhoz Kototoro-specifikus részek nélkül.</string>
+    <string name="export_kotatsu_backup_summary">Külön örökölt mentés létrehozása a Kotatsu-alapú appokhoz Amuratsu-specifikus részek nélkül.</string>
     <string name="export_kotatsu_backup_saved">Kotatsu mentés elmentve</string>
     <string name="export_mihon_backup">Mihon-mentés exportálása</string>
     <string name="export_mihon_backup_summary">Csak a Mihon-forrásbejegyzések kedvenceinek, kategóriáinak és olvasási haladásának exportálása.</string>
@@ -1494,7 +1494,7 @@
     <string name="import_backup_started_background">A külső biztonsági mentés importálása a háttérben zajlik</string>
     <string name="username_password_enter_hint">A folytatáshoz adja meg felhasználónevét és jelszavát</string>
     <string name="restore_kototoro_backup">Visszaállítás</string>
-    <string name="restore_kototoro_backup_summary">Kototoro biztonsági mentés visszaállítása bármely verzióból, vagy Kotatsu mentés. A formátum felismerése automatikus.</string>
+    <string name="restore_kototoro_backup_summary">Amuratsu biztonsági mentés visszaállítása bármely verzióból, vagy Kotatsu mentés. A formátum felismerése automatikus.</string>
     <string name="restore_mode_replace_existing">Meglévő adatok cseréje</string>
     <string name="restore_mode_replace_existing_summary">A visszaállítandó szakaszok először törlődnek; a mentésből hiányzó kedvencek és előzmények eltávolításra kerülnek</string>
     <string name="restore_mode_merge_with_existing">Egyesítés a meglévő adatokkal</string>
@@ -2065,8 +2065,8 @@
     <string name="chapters_read">Elolvasott fejezetek</string>
     <string name="chapters_left">Hátra lévő fejezetek</string>
     <string name="external_source">Külső/bővítmény</string>
-    <string name="plugin_incompatible">Nem kompatibilis bővítmény vagy belső hiba. Győződj meg arról, hogy a bővítmény és a Kototoro legfrissebb verzióját használod</string>
-    <string name="plugin_incompatible_with_cause">Bővítményhiba: %s\n Győződj meg arról, hogy a bővítmény és a Kototoro legfrissebb verzióját használod</string>
+    <string name="plugin_incompatible">Nem kompatibilis bővítmény vagy belső hiba. Győződj meg arról, hogy a bővítmény és a Amuratsu legfrissebb verzióját használod</string>
+    <string name="plugin_incompatible_with_cause">Bővítményhiba: %s\n Győződj meg arról, hogy a bővítmény és a Amuratsu legfrissebb verzióját használod</string>
     <string name="plugin_missing_host_classes">A(z) %1$s nem telepíthető, mert nem támogatott %2$s gazdaosztályoktól függ:\n%3$s</string>
     <string name="connection_ok">A kapcsolat rendben van</string>
     <string name="invalid_proxy_configuration">Érvénytelen proxykonfiguráció</string>
@@ -2267,7 +2267,7 @@
     <string name="search_disabled_sources">Keresés a letiltott forrásokban</string>
     <string name="error_details">Hiba részletei</string>
     <string name="error_disclaimer_manga">Próbálja meg megnyitni a mangát egy webböngészőben, hogy ellenőrizze, elérhető-e a forrásán.</string>
-    <string name="error_disclaimer_app_outdated">Úgy tűnik, hogy a Kototoro elavult verzióját használja. Telepítse a legújabb verziót az összes elérhető javítás beszerzéséhez.</string>
+    <string name="error_disclaimer_app_outdated">Úgy tűnik, hogy a Amuratsu elavult verzióját használja. Telepítse a legújabb verziót az összes elérhető javítás beszerzéséhez.</string>
     <string name="error_disclaimer_report">Küldhet hibajelentést a fejlesztőknek, ez segít nekünk megtalálni és kijavítani a hibát</string>
     <string name="enable_source_manga">Mangaforrás engedélyezése</string>
     <string name="enable_source_novel">Regényforrás engedélyezése</string>
@@ -2285,7 +2285,7 @@
     <string name="recommendation_novel">ajánlott regények</string>
     <string name="recommendation_video">ajánlott videók</string>
     <string name="link_to_manga_on_s">Link a mangához itt: %s</string>
-    <string name="link_to_manga_in_app">Link a mangához a Kototoro alkalmazásban</string>
+    <string name="link_to_manga_in_app">Link a mangához a Amuratsu alkalmazásban</string>
     <string name="clear_browser_data">Böngészőadatok törlése</string>
     <string name="clear_browser_data_summary">Böngészőadatok, például a gyorsítótár és a sütik törlése. Figyelem: A tartalomforrásokba való bejelentkezés érvénytelenné válhat</string>
     <string name="no_write_permission_to_file">Nincs írási jogosultság a fájlhoz</string>
@@ -2335,7 +2335,7 @@
     <string name="discord_token_hint">Illessze be ide a Discord-tokenjét</string>
     <string name="discord_rpc_summary">Az olvasási státusz megjelenítése a Discordon</string>
     <string name="obtain">Beszerzés</string>
-    <string name="discord_rpc_description">Manga olvasása a Kototoro alkalmazásban</string>
+    <string name="discord_rpc_description">Manga olvasása a Amuratsu alkalmazásban</string>
     <string name="discord_logout_summary">A mentett Discord-hitelesítés törlése</string>
     <string name="reading_s">%s olvasása</string>
     <string name="read_on_s">Olvasás itt: %s</string>
@@ -2363,7 +2363,7 @@
     <string name="sync_backend_switch_webdav_title">Váltás WebDAV-biztonsági mentésre?</string>
     <string name="sync_backend_switch_webdav_confirm">A Google Drive-szinkronizálás jelenleg engedélyezve van. A WebDAV-biztonsági mentés engedélyezése kikapcsolja a Google Drive-szinkronizálást, de megtartja a Google-bejelentkezést.</string>
     <string name="sync_sign_in">Google Drive-szinkronizálás előkészítése</string>
-    <string name="sync_sign_in_summary">A Google Drive alkalmazásadatokat használja a minimális Drive appdata engedéllyel az előfizetések és a frissítési adatok szinkronizálásához. A Kototoro nem fér hozzá a Drive-fájljaidhoz.</string>
+    <string name="sync_sign_in_summary">A Google Drive alkalmazásadatokat használja a minimális Drive appdata engedéllyel az előfizetések és a frissítési adatok szinkronizálásához. A Amuratsu nem fér hozzá a Drive-fájljaidhoz.</string>
     <string name="google_drive_sync_unregistered_build_error">A Google Drive-szinkronizálás nem támogatott a fejlesztői/nightly verziókban. Kérlek, használd a hivatalos kiadási verziókat vagy a WebDAV-szinkronizálást.</string>
     <string name="sync_sign_out">Kijelentkezés</string>
     <string name="sync_account">Bejelentkezve</string>
@@ -2418,8 +2418,8 @@
     <string name="webdav_remote_backups_inspect">Távoli mentések ellenőrzése</string>
     <string name="webdav_remote_backups_inspect_summary">Letöltés és annak ellenőrzése, hogy az egyes távoli mentések biztonságosan visszaállíthatók-e.</string>
     <string name="webdav_remote_backups_clear">Távoli WebDAV-mentések törlése</string>
-    <string name="webdav_remote_backups_clear_summary">Az összes Kototoro-biztonsági mentés törlése a konfigurált WebDAV-útvonalon. A helyi adatok nem módosulnak.</string>
-    <string name="webdav_remote_backups_clear_confirm">Törli az összes Kototoro-biztonsági mentést a konfigurált WebDAV-útvonalról? A helyi adatok nem fognak megváltozni.</string>
+    <string name="webdav_remote_backups_clear_summary">Az összes Amuratsu-biztonsági mentés törlése a konfigurált WebDAV-útvonalon. A helyi adatok nem módosulnak.</string>
+    <string name="webdav_remote_backups_clear_confirm">Törli az összes Amuratsu-biztonsági mentést a konfigurált WebDAV-útvonalról? A helyi adatok nem fognak megváltozni.</string>
     <string name="webdav_remote_backups_loading">WebDAV-mentések betöltése…</string>
     <string name="webdav_remote_backup_status_unknown">Nincs ellenőrizve</string>
     <string name="webdav_remote_backup_status_restorable">Visszaállítható</string>
@@ -2826,7 +2826,7 @@
     <string name="trust_and_add">Megbízás és hozzáadás</string>
     <string name="trust_extension_repository_message">Tároló: %1$s\nWeboldal: %2$s\nSHA-256 ujjlenyomat:\n%3$s\n\nA tároló megbízása előtt ellenőrizd ezt az ujjlenyomatot a kiadónál.</string>
     <string name="untrusted_extension_message">A(z) %1$s (%2$s) telepítve van, de az aláírása nem egyezik a kiválasztott tároló ujjlenyomatával.\n\nTároló ujjlenyomata: %3$s\n\nTávolítsd el a telepített csomagot, mielőtt újratelepíted ebből a tárolóból.</string>
-    <string name="incompatible_extension_message">A(z) %1$s %2$s nem telepíthető, mert a könyvtárverziója (%3$s) kívül esik a Kototoro által támogatott tartományon.</string>
+    <string name="incompatible_extension_message">A(z) %1$s %2$s nem telepíthető, mert a könyvtárverziója (%3$s) kívül esik a Amuratsu által támogatott tartományon.</string>
     <string name="built_in_sources">Beépített</string>
     <string name="select_all">Összes kijelölése</string>
     <string name="deselect_all">Kijelölés törlése</string>
@@ -2866,7 +2866,7 @@
     <string name="welcome_plugins_repo_yakateam">Yakateam elemzők</string>
     <string name="welcome_plugins_repo_redo">Redo elemzők</string>
     <string name="welcome_plugins_repo_uma">UMA (Tsuki elemzők)</string>
-    <string name="welcome_plugins_disclaimer">Ezeket a bővítménytárolókat független online közösségek tartják fenn. A Kototoro fejlesztői semmilyen kapcsolatban, ellenőrzésben vagy társulásban nincsenek ezekkel a harmadik féltől származó tárolókkal. Tudomásul veszem, hogy ezen források beállítását saját felelősségemre végzem.</string>
+    <string name="welcome_plugins_disclaimer">Ezeket a bővítménytárolókat független online közösségek tartják fenn. A Amuratsu fejlesztői semmilyen kapcsolatban, ellenőrzésben vagy társulásban nincsenek ezekkel a harmadik féltől származó tárolókkal. Tudomásul veszem, hogy ezen források beállítását saját felelősségemre végzem.</string>
     <string name="welcome_plugins_start_btn">Tárolók konfigurálása</string>
     <string name="welcome_plugins_configured">%1$d új forrás-/tárolótípus konfigurálva: %2$s. A csomagok letöltése még nem történt meg – telepítse a megfelelőket a következő lépésben.</string>
     <string name="welcome_plugins_configured_none">Nem sikerült forrást vagy tárolót konfigurálni. Ellenőrizze a hálózatot, vagy válasszon másik tárolókat, majd próbálja újra.</string>
@@ -2896,14 +2896,14 @@
     <string name="welcome_install_system_launch_failed">Nem sikerült elindítani a rendszertelepítőt: %1$s</string>
     <string name="welcome_install_skip">Kihagyás – Később megcsinálom a Bővítménykezelésben</string>
     <string name="welcome_install_step_title">Bővítmények kötegelt telepítése</string>
-    <string name="welcome_install_step_summary">Válassza ki a használni kívánt forrástípusokat és beállításokat, majd hagyja, hogy a Kototoro a háttérben mindent letöltsön és telepítsen.</string>
+    <string name="welcome_install_step_summary">Válassza ki a használni kívánt forrástípusokat és beállításokat, majd hagyja, hogy a Amuratsu a háttérben mindent letöltsön és telepítsen.</string>
     <string name="welcome_install_kinds_title">Telepítendő forrástípusok</string>
     <string name="welcome_install_kinds_summary">Csak a bejelölt típusok lesznek kezelve. A be nem jelöltek (pl. Mihon, ha később szeretné) megmaradnak, hogy a Bővítménykezelésben telepíthesse őket.</string>
     <string name="welcome_install_kinds_empty">Még nincsenek tárolók konfigurálva. Menjen vissza, és először adjon hozzá tárolókat.</string>
     <string name="welcome_install_nsfw_title">NSFW tartalom beleértése</string>
     <string name="welcome_install_nsfw_summary">Alapértelmezés szerint ki – a csak felnőtteknek szóló csomagok ki vannak szűrve a telepítési listából.</string>
-    <string name="welcome_intro_app_title">Kototoro · Nyílt forráskódú olvasó</string>
-    <string name="welcome_intro_body">A Kototoro egy nyílt forráskódú multimédiás olvasó / lejátszó. Támogatja a közösségi bővítmények széles ökoszisztémáját, de saját tartalomforrásokat nem tartalmaz.</string>
+    <string name="welcome_intro_app_title">Amuratsu · Nyílt forráskódú olvasó</string>
+    <string name="welcome_intro_body">A Amuratsu egy nyílt forráskódú multimédiás olvasó / lejátszó. Támogatja a közösségi bővítmények széles ökoszisztémáját, de saját tartalomforrásokat nem tartalmaz.</string>
     <string name="welcome_intro_concepts_title">Három alapelv, 30 másodpercben</string>
     <string name="welcome_intro_repo_label">Tároló</string>
     <string name="welcome_intro_repo_body">Egy harmadik féltől származó bővítménygyűjtemény URL-címe, amelyet egy független közösség tart fenn (például Mihon tárolók, TVBox listák vagy LNReader bővítménytárak).</string>
@@ -2911,7 +2911,7 @@
     <string name="welcome_intro_extension_body">Egy telepíthető csomag egy tárolón belül – egy JAR, APK vagy JSON lista. A telepített bővítmények adnak a Kototorónak olvasási vagy lejátszási képességet egy webhelyről.</string>
     <string name="welcome_intro_source_label">Forrás</string>
     <string name="welcome_intro_source_body">Egy konkrét tartalomforrás, amelyet az alkalmazásban lát a bővítmény telepítése vagy importálása után – például egy adott manga- vagy videós webhely.</string>
-    <string name="welcome_intro_disclaimer">A harmadik fél bővítményeinek használata teljesen saját felelősségre történik: a futásidejű viselkedést, a legalitást és a tartalmat nem a Kototoro projekt ellenőrzi.</string>
+    <string name="welcome_intro_disclaimer">A harmadik fél bővítményeinek használata teljesen saját felelősségre történik: a futásidejű viselkedést, a legalitást és a tartalmat nem a Amuratsu projekt ellenőrzi.</string>
     <string name="welcome_intro_continue">Megértettem – tovább</string>
     <string name="welcome_done_title">Majdnem kész</string>
     <string name="welcome_done_summary">A beállítások összefoglalója és néhány tipp.</string>
@@ -2920,10 +2920,10 @@
     <string name="welcome_done_json_note">A JSON-alapú típusok (Legado / TVBox / LNReader) automatikusan importálásra kerülnek; ha más JSON-tárolókat is hozzáadott, importálja őket a Bővítménykezelésben.</string>
     <string name="welcome_done_title_finished">A beállítás kész</string>
     <string name="welcome_done_summary_finished">A varázsló lefutott – nem lett automatikusan tároló vagy forrás hozzáadva.</string>
-    <string name="welcome_done_body_finished">A Kototoro nem adott hozzá forrásokat a beállítás során. Saját tárolókat és forrásokat bármikor hozzáadhat a Beállítások → Tartalomforrások (Bővítménykezelés) menüpontban.</string>
+    <string name="welcome_done_body_finished">A Amuratsu nem adott hozzá forrásokat a beállítás során. Saját tárolókat és forrásokat bármikor hozzáadhat a Beállítások → Tartalomforrások (Bővítménykezelés) menüpontban.</string>
     <string name="welcome_done_advice_title">Ha egy forrás nem működik</string>
     <string name="welcome_done_advice_summary">Egy rövid hibaelhárítási útmutató, hogy a megfelelő emberek lássák a jelentést.</string>
-    <string name="welcome_done_advice_body">1. Ellenőrizze a problémát a bővítmény eredeti gazdaalkalmazásával – például egy Mihon-típusú forrást a Mihon alkalmazásban kell tesztelni.\n2. Ha a probléma ott is fennáll, az a bővítményt fenntartó tárolóhoz tartozik: nyisson meg egy hibajegyet a tároló saját URL-címén.\n3. Ha ez csak a Kototoróban fordul elő, jelentse a Kototoro projekt tárolójában, és mellékelje a forrás nevét, a bővítmény verzióját, valamint hogy mit próbált meg.</string>
+    <string name="welcome_done_advice_body">1. Ellenőrizze a problémát a bővítmény eredeti gazdaalkalmazásával – például egy Mihon-típusú forrást a Mihon alkalmazásban kell tesztelni.\n2. Ha a probléma ott is fennáll, az a bővítményt fenntartó tárolóhoz tartozik: nyisson meg egy hibajegyet a tároló saját URL-címén.\n3. Ha ez csak a Kototoróban fordul elő, jelentse a Amuratsu projekt tárolójában, és mellékelje a forrás nevét, a bővítmény verzióját, valamint hogy mit próbált meg.</string>
     <string name="welcome_step_counter">%1$d. lépés / %2$d</string>
     <string name="welcome_action_configure_repos">Kijelölt tárolók konfigurálása</string>
     <string name="welcome_action_install_count">%1$d bővítmény telepítése</string>
@@ -2957,7 +2957,7 @@
     <string name="welcome_permissions_notifications_title">Értesítések</string>
     <string name="welcome_permissions_notifications_summary">Megjeleníti a letöltési, frissítési és lejátszóértesítéseket.</string>
     <string name="welcome_permissions_packages_title">Telepített alkalmazások</string>
-    <string name="welcome_permissions_packages_summary">Lehetővé teszi, hogy a Kototoro felismerje a már telepített kiegészítőket és gazdaalkalmazásokat (Mihon, Aniyomi, …). A jegyzékben szerepel és automatikusan megadásra kerül.</string>
+    <string name="welcome_permissions_packages_summary">Lehetővé teszi, hogy a Amuratsu felismerje a már telepített kiegészítőket és gazdaalkalmazásokat (Mihon, Aniyomi, …). A jegyzékben szerepel és automatikusan megadásra kerül.</string>
     <string name="welcome_permissions_battery_title">Háttérben maradás</string>
     <string name="welcome_permissions_battery_summary">Biztosítja, hogy a háttérbeli letöltések és frissítések lekapcsolt képernyőnél vagy tétlen eszközön is fussanak.</string>
     <string name="welcome_permissions_battery_action">Engedélyezés</string>
@@ -3374,11 +3374,11 @@
     <string name="pref_glass_blur_quality_performance">Teljesítmény</string>
     <string name="pref_glass_blur_quality_balanced">Kiegyenl.</string>
     <string name="pref_glass_blur_quality_quality">Minőség</string>
-    <string name="glass_material_family_kototoro">Kototoro (Ajánlott)</string>
+    <string name="glass_material_family_kototoro">Amuratsu (Ajánlott)</string>
     <string name="glass_material_family_haze">Haze</string>
     <string name="glass_material_family_cupertino">Cupertino</string>
     <string name="glass_material_family_fluent">Fluent</string>
-    <string name="glass_material_kototoro">Kototoro (Ajánlott)</string>
+    <string name="glass_material_kototoro">Amuratsu (Ajánlott)</string>
     <string name="glass_material_haze_ultra_thin">Haze ultra vékony</string>
     <string name="glass_material_haze_thin">Haze vékony</string>
     <string name="glass_material_haze_regular">Haze normál</string>

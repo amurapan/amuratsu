@@ -149,7 +149,7 @@ struct AboutSettingsPage: View {
     var body: some View {
         Form {
             Section {
-                LabeledContent("应用", value: "Kototoro")
+                LabeledContent("应用", value: "Amuratsu")
                 LabeledContent("版本", value: AppBuildInfo.current.description)
                     .accessibilityIdentifier("settings.appVersion")
                 LabeledContent("构建渠道", value: AppBuildInfo.current.channel.title)

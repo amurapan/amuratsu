@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="url_github" translatable="false">https://github.com/Kototoro-app/Kototoro</string>
+	<string name="url_github" translatable="false">https://github.com/amurapan/amuratsu</string>
 	<string name="url_telegram_web" translatable="false">https://t.me/kototoroapp</string>
 	<string name="url_telegram" translatable="false">tg://resolve?domain=kototoroapp</string>
-	<string name="url_weblate" translatable="false">https://hosted.weblate.org/engage/kototoro</string>
-	<string name="url_user_manual" translatable="false">https://kototoro-app.github.io/Kototoro</string>
+	<string name="url_weblate" translatable="false">https://github.com/amurapan/amuratsu/issues</string>
+	<string name="url_user_manual" translatable="false">https://github.com/amurapan/amuratsu#readme</string>
 	<string name="url_discord" translatable="false">https://discord.gg/xBXvPz7tr7</string>
 	<string name="account_type_sync" translatable="false">org.kototoro.sync</string>
-    <string name="github_updates_repo" translatable="false">Kototoro-app/Kototoro</string>
-    <!-- Branch the out-of-band config files (docs/*.json) are read from.
-         The repo default branch is "devel", not "main" — hardcoding "main"
-         made every mirror-list refresh 404. Keep this in sync with CI. -->
-    <string name="github_updates_branch" translatable="false">devel</string>
+    <string name="github_updates_repo" translatable="false">amurapan/amuratsu</string>
+    <!-- Branch used for Amuratsu's out-of-band config files (docs/*.json). -->
+    <string name="github_updates_branch" translatable="false">main</string>
     <string name="gitcode_updates_repo" translatable="false">2401_87187946/Kototoro</string>
 	<string name="shikimori_clientId" translatable="false">5l5MXfd9WG7lsVlFSNSQG1ct1-A0M1LHqkg0HyEDiF4</string>
 	<string name="shikimori_clientSecret" translatable="false">YIGxvP6rxR-4Oi7L3nE7RhESIesosEUWmrMh9J6L_aY</string>
@@ -28,7 +26,7 @@
 	<string name="sync_authority_favourites" translatable="false">org.skepsun.kototoro.favourites</string>
 	<string name="tg_backup_bot_name" translatable="false">kototoro_backup_bot</string>
 	<string name="discord_app_id" translatable="false">1533311715364831252</string>
-	<string name="app_icon_url" translatable="false">https://raw.githubusercontent.com/Kototoro-app/Kototoro/refs/heads/devel/metadata/en-US/icon.png</string>
+	<string name="app_icon_url" translatable="false">https://raw.githubusercontent.com/amurapan/amuratsu/main/metadata/en-US/icon.png</string>
 	<string-array name="values_theme" translatable="false">
 		<item>-1</item>
 		<item>1</item>
@@ -102,4 +100,7 @@
 		<item>immersive</item>
 		<item>enhanced</item>
 	</string-array>
+    <string name="url_issues" translatable="false">https://github.com/amurapan/amuratsu/issues</string>
+    <string name="url_upstream_kototoro" translatable="false">https://github.com/Kototoro-app/Kototoro</string>
+    <string name="url_upstream_kotatsu" translatable="false">https://github.com/KotatsuApp/Kotatsu</string>
 </resources>

@@ -70,7 +70,7 @@ import javax.swing.filechooser.FileNameExtensionFilter
 fun DesktopStartup(error: String?) = DesktopTheme {
     Box(Modifier.fillMaxSize().background(Canvas), contentAlignment = Alignment.Center) {
         Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(18.dp)) {
-            Text("Kototoro", fontSize = 32.sp, fontWeight = FontWeight.Bold)
+            Text("Amuratsu", fontSize = 32.sp, fontWeight = FontWeight.Bold)
             if (error == null) {
                 CircularProgressIndicator()
                 Text(desktopText("app.opening"), color = Muted)

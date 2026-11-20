@@ -120,7 +120,7 @@
     <string name="_import">ייבוא</string>
     <string name="delete">מחיקה</string>
     <string name="operation_not_supported">פעולה זו אינה נתמכת</string>
-    <string name="cloudstream_newpipe_required">הרחבה זו דורשת מחלקות NewPipe שאינן קיימות ב-NewPipe שצורף ל-Kototoro, ולכן אינה יכולה להפעיל סרטונים. נסה לעדכן את ההרחבה או את Kototoro.</string>
+    <string name="cloudstream_newpipe_required">הרחבה זו דורשת מחלקות NewPipe שאינן קיימות ב-NewPipe שצורף ל-Amuratsu, ולכן אינה יכולה להפעיל סרטונים. נסה לעדכן את ההרחבה או את Amuratsu.</string>
     <string name="text_file_not_supported">יש לבחור קובץ ZIP או CBZ.</string>
     <string name="no_description">אין תיאור</string>
     <string name="clear_pages_cache">ניקוי מטמון עמודים</string>
@@ -184,7 +184,7 @@
     <string name="replace_rule_disable_all_summary">הפסק זמנית את החלת כללי ההחלפה</string>
     <string name="replace_rule_edit">עריכת כלל</string>
     <string name="replace_rule_import">ייבוא כללי Legado</string>
-    <string name="replace_rule_import_summary">ייבוא מערך JSON שיוצא על ידי Legado או Kototoro</string>
+    <string name="replace_rule_import_summary">ייבוא מערך JSON שיוצא על ידי Legado או Amuratsu</string>
     <string name="replace_rule_export">ייצוא כללים</string>
     <string name="replace_rule_export_summary">ייצוא כללים בפורמט JSON תואם</string>
     <string name="replace_rule_empty">אין כללי החלפה</string>
@@ -315,7 +315,7 @@
     <string name="enter_password">הזן סיסמה</string>
     <string name="wrong_password">סיסמה שגויה</string>
     <string name="protect_application">הגן על האפליקציה</string>
-    <string name="protect_application_summary">בקש סיסמה בעת הפעלת Kototoro</string>
+    <string name="protect_application_summary">בקש סיסמה בעת הפעלת Amuratsu</string>
     <string name="repeat_password">חזור על הסיסמה</string>
     <string name="passwords_mismatch">הסיסמאות אינן תואמות</string>
     <string name="about">אודות</string>
@@ -422,8 +422,8 @@
     <string name="clear_local_novel_storage_prompt">למחוק את כל קבצי הרומנים המקומיים והמיובאים? פעולה זו בלתי הפיכה.</string>
     <string name="clear_local_video_storage_prompt">למחוק את כל קבצי הווידאו המקומיים והמיובאים? פעולה זו בלתי הפיכה.</string>
     <string name="welcome">ברוך הבא</string>
-    <string name="welcome_intro_title">הגדרת Kototoro</string>
-    <string name="welcome_intro_summary">בחר כיצד ברצונך לקרוא ולצפות. Kototoro משתמשת כעת במשפחות מקורות מבוססות תוספים למנגה, רומנים ווידאו, כולל JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader ו-Cloudstream.</string>
+    <string name="welcome_intro_title">הגדרת Amuratsu</string>
+    <string name="welcome_intro_summary">בחר כיצד ברצונך לקרוא ולצפות. Amuratsu משתמשת כעת במשפחות מקורות מבוססות תוספים למנגה, רומנים ווידאו, כולל JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader ו-Cloudstream.</string>
     <string name="welcome_step_start">התחל</string>
     <string name="welcome_step_sources">מקורות</string>
     <string name="welcome_step_preferences">העדפות</string>
@@ -433,11 +433,11 @@
     <string name="welcome_glass_preset_title">גימור זכוכית</string>
     <string name="welcome_glass_preset_summary">בחר את ערכת גימור הזכוכית בסגנון iOS. שבירת אור היא ברירת המחדל וניתן לכוונן אותה בהמשך בהגדרות המראה.</string>
     <string name="home_quick_action_wizard">אשף</string>
-    <string name="welcome_restore_summary">כבר השתמשת ב-Kototoro בעבר? שחזר גיבוי, התחבר לסנכרון או הוסף תיקיות מקומיות תחילה.</string>
+    <string name="welcome_restore_summary">כבר השתמשת ב-Amuratsu בעבר? שחזר גיבוי, התחבר לסנכרון או הוסף תיקיות מקומיות תחילה.</string>
     <string name="welcome_source_formats_title">בחר פורמטים של תוכן</string>
     <string name="welcome_source_formats_summary">מסננים אלו קובעים אילו משפחות מקורות יופעלו לאחר ההגדרה.</string>
     <string name="welcome_ecosystems_title">אקוסיסטם מקורות</string>
-    <string name="welcome_ecosystems_summary">Kototoro תומכת במספר משפחות מקורות של תוספים לקריאה וצפייה. התחל עם המאגרים המומלצים כאן, ולאחר מכן כוונן אותם בהמשך בניהול ההרחבות.</string>
+    <string name="welcome_ecosystems_summary">Amuratsu תומכת במספר משפחות מקורות של תוספים לקריאה וצפייה. התחל עם המאגרים המומלצים כאן, ולאחר מכן כוונן אותם בהמשך בניהול ההרחבות.</string>
     <string name="welcome_ecosystem_manga">מנגה: מנתחי JAR, Mihon, IReader, LNReader</string>
     <string name="welcome_ecosystem_novel">רומן: Legado, IReader, LNReader</string>
     <string name="welcome_ecosystem_video">ווידאו: Aniyomi, TVBox, Cloudstream</string>
@@ -446,10 +446,10 @@
     <string name="welcome_preferences_summary">בחר שפות וסוגי תוכן. תוכל לשנות זאת בהמשך בהגדרות המקורות.</string>
     <string name="welcome_spaces_title">הפרד את המרחבים שלך</string>
     <string name="welcome_spaces_summary">מרחבים מעניקים למנגה, רומנים ואנימה ניווט עצמאי, העדפות גלישה והקשר קריאה או הפעלה. אפשרויות מתקדמות ומרחבים מותאמים אישית זמינים בהמשך תחת הגדרות ‹ משתמש ‹ מרחבים.</string>
-    <string name="welcome_ready_summary">ההגדרה הושלמה. Kototoro תפעיל מקורות התואמים לשפות ולפורמטים שבחרת. תוכל להריץ אשף זה שוב מתוך הגדרות ‹ מקורות תוכן ‹ אשף הגדרה.</string>
-    <string name="welcome_jar_install_success">Kototoro: מנועי הניתוח העדכניים %1$d הובאו ונטענו בהצלחה מהענן!</string>
-    <string name="welcome_jar_install_up_to_date">Kototoro: אימות הענן הושלם, המנתחים המקומיים מעודכנים! (נטענו %1$d מקורות בסך הכל)</string>
-    <string name="welcome_jar_install_failed">Kototoro: טעינת מנועי הניתוח מהרשת נכשלה (%1$s), נסה שוב או עבור בהגדרות להחלפת שרתי פרוקסי חלופיים</string>
+    <string name="welcome_ready_summary">ההגדרה הושלמה. Amuratsu תפעיל מקורות התואמים לשפות ולפורמטים שבחרת. תוכל להריץ אשף זה שוב מתוך הגדרות ‹ מקורות תוכן ‹ אשף הגדרה.</string>
+    <string name="welcome_jar_install_success">Amuratsu: מנועי הניתוח העדכניים %1$d הובאו ונטענו בהצלחה מהענן!</string>
+    <string name="welcome_jar_install_up_to_date">Amuratsu: אימות הענן הושלם, המנתחים המקומיים מעודכנים! (נטענו %1$d מקורות בסך הכל)</string>
+    <string name="welcome_jar_install_failed">Amuratsu: טעינת מנועי הניתוח מהרשת נכשלה (%1$s), נסה שוב או עבור בהגדרות להחלפת שרתי פרוקסי חלופיים</string>
     <string name="home_placeholder_title">לוח בקרה של קריאה</string>
     <string name="home_placeholder_subtitle">הצגת הקריאה האחרונה, עדכונים, ספריה, סנכרון ומקורות במקום אחד.</string>
     <string name="home_hero_local_subtitle">להמשיך מאיפה שהפסקת, או לחזור למה שפתחת לאחרונה.</string>
@@ -1027,7 +1027,7 @@
     <string name="import_completed_hint">באפשרותך למחוק את הקובץ המקורי מהאחסון כדי לחסוך מקום</string>
     <string name="import_will_start_soon">הייבוא יחל בקרוב</string>
     <string name="feed">פיד</string>
-    <string name="manga_error_description_pattern">פרטי שגיאה:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. נסה &lt;a href=\"%2$s\"&gt;לפתוח את המנגה בדפדפן&lt;/a&gt; כדי לוודא שהיא זמינה במקור שלה&lt;br&gt;2. ודא שאתה משתמש ב&lt;a href=\"kototoro://about\"&gt;גרסה העדכנית ביותר של Kototoro&lt;/a&gt;&lt;br&gt;3. אם היא זמינה, שלח דיווח שגיאה למפתחים.</string>
+    <string name="manga_error_description_pattern">פרטי שגיאה:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. נסה &lt;a href=\"%2$s\"&gt;לפתוח את המנגה בדפדפן&lt;/a&gt; כדי לוודא שהיא זמינה במקור שלה&lt;br&gt;2. ודא שאתה משתמש ב&lt;a href=\"amuratsu://about\"&gt;גרסה העדכנית ביותר של Amuratsu&lt;/a&gt;&lt;br&gt;3. אם היא זמינה, שלח דיווח שגיאה למפתחים.</string>
     <string name="history_shortcuts">הצגת קיצורי דרך למנגה אחרונה</string>
     <string name="history_shortcuts_summary">הפיכת מנגה אחרונה לזמינה באמצעות לחיצה ארוכה על סמל האפליקציה</string>
     <string name="reader_control_ltr_summary">אל תתאים את כיוון החלפת העמודים למצב הקורא, לדוגמה לחיצה על החץ הימני תעביר תמיד לעמוד הבא. אפשרות זו משפיעה רק על התקני קלט פיזיים</string>
@@ -1196,7 +1196,7 @@
     <string name="export_backup_for_other_apps_summary">בחירת יישום יעד ויצירת גיבוי תואם: Kotatsu, Mihon, Aniyomi או Usagi.</string>
     <string name="export_backup_choose_target_app">בחר יישום יעד</string>
     <string name="export_kotatsu_backup">ייצוא גיבוי Kotatsu</string>
-    <string name="export_kotatsu_backup_summary">יצירת גיבוי ישן נפרד עבור יישומי משפחת Kotatsu ללא מקטעים הספציפיים ל-Kototoro.</string>
+    <string name="export_kotatsu_backup_summary">יצירת גיבוי ישן נפרד עבור יישומי משפחת Kotatsu ללא מקטעים הספציפיים ל-Amuratsu.</string>
     <string name="export_kotatsu_backup_saved">גיבוי Kotatsu נשמר</string>
     <string name="export_mihon_backup">ייצוא גיבוי Mihon</string>
     <string name="export_mihon_backup_summary">ייצוא מועדפים, קטגוריות והתקדמות קריאה עבור פריטי מקור Mihon בלבד.</string>
@@ -1269,7 +1269,7 @@
     <string name="data_and_privacy">נתונים ופרטיות</string>
     <string name="restore_summary">שחזור גיבוי שנוצר בעבר</string>
     <string name="restore_kototoro_backup">שחזור גיבוי</string>
-    <string name="restore_kototoro_backup_summary">שחזור גיבוי Kototoro מכל גרסה, או גיבוי Kotatsu. המבנה זוהה אוטומטית.</string>
+    <string name="restore_kototoro_backup_summary">שחזור גיבוי Amuratsu מכל גרסה, או גיבוי Kotatsu. המבנה זוהה אוטומטית.</string>
     <string name="restore_mode_replace_existing">החלפת נתונים קיימים</string>
     <string name="restore_mode_replace_existing_summary">קטעים המשוחזרים ינוקו תחילה; מועדפים והיסטוריה שחסרים בגיבוי יוסרו</string>
     <string name="restore_mode_merge_with_existing">מיזוג עם נתונים קיימים</string>
@@ -2006,7 +2006,7 @@
     <string name="show_pages_thumbs">הצג תמונות ממוזערות של עמודים</string>
     <string name="show_pages_thumbs_summary">הצגת לשונית \"עמודים\" במסך הפרטים</string>
     <string name="error_no_data_received">לא התקבלו נתונים מהשרת</string>
-    <string name="unsupported_backup_message">נא לבחור קובץ גיבוי תקין של Kototoro</string>
+    <string name="unsupported_backup_message">נא לבחור קובץ גיבוי תקין של Amuratsu</string>
     <string name="hours_short">%d ש\'</string>
     <string name="minutes_short">%d ד\'</string>
     <string name="seconds_short">%d שנ\'</string>
@@ -2058,8 +2058,8 @@
     <string name="chapters_read">פרקים שנקראו</string>
     <string name="chapters_left">פרקים שנותרו</string>
     <string name="external_source">חיצוני / תוסף</string>
-    <string name="plugin_incompatible">תוסף לא תואם או שגיאה פנימית. ודא שאתה משתמש בגרסה העדכנית ביותר של התוסף ושל Kototoro</string>
-    <string name="plugin_incompatible_with_cause">שגיאת תוסף: %s\n ודא שאתה משתמש בגרסה העדכנית ביותר של התוסף ושל Kototoro</string>
+    <string name="plugin_incompatible">תוסף לא תואם או שגיאה פנימית. ודא שאתה משתמש בגרסה העדכנית ביותר של התוסף ושל Amuratsu</string>
+    <string name="plugin_incompatible_with_cause">שגיאת תוסף: %s\n ודא שאתה משתמש בגרסה העדכנית ביותר של התוסף ושל Amuratsu</string>
     <string name="plugin_missing_host_classes">לא ניתן להתקין את %1$s משום שהוא תלוי במחלקות מארח %2$s אינן נתמכות:\n%3$s</string>
     <string name="connection_ok">החיבור תקין</string>
     <string name="invalid_proxy_configuration">תצורת פרוקסי שגויה</string>
@@ -2259,7 +2259,7 @@
     <string name="search_disabled_sources">חיפוש במקורות מושבתים</string>
     <string name="error_details">פרטי שגיאה</string>
     <string name="error_disclaimer_manga">נסה לפתוח את המנגה בדפדפן כדי לוודא שהיא זמינה במקור שלה.</string>
-    <string name="error_disclaimer_app_outdated">נראה שגרסת Kototoro שברשותך אינה מעודכנת. יש להתקין את הגרסה האחרונה כדי לקבל את כל התיקונים הזמינים.</string>
+    <string name="error_disclaimer_app_outdated">נראה שגרסת Amuratsu שברשותך אינה מעודכנת. יש להתקין את הגרסה האחרונה כדי לקבל את כל התיקונים הזמינים.</string>
     <string name="error_disclaimer_report">באפשרותך לשלוח דוח שגיאה למפתחים, דבר שיעזור לנו לאתר ולתקן את השגיאה</string>
     <string name="enable_source_manga">הפעלת מקור מנגה</string>
     <string name="enable_source_novel">הפעלת מקור רומן</string>
@@ -2277,7 +2277,7 @@
     <string name="recommendation_novel">רומנים מומלצים</string>
     <string name="recommendation_video">סרטונים מומלצים</string>
     <string name="link_to_manga_on_s">קישור למנגה ב-%s</string>
-    <string name="link_to_manga_in_app">קישור למנגה ב-Kototoro</string>
+    <string name="link_to_manga_in_app">קישור למנגה ב-Amuratsu</string>
     <string name="clear_browser_data">ניקוי נתוני דפדפן</string>
     <string name="clear_browser_data_summary">ניקוי נתוני דפדפן כגון מטמון ועוגיות. אזהרה: ההרשאה במקורות תוכן עלולה להיות לא תקפה</string>
     <string name="no_write_permission_to_file">אין הרשאה לכתיבת קובץ</string>
@@ -2327,7 +2327,7 @@
     <string name="discord_token_hint">הדבק את אסימון ה-Discord שלך כאן</string>
     <string name="discord_rpc_summary">הצגת מצב הקריאה שלך ב-Discord</string>
     <string name="obtain">השגה</string>
-    <string name="discord_rpc_description">קורא מנגה ב-Kototoro - אפליקציית קריאת מנגה</string>
+    <string name="discord_rpc_description">קורא מנגה ב-Amuratsu - אפליקציית קריאת מנגה</string>
     <string name="discord_logout_summary">ניקוי הרשאת ה-Discord השמורה</string>
     <string name="reading_s">קורא את %s</string>
     <string name="read_on_s">קריאה ב-%s</string>
@@ -2355,7 +2355,7 @@
     <string name="sync_backend_switch_webdav_title">לעבור לגיבוי WebDAV?</string>
     <string name="sync_backend_switch_webdav_confirm">סנכרון Google Drive מופעל כעת. הפעלת גיבוי WebDAV תכבה את סנכרון Google Drive תוך שמירת החשבון המחובר שלך.</string>
     <string name="sync_sign_in">הכן את סנכרון Google Drive</string>
-    <string name="sync_sign_in_summary">משתמש בנתוני אפליקציית Google Drive עם הרשאת Drive appdata המינימלית לסנכרון מנויים ועדכון רשומות. Kototoro לא יכול לגשת לקבצים ב-Drive שלך.</string>
+    <string name="sync_sign_in_summary">משתמש בנתוני אפליקציית Google Drive עם הרשאת Drive appdata המינימלית לסנכרון מנויים ועדכון רשומות. Amuratsu לא יכול לגשת לקבצים ב-Drive שלך.</string>
     <string name="google_drive_sync_unregistered_build_error">סנכרון Google Drive אינו נתמך בגרסאות פיתוח/לילה. אנא השתמש בגרסאות רשמיות או בסנכרון WebDAV.</string>
     <string name="sync_sign_out">התנתק</string>
     <string name="sync_account">מחובר</string>
@@ -2410,8 +2410,8 @@
     <string name="webdav_remote_backups_inspect">בדיקת גיבויים מרוחקים</string>
     <string name="webdav_remote_backups_inspect_summary">הורדה ובדיקה האם ניתן לשחזר בבטחה כל גיבוי מרוחק.</string>
     <string name="webdav_remote_backups_clear">ניקוי גיבויי WebDAV מרוחקים</string>
-    <string name="webdav_remote_backups_clear_summary">מחיקת כל קובצי הגיבוי של Kototoro בנתיב ה-WebDAV המוגדר. הנתונים המקומיים לא ישתנו.</string>
-    <string name="webdav_remote_backups_clear_confirm">למחוק את כל קובצי הגיבוי של Kototoro מנתיב ה-WebDAV המוגדר? הנתונים המקומיים לא ישתנו.</string>
+    <string name="webdav_remote_backups_clear_summary">מחיקת כל קובצי הגיבוי של Amuratsu בנתיב ה-WebDAV המוגדר. הנתונים המקומיים לא ישתנו.</string>
+    <string name="webdav_remote_backups_clear_confirm">למחוק את כל קובצי הגיבוי של Amuratsu מנתיב ה-WebDAV המוגדר? הנתונים המקומיים לא ישתנו.</string>
     <string name="webdav_remote_backups_loading">טוען גיבויי WebDAV…</string>
     <string name="webdav_remote_backup_status_unknown">לא נבדק</string>
     <string name="webdav_remote_backup_status_restorable">ניתן לשחזור</string>
@@ -2819,7 +2819,7 @@
     <string name="trust_and_add">הבעת אמון והוספה</string>
     <string name="trust_extension_repository_message">מאגר: %1$s\nאתר: %2$s\nטביעת אצבע SHA-256:\n%3$s\n\nוודא טביעת אצבע זו מול המפרסם טרם מתן אמון במאגר זה.</string>
     <string name="untrusted_extension_message">%1$s (%2$s) מותקן, אך החתימה שלו אינה תואמת לטביעת האצבע של המאגר הנבחר.\n\nטביעת אצבע של המאגר: %3$s\n\nהסר את החבילה המותקנת טרם התקנה מחדש ממאגר זה.</string>
-    <string name="incompatible_extension_message">לא ניתן להתקין את %1$s %2$s מכיוון שגרסת הספרייה שלו (%3$s) נמצאת מחוץ לטווח הנתמך של Kototoro.</string>
+    <string name="incompatible_extension_message">לא ניתן להתקין את %1$s %2$s מכיוון שגרסת הספרייה שלו (%3$s) נמצאת מחוץ לטווח הנתמך של Amuratsu.</string>
     <string name="built_in_sources">מובנים</string>
     <string name="select_all">בחר הכל</string>
     <string name="deselect_all">בטל בחירת הכל</string>
@@ -2859,7 +2859,7 @@
     <string name="welcome_plugins_repo_yakateam">מנתחי Yakateam</string>
     <string name="welcome_plugins_repo_redo">מנתחי Redo</string>
     <string name="welcome_plugins_repo_uma">UMA (מנתחי Tsuki)</string>
-    <string name="welcome_plugins_disclaimer">מאגרי הרחבות אלו מתוחזקים על ידי קהילות מקוונות עצמאיות. מפתחי Kototoro אינם קשורים, שולטים או משוייכים למאגרים צד שלישי אלו. אני מאשר שאני מגדיר מקורות אלו על אחריותי בלבד.</string>
+    <string name="welcome_plugins_disclaimer">מאגרי הרחבות אלו מתוחזקים על ידי קהילות מקוונות עצמאיות. מפתחי Amuratsu אינם קשורים, שולטים או משוייכים למאגרים צד שלישי אלו. אני מאשר שאני מגדיר מקורות אלו על אחריותי בלבד.</string>
     <string name="welcome_plugins_start_btn">הגדרת מאגרים</string>
     <string name="welcome_plugins_configured">הוגדרו %1$d סוגי מקור/מאגר חדשים: %2$s. החבילות עדיין לא הורידו — התקן את המתאימות בשלב הבא.</string>
     <string name="welcome_plugins_configured_none">לא ניתן להגדיר מקור או מאגר. בדוק את הרשת שלך או בחר מאגרים אחרים ונסה שוב.</string>
@@ -2889,22 +2889,22 @@
     <string name="welcome_install_system_launch_failed">לא ניתן להפעיל את מתקין המערכת: %1$s</string>
     <string name="welcome_install_skip">דלג על ההתקנה — אעשה זאת בניהול הרחבות בהמשך</string>
     <string name="welcome_install_step_title">התקנת הרחבות בקבוצה</string>
-    <string name="welcome_install_step_summary">בחר אילו סוגי מקורות והגדרות להשתמש, ואז אפשר ל-Kototoro להוריד ולהתקין הכל ברקע.</string>
+    <string name="welcome_install_step_summary">בחר אילו סוגי מקורות והגדרות להשתמש, ואז אפשר ל-Amuratsu להוריד ולהתקין הכל ברקע.</string>
     <string name="welcome_install_kinds_title">סוגי מקורות להתקנה</string>
     <string name="welcome_install_kinds_summary">רק הסוגים שסימנת יטופלו. אלה שלא סומנו (למשל Mihon, אם אתה מעדיף לעשות זאת מאוחר יותר) ימתינו להתקנה שלך בניהול הרחבות.</string>
     <string name="welcome_install_kinds_empty">עדיין לא הוגדר מאגר. חזור הוסף מאגרים תחילה.</string>
     <string name="welcome_install_nsfw_title">כלול תוכן למבוגרים (NSFW)</string>
     <string name="welcome_install_nsfw_summary">כבוי כברירת מחדל — חבילות למבוגרים בלבד מסוננות מרשימת ההתקנה.</string>
-    <string name="welcome_intro_app_title">Kototoro · קורא בקוד פתוח</string>
-    <string name="welcome_intro_body">Kototoro הוא קורא / נגן מולטימדיה בקוד פתוח. הוא תומך במערכת אקולוגית רחבה של הרחבות קהילתיות, אך אינו כולל מקורות תוכן משל עצמו.</string>
+    <string name="welcome_intro_app_title">Amuratsu · קורא בקוד פתוח</string>
+    <string name="welcome_intro_body">Amuratsu הוא קורא / נגן מולטימדיה בקוד פתוח. הוא תומך במערכת אקולוגית רחבה של הרחבות קהילתיות, אך אינו כולל מקורות תוכן משל עצמו.</string>
     <string name="welcome_intro_concepts_title">שלושה מושגים, ב-30 שניות</string>
     <string name="welcome_intro_repo_label">מאגר</string>
     <string name="welcome_intro_repo_body">כתובת URL לאוסף הרחבות צד שלישי, המתוחזק על ידי קהילה עצמאית (למשל מאגרי Mihon, רשימות TVBox או מאגרי תוספים של LNReader).</string>
     <string name="welcome_intro_extension_label">הרחבה</string>
-    <string name="welcome_intro_extension_body">חבילה אחת ניתנת להתקנה בתוך מאגר — קובץ JAR, APK או רשימת JSON. הרחבות מותקנות מעניקות ל-Kototoro את היכולת לקרוא או לנגן מאתר.</string>
+    <string name="welcome_intro_extension_body">חבילה אחת ניתנת להתקנה בתוך מאגר — קובץ JAR, APK או רשימת JSON. הרחבות מותקנות מעניקות ל-Amuratsu את היכולת לקרוא או לנגן מאתר.</string>
     <string name="welcome_intro_source_label">מקור</string>
     <string name="welcome_intro_source_body">מקור תוכן מוחשי אחד שאתה רואה באפליקציה לאחר התקנה או ייבוא של הרחבה — לדוגמה אתר מנגה או וידאו ספציפי.</string>
-    <string name="welcome_intro_disclaimer">השימוש בהרחבות צד שלישי הוא על אחריותך בלבד: התנהגות בזמן ריצה, חוקיות ותוכן אינם נשלטים על ידי פרויקט Kototoro.</string>
+    <string name="welcome_intro_disclaimer">השימוש בהרחבות צד שלישי הוא על אחריותך בלבד: התנהגות בזמן ריצה, חוקיות ותוכן אינם נשלטים על ידי פרויקט Amuratsu.</string>
     <string name="welcome_intro_continue">הבנתי — המשך</string>
     <string name="welcome_done_title">כמעט סיימנו</string>
     <string name="welcome_done_summary">סיכום ההתקנה שלך וכמה טיפים.</string>
@@ -2913,10 +2913,10 @@
     <string name="welcome_done_json_note">סוגים מבוססי JSON (Legado / TVBox / LNReader) מיובאים אוטומטית; אם הוספת גם מאגרי JSON אחרים, ייבא אותם בניהול הרחבות.</string>
     <string name="welcome_done_title_finished">ההתקנה הושלמה</string>
     <string name="welcome_done_summary_finished">אשף ההתקנה הסתיים — לא נוספו מאגרים או מקורות באופן אוטומטי.</string>
-    <string name="welcome_done_body_finished">Kototoro לא הוסיפה מקורות במהלך ההתקנה. באפשרותך להוסיף מאגרים ומקורות משלך בכל עת בהגדרות ← מקורות תוכן (ניהול הרחבות).</string>
+    <string name="welcome_done_body_finished">Amuratsu לא הוסיפה מקורות במהלך ההתקנה. באפשרותך להוסיף מאגרים ומקורות משלך בכל עת בהגדרות ← מקורות תוכן (ניהול הרחבות).</string>
     <string name="welcome_done_advice_title">אם מקור אינו עובד</string>
     <string name="welcome_done_advice_summary">מסלול פתרון בעיות קצר, כדי שהאנשים הנכונים יראו את הדיווח.</string>
-    <string name="welcome_done_advice_body">1. אמת את הבעיה באמצעות אפליקציית המקור של ההרחבה — לדוגמה, יש לבדוק מקור מסוג Mihon באפליקציית Mihon.\n2. אם הבעיה קיימת גם שם, היא שייכת למאגר המתוחזק את ההרחבה: פתח בעיה בכתובת ה-URL של המאגר עצמו.\n3. אם היא קיימת רק ב-Kototoro, דווח על כך במאגר פרויקט Kototoro וכלול את שם המקור, גרסת ההרחבה ומה ניסית לעשות.</string>
+    <string name="welcome_done_advice_body">1. אמת את הבעיה באמצעות אפליקציית המקור של ההרחבה — לדוגמה, יש לבדוק מקור מסוג Mihon באפליקציית Mihon.\n2. אם הבעיה קיימת גם שם, היא שייכת למאגר המתוחזק את ההרחבה: פתח בעיה בכתובת ה-URL של המאגר עצמו.\n3. אם היא קיימת רק ב-Amuratsu, דווח על כך במאגר פרויקט Amuratsu וכלול את שם המקור, גרסת ההרחבה ומה ניסית לעשות.</string>
     <string name="welcome_step_counter">שלב %1$d מתוך %2$d</string>
     <string name="welcome_action_configure_repos">הגדר מאגרים נבחרים</string>
     <string name="welcome_action_install_count">התקן %1$d הרחבות</string>
@@ -2950,7 +2950,7 @@
     <string name="welcome_permissions_notifications_title">התראות</string>
     <string name="welcome_permissions_notifications_summary">מציג התראות הורדה, עדכון ונגן.</string>
     <string name="welcome_permissions_packages_title">אפליקציות מותקנות</string>
-    <string name="welcome_permissions_packages_summary">מאפשר ל-Kototoro לזהות הרחבות מותקנות ואפליקציות מארחות (Mihon, Aniyomi, …). מוגדר במניפסט ומאושר אוטומטית.</string>
+    <string name="welcome_permissions_packages_summary">מאפשר ל-Amuratsu לזהות הרחבות מותקנות ואפליקציות מארחות (Mihon, Aniyomi, …). מוגדר במניפסט ומאושר אוטומטית.</string>
     <string name="welcome_permissions_battery_title">שרידות ברקע</string>
     <string name="welcome_permissions_battery_summary">שומר על הורדות ועדכונים ברקע כשהמסך כבוי או המכשיר במצב סרק.</string>
     <string name="welcome_permissions_battery_action">אישור</string>
@@ -3366,11 +3366,11 @@
     <string name="pref_glass_blur_quality_performance">ביצועים</string>
     <string name="pref_glass_blur_quality_balanced">מאוזן</string>
     <string name="pref_glass_blur_quality_quality">איכות</string>
-    <string name="glass_material_family_kototoro">Kototoro (מומלץ)</string>
+    <string name="glass_material_family_kototoro">Amuratsu (מומלץ)</string>
     <string name="glass_material_family_haze">Haze</string>
     <string name="glass_material_family_cupertino">Cupertino</string>
     <string name="glass_material_family_fluent">Fluent</string>
-    <string name="glass_material_kototoro">Kototoro (מומלץ)</string>
+    <string name="glass_material_kototoro">Amuratsu (מומלץ)</string>
     <string name="glass_material_haze_ultra_thin">Haze דק במיוחד</string>
     <string name="glass_material_haze_thin">Haze דק</string>
     <string name="glass_material_haze_regular">Haze רגיל</string>

@@ -120,7 +120,7 @@
     <string name="_import">Innbaíran</string>
     <string name="delete">Fraqiman</string>
     <string name="operation_not_supported">So tauhts ni gatiligst</string>
-    <string name="cloudstream_newpipe_required">Þata auking þarf NewPipe craftons, þoei NewPipe gafastid miþ Kototoro ni habaiþ, duþe ni mag gablotjan bileidon. Frojis niujaþian auking oþþe Kototoro.</string>
+    <string name="cloudstream_newpipe_required">Þata auking þarf NewPipe craftons, þoei NewPipe gafastid miþ Amuratsu ni habaiþ, duþe ni mag gablotjan bileidon. Frojis niujaþian auking oþþe Amuratsu.</string>
     <string name="text_file_not_supported">Kius ZIP oþþe CBZ skive.</string>
     <string name="no_description">Ni mel</string>
     <string name="clear_pages_cache">Hrainjan lido falaha</string>
@@ -184,7 +184,7 @@
     <string name="replace_rule_disable_all_summary">Hwele atlet waurda ustahs</string>
     <string name="replace_rule_edit">Bala ustah</string>
     <string name="replace_rule_import">Innbaur Legado ustahs</string>
-    <string name="replace_rule_import_summary">Innbaur JSON fram Legado aþþan Kototoro</string>
+    <string name="replace_rule_import_summary">Innbaur JSON fram Legado aþþan Amuratsu</string>
     <string name="replace_rule_export">Utbaur ustahs</string>
     <string name="replace_rule_export_summary">Utbaur ustahs in JSON mēta</string>
     <string name="replace_rule_empty">Ni ustahs</string>
@@ -315,7 +315,7 @@
     <string name="enter_password">innagid liug</string>
     <string name="wrong_password">faheins liug</string>
     <string name="protect_application">gaweih sa app</string>
-    <string name="protect_application_summary">bidei liug þan duginnid Kototoro</string>
+    <string name="protect_application_summary">bidei liug þan duginnid Amuratsu</string>
     <string name="repeat_password">aftra giwandei liug</string>
     <string name="passwords_mismatch">ni samaleikons liug</string>
     <string name="about">fram</string>
@@ -422,8 +422,8 @@
     <string name="clear_local_novel_storage_prompt">Afqiman allos stadis gaheftans novel skabelons? Ni mag aftra gataujada.</string>
     <string name="clear_local_video_storage_prompt">Afqiman allos stadis gaheftans video skabelons? Ni mag aftra gataujada.</string>
     <string name="welcome">Waila</string>
-    <string name="welcome_intro_title">Gatigid Kototoro</string>
-    <string name="welcome_intro_summary">Weilos hu wileis lagjan jah saihwan. Kototoro nu brukeid plugin-basiþos brunnos manga, novel jah video, þairh þata JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader, jah Cloudstream.</string>
+    <string name="welcome_intro_title">Gatigid Amuratsu</string>
+    <string name="welcome_intro_summary">Weilos hu wileis lagjan jah saihwan. Amuratsu nu brukeid plugin-basiþos brunnos manga, novel jah video, þairh þata JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader, jah Cloudstream.</string>
     <string name="welcome_step_start">Duginn</string>
     <string name="welcome_step_sources">Brunnos</string>
     <string name="welcome_step_preferences">Kusands</string>
@@ -433,11 +433,11 @@
     <string name="welcome_glass_preset_title">Gleis endi</string>
     <string name="welcome_glass_preset_summary">Weilos gleis endi iOS siujai. Refraction ist sjefino jah mag gahaftada aftra in stelains.</string>
     <string name="home_quick_action_wizard">Galaiba</string>
-    <string name="welcome_restore_summary">Brukiþs Kototoro faurþis? Gasatja bakup, innweipan du sync, oþþe auksta stadis skura faurþis.</string>
+    <string name="welcome_restore_summary">Brukiþs Amuratsu faurþis? Gasatja bakup, innweipan du sync, oþþe auksta stadis skura faurþis.</string>
     <string name="welcome_source_formats_title">Weilos haubutskabelons</string>
     <string name="welcome_source_formats_summary">Þai silban gaskaidons hwelja brunnos ist usstohans afar setup.</string>
     <string name="welcome_ecosystems_title">Brunno aikosystem</string>
-    <string name="welcome_ecosystems_summary">Kototoro saljand managans plugin brunnos lagjands jah saihwands. Duginn mid þaim garihta repositories her, þan gahafta in extension sturjam.</string>
+    <string name="welcome_ecosystems_summary">Amuratsu saljand managans plugin brunnos lagjands jah saihwands. Duginn mid þaim garihta repositories her, þan gahafta in extension sturjam.</string>
     <string name="welcome_ecosystem_manga">Manga: JAR parsers, Mihon, IReader, LNReader</string>
     <string name="welcome_ecosystem_novel">Novel: Legado, IReader, LNReader</string>
     <string name="welcome_ecosystem_video">Video: Aniyomi, TVBox, Cloudstream</string>
@@ -446,10 +446,10 @@
     <string name="welcome_preferences_summary">Weilos razdos jah skabelons. Mag andwizan aftra in brunno stelains.</string>
     <string name="welcome_spaces_title">Skeira þains rums</string>
     <string name="welcome_spaces_summary">Rums giband manga, novels, jah anime sundro drahtins, kusands, jah lagjands oþþe saihwands. Furahtis gataujands jah sleidans rums sind manags in Stelains → User → Rums.</string>
-    <string name="welcome_ready_summary">Setup ist fulgins. Kototoro skal usstohjan brunnos gands þaim razdom jah skabelons. Mag gataujan þata galaiba aftra us Stelains → Brunos → Setup galaiba.</string>
-    <string name="welcome_jar_install_success">Kototoro: Gagalubja jah usgat ga %1$d aftumist parsers us cloud net!</string>
-    <string name="welcome_jar_install_up_to_date">Kototoro: Cloud prooba fulgins, stadis parsers sind niujai! (Usgaba %1$d brunnos samin)</string>
-    <string name="welcome_jar_install_failed">Kototoro: Parser net uslagja afsat (%1$s), wileis roþjan aftra oþþe gaggan stelains du andwizan proxy</string>
+    <string name="welcome_ready_summary">Setup ist fulgins. Amuratsu skal usstohjan brunnos gands þaim razdom jah skabelons. Mag gataujan þata galaiba aftra us Stelains → Brunos → Setup galaiba.</string>
+    <string name="welcome_jar_install_success">Amuratsu: Gagalubja jah usgat ga %1$d aftumist parsers us cloud net!</string>
+    <string name="welcome_jar_install_up_to_date">Amuratsu: Cloud prooba fulgins, stadis parsers sind niujai! (Usgaba %1$d brunnos samin)</string>
+    <string name="welcome_jar_install_failed">Amuratsu: Parser net uslagja afsat (%1$s), wileis roþjan aftra oþþe gaggan stelains du andwizan proxy</string>
     <string name="home_placeholder_title">Lagjands dashboard</string>
     <string name="home_placeholder_subtitle">Saihws þana niujans lagjands, niujiza, libra, sync, jah brunnos in ainata stadi.</string>
     <string name="home_hero_local_subtitle">Nim þar þu bileibtos, oþþe ufarsteig aftra in þata þu usgaba niujis.</string>
@@ -1027,7 +1027,7 @@
     <string name="import_completed_hint">Magt usqiman frumist skatt du fastan rum</string>
     <string name="import_will_start_soon">Innbaera duginnip sniumundo</string>
     <string name="feed">Mati</string>
-    <string name="manga_error_description_pattern">Airzis gaqussi:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. Roki &lt;a href=\"%2$s\"&gt;uslukana manga in nettabilu&lt;/a&gt; gaskeiðan þatei ist garaihts ana brunna&lt;br&gt;2. Roki þu bruki &lt;a href=\"kototoro://about\"&gt;niujistan uhtwon Kototoro&lt;/a&gt;&lt;br&gt;3. Jabai ist garaihts, sandjan airzis skreiban du frumakunstjam.</string>
+    <string name="manga_error_description_pattern">Airzis gaqussi:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. Roki &lt;a href=\"%2$s\"&gt;uslukana manga in nettabilu&lt;/a&gt; gaskeiðan þatei ist garaihts ana brunna&lt;br&gt;2. Roki þu bruki &lt;a href=\"amuratsu://about\"&gt;niujistan uhtwon Amuratsu&lt;/a&gt;&lt;br&gt;3. Jabai ist garaihts, sandjan airzis skreiban du frumakunstjam.</string>
     <string name="history_shortcuts">Uisjan aftumist mangas</string>
     <string name="history_shortcuts_summary">Gawaurkja aftumist mangas þairh langa skeinana ana taikn</string>
     <string name="reader_control_ltr_summary">Ni gaþaursjan leafas gahlaiban in silogin, biskaiþ swaswe tahts hnuqil skeiniþ aftra du afum leafe. Þata kusta skaidip jabai hnuqil</string>
@@ -1160,7 +1160,7 @@
     <string name="export_backup_for_other_apps_summary">Gakjus app</string>
     <string name="export_backup_choose_target_app">Kius faorida app</string>
     <string name="export_kotatsu_backup">Usbeis Kotatsu afstass</string>
-    <string name="export_kotatsu_backup_summary">Gawja sisata afstass du Kotatsu-gabaios niþuh Kototoro-dailos.</string>
+    <string name="export_kotatsu_backup_summary">Gawja sisata afstass du Kotatsu-gabaios niþuh Amuratsu-dailos.</string>
     <string name="export_kotatsu_backup_saved">Kotatsu afstass gasqiss</string>
     <string name="export_mihon_backup">Usbeis Mihon afstass</string>
     <string name="export_mihon_backup_summary">Usbeis frijons, flokjos jah gaggag. Mihon.</string>
@@ -1233,7 +1233,7 @@
     <string name="data_and_privacy">Gagga jah rani</string>
     <string name="restore_summary">Aftra gasatjan framis gataujin baurt</string>
     <string name="restore_kototoro_backup">Aftra gasatjan</string>
-    <string name="restore_kototoro_backup_summary">Aftra gasatjan Kototoro baurt fram aljaibai ubuh, aiþþau Kotatsu baurt. Sniutata skoni gaswikeiþ.</string>
+    <string name="restore_kototoro_backup_summary">Aftra gasatjan Amuratsu baurt fram aljaibai ubuh, aiþþau Kotatsu baurt. Sniutata skoni gaswikeiþ.</string>
     <string name="restore_mode_replace_existing">Manwjan wisandans gagga</string>
     <string name="restore_mode_replace_existing_summary">Dails aftra gasatjans fratimida sint; liubons jah spelli us baurt afnimida sint</string>
     <string name="restore_mode_merge_with_existing">Gainsan miþ wisandans gagga</string>
@@ -1970,7 +1970,7 @@
     <string name="show_pages_thumbs">Atweisai smala leifa</string>
     <string name="show_pages_thumbs_summary">Gatwilei þana hnaupan bi smala</string>
     <string name="error_no_data_received">Ni waihtata gibai ana hita</string>
-    <string name="unsupported_backup_message">Gawaleigai gadauftana Kototoro skatts</string>
+    <string name="unsupported_backup_message">Gawaleigai gadauftana Amuratsu skatts</string>
     <string name="hours_short">%d w</string>
     <string name="minutes_short">%d m</string>
     <string name="seconds_short">%d s</string>
@@ -2022,8 +2022,8 @@
     <string name="chapters_read">Lafa afleisana</string>
     <string name="chapters_left">Lafa afleibida</string>
     <string name="external_source">Utana/blot</string>
-    <string name="plugin_incompatible">Unandhaba blot oþþe innaba missadja. Gagg gibais þatei brukjos niujiston blotizos jah Kototoro</string>
-    <string name="plugin_incompatible_with_cause">Blotis missadja: %s\n Gagg gibais þatei brukjos niujiston blotizos jah Kototoro</string>
+    <string name="plugin_incompatible">Unandhaba blot oþþe innaba missadja. Gagg gibais þatei brukjos niujiston blotizos jah Amuratsu</string>
+    <string name="plugin_incompatible_with_cause">Blotis missadja: %s\n Gagg gibais þatei brukjos niujiston blotizos jah Amuratsu</string>
     <string name="plugin_missing_host_classes">%1$s ni mag satja unte þarf ni andhabans %2$s host klason:\n%3$s</string>
     <string name="connection_ok">Bandwa goda ist</string>
     <string name="invalid_proxy_configuration">Unrihta prokysis gasatipa</string>
@@ -2214,7 +2214,7 @@
     <string name="search_disabled_sources">Sokjanair af usjukanaida brunna</string>
     <string name="error_details">Galeiko nauþos</string>
     <string name="error_disclaimer_manga">Fraujis uslukjan mangaan in netabaurdaeiei du gaswipnan þatei ist.</string>
-    <string name="error_disclaimer_app_outdated">Saeihada þateita usutisk Kototoro ist fairneis. Gabindi niujis usutisk du niman allos galeikos.</string>
+    <string name="error_disclaimer_app_outdated">Saeihada þateita usutisk Amuratsu ist fairneis. Gabindi niujis usutisk du niman allos galeikos.</string>
     <string name="error_disclaimer_report">Magt sandjan galeikopairto du timbrjandam, þata hilpid uns gasokjan jah gaswipan galeiko.</string>
     <string name="enable_source_manga">Gatwizan manga brunnan</string>
     <string name="enable_source_novel">Gatwizan novel brunnan</string>
@@ -2232,7 +2232,7 @@
     <string name="recommendation_novel">gafairindos novels</string>
     <string name="recommendation_video">gafairindos videos</string>
     <string name="link_to_manga_on_s">Toga du manga ana %s</string>
-    <string name="link_to_manga_in_app">Toga du manga in Kototoro</string>
+    <string name="link_to_manga_in_app">Toga du manga in Amuratsu</string>
     <string name="clear_browser_data">Hrainjan baurd gatamis</string>
     <string name="clear_browser_data_summary">Hrainjan baurd gatamis swaswe hiliza jah kokes. Warnu: Waldufni in brunnam mag wairþan ni niujis</string>
     <string name="no_write_permission_to_file">Ni habaida waldufni du meljan skive</string>
@@ -2282,7 +2282,7 @@
     <string name="discord_token_hint">Lagja þne Discord Token her</string>
     <string name="discord_rpc_summary">Atgaib þne lisandrs staua ana Discord</string>
     <string name="obtain">Niman</string>
-    <string name="discord_rpc_description">Lisandja bokos ana Kototoro - boko lisands app</string>
+    <string name="discord_rpc_description">Lisandja bokos ana Amuratsu - boko lisands app</string>
     <string name="discord_logout_summary">Hrainei gaskiratn Discord galawjan</string>
     <string name="reading_s">Lisands %s</string>
     <string name="read_on_s">Lisan ana %s</string>
@@ -2310,7 +2310,7 @@
     <string name="sync_backend_switch_webdav_title">Galiuhta du WebDAV gahramjan?</string>
     <string name="sync_backend_switch_webdav_confirm">Google Drive gata ist nu rinnan. Atnuhjand WebDAV-gaidana gagabaidip Google Drive gata, mel giband Google meldains.</string>
     <string name="sync_sign_in">Manwjan Google Drive gata</string>
-    <string name="sync_sign_in_summary">Biandib Google Drive gata-gaba mid ministan gagaba-galduka du gaimjan managans jah niujans. Kototoro ni mag niman þizos Drive skive.</string>
+    <string name="sync_sign_in_summary">Biandib Google Drive gata-gaba mid ministan gagaba-galduka du gaimjan managans jah niujans. Amuratsu ni mag niman þizos Drive skive.</string>
     <string name="google_drive_sync_unregistered_build_error">Google Drive gata ni ist usbeisida in waurstwa-timram. Niuk briskun buildizos aþþan WebDAV gata.</string>
     <string name="sync_sign_out">Utsaljan</string>
     <string name="sync_account">Innmatida</string>
@@ -2365,8 +2365,8 @@
     <string name="webdav_remote_backups_inspect">kannjan fairra gaggja</string>
     <string name="webdav_remote_backups_inspect_summary">niman jah gaskunsjan hvaryei fairra gaggs gadobata aftra satjada.</string>
     <string name="webdav_remote_backups_clear">usqiman fairra WebDAV gaggja</string>
-    <string name="webdav_remote_backups_clear_summary">usqiman allans Kototoro gagggja standandans ana WebDAV slada. Haimja gatawida ni staþliþ.</string>
-    <string name="webdav_remote_backups_clear_confirm">Usqiman allans Kototoro gaggja fairra WebDAV slada? Haimja gatawida ni staþliþ.</string>
+    <string name="webdav_remote_backups_clear_summary">usqiman allans Amuratsu gagggja standandans ana WebDAV slada. Haimja gatawida ni staþliþ.</string>
+    <string name="webdav_remote_backups_clear_confirm">Usqiman allans Amuratsu gaggja fairra WebDAV slada? Haimja gatawida ni staþliþ.</string>
     <string name="webdav_remote_backups_loading">hlaþand WebDAV gaggja...</string>
     <string name="webdav_remote_backup_status_unknown">ni gaskunþ</string>
     <string name="webdav_remote_backup_status_restorable">Aftra satja</string>
@@ -2774,7 +2774,7 @@
     <string name="trust_and_add">Traida jah auk</string>
     <string name="trust_extension_repository_message">Gardja: %1$s\nUtastaþs: %2$s\nSHA-256 gardja:\n%3$s\n\nGaweis þata gardja mið gatarjand faura traidands þata gardja.</string>
     <string name="untrusted_extension_message">Faura %1$s (%2$s) gasatidan ist, þanuh taikns izais ni galeikoþ þamma gasatidun gardjam.\n\nGardja gardjis: %3$s\n\nNimi us gasatidan taugeins faura niujis gasatideins us þamma gardja.</string>
-    <string name="incompatible_extension_message">%1$s %2$s ni mag gasatida wisanunte boka izais (%3$s) ist hindar markos Kototoro.</string>
+    <string name="incompatible_extension_message">%1$s %2$s ni mag gasatida wisanunte boka izais (%3$s) ist hindar markos Amuratsu.</string>
     <string name="built_in_sources">Inbubans</string>
     <string name="select_all">Usweis all</string>
     <string name="deselect_all">Ni usweis all</string>
@@ -2814,7 +2814,7 @@
     <string name="welcome_plugins_repo_yakateam">Yakateam Disons</string>
     <string name="welcome_plugins_repo_redo">Redo Disons</string>
     <string name="welcome_plugins_repo_uma">UMA (Tsuki Disons)</string>
-    <string name="welcome_plugins_disclaimer">Þôs auktoðê gaqussjands wisand faura silbanum þiudum haldand. Þái Kototoro waurstwjans ni haband þaurn, waldand, naub samana miþ þaim anþar-silda leikstaþam. Witands þatei ik gawiþa þans brunna mit meinata faurhtei.</string>
+    <string name="welcome_plugins_disclaimer">Þôs auktoðê gaqussjands wisand faura silbanum þiudum haldand. Þái Amuratsu waurstwjans ni haband þaurn, waldand, naub samana miþ þaim anþar-silda leikstaþam. Witands þatei ik gawiþa þans brunna mit meinata faurhtei.</string>
     <string name="welcome_plugins_start_btn">Gawiþ gaqussjan</string>
     <string name="welcome_plugins_configured">Gawiþ %1$d niujis brunna/gaqussjans kungi: %2$s. Kustans ni niþarlagans nu — lagjands gamotanins ana aftumist stega.</string>
     <string name="welcome_plugins_configured_none">Ni brunna naur gaqussjan gawiþa mag. Sai net izwar naur gawiþ anþara gaqussjans jah roids.</string>
@@ -2844,22 +2844,22 @@
     <string name="welcome_install_system_launch_failed">Ni mag ushevia system lagjands: %1$s</string>
     <string name="welcome_install_skip">Afletan lagjands — gatawida in Auktoðê Managein aftra</string>
     <string name="welcome_install_step_title">Samasetein lagjands auktoðê</string>
-    <string name="welcome_install_step_summary">Gajukis haband brunna kungi jah gamotan þu wileis, þan let Kototoro niþarlagi jah lagji allana in aftarstaþa.</string>
+    <string name="welcome_install_step_summary">Gajukis haband brunna kungi jah gamotan þu wileis, þan let Amuratsu niþarlagi jah lagji allana in aftarstaþa.</string>
     <string name="welcome_install_kinds_title">Brunna kungi lagjands</string>
     <string name="welcome_install_kinds_summary">Ata þái kungi þu gajukis wairþand handugs. Þái ni gajukis (faura dæmi Mihon, jabai gajukis gataujan aftra) bileiþand þuz lagjands in Auktoðê Managein.</string>
     <string name="welcome_install_kinds_empty">Ni gaqussjans gawiþos nu. Gakwimis aftra jah aukga gaqussjans frumista.</string>
     <string name="welcome_install_nsfw_title">Usfullan NSFW razn</string>
     <string name="welcome_install_nsfw_summary">Af fram brêdi — unaldans kustans usswôkin fram lagjands lista.</string>
-    <string name="welcome_intro_app_title">Kototoro · Liþuswêg brigggja</string>
-    <string name="welcome_intro_body">Kototoro ist liþuswêg brigggja gagareins / afsatjans. Gahabaiþ manago gamotan auktoðê þiudis, aþþan ni habaiþ anþar razns brunna silbis.</string>
+    <string name="welcome_intro_app_title">Amuratsu · Liþuswêg brigggja</string>
+    <string name="welcome_intro_body">Amuratsu ist liþuswêg brigggja gagareins / afsatjans. Gahabaiþ manago gamotan auktoðê þiudis, aþþan ni habaiþ anþar razns brunna silbis.</string>
     <string name="welcome_intro_concepts_title">Þria gamotans, in 30 sekundan</string>
     <string name="welcome_intro_repo_label">Gaqussjan</string>
     <string name="welcome_intro_repo_body">URL du anþara staþis gagarein auktoðê, haldid fram silbanum þiudai (faura dæmi Mihon gaqussjans, TVBox lisans naur LNReader disons gaqussjans).</string>
     <string name="welcome_intro_extension_label">Auktoðê</string>
-    <string name="welcome_intro_extension_body">Ainu lagjand kungi in gaqussjan — JAR, APK naur JSON lis. Lagjand auktoðê gibaid Kototoro maht du raginon naur leikan fram stadis.</string>
+    <string name="welcome_intro_extension_body">Ainu lagjand kungi in gaqussjan — JAR, APK naur JSON lis. Lagjand auktoðê gibaid Amuratsu maht du raginon naur leikan fram stadis.</string>
     <string name="welcome_intro_source_label">Brunna</string>
     <string name="welcome_intro_source_body">Ains wola brunna matjaei þei saiƚis in þamma app afar ussatida aïu innatauhida — du bisamna managata mangō aïu saiƚa vidjō.</string>
-    <string name="welcome_intro_disclaimer">Niukeins aïu ussatide thridjē adēliþ þata silba faura þeinai faurdauhja: gahugst waurst, gadrihta jah matjaei ni stauand fram faurimamma Kototoro.</string>
+    <string name="welcome_intro_disclaimer">Niukeins aïu ussatide thridjē adēliþ þata silba faura þeinai faurdauhja: gahugst waurst, gadrihta jah matjaei ni stauand fram faurimamma Amuratsu.</string>
     <string name="welcome_intro_continue">Frabiþ — framgag</string>
     <string name="welcome_done_title">Neha</string>
     <string name="welcome_done_summary">Þein gafaurs gisatida jah lēteis raudjō.</string>
@@ -2868,10 +2868,10 @@
     <string name="welcome_done_json_note">JSON-based types (Legado / TVBox / LNReader) are imported automatically; if you also added other JSON repositories, import them in Extension Management.</string>
     <string name="welcome_done_title_finished">Gagoda ussatida</string>
     <string name="welcome_done_summary_finished">Stiuripeis usgala — ni anþara hidre faurimamma aïu brunna ussatida.</string>
-    <string name="welcome_done_body_finished">Kototoro ni aukida brunne bi ussatide. Magt aukijan þeinata silba hidre jah brunna huanhwan in Gasatide → Brunna (Ussatide Stiuripai).</string>
+    <string name="welcome_done_body_finished">Amuratsu ni aukida brunne bi ussatide. Magt aukijan þeinata silba hidre jah brunna huanhwan in Gasatide → Brunna (Ussatide Stiuripai).</string>
     <string name="welcome_done_advice_title">Niba brunna ni waurkeiþ</string>
     <string name="welcome_done_advice_summary">Airzis gabaurs vegur, þei raudjō gesehviþ þata gissit.</string>
-    <string name="welcome_done_advice_body">1. Gastaþja þata gaqust þairh frumaningis app þizos ussatidis — bisamna Mihon-kuni brunna skuljand gajuka in Mihon app.\n2. Niba gaqust swē gagand, hairjiþ þaim faurimamma þata ussatida: ussluti gaqust in faurimamma silba URL.\n3. Niba gagand in Kototoro anaweis, giskreiþ in Kototoro faurimamma gaqust jah gagadja namo brunna, ussatida usgala jah þatei usgatajais.</string>
+    <string name="welcome_done_advice_body">1. Gastaþja þata gaqust þairh frumaningis app þizos ussatidis — bisamna Mihon-kuni brunna skuljand gajuka in Mihon app.\n2. Niba gaqust swē gagand, hairjiþ þaim faurimamma þata ussatida: ussluti gaqust in faurimamma silba URL.\n3. Niba gagand in Amuratsu anaweis, giskreiþ in Amuratsu faurimamma gaqust jah gagadja namo brunna, ussatida usgala jah þatei usgatajais.</string>
     <string name="welcome_step_counter">Step %1$d of %2$d</string>
     <string name="welcome_action_configure_repos">Gasatide faurimamma</string>
     <string name="welcome_action_install_count">Ussatida %1$d ussatida</string>
@@ -2905,7 +2905,7 @@
     <string name="welcome_permissions_notifications_title">Gakandeis</string>
     <string name="welcome_permissions_notifications_summary">Saihniþ niþarlauda, ganyte jah baun gakandeis.</string>
     <string name="welcome_permissions_packages_title">Ussatida app</string>
-    <string name="welcome_permissions_packages_summary">Lētiþ Kototoro gasaihwan ussatiþ ussatida jah faurimamma app (Mihon, Aniyomi, …). Gabaudiþ in manifest jah gagoda silba.</string>
+    <string name="welcome_permissions_packages_summary">Lētiþ Amuratsu gasaihwan ussatiþ ussatida jah faurimamma app (Mihon, Aniyomi, …). Gabaudiþ in manifest jah gagoda silba.</string>
     <string name="welcome_permissions_battery_title">Aftra stede</string>
     <string name="welcome_permissions_battery_summary">Haldiþ niþarlaude jah ganyte waurstiga þan saiƚis is afaïu tawiþ is þata tōja.</string>
     <string name="welcome_permissions_battery_action">Lēwjan</string>
@@ -3321,11 +3321,11 @@
     <string name="pref_glass_blur_quality_performance">Waurstw</string>
     <string name="pref_glass_blur_quality_balanced">Gaþaik</string>
     <string name="pref_glass_blur_quality_quality">Gairhtiba</string>
-    <string name="glass_material_family_kototoro">Kototoro (Bidoþ)</string>
+    <string name="glass_material_family_kototoro">Amuratsu (Bidoþ)</string>
     <string name="glass_material_family_haze">Bruna</string>
     <string name="glass_material_family_cupertino">Cupertino</string>
     <string name="glass_material_family_fluent">Fluent</string>
-    <string name="glass_material_kototoro">Kototoro (Bidoþ)</string>
+    <string name="glass_material_kototoro">Amuratsu (Bidoþ)</string>
     <string name="glass_material_haze_ultra_thin">Bruna þunnista</string>
     <string name="glass_material_haze_thin">Bruna þunni</string>
     <string name="glass_material_haze_regular">Bruna maþ</string>

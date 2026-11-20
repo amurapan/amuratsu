@@ -26,6 +26,21 @@ class ContentLinkResolverTest {
 	private val context = mockk<ContentLoaderContext>(relaxed = true)
 	private val resolver = ContentLinkResolver(repositoryFactory, dataRepository, context)
 
+    @Test
+    fun `new and legacy app links resolve the same saved content`() = runTest {
+        val saved = content(source = namedSource("LOCAL"), title = "Saved book", url = "file:///book.epub")
+        coEvery { dataRepository.findPreferredLocalContentById(42L, withChapters = false) } returns saved
+        for (appScheme in listOf("amuratsu", "kototoro")) {
+            val uri = mockk<Uri> {
+                every { scheme } returns appScheme
+                every { host } returns "content"
+                every { pathSegments } returns listOf("manga")
+                every { getQueryParameter("id") } returns "42"
+            }
+            assertEquals(saved, resolver.resolve(uri))
+        }
+    }
+
 	@Test
 	fun `resolve app link uses repository diagnostics and finds matching content`() = runTest {
 		val sourceName = "MIHON_SOURCE_OK"

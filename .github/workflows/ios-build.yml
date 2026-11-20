@@ -167,7 +167,7 @@ jobs:
           set -euo pipefail
           case "$CHANNEL" in release|nightly) ;; *) echo "Unknown iOS channel." >&2; exit 1 ;; esac
           mkdir -p release-ios
-          asset="Kototoro-$VERSION_NAME-ios-$CHANNEL-unsigned"
+          asset="Amuratsu-$VERSION_NAME-ios-$CHANNEL-unsigned"
           cp "$IOS_DIR/release-ios/Kototoro-$MARKETING-ios-jvm-unsigned.ipa" "release-ios/$asset.ipa"
           (cd release-ios && shasum -a 256 "$asset.ipa" > "$asset.sha256")
           # Read by the AltStore source that the docs site publishes (iosApp/Scripts/altstore-source.py).

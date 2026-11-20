@@ -125,7 +125,7 @@
     <string name="size_s">Boy: %s</string>
     <string name="updates_feed_cleared">Temizlendi</string>
     <string name="enter_password">Parola gir</string>
-    <string name="protect_application_summary">Kototoro başlatılırken parola sor</string>
+    <string name="protect_application_summary">Amuratsu başlatılırken parola sor</string>
     <string name="track_sources">Güncellemeleri ara</string>
     <string name="clear_updates_feed">Akışı temizle</string>
     <string name="feed_will_update_soon">Akış yakında güncellenecek</string>
@@ -292,7 +292,7 @@
     <string name="removed_from_favourites">Favorilerden çıkarıldı</string>
     <string name="exit_confirmation">Çıkış doğrulaması</string>
     <string name="comics_archive">Manga arşivi</string>
-    <string name="manga_error_description_pattern">Hata ayrıntıları:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. Kaynağında var mı diye &lt;a href=\"%2$s\"&gt;tarayıcıda açın&lt;/a&gt;&lt;br&gt;2. &lt;a href=\"kototoro://about\"&gt;Kototoro&lt;/a&gt; sürümünün güncel olduğundan emin olun&lt;br&gt;3. Sorun sürüyorsa geliştiricilere bildirin.</string>
+    <string name="manga_error_description_pattern">Hata ayrıntıları:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. Kaynağında var mı diye &lt;a href=\"%2$s\"&gt;tarayıcıda açın&lt;/a&gt;&lt;br&gt;2. &lt;a href=\"amuratsu://about\"&gt;Amuratsu&lt;/a&gt; sürümünün güncel olduğundan emin olun&lt;br&gt;3. Sorun sürüyorsa geliştiricilere bildirin.</string>
     <string name="categories_delete_confirm">Seçilen favori kategorileri silmek istediğinizden emin misiniz?\nİçindeki tüm mangalar kaybolacak ve bu geri alınamaz.</string>
     <string name="reorder">Sırala</string>
     <string name="pages_cache">Önbellek</string>
@@ -609,7 +609,7 @@
     <string name="show_pages_thumbs_summary">Detay ekranında \"Sayfalar\" sekmesini aç</string>
     <string name="show_pages_thumbs">Sayfa küçük resimleri</string>
     <string name="error_no_data_received">Sunucudan veri alınamadı</string>
-    <string name="unsupported_backup_message">Geçerli bir Kototoro yedek dosyası seçin</string>
+    <string name="unsupported_backup_message">Geçerli bir Amuratsu yedek dosyası seçin</string>
     <string name="hours_short">%d sa</string>
     <string name="minutes_short">%d dak</string>
     <string name="hours_minutes_short">%1$ds %2$ddk</string>
@@ -656,7 +656,7 @@
     <string name="chapters_read">Okunan bölüm</string>
     <string name="chapters_left">Kalan bölüm</string>
     <string name="external_source">Harici/eklenti</string>
-    <string name="plugin_incompatible">Uyumsuz eklenti veya dahili hata. Eklentinin ve Kototoro\'nun en son sürümünü kullandığınızdan emin olun</string>
+    <string name="plugin_incompatible">Uyumsuz eklenti veya dahili hata. Eklentinin ve Amuratsu\'nun en son sürümünü kullandığınızdan emin olun</string>
     <string name="text_empty_holder_secondary_filtered">Seçtiğiniz filtrelerle eşleşen manga yok</string>
     <string name="connection_ok">Bağlantı tamam</string>
     <string name="invalid_proxy_configuration">Geçersiz vekil ayarı</string>
@@ -740,7 +740,7 @@
     <string name="screen_orientation">Ekran yönü</string>
     <string name="portrait">Dikey</string>
     <string name="landscape">Yatay</string>
-    <string name="plugin_incompatible_with_cause">Eklenti hatası: %s\n Eklentinin ve Kototoro\'nun son sürümünü kullandığınızdan emin olun</string>
+    <string name="plugin_incompatible_with_cause">Eklenti hatası: %s\n Eklentinin ve Amuratsu\'nun son sürümünü kullandığınızdan emin olun</string>
     <string name="error_not_image">Geçersiz biçim: görsel yerine %s alındı</string>
     <string name="access_denied_403">Erişim reddedildi</string>
     <string name="max_backups_count">Maks yedek sayısı</string>
@@ -791,11 +791,11 @@
     <string name="unnamed_chapter">İsimsiz bölüm</string>
     <string name="search_disabled_sources">Devre dışı kaynaklarda ara</string>
     <string name="error_details">Hata detayı</string>
-    <string name="error_disclaimer_app_outdated">Görünüşe göre Kototoro sürümünüz güncel değil. Tüm düzeltmeleri almak için lütfen en son sürümü yükleyin.</string>
+    <string name="error_disclaimer_app_outdated">Görünüşe göre Amuratsu sürümünüz güncel değil. Tüm düzeltmeleri almak için lütfen en son sürümü yükleyin.</string>
     <string name="error_disclaimer_manga">Kaynağında açık olduğundan tarayıcıda deneyin.</string>
     <string name="error_disclaimer_report">Hata raporu göndererek çözmemize yardım edin</string>
     <string name="link_to_manga_on_s">%s bağlantısı</string>
-    <string name="link_to_manga_in_app">Kototoro bağlantısı</string>
+    <string name="link_to_manga_in_app">Amuratsu bağlantısı</string>
     <string name="clear_browser_data">Verileri temizle</string>
     <string name="clear_browser_data_summary">Önbellek ve çerezleri sil. Oturumlar kapanabilir</string>
     <string name="no_write_permission_to_file">Dosya yazma izni yok</string>
@@ -847,7 +847,7 @@
     <string name="discord_token_hint">Paste Discord Token here</string>
     <string name="discord_rpc_summary">Okuma durumunu Discord\'da göster</string>
     <string name="obtain">Al</string>
-    <string name="discord_rpc_description">Reading manga via Kototoro</string>
+    <string name="discord_rpc_description">Reading manga via Amuratsu</string>
     <string name="reading_s">%s okuyor</string>
     <string name="read_on_s">Read %s</string>
     <string name="rpc_skip_nsfw_summary">Hide RPC for adult content</string>
@@ -1058,13 +1058,13 @@
     <string name="welcome_glass_preset_title">Cam görünüm</string>
     <string name="welcome_glass_preset_summary">iOS stili için cam görünüm ön ayarını seçin. Kırılma varsayılandır ve daha sonra Görünüm ayarlarından ince ayar yapılabilir.</string>
     <string name="home_quick_action_wizard">Sihirbaz</string>
-    <string name="welcome_ecosystems_summary">Kototoro, okuma ve izleme için birden fazla eklenti kaynak ailesini destekler. Buradaki önerilen depolarla başlayın, ardından eklenti yönetiminden bunlara ince ayar yapın.</string>
+    <string name="welcome_ecosystems_summary">Amuratsu, okuma ve izleme için birden fazla eklenti kaynak ailesini destekler. Buradaki önerilen depolarla başlayın, ardından eklenti yönetiminden bunlara ince ayar yapın.</string>
     <string name="welcome_ecosystem_novel">Roman: Legado, IReader, LNReader</string>
     <string name="welcome_ecosystem_video">Video: Aniyomi, TVBox, Cloudstream</string>
     <string name="welcome_plugin_repositories">Eklenti depoları</string>
     <string name="welcome_spaces_title">Alanlarınızı ayırın</string>
-    <string name="welcome_jar_install_success">Kototoro: Bulut ağından en son %1$d ayrıştırıcı motoru başarıyla alındı ve yüklendi!</string>
-    <string name="welcome_jar_install_up_to_date">Kototoro: Bulut doğrulaması tamamlandı, yerel ayrıştırıcılar güncel! (Toplam %1$d kaynak yüklendi)</string>
+    <string name="welcome_jar_install_success">Amuratsu: Bulut ağından en son %1$d ayrıştırıcı motoru başarıyla alındı ve yüklendi!</string>
+    <string name="welcome_jar_install_up_to_date">Amuratsu: Bulut doğrulaması tamamlandı, yerel ayrıştırıcılar güncel! (Toplam %1$d kaynak yüklendi)</string>
     <string name="home_placeholder_title">Okuma paneli</string>
     <string name="home_hero_local_subtitle">Kaldığınız yerden devam edin veya son açtığınız şeye geri dönün.</string>
     <string name="home_overview_title">Bir bakışta</string>
@@ -1967,7 +1967,7 @@
     <string name="trust_and_add">Güven ve ekle</string>
     <string name="trust_extension_repository_message">Depo: %1$s\nİnternet Sitesi: %2$s\nSHA-256 parmak izi:\n%3$s\n\nBu depoya güvenmeden önce parmak izini yayıncıyla doğrulayın.</string>
     <string name="untrusted_extension_message">%1$s (%2$s) kurulu, ancak imzası seçilen depo parmak iziyle eşleşmiyor.\n\nDepo parmak izi: %3$s\n\nBu depodan yeniden yüklemeden önce kurulu paketi kaldırın.</string>
-    <string name="incompatible_extension_message">%1$s %2$s, kütüphane sürümü (%3$s) Kototoro desteklenen aralığının dışında olduğundan yüklenemiyor.</string>
+    <string name="incompatible_extension_message">%1$s %2$s, kütüphane sürümü (%3$s) Amuratsu desteklenen aralığının dışında olduğundan yüklenemiyor.</string>
     <string name="built_in_sources">Yerleşik</string>
     <string name="select_all">Tümünü seç</string>
     <string name="selected_count">%d seçildi</string>
@@ -1980,7 +1980,7 @@
     <string name="mirror_probe_timeout">zaman aşımı</string>
     <string name="mirror_probe_select_fastest">En hızlıyı seç</string>
     <string name="mirror_probe_fastest_badge">En Hızlı</string>
-    <string name="welcome_plugins_disclaimer">Bu eklenti depoları bağımsız çevrimiçi topluluklar tarafından sürdürülmektedir. Kototoro geliştiricilerinin bu üçüncü taraf depolarla hiçbir bağı, kontrolü veya ilişkisi yoktur. Bu kaynakları kendi sorumluluğumda yapılandırdığımı kabul ediyorum.</string>
+    <string name="welcome_plugins_disclaimer">Bu eklenti depoları bağımsız çevrimiçi topluluklar tarafından sürdürülmektedir. Amuratsu geliştiricilerinin bu üçüncü taraf depolarla hiçbir bağı, kontrolü veya ilişkisi yoktur. Bu kaynakları kendi sorumluluğumda yapılandırdığımı kabul ediyorum.</string>
     <string name="welcome_plugins_start_btn">Depoları yapılandır</string>
     <string name="welcome_plugins_configured">%1$d yeni kaynak/depo türü yapılandırıldı: %2$s. Paketler henüz indirilmedi — sonraki adımda eşleşenleri yükleyin.</string>
     <string name="welcome_plugins_configured_none">Hiçbir kaynak veya depo yapılandırılamadı. Ağınızı kontrol edin veya farklı depolar seçip tekrar deneyin.</string>
@@ -2002,11 +2002,11 @@
     <string name="welcome_install_step_title">Toplu eklenti yükleme</string>
     <string name="welcome_install_kinds_empty">Henüz depo yapılandırılmadı. Geri dönün ve önce depo ekleyin.</string>
     <string name="welcome_install_nsfw_title">NSFW içerik dahil et</string>
-    <string name="welcome_intro_body">Kototoro, açık kaynaklı bir multimedya okuyucu/oynatıcıdır. Geniş bir topluluk eklentisi ekosistemini destekler ancak kendi içeriğini barındırmaz.</string>
+    <string name="welcome_intro_body">Amuratsu, açık kaynaklı bir multimedya okuyucu/oynatıcıdır. Geniş bir topluluk eklentisi ekosistemini destekler ancak kendi içeriğini barındırmaz.</string>
     <string name="welcome_intro_concepts_title">30 saniyede üç kavram</string>
     <string name="welcome_intro_repo_label">Depo</string>
     <string name="welcome_intro_extension_label">Eklenti</string>
-    <string name="welcome_intro_extension_body">Bir depodaki kurulabilir paket; JAR, APK veya JSON listesi. Kurulan eklentiler Kototoro\'ya bir siteden okuma veya oynatma yeteneği kazandırır.</string>
+    <string name="welcome_intro_extension_body">Bir depodaki kurulabilir paket; JAR, APK veya JSON listesi. Kurulan eklentiler Amuratsu\'ya bir siteden okuma veya oynatma yeteneği kazandırır.</string>
     <string name="welcome_intro_source_label">Kaynak</string>
     <string name="welcome_intro_continue">Anlıyorum — devam et</string>
     <string name="welcome_done_summary">Kurulum özetiniz ve birkaç ipucu.</string>
@@ -2014,7 +2014,7 @@
     <string name="welcome_done_summary_finished">Sihirbaz tamamlandı — otomatik olarak hiçbir depo veya kaynak eklenmedi.</string>
     <string name="welcome_done_advice_title">Bir kaynak çalışmıyorsa</string>
     <string name="welcome_done_advice_summary">Doğru kişilerin raporu görmesi için kısa bir sorun giderme yolu.</string>
-    <string name="welcome_done_advice_body">1. Eklentinin orijinal ana uygulamasını kullanarak sorunu doğrulayın — örneğin Mihon türünde bir kaynak Mihon uygulamasında test edilmelidir.\n2. Sorun orada da yaşanıyorsa eklentinin bakımını yapan depoya aittir: deponun kendi URL\'sinde bir sorun bildirimi açın.\n3. Yalnızca Kototoro\'da yaşanıyorsa bunu Kototoro proje deposunda bildirin ve kaynak adını, eklenti sürümünü ve ne denediğinizi ekleyin.</string>
+    <string name="welcome_done_advice_body">1. Eklentinin orijinal ana uygulamasını kullanarak sorunu doğrulayın — örneğin Mihon türünde bir kaynak Mihon uygulamasında test edilmelidir.\n2. Sorun orada da yaşanıyorsa eklentinin bakımını yapan depoya aittir: deponun kendi URL\'sinde bir sorun bildirimi açın.\n3. Yalnızca Amuratsu\'da yaşanıyorsa bunu Amuratsu proje deposunda bildirin ve kaynak adını, eklenti sürümünü ve ne denediğinizi ekleyin.</string>
     <string name="welcome_step_counter">Adım %1$d / %2$d</string>
     <string name="welcome_action_configure_repos">Seçilen depoları yapılandır</string>
     <string name="welcome_action_install_count">%1$d eklenti kur</string>
@@ -2257,11 +2257,11 @@
     <string name="pref_glass_blur_quality_performance">Performans</string>
     <string name="pref_glass_blur_quality_balanced">Dengeli</string>
     <string name="pref_glass_blur_quality_quality">Kalite</string>
-    <string name="glass_material_family_kototoro">Kototoro (Önerilen)</string>
+    <string name="glass_material_family_kototoro">Amuratsu (Önerilen)</string>
     <string name="glass_material_family_haze">Haze</string>
     <string name="glass_material_family_cupertino">Cupertino</string>
     <string name="glass_material_family_fluent">Fluent</string>
-    <string name="glass_material_kototoro">Kototoro (Önerilen)</string>
+    <string name="glass_material_kototoro">Amuratsu (Önerilen)</string>
     <string name="glass_material_haze_ultra_thin">Haze Ultra İnce</string>
     <string name="glass_material_haze_thin">İnce Buğu</string>
     <string name="glass_material_haze_regular">Normal Buğu</string>
@@ -2735,7 +2735,7 @@
     <string name="refresh_filters">Filtre yenile</string>
     <string name="page_save_manga_title_length">Manga adı uzunluğu</string>
     <string name="page_save_manga_title_length_summary">Dosya adlarında tutulan manga adı karakter sayısı (12–64)</string>
-    <string name="cloudstream_newpipe_required">Bu eklenti, Kototoro\'daki NewPipe sınıflarını gerektirir; bu yüzden oynatılamıyor. Eklentiyi veya Kototoro\'yu güncelleyin.</string>
+    <string name="cloudstream_newpipe_required">Bu eklenti, Amuratsu\'daki NewPipe sınıflarını gerektirir; bu yüzden oynatılamıyor. Eklentiyi veya Amuratsu\'yu güncelleyin.</string>
     <string name="reader_spread_page_choice">Hangi sayfa?</string>
     <string name="reader_spread_left_page">Sol sayfa (%1$d)</string>
     <string name="reader_page_turning_mode">Sayfa çevirme</string>
@@ -2749,7 +2749,7 @@
     <string name="replace_rule_add_summary">Kural veya filtre oluştur</string>
     <string name="replace_rule_enable_all">Hepsini etkin.</string>
     <string name="replace_rule_disable_all_summary">Değiştirme kurallarını geçici olarak durdur</string>
-    <string name="replace_rule_import_summary">Legado veya Kototoro dışa aktarması içe aktar</string>
+    <string name="replace_rule_import_summary">Legado veya Amuratsu dışa aktarması içe aktar</string>
     <string name="replace_rule_export_summary">JSON biçiminde dışarı aktar</string>
     <string name="replace_rule_empty">Kural yok</string>
     <string name="replace_rule_empty_summary">Roman bölümleri için kural ekleyin veya içe aktarın</string>
@@ -2796,16 +2796,16 @@
     <string name="clear_local_manga_storage_prompt">Yerel manga dosyaları silinsin mi? Bu işlem geri alınamaz.</string>
     <string name="clear_local_novel_storage_prompt">Yerel roman dosyaları silinsin mi? Bu işlem geri alınamaz.</string>
     <string name="clear_local_video_storage_prompt">Yerel video dosyaları silinsin mi? Bu işlem geri alınamaz.</string>
-    <string name="welcome_intro_title">Kototoro kur</string>
-    <string name="welcome_intro_summary">Kototoro; JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader ve Cloudstream eklentilerini destekler.</string>
-    <string name="welcome_restore_summary">Kototoro\'yu daha önce kullandınız mı? Yedek yükleyin veya senkronize edin.</string>
+    <string name="welcome_intro_title">Amuratsu kur</string>
+    <string name="welcome_intro_summary">Amuratsu; JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader ve Cloudstream eklentilerini destekler.</string>
+    <string name="welcome_restore_summary">Amuratsu\'yu daha önce kullandınız mı? Yedek yükleyin veya senkronize edin.</string>
     <string name="welcome_source_formats_title">İçerik biçimleri</string>
     <string name="welcome_source_formats_summary">Bu filtreler kuruluma göre etkin eklentileri belirler.</string>
     <string name="welcome_ecosystems_title">Kaynak ekosistemi</string>
     <string name="welcome_ecosystem_manga">Manga: JAR, Mihon, IReader, LNReader</string>
     <string name="welcome_plugin_acknowledge">Bu üçüncü taraf depoların riskini kabul ediyorum.</string>
     <string name="welcome_preferences_summary">Dil ve içerik seçin. Sonradan değiştirebilirsiniz.</string>
-    <string name="welcome_jar_install_failed">Kototoro: Ağ yüklemesi başarısız (%1$s), tekrar deneyin veya proxy değiştirin</string>
+    <string name="welcome_jar_install_failed">Amuratsu: Ağ yüklemesi başarısız (%1$s), tekrar deneyin veya proxy değiştirin</string>
     <string name="home_placeholder_subtitle">Okuduklarınızı, güncellemeleri ve kütüphaneyi tek yerde görün.</string>
     <string name="home_sync_status_auto">WebDAV Oto Senk</string>
     <string name="home_sync_status_ready">WebDAV Hazır</string>
@@ -2943,7 +2943,7 @@
     <string name="import_backup_from_other_apps">Diğer uygulamalardan yedek al</string>
     <string name="export_backup_for_other_apps_summary">Uyumlu yedek oluşturun: Kotatsu, Mihon, Aniyomi veya Usagi.</string>
     <string name="export_backup_choose_target_app">Hedef uygulama seç</string>
-    <string name="export_kotatsu_backup_summary">Kototoro öğeleri olmadan eski tip Kotatsu yedeği oluşturun.</string>
+    <string name="export_kotatsu_backup_summary">Amuratsu öğeleri olmadan eski tip Kotatsu yedeği oluşturun.</string>
     <string name="export_mihon_backup_summary">Yalnızca Mihon kaynakları için favorileri ve ilerlemeyi dışa aktar.</string>
     <string name="export_aniyomi_backup_summary">Mihon manga ve Aniyomi anime kaynakları için verileri dışa aktar.</string>
     <string name="export_usagi_backup_summary">Usagi için favorileri, geçmişi ve istatistikleri dışa aktar.</string>
@@ -2951,7 +2951,7 @@
     <string name="import_backup_mihon_family_summary">Mihon, TachiyomiSY, Komikku veya Neko yedeği.</string>
     <string name="import_backup_scope_summary">Bu sürüm favorileri, geçmişi ve okuma ilerlemesini geri yükler.</string>
     <string name="username_password_enter_hint">Devam etmek için kullanıcı adı ve şifre girin</string>
-    <string name="restore_kototoro_backup_summary">Kototoro veya Kotatsu yedeğini geri yükleyin. Biçim otomatik algılanır.</string>
+    <string name="restore_kototoro_backup_summary">Amuratsu veya Kotatsu yedeğini geri yükleyin. Biçim otomatik algılanır.</string>
     <string name="restore_mode_merge_with_existing">Mevcutla birleştir</string>
     <string name="restore_mode_merge_with_existing_summary">Mevcut verileri koru ve yedekten ekle; hiçbir şey silinmez</string>
     <string name="external_import_result_title">Harici yedek aktarıldı</string>
@@ -3101,8 +3101,8 @@
     <string name="webdav_restore_mode_title">Geri yükleme modu</string>
     <string name="webdav_restore_mode_summary">Değiştir, eşleşen yerel hedefleri siler. Birleştir, yerel durumu korur ve yeni uyumlu WebDAV durumunu ekler.</string>
     <string name="webdav_restore_in_progress">Restoring WebDAV backup…</string>
-    <string name="webdav_remote_backups_clear_summary">Yapılandırılan WebDAV yolundaki tüm Kototoro yedek dosyalarını silin.</string>
-    <string name="webdav_remote_backups_clear_confirm">Yapılandırılan WebDAV yolundaki tüm Kototoro yedek dosyaları silinsin mi?</string>
+    <string name="webdav_remote_backups_clear_summary">Yapılandırılan WebDAV yolundaki tüm Amuratsu yedek dosyalarını silin.</string>
+    <string name="webdav_remote_backups_clear_confirm">Yapılandırılan WebDAV yolundaki tüm Amuratsu yedek dosyaları silinsin mi?</string>
     <string name="webdav_remote_backup_status_unrestorable">Unsafe to restore</string>
     <string name="webdav_keep_local_copy_summary">WebDAV\'a yüklerken yedeğin yerel bir kopyasını kaydedin.</string>
     <string name="backup_periodic_explain_keep_local_copy_off">Yerel kopya kapalıyken, periyodik görev yalnızca uzaktakine yükler</string>
@@ -3216,7 +3216,7 @@
     <string name="welcome_install_mode_system">Sistem yükleyicisi</string>
     <string name="welcome_install_start">Kur</string>
     <string name="welcome_install_state_completed">Bitti</string>
-    <string name="welcome_install_step_summary">Hangi kaynak türlerini kullanacağınızı seçin, ardından Kototoro\'nun her şeyi indirmesine izin verin.</string>
+    <string name="welcome_install_step_summary">Hangi kaynak türlerini kullanacağınızı seçin, ardından Amuratsu\'nun her şeyi indirmesine izin verin.</string>
     <string name="welcome_install_kinds_title">Kaynak türleri</string>
     <string name="welcome_install_kinds_summary">Yalnızca işaretlediğiniz türler işleme alınacaktır.</string>
     <string name="welcome_install_nsfw_summary">Varsayılan olarak kapalıdır — yetişkin içerikli paketler filtrelenir.</string>
@@ -3225,7 +3225,7 @@
     <string name="welcome_intro_disclaimer">Üçüncü taraf eklentilerin kullanımı tamamen kendi sorumluluğunuzdadır.</string>
     <string name="welcome_done_summary_text">Başarılı %1$d · Başarısız %2$d · İptal %3$d. Eşleşen kaynaklar etkinleştirildi.</string>
     <string name="welcome_done_json_note">JSON tabanlı türler otomatik olarak içe aktarılır; başka depolar eklediyseniz eklenti yönetiminden içe aktarın.</string>
-    <string name="welcome_done_body_finished">Kototoro kurulum sırasında hiçbir kaynak eklemedi. İstediğiniz zaman depolardan ekleyebilirsiniz.</string>
+    <string name="welcome_done_body_finished">Amuratsu kurulum sırasında hiçbir kaynak eklemedi. İstediğiniz zaman depolardan ekleyebilirsiniz.</string>
     <string name="welcome_repo_fetch_failed">Alınamadı</string>
     <string name="welcome_languages_summary_more">%1$s ve %2$d diğer</string>
     <string name="welcome_status_analyzing">Mevcut diller ve içerik türleri analiz ediliyor…</string>
@@ -3234,7 +3234,7 @@
     <string name="welcome_done_skipped_title">Kurulum bitti</string>
     <string name="welcome_permissions_summary">Birkaç isteğe bağlı izin, indirmeleri ve güncellemeleri kararlı tutar.</string>
     <string name="welcome_permissions_note">İsteğe bağlı ancak önerilir. Sistem ayarlarından sonradan değiştirebilirsiniz.</string>
-    <string name="welcome_permissions_packages_summary">Kototoro\'nun uzantıları ve ana uygulamaları algılamasını sağlar.</string>
+    <string name="welcome_permissions_packages_summary">Amuratsu\'nun uzantıları ve ana uygulamaları algılamasını sağlar.</string>
     <string name="welcome_permissions_battery_summary">Ekran kapalıyken arka planda indirmelerin çalışmasını sağlar.</string>
     <string name="download_request_delay">İndirme gecikmesi</string>
     <string name="download_request_delay_summary">Kaynaklar arasındaki bekleme süresi (varsayılan 1600 ms, 0 kapatır)</string>
@@ -3795,7 +3795,7 @@
     <string name="welcome_install_section_summary">Paketler dillere göre eşlenir, seçtiğiniz biçimlerle etkinleştirilir.</string>
     <string name="welcome_install_state_cancelled">İptal</string>
     <string name="welcome_install_done_message">Başarılı %1$d · Başarısız %2$d · İptal %3$d.\n\nSeçilen biçim ve dillerdeki kaynaklar etkinleştirildi. Legado / TVBox / LNReader kaynakları içe aktarıldı; diğer JSON depoları için uzantı yöneticisini kullanın.</string>
-    <string name="welcome_intro_app_title">Kototoro · Açık kaynak okuy.</string>
+    <string name="welcome_intro_app_title">Amuratsu · Açık kaynak okuy.</string>
     <string name="welcome_done_title">Az kaldı</string>
     <string name="welcome_done_title_finished">Kurulum bitti</string>
     <string name="welcome_action_retry_failed">Yeniden dene</string>
@@ -4048,7 +4048,7 @@
     <string name="update_all_packages">Tümü güncelle</string>
     <string name="video_mpv_conf">mpv.conf düzenle</string>
     <string name="video_mpv_conf_guide"><![CDATA[<b>Yaygın seçenekler:</b><br/>• <tt>deband=yes</tt> (Bantlanmayı azalt)<br/>• <tt>interpolation=yes</tt> (Akıcı oynatma)<br/>• <tt>hwdec=mediacodec</tt> (Donanım çözme)<br/><br/><a href="https://mpv.io/manual/master/#options">Ayrıntılı MPV belgeleri</a>]]></string>
-    <string name="welcome_ready_summary">Kurulum tamamlandı. Kototoro, seçtiğiniz dil ve biçimlere uyan kaynakları etkinleştirir. Sihirbazı Ayarlar → İçerik kaynakları → Kurulum sihirbazı ile yeniden açabilirsiniz.</string>
+    <string name="welcome_ready_summary">Kurulum tamamlandı. Amuratsu, seçtiğiniz dil ve biçimlere uyan kaynakları etkinleştirir. Sihirbazı Ayarlar → İçerik kaynakları → Kurulum sihirbazı ile yeniden açabilirsiniz.</string>
     <string name="work_info">Eser bilgisi</string>
     <string name="replace_rule_edit">Kural düzenle</string>
     <plurals name="pages_value">

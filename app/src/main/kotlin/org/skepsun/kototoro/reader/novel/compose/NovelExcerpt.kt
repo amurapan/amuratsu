@@ -1197,7 +1197,7 @@ internal object NovelExcerptCardRenderer {
                 }
 
                 // Branding centered at bottom
-                val brand = "Kototoro"
+                val brand = "Amuratsu"
                 paint.textSize = 22f
                 paint.color = android.graphics.Color.rgb(170, 170, 170)
                 paint.typeface = layout.typeface
@@ -1225,7 +1225,7 @@ internal object NovelExcerptCardRenderer {
                 }
 
                 // Branding left-aligned
-                val brand = "Kototoro"
+                val brand = "Amuratsu"
                 paint.textSize = 22f
                 paint.color = android.graphics.Color.rgb(153, 153, 153)
                 canvas.drawText(brand, margin, layout.height - 50f, paint)
@@ -1259,7 +1259,7 @@ internal object NovelExcerptCardRenderer {
                 }
 
                 // Branding left-aligned
-                val brand = "Kototoro"
+                val brand = "Amuratsu"
                 paint.textSize = 22f
                 paint.color = android.graphics.Color.rgb(153, 153, 153)
                 canvas.drawText(brand, margin, layout.height - 70f, paint)

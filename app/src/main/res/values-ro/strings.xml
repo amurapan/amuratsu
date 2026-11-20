@@ -137,7 +137,7 @@
     <string name="page_save_manga_title_length">Lungimea titlului manga în numele fișierelor salvate</string>
     <string name="page_save_manga_title_length_summary">Numărul de caractere din titlul manga păstrate în numele fișierelor imagini salvate (12–64)</string>
     <string name="pages_saved">Pagini salvate</string>
-    <string name="cloudstream_newpipe_required">Această extensie necesită clase NewPipe pe care cele incluse cu Kototoro nu le au, așa că nu poate reda videoclipuri. Încearcă să actualizezi extensia sau Kototoro.</string>
+    <string name="cloudstream_newpipe_required">Această extensie necesită clase NewPipe pe care cele incluse cu Amuratsu nu le au, așa că nu poate reda videoclipuri. Încearcă să actualizezi extensia sau Amuratsu.</string>
     <string name="clear_chapter_thumbnails">Șterge miniaturile capitolelor</string>
     <string name="continuous_horizontal">Orizontal continuu</string>
     <string name="continuous_horizontal_reversed">Dreapta la stânga</string>
@@ -189,7 +189,7 @@
     <string name="replace_rule_disable_all_summary">Oprește temporar aplicarea regulilor de înlocuire</string>
     <string name="replace_rule_edit">Editează regula</string>
     <string name="replace_rule_import">Importă reguli Legado</string>
-    <string name="replace_rule_import_summary">Importă un tablou JSON exportat de Legado sau Kototoro</string>
+    <string name="replace_rule_import_summary">Importă un tablou JSON exportat de Legado sau Amuratsu</string>
     <string name="replace_rule_export">Exportă regulile</string>
     <string name="replace_rule_export_summary">Exportă regulile într-un format JSON compatibil</string>
     <string name="replace_rule_empty">Nicio regulă de înlocuire</string>
@@ -315,7 +315,7 @@
     <string name="enter_password">Introdu parola</string>
     <string name="wrong_password">Parolă greșită</string>
     <string name="protect_application">Protejează aplicația</string>
-    <string name="protect_application_summary">Cere parola la pornirea Kototoro</string>
+    <string name="protect_application_summary">Cere parola la pornirea Amuratsu</string>
     <string name="repeat_password">Repetă parola</string>
     <string name="passwords_mismatch">Parolele nu coincid</string>
     <string name="about">Despre</string>
@@ -422,8 +422,8 @@
     <string name="clear_local_novel_storage_prompt">Ștergi toate fișierele de romane salvate local și importate? Această acțiune nu poate fi anulată.</string>
     <string name="clear_local_video_storage_prompt">Ștergi toate fișierele video salvate local și importate? Această acțiune nu poate fi anulată.</string>
     <string name="welcome">Bun venit</string>
-    <string name="welcome_intro_title">Configurează Kototoro</string>
-    <string name="welcome_intro_summary">Alege cum vrei să citești și să te uiți. Kototoro folosește acum familii de surse bazate pe pluginuri pentru manga, romane și video, inclusiv JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader și Cloudstream.</string>
+    <string name="welcome_intro_title">Configurează Amuratsu</string>
+    <string name="welcome_intro_summary">Alege cum vrei să citești și să te uiți. Amuratsu folosește acum familii de surse bazate pe pluginuri pentru manga, romane și video, inclusiv JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader și Cloudstream.</string>
     <string name="welcome_step_start">Începe</string>
     <string name="welcome_step_sources">Surse</string>
     <string name="welcome_step_preferences">Preferințe</string>
@@ -433,11 +433,11 @@
     <string name="welcome_glass_preset_title">Finisaj sticlă</string>
     <string name="welcome_glass_preset_summary">Alege presetarea de finisaj din sticlă pentru stilul iOS. Refracția este implicită și poate fi finisată ulterior în setările de aspect.</string>
     <string name="home_quick_action_wizard">Asistent</string>
-    <string name="welcome_restore_summary">Ai mai folosit Kototoro? Restaurează o copie de rezervă, Conectează-te pentru sincronizare sau adaugă mai întâi foldere locale.</string>
+    <string name="welcome_restore_summary">Ai mai folosit Amuratsu? Restaurează o copie de rezervă, Conectează-te pentru sincronizare sau adaugă mai întâi foldere locale.</string>
     <string name="welcome_source_formats_title">Alege formatele de conținut</string>
     <string name="welcome_source_formats_summary">Aceste filtre decid ce familii de surse sunt activate după configurare.</string>
     <string name="welcome_ecosystems_title">Ecosistem de surse</string>
-    <string name="welcome_ecosystems_summary">Kototoro acceptă mai multe familii de surse plugin pentru citire și vizionare. Începe cu depozitele recomandate de aici, apoi ajustează-le ulterior în gestionarea extensiilor.</string>
+    <string name="welcome_ecosystems_summary">Amuratsu acceptă mai multe familii de surse plugin pentru citire și vizionare. Începe cu depozitele recomandate de aici, apoi ajustează-le ulterior în gestionarea extensiilor.</string>
     <string name="welcome_ecosystem_manga">Manga: motoare JAR, Mihon, IReader, LNReader</string>
     <string name="welcome_ecosystem_novel">Roman: Legado, IReader, LNReader</string>
     <string name="welcome_ecosystem_video">Video: Aniyomi, TVBox, Cloudstream</string>
@@ -446,10 +446,10 @@
     <string name="welcome_preferences_summary">Alege limbile și tipurile de conținut. Poți schimba acest lucru mai târziu în setările sursei.</string>
     <string name="welcome_spaces_title">Separă-ți spațiile</string>
     <string name="welcome_spaces_summary">Spațiile oferă manga, romane și anime navigare independentă, preferințe de căutare și context de citire sau redare. Opțiunile avansate și spațiile personalizate sunt disponibile mai târziu în Setări &gt; Utilizator &gt; Spații.</string>
-    <string name="welcome_ready_summary">Setup is complete. Kototoro will enable sources matching your selected languages and formats. You can run this wizard again from Settings &gt; Content sources &gt; Setup wizard.</string>
-    <string name="welcome_jar_install_success">Kototoro: S-au preluat și montat cu succes %1$d motoare de parsare recente din rețeaua cloud!</string>
-    <string name="welcome_jar_install_up_to_date">Kototoro: Verificarea în cloud s-a încheiat, motoarele locale sunt la zi! (Încărcat %1$d surse în total)</string>
-    <string name="welcome_jar_install_failed">Kototoro: Încărcarea rețelei de parsare a eșuat (%1$s), încearcă din nou sau mergi la setări pentru a schimba oglinzile proxy</string>
+    <string name="welcome_ready_summary">Setup is complete. Amuratsu will enable sources matching your selected languages and formats. You can run this wizard again from Settings &gt; Content sources &gt; Setup wizard.</string>
+    <string name="welcome_jar_install_success">Amuratsu: S-au preluat și montat cu succes %1$d motoare de parsare recente din rețeaua cloud!</string>
+    <string name="welcome_jar_install_up_to_date">Amuratsu: Verificarea în cloud s-a încheiat, motoarele locale sunt la zi! (Încărcat %1$d surse în total)</string>
+    <string name="welcome_jar_install_failed">Amuratsu: Încărcarea rețelei de parsare a eșuat (%1$s), încearcă din nou sau mergi la setări pentru a schimba oglinzile proxy</string>
     <string name="home_placeholder_title">Panou de lectură</string>
     <string name="home_placeholder_subtitle">Vezi lecturile recente, actualizările, biblioteca, sincronizarea și sursele într-un singur loc.</string>
     <string name="home_hero_local_subtitle">Continuă de unde ai rămas sau revino la ceea ce ai deschis recent.</string>
@@ -1027,7 +1027,7 @@
     <string name="import_completed_hint">Poți șterge fișierul original pentru a elibera spațiu</string>
     <string name="import_will_start_soon">Importul va începe în curând</string>
     <string name="feed">Flux</string>
-    <string name="manga_error_description_pattern">Detalii eroare:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. Încearcă să &lt;a href=\"%2$s\"&gt;deschizi manga în browserul web&lt;/a&gt; pentru a te asigura că este disponibilă pe sursă&lt;br&gt;2. Asigură-te că folosești &lt;a href=\"kototoro://about\"&gt;cea mai recentă versiune de Kototoro&lt;/a&gt;&lt;br&gt;3. Dacă este disponibilă, trimite un raport de eroare dezvoltatorilor.</string>
+    <string name="manga_error_description_pattern">Detalii eroare:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. Încearcă să &lt;a href=\"%2$s\"&gt;deschizi manga în browserul web&lt;/a&gt; pentru a te asigura că este disponibilă pe sursă&lt;br&gt;2. Asigură-te că folosești &lt;a href=\"amuratsu://about\"&gt;cea mai recentă versiune de Amuratsu&lt;/a&gt;&lt;br&gt;3. Dacă este disponibilă, trimite un raport de eroare dezvoltatorilor.</string>
     <string name="history_shortcuts">Afișează scurtături pentru manga recentă</string>
     <string name="history_shortcuts_summary">Pune manga recentă la dispoziție prin apăsare lungă pe pictograma aplicației</string>
     <string name="reader_control_ltr_summary">Nu ajusta direcția de schimbare a paginilor în funcție de modul de citire, de ex. apăsarea tastei dreapta trece mereu la pagina următoare. Această opțiune afectează doar dispozitivele de intrare hardware</string>
@@ -1196,7 +1196,7 @@
     <string name="export_backup_for_other_apps_summary">Alege o aplicație țintă și creează o copie de rezervă compatibilă: Kotatsu, Mihon, Aniyomi sau Usagi.</string>
     <string name="export_backup_choose_target_app">Alege aplicația țintă</string>
     <string name="export_kotatsu_backup">Exportă copia de rezervă Kotatsu</string>
-    <string name="export_kotatsu_backup_summary">Creează o copie de rezervă veche separată pentru aplicațiile din familia Kotatsu, fără secțiuni specifice Kototoro.</string>
+    <string name="export_kotatsu_backup_summary">Creează o copie de rezervă veche separată pentru aplicațiile din familia Kotatsu, fără secțiuni specifice Amuratsu.</string>
     <string name="export_kotatsu_backup_saved">Copia de rezervă Kotatsu salvată</string>
     <string name="export_mihon_backup">Exportă copia de rezervă Mihon</string>
     <string name="export_mihon_backup_summary">Exportă favoritele, categoriile și progresul lecturii doar pentru intrările din surse Mihon.</string>
@@ -1269,7 +1269,7 @@
     <string name="data_and_privacy">Date și confidențialitate</string>
     <string name="restore_summary">Restaurează o copie de rezervă creată anterior</string>
     <string name="restore_kototoro_backup">Restaurare backup</string>
-    <string name="restore_kototoro_backup_summary">Restaurează o copie de rezervă Kototoro de la orice versiune sau una Kotatsu. Formatul este detectat automat.</string>
+    <string name="restore_kototoro_backup_summary">Restaurează o copie de rezervă Amuratsu de la orice versiune sau una Kotatsu. Formatul este detectat automat.</string>
     <string name="restore_mode_replace_existing">Înlocuiește datele existente</string>
     <string name="restore_mode_replace_existing_summary">Secțiunile restaurate sunt șterse mai întâi; favoritele și istoricul lipsă din copie sunt eliminate</string>
     <string name="restore_mode_merge_with_existing">Unește cu datele existente</string>
@@ -2006,7 +2006,7 @@
     <string name="show_pages_thumbs">Afișează miniaturi pagini</string>
     <string name="show_pages_thumbs_summary">Activează fila „Pagini” pe ecranul cu detalii</string>
     <string name="error_no_data_received">Nu s-au primit date de la server</string>
-    <string name="unsupported_backup_message">Selectează un fișier de rezervă Kototoro valid</string>
+    <string name="unsupported_backup_message">Selectează un fișier de rezervă Amuratsu valid</string>
     <string name="hours_short">%d h</string>
     <string name="minutes_short">%d m</string>
     <string name="seconds_short">%d s</string>
@@ -2058,8 +2058,8 @@
     <string name="chapters_read">Capitole citite</string>
     <string name="chapters_left">Capitole rămase</string>
     <string name="external_source">Extern/plugin</string>
-    <string name="plugin_incompatible">Plugin incompatibil sau eroare internă. Asigură-te că folosești cea mai recentă versiune a pluginului și a Kototoro</string>
-    <string name="plugin_incompatible_with_cause">Eroare de plugin: %s\n Asigură-te că folosești cea mai recentă versiune a pluginului și a Kototoro</string>
+    <string name="plugin_incompatible">Plugin incompatibil sau eroare internă. Asigură-te că folosești cea mai recentă versiune a pluginului și a Amuratsu</string>
+    <string name="plugin_incompatible_with_cause">Eroare de plugin: %s\n Asigură-te că folosești cea mai recentă versiune a pluginului și a Amuratsu</string>
     <string name="plugin_missing_host_classes">%1$s nu poate fi instalat deoarece depinde de clase gazdă %2$s neacceptate:\n%3$s</string>
     <string name="connection_ok">Conexiunea este bună</string>
     <string name="invalid_proxy_configuration">Configurație proxy nevalidă</string>
@@ -2259,7 +2259,7 @@
     <string name="search_disabled_sources">Caută prin sursele dezactivate</string>
     <string name="error_details">Detalii eroare</string>
     <string name="error_disclaimer_manga">Încearcă să deschizi manga într-un browser web pentru a te asigura că este disponibilă pe sursa sa.</string>
-    <string name="error_disclaimer_app_outdated">Se pare că versiunea ta de Kototoro este învechită. Instalează ultima versiune pentru a obține toate corecturile disponibile.</string>
+    <string name="error_disclaimer_app_outdated">Se pare că versiunea ta de Amuratsu este învechită. Instalează ultima versiune pentru a obține toate corecturile disponibile.</string>
     <string name="error_disclaimer_report">Poți trimite un raport de eroare dezvoltatorilor, ne va ajuta să localizăm și să remediem eroarea</string>
     <string name="enable_source_manga">Activează sursa manga</string>
     <string name="enable_source_novel">Activează sursa de romane</string>
@@ -2277,7 +2277,7 @@
     <string name="recommendation_novel">romane recomandate</string>
     <string name="recommendation_video">videoclipuri recomandate</string>
     <string name="link_to_manga_on_s">Link către manga pe %s</string>
-    <string name="link_to_manga_in_app">Link către manga în Kototoro</string>
+    <string name="link_to_manga_in_app">Link către manga în Amuratsu</string>
     <string name="clear_browser_data">Șterge datele browserului</string>
     <string name="clear_browser_data_summary">Șterge datele browserului precum memoria cache și cookie-urile. Atenție: Autorizarea în sursele de conținut poate deveni invalidă</string>
     <string name="no_write_permission_to_file">Nu există permisiune de scriere a fișierului</string>
@@ -2327,7 +2327,7 @@
     <string name="discord_token_hint">Lipește tokenul Discord aici</string>
     <string name="discord_rpc_summary">Afișează starea lecturii pe Discord</string>
     <string name="obtain">Obține</string>
-    <string name="discord_rpc_description">Citește manga pe Kototoro - o aplicație de citit manga</string>
+    <string name="discord_rpc_description">Citește manga pe Amuratsu - o aplicație de citit manga</string>
     <string name="discord_logout_summary">Șterge autorizarea Discord salvată</string>
     <string name="reading_s">Citește %s</string>
     <string name="read_on_s">Citește pe %s</string>
@@ -2355,7 +2355,7 @@
     <string name="sync_backend_switch_webdav_title">Treci la backupul WebDAV?</string>
     <string name="sync_backend_switch_webdav_confirm">Sincronizarea Google Drive este activată în prezent. Activarea backupului WebDAV va dezactiva sincronizarea Google Drive, păstrând în același timp autentificarea Google.</string>
     <string name="sync_sign_in">Pregătește sincronizarea Google Drive</string>
-    <string name="sync_sign_in_summary">Utilizează datele aplicației Google Drive cu permisiunea minimă Drive appdata pentru a sincroniza abonamentele și a actualiza înregistrările. Kototoro nu poate accesa fișierele tale Drive.</string>
+    <string name="sync_sign_in_summary">Utilizează datele aplicației Google Drive cu permisiunea minimă Drive appdata pentru a sincroniza abonamentele și a actualiza înregistrările. Amuratsu nu poate accesa fișierele tale Drive.</string>
     <string name="google_drive_sync_unregistered_build_error">Sincronizarea Google Drive nu este acceptată în versiunile de dezvoltare/nocturne. Te rugăm să folosești versiuni oficiale lansate sau sincronizarea WebDAV.</string>
     <string name="sync_sign_out">Deconectare</string>
     <string name="sync_account">Conectat</string>
@@ -2819,7 +2819,7 @@
     <string name="trust_and_add">Încredere și adăugare</string>
     <string name="trust_extension_repository_message">Repozitoriu: %1$s\nSite web: %2$s\nAmprentă SHA-256:\n%3$s\n\nVerifică această amprentă cu editorul înainte de a acorda încredere acestui repozitoriu.</string>
     <string name="untrusted_extension_message">%1$s (%2$s) este instalat, dar semnătura sa nu corespunde amprentei repozitoritului selectat.\n\nAmprentă repozitoriu: %3$s\n\nElimină pachetul instalat înainte de a-l reinstala din acest repozitoriu.</string>
-    <string name="incompatible_extension_message">%1$s %2$s nu poate fi instalat deoarece versiunea bibliotecii (%3$s) este în afara intervalului acceptat de Kototoro.</string>
+    <string name="incompatible_extension_message">%1$s %2$s nu poate fi instalat deoarece versiunea bibliotecii (%3$s) este în afara intervalului acceptat de Amuratsu.</string>
     <string name="built_in_sources">Integrate</string>
     <string name="select_all">Selectează tot</string>
     <string name="deselect_all">Deselectează tot</string>
@@ -2859,7 +2859,7 @@
     <string name="welcome_plugins_repo_yakateam">Parsere Yakateam</string>
     <string name="welcome_plugins_repo_redo">Parsere Redo</string>
     <string name="welcome_plugins_repo_uma">UMA (Parsere Tsuki)</string>
-    <string name="welcome_plugins_disclaimer">Aceste depozite de extensii sunt menținute de comunități online independente. Dezvoltatorii Kototoro nu au nicio afiliere, control sau asociere cu aceste depozite terțe. Confirm că configurez aceste surse pe propriul risc.</string>
+    <string name="welcome_plugins_disclaimer">Aceste depozite de extensii sunt menținute de comunități online independente. Dezvoltatorii Amuratsu nu au nicio afiliere, control sau asociere cu aceste depozite terțe. Confirm că configurez aceste surse pe propriul risc.</string>
     <string name="welcome_plugins_start_btn">Configurare depozite</string>
     <string name="welcome_plugins_configured">S-au configurat %1$d tipuri noi de surse/depozite: %2$s. Pachetele nu sunt descărcate încă — instalați-le pe cele potrivite la pasul următor.</string>
     <string name="welcome_plugins_configured_none">Nicio sursă sau depozit nu a putut fi configurat. Verificați rețeaua sau alegeți alte depozite și încercați din nou.</string>
@@ -2889,22 +2889,22 @@
     <string name="welcome_install_system_launch_failed">Nu s-a putut porni programul de instalare al sistemului: %1$s</string>
     <string name="welcome_install_skip">Săriți instalarea — o voi face mai târziu în Administrare extensii</string>
     <string name="welcome_install_step_title">Instalare în masă a extensiilor</string>
-    <string name="welcome_install_step_summary">Alegeți tipurile de surse și setările de utilizat, apoi lăsați Kototoro să descarce și să instaleze totul în fundal.</string>
+    <string name="welcome_install_step_summary">Alegeți tipurile de surse și setările de utilizat, apoi lăsați Amuratsu să descarce și să instaleze totul în fundal.</string>
     <string name="welcome_install_kinds_title">Tipuri de surse de instalat</string>
     <string name="welcome_install_kinds_summary">Doar tipurile bifate vor fi procesate. Cele debifate (de ex. Mihon, dacă preferați mai târziu) rămân pentru a fi instalate în Administrare extensii.</string>
     <string name="welcome_install_kinds_empty">Niciun repositoriu configurat încă. Mergeți înapoi și adăugați mai întâi repositorii.</string>
     <string name="welcome_install_nsfw_title">Includeți conținut NSFW</string>
     <string name="welcome_install_nsfw_summary">Dezactivat implicit — pachetele pentru adulți sunt eliminate din lista de instalare.</string>
-    <string name="welcome_intro_app_title">Kototoro · Cititor open-source</string>
-    <string name="welcome_intro_body">Kototoro este un cititor / player multimedia open-source. Acceptă un ecosistem larg de extensii comunitare, dar nu include nicio sursă de conținut proprie.</string>
+    <string name="welcome_intro_app_title">Amuratsu · Cititor open-source</string>
+    <string name="welcome_intro_body">Amuratsu este un cititor / player multimedia open-source. Acceptă un ecosistem larg de extensii comunitare, dar nu include nicio sursă de conținut proprie.</string>
     <string name="welcome_intro_concepts_title">Trei concepte, în 30 de secunde</string>
     <string name="welcome_intro_repo_label">Repositoriu</string>
     <string name="welcome_intro_repo_body">Un URL către o colecție terta de extensii, menținută de o comunitate independentă (de exemplu repositorii Mihon, liste TVBox sau repositorii de pluginuri LNReader).</string>
     <string name="welcome_intro_extension_label">Extensie</string>
-    <string name="welcome_intro_extension_body">Un singur pachet instalabil dintr-un repositoriu — un JAR, un APK sau o listă JSON. Extensiile instalate oferă lui Kototoro capacitatea de a citi sau reda de pe un site.</string>
+    <string name="welcome_intro_extension_body">Un singur pachet instalabil dintr-un repositoriu — un JAR, un APK sau o listă JSON. Extensiile instalate oferă lui Amuratsu capacitatea de a citi sau reda de pe un site.</string>
     <string name="welcome_intro_source_label">Sursă</string>
     <string name="welcome_intro_source_body">O sursă de conținut concretă pe care o vedeți în aplicație după instalarea sau importarea unei extensii — de exemplu un anumit site web de manga sau video.</string>
-    <string name="welcome_intro_disclaimer">Utilizarea extensiilor terțe este în întregime pe propriul risc: comportamentul în timpul execuției, legalitatea și conținutul nu sunt controlate de proiectul Kototoro.</string>
+    <string name="welcome_intro_disclaimer">Utilizarea extensiilor terțe este în întregime pe propriul risc: comportamentul în timpul execuției, legalitatea și conținutul nu sunt controlate de proiectul Amuratsu.</string>
     <string name="welcome_intro_continue">Am înțeles — continuă</string>
     <string name="welcome_done_title">Aproape gata</string>
     <string name="welcome_done_summary">Rezumatul configurării și câteva sfaturi.</string>
@@ -2913,10 +2913,10 @@
     <string name="welcome_done_json_note">Tipurile bazate pe JSON (Legado / TVBox / LNReader) sunt importate automat; dacă ați adăugat și alte repositorii JSON, importați-le în Administrare extensii.</string>
     <string name="welcome_done_title_finished">Configurare completă</string>
     <string name="welcome_done_summary_finished">Asistentul s-a încheiat — nu s-au adăugat automat repositorii sau surse.</string>
-    <string name="welcome_done_body_finished">Kototoro nu a adăugat nicio sursă în timpul configurării. Puteți adăuga propriile repositorii și surse oricând în Setări › Surse de conținut (Administrare extensii).</string>
+    <string name="welcome_done_body_finished">Amuratsu nu a adăugat nicio sursă în timpul configurării. Puteți adăuga propriile repositorii și surse oricând în Setări › Surse de conținut (Administrare extensii).</string>
     <string name="welcome_done_advice_title">Dacă o sursă nu funcționează</string>
     <string name="welcome_done_advice_summary">O scurtă cale de depanare, pentru ca persoanele potrivite să vadă raportul.</string>
-    <string name="welcome_done_advice_body">1. Confirmați problema utilizând aplicația gazdă originală a extensiei — de exemplu, o sursă de tip Mihon ar trebui testată în aplicația Mihon.\n2. Dacă problema apare și acolo, aparține repositoriului care menține extensia: deschideți o sesiune la URL-ul propriu al repositoriului.\n3. Dacă apare doar în Kototoro, raportați-o în repositoriul proiectului Kototoro și includeți numele sursei, versiunea extensiei și ce ați încercat.</string>
+    <string name="welcome_done_advice_body">1. Confirmați problema utilizând aplicația gazdă originală a extensiei — de exemplu, o sursă de tip Mihon ar trebui testată în aplicația Mihon.\n2. Dacă problema apare și acolo, aparține repositoriului care menține extensia: deschideți o sesiune la URL-ul propriu al repositoriului.\n3. Dacă apare doar în Amuratsu, raportați-o în repositoriul proiectului Amuratsu și includeți numele sursei, versiunea extensiei și ce ați încercat.</string>
     <string name="welcome_step_counter">Pasul %1$d din %2$d</string>
     <string name="welcome_action_configure_repos">Configurați repositoriile selectate</string>
     <string name="welcome_action_install_count">Instalați %1$d extensii</string>
@@ -2950,7 +2950,7 @@
     <string name="welcome_permissions_notifications_title">Notificări</string>
     <string name="welcome_permissions_notifications_summary">Afișează notificări pentru descărcări, actualizări și player.</string>
     <string name="welcome_permissions_packages_title">Aplicații instalate</string>
-    <string name="welcome_permissions_packages_summary">Permite Kototoro să detecteze extensiile deja instalate și aplicațiile gazdă (Mihon, Aniyomi, …). Declarat în manifest și acordat automat.</string>
+    <string name="welcome_permissions_packages_summary">Permite Amuratsu să detecteze extensiile deja instalate și aplicațiile gazdă (Mihon, Aniyomi, …). Declarat în manifest și acordat automat.</string>
     <string name="welcome_permissions_battery_title">Funcționare în fundal</string>
     <string name="welcome_permissions_battery_summary">Menține descărcările și actualizările în fundal când ecranul este stins sau dispozitivul este inactiv.</string>
     <string name="welcome_permissions_battery_action">Permite</string>
@@ -3364,11 +3364,11 @@
     <string name="pref_glass_blur_quality_performance">Performanță</string>
     <string name="pref_glass_blur_quality_balanced">Echilibrat</string>
     <string name="pref_glass_blur_quality_quality">Calitate</string>
-    <string name="glass_material_family_kototoro">Kototoro (Recomandat)</string>
+    <string name="glass_material_family_kototoro">Amuratsu (Recomandat)</string>
     <string name="glass_material_family_haze">Haze</string>
     <string name="glass_material_family_cupertino">Cupertino</string>
     <string name="glass_material_family_fluent">Fluent</string>
-    <string name="glass_material_kototoro">Kototoro (Recomandat)</string>
+    <string name="glass_material_kototoro">Amuratsu (Recomandat)</string>
     <string name="glass_material_haze_ultra_thin">Haze Ultra Subțire</string>
     <string name="glass_material_haze_thin">Cețos subț.</string>
     <string name="glass_material_haze_regular">Haze Normal</string>

@@ -151,7 +151,9 @@
 				<category android:name="android.intent.category.DEFAULT" />
 				<category android:name="android.intent.category.BROWSABLE" />
 
+				<data android:scheme="amuratsu" />
 				<data android:scheme="kototoro" />
+				<data android:host="content" />
 				<data android:host="manga" />
 				<data android:host="kototoro.app" />
 			</intent-filter>
@@ -240,6 +242,7 @@
 				<category android:name="android.intent.category.DEFAULT" />
 				<category android:name="android.intent.category.BROWSABLE" />
 
+				<data android:scheme="amuratsu" />
 				<data android:scheme="kototoro" />
 				<data android:host="about" />
 				<data android:host="sync-settings" />
@@ -259,6 +262,7 @@
 				<category android:name="android.intent.category.DEFAULT" />
 				<category android:name="android.intent.category.BROWSABLE" />
 
+				<data android:scheme="amuratsu" />
 				<data android:scheme="kototoro" />
 				<data android:scheme="tachiyomi" />
 				<data android:scheme="aniyomi" />

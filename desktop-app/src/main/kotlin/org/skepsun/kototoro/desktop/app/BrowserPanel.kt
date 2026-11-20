@@ -16,7 +16,7 @@ import org.skepsun.kototoro.core.ui.buttons.OutlinedButton
 /** Interactive browser and HTML/JS debug operations on the session-owned bridge. */
 @Composable
 internal fun BrowserPanel(session: DesktopSession) {
-    var html by remember { mutableStateOf("<html><head><title>Kototoro Windows</title></head><body>${desktopText("browser.offlinePage")}</body></html>") }
+    var html by remember { mutableStateOf("<html><head><title>Amuratsu Windows</title></head><body>${desktopText("browser.offlinePage")}</body></html>") }
     var url by remember { mutableStateOf("") }
     var script by remember { mutableStateOf("document.title") }
     var result by remember { mutableStateOf("") }

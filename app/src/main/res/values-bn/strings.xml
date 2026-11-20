@@ -208,8 +208,8 @@
     <string name="chapters_read">অধ্যায় পড়া</string>
     <string name="chapters_left">অধ্যায় বাকি আছে</string>
     <string name="external_source">বাহ্যিক/প্লাগইন</string>
-    <string name="plugin_incompatible">বেমানান প্লাগইন বা অভ্যন্তরীণ ত্রুটি. আপনি প্লাগইন এবং Kototoro এর সর্বশেষ সংস্করণ ব্যবহার করছেন তা নিশ্চিত করুন৷</string>
-    <string name="plugin_incompatible_with_cause">প্লাগইন ত্রুটি: %s \n· নিশ্চিত করুন যে আপনি প্লাগইন এবং Kototoro এর সর্বশেষ সংস্করণ ব্যবহার করছেন</string>
+    <string name="plugin_incompatible">বেমানান প্লাগইন বা অভ্যন্তরীণ ত্রুটি. আপনি প্লাগইন এবং Amuratsu এর সর্বশেষ সংস্করণ ব্যবহার করছেন তা নিশ্চিত করুন৷</string>
+    <string name="plugin_incompatible_with_cause">প্লাগইন ত্রুটি: %s \n· নিশ্চিত করুন যে আপনি প্লাগইন এবং Amuratsu এর সর্বশেষ সংস্করণ ব্যবহার করছেন</string>
     <string name="connection_ok">সংযোগ ঠিক আছে</string>
     <string name="invalid_proxy_configuration">অবৈধ প্রক্সি কনফিগারেশন</string>
     <string name="show_quick_filters">দ্রুত ফিল্টার দেখান</string>
@@ -279,7 +279,7 @@
     <string name="appearance_mode">চেহারার মোড</string>
     <string name="page_save_manga_title_length">সংরক্ষিত ফাইলের নামে মাঙ্গার শিরোনামের দৈর্ঘ্য</string>
     <string name="page_save_manga_title_length_summary">সংরক্ষিত ছবির ফাইলের নামে যতটি মাঙ্গা শিরোনামের অক্ষর রাখা হবে (১২–৬৪)</string>
-    <string name="cloudstream_newpipe_required">এই এক্সটেনশনটির জন্য NewPipe ক্লাসের প্রয়োজন যা Kototoro-এর সাথে বান্ডেল করা NewPipe-এ নেই, তাই এটি ভিডিও চালাতে পারছে না। এক্সটেনশন বা Kototoro আপডেট করার চেষ্টা করুন।</string>
+    <string name="cloudstream_newpipe_required">এই এক্সটেনশনটির জন্য NewPipe ক্লাসের প্রয়োজন যা Amuratsu-এর সাথে বান্ডেল করা NewPipe-এ নেই, তাই এটি ভিডিও চালাতে পারছে না। এক্সটেনশন বা Amuratsu আপডেট করার চেষ্টা করুন।</string>
     <string name="clear_chapter_thumbnails">অধ্যায়ের থাম্বনেইল মুছে ফেলুন</string>
     <string name="continuous_horizontal">ক্রমাগত অনুভূমিক</string>
     <string name="continuous_horizontal_reversed">ডান থেকে বামে পড়ুন</string>
@@ -331,7 +331,7 @@
     <string name="replace_rule_disable_all_summary">সাময়িকভাবে প্রতিস্থাপন নিয়ম প্রয়োগ বন্ধ রাখুন</string>
     <string name="replace_rule_edit">নিয়ম এডিট</string>
     <string name="replace_rule_import">Legado নিয়ম ইম্পোর্ট করুন</string>
-    <string name="replace_rule_import_summary">Legado বা Kototoro দ্বারা রপ্তানিকৃত একটি JSON অ্যারে ইম্পোর্ট করুন</string>
+    <string name="replace_rule_import_summary">Legado বা Amuratsu দ্বারা রপ্তানিকৃত একটি JSON অ্যারে ইম্পোর্ট করুন</string>
     <string name="replace_rule_export">নিয়ম রপ্তানি করুন</string>
     <string name="replace_rule_export_summary">সামঞ্জস্যপূর্ণ JSON ফরম্যাটে নিয়ম রপ্তানি করুন</string>
     <string name="replace_rule_empty">কোনো প্রতিস্থাপন নিয়ম নেই</string>
@@ -499,8 +499,8 @@
     <string name="clear_local_novel_storage_prompt">স্থানীয়ভাবে সংরক্ষিত এবং আমদানিকৃত সমস্ত নোবেল ফাইল মুছবেন? এটি পূর্বাবস্থায় ফেরানো যাবে না।</string>
     <string name="clear_local_video_storage_prompt">স্থানীয়ভাবে সংরক্ষিত এবং আমদানিকৃত সমস্ত ভিডিও ফাইল মুছবেন? এটি পূর্বাবস্থায় ফেরানো যাবে না।</string>
     <string name="welcome">স্বাগতম</string>
-    <string name="welcome_intro_title">Kototoro সেট আপ করুন</string>
-    <string name="welcome_intro_summary">আপনি কীভাবে পড়তে এবং দেখতে চান তা বেছে নিন। Kototoro এখন মাঙ্গা, নোবেল এবং ভিডিওর জন্য প্লাগইন-ভিত্তিক সোর্স ফ্যামিলি ব্যবহার করে, যার মধ্যে JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader এবং Cloudstream অন্তর্ভুক্ত রয়েছে।</string>
+    <string name="welcome_intro_title">Amuratsu সেট আপ করুন</string>
+    <string name="welcome_intro_summary">আপনি কীভাবে পড়তে এবং দেখতে চান তা বেছে নিন। Amuratsu এখন মাঙ্গা, নোবেল এবং ভিডিওর জন্য প্লাগইন-ভিত্তিক সোর্স ফ্যামিলি ব্যবহার করে, যার মধ্যে JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader এবং Cloudstream অন্তর্ভুক্ত রয়েছে।</string>
     <string name="welcome_step_start">শুরু করুন</string>
     <string name="welcome_step_sources">সোর্স</string>
     <string name="welcome_step_preferences">পছন্দসমূহ</string>
@@ -510,11 +510,11 @@
     <string name="welcome_glass_preset_title">গ্লাস ফিনিশ</string>
     <string name="welcome_glass_preset_summary">iOS স্টাইলের জন্য গ্লাস ফিনিশ প্রিসেট বেছে নিন। প্রতিসরণ ডিফল্ট এবং পরবর্তীতে অ্যাপিয়ারেন্স সেটিংসে ফাইন-টিউন করা যেতে পারে।</string>
     <string name="home_quick_action_wizard">উইজার্ড</string>
-    <string name="welcome_restore_summary">আগে কি Kototoro ব্যবহার করেছেন? ব্যাকআপ রিস্টোর করুন, সিঙ্ক করতে সাইন ইন করুন অথবা প্রথমে স্থানীয় ফোল্ডার যোগ করুন।</string>
+    <string name="welcome_restore_summary">আগে কি Amuratsu ব্যবহার করেছেন? ব্যাকআপ রিস্টোর করুন, সিঙ্ক করতে সাইন ইন করুন অথবা প্রথমে স্থানীয় ফোল্ডার যোগ করুন।</string>
     <string name="welcome_source_formats_title">কন্টেন্ট ফরম্যাট বেছে নিন</string>
     <string name="welcome_source_formats_summary">এই ফিল্টারগুলি নির্ধারণ করে সেটআপের পর কোন সোর্স ফ্যামিলিগুলি সক্রিয় থাকবে।</string>
     <string name="welcome_ecosystems_title">সোর্স ইকোসিস্টেম</string>
-    <string name="welcome_ecosystems_summary">Kototoro পড়ার এবং দেখার জন্য একাধিক প্লাগইন সোর্স ফ্যামিলি সমর্থন করে। এখানে প্রস্তাবিত রিপোজিটরিগুলি দিয়ে শুরু করুন, তারপর এক্সটেনশন ম্যানেজমেন্টে এগুলো ফাইন-টিউন করুন।</string>
+    <string name="welcome_ecosystems_summary">Amuratsu পড়ার এবং দেখার জন্য একাধিক প্লাগইন সোর্স ফ্যামিলি সমর্থন করে। এখানে প্রস্তাবিত রিপোজিটরিগুলি দিয়ে শুরু করুন, তারপর এক্সটেনশন ম্যানেজমেন্টে এগুলো ফাইন-টিউন করুন।</string>
     <string name="welcome_ecosystem_manga">মাঙ্গা: JAR পার্সার, Mihon, IReader, LNReader</string>
     <string name="welcome_ecosystem_novel">নোবেল: Legado, IReader, LNReader</string>
     <string name="welcome_ecosystem_video">ভিডিও: Aniyomi, TVBox, Cloudstream</string>
@@ -523,10 +523,10 @@
     <string name="welcome_preferences_summary">ভাষা এবং কন্টেন্টের ধরণ বেছে নিন। আপনি পরে সোর্স সেটিংসে এটি পরিবর্তন করতে পারেন।</string>
     <string name="welcome_spaces_title">আপনার স্পেসগুলো আলাদা করুন</string>
     <string name="welcome_spaces_summary">স্পেসগুলো মাঙ্গা, উপন্যাস এবং অ্যানিমের জন্য স্বাধীন নেভিগেশন, ব্রাউজিং পছন্দ এবং পড়ার বা প্লেব্যাকের প্রসঙ্গ প্রদান করে। উন্নত অপশন এবং কাস্টম স্পেস পরবর্তীতে সেটিংস &gt; ব্যবহারকারী &gt; স্পেস-এ পাওয়া যাবে।</string>
-    <string name="welcome_ready_summary">Setup is complete. Kototoro will enable sources matching your selected languages and formats. You can run this wizard again from Settings &gt; Content sources &gt; Setup wizard.</string>
-    <string name="welcome_jar_install_success">Kototoro: ক্লাউড নেটওয়ার্ক থেকে সফলভাবে সর্বশেষ %1$dটি পার্সার ইঞ্জিন আনা এবং মাউন্ট করা হয়েছে!</string>
-    <string name="welcome_jar_install_up_to_date">Kototoro: ক্লাউড যাচাইকরণ সম্পন্ন, স্থানীয় পার্সারগুলো আপডেট রয়েছে! (মোট %1$dটি সোর্স লোড করা হয়েছে)</string>
-    <string name="welcome_jar_install_failed">Kototoro: পার্সার নেটওয়ার্ক লোড করতে ব্যর্থ (%1$s), অনুগ্রহ করে আবার চেষ্টা করুন বা প্রক্সি মিরর পরিবর্তন করতে সেটিংসে যান</string>
+    <string name="welcome_ready_summary">Setup is complete. Amuratsu will enable sources matching your selected languages and formats. You can run this wizard again from Settings &gt; Content sources &gt; Setup wizard.</string>
+    <string name="welcome_jar_install_success">Amuratsu: ক্লাউড নেটওয়ার্ক থেকে সফলভাবে সর্বশেষ %1$dটি পার্সার ইঞ্জিন আনা এবং মাউন্ট করা হয়েছে!</string>
+    <string name="welcome_jar_install_up_to_date">Amuratsu: ক্লাউড যাচাইকরণ সম্পন্ন, স্থানীয় পার্সারগুলো আপডেট রয়েছে! (মোট %1$dটি সোর্স লোড করা হয়েছে)</string>
+    <string name="welcome_jar_install_failed">Amuratsu: পার্সার নেটওয়ার্ক লোড করতে ব্যর্থ (%1$s), অনুগ্রহ করে আবার চেষ্টা করুন বা প্রক্সি মিরর পরিবর্তন করতে সেটিংসে যান</string>
     <string name="home_placeholder_title">রিডিং ড্যাশবোর্ড</string>
     <string name="home_placeholder_subtitle">আপনার সাম্প্রতিক পড়া, আপডেট, লাইব্রেরি, সিঙ্ক এবং সোর্সগুলো এক জায়গায় দেখুন।</string>
     <string name="home_hero_local_subtitle">যেখান থেকে পড়া থামিয়েছিলেন সেখান থেকে শুরু করুন, বা সম্প্রতি যা খুলেছিলেন তা আবার চালু করুন।</string>
@@ -1104,7 +1104,7 @@
     <string name="import_completed_hint">জায়গা বাঁচাতে আপনি স্টোরেজ থেকে মূল ফাইলটি মুছে ফেলতে পারেন</string>
     <string name="import_will_start_soon">খুব শীঘ্রই ইম্পোর্ট শুরু হবে</string>
     <string name="feed">Feed</string>
-    <string name="manga_error_description_pattern">Error details:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. Try to &lt;a href=\"%2$s\"&gt;open manga in a web browser&lt;/a&gt; to ensure it is available on its source&lt;br&gt;2. Make sure you are using the &lt;a href=\"kototoro://about\"&gt;latest version of Kototoro&lt;/a&gt;&lt;br&gt;3. If it is available, send an error report to the developers.</string>
+    <string name="manga_error_description_pattern">Error details:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. Try to &lt;a href=\"%2$s\"&gt;open manga in a web browser&lt;/a&gt; to ensure it is available on its source&lt;br&gt;2. Make sure you are using the &lt;a href=\"amuratsu://about\"&gt;latest version of Amuratsu&lt;/a&gt;&lt;br&gt;3. If it is available, send an error report to the developers.</string>
     <string name="history_shortcuts">সাম্প্রতিক মাঙ্গার শর্টকাট দেখান</string>
     <string name="history_shortcuts_summary">অ্যাপ্লিকেশন আইকনে দীর্ঘক্ষণ চেপে ধরে সাম্প্রতিক মাঙ্গাগুলো অ্যাক্সেসযোগ্য করুন</string>
     <string name="reader_control_ltr_summary">রিডার মোড অনুযায়ী পৃষ্ঠা পরিবর্তনের দিক সামঞ্জস্য করবেন না, যেমন ডান দিকের কি চাপলে সর্বদা পরবর্তী পৃষ্ঠায় যাওয়া যাবে। এই বিকল্পটি শুধুমাত্র হার্ডওয়্যার ইনপুট ডিভাইসগুলোকে প্রভাবিত করে</string>
@@ -1260,7 +1260,7 @@
     <string name="export_backup_for_other_apps_summary">একটি লক্ষ্য অ্যাপ বেছে নিন এবং সামঞ্জস্যপূর্ণ ব্যাকআপ তৈরি করুন: Kotatsu, Mihon, Aniyomi বা Usagi।</string>
     <string name="export_backup_choose_target_app">লক্ষ্য অ্যাপ বেছে নিন</string>
     <string name="export_kotatsu_backup">Kotatsu ব্যাকআপ এক্সপোর্ট করুন</string>
-    <string name="export_kotatsu_backup_summary">Kototoro-নির্দিষ্ট বিভাগ ছাড়া Kotatsu-ফ্যামিলি অ্যাপের জন্য আলাদা লিগ্যাসি ব্যাকআপ তৈরি করুন।</string>
+    <string name="export_kotatsu_backup_summary">Amuratsu-নির্দিষ্ট বিভাগ ছাড়া Kotatsu-ফ্যামিলি অ্যাপের জন্য আলাদা লিগ্যাসি ব্যাকআপ তৈরি করুন।</string>
     <string name="export_kotatsu_backup_saved">Kotatsu ব্যাকআপ সংরক্ষিত হয়েছে</string>
     <string name="export_mihon_backup">Mihon ব্যাকআপ এক্সপোর্ট করুন</string>
     <string name="export_mihon_backup_summary">শুধুমাত্র Mihon-সোর্স এন্ট্রির জন্য ফেভারিট, ক্যাটাগরি এবং পড়ার অগ্রগতি এক্সপোর্ট করুন।</string>
@@ -1315,7 +1315,7 @@
     <string name="data_and_privacy">ডেটা এবং গোপনীয়তা</string>
     <string name="restore_summary">আগে তৈরি ব্যাকআপ পুনরুদ্ধার করুন</string>
     <string name="restore_kototoro_backup">ব্যাকআপ পুনরুদ্ধার করুন</string>
-    <string name="restore_kototoro_backup_summary">যেকোনো সংস্করণের Kototoro ব্যাকআপ বা Kotatsu ব্যাকআপ পুনরুদ্ধার করুন। ফরম্যাট স্বয়ংক্রিয়ভাবে শনাক্ত হয়।</string>
+    <string name="restore_kototoro_backup_summary">যেকোনো সংস্করণের Amuratsu ব্যাকআপ বা Kotatsu ব্যাকআপ পুনরুদ্ধার করুন। ফরম্যাট স্বয়ংক্রিয়ভাবে শনাক্ত হয়।</string>
     <string name="restore_mode_replace_existing">বিদ্যমান ডেটা প্রতিস্থাপন করুন</string>
     <string name="restore_mode_replace_existing_summary">যে বিভাগগুলো পুনরুদ্ধার করা হচ্ছে তা প্রথমে মুছে ফেলা হয়; ব্যাকআপে নেই এমন ফেভারিট ও ইতিহাস সরানো হয়</string>
     <string name="restore_mode_merge_with_existing">বিদ্যমান ডেটার সাথে মার্জ করুন</string>
@@ -2048,7 +2048,7 @@
     <string name="show_pages_thumbs">পৃষ্ঠার থাম্বনেইল দেখান</string>
     <string name="show_pages_thumbs_summary">বিবরণ স্ক্রিনে \"পৃষ্ঠা\" ট্যাবটি সচল করুন</string>
     <string name="error_no_data_received">সার্ভার থেকে কোনো ডেটা পাওয়া যায়নি</string>
-    <string name="unsupported_backup_message">দয়া করে একটি সঠিক Kototoro ব্যাকআপ ফাইল নির্বাচন করুন</string>
+    <string name="unsupported_backup_message">দয়া করে একটি সঠিক Amuratsu ব্যাকআপ ফাইল নির্বাচন করুন</string>
     <string name="hours_short">%d h</string>
     <string name="minutes_short">%d m</string>
     <string name="seconds_short">%d s</string>
@@ -2260,7 +2260,7 @@
     <string name="search_disabled_sources">অক্ষম উৎসগুলির মাধ্যমে অনুসন্ধান করুন</string>
     <string name="error_details">ত্রুটির বিবরণ</string>
     <string name="error_disclaimer_manga">মাঙ্গাটি এর উৎসে উপলব্ধ আছে কিনা তা নিশ্চিত করতে একটি ওয়েব ব্রাউজারে এটি খোলার চেষ্টা করুন।</string>
-    <string name="error_disclaimer_app_outdated">মনে হচ্ছে আপনার Kototoro-এর সংস্করণটি পুরানো। সমস্ত উপলব্ধ সমাধান পেতে অনুগ্রহ করে সর্বশেষ সংস্করণটি ইনস্টল করুন।</string>
+    <string name="error_disclaimer_app_outdated">মনে হচ্ছে আপনার Amuratsu-এর সংস্করণটি পুরানো। সমস্ত উপলব্ধ সমাধান পেতে অনুগ্রহ করে সর্বশেষ সংস্করণটি ইনস্টল করুন।</string>
     <string name="error_disclaimer_report">আপনি ডেভেলপারদের কাছে ত্রুটি রিপোর্ট পাঠাতে পারেন, এটি আমাদের ত্রুটি চিহ্নিত করতে এবং ঠিক করতে সাহায্য করবে</string>
     <string name="enable_source_manga">মাঙ্গা উৎস সক্রিয় করুন</string>
     <string name="enable_source_novel">নভেল উৎস সক্রিয় করুন</string>
@@ -2278,7 +2278,7 @@
     <string name="recommendation_novel">সুপারিশকৃত নভেল</string>
     <string name="recommendation_video">সুপারিশকৃত ভিডিও</string>
     <string name="link_to_manga_on_s">%s-এ মাঙ্গার লিঙ্ক</string>
-    <string name="link_to_manga_in_app">Kototoro-এ মাঙ্গার লিঙ্ক</string>
+    <string name="link_to_manga_in_app">Amuratsu-এ মাঙ্গার লিঙ্ক</string>
     <string name="clear_browser_data">ব্রাউজারের ডেটা মুছুন</string>
     <string name="clear_browser_data_summary">ক্যাশে এবং কুকিজের মতো ব্রাউজার ডেটা পরিষ্কার করুন। সতর্কতা: কন্টেন্ট উৎসে অনুমোদন অচল হয়ে যেতে পারে</string>
     <string name="no_write_permission_to_file">ফাইল লেখার অনুমতি নেই</string>
@@ -2328,7 +2328,7 @@
     <string name="discord_token_hint">আপনার Discord টোকেন এখানে পেস্ট করুন</string>
     <string name="discord_rpc_summary">Discord-এ আপনার পড়ার স্ট্যাটাস দেখান</string>
     <string name="obtain">সংগ্রহ করুন</string>
-    <string name="discord_rpc_description">Kototoro-তে মাঙ্গা পড়া হচ্ছে - একটি মাঙ্গা রিডার অ্যাপ</string>
+    <string name="discord_rpc_description">Amuratsu-তে মাঙ্গা পড়া হচ্ছে - একটি মাঙ্গা রিডার অ্যাপ</string>
     <string name="discord_logout_summary">সংরক্ষিত Discord অনুমোদন মুছে ফেলুন</string>
     <string name="reading_s">%s পড়া হচ্ছে</string>
     <string name="read_on_s">%s এ পড়ুন</string>
@@ -2356,7 +2356,7 @@
     <string name="sync_backend_switch_webdav_title">WebDAV ব্যাকআপে স্যুইচ করবেন?</string>
     <string name="sync_backend_switch_webdav_confirm">Google Drive সিঙ্ক বর্তমানে সক্ষম আছে। আপনার Google সাইন-ইন অক্ষুণ্ণ রেখেই WebDAV ব্যাকআপ সক্ষম করলে Google Drive সিঙ্ক বন্ধ হয়ে যাবে।</string>
     <string name="sync_sign_in">Google Drive সিঙ্ক প্রস্তুত করুন</string>
-    <string name="sync_sign_in_summary">সাবস্ক্রিপশন এবং আপডেট রেকর্ড সিঙ্ক করতে সর্বনিম্ন Drive appdata অনুমতি সহ Google Drive অ্যাপ ডেটা ব্যবহার করে। Kototoro আপনার Drive ফাইল অ্যাক্সেস করতে পারে না।</string>
+    <string name="sync_sign_in_summary">সাবস্ক্রিপশন এবং আপডেট রেকর্ড সিঙ্ক করতে সর্বনিম্ন Drive appdata অনুমতি সহ Google Drive অ্যাপ ডেটা ব্যবহার করে। Amuratsu আপনার Drive ফাইল অ্যাক্সেস করতে পারে না।</string>
     <string name="google_drive_sync_unregistered_build_error">ডেভেলপমেন্ট/নাইটলি বিল্ডে Google Drive সিঙ্ক সমর্থিত নয়। অনুগ্রহ করে অফিসিয়াল রিলিজ বিল্ড বা WebDAV সিঙ্ক ব্যবহার করুন।</string>
     <string name="sync_sign_out">সাইন আউট করুন</string>
     <string name="sync_account">সাইন ইন করা</string>
@@ -2411,8 +2411,8 @@
     <string name="webdav_remote_backups_inspect">রিমোট ব্যাকআপ পরীক্ষা করুন</string>
     <string name="webdav_remote_backups_inspect_summary">প্রতিটি রিমোট ব্যাকআপ নিরাপদে পুনরুদ্ধার করা যাবে কিনা তা ডাউনলোড করে যাচাই করুন।</string>
     <string name="webdav_remote_backups_clear">রিমোট WebDAV ব্যাকআপ সাফ করুন</string>
-    <string name="webdav_remote_backups_clear_summary">কনফিগার করা WebDAV পাথে সমস্ত Kototoro ব্যাকআপ ফাইল মুছে দিন। স্থানীয় ডেটা পরিবর্তিত হবে না।</string>
-    <string name="webdav_remote_backups_clear_confirm">কনফিগার করা WebDAV পথ থেকে সমস্ত Kototoro ব্যাকআপ ফাইল মুছে ফেলবেন? স্থানীয় ডেটা পরিবর্তিত হবে না।</string>
+    <string name="webdav_remote_backups_clear_summary">কনফিগার করা WebDAV পাথে সমস্ত Amuratsu ব্যাকআপ ফাইল মুছে দিন। স্থানীয় ডেটা পরিবর্তিত হবে না।</string>
+    <string name="webdav_remote_backups_clear_confirm">কনফিগার করা WebDAV পথ থেকে সমস্ত Amuratsu ব্যাকআপ ফাইল মুছে ফেলবেন? স্থানীয় ডেটা পরিবর্তিত হবে না।</string>
     <string name="webdav_remote_backups_loading">WebDAV ব্যাকআপ লোড হচ্ছে…</string>
     <string name="webdav_remote_backup_status_unknown">যাচাই করা হয়নি</string>
     <string name="webdav_remote_backup_status_restorable">পুনরুদ্ধারযোগ্য</string>
@@ -2819,7 +2819,7 @@
     <string name="trust_and_add">বিশ্বাস করে যোগ</string>
     <string name="trust_extension_repository_message">রিপোজিটরি: %1$s\nওয়েবসাইট: %2$s\nSHA-256 ফিঙ্গারপ্রিন্ট:\n%3$s\n\nএই রিপোজিটরি বিশ্বাস করার আগে প্রকাশকের সাথে এই ফিঙ্গারপ্রিন্ট যাচাই করুন।</string>
     <string name="untrusted_extension_message">%1$s (%2$s) ইনস্টল করা আছে, কিন্তু এর স্বাক্ষর নির্বাচিত রিপোজিটরি ফিঙ্গারপ্রিন্টের সাথে মিলছে না।\n\nরিপোজিটরি ফিঙ্গারপ্রিন্ট: %3$s\n\nএই রিপোজিটরি থেকে পুনরায় ইনস্টল করার আগে ইনস্টল করা প্যাকেজটি সরিয়ে ফেলুন।</string>
-    <string name="incompatible_extension_message">%1$s %2$s ইনস্টল করা যাচ্ছে না কারণ এর লাইব্রেরি সংস্করণ (%3$s) Kototoro-এর সমর্থিত সীমার বাইরে।</string>
+    <string name="incompatible_extension_message">%1$s %2$s ইনস্টল করা যাচ্ছে না কারণ এর লাইব্রেরি সংস্করণ (%3$s) Amuratsu-এর সমর্থিত সীমার বাইরে।</string>
     <string name="built_in_sources">বিল্ট-ইন</string>
     <string name="select_all">সব নির্বাচন করুন</string>
     <string name="deselect_all">সব অনির্বাচন করুন</string>
@@ -2859,7 +2859,7 @@
     <string name="welcome_plugins_repo_yakateam">Yakateam পার্সার</string>
     <string name="welcome_plugins_repo_redo">Redo পার্সার</string>
     <string name="welcome_plugins_repo_uma">UMA (Tsuki পার্সার)</string>
-    <string name="welcome_plugins_disclaimer">এই এক্সটেনশন সংগ্রহস্থলগুলি স্বাধীন অনলাইন সম্প্রদায় দ্বারা পরিচালিত হয়। Kototoro ডেভেলপারদের এই তৃতীয় পক্ষের সংগ্রহস্থলগুলির সাথে কোনো সম্পর্ক, নিয়ন্ত্রণ বা সংশ্লিষ্টতা নেই। আমি স্বীকার করছি যে আমি নিজের ঝুঁকিতে এই সোর্সগুলি কনফিগার করছি।</string>
+    <string name="welcome_plugins_disclaimer">এই এক্সটেনশন সংগ্রহস্থলগুলি স্বাধীন অনলাইন সম্প্রদায় দ্বারা পরিচালিত হয়। Amuratsu ডেভেলপারদের এই তৃতীয় পক্ষের সংগ্রহস্থলগুলির সাথে কোনো সম্পর্ক, নিয়ন্ত্রণ বা সংশ্লিষ্টতা নেই। আমি স্বীকার করছি যে আমি নিজের ঝুঁকিতে এই সোর্সগুলি কনফিগার করছি।</string>
     <string name="welcome_plugins_start_btn">সংগ্রহস্থল কনফিগার করুন</string>
     <string name="welcome_plugins_configured">%1$dটি নতুন সোর্স বা সংগ্রহস্থলের ধরন কনফিগার করা হয়েছে: %2$s। প্যাকেজগুলি এখনও ডাউনলোড করা হয়নি — পরবর্তী ধাপে মিল থাকা প্যাকেজগুলি ইনস্টল করুন।</string>
     <string name="welcome_plugins_configured_none">কোনো সোর্স বা সংগ্রহস্থল কনফিগার করা যায়নি। আপনার নেটওয়ার্ক চেক করুন বা ভিন্ন সংগ্রহস্থল বেছে নিয়ে আবার চেষ্টা করুন।</string>
@@ -2889,22 +2889,22 @@
     <string name="welcome_install_system_launch_failed">সিস্টেম ইনস্টলার চালু করা যায়নি: %1$s</string>
     <string name="welcome_install_skip">ইনস্টলেশন এড়িয়ে চলুন — আমি পরে এক্সটেনশন ম্যানেজমেন্টে এটি করব</string>
     <string name="welcome_install_step_title">ব্যাচ ইনস্টল এক্সটেনশন</string>
-    <string name="welcome_install_step_summary">কোন সোর্স টাইপ এবং সেটিংস ব্যবহার করবেন তা বেছে নিন, তারপর Kototoro-কে ব্যাকগ্রাউন্ডে সবকিছু ডাউনলোড ও ইনস্টল করতে দিন।</string>
+    <string name="welcome_install_step_summary">কোন সোর্স টাইপ এবং সেটিংস ব্যবহার করবেন তা বেছে নিন, তারপর Amuratsu-কে ব্যাকগ্রাউন্ডে সবকিছু ডাউনলোড ও ইনস্টল করতে দিন।</string>
     <string name="welcome_install_kinds_title">ইনস্টল করার জন্য সোর্সের ধরণ</string>
     <string name="welcome_install_kinds_summary">শুধুমাত্র যে ধরণের বক্সে টিক দিয়েছেন সেগুলোর কাজ করা হবে। যেগুলো আনচেক করা আছে (যেমন Mihon, যদি আপনি পরে করতে চান) সেগুলোকে এক্সটেনশন ম্যানেজমেন্টে গিয়ে ইনস্টল করতে পারবেন।</string>
     <string name="welcome_install_kinds_empty">এখনো কোনো রিপোজিটরি কনফিগার করা হয়নি। ফিরে গিয়ে প্রথমে রিপোজিটরি যোগ করুন।</string>
     <string name="welcome_install_nsfw_title">NSFW কন্টেন্ট অন্তর্ভুক্ত করুন</string>
     <string name="welcome_install_nsfw_summary">ডিফল্টভাবে বন্ধ — শুধুমাত্র প্রাপ্তবয়স্কদের জন্য তৈরি প্যাকেজগুলো ইনস্টলেশন তালিকা থেকে ফিল্টার করে বাদ দেওয়া হয়।</string>
-    <string name="welcome_intro_app_title">Kototoro · ওপেন-সোর্স রিডার</string>
-    <string name="welcome_intro_body">Kototoro একটি ওপেন-সোর্স মাল্টিমিডিয়া রিডার/প্লেয়ার। এটি কমিউনিটি এক্সটেনশনের একটি বিশাল ইকোসিস্টেম সমর্থন করে, তবে এটি নিজস্ব কোনো কন্টেন্ট সোর্স বান্ডিল করে না।</string>
+    <string name="welcome_intro_app_title">Amuratsu · ওপেন-সোর্স রিডার</string>
+    <string name="welcome_intro_body">Amuratsu একটি ওপেন-সোর্স মাল্টিমিডিয়া রিডার/প্লেয়ার। এটি কমিউনিটি এক্সটেনশনের একটি বিশাল ইকোসিস্টেম সমর্থন করে, তবে এটি নিজস্ব কোনো কন্টেন্ট সোর্স বান্ডিল করে না।</string>
     <string name="welcome_intro_concepts_title">তিনটি ধারণা, ৩০ সেকেন্ডে</string>
     <string name="welcome_intro_repo_label">রিপোজিটরি</string>
     <string name="welcome_intro_repo_body">একটি স্বাধীন কমিউনিটি দ্বারা রক্ষণাবেক্ষণ করা থার্ড-পার্টি এক্সটেনশনের একটি সংগ্রহের ইউআরএল (উদাহরণস্বরূপ Mihon রিপো, TVBox তালিকা বা LNReader প্লাগইন রিপো)।</string>
     <string name="welcome_intro_extension_label">এক্সটেনশন</string>
-    <string name="welcome_intro_extension_body">একটি রিপোজিটরির ভেতরের ইনস্টল করার যোগ্য একটি প্যাকেজ — একটি JAR, একটি APK বা একটি JSON তালিকা। ইনস্টল করা এক্সটেনশনগুলো Kototoro-কে কোনো সাইট থেকে পড়ার বা চালানোর ক্ষমতা দেয়।</string>
+    <string name="welcome_intro_extension_body">একটি রিপোজিটরির ভেতরের ইনস্টল করার যোগ্য একটি প্যাকেজ — একটি JAR, একটি APK বা একটি JSON তালিকা। ইনস্টল করা এক্সটেনশনগুলো Amuratsu-কে কোনো সাইট থেকে পড়ার বা চালানোর ক্ষমতা দেয়।</string>
     <string name="welcome_intro_source_label">সোর্স</string>
     <string name="welcome_intro_source_body">এক্সটেনশন ইনস্টল বা ইমপোর্ট করার পরে অ্যাপে আপনি যে নির্দিষ্ট কন্টেন্ট সোর্স দেখতে পান — যেমন একটি নির্দিষ্ট মাঙ্গা বা ভিডিও ওয়েবসাইট।</string>
-    <string name="welcome_intro_disclaimer">থার্ড-পার্টি এক্সটেনশনের ব্যবহার সম্পূর্ণ আপনার নিজস্ব ঝুঁকিতে: রানটাইম আচরণ, আইনি বৈধতা এবং কন্টেন্ট Kototoro প্রজেক্ট দ্বারা নিয়ন্ত্রিত হয় না।</string>
+    <string name="welcome_intro_disclaimer">থার্ড-পার্টি এক্সটেনশনের ব্যবহার সম্পূর্ণ আপনার নিজস্ব ঝুঁকিতে: রানটাইম আচরণ, আইনি বৈধতা এবং কন্টেন্ট Amuratsu প্রজেক্ট দ্বারা নিয়ন্ত্রিত হয় না।</string>
     <string name="welcome_intro_continue">আমি বুঝতে পেরেছি — চালিয়ে যান</string>
     <string name="welcome_done_title">প্রায় শেষ</string>
     <string name="welcome_done_summary">আপনার সেটআপের সারাংশ এবং কিছু টিপস।</string>
@@ -2913,10 +2913,10 @@
     <string name="welcome_done_json_note">JSON-ভিত্তিক টাইপগুলো (Legado / TVBox / LNReader) স্বয়ংক্রিয়ভাবে ইমপোর্ট হয়; আপনি যদি অন্য কোনো JSON রিপোজিটরিও যোগ করে থাকেন, তবে সেগুলোকে এক্সটেনশন ম্যানেজমেন্টে ইমপোর্ট করুন।</string>
     <string name="welcome_done_title_finished">সেটআপ সম্পন্ন হয়েছে</string>
     <string name="welcome_done_summary_finished">উইজার্ড শেষ হয়েছে — কোনো রিপোজিটরি বা সোর্স স্বয়ংক্রিয়ভাবে যোগ করা হয়নি।</string>
-    <string name="welcome_done_body_finished">Kototoro সেটআপের সময় কোনো সোর্স যোগ করেনি। আপনি সেটিংস › কন্টেন্ট সোর্স (এক্সটেনশন ম্যানেজমেন্ট)-এ গিয়ে যেকোনো সময় নিজের রিপোজিটরি এবং সোর্স যোগ করতে পারেন।</string>
+    <string name="welcome_done_body_finished">Amuratsu সেটআপের সময় কোনো সোর্স যোগ করেনি। আপনি সেটিংস › কন্টেন্ট সোর্স (এক্সটেনশন ম্যানেজমেন্ট)-এ গিয়ে যেকোনো সময় নিজের রিপোজিটরি এবং সোর্স যোগ করতে পারেন।</string>
     <string name="welcome_done_advice_title">যদি কোনো সোর্স কাজ না করে</string>
     <string name="welcome_done_advice_summary">একটি সংক্ষিপ্ত ট্রাবলশুটিং গাইড, যাতে সঠিক ব্যক্তিরা রিপোর্টটি দেখতে পান।</string>
-    <string name="welcome_done_advice_body">1. এক্সটেনশনের মূল হোস্ট অ্যাপ ব্যবহার করে সমস্যাটি নিশ্চিত করুন — যেমন Mihon-টাইপ সোর্সটি Mihon অ্যাপে পরীক্ষা করা উচিত।\n2. সমস্যাটি সেখানেও ঘটে থাকলে, এটি এক্সটেনশন রক্ষণাবেক্ষণকারী রিপোজিটরির অন্তর্গত: রিপোজিটরির নিজস্ব ইউআরএলে একটি ইস্যু খুলুন।\n3. এটি শুধুমাত্র Kototoro-তে ঘটলে, Kototoro প্রজেক্ট রিপোজিটরিতে এটি রিপোর্ট করুন এবং সোর্সের নাম, এক্সটেনশনের সংস্করণ ও আপনি কী চেষ্টা করেছেন তা উল্লেখ করুন।</string>
+    <string name="welcome_done_advice_body">1. এক্সটেনশনের মূল হোস্ট অ্যাপ ব্যবহার করে সমস্যাটি নিশ্চিত করুন — যেমন Mihon-টাইপ সোর্সটি Mihon অ্যাপে পরীক্ষা করা উচিত।\n2. সমস্যাটি সেখানেও ঘটে থাকলে, এটি এক্সটেনশন রক্ষণাবেক্ষণকারী রিপোজিটরির অন্তর্গত: রিপোজিটরির নিজস্ব ইউআরএলে একটি ইস্যু খুলুন।\n3. এটি শুধুমাত্র Amuratsu-তে ঘটলে, Amuratsu প্রজেক্ট রিপোজিটরিতে এটি রিপোর্ট করুন এবং সোর্সের নাম, এক্সটেনশনের সংস্করণ ও আপনি কী চেষ্টা করেছেন তা উল্লেখ করুন।</string>
     <string name="welcome_step_counter">ধাপ %1$d/%2$d</string>
     <string name="welcome_action_configure_repos">নির্বাচিত রিপোজিটরিগুলো কনফিগার করুন</string>
     <string name="welcome_action_install_count">%1$dটি এক্সটেনশন ইনস্টল করুন</string>
@@ -2950,7 +2950,7 @@
     <string name="welcome_permissions_notifications_title">বিজ্ঞপ্তি</string>
     <string name="welcome_permissions_notifications_summary">ডাউনলোড, আপডেট এবং প্লেয়ারের বিজ্ঞপ্তি দেখায়।</string>
     <string name="welcome_permissions_packages_title">ইনস্টল করা অ্যাপস</string>
-    <string name="welcome_permissions_packages_summary">Kototoro-কে ইতিমধ্যে ইনস্টল করা এক্সটেনশন এবং হোস্ট অ্যাপ (Mihon, Aniyomi, …) শনাক্ত করতে দেয়। ম্যানিফেস্টে ঘোষিত এবং স্বয়ংক্রিয়ভাবে অনুমোদিত।</string>
+    <string name="welcome_permissions_packages_summary">Amuratsu-কে ইতিমধ্যে ইনস্টল করা এক্সটেনশন এবং হোস্ট অ্যাপ (Mihon, Aniyomi, …) শনাক্ত করতে দেয়। ম্যানিফেস্টে ঘোষিত এবং স্বয়ংক্রিয়ভাবে অনুমোদিত।</string>
     <string name="welcome_permissions_battery_title">ব্যাকগ্রাউন্ড পরিচালনা</string>
     <string name="welcome_permissions_battery_summary">স্ক্রিন বন্ধ থাকা অবস্থায় বা ডিভাইস অলস থাকলে ব্যাকগ্রাউন্ড ডাউনলোড এবং আপডেট সচল রাখে।</string>
     <string name="welcome_permissions_battery_action">অনুমতি দিন</string>
@@ -3366,11 +3366,11 @@
     <string name="pref_glass_blur_quality_performance">পারফরম্যান্স</string>
     <string name="pref_glass_blur_quality_balanced">ব্যালান্সড</string>
     <string name="pref_glass_blur_quality_quality">কোয়ালিটি</string>
-    <string name="glass_material_family_kototoro">Kototoro (প্রস্তাবিত)</string>
+    <string name="glass_material_family_kototoro">Amuratsu (প্রস্তাবিত)</string>
     <string name="glass_material_family_haze">হেইজ</string>
     <string name="glass_material_family_cupertino">কুপারটিনো</string>
     <string name="glass_material_family_fluent">ফ্লুয়েন্ট</string>
-    <string name="glass_material_kototoro">Kototoro (প্রস্তাবিত)</string>
+    <string name="glass_material_kototoro">Amuratsu (প্রস্তাবিত)</string>
     <string name="glass_material_haze_ultra_thin">হেইজ আল্ট্রা থিন</string>
     <string name="glass_material_haze_thin">হেইজ থিন</string>
     <string name="glass_material_haze_regular">হেইজ রেগুলার</string>

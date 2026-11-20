@@ -11,14 +11,15 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  NIGHTLY_REPOSITORY: Kototoro-app/Kototoro-Nightly
-  # Scheduled runs build devel; a manual run builds the branch it was dispatched on.
-  BUILD_REF: ${{ github.event_name == 'workflow_dispatch' && github.ref_name || 'devel' }}
-  # Only devel builds reach the public Nightly channel that users update from over OTA.
-  PUBLISH_NIGHTLY: ${{ github.event_name != 'workflow_dispatch' || github.ref_name == 'devel' }}
+  NIGHTLY_REPOSITORY: ${{ github.repository }}
+  # Scheduled runs build main; a manual run builds the branch it was dispatched on.
+  BUILD_REF: ${{ github.event_name == 'workflow_dispatch' && github.ref_name || 'main' }}
+  # Only main builds reach the public Nightly channel that users update from over OTA.
+  PUBLISH_NIGHTLY: ${{ github.event_name != 'workflow_dispatch' || github.ref_name == 'main' }}
 
 jobs:
   build:
+    if: github.event_name == 'workflow_dispatch' || vars.NIGHTLY_ENABLED == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 60
     permissions:
@@ -82,12 +83,12 @@ jobs:
               *universal*) abi=universal ;;
               *) echo "Unknown APK ABI: $filename" >&2; exit 1 ;;
             esac
-            cp "$apk" "release/Kototoro-${version_name}-${abi}-nightly.apk"
+            cp "$apk" "release/Amuratsu-${version_name}-${abi}-nightly.apk"
           done
 
           echo "version_name=${version_name}" >> "$GITHUB_OUTPUT"
           echo "built_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
-          echo "artifact_name=Kototoro-${version_name}-$(echo "$BUILD_REF" | tr '/' '-')" >> "$GITHUB_OUTPUT"
+          echo "artifact_name=Amuratsu-${version_name}-$(echo "$BUILD_REF" | tr '/' '-')" >> "$GITHUB_OUTPUT"
           echo "tag=nightly-${date_utc}" >> "$GITHUB_OUTPUT"
           find release -type f -maxdepth 1 -print
 
@@ -145,7 +146,7 @@ jobs:
 
   publish-windows:
     needs: [build, windows]
-    if: github.event_name != 'workflow_dispatch' || github.ref_name == 'devel'
+    if: github.event_name != 'workflow_dispatch' || github.ref_name == 'main'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
@@ -180,7 +181,7 @@ jobs:
 
   publish-macos:
     needs: [build, macos]
-    if: github.event_name != 'workflow_dispatch' || github.ref_name == 'devel'
+    if: github.event_name != 'workflow_dispatch' || github.ref_name == 'main'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
@@ -213,7 +214,7 @@ jobs:
 
   publish-ios:
     needs: [build, ios]
-    if: github.event_name != 'workflow_dispatch' || github.ref_name == 'devel'
+    if: github.event_name != 'workflow_dispatch' || github.ref_name == 'main'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
@@ -237,4 +238,4 @@ jobs:
       - name: Refresh AltStore sources
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh workflow run docs-pages.yml --repo "${{ github.repository }}" --ref devel
+        run: gh workflow run docs-pages.yml --repo "${{ github.repository }}" --ref main

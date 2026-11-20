@@ -3,7 +3,7 @@ import Foundation
 import XCTest
 
 final class AppUpdateTests: XCTestCase {
-    private let asset = URL(string: "https://github.com/Kototoro-app/Kototoro/releases/download/v2.3.7/Kototoro.ipa")!
+    private let asset = URL(string: "https://github.com/amurapan/amuratsu/releases/download/v2.3.7/Amuratsu.ipa")!
 
     private func release(_ version: String = "2.3.7", build: String = "7882", minimum: String = "26.0",
                          bytes: Data = Data("test IPA".utf8)) -> AppRelease {

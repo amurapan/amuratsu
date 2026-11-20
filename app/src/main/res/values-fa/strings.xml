@@ -671,7 +671,7 @@
     <string name="page_save_manga_title_length">طول عنوان مانگا در نام فایل‌های ذخیره‌شده</string>
     <string name="page_save_manga_title_length_summary">تعداد کاراکترهای عنوان مانگا که در نام فایل‌های تصویر ذخیره می‌شوند (۱۲ تا ۶۴)</string>
     <string name="pages_saved">صفحات ذخیره‌شدند</string>
-    <string name="cloudstream_newpipe_required">این افزونه به کلاس‌های NewPipe نیاز دارد که NewPipe همراه با Kototoro ندارد، بنابراین نمی‌تواند ویدیوها را پخش کند. افزونه یا Kototoro را به‌روزرسانی کنید.</string>
+    <string name="cloudstream_newpipe_required">این افزونه به کلاس‌های NewPipe نیاز دارد که NewPipe همراه با Amuratsu ندارد، بنابراین نمی‌تواند ویدیوها را پخش کند. افزونه یا Amuratsu را به‌روزرسانی کنید.</string>
     <string name="clear_chapter_thumbnails">پاک کردن بندانگشتی‌های فصل</string>
     <string name="continuous_horizontal">افقی پیوسته</string>
     <string name="continuous_horizontal_reversed">مطالعه از راست به چپ</string>
@@ -722,7 +722,7 @@
     <string name="replace_rule_disable_all_summary">توقف موقت اعمال قوانین جایگزینی</string>
     <string name="replace_rule_edit">ویرایش قانون</string>
     <string name="replace_rule_import">وارد کردن قوانین Legado</string>
-    <string name="replace_rule_import_summary">وارد کردن یک آرایه JSON صادر شده توسط Legado یا Kototoro</string>
+    <string name="replace_rule_import_summary">وارد کردن یک آرایه JSON صادر شده توسط Legado یا Amuratsu</string>
     <string name="replace_rule_export">صصدور قوانین</string>
     <string name="replace_rule_export_summary">صدور قوانین در قالب JSON سازگار</string>
     <string name="replace_rule_empty">بدون قانون جایگزینی</string>
@@ -854,8 +854,8 @@
     <string name="clear_local_manga_storage_prompt">حذف تمام فایل‌های مانگای ذخیره و وارد شده محلی؟ این عمل غیرقابل بازگشت است.</string>
     <string name="clear_local_novel_storage_prompt">حذف تمام فایل‌های رمان ذخیره و وارد شده محلی؟ این عمل غیرقابل بازگشت است.</string>
     <string name="clear_local_video_storage_prompt">حذف تمام فایل‌های ویدیویی ذخیره و وارد شده محلی؟ این عمل غیرقابل بازگشت است.</string>
-    <string name="welcome_intro_title">راه‌اندازی Kototoro</string>
-    <string name="welcome_intro_summary">نحوه خواندن و تماشای خود را انتخاب کنید. Kototoro اکنون از خانواده‌های منابع مبتنی بر افزونه برای مانگا، رمان و ویدیو از جمله JAR، Mihon، Aniyomi، IReader، Legado، TVBox، LNReader و Cloudstream پشتیبانی می‌کند.</string>
+    <string name="welcome_intro_title">راه‌اندازی Amuratsu</string>
+    <string name="welcome_intro_summary">نحوه خواندن و تماشای خود را انتخاب کنید. Amuratsu اکنون از خانواده‌های منابع مبتنی بر افزونه برای مانگا، رمان و ویدیو از جمله JAR، Mihon، Aniyomi، IReader، Legado، TVBox، LNReader و Cloudstream پشتیبانی می‌کند.</string>
     <string name="welcome_step_start">شروع</string>
     <string name="welcome_step_sources">منابع</string>
     <string name="welcome_step_preferences">ترجیحات</string>
@@ -865,11 +865,11 @@
     <string name="welcome_glass_preset_title">پوشش شیشه‌ای</string>
     <string name="welcome_glass_preset_summary">پیش‌فرض پوشش شیشه‌ای را برای سبک iOS انتخاب کنید. شکست نور پیش‌فرض است و بعداً در تنظیمات ظاهر قابل تنظیم است.</string>
     <string name="home_quick_action_wizard">راهنما</string>
-    <string name="welcome_restore_summary">قبلاً از Kototoro استفاده کرده‌اید؟ ابتدا یک نسخه پشتیبان بازیابی کنید، برای همگام‌سازی وارد شوید یا پوشه‌های محلی را اضافه کنید.</string>
+    <string name="welcome_restore_summary">قبلاً از Amuratsu استفاده کرده‌اید؟ ابتدا یک نسخه پشتیبان بازیابی کنید، برای همگام‌سازی وارد شوید یا پوشه‌های محلی را اضافه کنید.</string>
     <string name="welcome_source_formats_title">انتخاب فرمت‌های محتوا</string>
     <string name="welcome_source_formats_summary">این فیلترها تعیین می‌کنند کدام خانواده‌های منبع پس از راه‌اندازی فعال شوند.</string>
     <string name="welcome_ecosystems_title">اکوسیستم منابع</string>
-    <string name="welcome_ecosystems_summary">Kototoro از چندین خانواده منبع افزونه برای خواندن و تماشا پشتیبانی می‌کند. با مخازن پیشنهادی در اینجا شروع کنید و سپس آن‌ها را در مدیریت افزونه‌ها تنظیم کنید.</string>
+    <string name="welcome_ecosystems_summary">Amuratsu از چندین خانواده منبع افزونه برای خواندن و تماشا پشتیبانی می‌کند. با مخازن پیشنهادی در اینجا شروع کنید و سپس آن‌ها را در مدیریت افزونه‌ها تنظیم کنید.</string>
     <string name="welcome_ecosystem_manga">مانگا: تجزیه‌کننده‌های JAR، Mihon، IReader، LNReader</string>
     <string name="welcome_ecosystem_novel">رمان: Legado، IReader، LNReader</string>
     <string name="welcome_ecosystem_video">ویدیو: Aniyomi، TVBox، Cloudstream</string>
@@ -878,10 +878,10 @@
     <string name="welcome_preferences_summary">زبان‌ها و انوع محتوا را انتخاب کنید. می‌توانید بعداً این را در تنظیمات منبع تغییر دهید.</string>
     <string name="welcome_spaces_title">جدا کردن فضاها</string>
     <string name="welcome_spaces_summary">فضاها به مانگا، رمان و انیمه ناوبری، تنظیمات مرور، و زمینه خواندن یا پخش مستقل می‌دهند. گزینه‌های پیشرفته و فضاهای سفارشی بعداً در بخش تنظیمات &gt; کاربر &gt; فضاها در دسترس خواهند بود.</string>
-    <string name="welcome_ready_summary">Setup is complete. Kototoro will enable sources matching your selected languages and formats. You can run this wizard again from Settings &gt; Content sources &gt; Setup wizard.</string>
-    <string name="welcome_jar_install_success">Kototoro: دریافت و بارگذاری موفقیت‌آمیز %1$d موتور تجزیه‌کننده جدید از شبکه ابری!</string>
-    <string name="welcome_jar_install_up_to_date">Kototoro: تأیید ابری کامل شد، تجزیه‌کننده‌های محلی به‌روز هستند! (%1$d منبع در کل بارگذاری شد)</string>
-    <string name="welcome_jar_install_failed">Kototoro: بارگذاری شبکه تجزیه‌کننده ناموفق بود (%1$s)، لطفاً دوباره تلاش کنید یا برای تغییر پروکسی به تنظیمات بروید</string>
+    <string name="welcome_ready_summary">Setup is complete. Amuratsu will enable sources matching your selected languages and formats. You can run this wizard again from Settings &gt; Content sources &gt; Setup wizard.</string>
+    <string name="welcome_jar_install_success">Amuratsu: دریافت و بارگذاری موفقیت‌آمیز %1$d موتور تجزیه‌کننده جدید از شبکه ابری!</string>
+    <string name="welcome_jar_install_up_to_date">Amuratsu: تأیید ابری کامل شد، تجزیه‌کننده‌های محلی به‌روز هستند! (%1$d منبع در کل بارگذاری شد)</string>
+    <string name="welcome_jar_install_failed">Amuratsu: بارگذاری شبکه تجزیه‌کننده ناموفق بود (%1$s)، لطفاً دوباره تلاش کنید یا برای تغییر پروکسی به تنظیمات بروید</string>
     <string name="home_placeholder_title">داشبورد مطالعه</string>
     <string name="home_placeholder_subtitle">مطالعه اخیر، به‌روزرسانی‌ها، کتابخانه، همگام‌سازی و منابع خود را در یک جا ببینید.</string>
     <string name="home_hero_local_subtitle">از همان جایی که رها کردید ادامه دهید، یا به موارد اخیراً باز شده برگردید.</string>
@@ -1320,7 +1320,7 @@
     <string name="import_content_type">نوع محتوا</string>
     <string name="import_content_type_auto">تشخیص خودکار</string>
     <string name="import_completed_with_count">%1$d کمیک وارد شد</string>
-    <string name="manga_error_description_pattern">جزئیات خطا:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;۱. تلاش کنید &lt;a href=\"%2$s\"&gt;مانگا را در مرورگر وب باز کنید&lt;/a&gt; تا از دسترسی به آن در منبع مطمئن شوید&lt;br&gt;۲. مطمئن شوید که از &lt;a href=\"kototoro://about\"&gt;آخرین نسخه Kototoro&lt;/a&gt; استفاده می‌کنید&lt;br&gt;۳. اگر در دسترس است، یک گزارش خطا برای توسعه‌دهندگان ارسال کنید.</string>
+    <string name="manga_error_description_pattern">جزئیات خطا:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;۱. تلاش کنید &lt;a href=\"%2$s\"&gt;مانگا را در مرورگر وب باز کنید&lt;/a&gt; تا از دسترسی به آن در منبع مطمئن شوید&lt;br&gt;۲. مطمئن شوید که از &lt;a href=\"amuratsu://about\"&gt;آخرین نسخه Amuratsu&lt;/a&gt; استفاده می‌کنید&lt;br&gt;۳. اگر در دسترس است، یک گزارش خطا برای توسعه‌دهندگان ارسال کنید.</string>
     <string name="image_post_processing">پردازش پس از تصویر</string>
     <string name="image_post_processing_original">اصلی</string>
     <string name="image_post_processing_result">نتیجه</string>
@@ -1437,7 +1437,7 @@
     <string name="export_backup_for_other_apps_summary">یک برنامه مقصد انتخاب کرده و پشتیبان سازگار ایجاد کنید: Kotatsu، Mihon، Aniyomi یا Usagi.</string>
     <string name="export_backup_choose_target_app">انتخاب برنامه مقصد</string>
     <string name="export_kotatsu_backup">خروجی پشتیبان Kotatsu</string>
-    <string name="export_kotatsu_backup_summary">ایجاد یک پشتیبان قدیمی جداگانه برای برنامه‌های خانواده Kotatsu بدون بخش‌های اختصاصی Kototoro.</string>
+    <string name="export_kotatsu_backup_summary">ایجاد یک پشتیبان قدیمی جداگانه برای برنامه‌های خانواده Kotatsu بدون بخش‌های اختصاصی Amuratsu.</string>
     <string name="export_kotatsu_backup_saved">پشتیبان Kotatsu ذخیره شد</string>
     <string name="export_mihon_backup">خروجی پشتیبان Mihon</string>
     <string name="export_mihon_backup_summary">خروجی علاقه‌مندی‌ها، دسته‌بندی‌ها و پیشرفت مطالعه فقط برای ورودی‌های منبع Mihon.</string>
@@ -1466,7 +1466,7 @@
     <string name="import_backup_started_background">پشتیبان خارجی در پس‌زمینه وارد خواهد شد</string>
     <string name="username_password_enter_hint">برای ادامه نام کاربری و رمز عبور خود را وارد کنید</string>
     <string name="restore_kototoro_backup">بازیابی پشتیبان</string>
-    <string name="restore_kototoro_backup_summary">بازیابی پشتیبان Kototoro از هر نسخه‌ای، یا پشتیبان Kotatsu. قالب به طور خودکار شناسایی می‌شود.</string>
+    <string name="restore_kototoro_backup_summary">بازیابی پشتیبان Amuratsu از هر نسخه‌ای، یا پشتیبان Kotatsu. قالب به طور خودکار شناسایی می‌شود.</string>
     <string name="restore_mode_replace_existing">جایگزینی داده‌های موجود</string>
     <string name="restore_mode_replace_existing_summary">بخش‌هایی که در حال بازیابی هستند ابتدا پاک می‌شوند؛ علاقه‌مندی‌ها و تاریخچه‌ای که در پشتیبان نیستند حذف می‌شوند</string>
     <string name="restore_mode_merge_with_existing">ادغام با داده‌های موجود</string>
@@ -2015,7 +2015,7 @@
     <string name="show_pages_thumbs">نمایش بندانگشتی صفحات</string>
     <string name="show_pages_thumbs_summary">فعال‌سازی تب «صفحات» در صفحه جزئیات</string>
     <string name="error_no_data_received">داده‌ای از سرور دریافت نشد</string>
-    <string name="unsupported_backup_message">لطفاً یک فایل پشتیبان معتبر از Kototoro انتخاب کنید</string>
+    <string name="unsupported_backup_message">لطفاً یک فایل پشتیبان معتبر از Amuratsu انتخاب کنید</string>
     <string name="hours_short">%d س</string>
     <string name="minutes_short">%d د</string>
     <string name="seconds_short">%d ث</string>
@@ -2067,8 +2067,8 @@
     <string name="chapters_read">فصل‌های خوانده‌شده</string>
     <string name="chapters_left">فصل‌های باقی‌مانده</string>
     <string name="external_source">خارجی / افزونه</string>
-    <string name="plugin_incompatible">افزونه ناسازگار یا خطای داخلی. مطمئن شوید که از آخرین نسخه افزونه و Kototoro استفاده می‌کنید</string>
-    <string name="plugin_incompatible_with_cause">خطای افزونه: %s\nمطمئن شوید که از آخرین نسخه افزونه و Kototoro استفاده می‌کنید</string>
+    <string name="plugin_incompatible">افزونه ناسازگار یا خطای داخلی. مطمئن شوید که از آخرین نسخه افزونه و Amuratsu استفاده می‌کنید</string>
+    <string name="plugin_incompatible_with_cause">خطای افزونه: %s\nمطمئن شوید که از آخرین نسخه افزونه و Amuratsu استفاده می‌کنید</string>
     <string name="plugin_missing_host_classes">امکان نصب %1$s وجود ندارد زیرا به کلاس‌های میزبان پشتیبانی‌نشده %2$s وابسته است:\n%3$s</string>
     <string name="connection_ok">اتصال برقرار است</string>
     <string name="invalid_proxy_configuration">پیکربندی پروکسی نامعتبر است</string>
@@ -2261,7 +2261,7 @@
     <string name="search_disabled_sources">جستجو در منابع غیرفعال</string>
     <string name="error_details">جزئیات خطا</string>
     <string name="error_disclaimer_manga">تلاش کنید مانگا را در مرورگر وب باز کنید تا از در دسترس بودن آن در منبع مطمئن شوید.</string>
-    <string name="error_disclaimer_app_outdated">به نظر می‌رسد نسخه Kototoro شما قدیمی است. لطفاً برای دریافت تمام اصلاحات، آخرین نسخه را نصب کنید.</string>
+    <string name="error_disclaimer_app_outdated">به نظر می‌رسد نسخه Amuratsu شما قدیمی است. لطفاً برای دریافت تمام اصلاحات، آخرین نسخه را نصب کنید.</string>
     <string name="error_disclaimer_report">می‌توانید گزارش خطا را برای توسعه‌دهندگان ارسال کنید، این کار به ما در یافتن و رفع خطا کمک می‌کند</string>
     <string name="enable_source_manga">فعال‌سازی منبع مانگا</string>
     <string name="enable_source_novel">فعال‌سازی منبع رمان</string>
@@ -2279,7 +2279,7 @@
     <string name="recommendation_novel">رمان‌های پیشنهادی</string>
     <string name="recommendation_video">ویدیوهای پیشنهادی</string>
     <string name="link_to_manga_on_s">پیوند به مانگا در %s</string>
-    <string name="link_to_manga_in_app">پیوند به مانگا در Kototoro</string>
+    <string name="link_to_manga_in_app">پیوند به مانگا در Amuratsu</string>
     <string name="clear_browser_data">پاک‌سازی داده‌های مرورگر</string>
     <string name="clear_browser_data_summary">پاک‌سازی داده‌های مرورگر مانند حافظه پنهان و کوکی‌ها. هشدار: احراز هویت در منابع محتوا ممکن است نامعتبر شود</string>
     <string name="no_write_permission_to_file">مجوز نوشتن فایل وجود ندارد</string>
@@ -2329,7 +2329,7 @@
     <string name="discord_token_hint">توکن Discord خود را اینجا قرار دهید</string>
     <string name="discord_rpc_summary">نمایش وضعیت خواندن خود در Discord</string>
     <string name="obtain">دریافت</string>
-    <string name="discord_rpc_description">در حال خواندن مانگا در Kototoro - یک برنامه مانگا خوان</string>
+    <string name="discord_rpc_description">در حال خواندن مانگا در Amuratsu - یک برنامه مانگا خوان</string>
     <string name="discord_logout_summary">پاک کردن مجوز ذخیره شده Discord</string>
     <string name="reading_s">در حال خواندن %s</string>
     <string name="read_on_s">مطالعه در %s</string>
@@ -2357,7 +2357,7 @@
     <string name="sync_backend_switch_webdav_title">تغییر به پشتیبان‌گیری WebDAV؟</string>
     <string name="sync_backend_switch_webdav_confirm">همگام‌سازی گوگل درایو در حال حاضر فعال است. فعال‌سازی پشتیبان‌گیری WebDAV، همگام‌سازی گوگل درایو را غیرفعال کرده اما ورود به حساب گوگل شما را حفظ می‌کند.</string>
     <string name="sync_sign_in">آماده‌سازی همگام‌سازی گوگل درایو</string>
-    <string name="sync_sign_in_summary">از داده‌های برنامه گوگل درایو با حداقل دسترسی Drive appdata برای همگام‌سازی اشتراک‌ها و سوابق به‌روزرسانی استفاده می‌کند. Kototoro نمی‌تواند به فایل‌های درایو شما دسترسی داشته باشد.</string>
+    <string name="sync_sign_in_summary">از داده‌های برنامه گوگل درایو با حداقل دسترسی Drive appdata برای همگام‌سازی اشتراک‌ها و سوابق به‌روزرسانی استفاده می‌کند. Amuratsu نمی‌تواند به فایل‌های درایو شما دسترسی داشته باشد.</string>
     <string name="google_drive_sync_unregistered_build_error">همگام‌سازی گوگل درایو در نسخه‌های توسعه‌دهنده/Nightly پشتیبانی نمی‌شود. لطفاً از نسخه‌های پایدار رسمی یا همگام‌سازی WebDAV استفاده کنید.</string>
     <string name="sync_sign_out">خروج از حساب</string>
     <string name="sync_account">وارد شده</string>
@@ -2412,8 +2412,8 @@
     <string name="webdav_remote_backups_inspect">بررسی نسخه‌های پشتیبان راه دور</string>
     <string name="webdav_remote_backups_inspect_summary">بارگیری و بررسی امکان بازیابی ایمن هر نسخه پشتیبان راه دور.</string>
     <string name="webdav_remote_backups_clear">پاک کردن پشتیبان‌های راه دور WebDAV</string>
-    <string name="webdav_remote_backups_clear_summary">حذف تمام فایل‌های پشتیبان Kototoro در مسیر پیکربندی‌شده WebDAV. داده‌های محلی تغییر نمی‌کنند.</string>
-    <string name="webdav_remote_backups_clear_confirm">تمام فایل‌های پشتیبان Kototoro از مسیر WebDAV حذف شوند؟ داده‌های محلی تغییر نخواهند کرد.</string>
+    <string name="webdav_remote_backups_clear_summary">حذف تمام فایل‌های پشتیبان Amuratsu در مسیر پیکربندی‌شده WebDAV. داده‌های محلی تغییر نمی‌کنند.</string>
+    <string name="webdav_remote_backups_clear_confirm">تمام فایل‌های پشتیبان Amuratsu از مسیر WebDAV حذف شوند؟ داده‌های محلی تغییر نخواهند کرد.</string>
     <string name="webdav_remote_backups_loading">بارگیری پشتیبان‌های WebDAV…</string>
     <string name="webdav_remote_backup_status_unknown">بررسی‌نشده</string>
     <string name="webdav_remote_backup_status_restorable">قابل بازیابی</string>
@@ -2821,7 +2821,7 @@
     <string name="trust_and_add">اعتماد و افزودن</string>
     <string name="trust_extension_repository_message">مخزن: %1$s\nوب‌سایت: %2$s\nاثر انگشت SHA-256:\n%3$s\n\nپیش از اعتماد به این مخزن، این اثر انگشت را با ناشر بررسی کنید.</string>
     <string name="untrusted_extension_message">افزونه %1$s (%2$s) نصب شده است، اما امضای آن با اثر انگشت مخزن انتخاب‌شده مطابقت ندارد.\n\nاثر انگشت مخزن: %3$s\n\nپیش از نصب مجدد از این مخزن، بسته نصب‌شده را حذف کنید.</string>
-    <string name="incompatible_extension_message">افزونه %1$s %2$s قابل نصب نیست چون نسخه کتابخانه آن (%3$s) خارج از محدوده پشتیبانی‌شده Kototoro است.</string>
+    <string name="incompatible_extension_message">افزونه %1$s %2$s قابل نصب نیست چون نسخه کتابخانه آن (%3$s) خارج از محدوده پشتیبانی‌شده Amuratsu است.</string>
     <string name="built_in_sources">پیش‌فرض</string>
     <string name="select_all">انتخاب همه</string>
     <string name="deselect_all">لغو انتخاب همه</string>
@@ -2861,7 +2861,7 @@
     <string name="welcome_plugins_repo_yakateam">پارسرهای Yakateam</string>
     <string name="welcome_plugins_repo_redo">پارسرهای Redo</string>
     <string name="welcome_plugins_repo_uma">UMA (پارسرهای Tsuki)</string>
-    <string name="welcome_plugins_disclaimer">این مخازن افزونه توسط جوامع آنلاین مستقل نگهداری می‌شوند. توسعه‌دهندگان Kototoro هیچ‌گونه وابستگی، کنترل یا ارتباطی با این مخازن شخص ثالث ندارند. تأیید می‌کنم که پیکربندی این منابع با مسئولیت خودم انجام می‌شود.</string>
+    <string name="welcome_plugins_disclaimer">این مخازن افزونه توسط جوامع آنلاین مستقل نگهداری می‌شوند. توسعه‌دهندگان Amuratsu هیچ‌گونه وابستگی، کنترل یا ارتباطی با این مخازن شخص ثالث ندارند. تأیید می‌کنم که پیکربندی این منابع با مسئولیت خودم انجام می‌شود.</string>
     <string name="welcome_plugins_start_btn">پیکربندی مخازن</string>
     <string name="welcome_plugins_configured">%1$d نوع منبع/مخزن جدید پیکربندی شد: %2$s. بسته‌ها هنوز دانلود نشده‌اند — موارد منطبق را در مرحله بعد نصب کنید.</string>
     <string name="welcome_plugins_configured_none">هیچ منبع یا مخزنی پیکربندی نشد. شبکه خود را بررسی کنید یا مخازن دیگری را انتخاب کرده و دوباره امتحان کنید.</string>
@@ -2891,22 +2891,22 @@
     <string name="welcome_install_system_launch_failed">نصب‌کننده سیستم اجرا نشد: %1$s</string>
     <string name="welcome_install_skip">رد کردن نصب - بعداً در مدیریت افزونه‌ها انجام خواهم داد</string>
     <string name="welcome_install_step_title">نصب دسته‌جمعی افزونه‌ها</string>
-    <string name="welcome_install_step_summary">انواع منابع و تنظیمات مورد نظر را انتخاب کنید، سپس اجازه دهید Kototoro همه‌چیز را در پس‌زمینه دانلود و نصب کند.</string>
+    <string name="welcome_install_step_summary">انواع منابع و تنظیمات مورد نظر را انتخاب کنید، سپس اجازه دهید Amuratsu همه‌چیز را در پس‌زمینه دانلود و نصب کند.</string>
     <string name="welcome_install_kinds_title">انواع منابع برای نصب</string>
     <string name="welcome_install_kinds_summary">فقط انواعی که علامت زده‌اید پردازش خواهند شد. موارد علامت‌نزده (مثلاً Mihon، اگر ترجیح می‌دهید بعداً این کار را بکنید) برای نصب در مدیریت افزونه‌ها باقی می‌مانند.</string>
     <string name="welcome_install_kinds_empty">هنوز هیچ مخزنی پیکربندی نشده است. ابتدا به عقب برگردید و مخازن را اضافه کنید.</string>
     <string name="welcome_install_nsfw_title">شامل محتوای نامناسب (NSFW)</string>
     <string name="welcome_install_nsfw_summary">به طور پیش‌فرض خاموش است - بسته‌های مخصوص بزرگسالان از فهرست نصب فیلتر می‌شوند.</string>
-    <string name="welcome_intro_app_title">Kototoro · کتابخوان متن‌باز</string>
-    <string name="welcome_intro_body">Kototoro یک کتابخوان و پخش‌کننده چندرسانه‌ای متن‌باز است. این برنامه از اکوسیستم گسترده‌ای از افزونه‌های انجمن پشتیبانی می‌کند، اما هیچ منبع محتوایی به‌طور پیش‌فرض در خود ندارد.</string>
+    <string name="welcome_intro_app_title">Amuratsu · کتابخوان متن‌باز</string>
+    <string name="welcome_intro_body">Amuratsu یک کتابخوان و پخش‌کننده چندرسانه‌ای متن‌باز است. این برنامه از اکوسیستم گسترده‌ای از افزونه‌های انجمن پشتیبانی می‌کند، اما هیچ منبع محتوایی به‌طور پیش‌فرض در خود ندارد.</string>
     <string name="welcome_intro_concepts_title">سه مفهوم، در ۳۰ ثانیه</string>
     <string name="welcome_intro_repo_label">مخزن</string>
     <string name="welcome_intro_repo_body">آدرسی به مجموعه ثانویه‌ای از افزونه‌ها که توسط یک جامعه مستقل نگهداری می‌شود (مانند مخازن Mihon، فهرست‌های TVBox یا مخازن افزونه LNReader).</string>
     <string name="welcome_intro_extension_label">افزونه</string>
-    <string name="welcome_intro_extension_body">یک بسته قابل نصب درون مخزن — یک فایل JAR، APK یا فهرست JSON. افزونه‌های نصب‌شده به Kototoro قابلیت خواندن یا پخش از یک وب‌سایت را می‌دهند.</string>
+    <string name="welcome_intro_extension_body">یک بسته قابل نصب درون مخزن — یک فایل JAR، APK یا فهرست JSON. افزونه‌های نصب‌شده به Amuratsu قابلیت خواندن یا پخش از یک وب‌سایت را می‌دهند.</string>
     <string name="welcome_intro_source_label">منبع</string>
     <string name="welcome_intro_source_body">یک منبع محتوای مشخص که پس از نصب یا وارد کردن افزونه در برنامه می‌بینید — مانند یک وب‌سایت خاص مانگا یا ویدیو.</string>
-    <string name="welcome_intro_disclaimer">استفاده از افزونه‌های شخص ثالث کاملاً به مسئولیت خود شماست: رفتار زمان اجرا، قانونی بودن و محتوا توسط پروژه Kototoro کنترل نمی‌شوند.</string>
+    <string name="welcome_intro_disclaimer">استفاده از افزونه‌های شخص ثالث کاملاً به مسئولیت خود شماست: رفتار زمان اجرا، قانونی بودن و محتوا توسط پروژه Amuratsu کنترل نمی‌شوند.</string>
     <string name="welcome_intro_continue">متوجه شدم - ادامه</string>
     <string name="welcome_done_title">تقریباً تمام است</string>
     <string name="welcome_done_summary">خلاصه راه‌اندازی شما و چند نکته.</string>
@@ -2915,10 +2915,10 @@
     <string name="welcome_done_json_note">انواع مبتنی بر JSON (مانند Legado / TVBox / LNReader) به‌طور خودکار وارد می‌شوند؛ اگر مخازن JSON دیگری نیز اضافه کرده‌اید، آن‌ها را در مدیریت افزونه‌ها وارد کنید.</string>
     <string name="welcome_done_title_finished">راه‌اندازی کامل شد</string>
     <string name="welcome_done_summary_finished">جادوگر راه‌اندازی تمام شد - هیچ مخزن یا منبعی به‌طور خودکار اضافه نشد.</string>
-    <string name="welcome_done_body_finished">Kototoro هیچ منبعی را در طول راه‌اندازی اضافه نکرد. می‌توانید در هر زمانی از طریق تنظیمات › منابع محتوا (مدیریت افزونه‌ها) مخازن و منابع خود را اضافه کنید.</string>
+    <string name="welcome_done_body_finished">Amuratsu هیچ منبعی را در طول راه‌اندازی اضافه نکرد. می‌توانید در هر زمانی از طریق تنظیمات › منابع محتوا (مدیریت افزونه‌ها) مخازن و منابع خود را اضافه کنید.</string>
     <string name="welcome_done_advice_title">اگر منبعی کار نکرد</string>
     <string name="welcome_done_advice_summary">یک مسیر کوتاه عیب‌یابی، تا افراد مناسب گزارش را ببینند.</string>
-    <string name="welcome_done_advice_body">۱. مشکل را با استفاده از برنامه میزبان اصلی افزونه بررسی کنید — برای مثال، یک منبع از نوع Mihon باید در برنامه Mihon آزمایش شود.\n۲. اگر مشکل در آنجا نیز رخ دهد، مربوط به مخزنی است که افزونه را نگهداری می‌کند: در آدرس مخزن یک گزارش مشکل (Issue) ثبت کنید.\n۳. اگر مشکل فقط در Kototoro رخ می‌دهد، آن را در مخزن پروژه Kototoro گزارش دهید و نام منبع، نسخه افزونه و کارهایی که انجام داده‌اید را ذکر کنید.</string>
+    <string name="welcome_done_advice_body">۱. مشکل را با استفاده از برنامه میزبان اصلی افزونه بررسی کنید — برای مثال، یک منبع از نوع Mihon باید در برنامه Mihon آزمایش شود.\n۲. اگر مشکل در آنجا نیز رخ دهد، مربوط به مخزنی است که افزونه را نگهداری می‌کند: در آدرس مخزن یک گزارش مشکل (Issue) ثبت کنید.\n۳. اگر مشکل فقط در Amuratsu رخ می‌دهد، آن را در مخزن پروژه Amuratsu گزارش دهید و نام منبع، نسخه افزونه و کارهایی که انجام داده‌اید را ذکر کنید.</string>
     <string name="welcome_step_counter">مرحله %1$d از %2$d</string>
     <string name="welcome_action_configure_repos">پیکربندی مخازن انتخاب‌شده</string>
     <string name="welcome_action_install_count">نصب %1$d افزونه</string>
@@ -2952,7 +2952,7 @@
     <string name="welcome_permissions_notifications_title">اعلان‌ها</string>
     <string name="welcome_permissions_notifications_summary">اعلان‌های بارگیری، به‌روزرسانی و پخش‌کننده را نمایش می‌دهد.</string>
     <string name="welcome_permissions_packages_title">برنامه‌های نصب‌شده</string>
-    <string name="welcome_permissions_packages_summary">به Kototoro اجازه می‌دهد افزونه‌های ازپیش‌نصب‌شده و برنامه‌های میزبان (Mihon، Aniyomi و غیره) را شناسایی کند. در مانیفست اعلام شده و به‌طور خودکار اعطا می‌شود.</string>
+    <string name="welcome_permissions_packages_summary">به Amuratsu اجازه می‌دهد افزونه‌های ازپیش‌نصب‌شده و برنامه‌های میزبان (Mihon، Aniyomi و غیره) را شناسایی کند. در مانیفست اعلام شده و به‌طور خودکار اعطا می‌شود.</string>
     <string name="welcome_permissions_battery_title">پایداری در پس‌زمینه</string>
     <string name="welcome_permissions_battery_summary">هنگامی که صفحه خاموش است یا دستگاه در حالت بیکار قرار دارد، بارگیری‌ها و به‌روزرسانی‌های پس‌زمینه را فعال نگه می‌دارد.</string>
     <string name="welcome_permissions_battery_action">اجازه دادن</string>
@@ -3367,11 +3367,11 @@
     <string name="pref_glass_blur_quality_performance">عملکرد</string>
     <string name="pref_glass_blur_quality_balanced">متعادل</string>
     <string name="pref_glass_blur_quality_quality">کیفیت</string>
-    <string name="glass_material_family_kototoro">Kototoro (توصیه‌شده)</string>
+    <string name="glass_material_family_kototoro">Amuratsu (توصیه‌شده)</string>
     <string name="glass_material_family_haze">Haze</string>
     <string name="glass_material_family_cupertino">Cupertino</string>
     <string name="glass_material_family_fluent">Fluent</string>
-    <string name="glass_material_kototoro">Kototoro (توصیه‌شده)</string>
+    <string name="glass_material_kototoro">Amuratsu (توصیه‌شده)</string>
     <string name="glass_material_haze_ultra_thin">Haze بسیار نازک</string>
     <string name="glass_material_haze_thin">Haze نازک</string>
     <string name="glass_material_haze_regular">Haze معمولی</string>

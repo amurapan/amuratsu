@@ -44,7 +44,7 @@ struct AppLockGate: ViewModifier {
             Rectangle().fill(.regularMaterial).ignoresSafeArea()
             VStack(spacing: 18) {
                 Image(systemName: "lock.fill").font(.system(size: 44)).foregroundStyle(.secondary)
-                Text("Kototoro 已锁定").font(.title3.weight(.semibold))
+                Text("Amuratsu 已锁定").font(.title3.weight(.semibold))
                 if locked {
                     Button("解锁") { Task { await unlock() } }
                         .buttonStyle(.glassProminent).controlSize(.large)
@@ -62,7 +62,7 @@ struct AppLockGate: ViewModifier {
         guard !authenticating else { return }
         authenticating = true
         defer { authenticating = false }
-        if await AppLock.authenticate(reason: String(localized: "解锁 Kototoro")) {
+        if await AppLock.authenticate(reason: String(localized: "解锁 Amuratsu")) {
             withAnimation { locked = false }
         }
     }

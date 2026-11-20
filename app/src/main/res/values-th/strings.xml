@@ -145,7 +145,7 @@
     <string name="dont_check">ไม่ต้องตรวจสอบ</string>
     <string name="enter_password">ใส่รหัสผ่าน</string>
     <string name="protect_application">ป้องกันแอป</string>
-    <string name="protect_application_summary">เมื่อเข้าแอป Kototoro จะขึ้นให้ใส่รหัส</string>
+    <string name="protect_application_summary">เมื่อเข้าแอป Amuratsu จะขึ้นให้ใส่รหัส</string>
     <string name="about">เกี่ยวกับ</string>
     <string name="right_to_left">ขวาไปซ้าย</string>
     <string name="create_category">หมวดหมู่ใหม่</string>
@@ -505,7 +505,7 @@
     <string name="appearance_mode">โหมดการแสดงผล</string>
     <string name="page_save_manga_title_length">ความยาวชื่อมังงะในชื่อไฟล์ที่บันทึก</string>
     <string name="page_save_manga_title_length_summary">จำนวนอักขระชื่อมังงะที่เก็บไว้ในชื่อไฟล์รูปภาพที่บันทึก (12–64)</string>
-    <string name="cloudstream_newpipe_required">ส่วนขยายนี้ต้องการคลาส NewPipe ซึ่ง NewPipe ที่มาพร้อมกับ Kototoro ไม่มี จึงไม่สามารถเล่นวิดีโอได้ ลองอัปเดตส่วนขยายหรือ Kototoro</string>
+    <string name="cloudstream_newpipe_required">ส่วนขยายนี้ต้องการคลาส NewPipe ซึ่ง NewPipe ที่มาพร้อมกับ Amuratsu ไม่มี จึงไม่สามารถเล่นวิดีโอได้ ลองอัปเดตส่วนขยายหรือ Amuratsu</string>
     <string name="clear_chapter_thumbnails">ล้างภาพย่อตอน</string>
     <string name="continuous_horizontal">แนวนอนต่อเนื่อง</string>
     <string name="continuous_horizontal_reversed">อ่านจากขวาไปซ้าย</string>
@@ -557,7 +557,7 @@
     <string name="replace_rule_disable_all_summary">หยุดการใช้กฎการแทนที่ชั่วคราว</string>
     <string name="replace_rule_edit">แก้ไขกฎ</string>
     <string name="replace_rule_import">นำเข้าระเบียบวิธีของ Legado</string>
-    <string name="replace_rule_import_summary">นำเข้าอาร์เรย์ JSON ที่ส่งออกโดย Legado หรือ Kototoro</string>
+    <string name="replace_rule_import_summary">นำเข้าอาร์เรย์ JSON ที่ส่งออกโดย Legado หรือ Amuratsu</string>
     <string name="replace_rule_export">ส่งออกกฎ</string>
     <string name="replace_rule_export_summary">ส่งออกกฎในรูปแบบ JSON ที่เข้ากันได้</string>
     <string name="replace_rule_empty">ไม่มีกฎการแทนที่</string>
@@ -692,8 +692,8 @@
     <string name="clear_local_manga_storage_prompt">ลบไฟล์มังงะที่บันทึกและนำเข้าในเครื่องทั้งหมดหรือไม่? การกระทำนี้ไม่สามารถย้อนกลับได้</string>
     <string name="clear_local_novel_storage_prompt">ลบไฟล์นิยายที่บันทึกและนำเข้าในเครื่องทั้งหมดหรือไม่? การกระทำนี้ไม่สามารถย้อนกลับได้</string>
     <string name="clear_local_video_storage_prompt">ลบไฟล์วิดีโอที่บันทึกและนำเข้าในเครื่องทั้งหมดหรือไม่? การกระทำนี้ไม่สามารถย้อนกลับได้</string>
-    <string name="welcome_intro_title">ตั้งค่า Kototoro</string>
-    <string name="welcome_intro_summary">เลือกวิธีที่คุณต้องการอ่านและรับชม ตอนนี้ Kototoro รองรับตระกูลแหล่งที่มาแบบปลั๊กอินสำหรับมังงะ นิยาย และวิดีโอ ได้แก่ JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader และ Cloudstream</string>
+    <string name="welcome_intro_title">ตั้งค่า Amuratsu</string>
+    <string name="welcome_intro_summary">เลือกวิธีที่คุณต้องการอ่านและรับชม ตอนนี้ Amuratsu รองรับตระกูลแหล่งที่มาแบบปลั๊กอินสำหรับมังงะ นิยาย และวิดีโอ ได้แก่ JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader และ Cloudstream</string>
     <string name="welcome_step_start">เริ่มต้น</string>
     <string name="welcome_step_sources">แหล่งข้อมูล</string>
     <string name="welcome_step_preferences">การตั้งค่า</string>
@@ -703,11 +703,11 @@
     <string name="welcome_glass_preset_title">ผิวแก้ว</string>
     <string name="welcome_glass_preset_summary">เลือกพรีเซ็ตผิวแก้วสไตล์ iOS ค่าเริ่มต้นคือการหักเหแสง และปรับแต่งเพิ่มเติมได้ในตั้งค่าการแสดงผล</string>
     <string name="home_quick_action_wizard">วิซาร์ด</string>
-    <string name="welcome_restore_summary">เคยใช้ Kototoro มาก่อนหรือไม่? กู้คืนข้อมูลสำรอง ลงชื่อเข้าใช้เพื่อซิงค์ หรือเพิ่มโฟลเดอร์ในเครื่องก่อน</string>
+    <string name="welcome_restore_summary">เคยใช้ Amuratsu มาก่อนหรือไม่? กู้คืนข้อมูลสำรอง ลงชื่อเข้าใช้เพื่อซิงค์ หรือเพิ่มโฟลเดอร์ในเครื่องก่อน</string>
     <string name="welcome_source_formats_title">เลือกรูปแบบเนื้อหา</string>
     <string name="welcome_source_formats_summary">ตัวกรองเหล่านี้จะกำหนดตระกูลแหล่งข้อมูลที่จะเปิดใช้งานหลังการตั้งค่า</string>
     <string name="welcome_ecosystems_title">ระบบนิเวศแหล่งข้อมูล</string>
-    <string name="welcome_ecosystems_summary">Kototoro รองรับตระกูลปลั๊กอินแหล่งข้อมูลหลากหลายสำหรับการอ่านและรับชม เริ่มต้นด้วยคลังที่แนะนำที่นี่ แล้วปรับแต่งต่อได้ในจัดการส่วนขยาย</string>
+    <string name="welcome_ecosystems_summary">Amuratsu รองรับตระกูลปลั๊กอินแหล่งข้อมูลหลากหลายสำหรับการอ่านและรับชม เริ่มต้นด้วยคลังที่แนะนำที่นี่ แล้วปรับแต่งต่อได้ในจัดการส่วนขยาย</string>
     <string name="welcome_ecosystem_manga">มังงะ: ตัวแยกวิเคราะห์ JAR, Mihon, IReader, LNReader</string>
     <string name="welcome_ecosystem_novel">นิยาย: Legado, IReader, LNReader</string>
     <string name="welcome_ecosystem_video">วิดีโอ: Aniyomi, TVBox, Cloudstream</string>
@@ -715,9 +715,9 @@
     <string name="welcome_plugin_acknowledge">ฉันเข้าใจว่าการกำหนดค่าคลังของบุคคลที่สามเหล่านี้มีความเสี่ยงที่ต้องยอมรับด้วยตนเอง</string>
     <string name="welcome_preferences_summary">เลือกภาษาและประเภทเนื้อหา เปลี่ยนแปลงภายหลังได้ในการตั้งค่าแหล่งข้อมูล</string>
     <string name="welcome_spaces_title">แยกพื้นที่ของคุณ</string>
-    <string name="welcome_jar_install_success">Kototoro: ดึงและติดตั้งเครื่องมือแยกวิเคราะห์ล่าสุด %1$d ตัวจากเครือข่ายคลาวด์สำเร็จแล้ว!</string>
-    <string name="welcome_jar_install_up_to_date">Kototoro: ตรวจสอบคลาวด์เสร็จสิ้น ตัวแยกวิเคราะห์ในเครื่องเป็นเวอร์ชันล่าสุดแล้ว! (โหลดแหล่งข้อมูลทั้งหมด %1$d แหล่ง)</string>
-    <string name="welcome_jar_install_failed">Kototoro: โหลดเครือข่ายตัวแยกวิเคราะห์ไม่สำเร็จ (%1$s) โปรดลองอีกครั้งหรือไปที่การตั้งค่าเพื่อสลับพร็อกซีมิเรอร์</string>
+    <string name="welcome_jar_install_success">Amuratsu: ดึงและติดตั้งเครื่องมือแยกวิเคราะห์ล่าสุด %1$d ตัวจากเครือข่ายคลาวด์สำเร็จแล้ว!</string>
+    <string name="welcome_jar_install_up_to_date">Amuratsu: ตรวจสอบคลาวด์เสร็จสิ้น ตัวแยกวิเคราะห์ในเครื่องเป็นเวอร์ชันล่าสุดแล้ว! (โหลดแหล่งข้อมูลทั้งหมด %1$d แหล่ง)</string>
+    <string name="welcome_jar_install_failed">Amuratsu: โหลดเครือข่ายตัวแยกวิเคราะห์ไม่สำเร็จ (%1$s) โปรดลองอีกครั้งหรือไปที่การตั้งค่าเพื่อสลับพร็อกซีมิเรอร์</string>
     <string name="home_placeholder_title">แดชบอร์ดการอ่าน</string>
     <string name="home_placeholder_subtitle">ดูประวัติการอ่าน การอัปเดต คลัง ซิงค์ และแหล่งข้อมูลของคุณได้ในที่เดียว</string>
     <string name="home_hero_local_subtitle">อ่านต่อจากที่คุณค้างไว้ หรือกลับไปยังสิ่งที่คุณเปิดดูล่าสุด</string>
@@ -1161,7 +1161,7 @@
     <string name="import_content_type">ประเภทเนื้อหา</string>
     <string name="import_content_type_auto">ตรวจหาอัตโนมัติ</string>
     <string name="import_completed_with_count">นำเข้าการ์ตูน %1$d รายการแล้ว</string>
-    <string name="manga_error_description_pattern">รายละเอียดข้อผิดพลาด:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. ลอง &lt;a href=\"%2$s\"&gt;เปิดมังงะในเว็บเบราว์เซอร์&lt;/a&gt; เพื่อตรวจสอบว่ายังมีอยู่บนแหล่งที่มาหรือไม่&lt;br&gt;2. ตรวจสอบให้แน่ใจว่าคุณใช้ &lt;a href=\"kototoro://about\"&gt;Kototoro เวอร์ชันล่าสุด&lt;/a&gt;&lt;br&gt;3. หากยังมีอยู่ ให้ส่งรายงานข้อผิดพลาดไปยังผู้พัฒนา</string>
+    <string name="manga_error_description_pattern">รายละเอียดข้อผิดพลาด:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. ลอง &lt;a href=\"%2$s\"&gt;เปิดมังงะในเว็บเบราว์เซอร์&lt;/a&gt; เพื่อตรวจสอบว่ายังมีอยู่บนแหล่งที่มาหรือไม่&lt;br&gt;2. ตรวจสอบให้แน่ใจว่าคุณใช้ &lt;a href=\"amuratsu://about\"&gt;Amuratsu เวอร์ชันล่าสุด&lt;/a&gt;&lt;br&gt;3. หากยังมีอยู่ ให้ส่งรายงานข้อผิดพลาดไปยังผู้พัฒนา</string>
     <string name="history_shortcuts_summary">เข้าถึงมังงะล่าสุดได้อย่างรวดเร็วโดยกดไอคอนแอปพลิเคชันค้างไว้</string>
     <string name="reader_control_ltr_summary">ไม่ปรับทิศทางการเปลี่ยนหน้าตามโหมดการอ่าน เช่น การกดปุ่มขวาจะเปลี่ยนไปหน้าถัดไปเสมอ ตัวผลลัพธ์นี้มีผลกับอุปกรณ์อินพุตฮาร์ดแวร์เท่านั้น</string>
     <string name="reader_control_ltr">การควบคุมการอ่านตามหลักสรีรศาสตร์</string>
@@ -1184,7 +1184,7 @@
     <string name="show_empty_sources">แสดงแหล่งที่มาที่ว่างเปล่า</string>
     <string name="mark_as_current">ทำเครื่องหมายเป็นปัจจุบัน</string>
     <string name="welcome_spaces_summary">พื้นที่ (Spaces) ช่วยให้มังงะ นิยาย และอนิเมะ มีการนำทาง การตั้งค่าการเรียกดู และบริบทการอ่านหรือเล่นแยกอิสระจากกัน ตัวเลือกขั้นสูงและพื้นที่กำหนดเองสามารถใช้งานได้ภายหลังใน ตั้งค่า → ผู้ใช้ → พื้นที่</string>
-    <string name="welcome_ready_summary">การตั้งค่าเสร็จสมบูรณ์แล้ว Kototoro จะเปิดใช้งานแหล่งที่มาที่ตรงกับภาษาและรูปแบบที่คุณเลือก คุณสามารถเรียกใช้ตัวช่วยสร้างนี้อีกครั้งได้จาก ตั้งค่า → แหล่งเนื้อหา → ตัวช่วยสร้างการตั้งค่า</string>
+    <string name="welcome_ready_summary">การตั้งค่าเสร็จสมบูรณ์แล้ว Amuratsu จะเปิดใช้งานแหล่งที่มาที่ตรงกับภาษาและรูปแบบที่คุณเลือก คุณสามารถเรียกใช้ตัวช่วยสร้างนี้อีกครั้งได้จาก ตั้งค่า → แหล่งเนื้อหา → ตัวช่วยสร้างการตั้งค่า</string>
     <string name="browse_display_options_summary">ตัวเลือกนี้ย้ายไปอยู่ที่ แถบค้นหาหน้าเรียกดู → เพิ่มเติม → ตัวเลือกการแสดงผล แล้ว</string>
     <plurals name="library_duplicates_entries">
         <item quantity="one">%d รายการ</item>
@@ -1295,7 +1295,7 @@
     <string name="export_backup_for_other_apps_summary">เลือกแอปเป้าหมายและสร้างข้อมูลสำรองที่ใช้งานร่วมกันได้: Kotatsu, Mihon, Aniyomi หรือ Usagi</string>
     <string name="export_backup_choose_target_app">เลือกแอปเป้าหมาย</string>
     <string name="export_kotatsu_backup">ส่งออกข้อมูลสำรอง Kotatsu</string>
-    <string name="export_kotatsu_backup_summary">สร้างข้อมูลสำรองแบบเก่าแยกต่างหากสำหรับแอปตระกูล Kotatsu โดยไม่มีส่วนเฉพาะของ Kototoro</string>
+    <string name="export_kotatsu_backup_summary">สร้างข้อมูลสำรองแบบเก่าแยกต่างหากสำหรับแอปตระกูล Kotatsu โดยไม่มีส่วนเฉพาะของ Amuratsu</string>
     <string name="export_kotatsu_backup_saved">บันทึกข้อมูลสำรอง Kotatsu แล้ว</string>
     <string name="export_mihon_backup">ส่งออกข้อมูลสำรอง Mihon</string>
     <string name="export_mihon_backup_summary">ส่งออกรายการโปรด หมวดหมู่ และความคืบหน้าการอ่านสำหรับรายการจากแหล่ง Mihon เท่านั้น</string>
@@ -1345,7 +1345,7 @@
     <string name="authorization_optional">การยืนยันตัวตน (ไม่บังคับ)</string>
     <string name="restore_summary">กู้คืนข้อมูลสำรองที่สร้างไว้ก่อนหน้า</string>
     <string name="restore_kototoro_backup">กู้คืนข้อมูลสำรอง</string>
-    <string name="restore_kototoro_backup_summary">กู้คืนข้อมูลสำรองของ Kototoro จากทุกเวอร์ชัน หรือข้อมูลสำรองของ Kotatsu ระบบจะตรวจหารูปแบบโดยอัตโนมัติ</string>
+    <string name="restore_kototoro_backup_summary">กู้คืนข้อมูลสำรองของ Amuratsu จากทุกเวอร์ชัน หรือข้อมูลสำรองของ Kotatsu ระบบจะตรวจหารูปแบบโดยอัตโนมัติ</string>
     <string name="restore_mode_replace_existing">แทนที่ข้อมูลที่มีอยู่</string>
     <string name="restore_mode_replace_existing_summary">ล้างข้อมูลส่วนที่จะกู้คืนก่อน รายการโปรดและประวัติที่ไม่มีในข้อมูลสำรองจะถูกลบออก</string>
     <string name="restore_mode_merge_with_existing">ผสานกับข้อมูลที่มีอยู่</string>
@@ -2034,7 +2034,7 @@
     <string name="show_pages_thumbs">แสดงภาพย่อหน้า</string>
     <string name="show_pages_thumbs_summary">เปิดแท็บ \"หน้า\" บนหน้าจอรายละเอียด</string>
     <string name="error_no_data_received">ไม่ได้รับข้อมูลจากเซิร์ฟเวอร์</string>
-    <string name="unsupported_backup_message">โปรดเลือกไฟล์สำรองข้อมูล Kototoro ที่ถูกต้อง</string>
+    <string name="unsupported_backup_message">โปรดเลือกไฟล์สำรองข้อมูล Amuratsu ที่ถูกต้อง</string>
     <string name="hours_short">%d ชม.</string>
     <string name="minutes_short">%d น.</string>
     <string name="seconds_short">%d วิ.</string>
@@ -2086,8 +2086,8 @@
     <string name="chapters_read">ตอนที่อ่านแล้ว</string>
     <string name="chapters_left">ตอนที่เหลือ</string>
     <string name="external_source">ภายนอก/ปลั๊กอิน</string>
-    <string name="plugin_incompatible">ปลั๊กอินไม่รองรับหรือเกิดข้อผิดพลาดภายใน โปรดตรวจสอบว่าคุณใช้ปลั๊กอินและ Kototoro เวอร์ชันล่าสุด</string>
-    <string name="plugin_incompatible_with_cause">ข้อผิดพลาดของปลั๊กอิน: %s\n โปรดตรวจสอบว่าคุณใช้ปลั๊กอินและ Kototoro เวอร์ชันล่าสุด</string>
+    <string name="plugin_incompatible">ปลั๊กอินไม่รองรับหรือเกิดข้อผิดพลาดภายใน โปรดตรวจสอบว่าคุณใช้ปลั๊กอินและ Amuratsu เวอร์ชันล่าสุด</string>
+    <string name="plugin_incompatible_with_cause">ข้อผิดพลาดของปลั๊กอิน: %s\n โปรดตรวจสอบว่าคุณใช้ปลั๊กอินและ Amuratsu เวอร์ชันล่าสุด</string>
     <string name="plugin_missing_host_classes">ไม่สามารถติดตั้ง %1$s ได้ เนื่องจากต้องใช้คลาสโฮสต์ %2$s ที่ไม่รองรับ:\n%3$s</string>
     <string name="connection_ok">การเชื่อมต่อปกติ</string>
     <string name="invalid_proxy_configuration">การกำหนดค่าพร็อกซีไม่ถูกต้อง</string>
@@ -2262,7 +2262,7 @@
     <string name="search_disabled_sources">ค้นหาผ่านแหล่งที่ปิดใช้งาน</string>
     <string name="error_details">รายละเอียดข้อผิดพลาด</string>
     <string name="error_disclaimer_manga">ลองเปิดมังงะในเว็บเบราว์เซอร์เพื่อให้แน่ใจว่ายังใช้งานได้บนแหล่งนั้น</string>
-    <string name="error_disclaimer_app_outdated">ดูเหมือนว่า Kototoro เวอร์ชันของคุณจะล้าสมัย โปรดติดตั้งเวอร์ชันล่าสุดเพื่อรับการแก้ไขทั้งหมด</string>
+    <string name="error_disclaimer_app_outdated">ดูเหมือนว่า Amuratsu เวอร์ชันของคุณจะล้าสมัย โปรดติดตั้งเวอร์ชันล่าสุดเพื่อรับการแก้ไขทั้งหมด</string>
     <string name="error_disclaimer_report">คุณสามารถส่งรายงานข้อผิดพลาดให้ผู้พัฒนาได้ ซึ่งจะช่วยให้เราค้นหาและแก้ไขข้อผิดพลาดได้</string>
     <string name="enable_source_manga">เปิดใช้งานแหล่งมังงะ</string>
     <string name="enable_source_novel">เปิดใช้งานแหล่ีงนิยาย</string>
@@ -2280,7 +2280,7 @@
     <string name="recommendation_novel">นิยายแนะนำ</string>
     <string name="recommendation_video">วิดีโอแนะนำ</string>
     <string name="link_to_manga_on_s">ลิงก์ไปยังมังงะบน %s</string>
-    <string name="link_to_manga_in_app">ลิงก์ไปยังมังงะใน Kototoro</string>
+    <string name="link_to_manga_in_app">ลิงก์ไปยังมังงะใน Amuratsu</string>
     <string name="clear_browser_data">ล้างข้อมูลเบราว์เซอร์</string>
     <string name="clear_browser_data_summary">ล้างข้อมูลเบราว์เซอร์ เช่น แคชและคุกกี้ คำเตือน: การเข้าสู่ระบบในแหล่งเนื้อหาอาจใช้งานไม่ได้</string>
     <string name="no_write_permission_to_file">ไม่มีสิทธิ์ในการเขียนไฟล์</string>
@@ -2330,7 +2330,7 @@
     <string name="discord_token_hint">วาง Discord Token ของคุณที่นี่</string>
     <string name="discord_rpc_summary">แสดงสถานะการอ่านของคุณบน Discord</string>
     <string name="obtain">รับ</string>
-    <string name="discord_rpc_description">กำลังอ่านมังงะบน Kototoro - แอปอ่านมังงะ</string>
+    <string name="discord_rpc_description">กำลังอ่านมังงะบน Amuratsu - แอปอ่านมังงะ</string>
     <string name="discord_logout_summary">ล้างข้อมูลการอนุญาตสิทธิ์ Discord ที่บันทึกไว้</string>
     <string name="reading_s">กำลังอ่าน %s</string>
     <string name="read_on_s">อ่านบน %s</string>
@@ -2358,7 +2358,7 @@
     <string name="sync_backend_switch_webdav_title">สลับไปใช้สำรองข้อมูล WebDAV หรือไม่</string>
     <string name="sync_backend_switch_webdav_confirm">ขณะนี้เปิดใช้งานซิงค์ Google Drive อยู่ การเปิดใช้งานการสำรองข้อมูล WebDAV จะปิดซิงค์ Google Drive แต่ยังคงชื่อเข้าสู่ระบบ Google ของคุณไว้</string>
     <string name="sync_sign_in">เตรียมซิงค์ Google Drive</string>
-    <string name="sync_sign_in_summary">ใช้ข้อมูลแอป Google Drive ด้วยสิทธิ์ appdata ของ Drive ขั้นต่ำเพื่อซิงค์การติดตามและอัปเดตบันทึก Kototoro ไม่สามารถเข้าถึงไฟล์ Drive ของคุณได้</string>
+    <string name="sync_sign_in_summary">ใช้ข้อมูลแอป Google Drive ด้วยสิทธิ์ appdata ของ Drive ขั้นต่ำเพื่อซิงค์การติดตามและอัปเดตบันทึก Amuratsu ไม่สามารถเข้าถึงไฟล์ Drive ของคุณได้</string>
     <string name="google_drive_sync_unregistered_build_error">ไม่รองรับซิงค์ Google Drive ในบิวด์สำหรับพัฒนา/nightly โปรดใช้บิวด์เผยแพร่ที่เป็นทางการหรือซิงค์ WebDAV</string>
     <string name="sync_sign_out">ออกจากระบบ</string>
     <string name="sync_account">เข้าสู่ระบบแล้ว</string>
@@ -2413,8 +2413,8 @@
     <string name="webdav_remote_backups_inspect">ตรวจสอบข้อมูลสำรองระยะไกล</string>
     <string name="webdav_remote_backups_inspect_summary">ดาวน์โหลดและตรวจสอบว่าข้อมูลสำรองระยะไกลแต่ละรายการสามารถกู้คืนได้อย่างปลอดภัยหรือไม่</string>
     <string name="webdav_remote_backups_clear">ล้างข้อมูลสำรอง WebDAV ระยะไกล</string>
-    <string name="webdav_remote_backups_clear_summary">ลบไฟล์สำรอง Kototoro ทั้งหมดบนพาธ WebDAV ที่กำหนดค่าไว้ ข้อมูลในเครื่องจะไม่เปลี่ยนแปลง</string>
-    <string name="webdav_remote_backups_clear_confirm">ลบไฟล์สำรอง Kototoro ทั้งหมดจากพาธ WebDAV ที่กำหนดค่าไว้หรือไม่ ข้อมูลในเครื่องจะไม่เปลี่ยนแปลง</string>
+    <string name="webdav_remote_backups_clear_summary">ลบไฟล์สำรอง Amuratsu ทั้งหมดบนพาธ WebDAV ที่กำหนดค่าไว้ ข้อมูลในเครื่องจะไม่เปลี่ยนแปลง</string>
+    <string name="webdav_remote_backups_clear_confirm">ลบไฟล์สำรอง Amuratsu ทั้งหมดจากพาธ WebDAV ที่กำหนดค่าไว้หรือไม่ ข้อมูลในเครื่องจะไม่เปลี่ยนแปลง</string>
     <string name="webdav_remote_backups_loading">กำลังโหลดข้อมูลสำรอง WebDAV…</string>
     <string name="webdav_remote_backup_status_unknown">ยังไม่ได้ตรวจสอบ</string>
     <string name="webdav_remote_backup_status_restorable">กู้คืนได้</string>
@@ -2822,7 +2822,7 @@
     <string name="trust_and_add">เชื่อถือและเพิ่ม</string>
     <string name="trust_extension_repository_message">คลัง: %1$s\nเว็บไซต์: %2$s\nลายเซ็น SHA-256:\n%3$s\n\nโปรดตรวจสอบลายเซ็นนี้กับผู้พัฒนาก่อนเชื่อถือคลังนี้</string>
     <string name="untrusted_extension_message">ติดตั้ง %1$s (%2$s) แล้ว แต่ลายเซ็นไม่ตรงกับลายเซ็นคลังที่เลือก\n\nลายเซ็นคลัง: %3$s\n\nโปรดลบแพ็กเกจที่ติดตั้งออกก่อนติดตั้งใหม่จากคลังนี้</string>
-    <string name="incompatible_extension_message">ไม่สามารถติดตั้ง %1$s %2$s ได้เนื่องจากเวอร์ชันไลบรารี (%3$s) อยู่นอกช่วงที่ Kototoro รองรับ</string>
+    <string name="incompatible_extension_message">ไม่สามารถติดตั้ง %1$s %2$s ได้เนื่องจากเวอร์ชันไลบรารี (%3$s) อยู่นอกช่วงที่ Amuratsu รองรับ</string>
     <string name="built_in_sources">ในตัว</string>
     <string name="select_all">เลือกทั้งหมด</string>
     <string name="deselect_all">ยกเลิกเลือกทั้งหมด</string>
@@ -2862,7 +2862,7 @@
     <string name="welcome_plugins_repo_yakateam">ตัวแยกข้อมูล Yakateam</string>
     <string name="welcome_plugins_repo_redo">ตัวแยกข้อมูล Redo</string>
     <string name="welcome_plugins_repo_uma">UMA (ตัวแยกข้อมูล Tsuki)</string>
-    <string name="welcome_plugins_disclaimer">คลังส่วนขยายเหล่านี้ดูแลโดยชุมชนออนไลน์อิสระ ผู้พัฒนา Kototoro ไม่มีส่วนเกี่ยวข้อง การควบคุม หรือความสัมพันธ์ใดๆ กับคลังบุคคลที่สามเหล่านี้ ข้าพเจ้ารับทราบว่าการกำหนดค่าแหล่งที่มาเหล่านี้มีความเสี่ยงที่ต้องยอมรับด้วยตนเอง</string>
+    <string name="welcome_plugins_disclaimer">คลังส่วนขยายเหล่านี้ดูแลโดยชุมชนออนไลน์อิสระ ผู้พัฒนา Amuratsu ไม่มีส่วนเกี่ยวข้อง การควบคุม หรือความสัมพันธ์ใดๆ กับคลังบุคคลที่สามเหล่านี้ ข้าพเจ้ารับทราบว่าการกำหนดค่าแหล่งที่มาเหล่านี้มีความเสี่ยงที่ต้องยอมรับด้วยตนเอง</string>
     <string name="welcome_plugins_start_btn">กำหนดค่าคลัง</string>
     <string name="welcome_plugins_configured">กำหนดค่าประเภทแหล่งที่มา/คลังใหม่ %1$d รายการแล้ว: %2$s ยังไม่ได้ดาวน์โหลดแพ็กเกจ — ติดตั้งอันที่ตรงกันในขั้นตอนถัดไป</string>
     <string name="welcome_plugins_configured_none">ไม่สามารถกำหนดค่าแหล่งที่มาหรือคลังได้ โปรดตรวจสอบเครือข่ายหรือเลือกคลังอื่นแล้วลองอีกครั้ง</string>
@@ -2892,22 +2892,22 @@
     <string name="welcome_install_system_launch_failed">ไม่สามารถเปิดตัวติดตั้งของระบบได้: %1$s</string>
     <string name="welcome_install_skip">ข้ามการติดตั้ง — จะทำในจัดการส่วนขยายภายหลัง</string>
     <string name="welcome_install_step_title">ติดตั้งส่วนขยายแบบชุด</string>
-    <string name="welcome_install_step_summary">เลือกประเภทแหล่งข้อมูลและการตั้งค่าที่ต้องการ แล้วให้ Kototoro ดาวน์โหลดและติดตั้งทุกอย่างเบื้องหลัง</string>
+    <string name="welcome_install_step_summary">เลือกประเภทแหล่งข้อมูลและการตั้งค่าที่ต้องการ แล้วให้ Amuratsu ดาวน์โหลดและติดตั้งทุกอย่างเบื้องหลัง</string>
     <string name="welcome_install_kinds_title">ประเภทแหล่งข้อมูลที่จะติดตั้ง</string>
     <string name="welcome_install_kinds_summary">จะจัดการเฉพาะประเภทที่คุณทำเครื่องหมายไว้เท่านั้น ส่วนที่ไม่ได้ทำเครื่องหมาย (เช่น Mihon หากคุณต้องการทำภายหลัง) จะยังคงไว้ให้คุณติดตั้งเองในจัดการส่วนขยาย</string>
     <string name="welcome_install_kinds_empty">ยังไม่ได้กำหนดค่าคลังข้อมูล โปรดกลับไปเพิ่มคลังข้อมูลก่อน</string>
     <string name="welcome_install_nsfw_title">รวมเนื้อหา NSFW</string>
     <string name="welcome_install_nsfw_summary">ปิดโดยค่าเริ่มต้น — แพ็กเกจสำหรับผู้ใหญ่จะถูกกรองออกจากรายการติดตั้ง</string>
-    <string name="welcome_intro_app_title">Kototoro · โปรแกรมอ่านโอเพนซอร์ส</string>
-    <string name="welcome_intro_body">Kototoro เป็นโปรแกรมอ่าน/เล่นมัลติมีเดียโอเพนซอร์ส รองรับระบบนิเวศส่วนขยายชุมชนที่หลากหลาย แต่ไม่ได้รวมแหล่งข้อมูลเนื้อหาใดๆ มาในตัว</string>
+    <string name="welcome_intro_app_title">Amuratsu · โปรแกรมอ่านโอเพนซอร์ส</string>
+    <string name="welcome_intro_body">Amuratsu เป็นโปรแกรมอ่าน/เล่นมัลติมีเดียโอเพนซอร์ส รองรับระบบนิเวศส่วนขยายชุมชนที่หลากหลาย แต่ไม่ได้รวมแหล่งข้อมูลเนื้อหาใดๆ มาในตัว</string>
     <string name="welcome_intro_concepts_title">สามแนวคิดใน 30 วินาที</string>
     <string name="welcome_intro_repo_label">คลังข้อมูล</string>
     <string name="welcome_intro_repo_body">URL สำหรับชุดส่วนขยายของบุคคลที่สาม ดูแลโดยชุมชนอิสระ (เช่น คลังข้อมูล Mihon, รายการ TVBox หรือคลังปลั๊กอิน LNReader)</string>
     <string name="welcome_intro_extension_label">ส่วนขยาย</string>
-    <string name="welcome_intro_extension_body">แพ็กเกจที่ติดตั้งได้ภายในคลังข้อมูล — ไฟล์ JAR, APK หรือรายการ JSON ส่วนขยายที่ติดตั้งแล้วช่วยให้ Kototoro สามารถอ่านหรือเล่นจากเว็บไซต์ได้</string>
+    <string name="welcome_intro_extension_body">แพ็กเกจที่ติดตั้งได้ภายในคลังข้อมูล — ไฟล์ JAR, APK หรือรายการ JSON ส่วนขยายที่ติดตั้งแล้วช่วยให้ Amuratsu สามารถอ่านหรือเล่นจากเว็บไซต์ได้</string>
     <string name="welcome_intro_source_label">แหล่งข้อมูล</string>
     <string name="welcome_intro_source_body">แหล่งข้อมูลเนื้อหาเฉพาะที่คุณเห็นในแอปหลังติดตั้งหรือนำเข้าส่วนขยายแล้ว เช่น เว็บไซต์มังงะหรือวิดีโอเฉพาะ</string>
-    <string name="welcome_intro_disclaimer">การใช้ส่วนขยายของบุคคลที่สามถือเป็นความเสี่ยงของคุณเอง พฤติกรรมขณะทำงาน ความถูกต้องตามกฎหมาย และเนื้อหาไม่ได้อยู่ภายใต้การควบคุมของโปรเจกต์ Kototoro</string>
+    <string name="welcome_intro_disclaimer">การใช้ส่วนขยายของบุคคลที่สามถือเป็นความเสี่ยงของคุณเอง พฤติกรรมขณะทำงาน ความถูกต้องตามกฎหมาย และเนื้อหาไม่ได้อยู่ภายใต้การควบคุมของโปรเจกต์ Amuratsu</string>
     <string name="welcome_intro_continue">ฉันเข้าใจแล้ว — ดำเนินการต่อ</string>
     <string name="welcome_done_title">เกือบเสร็จแล้ว</string>
     <string name="welcome_done_summary">สรุปการตั้งค่าของคุณและเคล็ดลับเล็กน้อย</string>
@@ -2916,10 +2916,10 @@
     <string name="welcome_done_json_note">ประเภทที่ใช้ JSON (Legado / TVBox / LNReader) จะถูกนำเข้าโดยอัตโนมัติ หากคุณเพิ่มคลังข้อมูล JSON อื่นๆ ด้วย โปรดนำเข้าในจัดการส่วนขยาย</string>
     <string name="welcome_done_title_finished">การตั้งค่าเสร็จสมบูรณ์</string>
     <string name="welcome_done_summary_finished">ตัวช่วยสร้างเสร็จสิ้นแล้ว — ไม่มีการเพิ่มคลังข้อมูลหรือแหล่งข้อมูลโดยอัตโนมัติ</string>
-    <string name="welcome_done_body_finished">Kototoro ไม่ได้เพิ่มแหล่งข้อมูลใดๆ ระหว่างการตั้งค่า คุณสามารถเพิ่มคลังข้อมูลและแหล่งข้อมูลของคุณเองได้ตลอดเวลาใน ตั้งค่า › แหล่งข้อมูลเนื้อหา (จัดการส่วนขยาย)</string>
+    <string name="welcome_done_body_finished">Amuratsu ไม่ได้เพิ่มแหล่งข้อมูลใดๆ ระหว่างการตั้งค่า คุณสามารถเพิ่มคลังข้อมูลและแหล่งข้อมูลของคุณเองได้ตลอดเวลาใน ตั้งค่า › แหล่งข้อมูลเนื้อหา (จัดการส่วนขยาย)</string>
     <string name="welcome_done_advice_title">หากแหล่งข้อมูลใช้งานไม่ได้</string>
     <string name="welcome_done_advice_summary">ขั้นตอนการแก้ปัญหาเบื้องต้นเพื่อให้ถูกคนตรวจสอบรายงาน</string>
-    <string name="welcome_done_advice_body">1. ยืนยันปัญหาโดยใช้แอปโฮสต์ดั้งเดิมของส่วนขยาย เช่น แหล่งข้อมูลประเภท Mihon ควรทดสอบในแอป Mihon\n2. หากปัญหานี้เกิดขึ้นที่นั่นด้วย แสดงว่าเป็นของคลังข้อมูลที่ดูแลส่วนขยายนั้น: เปิดปัญหาที่ URL ของคลังข้อมูลเอง\n3. หากเกิดขึ้นเฉพาะใน Kototoro ให้รายงานในคลังข้อมูลโปรเจกต์ Kototoro และระบุชื่อแหล่งข้อมูล, เวอร์ชันส่วนขยาย และสิ่งที่คุณได้ลองทำแล้ว</string>
+    <string name="welcome_done_advice_body">1. ยืนยันปัญหาโดยใช้แอปโฮสต์ดั้งเดิมของส่วนขยาย เช่น แหล่งข้อมูลประเภท Mihon ควรทดสอบในแอป Mihon\n2. หากปัญหานี้เกิดขึ้นที่นั่นด้วย แสดงว่าเป็นของคลังข้อมูลที่ดูแลส่วนขยายนั้น: เปิดปัญหาที่ URL ของคลังข้อมูลเอง\n3. หากเกิดขึ้นเฉพาะใน Amuratsu ให้รายงานในคลังข้อมูลโปรเจกต์ Amuratsu และระบุชื่อแหล่งข้อมูล, เวอร์ชันส่วนขยาย และสิ่งที่คุณได้ลองทำแล้ว</string>
     <string name="welcome_step_counter">ขั้นตอนที่ %1$d จาก %2$d</string>
     <string name="welcome_action_configure_repos">กำหนดค่าคลังข้อมูลที่เลือก</string>
     <string name="welcome_action_install_count">ติดตั้ง %1$d ส่วนขยาย</string>
@@ -2953,7 +2953,7 @@
     <string name="welcome_permissions_notifications_title">การแจ้งเตือน</string>
     <string name="welcome_permissions_notifications_summary">แสดงการแจ้งเตือนการดาวน์โหลด การอัปเดต และโปรแกรมเล่น</string>
     <string name="welcome_permissions_packages_title">แอปที่ติดตั้งแล้ว</string>
-    <string name="welcome_permissions_packages_summary">ให้ Kototoro ตรวจหาส่วนขยายที่ติดตั้งไว้แล้วและแอปโฮสต์ (Mihon, Aniyomi, …) โดยประกาศไว้ในแมนิเฟสต์และได้รับสิทธิ์โดยอัตโนมัติ</string>
+    <string name="welcome_permissions_packages_summary">ให้ Amuratsu ตรวจหาส่วนขยายที่ติดตั้งไว้แล้วและแอปโฮสต์ (Mihon, Aniyomi, …) โดยประกาศไว้ในแมนิเฟสต์และได้รับสิทธิ์โดยอัตโนมัติ</string>
     <string name="welcome_permissions_battery_title">การทำงานในเบื้องหลัง</string>
     <string name="welcome_permissions_battery_summary">ให้การดาวน์โหลดและอัปเดตในเบื้องหลังดำเนินต่อไปได้เมื่อปิดหน้าจอหรืออุปกรณ์ไม่ได้ใช้งาน</string>
     <string name="welcome_permissions_battery_action">อนุญาต</string>
@@ -3369,11 +3369,11 @@
     <string name="pref_glass_blur_quality_performance">ประสิทธิภาพ</string>
     <string name="pref_glass_blur_quality_balanced">สมดุล</string>
     <string name="pref_glass_blur_quality_quality">คุณภาพ</string>
-    <string name="glass_material_family_kototoro">Kototoro (แนะนำ)</string>
+    <string name="glass_material_family_kototoro">Amuratsu (แนะนำ)</string>
     <string name="glass_material_family_haze">Haze</string>
     <string name="glass_material_family_cupertino">Cupertino</string>
     <string name="glass_material_family_fluent">Fluent</string>
-    <string name="glass_material_kototoro">Kototoro (แนะนำ)</string>
+    <string name="glass_material_kototoro">Amuratsu (แนะนำ)</string>
     <string name="glass_material_haze_ultra_thin">Haze Ultra Thin</string>
     <string name="glass_material_haze_thin">Haze Thin</string>
     <string name="glass_material_haze_regular">Haze ปกติ</string>

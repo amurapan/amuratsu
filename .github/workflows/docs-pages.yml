@@ -24,6 +24,7 @@ concurrency:
 
 jobs:
   build:
+    if: github.event_name == 'workflow_dispatch' || vars.DOCS_PAGES_ENABLED == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -56,9 +57,9 @@ jobs:
           out=docs/.vitepress/dist/altstore
           mkdir -p "$out"
           cp iosApp/Kototoro/Assets.xcassets/AppIcon.appiconset/AppIcon.png "$out/icon.png"
-          python3 iosApp/Scripts/altstore-source.py source --repository Kototoro-app/Kototoro --channel release \
+          python3 iosApp/Scripts/altstore-source.py source --repository "${{ github.repository }}" --channel release \
             -o "$out/release.json"
-          python3 iosApp/Scripts/altstore-source.py source --repository Kototoro-app/Kototoro-Nightly \
+          python3 iosApp/Scripts/altstore-source.py source --repository "${{ github.repository }}" \
             --channel nightly -o "$out/nightly.json"
 
       - name: Upload Pages artifact

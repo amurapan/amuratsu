@@ -40,13 +40,10 @@ internal data class DesktopAboutLink(
 }
 
 /** Android's `about_group_support` rows, in its order; the labels are the application's own resources. */
-internal fun desktopAboutLinks(): List<DesktopAboutLink> = listOf(
-    Triple("manual", "user_manual", "url_user_manual"),
-    Triple("github", "source_code", "url_github"),
-    Triple("donate", "about_donate", "url_donate"),
-    Triple("afdian", "about_donate_afdian", "url_afdian"),
-    Triple("discord", "about_discord", "url_discord"),
-).map { (key, title, url) -> DesktopAboutLink(key, AndroidStrings[title], AndroidStrings[url]) }
+internal fun desktopAboutLinks(): List<DesktopAboutLink> =
+    org.skepsun.kototoro.core.ui.text.AppProjectLink.entries.map { link ->
+        DesktopAboutLink(link.tag, AndroidStrings[link.titleKey], AndroidStrings[link.urlKey])
+    }
 
 /**
  * Opens [url] in the system browser without letting a missing browser crash the window; returns whether it opened.

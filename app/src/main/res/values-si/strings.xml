@@ -119,7 +119,7 @@
     <string name="_import">ආනයනය කරන්න</string>
     <string name="delete">මකන්න</string>
     <string name="operation_not_supported">මෙම මෙහෙයුම සඳහා සහය නොදක්වයි</string>
-    <string name="cloudstream_newpipe_required">මෙම දිගුවට Kototoro සමඟ අන්තර්ගත NewPipe පන්ති අවශ්‍ය වන බැවින්, එයට වීඩියෝ වාදනය කළ නොහැක. දිගුව හෝ Kototoro යාවත්කාලීන කිරීමට උත්සාහ කරන්න.</string>
+    <string name="cloudstream_newpipe_required">මෙම දිගුවට Amuratsu සමඟ අන්තර්ගත NewPipe පන්ති අවශ්‍ය වන බැවින්, එයට වීඩියෝ වාදනය කළ නොහැක. දිගුව හෝ Amuratsu යාවත්කාලීන කිරීමට උත්සාහ කරන්න.</string>
     <string name="text_file_not_supported">ZIP හෝ CBZ ගොනුවක් තෝරන්න.</string>
     <string name="no_description">විස්තරයක් නොමැත</string>
     <string name="clear_pages_cache">පිටු හැඹිලිය හිස් කරන්න</string>
@@ -183,7 +183,7 @@
     <string name="replace_rule_disable_all_summary">තාවකාලිකව පෙළ ආදේශන නීති යෙදීම නවත්වන්න</string>
     <string name="replace_rule_edit">සංස්කරණය</string>
     <string name="replace_rule_import">Legado නීති ආනයනය කරන්න</string>
-    <string name="replace_rule_import_summary">Legado හෝ Kototoro මඟින් නිර්යාත කළ JSON අරාවකි ආනයනය කරන්න</string>
+    <string name="replace_rule_import_summary">Legado හෝ Amuratsu මඟින් නිර්යාත කළ JSON අරාවකි ආනයනය කරන්න</string>
     <string name="replace_rule_export">නීති නිර්යාත කරන්න</string>
     <string name="replace_rule_export_summary">ගැළපෙන JSON ආකෘතියකින් නීති නිර්යාත කරන්න</string>
     <string name="replace_rule_empty">ආදේශන නීති නොමැත</string>
@@ -314,7 +314,7 @@
     <string name="enter_password">මුරපදය ඇතුළත් කරන්න</string>
     <string name="wrong_password">වැරදි මුරපදයකි</string>
     <string name="protect_application">යෙදුම ආරක්ෂා කරන්න</string>
-    <string name="protect_application_summary">Kototoro ආරම්භ කරන විට මුරපදයක් ඉල්ලන්න</string>
+    <string name="protect_application_summary">Amuratsu ආරම්භ කරන විට මුරපදයක් ඉල්ලන්න</string>
     <string name="repeat_password">මුරපදය නැවත ඇතුළත් කරන්න</string>
     <string name="passwords_mismatch">මුරපද නොගැලපේ</string>
     <string name="about">විස්තර</string>
@@ -420,8 +420,8 @@
     <string name="clear_local_manga_storage_prompt">స్థానికව සුරැകූ සහ ආනයනය කළ සියලු මංගා ගොනු මකා දමන්නද? මෙය ආපසු හැරවිය නොහැක.</string>
     <string name="clear_local_novel_storage_prompt">ಸ್ಥానికව සුරැකූ සහ ආනයනය කළ සියලු නවකතා ගොනු මකා දමන්නද? මෙය ආපසු හැරවිය නොහැක.</string>
     <string name="clear_local_video_storage_prompt">ಸ್ಥానికව සුරැකූ සහ ආනයනය කළ සියලු වීඩියෝ ගොනු මකා දමන්නද? මෙය ආපසු හැරවිය නොහැක.</string>
-    <string name="welcome_intro_title">Kototoro සකසන්න</string>
-    <string name="welcome_intro_summary">කියවීමට සහ නැරඹීමට අවශ්‍ය ආකාරය තෝරන්න. Kototoro දැන් මංගා, නවකතා සහ වීඩියෝ සඳහා ප්ලගගින් පාදක කරගත් මූලාශ්‍ර පවුල් භාවිතා කරයි.</string>
+    <string name="welcome_intro_title">Amuratsu සකසන්න</string>
+    <string name="welcome_intro_summary">කියවීමට සහ නැරඹීමට අවශ්‍ය ආකාරය තෝරන්න. Amuratsu දැන් මංගා, නවකතා සහ වීඩියෝ සඳහා ප්ලගගින් පාදක කරගත් මූලාශ්‍ර පවුල් භාවිතා කරයි.</string>
     <string name="welcome_step_start">ආරම්භ කරන්න</string>
     <string name="welcome_step_sources">මූලාශ්‍ර</string>
     <string name="welcome_step_preferences">මනාප</string>
@@ -431,11 +431,11 @@
     <string name="welcome_glass_preset_title">වීදුරු නිමාව</string>
     <string name="welcome_glass_preset_summary">iOS විලාසය සඳහා වීදුරු නිමවුම් පෙරසිටුව තෝරන්න. වර්තන පෙරනිමිය වන අතර පසුව පෙනුම් සැකසුම් වලින් සකස් කළ හැක.</string>
     <string name="home_quick_action_wizard">මායාකාරිය</string>
-    <string name="welcome_restore_summary">මීට පෙර Kototoro භාවිත කර තිබේද? උපස්ථයක් ප්‍රතිස්ථාපනය කරන්න, සමමුහුර්ත කිරීමට පුon වන්න, හෝ මුලින්ම ප්‍රාදේශීය ෆෝල්ඩර එක් කරන්න.</string>
+    <string name="welcome_restore_summary">මීට පෙර Amuratsu භාවිත කර තිබේද? උපස්ථයක් ප්‍රතිස්ථාපනය කරන්න, සමමුහුර්ත කිරීමට පුon වන්න, හෝ මුලින්ම ප්‍රාදේශීය ෆෝල්ඩර එක් කරන්න.</string>
     <string name="welcome_source_formats_title">අන්තර්ගත ආකෘති තෝරන්න</string>
     <string name="welcome_source_formats_summary">මෙම පෙරහන් සැකසීමෙන් පසු සක්‍රීය කර ඇති මූලාශ්‍ර පවුල් මොනවාදැයි තීරණය කරයි.</string>
     <string name="welcome_ecosystems_title">මූලාශ්‍ර පරිසර පද්ධතිය</string>
-    <string name="welcome_ecosystems_summary">Kototoro කියවීමට සහ නැරඹීමට බහු ප්ලගගින් මූලාශ්‍ර පවුල් සඳහා සහය දක්වයි. මෙහි ඇති නිර්දේශිත ගබඩාවලින් ආරම්භ කරන්න, පසුව දිගු කළමනාකරණයෙන් ඒවා සකස් කරන්න.</string>
+    <string name="welcome_ecosystems_summary">Amuratsu කියවීමට සහ නැරඹීමට බහු ප්ලගගින් මූලාශ්‍ර පවුල් සඳහා සහය දක්වයි. මෙහි ඇති නිර්දේශිත ගබඩාවලින් ආරම්භ කරන්න, පසුව දිගු කළමනාකරණයෙන් ඒවා සකස් කරන්න.</string>
     <string name="welcome_ecosystem_manga">මංගා: JAR පාර්සර්, Mihon, IReader, LNReader</string>
     <string name="welcome_ecosystem_novel">නවකතා: Legado, IReader, LNReader</string>
     <string name="welcome_ecosystem_video">වීඩියෝ: Aniyomi, TVBox, Cloudstream</string>
@@ -444,10 +444,10 @@
     <string name="welcome_preferences_summary">භාෂා සහ අන්තර්ගත වර්ග තෝරන්න. ඔබට පසුව මූලාශ්‍ර සැකසුම් වලින් මෙය වෙනස් කළ හැක.</string>
     <string name="welcome_spaces_title">ඔබේ අවකාශයන් වෙන් කරන්න</string>
     <string name="welcome_spaces_summary">අවකාශයන් මංගා, නවකතා සහ ඇනිමෙ සඳහා ස්වාධීන සංචාලනය, බ්‍රවුසින් මනාප සහ කියවීමේ හෝ ධාවන සන්දර්භය ලබා දෙයි. උසස් විකල්ප සහ අභිරුචි අවකාශයන් පසුව Settings &gt; User &gt; Spaces යටතේ ඇත.</string>
-    <string name="welcome_ready_summary">ස්ථාපනය සම්පූර්ණයි. ඔබ තෝරාගත් භාෂා සහ ආකෘතිවලට ගැළපෙන මූලාශ්‍ර Kototoro විසින් සක්‍රීය කරනු ඇත. Settings &gt; Content sources &gt; Setup wizard වෙතින් ඔබට මෙම විශාරදයා නැවත ක්‍රියාත්මක කළ හැක.</string>
-    <string name="welcome_jar_install_success">Kototoro: වලාකුළු ජාලයෙන් නවතම පාර්සර් එන්ජින් %1$d ක් සාර්ථකව ලබාගෙන සවි කරන ලදී!</string>
-    <string name="welcome_jar_install_up_to_date">Kototoro: වලාකුළු සත්‍යාපනය සම්පූර්ණයි, ප්‍රාදේශීය පාර්සර් යාවත්කාලීනයි! (මුළු මූලාශ්‍ර %1$d ක් පූරණය කර ඇත)</string>
-    <string name="welcome_jar_install_failed">Kototoro: පාර්සර් ජාලය පූරණය වීම අසාර්ථක විය (%1$s), කරුණාකර නැවත උත්සාහ කරන්න හෝ ප්‍රොক্সি මර්කර් වෙත මාරු වීමට සැකසුම් වෙත යන්න</string>
+    <string name="welcome_ready_summary">ස්ථාපනය සම්පූර්ණයි. ඔබ තෝරාගත් භාෂා සහ ආකෘතිවලට ගැළපෙන මූලාශ්‍ර Amuratsu විසින් සක්‍රීය කරනු ඇත. Settings &gt; Content sources &gt; Setup wizard වෙතින් ඔබට මෙම විශාරදයා නැවත ක්‍රියාත්මක කළ හැක.</string>
+    <string name="welcome_jar_install_success">Amuratsu: වලාකුළු ජාලයෙන් නවතම පාර්සර් එන්ජින් %1$d ක් සාර්ථකව ලබාගෙන සවි කරන ලදී!</string>
+    <string name="welcome_jar_install_up_to_date">Amuratsu: වලාකුළු සත්‍යාපනය සම්පූර්ණයි, ප්‍රාදේශීය පාර්සර් යාවත්කාලීනයි! (මුළු මූලාශ්‍ර %1$d ක් පූරණය කර ඇත)</string>
+    <string name="welcome_jar_install_failed">Amuratsu: පාර්සර් ජාලය පූරණය වීම අසාර්ථක විය (%1$s), කරුණාකර නැවත උත්සාහ කරන්න හෝ ප්‍රොক্সি මර්කර් වෙත මාරු වීමට සැකසුම් වෙත යන්න</string>
     <string name="home_placeholder_title">කියවීමේ උපකරණ පුවරුව</string>
     <string name="home_placeholder_subtitle">ඔබගේ මෑත කාලීන කියවීම්, යාවත්කාලීන කිරීම්, පුස්තකාලය, සමමුහුර්තකරණය සහ මූලාශ්‍ර එකම තැනකින් බලන්න.</string>
     <string name="home_hero_local_subtitle">නැවැත්වූ තැන සිට දිගටම කරගෙන යන්න, නැතහොත් මෑතකදී විවෘත කළ දේ වෙත ආපසු යන්න.</string>
@@ -1022,7 +1022,7 @@
     <string name="import_completed_hint">ඉඩ ඉතිරි කර ගැනීමට ඔබට මුල් ගොනුව ගබඩාවෙන් මැකිය හැක</string>
     <string name="import_will_start_soon">ආනයනය ඉක්මනින් ආරම්භ වේ</string>
     <string name="feed">පෝෂකය</string>
-    <string name="manga_error_description_pattern">දෝෂ විස්තර:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. මංගා එහි මූලාශ්‍රයේ ඇති බව තහවුරු කර ගැනීමට &lt;a href=\"%2$s\"&gt;వెబ్ බ්‍රව්සරයකින් විවෘත කිරීමට&lt;/a&gt; උත්සාහ කරන්න&lt;br&gt;2. ඔබ &lt;a href=\"kototoro://about\"&gt;Kototoro හි නවතම අනුවාදය&lt;/a&gt; භාවිතා කරන බවට වග බලා ගන්න&lt;br&gt;3. එය තිබේ නම්, සංවර්ධකයින්ට දෝෂ වාර්තාවක් යවන්න.</string>
+    <string name="manga_error_description_pattern">දෝෂ විස්තර:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. මංගා එහි මූලාශ්‍රයේ ඇති බව තහවුරු කර ගැනීමට &lt;a href=\"%2$s\"&gt;వెబ్ බ්‍රව්සරයකින් විවෘත කිරීමට&lt;/a&gt; උත්සාහ කරන්න&lt;br&gt;2. ඔබ &lt;a href=\"amuratsu://about\"&gt;Amuratsu හි නවතම අනුවාදය&lt;/a&gt; භාවිතා කරන බවට වග බලා ගන්න&lt;br&gt;3. එය තිබේ නම්, සංවර්ධකයින්ට දෝෂ වාර්තාවක් යවන්න.</string>
     <string name="history_shortcuts">לטසන් මංගා කෙටිමං පෙන්වන්න</string>
     <string name="history_shortcuts_summary">යෙදුම් නිරූපකය දිගු වේලාවක් එබීමෙන් මෑත මංගා ලබා ගත හැක</string>
     <string name="reader_control_ltr_summary">පිටු මාරු කිරීමේ දිශාව කියවන ආකාරයට සකස් නොකරන්න, උදාහරණයක් ලෙස දකුණු යතුර එබීමෙන් සැමවිටම මඟ පෙන්වයි. මෙම විකල්පය දෘඩාංග ආදාන උපාංගවලට පමණක් බලපායි</string>
@@ -1196,7 +1196,7 @@
     <string name="export_backup_for_other_apps_summary">ඉලක්කගත යෙදුමක් තෝරා අනුකූල උපස්ථයක් සාදන්න: Kotatsu, Mihon, Aniyomi, හෝ Usagi.</string>
     <string name="export_backup_choose_target_app">ඉලක්කගත යෙදුම තෝරන්න</string>
     <string name="export_kotatsu_backup">Kotatsu උපස්ථය අපනයනය කරන්න</string>
-    <string name="export_kotatsu_backup_summary">Kototoro-විශේෂිත කොටස් නොමැතිව Kotatsu-family යෙදුම් සඳහා වෙනම පැරණි උපස්ථයක් සාදන්න.</string>
+    <string name="export_kotatsu_backup_summary">Amuratsu-විශේෂිත කොටස් නොමැතිව Kotatsu-family යෙදුම් සඳහා වෙනම පැරණි උපස්ථයක් සාදන්න.</string>
     <string name="export_kotatsu_backup_saved">Kotatsu උපස්ථය සුරකින ලදී</string>
     <string name="export_mihon_backup">Mihon උපස්ථය අපනයනය කරන්න</string>
     <string name="export_mihon_backup_summary">Mihon මූලාශ්‍ර ඇතුළත් කිරීම් සඳහා පමණක් ප්‍රියතමයන්, ප්‍රභේද සහ කියවීමේ ප්‍රගතිය අපනයනය කරන්න.</string>
@@ -1269,7 +1269,7 @@
     <string name="data_and_privacy">දත්ත සහ පෞද්ගලිකත්වය</string>
     <string name="restore_summary">පෙර සාදන ලද උපස්ථයක් ප්‍රතිස්ථාපනය කරන්න</string>
     <string name="restore_kototoro_backup">උපස්ථය ප්‍රතිස්ථාපනය</string>
-    <string name="restore_kototoro_backup_summary">ඕනෑම අනුවාදයකින් Kototoro උපස්ථයක් හෝ Kotatsu උපස්ථයක් ප්‍රතිස්ථාපනය කරන්න. ආකෘතිය ස්වයංක්‍රීයව හඳුනා ගැනේ.</string>
+    <string name="restore_kototoro_backup_summary">ඕනෑම අනුවාදයකින් Amuratsu උපස්ථයක් හෝ Kotatsu උපස්ථයක් ප්‍රතිස්ථාපනය කරන්න. ආකෘතිය ස්වයංක්‍රීයව හඳුනා ගැනේ.</string>
     <string name="restore_mode_replace_existing">පවතින දත්ත ප්‍රතිස්ථාපනය කරන්න</string>
     <string name="restore_mode_replace_existing_summary">ප්‍රතිස්ථාපනය වන කොටස් පළමුව හිස් කෙරේ; උපස්ථයේ නොමැති ප්‍රියතමයන් සහ ඉතිහාසය ඉවත් කෙරේ</string>
     <string name="restore_mode_merge_with_existing">පවතින දත්ත සමඟ ඒකාබද්ධ කරන්න</string>
@@ -2006,7 +2006,7 @@
     <string name="show_pages_thumbs">පිටු සිඟිති රූ පෙන්වන්න</string>
     <string name="show_pages_thumbs_summary">විස්තර තිරය මත \"පිටු\" ටැබය සක්‍රීය කරන්න</string>
     <string name="error_no_data_received">සේවාදායකයෙන් දත්ත ලැබී නැත</string>
-    <string name="unsupported_backup_message">სათანადო Kototoro බැකප් ගොනුවක් තෝරන්න</string>
+    <string name="unsupported_backup_message">სათანადო Amuratsu බැකප් ගොනුවක් තෝරන්න</string>
     <string name="hours_short">%d පැ</string>
     <string name="minutes_short">%d මිනි</string>
     <string name="seconds_short">%d තා</string>
@@ -2058,8 +2058,8 @@
     <string name="chapters_read">කියවූ පරිච්ඡේද</string>
     <string name="chapters_left">ඉතිරි පරිච්ඡේද</string>
     <string name="external_source">බාහිර / ප්ලගීන</string>
-    <string name="plugin_incompatible">ප්‍රතිසම නොවන ප්ලගීන හෝ අභ්‍යන්තර දෝෂයකි. කරුණාකර ප්ලගීන සහ Kototoro හි නවතම අනුවාදය භාවිත කරන බවට තහවුරු කරගන්න</string>
-    <string name="plugin_incompatible_with_cause">ප්ලගීන දෝෂයකි: %s\n කරුණාකර ප්ලගීන සහ Kototoro හි නවතම අනුවාදය භාවිත කරන බවට තහවුරු කරගන්න</string>
+    <string name="plugin_incompatible">ප්‍රතිසම නොවන ප්ලගීන හෝ අභ්‍යන්තර දෝෂයකි. කරුණාකර ප්ලගීන සහ Amuratsu හි නවතම අනුවාදය භාවිත කරන බවට තහවුරු කරගන්න</string>
+    <string name="plugin_incompatible_with_cause">ප්ලගීන දෝෂයකි: %s\n කරුණාකර ප්ලගීන සහ Amuratsu හි නවතම අනුවාදය භාවිත කරන බවට තහවුරු කරගන්න</string>
     <string name="plugin_missing_host_classes">සහාය නොදක්වන %2$s සත්කාරක පන්ති මත රඳා පවතින බැවින් %1$s ස්ථාපනය කළ නොහැක:\n%3$s</string>
     <string name="connection_ok">සම්බන්ධතාව සාර්ථකයි</string>
     <string name="invalid_proxy_configuration">අවලංගු ප්‍රොکسی වින්‍යාසයකි</string>
@@ -2259,7 +2259,7 @@
     <string name="search_disabled_sources">අක්‍රීය කළ මූලාශ්‍ර හරහා සොයන්න</string>
     <string name="error_details">දෝෂ විස්තර</string>
     <string name="error_disclaimer_manga">මූලාශ්‍රය මත එය තිබෙන බව තහවුරු කර ගැනීමට වෙබ් බ්‍රවුසරයකින් මංගා විවෘත කිරීමට උත්සාහ කරන්න.</string>
-    <string name="error_disclaimer_app_outdated">ඔබගේ Kototoro අනුවංකය යල් පැන ගොස් ඇති බව පෙනේ. කරුණාකර සියලුම දෝෂ නිවැරදි කිරීම් ලබා ගැනීමට නවතම අනුවංකය ස්ථාපනය කරන්න.</string>
+    <string name="error_disclaimer_app_outdated">ඔබගේ Amuratsu අනුවංකය යල් පැන ගොස් ඇති බව පෙනේ. කරුණාකර සියලුම දෝෂ නිවැරදි කිරීම් ලබා ගැනීමට නවතම අනුවංකය ස්ථාපනය කරන්න.</string>
     <string name="error_disclaimer_report">ඔබට සංවර්ධකයින් වෙත දෝෂ වාර්තාවක් එවිය හැක, මෙය දෝෂය සොයා ගැනීමට සහ නිවැරදි කිරීමට අපට උපකාරී වනු ඇත</string>
     <string name="enable_source_manga">මංගා මූලාශ්‍රය සක්‍රීය කරන්න</string>
     <string name="enable_source_novel">නවකතා මූලාශ්‍රය සක්‍රීය කරන්න</string>
@@ -2277,7 +2277,7 @@
     <string name="recommendation_novel">නිර්දේශිත නවකතා</string>
     <string name="recommendation_video">නිර්දේශිත වීඩියෝ</string>
     <string name="link_to_manga_on_s">%s හි මංගා වෙත සබැඳිය</string>
-    <string name="link_to_manga_in_app">Kototoro හි මංගා වෙත සබැඳිය</string>
+    <string name="link_to_manga_in_app">Amuratsu හි මංගා වෙත සබැඳිය</string>
     <string name="clear_browser_data">බ්‍රවුසර දත්ත ඉවත් කරන්න</string>
     <string name="clear_browser_data_summary">හැඹිලි සහ කුකීස් වැනි බ්‍රවුසර දත්ත ඉවත් කරන්න. අනතුරු ඇඟවීමයි: අන්තර්ගත මූලාශ්‍රවල අවසරය නීතිවිරෝධී විය හැක</string>
     <string name="no_write_permission_to_file">ගොනුවක් ලිවීමට අවසර නැත</string>
@@ -2327,7 +2327,7 @@
     <string name="discord_token_hint">ඔබේ Discord ටෝකනය මෙහි අලවන්න</string>
     <string name="discord_rpc_summary">Discord හි ඔබේ කියවීමේ තත්ත්වය පෙන්වන්න</string>
     <string name="obtain">ලබා ගන්න</string>
-    <string name="discord_rpc_description">Kototoro හි මංගා කියවීම - මංගා කියවීමේ යෙදුමකි</string>
+    <string name="discord_rpc_description">Amuratsu හි මංගා කියවීම - මංගා කියවීමේ යෙදුමකි</string>
     <string name="discord_logout_summary">සුරකින ලද Discord බලය පැවරීම ඉවත් කරන්න</string>
     <string name="reading_s">කියවමින් %s</string>
     <string name="read_on_s">%s හි කියවන්න</string>
@@ -2355,7 +2355,7 @@
     <string name="sync_backend_switch_webdav_title">WebDAV උපස්ථයට මාරු වීමට අවශ්‍යද?</string>
     <string name="sync_backend_switch_webdav_confirm">Google Drive සමමුහුර්තකරණය දැනට සක්‍රීය කර ඇත. WebDAV උපස්ථය සක්‍රීය කිරීමෙන් ඔබේ Google පිවිසීම තබා ගනිමින් Google Drive සමමුහුර්තකරණය අක්‍රිය කරයි.</string>
     <string name="sync_sign_in">Google Drive සමමුහුර්තකරණය සූදානම් කරන්න</string>
-    <string name="sync_sign_in_summary">දායකත්වයන් සහ යාවත්කාලීන වාර්තා සමමුහුර්ත කිරීමට අවම Drive appdata අවසරය සමඟ Google Drive යෙදුම් දත්ත භාවිතා කරයි. Kototoro වෙත ඔබේ Drive ගොනු වෙත ප්‍රවේශ විය නොහැක.</string>
+    <string name="sync_sign_in_summary">දායකත්වයන් සහ යාවත්කාලීන වාර්තා සමමුහුර්ත කිරීමට අවම Drive appdata අවසරය සමඟ Google Drive යෙදුම් දත්ත භාවිතා කරයි. Amuratsu වෙත ඔබේ Drive ගොනු වෙත ප්‍රවේශ විය නොහැක.</string>
     <string name="google_drive_sync_unregistered_build_error">සංවර්ධන / රාත්‍රී ගොඩනැගීම් වලදී Google Drive සමමුහුර්තකරණය සඳහා සහය නොදක්වයි. කරුණාකර නිල නිකුතු ගොඩනැගීම් හෝ WebDAV සමමුහුර්තකරණය භාවිතා කරන්න.</string>
     <string name="sync_sign_out">ඉවත් වන්න</string>
     <string name="sync_account">පුරනය වී ඇත</string>
@@ -2409,8 +2409,8 @@
     <string name="webdav_remote_backups_inspect">දුරස්ථ උපස්ථ පරීක්ෂා කරන්න</string>
     <string name="webdav_remote_backups_inspect_summary">ഓരോ දුරස්ථ උපස්ථයක්ම ආරක්ෂිතව ප්‍රතිස්ථාපනය කළ හැකි දැයි බාගත කර සත්‍යාපනය කරන්න.</string>
     <string name="webdav_remote_backups_clear">දුරස්ථ WebDAV උපස්ථ ඉවත් කරන්න</string>
-    <string name="webdav_remote_backups_clear_summary">වින්‍යාස කර ඇති WebDAV මාර්ගයේ ඇති සියලුම Kototoro උපස්ථ ගොනු මකන්න. දේශීය දත්ත වෙනස් නොවේ.</string>
-    <string name="webdav_remote_backups_clear_confirm">වින්‍යාස කර ඇති WebDAV මාර්ගයෙන් සියලුම Kototoro උපස්ථ ගොනු මකා දමන්නද? දේශීය දත්ත වෙනස් නොවනු ඇත.</string>
+    <string name="webdav_remote_backups_clear_summary">වින්‍යාස කර ඇති WebDAV මාර්ගයේ ඇති සියලුම Amuratsu උපස්ථ ගොනු මකන්න. දේශීය දත්ත වෙනස් නොවේ.</string>
+    <string name="webdav_remote_backups_clear_confirm">වින්‍යාස කර ඇති WebDAV මාර්ගයෙන් සියලුම Amuratsu උපස්ථ ගොනු මකා දමන්නද? දේශීය දත්ත වෙනස් නොවනු ඇත.</string>
     <string name="webdav_remote_backups_loading">WebDAV උපස්ථ පූරණය වෙමින් පවතී…</string>
     <string name="webdav_remote_backup_status_unknown">පරීක්ෂා කර නැත</string>
     <string name="webdav_remote_backup_status_unrestorable">ආරක්ෂිතව ප්‍රතිස්ථාපනය කළ නොහැක</string>
@@ -2815,7 +2815,7 @@
     <string name="trust_and_add">විශ්වාස කර එකතු කරන්න</string>
     <string name="trust_extension_repository_message">ගබඩාව: %1$s\nවෙබ් අඩවිය: %2$s\nSHA-256 ඇඟිලි සලකුණ:\n%3$s\n\nමෙම ගබඩාව විශ්වාස කිරීමට පෙර ප්‍රකාශකයා සමඟ මෙම ඇඟිලි සලකුණ සත්‍යාපනය කරන්න.</string>
     <string name="untrusted_extension_message">%1$s (%2$s) ස්ථාපනය කර ඇත, නමුත් එහි අත්සන තෝරාගත් ගබඩා ඇඟිලි සලකුණ සමඟ නොගැලපේ.\n\nගබඩා ඇඟිලි සලකුණ: %3$s\n\nමෙම ගබඩාවෙන් නැවත ස්ථාපනය කිරීමට පෙර ස්ථාපිත පැකේජය ඉවත් කරන්න.</string>
-    <string name="incompatible_extension_message">Kototoro සඳහා සහය දක්වන පරාසයෙන් පිටත එහි පුස්තකාල අනුවාදය (%3$s) ඇති බැවින් %1$s %2$s ස්ථාපනය කළ නොහැක.</string>
+    <string name="incompatible_extension_message">Amuratsu සඳහා සහය දක්වන පරාසයෙන් පිටත එහි පුස්තකාල අනුවාදය (%3$s) ඇති බැවින් %1$s %2$s ස්ථාපනය කළ නොහැක.</string>
     <string name="built_in_sources">अंतर्निहित</string>
     <string name="select_all">සියල්ල තෝරන්න</string>
     <string name="deselect_all">තේරීම් සියල්ල ඉවත්</string>
@@ -2854,7 +2854,7 @@
     <string name="welcome_plugins_repo_yakateam">Yakateam විග්‍රහක</string>
     <string name="welcome_plugins_repo_redo">Redo විග්‍රහක</string>
     <string name="welcome_plugins_repo_uma">UMA (Tsuki විග්‍රහක)</string>
-    <string name="welcome_plugins_disclaimer">ಈ විස්තීරණ ගබඩා ස්වාධීන මාර්ගගත ප්‍රජාවන් විසින් පවත්වාගෙන යනු ලැබේ. Kototoro සංවර්ධකයින්ට මෙම තෙවන පාර්ශවීය ගබඩා සමඟ කිසිදු අනුබද්ධයක්, පාලනයක් හෝ සම්බන්ධයක් නැත. මම මෙම මූලාශ්‍ර මගේම අවදානම මත වින්‍යාස කරන බව පිළිගනිමි.</string>
+    <string name="welcome_plugins_disclaimer">ಈ විස්තීරණ ගබඩා ස්වාධීන මාර්ගගත ප්‍රජාවන් විසින් පවත්වාගෙන යනු ලැබේ. Amuratsu සංවර්ධකයින්ට මෙම තෙවන පාර්ශවීය ගබඩා සමඟ කිසිදු අනුබද්ධයක්, පාලනයක් හෝ සම්බන්ධයක් නැත. මම මෙම මූලාශ්‍ර මගේම අවදානම මත වින්‍යාස කරන බව පිළිගනිමි.</string>
     <string name="welcome_plugins_start_btn">ගබඩා වින්‍යාස කරන්න</string>
     <string name="welcome_plugins_configured">%1$d නව මූලාශ්‍ර/ගබඩා වර්ගයක් වින්‍යාස කරන ලදී: %2$s. පැකේජ තවමත් බාගත කර නැත — මීළඟ පියවරේදී ගැළපෙන ඒවා ස්ථාපනය කරන්න.</string>
     <string name="welcome_plugins_configured_none">කිසිදු මූලාශ්‍රයක් හෝ ගබඩාවක් වින්‍යාස කිරීමට නොහැකි විය. ඔබේ ජාලය පරීක්ෂා කරන්න හෝ වෙනත් ගබඩා තෝරා නැවත උත්සාහ කරන්න.</string>
@@ -2884,22 +2884,22 @@
     <string name="welcome_install_system_launch_failed">පද්ධති ස්ථාපකය දියත් කළ නොහැකි විය: %1$s</string>
     <string name="welcome_install_skip">ස්ථාපනය මඟ හරින්න — මම පසුව විස්තාරණ කළමනාකරණයෙන් කරන්නෙමි</string>
     <string name="welcome_install_step_title">කාණ්ඩ විස්තාරණ ස්ථාපනය</string>
-    <string name="welcome_install_step_summary">භාවිතා කළ යුතු මූලාශ්‍ර වර්ග සහ සැකසුම් තෝරන්න, ඉන්පසු Kototoro හට පසුබිමේ සියල්ල බාගත කර ස්ථාපනය කිරීමට ඉඩ දෙන්න.</string>
+    <string name="welcome_install_step_summary">භාවිතා කළ යුතු මූලාශ්‍ර වර්ග සහ සැකසුම් තෝරන්න, ඉන්පසු Amuratsu හට පසුබිමේ සියල්ල බාගත කර ස්ථාපනය කිරීමට ඉඩ දෙන්න.</string>
     <string name="welcome_install_kinds_title">ස්ථාපනය කළ යුතු මූලාශ්‍ර වර්ග</string>
     <string name="welcome_install_kinds_summary">ඔබ සලකුණු කළ වර්ග පමණක් හසුරුවනු ලැබේ. සලකුණු නොකළ ඒවා (උදාහරණයක් ලෙස Mihon, ඔබ එය පසුව කිරීමට කැමති නම්) ඔබට විස්තාරණ කළමනාකරණය තුළ ස්ථාපනය කිරීමට ඉතිරි වේ.</string>
     <string name="welcome_install_kinds_empty">තවමත් ගබඩා වින්‍යාස කර නැත. ආපසු ගොස් ප්‍රථමයෙන් ගබඩා එකතු කරන්න.</string>
     <string name="welcome_install_nsfw_title">NSFW අන්තර්ගතය ඇතුළත් කරන්න</string>
     <string name="welcome_install_nsfw_summary">පෙරනිමියෙන් අක්‍රියයි — වැඩිහිටියන්ට පමණක් වන පැකේජ ස්ථාපන ලැයිස්තුවෙන් පෙරጣ ඇත.</string>
-    <string name="welcome_intro_app_title">Kototoro · විවෘත මූලාශ්‍ර කියවනය</string>
-    <string name="welcome_intro_body">Kototoro යනු විවෘත මූලාශ්‍ර බහුමාධ්‍ය කියවනයක් / වාදකයකි. එය ප්‍රජා විස්තාරණවල පුළුල් පරිසර පද්ධතියකට සහාය දක්වයි, නමුත් එය තමන්ගේම කිසිදු අන්තර්ගත මූලාශ්‍රයක් එකතු නොකරයි.</string>
+    <string name="welcome_intro_app_title">Amuratsu · විවෘත මූලාශ්‍ර කියවනය</string>
+    <string name="welcome_intro_body">Amuratsu යනු විවෘත මූලාශ්‍ර බහුමාධ්‍ය කියවනයක් / වාදකයකි. එය ප්‍රජා විස්තාරණවල පුළුල් පරිසර පද්ධතියකට සහාය දක්වයි, නමුත් එය තමන්ගේම කිසිදු අන්තර්ගත මූලාශ්‍රයක් එකතු නොකරයි.</string>
     <string name="welcome_intro_concepts_title">अवधारणाዎች තුනක්, තත්පර 30කින්</string>
     <string name="welcome_intro_repo_label">ගබඩාව</string>
     <string name="welcome_intro_repo_body">ස්වාධීන ප්‍රජාවක් විසින් පවත්වාගෙන යනු ලබන තෙවන පාර්ශ්ව විස්තාරණ එකතුවකට URL එකක් (උදාහරණයක් ලෙස Mihon ගබඩා, TVBox ලැයිස්තු හෝ LNReader ප්ලගීන් ගබඩා).</string>
     <string name="welcome_intro_extension_label">විස්තාරණය</string>
-    <string name="welcome_intro_extension_body">ගබඩාවක් තුළ ස්ථාපනය කළ හැකි පැකේජයක් — JAR, APK හෝ JSON ලැයිස්තුවක්. ස්ථාපිත විස්තාරණ මඟින් Kototoro හට අඩවියකින් කියවීමට හෝ වාදනය කිරීමට ඇති හැකියාව ලබා දේ.</string>
+    <string name="welcome_intro_extension_body">ගබඩාවක් තුළ ස්ථාපනය කළ හැකි පැකේජයක් — JAR, APK හෝ JSON ලැයිස්තුවක්. ස්ථාපිත විස්තාරණ මඟින් Amuratsu හට අඩවියකින් කියවීමට හෝ වාදනය කිරීමට ඇති හැකියාව ලබා දේ.</string>
     <string name="welcome_intro_source_label">මූලාශ්‍රය</string>
     <string name="welcome_intro_source_body">විස්තාරණයක් ස්ථාපනය කර හෝ ආනයනය කළ පසු යෙදුම තුළ ඔබට පෙනෙන එක් ස්ථිර අන්තර්ගත මූලාශ්‍රයක් — උදාහරණයක් ලෙස නිශ්චිත manga හෝ වීඩියෝ වෙබ් අඩවියක්.</string>
-    <string name="welcome_intro_disclaimer">තෙවන පාර්ශ්ව විස්තාරණ භාවිතය ಸಂಪೂರ್ಣයෙන් ඔබේම අවදානම මත වේ: ධාවන කාල හැසිරීම, නීත්‍යානුකූලභාවය සහ අන්තර්ගතය Kototoro ව්‍යාපෘතිය මඟින් පාලනය නොකෙේ.</string>
+    <string name="welcome_intro_disclaimer">තෙවන පාර්ශ්ව විස්තාරණ භාවිතය ಸಂಪೂರ್ಣයෙන් ඔබේම අවදානම මත වේ: ධාවන කාල හැසිරීම, නීත්‍යානුකූලභාවය සහ අන්තර්ගතය Amuratsu ව්‍යාපෘතිය මඟින් පාලනය නොකෙේ.</string>
     <string name="welcome_intro_continue">මට වැටහෙනවා — දිගටම කරගෙන යන්න</string>
     <string name="welcome_done_title">වැඩේ ළඟයි</string>
     <string name="welcome_done_summary">ඔබේ පිහිටුවීම් සාරාංශය සහ ඉඟි කිහිපයක්.</string>
@@ -2908,10 +2908,10 @@
     <string name="welcome_done_json_note">JSON-පාදක වර්ග (Legado / TVBox / LNReader) ස්වයංක්‍රීයව ආනයනය කරනු ලැබේ; ඔබ වෙනත් JSON ගබඩා ද එකතු කර ඇත්නම්, ඒවා විස්තාරණ කළමනාකරණය තුළ ආනයනය කරන්න.</string>
     <string name="welcome_done_title_finished">පිහිටුවීම සම්පූර්ණයි</string>
     <string name="welcome_done_summary_finished">මායාකාරිය අවසන් — ගබඩා හෝ මූලාශ්‍ර ස්වයංක්‍රීයව එකතු කර නැත.</string>
-    <string name="welcome_done_body_finished">Kototoro පිහිටුවීමේදී කිසිදු මූලාශ්‍රයක් එකතු කළේ නැත. ඔබට සැකසීම් › අන්තර්ගත මූලාශ්‍ර (විස්තාරණ කළමනාකරණය) තුළ ඕනෑම වේලාවක ඔබේම ගබඩා සහ මූලාශ්‍ර එකතු කළ හැක.</string>
+    <string name="welcome_done_body_finished">Amuratsu පිහිටුවීමේදී කිසිදු මූලාශ්‍රයක් එකතු කළේ නැත. ඔබට සැකසීම් › අන්තර්ගත මූලාශ්‍ර (විස්තාරණ කළමනාකරණය) තුළ ඕනෑම වේලාවක ඔබේම ගබඩා සහ මූලාශ්‍ර එකතු කළ හැක.</string>
     <string name="welcome_done_advice_title">මූලාශ්‍රයක් ක්‍රියා නොකරන්නේ නම්</string>
     <string name="welcome_done_advice_summary">කෙටි දෝෂ නිරාකරණ මාර්ගයක්, එවිට නිවැරදි පුද්ගලයින්ට වාර්තාව පෙනේ.</string>
-    <string name="welcome_done_advice_body">1. විස්තාරණයේ මුල් සත්කාරක යෙදුම භාවිතයෙන් ගැටළුව තහවුරු කරන්න — උදාහරණයක් ලෙස Mihon-වර්ගයේ මූලාශ්‍රයක් Mihon යෙදුම තුළ පරීක්ෂා කළ යුතුය.\n2. ගැටළුව එහිදී ද සිදු වන්නේ නම්, එය විස්තාරණය පවත්වාගෙන යන ගබඩාවට අයත් වේ: ගබඩාවේම URL එකේ ගැටළුවක් විවෘත කරන්න.\n3. එය Kototoro හි පමණක් සිදු වන්නේ නම්, එය Kototoro ව්‍යාපෘති ගබඩාවේ වාර්තා කර මූලාශ්‍රයේ නම, විස්තාරණ අනුවාදය සහ ඔබ උත්සාහ කළ දේ ඇතුළත් කරන්න.</string>
+    <string name="welcome_done_advice_body">1. විස්තාරණයේ මුල් සත්කාරක යෙදුම භාවිතයෙන් ගැටළුව තහවුරු කරන්න — උදාහරණයක් ලෙස Mihon-වර්ගයේ මූලාශ්‍රයක් Mihon යෙදුම තුළ පරීක්ෂා කළ යුතුය.\n2. ගැටළුව එහිදී ද සිදු වන්නේ නම්, එය විස්තාරණය පවත්වාගෙන යන ගබඩාවට අයත් වේ: ගබඩාවේම URL එකේ ගැටළුවක් විවෘත කරන්න.\n3. එය Amuratsu හි පමණක් සිදු වන්නේ නම්, එය Amuratsu ව්‍යාපෘති ගබඩාවේ වාර්තා කර මූලාශ්‍රයේ නම, විස්තාරණ අනුවාදය සහ ඔබ උත්සාහ කළ දේ ඇතුළත් කරන්න.</string>
     <string name="welcome_step_counter">පියවර %1$d න් %2$d</string>
     <string name="welcome_action_configure_repos">තෝරාගත් ගබඩා වින්‍යාස කරන්න</string>
     <string name="welcome_action_install_count">විස්තාරණ %1$d ක් ස්ථාපනය කරන්න</string>
@@ -2945,7 +2945,7 @@
     <string name="welcome_permissions_notifications_title">දැනුම්දීම්</string>
     <string name="welcome_permissions_notifications_summary">බාගත කිරීම්, යාවත්කාලීන කිරීම් සහ වාදක දැනුම්දීම් පෙන්වයි.</string>
     <string name="welcome_permissions_packages_title">ස්ථාපිත යෙදුම්</string>
-    <string name="welcome_permissions_packages_summary">දැනටමත් ස්ථාපිත කර ඇති දිගු සහ සත්කාරක යෙදුම් (Mihon, Aniyomi, …) හඳුනා ගැනීමට Kototoro වෙත ඉඩ දෙයි. මූලික ලේඛනයේ ප්‍රකාශ කර ඇති අතර ස්වයංක්‍රීයව ලබා දී ඇත.</string>
+    <string name="welcome_permissions_packages_summary">දැනටමත් ස්ථාපිත කර ඇති දිගු සහ සත්කාරක යෙදුම් (Mihon, Aniyomi, …) හඳුනා ගැනීමට Amuratsu වෙත ඉඩ දෙයි. මූලික ලේඛනයේ ප්‍රකාශ කර ඇති අතර ස්වයංක්‍රීයව ලබා දී ඇත.</string>
     <string name="welcome_permissions_battery_title">පසුබිම් ක්‍රියාකාරීත්වය</string>
     <string name="welcome_permissions_battery_summary">තිරය අක්‍රියව තිබෙන විට හෝ උපාංගය නිෂ්ක්‍රීයව තිබෙන විට පසුබිම් බබාගත කිරීම් සහ යාවත්කාලීන කිරීම් අඛණ්ඩව ක්‍රියාත්මක කරයි.</string>
     <string name="welcome_permissions_battery_action">ඉඩ දෙන්න</string>
@@ -3366,11 +3366,11 @@
     <string name="pref_glass_blur_quality_performance">කාර්ය සාධනය</string>
     <string name="pref_glass_blur_quality_balanced">තුලිතයි</string>
     <string name="pref_glass_blur_quality_quality">ගුණත්වය</string>
-    <string name="glass_material_family_kototoro">Kototoro (නිර්දේශිතයි)</string>
+    <string name="glass_material_family_kototoro">Amuratsu (නිර්දේශිතයි)</string>
     <string name="glass_material_family_haze">Haze</string>
     <string name="glass_material_family_cupertino">Cupertino</string>
     <string name="glass_material_family_fluent">Fluent</string>
-    <string name="glass_material_kototoro">Kototoro (නිර්දේශිතයි)</string>
+    <string name="glass_material_kototoro">Amuratsu (නිර්දේශිතයි)</string>
     <string name="glass_material_haze_ultra_thin">Haze Ultra Thin</string>
     <string name="glass_material_haze_thin">Haze Thin</string>
     <string name="glass_material_haze_regular">Haze Regular</string>

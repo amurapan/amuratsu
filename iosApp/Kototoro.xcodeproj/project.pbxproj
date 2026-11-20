@@ -909,7 +909,7 @@
 				INFOPLIST_FILE = Kototoro/Info.plist;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Kototoro;
+				INFOPLIST_KEY_CFBundleDisplayName = Amuratsu;
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = NO;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -968,7 +968,7 @@
 				INFOPLIST_FILE = Kototoro/Info.plist;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Kototoro;
+				INFOPLIST_KEY_CFBundleDisplayName = Amuratsu;
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = NO;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1037,7 +1037,7 @@
 				DEVELOPMENT_TEAM = 53L8K3RJ32;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KototoroWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Kototoro;
+				INFOPLIST_KEY_CFBundleDisplayName = Amuratsu;
 				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.skepsun.kototoro.ios.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1056,7 +1056,7 @@
 				DEVELOPMENT_TEAM = 53L8K3RJ32;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KototoroWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Kototoro;
+				INFOPLIST_KEY_CFBundleDisplayName = Amuratsu;
 				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.skepsun.kototoro.ios.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";

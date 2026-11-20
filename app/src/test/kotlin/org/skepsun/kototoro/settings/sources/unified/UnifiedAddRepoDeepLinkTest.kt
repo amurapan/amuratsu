@@ -87,6 +87,7 @@ class UnifiedAddRepoDeepLinkTest {
         assertEquals(UnifiedSourceKind.ANIYOMI, UnifiedAddRepoDeepLinkParser.kindFromScheme("anikku"))
         assertEquals(UnifiedSourceKind.MIHON, UnifiedAddRepoDeepLinkParser.kindFromScheme("tachiyomi"))
         assertEquals(UnifiedSourceKind.MIHON, UnifiedAddRepoDeepLinkParser.kindFromScheme("kototoro"))
+        assertEquals(UnifiedSourceKind.MIHON, UnifiedAddRepoDeepLinkParser.kindFromScheme("amuratsu"))
         assertNull(UnifiedAddRepoDeepLinkParser.kindFromScheme("tvbox"))
         assertNull(UnifiedAddRepoDeepLinkParser.kindFromScheme(null))
     }

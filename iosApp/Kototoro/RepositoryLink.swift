@@ -9,7 +9,7 @@ struct RepositoryLink {
         var address = input.string ?? ""
         var kind = defaultKind
         // Same deep links as Android: `kind` is authoritative; legacy Tachiyomi/Aniyomi schemes imply the kind.
-        let schemeKinds = ["kototoro": "MIHON", "tachiyomi": "MIHON", "aniyomi": "ANIYOMI", "anikku": "ANIYOMI"]
+        let schemeKinds = ["amuratsu": "MIHON", "kototoro": "MIHON", "tachiyomi": "MIHON", "aniyomi": "ANIYOMI", "anikku": "ANIYOMI"]
         if let scheme = input.scheme?.lowercased(), let implied = schemeKinds[scheme] {
             guard input.host == "add-repo" else { throw URLError(.unsupportedURL) }
             let params = input.queryItems ?? []

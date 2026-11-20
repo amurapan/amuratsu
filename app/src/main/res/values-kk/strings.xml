@@ -386,7 +386,7 @@
     <string name="related_manga">Ұқсас маңга</string>
     <string name="discard">Сақтамау</string>
     <string name="saved_manga">Сақталған маңга</string>
-    <string name="manga_error_description_pattern">Қате мәліметі:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. Дереккөзде бар ма екенін тексеру үшін &lt;a href=%2$s&gt;маңганы уеб браузер арқылы&lt;/a&gt; ашып көріңіз&lt;br&gt;2. &lt;a href=kototoro://about&gt;Kototoro-ның ең соңғы нұсқасын&lt;/a&gt;&lt;br&gt;3 қолданып отырсыз ба, тексеріп көріңіз. Мүмкін болса: әзірлеушіге қате туралы шағып жіберіңіз.</string>
+    <string name="manga_error_description_pattern">Қате мәліметі:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. Дереккөзде бар ма екенін тексеру үшін &lt;a href=%2$s&gt;маңганы уеб браузер арқылы&lt;/a&gt; ашып көріңіз&lt;br&gt;2. &lt;a href=amuratsu://about&gt;Kototoro-ның ең соңғы нұсқасын&lt;/a&gt;&lt;br&gt;3 қолданып отырсыз ба, тексеріп көріңіз. Мүмкін болса: әзірлеушіге қате туралы шағып жіберіңіз.</string>
     <string name="state_abandoned">Тасталған</string>
     <string name="history_shortcuts_summary">Қолданба таңбасын ұзақ басып тұрғанда соңғы маңганы қолжетімді ету</string>
     <string name="automatic_scroll">Өздігінен парақтау</string>
@@ -601,7 +601,7 @@
     <string name="appearance_mode">Көрініс режимі</string>
     <string name="page_save_manga_title_length">Сақталған файл атауындағы манга атауының ұзындығы</string>
     <string name="page_save_manga_title_length_summary">Сақталған сурет файлдарының атауында сақталатын манга атауының таңбалар саны (12–64)</string>
-    <string name="cloudstream_newpipe_required">Бұл кеңейтімге Kototoro ішіндегі NewPipe жинағында жоқ NewPipe кластары қажет, сондықтан ол видеоларды ойната алмайды. Кеңейтімді немесе Kototoro қолданбасын жаңартып көріңіз.</string>
+    <string name="cloudstream_newpipe_required">Бұл кеңейтімге Amuratsu ішіндегі NewPipe жинағында жоқ NewPipe кластары қажет, сондықтан ол видеоларды ойната алмайды. Кеңейтімді немесе Amuratsu қолданбасын жаңартып көріңіз.</string>
     <string name="clear_chapter_thumbnails">Тарау нобайларын тазалау</string>
     <string name="continuous_horizontal">Үздіксіз көлденең</string>
     <string name="continuous_horizontal_reversed">Оңнан солға оқу</string>
@@ -653,7 +653,7 @@
     <string name="replace_rule_disable_all_summary">Алмастыру ережелерін уақытша қолданбау</string>
     <string name="replace_rule_edit">Ережені өңдеу</string>
     <string name="replace_rule_import">Legado ережелерін импорттау</string>
-    <string name="replace_rule_import_summary">Legado немесе Kototoro экспорттаған JSON массивін импорттау</string>
+    <string name="replace_rule_import_summary">Legado немесе Amuratsu экспорттаған JSON массивін импорттау</string>
     <string name="replace_rule_export">Ережелерді экспорт</string>
     <string name="replace_rule_export_summary">Ережелерді үйлесімді JSON пішімінде экспорттау</string>
     <string name="replace_rule_empty">Алмастыру ережелері жоқ</string>
@@ -786,8 +786,8 @@
     <string name="clear_local_manga_storage_prompt">Жергілікті манга файлдары жойылсын ба? Қайтарылмайды.</string>
     <string name="clear_local_novel_storage_prompt">Жергілікті новелла файлдары жойылсын ба? Қайтарылмайды.</string>
     <string name="clear_local_video_storage_prompt">Жергілікті бейне файлдары жойылсын ба? Қайтарылмайды.</string>
-    <string name="welcome_intro_title">Kototoro баптау</string>
-    <string name="welcome_intro_summary">Қалай оқығыңыз және көргіңіз келетінін таңдаңыз. Kototoro енді манга, новелла және бейне үшін плагинге негізделген қайнар көздер отбасыларын, соның ішінде JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader және Cloudstream қолданады.</string>
+    <string name="welcome_intro_title">Amuratsu баптау</string>
+    <string name="welcome_intro_summary">Қалай оқығыңыз және көргіңіз келетінін таңдаңыз. Amuratsu енді манга, новелла және бейне үшін плагинге негізделген қайнар көздер отбасыларын, соның ішінде JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader және Cloudstream қолданады.</string>
     <string name="welcome_step_start">Бастау</string>
     <string name="welcome_step_sources">Көздер</string>
     <string name="welcome_step_preferences">Баптаулар</string>
@@ -797,11 +797,11 @@
     <string name="welcome_glass_preset_title">Шыны әрлеу</string>
     <string name="welcome_glass_preset_summary">iOS стилі үшін шыны әрлеу пресетін таңдаңыз. Сындыру әдепкі бойынша қосылады және оны кейін Сыртқы көрініс параметрлерінен дәл реттеуге болады.</string>
     <string name="home_quick_action_wizard">Шебер</string>
-    <string name="welcome_restore_summary">Kototoro бұрын қолданылған ба? Қалпына келтіріңіз не қосыңыз.</string>
+    <string name="welcome_restore_summary">Amuratsu бұрын қолданылған ба? Қалпына келтіріңіз не қосыңыз.</string>
     <string name="welcome_source_formats_title">Контент форматтарын таңдау</string>
     <string name="welcome_source_formats_summary">Бұл сүзгілер орнатудан кейін қай дереккөз отбасыларының қосылатынын шешеді.</string>
     <string name="welcome_ecosystems_title">Дереккөз экожүйесі</string>
-    <string name="welcome_ecosystems_summary">Kototoro оқу және көру үшін бірнеше плагин дереккөз отбасыларын қолдайды. Мұнда ұсынылған репозиторийлерден бастаңыз, содан кейін оларды кеңейтімдерді басқару бөлімінде реттеңіз.</string>
+    <string name="welcome_ecosystems_summary">Amuratsu оқу және көру үшін бірнеше плагин дереккөз отбасыларын қолдайды. Мұнда ұсынылған репозиторийлерден бастаңыз, содан кейін оларды кеңейтімдерді басқару бөлімінде реттеңіз.</string>
     <string name="welcome_ecosystem_manga">Манга: JAR талдағыштары, Mihon, IReader, LNReader</string>
     <string name="welcome_ecosystem_novel">Новелла: Legado, IReader, LNReader</string>
     <string name="welcome_ecosystem_video">Видео: Aniyomi, TVBox, Cloudstream</string>
@@ -810,10 +810,10 @@
     <string name="welcome_preferences_summary">Тілдер мен контент түрлерін таңдаңыз. Мұны кейін дереккөз параметрлерінен өзгертуге болады.</string>
     <string name="welcome_spaces_title">Кеңістіктеріңізді бөлу</string>
     <string name="welcome_spaces_summary">Кеңістіктер тәуелсіз навигацияны, шолу параметрлерін және оқу немесе ойнату мәнмәтінін қамтамасыз етеді. Қосымша опциялар мен реттелетін кеңістіктер кейінірек Параметрлер › Пайдаланушы › Кеңістіктер бөлімінде қолжетімді болады.</string>
-    <string name="welcome_ready_summary">Баптау аяқталды. Kototoro таңдалған тілдер мен форматтарға сәйкес келетін дереккөздерді қосады. Бұл шеберді Параметрлер › Контент көздері › Баптау шебері арқылы қайта іске қосуға болады.</string>
-    <string name="welcome_jar_install_success">Kototoro: Бұлттық желіден соңғы %1$d талдағыш қозғалтқышы сәтті алынып, орнатылды!</string>
-    <string name="welcome_jar_install_up_to_date">Kototoro: Бұлтты тексеру аяқталды, жергілікті талдағыштар жаңартылған! (Барлығы %1$d дереккөз жүктелді)</string>
-    <string name="welcome_jar_install_failed">Kototoro: Талдағыш желісін жүктеу сәтсіз аяқталды (%1$s), қайталап көріңіз немесе прокси айналарын ауыстыру үшін параметрлерге өтіңіз</string>
+    <string name="welcome_ready_summary">Баптау аяқталды. Amuratsu таңдалған тілдер мен форматтарға сәйкес келетін дереккөздерді қосады. Бұл шеберді Параметрлер › Контент көздері › Баптау шебері арқылы қайта іске қосуға болады.</string>
+    <string name="welcome_jar_install_success">Amuratsu: Бұлттық желіден соңғы %1$d талдағыш қозғалтқышы сәтті алынып, орнатылды!</string>
+    <string name="welcome_jar_install_up_to_date">Amuratsu: Бұлтты тексеру аяқталды, жергілікті талдағыштар жаңартылған! (Барлығы %1$d дереккөз жүктелді)</string>
+    <string name="welcome_jar_install_failed">Amuratsu: Талдағыш желісін жүктеу сәтсіз аяқталды (%1$s), қайталап көріңіз немесе прокси айналарын ауыстыру үшін параметрлерге өтіңіз</string>
     <string name="home_placeholder_title">Оқу бақылау тақтасы</string>
     <string name="home_placeholder_subtitle">Жақында оқығаныңызды, жаңартуларды, кітапхананы, синхрондауды және дереккөздерді бір жерден көріңіз.</string>
     <string name="home_hero_local_subtitle">Тоқтаған жеріңізден жалғастырыңыз немесе жақында ашқан нәрсеге қайта оралыңыз.</string>
@@ -1368,7 +1368,7 @@
     <string name="export_backup_for_other_apps_summary">Мақсатты қолданбаны таңдап, үйлесімді сақтық көшірмені жасаңыз: Kotatsu, Mihon, Aniyomi немесе Usagi.</string>
     <string name="export_backup_choose_target_app">Мақсатты қолданбаны таңдау</string>
     <string name="export_kotatsu_backup">Kotatsu көшірмесін экспорттау</string>
-    <string name="export_kotatsu_backup_summary">Kototoro-ға тән бөлімдерсіз Kotatsu отбасындағы қолданбалар үшін бөлек ескі сақтық көшірмені жасаңыз.</string>
+    <string name="export_kotatsu_backup_summary">Amuratsu-ға тән бөлімдерсіз Kotatsu отбасындағы қолданбалар үшін бөлек ескі сақтық көшірмені жасаңыз.</string>
     <string name="export_kotatsu_backup_saved">Kotatsu көшірмесі сақталды</string>
     <string name="export_mihon_backup">Mihon көшірмесін экспорттау</string>
     <string name="export_mihon_backup_summary">Тек Mihon көздеріндегі жазбалар үшін таңдаулыларды, санаттарды және оқу барысын экспорттау.</string>
@@ -1396,7 +1396,7 @@
     <string name="import_backup_started_background">Сыртқы сақтық көшірме фондық режимде импортталады</string>
     <string name="username_password_enter_hint">Жалғастыру үшін пайдаланушы аты мен құпия сөзді енгізіңіз</string>
     <string name="restore_kototoro_backup">Қалпына келтіру</string>
-    <string name="restore_kototoro_backup_summary">Кез келген нұсқадағы Kototoro сақтық көшірмесін немесе Kotatsu сақтық көшірмесін қалпына келтіру. Пішімі автоматты түрде анықталады.</string>
+    <string name="restore_kototoro_backup_summary">Кез келген нұсқадағы Amuratsu сақтық көшірмесін немесе Kotatsu сақтық көшірмесін қалпына келтіру. Пішімі автоматты түрде анықталады.</string>
     <string name="restore_mode_replace_existing">Бұрынғы деректерді алмастыру</string>
     <string name="restore_mode_replace_existing_summary">Қалпына келтірілетін бөлімдер алдымен тазаланады; сақтық көшірмеде жоқ таңдаулылар мен тарих жойылады</string>
     <string name="restore_mode_merge_with_existing">Бұрынғы деректермен біріктіру</string>
@@ -2009,7 +2009,7 @@
     <string name="show_pages_thumbs">Беттердің нобайын көрсету</string>
     <string name="show_pages_thumbs_summary">Ақпарат экранында \"Беттер\" қойындысын қосу</string>
     <string name="error_no_data_received">Серверден деректер алынбады</string>
-    <string name="unsupported_backup_message">Жарамды Kototoro сақтық көшірме файлын таңдаңыз</string>
+    <string name="unsupported_backup_message">Жарамды Amuratsu сақтық көшірме файлын таңдаңыз</string>
     <string name="hours_short">%d сағ</string>
     <string name="minutes_short">%d мин</string>
     <string name="seconds_short">%d сек</string>
@@ -2061,8 +2061,8 @@
     <string name="chapters_read">Оқылған тараулар</string>
     <string name="chapters_left">Қалған тараулар</string>
     <string name="external_source">Сыртқы/плагин</string>
-    <string name="plugin_incompatible">Плагин үйлеспейді немесе ішкі қате. Плагин мен Kototoro қолданбасының соңғы нұсқасын пайдаланыңыз</string>
-    <string name="plugin_incompatible_with_cause">Плагин қатесі: %s\n Плагин мен Kototoro қолданбасының соңғы нұсқасын пайдаланыңыз</string>
+    <string name="plugin_incompatible">Плагин үйлеспейді немесе ішкі қате. Плагин мен Amuratsu қолданбасының соңғы нұсқасын пайдаланыңыз</string>
+    <string name="plugin_incompatible_with_cause">Плагин қатесі: %s\n Плагин мен Amuratsu қолданбасының соңғы нұсқасын пайдаланыңыз</string>
     <string name="plugin_missing_host_classes">%1$s орнатылмайды, себебі ол мына қолдау көрсетілмейтін %2$s хост кластарына тәуелді:\n%3$s</string>
     <string name="connection_ok">Қосылым қалыпты</string>
     <string name="invalid_proxy_configuration">Прокси конфигурациясы қате</string>
@@ -2263,7 +2263,7 @@
     <string name="search_disabled_sources">Өшірілген көздер арқылы іздеу</string>
     <string name="error_details">Қате мәліметтері</string>
     <string name="error_disclaimer_manga">Манганың өз көзінде қолжетімді екеніне көз жеткізу үшін оны веб-браузерде ашып көріңіз.</string>
-    <string name="error_disclaimer_app_outdated">Kototoro қолданбасының нұсқасы ескірген сияқты. Барлық қолжетімді түзетулерді алу үшін соңғы нұсқасын орнатыңыз.</string>
+    <string name="error_disclaimer_app_outdated">Amuratsu қолданбасының нұсқасы ескірген сияқты. Барлық қолжетімді түзетулерді алу үшін соңғы нұсқасын орнатыңыз.</string>
     <string name="error_disclaimer_report">Әзірлеушілерге қате туралы есеп жібере аласыз, бұл қатені тауып, түзетуге көмектеседі</string>
     <string name="enable_source_manga">Манга көзін қосу</string>
     <string name="enable_source_novel">Новелла көзін қосу</string>
@@ -2281,7 +2281,7 @@
     <string name="recommendation_novel">ұсынылатын новеллалар</string>
     <string name="recommendation_video">ұсынылатын видеолар</string>
     <string name="link_to_manga_on_s">%s жүйесіндегі мангаға сілтеме</string>
-    <string name="link_to_manga_in_app">Kototoro қолданбасындағы мангаға сілтеме</string>
+    <string name="link_to_manga_in_app">Amuratsu қолданбасындағы мангаға сілтеме</string>
     <string name="clear_browser_data">Браузер деректерін тазарту</string>
     <string name="clear_browser_data_summary">Кэш пен cookie сияқты браузер деректерін тазарту. Ескерту: Мазмұн көздеріндегі авторизация жарамсыз болып қалуы мүмкін</string>
     <string name="no_write_permission_to_file">Файлға жазу құқығы жоқ</string>
@@ -2331,7 +2331,7 @@
     <string name="discord_token_hint">Discord токенін осында қойыңыз</string>
     <string name="discord_rpc_summary">Discord желісінде оқу күйіңізді көрсету</string>
     <string name="obtain">Алу</string>
-    <string name="discord_rpc_description">Kototoro қолданбасында манга оқу - манга оқу құралы</string>
+    <string name="discord_rpc_description">Amuratsu қолданбасында манга оқу - манга оқу құралы</string>
     <string name="discord_logout_summary">Сақталған Discord авторизациясын тазарту</string>
     <string name="reading_s">%s оқылуда</string>
     <string name="read_on_s">%s арқылы оқу</string>
@@ -2359,7 +2359,7 @@
     <string name="sync_backend_switch_webdav_title">WebDAV көшірмесіне өту?</string>
     <string name="sync_backend_switch_webdav_confirm">Google Drive синхрондауы қазір қосулы. WebDAV сақтық көшірмесін қосу Google жүйесіне кіру деректерін сақтай отырып, Google Drive синхрондауын өшіреді.</string>
     <string name="sync_sign_in">Google Drive синхрондауын дайындау</string>
-    <string name="sync_sign_in_summary">Жазылымдар мен жаңарту жазбаларын синхрондау үшін Drive қолданбасының ең аз рұқсатымен Google Drive қолданба деректерін пайдаланады. Kototoro Drive файлдарыңызға қол жеткізе алмайды.</string>
+    <string name="sync_sign_in_summary">Жазылымдар мен жаңарту жазбаларын синхрондау үшін Drive қолданбасының ең аз рұқсатымен Google Drive қолданба деректерін пайдаланады. Amuratsu Drive файлдарыңызға қол жеткізе алмайды.</string>
     <string name="google_drive_sync_unregistered_build_error">Google Drive синхрондауы әзірлеушілік/nightly нұсқаларында қолдау көрсетілмейді. Ресми шығарылым нұсқаларын немесе WebDAV синхрондауын пайдаланыңыз.</string>
     <string name="sync_sign_out">Шығу</string>
     <string name="sync_account">Кірген</string>
@@ -2414,8 +2414,8 @@
     <string name="webdav_remote_backups_inspect">Көшірмелерді тексеру</string>
     <string name="webdav_remote_backups_inspect_summary">Әрбір қашықтағы сақтық көшірменің қауіпсіз қалпына келтірілетінін жүктеп алып, растаңыз.</string>
     <string name="webdav_remote_backups_clear">Қашықтағы көшірмелерді тазарту</string>
-    <string name="webdav_remote_backups_clear_summary">Конфигурацияланған WebDAV жолындағы барлық Kototoro сақтық көшірме файлдарын жою. Жергілікті деректер өзгертілмейді.</string>
-    <string name="webdav_remote_backups_clear_confirm">Конфигурацияланған WebDAV жолынан барлық Kototoro сақтық көшірме файлдарын жою керек пе? Жергілікті деректер өзгертілмейді.</string>
+    <string name="webdav_remote_backups_clear_summary">Конфигурацияланған WebDAV жолындағы барлық Amuratsu сақтық көшірме файлдарын жою. Жергілікті деректер өзгертілмейді.</string>
+    <string name="webdav_remote_backups_clear_confirm">Конфигурацияланған WebDAV жолынан барлық Amuratsu сақтық көшірме файлдарын жою керек пе? Жергілікті деректер өзгертілмейді.</string>
     <string name="webdav_remote_backups_loading">WebDAV сақтық көшірмелері жүктелуде…</string>
     <string name="webdav_remote_backup_status_unknown">Тексерілмеген</string>
     <string name="webdav_remote_backup_status_restorable">Қалпына келеді</string>
@@ -2823,7 +2823,7 @@
     <string name="trust_and_add">Senim artu jäne qosıw</string>
     <string name="trust_extension_repository_message">Репозиторий: %1$s\nВеб-сайт: %2$s\nSHA-256 отығы:\n%3$s\n\nБұл репозиторийге сенім артпас бұрын отықты жариялаушы арқылы тексеріңіз.</string>
     <string name="untrusted_extension_message">%1$s (%2$s) орнатылған, бірақ оның қолтаңбасы таңдалған репозиторий отығына сәйкес келмейді.\n\nРепозиторий отығы: %3$s\n\nБұл репозиторийден қайта орнату үшін бұрынғы орнатылған пакетті жойыңыз.</string>
-    <string name="incompatible_extension_message">%1$s %2$s орнатылмайды, себебі оның кітапхана нұсқасы (%3$s) Kototoro қолдайтын ауқымнан тыс.</string>
+    <string name="incompatible_extension_message">%1$s %2$s орнатылмайды, себебі оның кітапхана нұсқасы (%3$s) Amuratsu қолдайтын ауқымнан тыс.</string>
     <string name="built_in_sources">Кірістірілген</string>
     <string name="select_all">Барлығын таңдау</string>
     <string name="deselect_all">Таңдауды алу</string>
@@ -2863,7 +2863,7 @@
     <string name="welcome_plugins_repo_yakateam">Yakateam талдаушылары</string>
     <string name="welcome_plugins_repo_redo">Redo талдаушылары</string>
     <string name="welcome_plugins_repo_uma">UMA (Tsuki талдаушылары)</string>
-    <string name="welcome_plugins_disclaimer">Бұл кеңейтім репозиторийлерін тәуелсіз онлайн қауымдастықтар басқарады. Kototoro әзірлеушілерінің бұл үшінші тарап репозиторийлеріне ешқандай қатысы жоқ және оларды басқармайды. Бұл көздерді өз тәуекеліммен баптап жатқанымды растаймын.</string>
+    <string name="welcome_plugins_disclaimer">Бұл кеңейтім репозиторийлерін тәуелсіз онлайн қауымдастықтар басқарады. Amuratsu әзірлеушілерінің бұл үшінші тарап репозиторийлеріне ешқандай қатысы жоқ және оларды басқармайды. Бұл көздерді өз тәуекеліммен баптап жатқанымды растаймын.</string>
     <string name="welcome_plugins_start_btn">Репозиторийлерді баптау</string>
     <string name="welcome_plugins_configured">%1$d жаңа көз/репозиторий түрі бапталды: %2$s. Пакеттер әлі жүктелген жоқ — келесі қадамда сәйкестерін орнатыңыз.</string>
     <string name="welcome_plugins_configured_none">Ешқандай көз немесе репозиторий бапталмады. Желіні тексеріңіз немесе басқа репозиторийлерді таңдап көріңіз.</string>
@@ -2893,22 +2893,22 @@
     <string name="welcome_install_system_launch_failed">Жүйелік орнатушыны іске қосу мүмкін болмады: %1$s</string>
     <string name="welcome_install_skip">Өткізіп жіберу — кейінірек кеңейтімдерді басқару бөлімінде жасаймын</string>
     <string name="welcome_install_step_title">Кеңейтімдерді топтап орнату</string>
-    <string name="welcome_install_step_summary">Қолданылатын көз түрлері мен параметрлерді таңдаңыз, ал қалғанын Kototoro фондық режимде жүктеп, орнатып алады.</string>
+    <string name="welcome_install_step_summary">Қолданылатын көз түрлері мен параметрлерді таңдаңыз, ал қалғанын Amuratsu фондық режимде жүктеп, орнатып алады.</string>
     <string name="welcome_install_kinds_title">Орнатылатын көз түрлері</string>
     <string name="welcome_install_kinds_summary">Тек белгіленген түрлері ғана өңделеді. Белгіленбегендері (мысалы, кейінірек жасағыңыз келсе, Mihon) кеңейтімдерді басқару бөлімінде орнату үшін қалады.</string>
     <string name="welcome_install_kinds_empty">Әзірге ешқандай репозиторий бапталмаған. Кері қайтып, алдымен репозиторийлерді қосыңыз.</string>
     <string name="welcome_install_nsfw_title">NSFW мазмұнын қосу</string>
     <string name="welcome_install_nsfw_summary">Әдепкі бойынша өшірулі — ересектерге арналған пакеттер орнату тізімінен сүзіліп тасталады.</string>
-    <string name="welcome_intro_app_title">Kototoro · Ашық бастапқы кодты оқу құралы</string>
-    <string name="welcome_intro_body">Kototoro — бұл ашық бастапқы коды бар мультимедиялық оқу құралы / плеер. Ол қауымдастық кеңейтімдерінің кең экожүйесін қолдайды, бірақ өз бетінше ешқандай мазмұн көздерін қамтымайды.</string>
+    <string name="welcome_intro_app_title">Amuratsu · Ашық бастапқы кодты оқу құралы</string>
+    <string name="welcome_intro_body">Amuratsu — бұл ашық бастапқы коды бар мультимедиялық оқу құралы / плеер. Ол қауымдастық кеңейтімдерінің кең экожүйесін қолдайды, бірақ өз бетінше ешқандай мазмұн көздерін қамтымайды.</string>
     <string name="welcome_intro_concepts_title">Үш тұжырымдама, 30 секундта</string>
     <string name="welcome_intro_repo_label">Репозиторий</string>
     <string name="welcome_intro_repo_body">Тәуелсіз қауымдастық басқаратын үшкінші тарап кеңейтімдер жинағының URL мекенжайы (мысалы, Mihon репозиторийлері, TVBox тізімдері немесе LNReader плагин репозиторийлері).</string>
     <string name="welcome_intro_extension_label">Кеңейтім</string>
-    <string name="welcome_intro_extension_body">Репозиторий ішіндегі бір орнатылатын пакет — JAR, APK немесе JSON тізімі. Орнатылған кеңейтімдер Kototoro қолданбасына кез келген сайттан оқу немесе ойнату мүмкіндігін береді.</string>
+    <string name="welcome_intro_extension_body">Репозиторий ішіндегі бір орнатылатын пакет — JAR, APK немесе JSON тізімі. Орнатылған кеңейтімдер Amuratsu қолданбасына кез келген сайттан оқу немесе ойнату мүмкіндігін береді.</string>
     <string name="welcome_intro_source_label">Көз</string>
     <string name="welcome_intro_source_body">Кеңейтім орнатылғаннан немесе импортталғаннан кейін қолданбада көретін нақты мазмұн көзі — мысалы, белгілі бір манга немесе видео веб-сайты.</string>
-    <string name="welcome_intro_disclaimer">Үшінші тарап кеңейтімдерін пайдалану толығымен өз тәуекеліңізге жатады: орындалу уақытындағы әрекет, заңдылық пен мазмұн Kototoro жобасымен бақыланбайды.</string>
+    <string name="welcome_intro_disclaimer">Үшінші тарап кеңейтімдерін пайдалану толығымен өз тәуекеліңізге жатады: орындалу уақытындағы әрекет, заңдылық пен мазмұн Amuratsu жобасымен бақыланбайды.</string>
     <string name="welcome_intro_continue">Түсінікті — жалғастыру</string>
     <string name="welcome_done_title">Дәл солай</string>
     <string name="welcome_done_summary">Баптаулар жиынтығы және бірнеше кеңес.</string>
@@ -2917,10 +2917,10 @@
     <string name="welcome_done_json_note">JSON негізіндегі түрлер (Legado / TVBox / LNReader) автоматты түрде импортталады; егер басқа JSON репозиторийлерін де қосқан болсаңыз, оларды кеңейтімдерді басқару бөлімінде импорттаңыз.</string>
     <string name="welcome_done_title_finished">Баптау аяқталды</string>
     <string name="welcome_done_summary_finished">Шебер аяқталды — ешқандай репозиторий немесе көз автоматты түрде қосылмады.</string>
-    <string name="welcome_done_body_finished">Kototoro орнату кезінде ешқандай көздерді қосқан жоқ. Өз репозиторийлеріңіз бен көздеріңізді кез келген уақытта «Параметрлер» → «Контент көздері» (Кеңейтімдерді басқару) бөлімінде қоса аласыз.</string>
+    <string name="welcome_done_body_finished">Amuratsu орнату кезінде ешқандай көздерді қосқан жоқ. Өз репозиторийлеріңіз бен көздеріңізді кез келген уақытта «Параметрлер» → «Контент көздері» (Кеңейтімдерді басқару) бөлімінде қоса аласыз.</string>
     <string name="welcome_done_advice_title">Егер көз жұмыс істемесе</string>
     <string name="welcome_done_advice_summary">Қате туралы тиісті адамдар білуі үшін қысқаша ақаулықтарды жою жолы.</string>
-    <string name="welcome_done_advice_body">1. Кеңейтімнің түпнұсқа хост қолданбасы арқылы мәселені тексеріңіз — мысалы, Mihon түріндегі көзді Mihon қолданбасында сынап көру керек.\n2. Егер бұл мәселе сол жерде де орын алса, ол кеңейтімді ұстайтын репозиторийге қатысты: репозиторийдің өзінің URL мекенжайында мәселе (issue) ашыңыз.\n3. Егер ол тек Kototoro қолданбасында орын алса, оны Kototoro жобасының репозиторийінде хабарлаңыз және көз атауын, кеңейтім нұсқасын және не істеп көргеніңізді көрсетіңіз.</string>
+    <string name="welcome_done_advice_body">1. Кеңейтімнің түпнұсқа хост қолданбасы арқылы мәселені тексеріңіз — мысалы, Mihon түріндегі көзді Mihon қолданбасында сынап көру керек.\n2. Егер бұл мәселе сол жерде де орын алса, ол кеңейтімді ұстайтын репозиторийге қатысты: репозиторийдің өзінің URL мекенжайында мәселе (issue) ашыңыз.\n3. Егер ол тек Amuratsu қолданбасында орын алса, оны Amuratsu жобасының репозиторийінде хабарлаңыз және көз атауын, кеңейтім нұсқасын және не істеп көргеніңізді көрсетіңіз.</string>
     <string name="welcome_step_counter">%1$d-ші қадам (%2$d ішінен)</string>
     <string name="welcome_action_configure_repos">Таңдалған репозиторийлерді баптау</string>
     <string name="welcome_action_install_count">%1$d кеңейтімді орнату</string>
@@ -2954,7 +2954,7 @@
     <string name="welcome_permissions_notifications_title">Хабарландырулар</string>
     <string name="welcome_permissions_notifications_summary">Жүктеу, жаңарту және плеер хабарландыруларын көрсетеді.</string>
     <string name="welcome_permissions_packages_title">Орнатылған қолданбалар</string>
-    <string name="welcome_permissions_packages_summary">Kototoro қолданбасына орнатылған кеңейтімдер мен негізгі қолданбаларды (Mihon, Aniyomi, т.б.) анықтауға мүмкіндік береді. Манифесте көрсетілген және автоматты түрде беріледі.</string>
+    <string name="welcome_permissions_packages_summary">Amuratsu қолданбасына орнатылған кеңейтімдер мен негізгі қолданбаларды (Mihon, Aniyomi, т.б.) анықтауға мүмкіндік береді. Манифесте көрсетілген және автоматты түрде беріледі.</string>
     <string name="welcome_permissions_battery_title">Фондық жұмыс</string>
     <string name="welcome_permissions_battery_summary">Экран өшірулі немесе құрылғы бос тұрғанда фондық жүктеулер мен жаңартуларды жалғастырады.</string>
     <string name="welcome_permissions_battery_action">Рұқсат ету</string>
@@ -3370,11 +3370,11 @@
     <string name="pref_glass_blur_quality_performance">Өнімділік</string>
     <string name="pref_glass_blur_quality_balanced">Теңгерімді</string>
     <string name="pref_glass_blur_quality_quality">Сапа</string>
-    <string name="glass_material_family_kototoro">Kototoro (Ұсынылады)</string>
+    <string name="glass_material_family_kototoro">Amuratsu (Ұсынылады)</string>
     <string name="glass_material_family_haze">Haze</string>
     <string name="glass_material_family_cupertino">Cupertino</string>
     <string name="glass_material_family_fluent">Fluent</string>
-    <string name="glass_material_kototoro">Kototoro (Ұсынылады)</string>
+    <string name="glass_material_kototoro">Amuratsu (Ұсынылады)</string>
     <string name="glass_material_haze_ultra_thin">Haze Ultra Thin</string>
     <string name="glass_material_haze_thin">Haze Thin</string>
     <string name="glass_material_haze_regular">Haze Regular</string>

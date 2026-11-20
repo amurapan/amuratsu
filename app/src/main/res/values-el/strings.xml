@@ -147,7 +147,7 @@
     <string name="pages_animation">Κίνηση σελίδας</string>
     <string name="wrong_password">Λανθασμένος κωδικός</string>
     <string name="protect_application">Προστασία εφαρμογής</string>
-    <string name="protect_application_summary">Να ζητείται κωδικός κατά την εκκίνηση του Kototoro</string>
+    <string name="protect_application_summary">Να ζητείται κωδικός κατά την εκκίνηση του Amuratsu</string>
     <string name="repeat_password">Επανάληψη κωδικού</string>
     <string name="passwords_mismatch">Ασύμφωνοι κωδικοί</string>
     <string name="about">Σχετικά</string>
@@ -450,7 +450,7 @@
     <string name="downloads_removed">Οι λήψεις αφαιρέθηκαν</string>
     <string name="suggestions_enable_prompt">Θέλεις να λαμβάνεις εξατομικευμένες προτάσεις για manga;</string>
     <string name="web_view_unavailable">WebView μη διαθέσιμο: έλεγξε αν ο WebView πάροχος είναι εγκατεστημένος.</string>
-    <string name="manga_error_description_pattern">Πληροφορίες σφάλματος:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. Προσπάθησε να &lt;a href=%2$s&gt;ανοίξεις το manga μέσω ενός περιηγητή&lt;/a&gt; για να βεβαιωθείς για την διαθεσιμότητα του στην πηγή.&lt;br&gt;2. Βεβαιώσου πως χρησιμοποιείς την &lt;a href=kototoro://about&gt;πιο πρόσφατη έκδοση του Kototoro.&lt;/a&gt;&lt;br&gt;3. Αν είναι διαθέσιμο, στείλε αναφορά του σφάλματος στους δημιουργούς.</string>
+    <string name="manga_error_description_pattern">Πληροφορίες σφάλματος:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. Προσπάθησε να &lt;a href=%2$s&gt;ανοίξεις το manga μέσω ενός περιηγητή&lt;/a&gt; για να βεβαιωθείς για την διαθεσιμότητα του στην πηγή.&lt;br&gt;2. Βεβαιώσου πως χρησιμοποιείς την &lt;a href=amuratsu://about&gt;πιο πρόσφατη έκδοση του Amuratsu.&lt;/a&gt;&lt;br&gt;3. Αν είναι διαθέσιμο, στείλε αναφορά του σφάλματος στους δημιουργούς.</string>
     <string name="clear_network_cache">Καθάρισε προσωρινή μνήμη δικτύου</string>
     <string name="images_procy_description">Χρησιμοποίησε την υπηρεσία wsrv.nl για να μειώσεις την κίνηση δικτύου και να αυξήσεις την ταχύτητα φόρτωσης εικόνων αν είναι δυνατό</string>
     <string name="reader_info_bar_summary">Εμφάνιση ώρας και προόδου στο πάνω μέρος της οθόνης</string>
@@ -596,7 +596,7 @@
     <string name="page_save_manga_title_length">Μήκος τίτλου manga στα αποθηκευμένα αρχεία</string>
     <string name="page_save_manga_title_length_summary">Αριθμός χαρακτήρων τίτλου manga που διατηρούνται στα ονόματα αρχείων εικόνας (12–64)</string>
     <string name="pages_saved">Αποθήκευση σελίδων</string>
-    <string name="cloudstream_newpipe_required">Αυτή η επέκταση χρειάζεται κλάσεις NewPipe που δεν διαθέτει το NewPipe που περιλαμβάνεται στο Kototoro, επομένως δεν μπορεί να αναπαράγει βίντεο. Δοκιμάστε να ενημερώσετε την επέκταση ή το Kototoro.</string>
+    <string name="cloudstream_newpipe_required">Αυτή η επέκταση χρειάζεται κλάσεις NewPipe που δεν διαθέτει το NewPipe που περιλαμβάνεται στο Amuratsu, επομένως δεν μπορεί να αναπαράγει βίντεο. Δοκιμάστε να ενημερώσετε την επέκταση ή το Amuratsu.</string>
     <string name="clear_chapter_thumbnails">Εκκαθάριση μικρογραφιών κεφαλαίων</string>
     <string name="continuous_horizontal">Συνεχής οριζόντια</string>
     <string name="continuous_horizontal_reversed">Δεξιά προς αριστερά</string>
@@ -648,7 +648,7 @@
     <string name="replace_rule_disable_all_summary">Προσωρινή παύση εφαρμογής κανόνων αντικατάστασης</string>
     <string name="replace_rule_edit">Αλλαγή κανόνα</string>
     <string name="replace_rule_import">Εισαγωγή κανόνων Legado</string>
-    <string name="replace_rule_import_summary">Εισαγωγή πίνακα JSON εξαγόμενου από Legado ή Kototoro</string>
+    <string name="replace_rule_import_summary">Εισαγωγή πίνακα JSON εξαγόμενου από Legado ή Amuratsu</string>
     <string name="replace_rule_export">Εξαγωγή κανόνων</string>
     <string name="replace_rule_export_summary">Εξαγωγή κανόνων σε συμβατή μορφή JSON</string>
     <string name="replace_rule_empty">Χωρίς κανόνες αντικατάστασης</string>
@@ -783,8 +783,8 @@
     <string name="clear_local_manga_storage_prompt">Διαγραφή όλων των τοπικά αποθηκευμένων αρχείων manga; Αυτή η ενέργεια δεν αναιρείται.</string>
     <string name="clear_local_novel_storage_prompt">Διαγραφή όλων των τοπικά αποθηκευμένων αρχείων μυθιστορημάτων; Αυτή η ενέργεια δεν αναιρείται.</string>
     <string name="clear_local_video_storage_prompt">Διαγραφή όλων των τοπικά αποθηκευμένων αρχείων βίντεο; Αυτή η ενέργεια δεν αναιρείται.</string>
-    <string name="welcome_intro_title">Ρύθμιση του Kototoro</string>
-    <string name="welcome_intro_summary">Επιλέξτε πώς θέλετε να διαβάζετε και να παρακολουθείτε. Το Kototoro χρησιμοποιεί πλέον οικογένειες πηγών βασισμένες σε πρόσθετα για manga, μυθιστορήματα και βίντεο, συμπεριλαμβανομένων των JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader και Cloudstream.</string>
+    <string name="welcome_intro_title">Ρύθμιση του Amuratsu</string>
+    <string name="welcome_intro_summary">Επιλέξτε πώς θέλετε να διαβάζετε και να παρακολουθείτε. Το Amuratsu χρησιμοποιεί πλέον οικογένειες πηγών βασισμένες σε πρόσθετα για manga, μυθιστορήματα και βίντεο, συμπεριλαμβανομένων των JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader και Cloudstream.</string>
     <string name="welcome_step_start">Έναρξη</string>
     <string name="welcome_step_sources">Πηγές</string>
     <string name="welcome_step_preferences">Προτιμήσεις</string>
@@ -794,11 +794,11 @@
     <string name="welcome_glass_preset_title">Γυάλινο φινίρισμα</string>
     <string name="welcome_glass_preset_summary">Επιλέξτε την προρύθμιση γυάλινου φινιρίσματος για το στυλ iOS. Η διάθλαση είναι η προεπιλογή και μπορεί να ρυθμιστεί λεπerώς αργότερα στις ρυθμίσεις Εμφάνισης.</string>
     <string name="home_quick_action_wizard">Οδηγός</string>
-    <string name="welcome_restore_summary">Χρησιμοποιήσατε ξανά το Kototoro; Επαναφέρετε ένα αντίγραφο ασφαλείας, συνδεθείτε για συγχρονισμό ή προσθέστε τοπικούς φακέλους.</string>
+    <string name="welcome_restore_summary">Χρησιμοποιήσατε ξανά το Amuratsu; Επαναφέρετε ένα αντίγραφο ασφαλείας, συνδεθείτε για συγχρονισμό ή προσθέστε τοπικούς φακέλους.</string>
     <string name="welcome_source_formats_title">Επιλογή μορφών περιεχομένου</string>
     <string name="welcome_source_formats_summary">Α αυτά τα φίλτρα εξαρτάται ποιες οικογένειες πηγών θα είναι ενεργές μετά τη ρύθμιση.</string>
     <string name="welcome_ecosystems_title">Οικοσύστημα πηγών</string>
-    <string name="welcome_ecosystems_summary">Το Kototoro υποστηρίζει πολλαπλές οικογένειες πηγών προσθέτων για ανάγνωση και παρακολούθηση. Ξεκινήστε με τα προτεινόμενα αποθετήρια εδώ και ρυθμίστε τα εκ νέου αργότερα στη διαχείριση επεκτάσεων.</string>
+    <string name="welcome_ecosystems_summary">Το Amuratsu υποστηρίζει πολλαπλές οικογένειες πηγών προσθέτων για ανάγνωση και παρακολούθηση. Ξεκινήστε με τα προτεινόμενα αποθετήρια εδώ και ρυθμίστε τα εκ νέου αργότερα στη διαχείριση επεκτάσεων.</string>
     <string name="welcome_ecosystem_manga">Manga: Αναλυτές JAR, Mihon, IReader, LNReader</string>
     <string name="welcome_ecosystem_novel">Μυθιστόρημα: Legado, IReader, LNReader</string>
     <string name="welcome_ecosystem_video">Βίντεο: Aniyomi, TVBox, Cloudstream</string>
@@ -807,10 +807,10 @@
     <string name="welcome_preferences_summary">Επιλέξτε γλώσσες και τύπους περιεχομένου. Μπορείτε να το αλλάξετε αργότερα στις ρυθμίσεις πηγών.</string>
     <string name="welcome_spaces_title">Διαχωρισμός χώρων</string>
     <string name="welcome_spaces_summary">Οι χώροι προσφέρουν σε manga, μυθιστορήματα και anime ανεξάρτητη πλοήγηση, προτιμήσεις περιήγησης και πλαίσιο ανάγνωσης ή αναπαραγωγής. Προχωρημένες επιλογές και προσαρμοσμένοι χώροι είναι διαθέσιμοι στις Ρυθμίσεις &gt; Χρήστης &gt; Χώροι.</string>
-    <string name="welcome_ready_summary">Η ρύθμιση ολοκληρώθηκε. Το Kototoro θα ενεργοποιήσει πηγές που ταιριάζουν στις επιλεγμένες γλώσσες και μορφές σας. Μπορείτε να εκτελέσετε ξανά αυτόν τον οδηγό από τις Ρυθμίσεις &gt; Πηγές &gt; Οδηγός.</string>
-    <string name="welcome_jar_install_success">Kototoro: Επιτυχής λήψη και προσάρτηση %1$d νεότερων μηχανών ανάλυσης από το cloud!</string>
-    <string name="welcome_jar_install_up_to_date">Kototoro: Η επαλήθευση cloud ολοκληρώθηκε, οι τοπικοί αναλυτές είναι ενημερωμένοι! (Φορτώθηκαν %1$d πηγές συνολικά)</string>
-    <string name="welcome_jar_install_failed">Kototoro: Η φόρτωση δικτύου αναλυτών απέτυχε (%1$s), δοκιμάστε ξανά ή μεταβείτε στις ρυθμίσεις για αλλαγή διακομιστή μεσολάβησης</string>
+    <string name="welcome_ready_summary">Η ρύθμιση ολοκληρώθηκε. Το Amuratsu θα ενεργοποιήσει πηγές που ταιριάζουν στις επιλεγμένες γλώσσες και μορφές σας. Μπορείτε να εκτελέσετε ξανά αυτόν τον οδηγό από τις Ρυθμίσεις &gt; Πηγές &gt; Οδηγός.</string>
+    <string name="welcome_jar_install_success">Amuratsu: Επιτυχής λήψη και προσάρτηση %1$d νεότερων μηχανών ανάλυσης από το cloud!</string>
+    <string name="welcome_jar_install_up_to_date">Amuratsu: Η επαλήθευση cloud ολοκληρώθηκε, οι τοπικοί αναλυτές είναι ενημερωμένοι! (Φορτώθηκαν %1$d πηγές συνολικά)</string>
+    <string name="welcome_jar_install_failed">Amuratsu: Η φόρτωση δικτύου αναλυτών απέτυχε (%1$s), δοκιμάστε ξανά ή μεταβείτε στις ρυθμίσεις για αλλαγή διακομιστή μεσολάβησης</string>
     <string name="home_placeholder_title">Πίνακας ανάγνωσης</string>
     <string name="home_placeholder_subtitle">Δείτε την πρόσφατη ανάγνωση, τις ενημερώσεις, τη βιβλιοθήκη, το συγχρονισμό και τις πηγές σας σε ένα μέρος.</string>
     <string name="home_hero_local_subtitle">Συνεχίστε από εκεί που σταματήσατε ή επιστρέψατε σε ό,τι ανοίξατε πρόσφατα.</string>
@@ -1365,7 +1365,7 @@
     <string name="export_backup_for_other_apps_summary">Επιλέξτε εφαρμογή-στόχο και δημιουργήστε συμβατό αντίγραφο: Kotatsu, Mihon, Aniyomi ή Usagi.</string>
     <string name="export_backup_choose_target_app">Επιλογή εφαρμογής-στόχου</string>
     <string name="export_kotatsu_backup">Εξαγωγή αντιγράφου Kotatsu</string>
-    <string name="export_kotatsu_backup_summary">Δημιουργία ξεχωριστού παλαιού αντιγράφου για εφαρμογές Kotatsu χωρίς ενότητες Kototoro.</string>
+    <string name="export_kotatsu_backup_summary">Δημιουργία ξεχωριστού παλαιού αντιγράφου για εφαρμογές Kotatsu χωρίς ενότητες Amuratsu.</string>
     <string name="export_kotatsu_backup_saved">Αποθήκ. αντιγράφου Kotatsu</string>
     <string name="export_mihon_backup">Εξαγωγή αντιγράφου Mihon</string>
     <string name="export_mihon_backup_summary">Εξαγωγή αγαπημένων, κατηγοριών και προόδου ανάγνωσης μόνο για πηγές Mihon.</string>
@@ -1395,7 +1395,7 @@
     <string name="email_password_enter_hint">Εισάγετε το email και τον κωδικό σας για συνέχεια</string>
     <string name="username_password_enter_hint">Εισάγετε το όνομα χρήστη και τον κωδικό σας</string>
     <string name="restore_kototoro_backup">Επαναφορά αντιγράφου</string>
-    <string name="restore_kototoro_backup_summary">Επαναφέρετε αντίγραφο Kototoro οποιασδήποτε έκδοσης ή αντίγραφο Kotatsu. Η μορφή ανιχνεύεται αυτόματα.</string>
+    <string name="restore_kototoro_backup_summary">Επαναφέρετε αντίγραφο Amuratsu οποιασδήποτε έκδοσης ή αντίγραφο Kotatsu. Η μορφή ανιχνεύεται αυτόματα.</string>
     <string name="restore_mode_replace_existing">Αντικατάσταση υπαρχόντων δεδομένων</string>
     <string name="restore_mode_replace_existing_summary">Οι ενότητες που επαναφέρονται εκκαθαρίζονται· αγαπημένα και ιστορικό που λείπουν αφαιρούνται</string>
     <string name="restore_mode_merge_with_existing">Συγχώνευση με υπάρχοντα δεδομένα</string>
@@ -2012,7 +2012,7 @@
     <string name="show_pages_thumbs">Εμφάνιση μικρογραφιών σελίδων</string>
     <string name="show_pages_thumbs_summary">Ενεργοποίηση της καρτέλας \"Σελίδες\" στην οθόνη λεπτομερειών</string>
     <string name="error_no_data_received">Δεν ελήφθησαν δεδομένα από τον διακομιστή</string>
-    <string name="unsupported_backup_message">Επιλέξτε ένα έγκυρο αρχείο αντιγράφου ασφαλείας του Kototoro</string>
+    <string name="unsupported_backup_message">Επιλέξτε ένα έγκυρο αρχείο αντιγράφου ασφαλείας του Amuratsu</string>
     <string name="hours_short">%d ώ</string>
     <string name="minutes_short">%d λ</string>
     <string name="seconds_short">%d δ</string>
@@ -2064,8 +2064,8 @@
     <string name="chapters_read">Αναγνωσμένα κεφάλαια</string>
     <string name="chapters_left">Κεφάλαια που απομένουν</string>
     <string name="external_source">Εξωτερική/πρόσθετο</string>
-    <string name="plugin_incompatible">Μη συμβατό πρόσθετο ή εσωτερικό σφάλμα. Βεβαιωθείτε ότι χρησιμοποιείτε την πιο πρόσφατη έκδοση του πρόσθετου και του Kototoro</string>
-    <string name="plugin_incompatible_with_cause">Σφάλμα πρόσθετου: %s\n Βεβαιωθείτε ότι χρησιμοποιείτε την πιο πρόσφατη έκδοση του πρόσθετου και του Kototoro</string>
+    <string name="plugin_incompatible">Μη συμβατό πρόσθετο ή εσωτερικό σφάλμα. Βεβαιωθείτε ότι χρησιμοποιείτε την πιο πρόσφατη έκδοση του πρόσθετου και του Amuratsu</string>
+    <string name="plugin_incompatible_with_cause">Σφάλμα πρόσθετου: %s\n Βεβαιωθείτε ότι χρησιμοποιείτε την πιο πρόσφατη έκδοση του πρόσθετου και του Amuratsu</string>
     <string name="plugin_missing_host_classes">Δεν είναι δυνατή η εγκατάσταση του %1$s επειδή εξαρτάται από μη υποστηριζόμενες κλάσεις κεντρικού υπολογιστή %2$s:\n%3$s</string>
     <string name="connection_ok">Η σύνδεση είναι εντάξει</string>
     <string name="invalid_proxy_configuration">Μη έγκυρη διαμόρφωση διαμεσολαβητή</string>
@@ -2265,7 +2265,7 @@
     <string name="search_disabled_sources">Αναζήτηση σε απενεργοποιημένες πηγές</string>
     <string name="error_details">Λεπτομέρειες σφάλματος</string>
     <string name="error_disclaimer_manga">Δοκιμάστε να ανοίξετε το manga σε πρόγραμμα περιήγησης για να βεβαιωθείτε ότι είναι διαθέσιμο.</string>
-    <string name="error_disclaimer_app_outdated">Φαίνεται ότι η έκδοση του Kototoro είναι παλιά. Εγκαταστήστε την πιο πρόσφατη.</string>
+    <string name="error_disclaimer_app_outdated">Φαίνεται ότι η έκδοση του Amuratsu είναι παλιά. Εγκαταστήστε την πιο πρόσφατη.</string>
     <string name="error_disclaimer_report">Μπορείτε να στείλετε αναφορά σφάλματος στους προγραμματιστές</string>
     <string name="enable_source_manga">Ενεργοποίηση πηγής manga</string>
     <string name="enable_source_novel">Ενεργ. πηγής μυθιστ.</string>
@@ -2283,7 +2283,7 @@
     <string name="recommendation_novel">προτεινόμενα μυθιστορήματα</string>
     <string name="recommendation_video">προτεινόμενα βίντεο</string>
     <string name="link_to_manga_on_s">Σύνδεσμος σε manga στο %s</string>
-    <string name="link_to_manga_in_app">Σύνδεσμος σε manga στο Kototoro</string>
+    <string name="link_to_manga_in_app">Σύνδεσμος σε manga στο Amuratsu</string>
     <string name="clear_browser_data">Εκκαθάριση δεδομένων</string>
     <string name="clear_browser_data_summary">Εκκαθάριση προσωρινής μνήμης και cookies. Προσοχή: Η σύνδεση σε πηγές μπορεί να χαθεί</string>
     <string name="no_write_permission_to_file">Δεν υπάρχει άδεια εγγραφής αρχείου</string>
@@ -2333,7 +2333,7 @@
     <string name="discord_token_hint">Επικολλήστε το Discord Token σας εδώ</string>
     <string name="discord_rpc_summary">Εμφάνιση της κατάστασης ανάγνωσης στο Discord</string>
     <string name="obtain">Απόκτηση</string>
-    <string name="discord_rpc_description">Ανάγνωση manga στο Kototoro - μια εφαρμογή ανάγνωσης manga</string>
+    <string name="discord_rpc_description">Ανάγνωση manga στο Amuratsu - μια εφαρμογή ανάγνωσης manga</string>
     <string name="discord_logout_summary">Εκκαθάριση της αποθηκευμένης εξουσιοδότησης Discord</string>
     <string name="reading_s">Ανάγνωση %s</string>
     <string name="read_on_s">Ανάγνωση σε %s</string>
@@ -2361,7 +2361,7 @@
     <string name="sync_backend_switch_webdav_title">Μετάβαση στο αντίγραφο WebDAV;</string>
     <string name="sync_backend_switch_webdav_confirm">Ο συγχρονισμός Google Drive είναι ενεργός. Η ενεργοποίηση του αντιγράφου ασφαλείας WebDAV θα απενεργοποιήσει το συγχρονισμό Google Drive διατηρώντας παράλληλα τη σύνδεσή σας στη Google.</string>
     <string name="sync_sign_in">Προετοιμασία συγχρονισμού Google Drive</string>
-    <string name="sync_sign_in_summary">Χρησιμοποιεί δεδομένα εφαρμογής Google Drive με την ελάχιστη άδεια appdata για το συγχρονισμό συνδρομών και ενημέρωση εγγραφών. Το Kototoro δεν έχει πρόσβαση στα αρχεία του Drive σας.</string>
+    <string name="sync_sign_in_summary">Χρησιμοποιεί δεδομένα εφαρμογής Google Drive με την ελάχιστη άδεια appdata για το συγχρονισμό συνδρομών και ενημέρωση εγγραφών. Το Amuratsu δεν έχει πρόσβαση στα αρχεία του Drive σας.</string>
     <string name="google_drive_sync_unregistered_build_error">Ο συγχρονισμός Google Drive δεν υποστηρίζεται σε εκδόσεις ανάπτυξης/nightly. Χρησιμοποιήστε επίσημες εκδόσεις κυκλοφορίας ή συγχρονισμό WebDAV.</string>
     <string name="sync_sign_out">Αποσύνδεση</string>
     <string name="sync_account">Συνδεδεμένος(-η)</string>
@@ -2416,8 +2416,8 @@
     <string name="webdav_remote_backups_inspect">Έλεγχος αντιγράφων</string>
     <string name="webdav_remote_backups_inspect_summary">Λήψη και επαλήθευση ότι κάθε απομακρυσμένο αντίγραφο μπορεί να επαναφερθεί με ασφάλεια.</string>
     <string name="webdav_remote_backups_clear">Εκκαθάριση απομακρυσμένων WebDAV</string>
-    <string name="webdav_remote_backups_clear_summary">Διαγραφή όλων των αρχείων αντιγράφων Kototoro στη διαμορφωμένη διαδρομή WebDAV. Τα τοπικά δεδομένα δεν αλλάζουν.</string>
-    <string name="webdav_remote_backups_clear_confirm">Διαγραφή όλων των αρχείων αντιγράφων Kototoro από τη διαμορφωμένη διαδρομή WebDAV; Τα τοπικά δεδομένα δεν θα αλλάξουν.</string>
+    <string name="webdav_remote_backups_clear_summary">Διαγραφή όλων των αρχείων αντιγράφων Amuratsu στη διαμορφωμένη διαδρομή WebDAV. Τα τοπικά δεδομένα δεν αλλάζουν.</string>
+    <string name="webdav_remote_backups_clear_confirm">Διαγραφή όλων των αρχείων αντιγράφων Amuratsu από τη διαμορφωμένη διαδρομή WebDAV; Τα τοπικά δεδομένα δεν θα αλλάξουν.</string>
     <string name="webdav_remote_backups_loading">Φόρτωση αντιγράφων WebDAV…</string>
     <string name="webdav_remote_backup_status_unknown">Δεν ελέγχθηκε</string>
     <string name="webdav_remote_backup_status_restorable">Επαναφέρσιμο</string>
@@ -2825,7 +2825,7 @@
     <string name="trust_and_add">Εμπισσύνη και προσθήκη</string>
     <string name="trust_extension_repository_message">Αποθετήριο: %1$s\nΙστότοπος: %2$s\nΑποτύπωμα SHA-256:\n%3$s\n\nΕπαληθεύστε αυτό το αποτύπωμα με τον εκδότη πριν εμπιστευτείτε το αποθετήριο.</string>
     <string name="untrusted_extension_message">Το %1$s (%2$s) είναι εγκατεστημένο, αλλά η υπογραφή του δεν ταιριάζει με το επιλεγμένο αποτύπωμα αποθετηρίου.\n\nΑποτύπωμα αποθετηρίου: %3$s\n\nΚαταργήστε το εγκατεστημένο πακέτο πριν το επανεγκαταστήσετε από αυτό το αποθετήριο.</string>
-    <string name="incompatible_extension_message">Δεν είναι δυνατή η εγκατάσταση του %1$s %2$s επειδή η έκδοση βιβλιοθήκης του (%3$s) είναι εκτός του υποστηριζόμενου εύρους του Kototoro.</string>
+    <string name="incompatible_extension_message">Δεν είναι δυνατή η εγκατάσταση του %1$s %2$s επειδή η έκδοση βιβλιοθήκης του (%3$s) είναι εκτός του υποστηριζόμενου εύρους του Amuratsu.</string>
     <string name="built_in_sources">Εσωτερικές</string>
     <string name="select_all">Επιλογή όλων</string>
     <string name="deselect_all">Αποεπιλογή όλων</string>
@@ -2865,7 +2865,7 @@
     <string name="welcome_plugins_repo_yakateam">Parsers Yakateam</string>
     <string name="welcome_plugins_repo_redo">Parsers Redo</string>
     <string name="welcome_plugins_repo_uma">UMA (Parsers Tsuki)</string>
-    <string name="welcome_plugins_disclaimer">Αυτά τα αποθετήρια επεκτάσεων συντηρούνται από ανεξάρτητες διαδικτυακές κοινότητες. Οι προγραμματιστές του Kototoro δεν έχουν καμία σχέση, έλεγχο ή συνεργασία με αυτά τα αποθετήρια τρίτων. Αναγνωρίζω ότι διαμορφώνω αυτές τις πηγές με δική μου ευθύνη.</string>
+    <string name="welcome_plugins_disclaimer">Αυτά τα αποθετήρια επεκτάσεων συντηρούνται από ανεξάρτητες διαδικτυακές κοινότητες. Οι προγραμματιστές του Amuratsu δεν έχουν καμία σχέση, έλεγχο ή συνεργασία με αυτά τα αποθετήρια τρίτων. Αναγνωρίζω ότι διαμορφώνω αυτές τις πηγές με δική μου ευθύνη.</string>
     <string name="welcome_plugins_start_btn">Διαμόρφωση αποθετηρίων</string>
     <string name="welcome_plugins_configured">Διαμορφώθηκαν %1$d νέοι τύποι πηγών/αποθετηρίων: %2$s. Τα πακέτα δεν έχουν ληφθεί ακόμα — εγκαταστήστε τα αντίστοιχα στο επόμενο βήμα.</string>
     <string name="welcome_plugins_configured_none">Δεν ήταν δυνατή η διαμόρφωση πηγής ή αποθετηρίου. Ελέγξτε το δίκτυό σας ή επιλέξτε άλλα αποθετήρια και δοκιμάστε ξανά.</string>
@@ -2895,22 +2895,22 @@
     <string name="welcome_install_system_launch_failed">Αδυναμία εκκίνησης του προγράμματος εγκατάστασης συστήματος: %1$s</string>
     <string name="welcome_install_skip">Παράκαμψη εγκατάστασης — Θα το κάνω στη Διαχείριση επεκτάσεων αργότερα</string>
     <string name="welcome_install_step_title">Μαζική εγκατάσταση επεκτάσεων</string>
-    <string name="welcome_install_step_summary">Επιλέξτε ποιοι τύποι πηγών και ρυθμίσεις θα χρησιμοποιηθούν και αφήστε το Kototoro να κατεβάσει και να εγκαταστήσει τα πάντα στο παρασκήνιο.</string>
+    <string name="welcome_install_step_summary">Επιλέξτε ποιοι τύποι πηγών και ρυθμίσεις θα χρησιμοποιηθούν και αφήστε το Amuratsu να κατεβάσει και να εγκαταστήσει τα πάντα στο παρασκήνιο.</string>
     <string name="welcome_install_kinds_title">Τύποι πηγών για εγκατάσταση</string>
     <string name="welcome_install_kinds_summary">Θα διαχειριστεί μόνο τους τύπους που έχετε επιλέξει. Οι μη επιλεγμένοι (π.χ. Mihon, αν προτιμάτε να το κάνετε αργότερα) παραμένουν για να τους εγκαταστήσετε στη Διαχείριση επεκτάσεων.</string>
     <string name="welcome_install_kinds_empty">Δεν έχουν διαμορφωθεί αποθετήρια ακόμα. Ππιστρέψτε και προσθέστε αποθετήρια πρώτα.</string>
     <string name="welcome_install_nsfw_title">Συμπερίληψη περιεχομένου NSFW</string>
     <string name="welcome_install_nsfw_summary">Ανενεργό από προεπιλογή — τα πακέτα μόνο για ενηλίκους φιλτράρονται από τη λίστα εγκατάστασης.</string>
-    <string name="welcome_intro_app_title">Kototoro · Πρόγραμμα ανάγνωσης ανοιχτού κώδικα</string>
-    <string name="welcome_intro_body">Το Kototoro είναι ένα πρόγραμμα ανάγνωσης / αναπαραγωγής πολυμέσων ανοιχτού κώδικα. Υποστηρίζει ένα ευρύ οικοσύστημα κοινοτικών επεκτάσεων, αλλά δεν περιλαμβάνει δικές του πηγές περιεχομένου.</string>
+    <string name="welcome_intro_app_title">Amuratsu · Πρόγραμμα ανάγνωσης ανοιχτού κώδικα</string>
+    <string name="welcome_intro_body">Το Amuratsu είναι ένα πρόγραμμα ανάγνωσης / αναπαραγωγής πολυμέσων ανοιχτού κώδικα. Υποστηρίζει ένα ευρύ οικοσύστημα κοινοτικών επεκτάσεων, αλλά δεν περιλαμβάνει δικές του πηγές περιεχομένου.</string>
     <string name="welcome_intro_concepts_title">Τρεις έννοιες, σε 30 δευτερόλεπτα</string>
     <string name="welcome_intro_repo_label">Αποθετήριο</string>
     <string name="welcome_intro_repo_body">Μια διεύθυνση URL σε μια συλλογή επεκτάσεων τρίτων, που συντηρείται από μια ανεξάρτητη κοινότητα (για παράδειγμα, αποθετήρια Mihon, λίστες TVBox ή αποθετήρια προσθέτων LNReader).</string>
     <string name="welcome_intro_extension_label">Επέκταση</string>
-    <string name="welcome_intro_extension_body">Ένα εγκαταστάσιμο πακέτο μέσα σε ένα αποθετήριο — ένα JAR, ένα APK ή μια λίστα JSON. Οι εγκατεστημένες επεκτάσεις δίνουν στο Kototoro τη δυνατότητα ανάγνωσης ή αναπαραγωγής από έναν ιστότοπο.</string>
+    <string name="welcome_intro_extension_body">Ένα εγκαταστάσιμο πακέτο μέσα σε ένα αποθετήριο — ένα JAR, ένα APK ή μια λίστα JSON. Οι εγκατεστημένες επεκτάσεις δίνουν στο Amuratsu τη δυνατότητα ανάγνωσης ή αναπαραγωγής από έναν ιστότοπο.</string>
     <string name="welcome_intro_source_label">Πηγή</string>
     <string name="welcome_intro_source_body">Μια συγκεκριμένη πηγή περιεχομένου που βλέπετε στην εφαρμογή μετά την εγκατάσταση ή εισαγωγή μιας επέκτασης — για παράδειγμα, ένας συγκεκριμένος ιστότοπος manga ή βίντεο.</string>
-    <string name="welcome_intro_disclaimer">Η χρήση επεκτάσεων τρίτων γίνεται αποκλειστικά με δική σας ευθύνη: η συμπεριφορά κατά την εκτέλεση, η νομιμότητα και το περιεχόμενο δεν ελέγχονται από το έργο Kototoro.</string>
+    <string name="welcome_intro_disclaimer">Η χρήση επεκτάσεων τρίτων γίνεται αποκλειστικά με δική σας ευθύνη: η συμπεριφορά κατά την εκτέλεση, η νομιμότητα και το περιεχόμενο δεν ελέγχονται από το έργο Amuratsu.</string>
     <string name="welcome_intro_continue">Καταλαβαίνω — συνέχιση</string>
     <string name="welcome_done_title">Σχεδόν έτοιμο</string>
     <string name="welcome_done_summary">Η σύνοψη της ρύθμισης και μερικές συμβουλές.</string>
@@ -2919,10 +2919,10 @@
     <string name="welcome_done_json_note">Οι τύποι που βασίζονται σε JSON (Legado / TVBox / LNReader) εισάγονται αυτόματα· εάν προσθέσατε και άλλα αποθετήρια JSON, εισαγάγετε τα στη Διαχείριση επεκτάσεων.</string>
     <string name="welcome_done_title_finished">Η ρύθμιση ολοκληρώθηκε</string>
     <string name="welcome_done_summary_finished">Ο οδηγός τελείωσε — δεν προστέθηκαν αυτόματα αποθετήρια ή πηγές.</string>
-    <string name="welcome_done_body_finished">Το Kototoro δεν πρόσθεσε καμία πηγή κατά τη ρύθμιση. Μπορείτε να προσθέσετε τα δικά σας αποθετήρια και πηγές ανά πάσα στιγμή στις Ρυθμίσεις → Πηγές περιεχομένου (Διαχείριση επεκτάσεων).</string>
+    <string name="welcome_done_body_finished">Το Amuratsu δεν πρόσθεσε καμία πηγή κατά τη ρύθμιση. Μπορείτε να προσθέσετε τα δικά σας αποθετήρια και πηγές ανά πάσα στιγμή στις Ρυθμίσεις → Πηγές περιεχομένου (Διαχείριση επεκτάσεων).</string>
     <string name="welcome_done_advice_title">Αν μια πηγή δεν λειτουργεί</string>
     <string name="welcome_done_advice_summary">Μια σύντομη διαδρομή αντιμετώπισης προβλημάτων, ώστε τα σωστά άτομα να δουν την αναφορά.</string>
-    <string name="welcome_done_advice_body">1. Επιβεβαιώστε το ζήτημα χρησιμοποιώντας την αρχική εφαρμογή-ξενιστή της επέκτασης — για παράδειγμα, μια πηγή τύπου Mihon θα πρέπει να δοκιμαστεί στην εφαρμογή Mihon.\n2. Εάν το πρόβλημα συμβαίνει και εκεί, αφορά το αποθετήριο που συντηρεί την επέκταση: ανοίξτε ένα ζήτημα στη διεύθυνση URL του αποθετηρίου.\n3. Εάν συμβαίνει μόνο στο Kototoro, αναφέρετέ το στο αποθετήριο του έργου Kototoro και συμπεριλάβετε το όνομα της πηγής, την έκδοση της επέκτασης και τι δοκιμάσατε.</string>
+    <string name="welcome_done_advice_body">1. Επιβεβαιώστε το ζήτημα χρησιμοποιώντας την αρχική εφαρμογή-ξενιστή της επέκτασης — για παράδειγμα, μια πηγή τύπου Mihon θα πρέπει να δοκιμαστεί στην εφαρμογή Mihon.\n2. Εάν το πρόβλημα συμβαίνει και εκεί, αφορά το αποθετήριο που συντηρεί την επέκταση: ανοίξτε ένα ζήτημα στη διεύθυνση URL του αποθετηρίου.\n3. Εάν συμβαίνει μόνο στο Amuratsu, αναφέρετέ το στο αποθετήριο του έργου Amuratsu και συμπεριλάβετε το όνομα της πηγής, την έκδοση της επέκτασης και τι δοκιμάσατε.</string>
     <string name="welcome_step_counter">Βήμα %1$d από %2$d</string>
     <string name="welcome_action_configure_repos">Διαμόρφωση επιλεγμένων αποθετηρίων</string>
     <string name="welcome_action_install_count">Εγκατάσταση %1$d επεκτάσεων</string>
@@ -2956,7 +2956,7 @@
     <string name="welcome_permissions_notifications_title">Ειδοποιήσεις</string>
     <string name="welcome_permissions_notifications_summary">Εμφανίζει ειδοποιήσεις λήψεων, ενημερώσεων και προγραμματιστή.</string>
     <string name="welcome_permissions_packages_title">Εφαρμογές</string>
-    <string name="welcome_permissions_packages_summary">Επιτρέπει στο Kototoro να εντοπίζει ήδη εγκατεστημένες επεκτάσεις και εφαρμογές υποδοχής (Mihon, Aniyomi, …). Δηλώνεται στο manifest και παραχωρείται αυτόματα.</string>
+    <string name="welcome_permissions_packages_summary">Επιτρέπει στο Amuratsu να εντοπίζει ήδη εγκατεστημένες επεκτάσεις και εφαρμογές υποδοχής (Mihon, Aniyomi, …). Δηλώνεται στο manifest και παραχωρείται αυτόματα.</string>
     <string name="welcome_permissions_battery_title">Λειτουργία στο παρασκήνιο</string>
     <string name="welcome_permissions_battery_summary">Διατηρεί τις λήψεις και τις ενημερώσεις στο παρασκήνιο όταν η οθόνη είναι σβηστή ή η συσκευή είναι σε αδράνεια.</string>
     <string name="welcome_permissions_battery_failed">Αδυναμία άνοιγμα ρυθμίσεων μπαταρίας: %1$s</string>
@@ -3368,11 +3368,11 @@
     <string name="pref_glass_blur_quality_performance">Επίδοση</string>
     <string name="pref_glass_blur_quality_balanced">Ισορροπ.</string>
     <string name="pref_glass_blur_quality_quality">Ποιότητα</string>
-    <string name="glass_material_family_kototoro">Kototoro (Προτεινόμενο)</string>
+    <string name="glass_material_family_kototoro">Amuratsu (Προτεινόμενο)</string>
     <string name="glass_material_family_haze">Haze</string>
     <string name="glass_material_family_cupertino">Cupertino</string>
     <string name="glass_material_family_fluent">Fluent</string>
-    <string name="glass_material_kototoro">Kototoro (Προτεινόμενο)</string>
+    <string name="glass_material_kototoro">Amuratsu (Προτεινόμενο)</string>
     <string name="glass_material_haze_ultra_thin">Haze Εξ. Λεπτό</string>
     <string name="glass_material_haze_thin">Haze Λεπτό</string>
     <string name="glass_material_haze_regular">Haze Κανονικό</string>

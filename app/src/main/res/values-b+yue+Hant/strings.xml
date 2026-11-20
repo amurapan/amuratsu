@@ -120,7 +120,7 @@
     <string name="_import">匯入</string>
     <string name="delete">刪除</string>
     <string name="operation_not_supported">不支援此操作</string>
-    <string name="cloudstream_newpipe_required">此擴充功能需要 Kototoro 內建之 NewPipe 所沒有的 NewPipe 類別，因此無法播放影片。請嘗試更新擴充功能或 Kototoro。</string>
+    <string name="cloudstream_newpipe_required">此擴充功能需要 Amuratsu 內建之 NewPipe 所沒有的 NewPipe 類別，因此無法播放影片。請嘗試更新擴充功能或 Amuratsu。</string>
     <string name="text_file_not_supported">請選擇 ZIP 或 CBZ 檔案。</string>
     <string name="no_description">無簡介</string>
     <string name="clear_pages_cache">清除頁面快取</string>
@@ -184,7 +184,7 @@
     <string name="replace_rule_disable_all_summary">暫時停止套用取代規則</string>
     <string name="replace_rule_edit">編輯規則</string>
     <string name="replace_rule_import">匯入 Legado 規則</string>
-    <string name="replace_rule_import_summary">匯入由 Legado 或 Kototoro 匯出的 JSON 陣列</string>
+    <string name="replace_rule_import_summary">匯入由 Legado 或 Amuratsu 匯出的 JSON 陣列</string>
     <string name="replace_rule_export">匯出規則</string>
     <string name="replace_rule_export_summary">以相容的 JSON 格式匯出規則</string>
     <string name="replace_rule_empty">沒有取代規則</string>
@@ -315,7 +315,7 @@
     <string name="enter_password">輸入密碼</string>
     <string name="wrong_password">密碼錯誤</string>
     <string name="protect_application">鎖定應用程式</string>
-    <string name="protect_application_summary">啟動 Kototoro 時要求輸入密碼</string>
+    <string name="protect_application_summary">啟動 Amuratsu 時要求輸入密碼</string>
     <string name="repeat_password">再輸入一次密碼</string>
     <string name="passwords_mismatch">兩次密碼唔一致</string>
     <string name="about">關於</string>
@@ -422,8 +422,8 @@
     <string name="clear_local_novel_storage_prompt">刪除所有本機儲存與匯入的小說檔案？此操作無法復原。</string>
     <string name="clear_local_video_storage_prompt">刪除所有本機儲存與匯入的影片檔案？此操作無法復原。</string>
     <string name="welcome">歡迎</string>
-    <string name="welcome_intro_title">設定 Kototoro</string>
-    <string name="welcome_intro_summary">選擇您喜愛的閱讀與觀看方式。Kototoro 現已支援基於外掛的漫畫、小說及影片來源系列，包含 JAR、Mihon、Aniyomi、IReader、Legado、TVBox、LNReader 與 Cloudstream。</string>
+    <string name="welcome_intro_title">設定 Amuratsu</string>
+    <string name="welcome_intro_summary">選擇您喜愛的閱讀與觀看方式。Amuratsu 現已支援基於外掛的漫畫、小說及影片來源系列，包含 JAR、Mihon、Aniyomi、IReader、Legado、TVBox、LNReader 與 Cloudstream。</string>
     <string name="welcome_step_start">開始</string>
     <string name="welcome_step_sources">來源</string>
     <string name="welcome_step_preferences">偏好設定</string>
@@ -433,11 +433,11 @@
     <string name="welcome_glass_preset_title">玻璃質感</string>
     <string name="welcome_glass_preset_summary">為 iOS 風格挑選玻璃質感預設集。預設為折射效果，日後可在「外觀」設定中進行微調。</string>
     <string name="home_quick_action_wizard">精靈</string>
-    <string name="welcome_restore_summary">之前用過 Kototoro？請還原備份、登入以進行同步，或先新增本機資料夾。</string>
+    <string name="welcome_restore_summary">之前用過 Amuratsu？請還原備份、登入以進行同步，或先新增本機資料夾。</string>
     <string name="welcome_source_formats_title">選擇內容格式</string>
     <string name="welcome_source_formats_summary">這些篩選條件決定了設定完成後啟用的來源系列。</string>
     <string name="welcome_ecosystems_title">來源生態系</string>
-    <string name="welcome_ecosystems_summary">Kototoro 支援多種用於閱讀與觀看的外掛來源系列。請從此處建議的儲存庫開始，然後再於擴充功能管理中進行微調。</string>
+    <string name="welcome_ecosystems_summary">Amuratsu 支援多種用於閱讀與觀看的外掛來源系列。請從此處建議的儲存庫開始，然後再於擴充功能管理中進行微調。</string>
     <string name="welcome_ecosystem_manga">漫畫：JAR 解析器、Mihon、IReader、LNReader</string>
     <string name="welcome_ecosystem_novel">小說：Legado、IReader、LNReader</string>
     <string name="welcome_ecosystem_video">影片：Aniyomi、TVBox、Cloudstream</string>
@@ -446,10 +446,10 @@
     <string name="welcome_preferences_summary">選擇語言和內容類型。您稍後可以在來源設定中進行更改。</string>
     <string name="welcome_spaces_title">區隔您的空間</string>
     <string name="welcome_spaces_summary">空間為漫畫、小說和動畫提供獨立的導覽、瀏覽偏好以及閱讀或播放內容。進階選項和自訂空間可在日後的「設定 ＞ 使用者 ＞ 空間」中找到。</string>
-    <string name="welcome_ready_summary">設定已完成。Kototoro 將啟用符合您所選語言和格式的來源。您隨時可以從「設定 ＞ 內容來源 ＞ 設定精靈」再次執行此精靈。</string>
-    <string name="welcome_jar_install_success">Kototoro：已成功從雲端網路取得並掛載 %1$d 個最新解析器引擎！</string>
-    <string name="welcome_jar_install_up_to_date">Kototoro：雲端驗證完成，本機解析器已是最新！ (共載入 %1$d 個來源)</string>
-    <string name="welcome_jar_install_failed">Kototoro：解析器網路載入失敗 (%1$s)，請重試或前往設定切換代理伺服器鏡像</string>
+    <string name="welcome_ready_summary">設定已完成。Amuratsu 將啟用符合您所選語言和格式的來源。您隨時可以從「設定 ＞ 內容來源 ＞ 設定精靈」再次執行此精靈。</string>
+    <string name="welcome_jar_install_success">Amuratsu：已成功從雲端網路取得並掛載 %1$d 個最新解析器引擎！</string>
+    <string name="welcome_jar_install_up_to_date">Amuratsu：雲端驗證完成，本機解析器已是最新！ (共載入 %1$d 個來源)</string>
+    <string name="welcome_jar_install_failed">Amuratsu：解析器網路載入失敗 (%1$s)，請重試或前往設定切換代理伺服器鏡像</string>
     <string name="home_placeholder_title">閱讀儀表板</string>
     <string name="home_placeholder_subtitle">在一個地方集中查看您的最近閱讀、更新、書庫、同步與來源。</string>
     <string name="home_hero_local_subtitle">從上次中斷的地方繼續，或快速返回最近開啟的內容。</string>
@@ -1027,7 +1027,7 @@
     <string name="import_completed_hint">你可以從儲存空間刪除原始檔案以節省空間</string>
     <string name="import_will_start_soon">匯入將立即開始</string>
     <string name="feed">動態</string>
-    <string name="manga_error_description_pattern">錯誤詳細資料：&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. 嘗試 &lt;a href=\"%2$s\"&gt;在網頁瀏覽器中開啟漫畫&lt;/a&gt; 以確認其在來源上是否可用&lt;br&gt;2. 確保你使用的是 &lt;a href=\"kototoro://about\"&gt;最新版本的 Kototoro&lt;/a&gt;&lt;br&gt;3. 若可用，請向開發者發送錯誤報告。</string>
+    <string name="manga_error_description_pattern">錯誤詳細資料：&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. 嘗試 &lt;a href=\"%2$s\"&gt;在網頁瀏覽器中開啟漫畫&lt;/a&gt; 以確認其在來源上是否可用&lt;br&gt;2. 確保你使用的是 &lt;a href=\"amuratsu://about\"&gt;最新版本的 Amuratsu&lt;/a&gt;&lt;br&gt;3. 若可用，請向開發者發送錯誤報告。</string>
     <string name="history_shortcuts">顯示最近漫畫捷徑</string>
     <string name="history_shortcuts_summary">長按應用程式圖示即可存取最近閱讀的漫畫</string>
     <string name="reader_control_ltr_summary">不要隨閱讀模式調整翻頁方向，例如按右鍵總是切換到下一頁。此選項僅影響硬體輸入裝置</string>
@@ -1196,7 +1196,7 @@
     <string name="export_backup_for_other_apps_summary">選擇目標應用程式並建立相容的備份：Kotatsu、Mihon、Aniyomi 或 Usagi。</string>
     <string name="export_backup_choose_target_app">選擇目標應用程式</string>
     <string name="export_kotatsu_backup">匯出 Kotatsu 備份</string>
-    <string name="export_kotatsu_backup_summary">為 Kotatsu 系列應用程式建立不含 Kototoro 專屬章節的獨立舊版備份。</string>
+    <string name="export_kotatsu_backup_summary">為 Kotatsu 系列應用程式建立不含 Amuratsu 專屬章節的獨立舊版備份。</string>
     <string name="export_kotatsu_backup_saved">已儲存 Kotatsu 備份</string>
     <string name="export_mihon_backup">匯出 Mihon 備份</string>
     <string name="export_mihon_backup_summary">僅匯出 Mihon 圖源條目的最愛、分類和閱讀進度。</string>
@@ -1269,7 +1269,7 @@
     <string name="data_and_privacy">資料與隱私</string>
     <string name="restore_summary">還原先前建立的備份</string>
     <string name="restore_kototoro_backup">還原備份</string>
-    <string name="restore_kototoro_backup_summary">還原任意版本的 Kototoro 備份或 Kotatsu 備份。格式會自動偵測。</string>
+    <string name="restore_kototoro_backup_summary">還原任意版本的 Amuratsu 備份或 Kotatsu 備份。格式會自動偵測。</string>
     <string name="restore_mode_replace_existing">取代現有資料</string>
     <string name="restore_mode_replace_existing_summary">正在還原的區段會先被清除；備份中缺少的加入最愛與歷史紀錄將會被移除</string>
     <string name="restore_mode_merge_with_existing">與現有資料合併</string>
@@ -2006,7 +2006,7 @@
     <string name="show_pages_thumbs">顯示頁面縮圖</string>
     <string name="show_pages_thumbs_summary">喺詳情畫面啟用「頁面」分頁</string>
     <string name="error_no_data_received">伺服器未傳回任何資料</string>
-    <string name="unsupported_backup_message">請選擇正確嘅 Kototoro 備份檔案</string>
+    <string name="unsupported_backup_message">請選擇正確嘅 Amuratsu 備份檔案</string>
     <string name="hours_short">%d 小時</string>
     <string name="minutes_short">%d 分</string>
     <string name="seconds_short">%d 秒</string>
@@ -2058,8 +2058,8 @@
     <string name="chapters_read">已讀章節</string>
     <string name="chapters_left">剩餘章節</string>
     <string name="external_source">外部／外掛程式</string>
-    <string name="plugin_incompatible">外掛程式不相容或發生內部錯誤。請確保您使用的是最新版本的 Kototoro 與外掛程式</string>
-    <string name="plugin_incompatible_with_cause">外掛程式錯誤：%s\n請確保您使用的是最新版本的 Kototoro 與外掛程式</string>
+    <string name="plugin_incompatible">外掛程式不相容或發生內部錯誤。請確保您使用的是最新版本的 Amuratsu 與外掛程式</string>
+    <string name="plugin_incompatible_with_cause">外掛程式錯誤：%s\n請確保您使用的是最新版本的 Amuratsu 與外掛程式</string>
     <string name="plugin_missing_host_classes">無法安裝 %1$s，因為它依賴不支援的 %2$s 主機類別：\n%3$s</string>
     <string name="connection_ok">連線正常</string>
     <string name="invalid_proxy_configuration">無效的代理伺服器設定</string>
@@ -2259,7 +2259,7 @@
     <string name="search_disabled_sources">搜尋已停用嘅來源</string>
     <string name="error_details">錯誤詳細資料</string>
     <string name="error_disclaimer_manga">嘗試喺網頁瀏覽器中開啟漫畫，以確保來源上可用。</string>
-    <string name="error_disclaimer_app_outdated">你嘅 Kototoro 版本似乎已過期。請安裝最新版本以獲取所有可用嘅修正。</string>
+    <string name="error_disclaimer_app_outdated">你嘅 Amuratsu 版本似乎已過期。請安裝最新版本以獲取所有可用嘅修正。</string>
     <string name="error_disclaimer_report">你可以向開發者傳送錯誤報告，呢個有助於我哋定位並修正錯誤</string>
     <string name="enable_source_manga">啟用漫畫來源</string>
     <string name="enable_source_novel">啟用小說來源</string>
@@ -2277,7 +2277,7 @@
     <string name="recommendation_novel">推薦小說</string>
     <string name="recommendation_video">推薦影片</string>
     <string name="link_to_manga_on_s">喺 %s 檢視漫畫</string>
-    <string name="link_to_manga_in_app">喺 Kototoro 檢視漫畫</string>
+    <string name="link_to_manga_in_app">喺 Amuratsu 檢視漫畫</string>
     <string name="clear_browser_data">清除瀏覽器資料</string>
     <string name="clear_browser_data_summary">清除瀏覽器資料，例如快取同 Cookie。警告：內容來源中嘅授權可能會失效</string>
     <string name="no_write_permission_to_file">冇寫入檔案權限</string>
@@ -2327,7 +2327,7 @@
     <string name="discord_token_hint">喺呢度貼上你嘅 Discord Token</string>
     <string name="discord_rpc_summary">喺 Discord 顯示你嘅閱讀狀態</string>
     <string name="obtain">取得</string>
-    <string name="discord_rpc_description">正喺 Kototoro 睇漫畫 - 一款漫畫閱讀 App</string>
+    <string name="discord_rpc_description">正喺 Amuratsu 睇漫畫 - 一款漫畫閱讀 App</string>
     <string name="discord_logout_summary">清除已儲存嘅 Discord 授權</string>
     <string name="reading_s">正在閱讀 %s</string>
     <string name="read_on_s">喺 %s 上閱讀</string>
@@ -2355,7 +2355,7 @@
     <string name="sync_backend_switch_webdav_title">切換至 WebDAV 備份？</string>
     <string name="sync_backend_switch_webdav_confirm">Google Drive 同步目前已啟用。啟用 WebDAV 備份將會關閉 Google Drive 同步，同時保留你嘅 Google 登入。</string>
     <string name="sync_sign_in">準備 Google Drive 同步</string>
-    <string name="sync_sign_in_summary">使用 Google Drive 應用程式資料同最低嘅 Drive appdata 權限嚟同步訂閱同更新紀錄。Kototoro 掂唔到你嘅 Drive 檔案。</string>
+    <string name="sync_sign_in_summary">使用 Google Drive 應用程式資料同最低嘅 Drive appdata 權限嚟同步訂閱同更新紀錄。Amuratsu 掂唔到你嘅 Drive 檔案。</string>
     <string name="google_drive_sync_unregistered_build_error">開發或 Nightly 版唔支援 Google Drive 同步。請使用官方正式版或 WebDAV 同步。</string>
     <string name="sync_sign_out">登出</string>
     <string name="sync_account">已登入</string>
@@ -2410,8 +2410,8 @@
     <string name="webdav_remote_backups_inspect">檢查遠端備份</string>
     <string name="webdav_remote_backups_inspect_summary">下載並驗證每個遠端備份是否可以安全還原。</string>
     <string name="webdav_remote_backups_clear">清除遠端 WebDAV 備份</string>
-    <string name="webdav_remote_backups_clear_summary">刪除已設定 WebDAV 路徑上嘅所有 Kototoro 備份檔案。本地資料不會更改。</string>
-    <string name="webdav_remote_backups_clear_confirm">確定要從已設定嘅 WebDAV 路徑刪除所有 Kototoro 備份檔案嗎？本地資料將不會更改。</string>
+    <string name="webdav_remote_backups_clear_summary">刪除已設定 WebDAV 路徑上嘅所有 Amuratsu 備份檔案。本地資料不會更改。</string>
+    <string name="webdav_remote_backups_clear_confirm">確定要從已設定嘅 WebDAV 路徑刪除所有 Amuratsu 備份檔案嗎？本地資料將不會更改。</string>
     <string name="webdav_remote_backups_loading">正在載入 WebDAV 備份…</string>
     <string name="webdav_remote_backup_status_unknown">未檢查</string>
     <string name="webdav_remote_backup_status_restorable">可還原</string>
@@ -2819,7 +2819,7 @@
     <string name="trust_and_add">信任並新增</string>
     <string name="trust_extension_repository_message">儲存庫：%1$s\n網站：%2$s\nSHA-256 指紋：\n%3$s\n\n信任此儲存庫前，請先與發布者確認此指紋。</string>
     <string name="untrusted_extension_message">%1$s (%2$s) 已安裝，但其簽章與所選的儲存庫指紋不符。\n\n儲存庫指紋：%3$s\n\n請先移除已安裝的套件，然後再從此儲存庫重新安裝。</string>
-    <string name="incompatible_extension_message">無法安裝 %1$s %2$s，因為其程式庫版本 (%3$s) 超出 Kototoro 支援的範圍。</string>
+    <string name="incompatible_extension_message">無法安裝 %1$s %2$s，因為其程式庫版本 (%3$s) 超出 Amuratsu 支援的範圍。</string>
     <string name="built_in_sources">內建</string>
     <string name="select_all">全選</string>
     <string name="deselect_all">取消全選</string>
@@ -2859,7 +2859,7 @@
     <string name="welcome_plugins_repo_yakateam">Yakateam 解析器</string>
     <string name="welcome_plugins_repo_redo">Redo 解析器</string>
     <string name="welcome_plugins_repo_uma">UMA（Tsuki 解析器）</string>
-    <string name="welcome_plugins_disclaimer">這些擴充功能儲存庫由獨立線上社群維護。Kototoro 開發者與這些第三方儲存庫無任何關係、控制權或關聯。本人確認設定這些來源須自擔風險。</string>
+    <string name="welcome_plugins_disclaimer">這些擴充功能儲存庫由獨立線上社群維護。Amuratsu 開發者與這些第三方儲存庫無任何關係、控制權或關聯。本人確認設定這些來源須自擔風險。</string>
     <string name="welcome_plugins_start_btn">設定儲存庫</string>
     <string name="welcome_plugins_configured">已設定 %1$d 個新來源/儲存庫類型：%2$s。尚未下載套件 — 請在下一步安裝符合的套件。</string>
     <string name="welcome_plugins_configured_none">無法設定任何來源或儲存庫。請檢查您的網路或選擇其他儲存庫後重試。</string>
@@ -2889,22 +2889,22 @@
     <string name="welcome_install_system_launch_failed">無法啟動系統安裝程式：%1$s</string>
     <string name="welcome_install_skip">略過安裝 — 我稍後會在擴充功能管理中處理</string>
     <string name="welcome_install_step_title">批次安裝擴充功能</string>
-    <string name="welcome_install_step_summary">選擇要使用的來源類型與設定，然後讓 Kototoro 在背景下載並安裝所有內容。</string>
+    <string name="welcome_install_step_summary">選擇要使用的來源類型與設定，然後讓 Amuratsu 在背景下載並安裝所有內容。</string>
     <string name="welcome_install_kinds_title">要安裝的來源類型</string>
     <string name="welcome_install_kinds_summary">只會處理您勾選的類型。未勾選的類型（例如 Mihon，如果您偏好稍後再處理）會保留給您在擴充功能管理中安裝。</string>
     <string name="welcome_install_kinds_empty">尚未設定任何儲存庫。請返回並先新增儲存庫。</string>
     <string name="welcome_install_nsfw_title">包含 NSFW 內容</string>
     <string name="welcome_install_nsfw_summary">預設關閉 — 安裝清單中將會過濾掉成人專用套件。</string>
-    <string name="welcome_intro_app_title">Kototoro · 開源閱讀器</string>
-    <string name="welcome_intro_body">Kototoro 是一個開源的多媒體閱讀／播放器。它支援豐富的社群擴充功能生態系統，但本身不包含任何內容來源。</string>
+    <string name="welcome_intro_app_title">Amuratsu · 開源閱讀器</string>
+    <string name="welcome_intro_body">Amuratsu 是一個開源的多媒體閱讀／播放器。它支援豐富的社群擴充功能生態系統，但本身不包含任何內容來源。</string>
     <string name="welcome_intro_concepts_title">30 秒了解三個概念</string>
     <string name="welcome_intro_repo_label">儲存庫</string>
     <string name="welcome_intro_repo_body">指向由獨立社群維護的第三方擴充功能集合的 URL（例如 Mihon 儲存庫、TVBox 清單或 LNReader 外掛程式儲存庫）。</string>
     <string name="welcome_intro_extension_label">擴充功能</string>
-    <string name="welcome_intro_extension_body">儲存庫中的一個可安裝套件 — JAR、APK 或 JSON 清單。安裝擴充功能後，Kototoro 便能從網站閱讀或播放內容。</string>
+    <string name="welcome_intro_extension_body">儲存庫中的一個可安裝套件 — JAR、APK 或 JSON 清單。安裝擴充功能後，Amuratsu 便能從網站閱讀或播放內容。</string>
     <string name="welcome_intro_source_label">來源</string>
     <string name="welcome_intro_source_body">安裝或匯入擴充功能後，您在應用程式中看到的具體內容來源 — 例如特定的漫畫或影片網站。</string>
-    <string name="welcome_intro_disclaimer">使用第三方擴充功能須自行承擔風險：執行階段行為、合法性與內容皆不受 Kototoro 專案控制。</string>
+    <string name="welcome_intro_disclaimer">使用第三方擴充功能須自行承擔風險：執行階段行為、合法性與內容皆不受 Amuratsu 專案控制。</string>
     <string name="welcome_intro_continue">我了解 — 繼續</string>
     <string name="welcome_done_title">快完成了</string>
     <string name="welcome_done_summary">您的設定摘要與幾個提示。</string>
@@ -2913,10 +2913,10 @@
     <string name="welcome_done_json_note">基於 JSON 的類型（Legado / TVBox / LNReader）會自動匯入；如果您還加入了其他 JSON 儲存庫，請在擴充功能管理中進行匯入。</string>
     <string name="welcome_done_title_finished">設定完成</string>
     <string name="welcome_done_summary_finished">精靈已完成 — 未自動新增任何儲存庫或來源。</string>
-    <string name="welcome_done_body_finished">Kototoro 在設定期間未新增任何來源。您隨時可以在「設定 › 內容來源（擴充功能管理）」中新增您自己的儲存庫與來源。</string>
+    <string name="welcome_done_body_finished">Amuratsu 在設定期間未新增任何來源。您隨時可以在「設定 › 內容來源（擴充功能管理）」中新增您自己的儲存庫與來源。</string>
     <string name="welcome_done_advice_title">如果來源無法運作</string>
     <string name="welcome_done_advice_summary">簡短的疑難排解路徑，以確保正確的人員能看到回報。</string>
-    <string name="welcome_done_advice_body">1. 使用擴充功能的原始宿主應用程式確認問題 — 例如 Mihon 類型來源應在 Mihon 應用程式中測試。\n2. 如果該問題在那裡也會發生，則屬於維護該擴充功能的儲存庫：請在該儲存庫自己的 URL 建立 Issue。\n3. 如果只在 Kototoro 中發生，請在 Kototoro 專案儲存庫中回報，並附上來源名稱、擴充功能版本以及您嘗試過的操作。</string>
+    <string name="welcome_done_advice_body">1. 使用擴充功能的原始宿主應用程式確認問題 — 例如 Mihon 類型來源應在 Mihon 應用程式中測試。\n2. 如果該問題在那裡也會發生，則屬於維護該擴充功能的儲存庫：請在該儲存庫自己的 URL 建立 Issue。\n3. 如果只在 Amuratsu 中發生，請在 Amuratsu 專案儲存庫中回報，並附上來源名稱、擴充功能版本以及您嘗試過的操作。</string>
     <string name="welcome_step_counter">第 %1$d 步，共 %2$d 步</string>
     <string name="welcome_action_configure_repos">設定所選儲存庫</string>
     <string name="welcome_action_install_count">安裝 %1$d 個擴充功能</string>
@@ -2950,7 +2950,7 @@
     <string name="welcome_permissions_notifications_title">通知</string>
     <string name="welcome_permissions_notifications_summary">顯示下載、更新與播放器通知。</string>
     <string name="welcome_permissions_packages_title">已安裝的應用程式</string>
-    <string name="welcome_permissions_packages_summary">讓 Kototoro 偵測已安裝的擴充功能與主應用程式（Mihon、Aniyomi 等）。已在資訊清單中宣告並自動授權。</string>
+    <string name="welcome_permissions_packages_summary">讓 Amuratsu 偵測已安裝的擴充功能與主應用程式（Mihon、Aniyomi 等）。已在資訊清單中宣告並自動授權。</string>
     <string name="welcome_permissions_battery_title">背景執行</string>
     <string name="welcome_permissions_battery_summary">在螢幕關閉或裝置閒置時，讓背景下載與更新持續執行。</string>
     <string name="welcome_permissions_battery_action">允許</string>
@@ -3366,11 +3366,11 @@
     <string name="pref_glass_blur_quality_performance">效能優先</string>
     <string name="pref_glass_blur_quality_balanced">平衡</string>
     <string name="pref_glass_blur_quality_quality">畫質優先</string>
-    <string name="glass_material_family_kototoro">Kototoro (建議)</string>
+    <string name="glass_material_family_kototoro">Amuratsu (建議)</string>
     <string name="glass_material_family_haze">Haze</string>
     <string name="glass_material_family_cupertino">Cupertino</string>
     <string name="glass_material_family_fluent">Fluent</string>
-    <string name="glass_material_kototoro">Kototoro (建議)</string>
+    <string name="glass_material_kototoro">Amuratsu (建議)</string>
     <string name="glass_material_haze_ultra_thin">Haze 極薄</string>
     <string name="glass_material_haze_thin">Haze 薄</string>
     <string name="glass_material_haze_regular">Haze 標準</string>

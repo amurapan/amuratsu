@@ -121,7 +121,7 @@
     <string name="_import">هاوردەکردن</string>
     <string name="delete">سڕینەوە</string>
     <string name="operation_not_supported">ئەم کارپێکردنە پشتگیری ناکرێت</string>
-    <string name="cloudstream_newpipe_required">ئەم فراوانکراوە پێویستی بە پۆلەکانی NewPipe هەیە کە لەو NewPipeـەی لەگەڵ Kototoro دابینکراوە نییە، بۆیە ناتوانێت ڤیدیۆ لێبدات. هەوڵ بدە فراوانکراوەکە یان Kototoro نوێبکەیتەوە.</string>
+    <string name="cloudstream_newpipe_required">ئەم فراوانکراوە پێویستی بە پۆلەکانی NewPipe هەیە کە لەو NewPipeـەی لەگەڵ Amuratsu دابینکراوە نییە، بۆیە ناتوانێت ڤیدیۆ لێبدات. هەوڵ بدە فراوانکراوەکە یان Amuratsu نوێبکەیتەوە.</string>
     <string name="text_file_not_supported">فایلی ZIP یان CBZ هەڵبژێرە.</string>
     <string name="no_description">بێ پێناسە</string>
     <string name="clear_pages_cache">پاککردنەوەی کاشی پەڕە</string>
@@ -185,7 +185,7 @@
     <string name="replace_rule_disable_all_summary">ڕاگرتنی کاتیی جێبەجێکردنی ڕێساکانی گۆڕین</string>
     <string name="replace_rule_edit">دەستکاری ڕێسا</string>
     <string name="replace_rule_import">هاوردەکردنی ڕێساکانی Legado</string>
-    <string name="replace_rule_import_summary">هاوردەکردنی لیستی JSON کە لەلایەن Legado یان Kototoroـوە هەناردە کراوە</string>
+    <string name="replace_rule_import_summary">هاوردەکردنی لیستی JSON کە لەلایەن Legado یان Amuratsuـوە هەناردە کراوە</string>
     <string name="replace_rule_export">هەناردەکردنی ڕێساکان</string>
     <string name="replace_rule_export_summary">هەناردەکردنی ڕێساکان لە فۆرماتێکی JSONی گونجاودا</string>
     <string name="replace_rule_empty">هیچ ڕێسایەکی گۆڕین نییە</string>
@@ -316,7 +316,7 @@
     <string name="enter_password">پاسۆرد بنووسە</string>
     <string name="wrong_password">پاسۆردی هەڵە</string>
     <string name="protect_application">پاراستنی بەرنامە</string>
-    <string name="protect_application_summary">داوای پاسۆرد بکە لە کاتی دەستپێکردنی Kototoro</string>
+    <string name="protect_application_summary">داوای پاسۆرد بکە لە کاتی دەستپێکردنی Amuratsu</string>
     <string name="repeat_password">دووبارەکردنەوەی پاسۆرد</string>
     <string name="passwords_mismatch">پاسۆردەکان یەکناگرنەوە</string>
     <string name="about">دەربارە</string>
@@ -423,8 +423,8 @@
     <string name="clear_local_novel_storage_prompt">سەرجەم فایلە پاشەکەوت و هاوردەکراوە خۆجێییەکانی ڕۆمان دەسڕێنەوە؟ ئەم کارە ناگەڕێتەوە.</string>
     <string name="clear_local_video_storage_prompt">سەرجەم فایلە پاشەکەوت و هاوردەکراوە خۆجێییەکانی ڤیدیۆ دەسڕێنەوە؟ ئەم کارە ناگەڕێتەوە.</string>
     <string name="welcome">بەخێر هاتیت</string>
-    <string name="welcome_intro_title">ڕێکخستنی Kototoro</string>
-    <string name="welcome_intro_summary">چۆنیەتی خوێندنەوە و سەیرکردن دیاری بکە. Kototoro ئێستا خێزانە سەرچاوەی لەسەر بنەمای هاوپێچ بۆ مانگا، ڕۆمان، و ڤیدیۆ بەکاردەهێنێت، لەوانە JAR، Mihon، Aniyomi، IReader، Legado، TVBox، LNReader، و Cloudstream.</string>
+    <string name="welcome_intro_title">ڕێکخستنی Amuratsu</string>
+    <string name="welcome_intro_summary">چۆنیەتی خوێندنەوە و سەیرکردن دیاری بکە. Amuratsu ئێستا خێزانە سەرچاوەی لەسەر بنەمای هاوپێچ بۆ مانگا، ڕۆمان، و ڤیدیۆ بەکاردەهێنێت، لەوانە JAR، Mihon، Aniyomi، IReader، Legado، TVBox، LNReader، و Cloudstream.</string>
     <string name="welcome_step_start">دەستپێکردن</string>
     <string name="welcome_step_sources">سەرچاوەکان</string>
     <string name="welcome_step_preferences">ڕەزامەندییەکان</string>
@@ -434,11 +434,11 @@
     <string name="welcome_glass_preset_title">ڕووپۆشی شووشەیی</string>
     <string name="welcome_glass_preset_summary">پێشوەختەی ڕووپۆشی شووشەیی بۆ شێوازی iOS هەڵبژێرە. شکانەوە پێشوەختەیە و دەتوانرێت دواتر لە ڕێکخستنەکانی دیمەن دەستکاری وردی بکرێت.</string>
     <string name="home_quick_action_wizard">وەستاد</string>
-    <string name="welcome_restore_summary">پێشتر Kototoro ات بەکارهێناوە؟ یەدەگێک بگێڕەوە، بچۆ ژوورەوە بۆ هاوکاتکردن، یان سەرەتا بۆخۆت بوخچە خۆجێییەکان زیاد بکە.</string>
+    <string name="welcome_restore_summary">پێشتر Amuratsu ات بەکارهێناوە؟ یەدەگێک بگێڕەوە، بچۆ ژوورەوە بۆ هاوکاتکردن، یان سەرەتا بۆخۆت بوخچە خۆجێییەکان زیاد بکە.</string>
     <string name="welcome_source_formats_title">قەبارەی ناوەڕۆک هەڵبژێرە</string>
     <string name="welcome_source_formats_summary">ئەم پاڵاوتانە بڕیار دەدەن کە کام خێزانی سەرچاوە دوای ڕێکخستن چالاک ببن.</string>
     <string name="welcome_ecosystems_title">ژینگەی سەرچاوە</string>
-    <string name="welcome_ecosystems_summary">Kototoro پشتگیری لە چەندین خێزانی سەرچاوەی پڵاگین دەکات بۆ خوێندنەوە و سەیرکردن. لە کۆگا پێشنیارکراوەکانەوە لێرە دەست پێبکە، پاشان لە بەڕێوەبردنی پڵاگینەکاندا وردکارییەکان ڕێکبخە.</string>
+    <string name="welcome_ecosystems_summary">Amuratsu پشتگیری لە چەندین خێزانی سەرچاوەی پڵاگین دەکات بۆ خوێندنەوە و سەیرکردن. لە کۆگا پێشنیارکراوەکانەوە لێرە دەست پێبکە، پاشان لە بەڕێوەبردنی پڵاگینەکاندا وردکارییەکان ڕێکبخە.</string>
     <string name="welcome_ecosystem_manga">مانگا: لێککەرەوەکانی JAR، Mihon، IReader، LNReader</string>
     <string name="welcome_ecosystem_novel">ڕۆمان: Legado، IReader، LNReader</string>
     <string name="welcome_ecosystem_video">ڤیدیۆ: Aniyomi، TVBox، Cloudstream</string>
@@ -448,9 +448,9 @@
     <string name="welcome_spaces_title">شوێنەکانت جیا بکەرەوە</string>
     <string name="welcome_spaces_summary">بۆشایییەکان ڕێگەی گەڕان، پێشەنگییەکانی پشکنین، و ناوەڕۆکی خوندنەوە یان لێدان بۆ مانگا، ڕۆمان و ئەنیمە فەراهەم دەکەن. هەڵبژاردنە پێشکەوتووەکان و بۆشایییە تایبەتەکان دواتر لە ڕێکخستنەکان ← بەکارهێنەر ← بۆشایییەکان بەردەستن.</string>
     <string name="welcome_ready_summary">ڕێکخستن تەواو بوو. کۆتۆتۆرۆ سەرچاوەکانی گونجاو لەگەڵ زمان و شێوازە هەڵبژاردراوەکانت چالاک دەکات. دەتوانیت ئەم ڕێبەری ڕێکخستنە دیسانەوە لە ڕێکخستنەکان → سەرچاوەکانی ناوەڕۆک → ڕێبەری ڕێکخستن جێبەجێ بکەیتەوە.</string>
-    <string name="welcome_jar_install_success">Kototoro: سەرکەوتووانە %1$d نوێترین بزوێنەری شیکار لە هەوری تۆڕەکە وەرگیرا و جێگیرکرا!</string>
-    <string name="welcome_jar_install_up_to_date">Kototoro: پشکنینی هەور تەواو بوو، شیکارە خۆجێییەکان نوێن! (%1$d سەرچاوە بە گشتی بارکران)</string>
-    <string name="welcome_jar_install_failed">Kototoro: بارکردنی تۆڕی شیکار سەرکەوتوو نەبوو (%1$s)، تکایە دووبارە هەوڵ بدەرەوە یان بچۆ بۆ ڕێکخستنەکان بۆ گۆڕینی ئاوێنەی پرۆکسی</string>
+    <string name="welcome_jar_install_success">Amuratsu: سەرکەوتووانە %1$d نوێترین بزوێنەری شیکار لە هەوری تۆڕەکە وەرگیرا و جێگیرکرا!</string>
+    <string name="welcome_jar_install_up_to_date">Amuratsu: پشکنینی هەور تەواو بوو، شیکارە خۆجێییەکان نوێن! (%1$d سەرچاوە بە گشتی بارکران)</string>
+    <string name="welcome_jar_install_failed">Amuratsu: بارکردنی تۆڕی شیکار سەرکەوتوو نەبوو (%1$s)، تکایە دووبارە هەوڵ بدەرەوە یان بچۆ بۆ ڕێکخستنەکان بۆ گۆڕینی ئاوێنەی پرۆکسی</string>
     <string name="home_placeholder_title">داشبۆردی خوێندنەوە</string>
     <string name="home_placeholder_subtitle">خوێندنەوەکانی دوایینت، نوێکارییەکان، کتێبخانە، هاوکاتکردن و سەرچاوەکان لە یەک شوێن ببینە.</string>
     <string name="home_hero_local_subtitle">لەو شوێنەی کە جێتهێشتووە دەست پێبکەرەوە، یان بگەڕێوە بۆ ئەوەی کە دوایی کردووتەوە.</string>
@@ -1028,7 +1028,7 @@
     <string name="import_completed_hint">دەتوانیت پەڕکەی ڕەسەن لە بیرگە بسڕیتەوە بۆ پاشەکەوتکردنی بۆشایی</string>
     <string name="import_will_start_soon">هاوردەکردن زوویەک دەست پێدەکات</string>
     <string name="feed">بڵاوکراوە</string>
-    <string name="manga_error_description_pattern">وردەکاری هەڵە:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. هەوڵ بدە &lt;a href=\"%2$s\"&gt;مانگا لە وێبگەڕدا بکەیتەوە&lt;/a&gt; بۆ دڵنیابوون لە بەردەستبوونی لە سەرچاوەکەی&lt;br&gt;2. دڵنیابە لەوەی کە &lt;a href=\"kototoro://about\"&gt;کۆتا ڤێرژنی Kototoro&lt;/a&gt; بەکاردەهێنیت&lt;br&gt;3. ئەگەر بەردەستە، ڕاپۆرتی هەڵە بنێرە بۆ گەشەپێدەران.</string>
+    <string name="manga_error_description_pattern">وردەکاری هەڵە:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. هەوڵ بدە &lt;a href=\"%2$s\"&gt;مانگا لە وێبگەڕدا بکەیتەوە&lt;/a&gt; بۆ دڵنیابوون لە بەردەستبوونی لە سەرچاوەکەی&lt;br&gt;2. دڵنیابە لەوەی کە &lt;a href=\"amuratsu://about\"&gt;کۆتا ڤێرژنی Amuratsu&lt;/a&gt; بەکاردەهێنیت&lt;br&gt;3. ئەگەر بەردەستە، ڕاپۆرتی هەڵە بنێرە بۆ گەشەپێدەران.</string>
     <string name="history_shortcuts">پیشاندانی قەدبڕەکانی مانگای دوایی</string>
     <string name="history_shortcuts_summary">بەردەستکردنی مانگای دوایی بە داگرتنی درێژ لەسەر دوگمەی ئەپلیکەشن</string>
     <string name="reader_control_ltr_summary">ئاراستەی گۆڕینی پەڕە بۆ دۆخی خوێنەر ڕێکخەخە، بۆ نموونە داگرتنی دوگمەی ڕاست هەمیشە دەگوازێتەوە بۆ پەڕەی داهاتوو. ئەم هەڵبژاردەیە تەنها کاریگەری لەسەر ئامێرە دەرەکییەکان هەیە</string>
@@ -1197,7 +1197,7 @@
     <string name="export_backup_for_other_apps_summary">بەرنامەیەکی ئامانج هەڵبژێرە و یەدەگێکی گونجاو دروست بکە: Kotatsu، Mihon، Aniyomi، یان Usagi.</string>
     <string name="export_backup_choose_target_app">هەڵبژاردنی بەرنامەی ئامانج</string>
     <string name="export_kotatsu_backup">هەناردەکردنی یەدەگی Kotatsu</string>
-    <string name="export_kotatsu_backup_summary">دروستکردنی یەدەگێکی کۆنی جیاواز بۆ بەرنامەکانی خێزانی Kotatsu بێ بەشە تایبەتەکانی Kototoro.</string>
+    <string name="export_kotatsu_backup_summary">دروستکردنی یەدەگێکی کۆنی جیاواز بۆ بەرنامەکانی خێزانی Kotatsu بێ بەشە تایبەتەکانی Amuratsu.</string>
     <string name="export_kotatsu_backup_saved">یەدەگی Kotatsu پاشەکەوت کرا</string>
     <string name="export_mihon_backup">هەناردەکردنی یەدەگی Mihon</string>
     <string name="export_mihon_backup_summary">هەناردەکردنی دڵخوازەکان، پۆلەکان، و پێشکەوتنی خوێندنەوە تەنها بۆ بڕگەکانی سەرچاوەی Mihon.</string>
@@ -1270,7 +1270,7 @@
     <string name="data_and_privacy">داتا و تایبەتمەندی</string>
     <string name="restore_summary">گێڕانەوەی پشتیوانی پێشتر دروستکراو</string>
     <string name="restore_kototoro_backup">گێڕانەوەی پشتیوانی</string>
-    <string name="restore_kototoro_backup_summary">گێڕانەوەی پشتیوانییەکی Kototoro لە هەر وەشانێک، یان پشتیوانییەکی Kotatsu. شێوازەکە بەخۆکار دەدۆزرێتەوە.</string>
+    <string name="restore_kototoro_backup_summary">گێڕانەوەی پشتیوانییەکی Amuratsu لە هەر وەشانێک، یان پشتیوانییەکی Kotatsu. شێوازەکە بەخۆکار دەدۆزرێتەوە.</string>
     <string name="restore_mode_replace_existing">جێگۆڕکێکردنی داتای ئێستا</string>
     <string name="restore_mode_replace_existing_summary">ئەو بەشانەی دەگەڕێنرێنەوە سەرەتا دەسڕێنەوە؛ دڵخوازەکان و مێژووی نەبوو لە پشتیوانییەکەدا لادەبرێن</string>
     <string name="restore_mode_merge_with_existing">تێکەڵکردن لەگەڵ داتای ئێستا</string>
@@ -2006,7 +2006,7 @@
     <string name="show_pages_thumbs">پیشاندانی وردەوێنەی پەڕەکان</string>
     <string name="show_pages_thumbs_summary">برקخستنی تبوی پەڕەکان لە شاشەی وردەکارییەکان</string>
     <string name="error_no_data_received">هیچ زانیارییەک لە ڕایەڵەوە نەگەیشت</string>
-    <string name="unsupported_backup_message">تکایە پەڕگەیەکی یەدەگی درووستی Kototoro هەڵبژێرە</string>
+    <string name="unsupported_backup_message">تکایە پەڕگەیەکی یەدەگی درووستی Amuratsu هەڵبژێرە</string>
     <string name="hours_short">%d ک</string>
     <string name="minutes_short">%d خ</string>
     <string name="seconds_short">%d چ</string>
@@ -2057,8 +2057,8 @@
     <string name="chapters_read">بابەتە خوێنراوەکان</string>
     <string name="chapters_left">بابەتە ماوەکان</string>
     <string name="external_source">دەرەکی / هاوپێچ</string>
-    <string name="plugin_incompatible">هاوپێچی نەگونجاو یان هەڵەی ناوخۆیی. دڵنیابەوە کە نوێترین وەشانی هاوپێچ و Kototoro بەکاردەهێنیت</string>
-    <string name="plugin_incompatible_with_cause">هەڵەی هاوپێچ: %s\n دڵنیابەوە کە نوێترین وەشانی هاوپێچ و Kototoro بەکاردەهێنیت</string>
+    <string name="plugin_incompatible">هاوپێچی نەگونجاو یان هەڵەی ناوخۆیی. دڵنیابەوە کە نوێترین وەشانی هاوپێچ و Amuratsu بەکاردەهێنیت</string>
+    <string name="plugin_incompatible_with_cause">هەڵەی هاوپێچ: %s\n دڵنیابەوە کە نوێترین وەشانی هاوپێچ و Amuratsu بەکاردەهێنیت</string>
     <string name="plugin_missing_host_classes">نەتوانرا %1$s دامەزرێت چونکە پشت بە پۆلی میوانی نەگونجاو دەبەستێت: %2$s\n%3$s</string>
     <string name="connection_ok">پەیوەندی ڕێکە</string>
     <string name="invalid_proxy_configuration">ڕێکخستنی پرۆکسی نادروستە</string>
@@ -2258,7 +2258,7 @@
     <string name="search_disabled_sources">گەڕان لە سەرچاوە ناچالاککراوەکان</string>
     <string name="error_details">وردەکاری هەڵە</string>
     <string name="error_disclaimer_manga">هەوڵ بدە مانگاکە لە وێبگەڕێکدا بکەیتەوە بۆ دڵنیابوون لە بەردەستبوونی لە سەرچاوەکەی.</string>
-    <string name="error_disclaimer_app_outdated">ادیارە وەشانەکەی Kototoro کۆن بووە. تکایە نوێترین وەشان دابەزێنە بۆ بەدەستهێنانی هەموو چاککردنەوە بەردەستەکان.</string>
+    <string name="error_disclaimer_app_outdated">ادیارە وەشانەکەی Amuratsu کۆن بووە. تکایە نوێترین وەشان دابەزێنە بۆ بەدەستهێنانی هەموو چاککردنەوە بەردەستەکان.</string>
     <string name="error_disclaimer_report">دەتوانیت ڕاپۆرتی هەڵە بنێریت بۆ گەشەپێدەران، ئەمە یارمەتیمان دەدات لە دۆزینەوە و چاککردنەوەی هەڵەکە</string>
     <string name="enable_source_manga">چالاککردنی سەرچاوەی مانگا</string>
     <string name="enable_source_novel">چالاککردنی سەرچاوەی ڕۆمان</string>
@@ -2276,7 +2276,7 @@
     <string name="recommendation_novel">ڕۆمانی پێشنیارکراو</string>
     <string name="recommendation_video">ڤیدیۆی پێشنیارکراو</string>
     <string name="link_to_manga_on_s">بەستەر بۆ مانگا لەسەر %s</string>
-    <string name="link_to_manga_in_app">بەستەر بۆ مانگا لە Kototoro</string>
+    <string name="link_to_manga_in_app">بەستەر بۆ مانگا لە Amuratsu</string>
     <string name="clear_browser_data">پاککردنەوەی داتای وێبگەڕ</string>
     <string name="clear_browser_data_summary">پاککردنەوەی داتای وێبگەڕ وەک کاش و کووکیز. ئاگاداری: ڕەنگە ڕێپێدان لە سەرچاوەکانی ناوەڕۆک نادروست ببێت</string>
     <string name="no_write_permission_to_file">مۆڵەتی نووسین بۆ فایل نییە</string>
@@ -2326,7 +2326,7 @@
     <string name="discord_token_hint">پێناسەی Discord-ەکەت لێرە پەیست بکە</string>
     <string name="discord_rpc_summary">نیشاندانی دۆخی خوێندنەوەکەت لەسەر Discord</string>
     <string name="obtain">بەدەستهێنان</string>
-    <string name="discord_rpc_description">خوێندنەوەی مەنگا لەسەر Kototoro - ئەپلیکەیشنێکی خوێندنەوەی مەنگا</string>
+    <string name="discord_rpc_description">خوێندنەوەی مەنگا لەسەر Amuratsu - ئەپلیکەیشنێکی خوێندنەوەی مەنگا</string>
     <string name="discord_logout_summary">سڕینەوەی ڕێپێدانی پاشەکەوتکراوی Discord</string>
     <string name="reading_s">خوێندنەوەی %s</string>
     <string name="read_on_s">خوێندنەوە لە %s</string>
@@ -2354,7 +2354,7 @@
     <string name="sync_backend_switch_webdav_title">گۆڕین بۆ پاشەکەوتی WebDAV؟</string>
     <string name="sync_backend_switch_webdav_confirm">هاوکاتی Google Drive ئێستا چالاکە. چالاککردنی پاشەکەوتی WebDAV هاوکاتی Google Drive دەکوژێنێتەوە لە کاتێکدا چوونەژوورەوەی گووگلت دەپارێزێت.</string>
     <string name="sync_sign_in">ئامادەکردنی هاوکاتی Google Drive</string>
-    <string name="sync_sign_in_summary">داتای بەرنامەی Google Drive بەکاردەهێنێت لەگەڵ کەمترین مۆڵەتی appdataی درایڤ بۆ هاوکاتکردنی بەشداریکردنەکان و نوێکردنەوەی تۆمارەکان. Kototoro ناتوانێت دەستی بگات بە فایلەکانی درایڤەکەت.</string>
+    <string name="sync_sign_in_summary">داتای بەرنامەی Google Drive بەکاردەهێنێت لەگەڵ کەمترین مۆڵەتی appdataی درایڤ بۆ هاوکاتکردنی بەشداریکردنەکان و نوێکردنەوەی تۆمارەکان. Amuratsu ناتوانێت دەستی بگات بە فایلەکانی درایڤەکەت.</string>
     <string name="google_drive_sync_unregistered_build_error">هاوکاتکردنی Google Drive لە وەشانی گەشەپێدەر/شەوانەدا پشتگیری ناکرێت. تکایە وەشانە فەرمییەکان یان هاوکاتکردنی WebDAV بەکاربهێنە.</string>
     <string name="sync_sign_out">دەرچوون</string>
     <string name="sync_account">چوە ژوورەوە</string>
@@ -2409,8 +2409,8 @@
     <string name="webdav_remote_backups_inspect">پشکنینی پاشەکەوتە دوورەکان</string>
     <string name="webdav_remote_backups_inspect_summary">دابەزاندن و دڵنیابوونەوە لەوەی ئایا هەر پاشەکەوتێکی دوورەپەیوەند دەتوانرێت بە سەلامەتی بگەڕێنرێتەوە.</string>
     <string name="webdav_remote_backups_clear">پاککردنەوەی پاشەکەوتە دوورەکانی WebDAV</string>
-    <string name="webdav_remote_backups_clear_summary">سڕینەوەی هەموو فایلەکانی پاشەکەوتی Kototoro لەسەر ڕێڕەوی WebDAVی ڕێکخراو. داتای خۆجێیی ناگۆڕدرێت.</string>
-    <string name="webdav_remote_backups_clear_confirm">سڕینەوەی هەموو فایلەکانی پاشەکەوتی Kototoro لە ڕێڕەوی WebDAVی ڕێکخراو؟ داتای خۆجێیی ناگۆڕدرێت.</string>
+    <string name="webdav_remote_backups_clear_summary">سڕینەوەی هەموو فایلەکانی پاشەکەوتی Amuratsu لەسەر ڕێڕەوی WebDAVی ڕێکخراو. داتای خۆجێیی ناگۆڕدرێت.</string>
+    <string name="webdav_remote_backups_clear_confirm">سڕینەوەی هەموو فایلەکانی پاشەکەوتی Amuratsu لە ڕێڕەوی WebDAVی ڕێکخراو؟ داتای خۆجێیی ناگۆڕدرێت.</string>
     <string name="webdav_remote_backups_loading">بارکردنی پاشەکەوتەکانی WebDAV…</string>
     <string name="webdav_remote_backup_status_unknown">پشکنین نەکراوە</string>
     <string name="webdav_remote_backup_status_restorable">قابل گەڕاندنەوەیە</string>
@@ -2818,7 +2818,7 @@
     <string name="trust_and_add">متمانە بکە و زیاد بکە</string>
     <string name="trust_extension_repository_message">یەدەگ: %1$s\nماڵپەڕ: %2$s\nپەنجەمۆری SHA-256:\n%3$s\n\nپێش متمانەکردن بەم یەدەگە، پەنجەمۆرەکە لەگەڵ بڵاوکەرەوەکەی دڵنیابەرەوە.</string>
     <string name="untrusted_extension_message">%1$s (%2$s) دامەزراوە، بەڵام واژۆکەی لەگەڵ پەنجەمۆری یەدەگی هەڵبژێردراو یەکناگرێتەوە.\n\nپەنجەمۆری یەدەگ: %3$s\n\nپێش دووبارە دابەزاندنەوە لەم یەدەگە، پاکێجە دامەزراوەکە بسڕەوە.</string>
-    <string name="incompatible_extension_message">%1$s %2$s ناتوانرێت دامەزرێت لەبەرئەوەی وەشانی کتێبخانەکەی (%3$s) لە دەرەوەی مەودای پاڵپشتیکراوی Kototoroیە.</string>
+    <string name="incompatible_extension_message">%1$s %2$s ناتوانرێت دامەزرێت لەبەرئەوەی وەشانی کتێبخانەکەی (%3$s) لە دەرەوەی مەودای پاڵپشتیکراوی Amuratsuیە.</string>
     <string name="built_in_sources">بنەڕەتی</string>
     <string name="select_all">دیاریکردنی هەمووی</string>
     <string name="deselect_all">هەڵوەشاندنەوەی هەموو</string>
@@ -2858,7 +2858,7 @@
     <string name="welcome_plugins_repo_yakateam">شیکەرەوەکانی Yakateam</string>
     <string name="welcome_plugins_repo_redo">شیکەرەوەکانی Redo</string>
     <string name="welcome_plugins_repo_uma">UMA (شیکەرەوەکانی Tsuki)</string>
-    <string name="welcome_plugins_disclaimer">ئەم کۆگایانەی پاشکۆ لەلایەن کۆمەڵگە ئۆنلاینە سەربەخۆکانەوە بەڕێوەدەبرێن. پەرەپێدەرانی Kototoro هیچ پەیوەندی، کۆنتڕۆڵ یان هاوبەشییەکیان لەگەڵ ئەم کۆگایانەی لایەنی سێیەمدا نییە. من دان بەوەدا دەنێم کە ئەم سەرچاوەکانە لەسەر بەرپرسیارێتی خۆم ڕێکدەخەم.</string>
+    <string name="welcome_plugins_disclaimer">ئەم کۆگایانەی پاشکۆ لەلایەن کۆمەڵگە ئۆنلاینە سەربەخۆکانەوە بەڕێوەدەبرێن. پەرەپێدەرانی Amuratsu هیچ پەیوەندی، کۆنتڕۆڵ یان هاوبەشییەکیان لەگەڵ ئەم کۆگایانەی لایەنی سێیەمدا نییە. من دان بەوەدا دەنێم کە ئەم سەرچاوەکانە لەسەر بەرپرسیارێتی خۆم ڕێکدەخەم.</string>
     <string name="welcome_plugins_start_btn">ڕێکخستنی کۆگاکان</string>
     <string name="welcome_plugins_configured">%1$d جۆری سەرچاوە/کۆگای نوێ ڕێکخران: %2$s. پاکەتەکان هێشتا دابەزێنراون — ئەوانەی گونجاون لە هەنگاوی داهاتوودا دابمەزرێنە.</string>
     <string name="welcome_plugins_configured_none">هیچ سەرچاوە یان کۆگایەک نەتوانرا ڕێکبخرێت. تۆڕەکەت پشکنە یان کۆگای جیاواز هەڵبژێرە و دووبارە هەوڵ بدەرەوە.</string>
@@ -2888,22 +2888,22 @@
     <string name="welcome_install_system_launch_failed">نەتوانرا دابەزێنەری سیستەم دەستپێبکرێت: %1$s</string>
     <string name="welcome_install_skip">پەڕاندنی دامەزراندن - دواتر لە بەڕێوەبەری پاشکۆکان دەیکەم</string>
     <string name="welcome_install_step_title">دامەزراندنی بە کۆمەڵی پاشکۆکان</string>
-    <string name="welcome_install_step_summary">جۆرەکانی سەرچاوە و ڕێکخستنەکان هەڵبژێرە، پاشان ڕێگە بدە Kototoro هەموو شتێک لە پاشبنەما دابەزێنێت و دامەزرێنێت.</string>
+    <string name="welcome_install_step_summary">جۆرەکانی سەرچاوە و ڕێکخستنەکان هەڵبژێرە، پاشان ڕێگە بدە Amuratsu هەموو شتێک لە پاشبنەما دابەزێنێت و دامەزرێنێت.</string>
     <string name="welcome_install_kinds_title">جۆرەکانی سەرچاوە بۆ دامەزراندن</string>
     <string name="welcome_install_kinds_summary">تەنها ئەو جۆرانەی نیشانەت کردوون مامەڵەیان لەگەڵ دەکرێت. ئەوانەی نیشانە نەکراون (بۆ نموونە Mihon، ئەگەر پێڕەوی دواخستنی دەکەیت) دەمێننەوە بۆ ئەوەی خۆت لە بەڕێوەبەری پاشکۆکان دایانمەزرێنیت.</string>
     <string name="welcome_install_kinds_empty">هێشتا هیچ یەدەگێک ڕێکنەخراوە. بگڕێوە دواوە و سەرەتا یەدەگەکان زیاد بکە.</string>
     <string name="welcome_install_nsfw_title">لەخۆگرتنی ناوەڕۆکی نەشیاو (NSFW)</string>
     <string name="welcome_install_nsfw_summary">لە بنەڕەتدا ناچالەکە - پاکەتە تایبەتەکان بە پێگەیشتووان لە لیستی دامەزراندن دەپاڵێورێن.</string>
-    <string name="welcome_intro_app_title">Kototoro · خوێنەری سەرچاوە کراوە</string>
-    <string name="welcome_intro_body">Kototoro خوێنەر/یاریکەری فرەپێکهاتەی سەرچاوە کراوەیە. پشتگیری لە ژینگەیەکی فراوانی پاشکۆ کۆمەڵگەیی دەکات، بەڵام هیچ سەرچاوەیەکی ناوەڕۆکی تایبەت بە خۆی لەگەڵدا نییە.</string>
+    <string name="welcome_intro_app_title">Amuratsu · خوێنەری سەرچاوە کراوە</string>
+    <string name="welcome_intro_body">Amuratsu خوێنەر/یاریکەری فرەپێکهاتەی سەرچاوە کراوەیە. پشتگیری لە ژینگەیەکی فراوانی پاشکۆ کۆمەڵگەیی دەکات، بەڵام هیچ سەرچاوەیەکی ناوەڕۆکی تایبەت بە خۆی لەگەڵدا نییە.</string>
     <string name="welcome_intro_concepts_title">سێ چەمک، لە ٣٠ چرکەدا</string>
     <string name="welcome_intro_repo_label">یەدەگ</string>
     <string name="welcome_intro_repo_body">بەستەرێک بۆ کۆمەڵەیەکی دەرەکی پاشکۆکان، کە لەلایەن کۆمەڵگەیەکی سەربەخۆوە بەڕێوەدەبرێت (بۆ نموونە یەدەگەکانی Mihon، لیستەکانی TVBox یان پاشکۆکانی پلگینی LNReader).</string>
     <string name="welcome_intro_extension_label">پاشکۆ</string>
-    <string name="welcome_intro_extension_body">پاکەتێکی دابەزێنراو لە ناو یەدەگێکدا - JAR، APK یان لیستێکی JSON. پاشکۆ دابەزێنراوەکان توانای خوێندنەوە یان یاریکردن لە ماڵپەڕێکەوە دەدەن بە Kototoro.</string>
+    <string name="welcome_intro_extension_body">پاکەتێکی دابەزێنراو لە ناو یەدەگێکدا - JAR، APK یان لیستێکی JSON. پاشکۆ دابەزێنراوەکان توانای خوێندنەوە یان یاریکردن لە ماڵپەڕێکەوە دەدەن بە Amuratsu.</string>
     <string name="welcome_intro_source_label">سەرچاوە</string>
     <string name="welcome_intro_source_body">سەرچاوەیەکی دیاریکراوی ناوەڕۆک کە لە ئەپەکەدا دەبینیت دوای ئەوەی پاشکۆیەک دەمەزرێت یان هاوردە دەکرێت - بۆ نموونە ماڵپەڕێکی مانگا یان ڤیدیۆیی تایبەت.</string>
-    <string name="welcome_intro_disclaimer">بەکارهێنانی پاشکۆ دەرەکییەکان بە تەواوی لەسەر بەرپرسیارێتی خۆتە: ڕفتاری کاتی جێبەجێکردن، یاسایی بوون و ناوەڕۆک لەلایەن پڕۆژەی Kototoroـوە کۆنتڕۆڵ ناکرێن.</string>
+    <string name="welcome_intro_disclaimer">بەکارهێنانی پاشکۆ دەرەکییەکان بە تەواوی لەسەر بەرپرسیارێتی خۆتە: ڕفتاری کاتی جێبەجێکردن، یاسایی بوون و ناوەڕۆک لەلایەن پڕۆژەی Amuratsuـوە کۆنتڕۆڵ ناکرێن.</string>
     <string name="welcome_intro_continue">تێگەیشتم - بەردەوام بە</string>
     <string name="welcome_done_title">نزیک بووینەتەوە</string>
     <string name="welcome_done_summary">پوختەی ڕێکخستنەکەت و چەند ئامۆژگارییەک.</string>
@@ -2912,10 +2912,10 @@
     <string name="welcome_done_json_note">جۆرەکانی بنەمادار بە JSON (Legado / TVBox / LNReader) بە خۆکارانە هاوردە دەبن؛ ئەگەر یەدەگی تری JSONیشت زیاد کردووە، لە بەڕێوەبەری پاشکۆکان هاوردەیان بکە.</string>
     <string name="welcome_done_title_finished">ڕێکخستن تەواو بوو</string>
     <string name="welcome_done_summary_finished">ئامرازەکە تەواو بوو - هیچ یەدەگ یان سەرچاوەیەک بە خۆکارانە زیاد نەکرا.</string>
-    <string name="welcome_done_body_finished">Kototoro هیچ سەرچاوەیەکی لە کاتی ڕێکخستندا زیاد نەکرد. دەتوانیت لە هەر کاتێکدا یەدەگ و سەرچاوەکانی خۆت لە ڕێکخستنەکان → سەرچاوەکانی ناوەڕۆک (بەڕێوەبەری پاشکۆکان) زیاد بکەیت.</string>
+    <string name="welcome_done_body_finished">Amuratsu هیچ سەرچاوەیەکی لە کاتی ڕێکخستندا زیاد نەکرد. دەتوانیت لە هەر کاتێکدا یەدەگ و سەرچاوەکانی خۆت لە ڕێکخستنەکان → سەرچاوەکانی ناوەڕۆک (بەڕێوەبەری پاشکۆکان) زیاد بکەیت.</string>
     <string name="welcome_done_advice_title">ئەگەر سەرچاوەیەک کار نەکرد</string>
     <string name="welcome_done_advice_summary">ڕێڕەوێکی کورت بۆ چارەسەرکردنی کێشە، بۆ ئەوەی کەسانی گونجاو ڕاپۆرتەکە ببەین.</string>
-    <string name="welcome_done_advice_body">١. کێشەکە پشتڕاست بکەرەوە بە بەکارهێنانی ئەپی ڕەسەنی سەرەتایی پاشکۆکە - بۆ نموونە سەرچاوەیەکی جۆری Mihon دەبێت لە ئەپی Mihon تاقیبکرێتەوە.\n٢. ئەگەر کێشەکە لەوێش ڕووی دا، ئەوا پەیوەندی بەو یەدەگەوە هەەی کە پاشکۆکە بەڕێوەدەبات: کێشەیەک لە بەستەری ڕەسەنی یەدەگەکەدا بکەرەوە.\n٣. ئەگەر تەنها لە Kototoro ڕووی دا، لە یەدەگی پڕۆژەی Kototoro ڕاگەیەنە و ناوەی سەرچاوە، وەشان و ئەوەی تاقیت کردووەتەوە لەخۆ بگرە.</string>
+    <string name="welcome_done_advice_body">١. کێشەکە پشتڕاست بکەرەوە بە بەکارهێنانی ئەپی ڕەسەنی سەرەتایی پاشکۆکە - بۆ نموونە سەرچاوەیەکی جۆری Mihon دەبێت لە ئەپی Mihon تاقیبکرێتەوە.\n٢. ئەگەر کێشەکە لەوێش ڕووی دا، ئەوا پەیوەندی بەو یەدەگەوە هەەی کە پاشکۆکە بەڕێوەدەبات: کێشەیەک لە بەستەری ڕەسەنی یەدەگەکەدا بکەرەوە.\n٣. ئەگەر تەنها لە Amuratsu ڕووی دا، لە یەدەگی پڕۆژەی Amuratsu ڕاگەیەنە و ناوەی سەرچاوە، وەشان و ئەوەی تاقیت کردووەتەوە لەخۆ بگرە.</string>
     <string name="welcome_step_counter">هەنگاوی %1$d لە %2$d</string>
     <string name="welcome_action_configure_repos">ڕێکخستنی یەدەگە هەڵبژاردراوەکان</string>
     <string name="welcome_action_install_count">دامەزراندنی %1$d پاشکۆ</string>
@@ -2949,7 +2949,7 @@
     <string name="welcome_permissions_notifications_title">ئاگادارییەکان</string>
     <string name="welcome_permissions_notifications_summary">ئاگادارییەکانی دابەزاندن، نوێکردنەوە و لێدەر نیشان دەدات.</string>
     <string name="welcome_permissions_packages_title">ئەپە دامەزراوەکان</string>
-    <string name="welcome_permissions_packages_summary">ڕێگە بە Kototoro دەدات پاشکۆ دامەزراوەکان و ئەپە میوانەکان (Mihon، Aniyomi، …) بناسێتەوە. لە مانیفێستدا ڕاگەیەندراوە و بە خۆکارانە دەدرێت.</string>
+    <string name="welcome_permissions_packages_summary">ڕێگە بە Amuratsu دەدات پاشکۆ دامەزراوەکان و ئەپە میوانەکان (Mihon، Aniyomi، …) بناسێتەوە. لە مانیفێستدا ڕاگەیەندراوە و بە خۆکارانە دەدرێت.</string>
     <string name="welcome_permissions_battery_title">مانەوە لە پاشبنەما</string>
     <string name="welcome_permissions_battery_summary">دابەزاندن و نوێکردنەوەکانی پاشبنەما چالاک دەهێڵێتەوە کاتێک شاشە کوژاوەتەوە یان ئامێرەکە بێکارە.</string>
     <string name="welcome_permissions_battery_action">ڕێگەدان</string>
@@ -3366,11 +3366,11 @@
     <string name="pref_glass_blur_quality_performance">کارایی</string>
     <string name="pref_glass_blur_quality_balanced">هاوسەنگ</string>
     <string name="pref_glass_blur_quality_quality">کوالێتی</string>
-    <string name="glass_material_family_kototoro">Kototoro (پێشنیارکراو)</string>
+    <string name="glass_material_family_kototoro">Amuratsu (پێشنیارکراو)</string>
     <string name="glass_material_family_haze">تەمومژ</string>
     <string name="glass_material_family_cupertino">کوپەرتینۆ</string>
     <string name="glass_material_family_fluent">فلۆنت</string>
-    <string name="glass_material_kototoro">Kototoro (پێشنیارکراو)</string>
+    <string name="glass_material_kototoro">Amuratsu (پێشنیارکراو)</string>
     <string name="glass_material_haze_ultra_thin">تەمومژی زۆر تەنک</string>
     <string name="glass_material_haze_thin">تەمی تەنک</string>
     <string name="glass_material_haze_regular">تەمومژی ئاسایی</string>

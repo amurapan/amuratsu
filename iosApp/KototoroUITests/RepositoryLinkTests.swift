@@ -25,7 +25,8 @@ final class RepositoryLinkTests: XCTestCase {
     func testLegacySchemesImplyTheirKind() throws {
         let address = "https://raw.githubusercontent.com/LittleSurvival/copymanga-copy20/repo/index.min.json"
         let encoded = address.addingPercentEncoding(withAllowedCharacters: .alphanumerics)!
-        for (scheme, kind) in [("tachiyomi", "MIHON"), ("aniyomi", "ANIYOMI"), ("anikku", "ANIYOMI"), ("kototoro", "MIHON")] {
+        for (scheme, kind) in [("tachiyomi", "MIHON"), ("aniyomi", "ANIYOMI"), ("anikku", "ANIYOMI"),
+                               ("amuratsu", "MIHON"), ("kototoro", "MIHON")] {
             let parsed = try RepositoryLink.parse("\(scheme)://add-repo?url=\(encoded)", defaultKind: "JAR")
             XCTAssertEqual(parsed.kind, kind, scheme)
             XCTAssertEqual(parsed.url.absoluteString, address)

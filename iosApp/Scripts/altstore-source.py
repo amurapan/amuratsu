@@ -25,11 +25,11 @@ import zipfile
 
 METADATA_FORMAT = 1
 METADATA_SUFFIX = ".altstore.json"
-APP_NAME = "Kototoro"
-SITE = "https://kototoro-app.github.io/Kototoro"
+APP_NAME = "Amuratsu"
+SITE = "https://amurapan.github.io/amuratsu"
 TINT = "0f766e"
 DESCRIPTION = (
-    "Kototoro brings manga, novels and video into one reader. The iOS preview runs Mihon, Tsundoku and Aniyomi "
+    "Amuratsu brings manga, novels and video into one reader. The iOS preview runs Mihon, Tsundoku and Aniyomi "
     "extensions plus kototoro / kotatsu / UMA parser plugins in an embedded JVM, and Apple CMS / TVBox sources "
     "natively. The app ships no extensions: add repositories or import APK/JAR files from inside the app.\n\n"
     "Requires iOS 26 or later. What works and what is missing: " + SITE + "/platforms"
@@ -37,13 +37,13 @@ DESCRIPTION = (
 CHANNELS = {
     "release": {
         "identifier": "org.skepsun.kototoro.altstore",
-        "name": "Kototoro",
+        "name": "Amuratsu",
         "subtitle": "Manga, novel and video reader",
     },
     "nightly": {
         "identifier": "org.skepsun.kototoro.altstore.nightly",
-        "name": "Kototoro Nightly",
-        "subtitle": "Daily builds of the Kototoro reader",
+        "name": "Amuratsu Nightly",
+        "subtitle": "Daily builds of the Amuratsu reader",
     },
 }
 MAX_VERSIONS = 10
@@ -160,7 +160,7 @@ def source(args):
         apps.append({
             "name": APP_NAME,
             "bundleIdentifier": bundle_identifier,
-            "developerName": "Kototoro contributors",
+            "developerName": "amurapan and contributors",
             "subtitle": channel["subtitle"],
             "localizedDescription": DESCRIPTION,
             "iconURL": icon,

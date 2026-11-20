@@ -32,13 +32,13 @@ internal object MacosAppUpdater {
         Files.createDirectories(staging)
         val work = Files.createTempDirectory(staging, "macos-")
         val mount = Files.createDirectory(work.resolve("mount"))
-        val image = work.resolve("image/Kototoro.app")
+        val image = work.resolve("image/Amuratsu.app")
         try {
             command("/usr/bin/hdiutil", "attach", "-readonly", "-nobrowse", "-mountpoint", mount.toString(),
                 download.file.toAbsolutePath().toString())
             try {
                 currentCoroutineContext().ensureActive()
-                val source = mount.resolve("Kototoro.app")
+                val source = mount.resolve("Amuratsu.app")
                 validate(source, installed, download.release.version)
                 command("/usr/bin/ditto", source.toString(), image.toString())
                 validate(image, installed, download.release.version)
@@ -52,10 +52,10 @@ internal object MacosAppUpdater {
     }
 
     fun validate(bundle: Path, installed: Path, version: DesktopPackageVersion) {
-        require(Files.isDirectory(bundle, LinkOption.NOFOLLOW_LINKS)) { "Missing Kototoro.app" }
-        val executable = bundle.resolve("Contents/MacOS/Kototoro")
+        require(Files.isDirectory(bundle, LinkOption.NOFOLLOW_LINKS)) { "Missing Amuratsu.app" }
+        val executable = bundle.resolve("Contents/MacOS/Amuratsu")
         require(Files.isRegularFile(executable, LinkOption.NOFOLLOW_LINKS) && Files.isExecutable(executable)) {
-            "The update has no executable Kototoro launcher"
+            "The update has no executable Amuratsu launcher"
         }
         val identifier = command("/usr/libexec/PlistBuddy", "-c", "Print :CFBundleIdentifier",
             bundle.resolve("Contents/Info.plist").toString()).trim()
@@ -132,7 +132,7 @@ internal fun macosExecutableArchitectures(executable: Path): Set<Int> = Files.ne
 internal fun macosInstallLayout(executable: Path): DesktopInstallLayout? {
     val contents = executable.parent?.parent ?: return null
     val root = contents.parent ?: return null
-    if (executable.fileName?.toString() != "Kototoro" || executable.parent.fileName?.toString() != "MacOS" ||
+    if (executable.fileName?.toString() != "Amuratsu" || executable.parent.fileName?.toString() != "MacOS" ||
         contents.fileName?.toString() != "Contents" || root.fileName?.toString()?.endsWith(".app") != true) return null
     if (!Files.isRegularFile(contents.resolve("Info.plist"), LinkOption.NOFOLLOW_LINKS) ||
         !Files.isDirectory(contents.resolve("runtime"), LinkOption.NOFOLLOW_LINKS) ||
@@ -182,7 +182,7 @@ internal fun macosUpdateScript(staged: DesktopStagedUpdate, log: Path, restart: 
         |/usr/bin/codesign --verify --deep --strict "${'$'}next"
         |$requirement
         |[ "${'$'}(/usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' "${'$'}next/Contents/Info.plist")" = '${MacosAppUpdater.BUNDLE_ID}' ]
-        |[ -x "${'$'}next/Contents/MacOS/Kototoro" ]
+        |[ -x "${'$'}next/Contents/MacOS/Amuratsu" ]
         |/bin/mv "${'$'}target" "${'$'}backup"
         |/bin/mv "${'$'}next" "${'$'}target"
         |$relaunch

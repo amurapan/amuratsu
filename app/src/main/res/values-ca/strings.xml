@@ -137,7 +137,7 @@
     <string name="page_save_manga_title_length">Longitud del títol del manga en els fitxers desats</string>
     <string name="page_save_manga_title_length_summary">Nombre de caràcters del títol del manga conservats als noms de fitxer de les imatges desades (12–64)</string>
     <string name="pages_saved">Pàgines desades</string>
-    <string name="cloudstream_newpipe_required">Aquesta extensió necessita classes de NewPipe que el NewPipe inclòs amb Kototoro no té, de manera que no pot reproduir vídeos. Proveu d\'actualitzar l\'extensió o Kototoro.</string>
+    <string name="cloudstream_newpipe_required">Aquesta extensió necessita classes de NewPipe que el NewPipe inclòs amb Amuratsu no té, de manera que no pot reproduir vídeos. Proveu d\'actualitzar l\'extensió o Amuratsu.</string>
     <string name="clear_chapter_thumbnails">Neteja les minyatures</string>
     <string name="continuous_horizontal">Horitzontal continu</string>
     <string name="continuous_horizontal_reversed">Llegeix de dreta a esquerra</string>
@@ -189,7 +189,7 @@
     <string name="replace_rule_disable_all_summary">Atura temporalment l\'aplicació de regles</string>
     <string name="replace_rule_edit">Edita la regla</string>
     <string name="replace_rule_import">Importa regles de Legado</string>
-    <string name="replace_rule_import_summary">Importa una matriu JSON exportada per Legado o Kototoro</string>
+    <string name="replace_rule_import_summary">Importa una matriu JSON exportada per Legado o Amuratsu</string>
     <string name="replace_rule_export">Exporta regles</string>
     <string name="replace_rule_export_summary">Exporta regles en un format JSON compatible</string>
     <string name="replace_rule_empty">Sense regles de substitució</string>
@@ -315,7 +315,7 @@
     <string name="enter_password">Entra la contrasenya</string>
     <string name="wrong_password">Contrasenya incorrecta</string>
     <string name="protect_application">Protegeix l\'aplicació</string>
-    <string name="protect_application_summary">Demana la contrasenya en iniciar Kototoro</string>
+    <string name="protect_application_summary">Demana la contrasenya en iniciar Amuratsu</string>
     <string name="repeat_password">Repetiu la contrasenya</string>
     <string name="passwords_mismatch">Les contrasenyes no coincideixen</string>
     <string name="about">Quant a</string>
@@ -422,8 +422,8 @@
     <string name="clear_local_novel_storage_prompt">Voleu suprimir tots els fitxers de novel·la desats localment i importats? Això no es pot desfer.</string>
     <string name="clear_local_video_storage_prompt">Voleu suprimir tots els fitxers de vídeo desats localment i importats? Això no es pot desfer.</string>
     <string name="welcome">Benvingut</string>
-    <string name="welcome_intro_title">Configura Kototoro</string>
-    <string name="welcome_intro_summary">Trieu com voleu llegir i veure contingut. Ara Kototoro utilitza famílies de fonts basades en complements per a manga, novel·les i vídeo, incloent-hi JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader i Cloudstream.</string>
+    <string name="welcome_intro_title">Configura Amuratsu</string>
+    <string name="welcome_intro_summary">Trieu com voleu llegir i veure contingut. Ara Amuratsu utilitza famílies de fonts basades en complements per a manga, novel·les i vídeo, incloent-hi JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader i Cloudstream.</string>
     <string name="welcome_step_start">Inici</string>
     <string name="welcome_step_sources">Fonts</string>
     <string name="welcome_step_preferences">Preferències</string>
@@ -433,11 +433,11 @@
     <string name="welcome_glass_preset_title">Acabat de vidre</string>
     <string name="welcome_glass_preset_summary">Tria el tipus d\'acabat de vidre per a l\'estil d\'iOS. La refracció és la predeterminada i es pot ajustar més endavant a la configuració d\'Aparença.</string>
     <string name="home_quick_action_wizard">Assistent</string>
-    <string name="welcome_restore_summary">Ja has utilitzat Kototoro anteriorment? Restaura una còpia de seguretat, inicia sessió per sincronitzar o afegeix carpetes locals primer.</string>
+    <string name="welcome_restore_summary">Ja has utilitzat Amuratsu anteriorment? Restaura una còpia de seguretat, inicia sessió per sincronitzar o afegeix carpetes locals primer.</string>
     <string name="welcome_source_formats_title">Tria els formats de contingut</string>
     <string name="welcome_source_formats_summary">Aquests filtres decideixen quines famílies de fonts s\'activen després de la configuració.</string>
     <string name="welcome_ecosystems_title">Ecosistema de fonts</string>
-    <string name="welcome_ecosystems_summary">Kototoro admet múltiples famílies de connectors de fonts per llegir i reproduir. Comença amb els repositoris recomanats aquí i després ajusta\'ls a la gestió d\'extensions.</string>
+    <string name="welcome_ecosystems_summary">Amuratsu admet múltiples famílies de connectors de fonts per llegir i reproduir. Comença amb els repositoris recomanats aquí i després ajusta\'ls a la gestió d\'extensions.</string>
     <string name="welcome_ecosystem_manga">Manga: analitzadors JAR, Mihon, IReader, LNReader</string>
     <string name="welcome_ecosystem_novel">Novel·la: Legado, IReader, LNReader</string>
     <string name="welcome_ecosystem_video">Vídeo: Aniyomi, TVBox, Cloudstream</string>
@@ -446,10 +446,10 @@
     <string name="welcome_preferences_summary">Tria els idiomes i tipus de contingut. Pots canviar-ho més endavant a la configuració de les fonts.</string>
     <string name="welcome_spaces_title">Separa els teus espais</string>
     <string name="welcome_spaces_summary">Els espais donen a manga, novel·les i anime navegació i preferències independents. Opcions avançades a Ajustos &gt; Usuari &gt; Espais.</string>
-    <string name="welcome_ready_summary">Configuració enllestida. Kototoro activarà fonts compatibles amb els vostres idiomes. Podeu tornar a obrir-ho des d\'Ajustos &gt; Fonts &gt; Assistent.</string>
-    <string name="welcome_jar_install_success">Kototoro: S\'han baixat i muntat correctament %1$d motors d\'anàlisi nous des del núvol!</string>
-    <string name="welcome_jar_install_up_to_date">Kototoro: Verificació al núvol completada, els analitzadors locals estan al dia! (%1$d fonts carregades en total)</string>
-    <string name="welcome_jar_install_failed">Kototoro: Ha fallat la càrrega d\'analitzadors des del núvol (%1$s), torna-ho a provar o ves a la configuració per canviar de servidor intermediari</string>
+    <string name="welcome_ready_summary">Configuració enllestida. Amuratsu activarà fonts compatibles amb els vostres idiomes. Podeu tornar a obrir-ho des d\'Ajustos &gt; Fonts &gt; Assistent.</string>
+    <string name="welcome_jar_install_success">Amuratsu: S\'han baixat i muntat correctament %1$d motors d\'anàlisi nous des del núvol!</string>
+    <string name="welcome_jar_install_up_to_date">Amuratsu: Verificació al núvol completada, els analitzadors locals estan al dia! (%1$d fonts carregades en total)</string>
+    <string name="welcome_jar_install_failed">Amuratsu: Ha fallat la càrrega d\'analitzadors des del núvol (%1$s), torna-ho a provar o ves a la configuració per canviar de servidor intermediari</string>
     <string name="home_placeholder_title">Tauler de lectura</string>
     <string name="home_placeholder_subtitle">Consulta la teva lectura recent, actualitzacions, biblioteca, sincronització i fonts en un sol lloc.</string>
     <string name="home_hero_local_subtitle">Reprengues on ho has deixat o torna a obrir allò que has consultat fa poc.</string>
@@ -1026,7 +1026,7 @@
     <string name="import_completed_hint">Podeu suprimir el fitxer original de l\'emmagatzematge per estalviar espai</string>
     <string name="import_will_start_soon">La importació començarà aviat</string>
     <string name="feed">Canal</string>
-    <string name="manga_error_description_pattern">Detalls de l\'error:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. Proveu d\'&lt;a href=\"%2$s\"&gt;obrir el manga en un navegador web&lt;/a&gt; per assegurar-vos que està disponible a la seva font&lt;br&gt;2. Assegureu-vos que utilitzeu la &lt;a href=\"kototoro://about\"&gt;versió més recent de Kototoro&lt;/a&gt;&lt;br&gt;3. Si està disponible, envieu un informe d\'error als desenvolupadors.</string>
+    <string name="manga_error_description_pattern">Detalls de l\'error:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. Proveu d\'&lt;a href=\"%2$s\"&gt;obrir el manga en un navegador web&lt;/a&gt; per assegurar-vos que està disponible a la seva font&lt;br&gt;2. Assegureu-vos que utilitzeu la &lt;a href=\"amuratsu://about\"&gt;versió més recent de Amuratsu&lt;/a&gt;&lt;br&gt;3. Si està disponible, envieu un informe d\'error als desenvolupadors.</string>
     <string name="history_shortcuts">Mostra les dreceres de manga recent</string>
     <string name="history_shortcuts_summary">Manteniu premuda la icona de l\'aplicació per accedir ràpidament als mangues recents</string>
     <string name="reader_control_ltr_summary">No ajustis la direcció de canvi de pàgina al mode de lectura, per exemple, prémer la tecla dreta sempre passa a la pàgina següent. Aquesta opció només afecta els dispositius d\'entrada de maquinari</string>
@@ -1196,7 +1196,7 @@
     <string name="export_backup_for_other_apps_summary">Trieu l\'aplicació de destí i creeu una còpia compatible: Kotatsu, Mihon, Aniyomi o Usagi.</string>
     <string name="export_backup_choose_target_app">Tria l\'aplicació de destí</string>
     <string name="export_kotatsu_backup">Exporta còpia de Kotatsu</string>
-    <string name="export_kotatsu_backup_summary">Creeu una còpia heretada separada per a aplicacions de Kotatsu sense les seccions específiques de Kototoro.</string>
+    <string name="export_kotatsu_backup_summary">Creeu una còpia heretada separada per a aplicacions de Kotatsu sense les seccions específiques de Amuratsu.</string>
     <string name="export_kotatsu_backup_saved">Còpia de Kotatsu desada</string>
     <string name="export_mihon_backup">Exporta còpia de Mihon</string>
     <string name="export_mihon_backup_summary">Exporta favorits, categories i progrés de lectura només per a entrades de font de Mihon.</string>
@@ -1269,7 +1269,7 @@
     <string name="data_and_privacy">Dades i privadesa</string>
     <string name="restore_summary">Restaura una còpia de seguretat anterior</string>
     <string name="restore_kototoro_backup">Restaura la còpia</string>
-    <string name="restore_kototoro_backup_summary">Restaura una còpia de seguretat de Kototoro de qualsevol versió o de Kotatsu. El format es detecta automàticament.</string>
+    <string name="restore_kototoro_backup_summary">Restaura una còpia de seguretat de Amuratsu de qualsevol versió o de Kotatsu. El format es detecta automàticament.</string>
     <string name="restore_mode_replace_existing">Substitueix les dades existents</string>
     <string name="restore_mode_replace_existing_summary">Primer s\'esborren les seccions a restaurar; s\'eliminen els preferits i l\'historial que no surtin a la còpia</string>
     <string name="restore_mode_merge_with_existing">Fusiona amb les dades existents</string>
@@ -2006,7 +2006,7 @@
     <string name="show_pages_thumbs">Mostra miniatures de pàgines</string>
     <string name="show_pages_thumbs_summary">Habilita la pestanya \"Pàgines\" a la pantalla de detalls</string>
     <string name="error_no_data_received">No s\'ha rebut cap dada del servidor</string>
-    <string name="unsupported_backup_message">Selecciona una còpia de seguretat de Kototoro vàlida</string>
+    <string name="unsupported_backup_message">Selecciona una còpia de seguretat de Amuratsu vàlida</string>
     <string name="hours_short">%d h</string>
     <string name="minutes_short">%d min</string>
     <string name="seconds_short">%d s</string>
@@ -2058,8 +2058,8 @@
     <string name="chapters_read">Capítols llegits</string>
     <string name="chapters_left">Capítols restants</string>
     <string name="external_source">Extern/complement</string>
-    <string name="plugin_incompatible">Complement incompatible o error intern. Assegureu-vos d\'utilitzar la darrera versió del complement i de Kototoro</string>
-    <string name="plugin_incompatible_with_cause">Error del complement: %s\n Assegureu-vos d\'utilitzar la darrera versió del complement i de Kototoro</string>
+    <string name="plugin_incompatible">Complement incompatible o error intern. Assegureu-vos d\'utilitzar la darrera versió del complement i de Amuratsu</string>
+    <string name="plugin_incompatible_with_cause">Error del complement: %s\n Assegureu-vos d\'utilitzar la darrera versió del complement i de Amuratsu</string>
     <string name="plugin_missing_host_classes">No es pot instal·lar %1$s perquè depèn de classes amfitriones %2$s no compatibles:\n%3$s</string>
     <string name="connection_ok">La connexió és correcta</string>
     <string name="invalid_proxy_configuration">Proxy invàlid</string>
@@ -2259,7 +2259,7 @@
     <string name="search_disabled_sources">Cerca a les fonts inhabilitades</string>
     <string name="error_details">Detalls de l\'error</string>
     <string name="error_disclaimer_manga">Proveu d\'obrir el manga al navegador web per assegurar-vos que està disponible a la seva font.</string>
-    <string name="error_disclaimer_app_outdated">Sembla que la vostra versió de Kototoro està desactualitzada. Instal·leu l\'última versió per obtenir totes les correccions disponibles.</string>
+    <string name="error_disclaimer_app_outdated">Sembla que la vostra versió de Amuratsu està desactualitzada. Instal·leu l\'última versió per obtenir totes les correccions disponibles.</string>
     <string name="error_disclaimer_report">Podeu enviar un informe d\'error als desenvolupadors, això ens ajudarà a localitzar i solucionar l\'error</string>
     <string name="enable_source_manga">Habilita la font de manga</string>
     <string name="enable_source_novel">Habilita la font de novel·la</string>
@@ -2277,7 +2277,7 @@
     <string name="recommendation_novel">novel·les recomanades</string>
     <string name="recommendation_video">vídeos recomanats</string>
     <string name="link_to_manga_on_s">Enllaç al manga a %s</string>
-    <string name="link_to_manga_in_app">Enllaç al manga a Kototoro</string>
+    <string name="link_to_manga_in_app">Enllaç al manga a Amuratsu</string>
     <string name="clear_browser_data">Neteja dades navegador</string>
     <string name="clear_browser_data_summary">Neteja les dades del navegador com ara la memòria cau i les galetes. Avís: l\'autorització a les fonts de contingut pot deixar de ser vàlida</string>
     <string name="no_write_permission_to_file">No hi ha permís per escriure un fitxer</string>
@@ -2327,7 +2327,7 @@
     <string name="discord_token_hint">Enganxeu el vostre token de Discord aquí</string>
     <string name="discord_rpc_summary">Mostra el vostre estat de lectura a Discord</string>
     <string name="obtain">Obté</string>
-    <string name="discord_rpc_description">S\'està llegint un manga a Kototoro - una aplicació de lectura de manga</string>
+    <string name="discord_rpc_description">S\'està llegint un manga a Amuratsu - una aplicació de lectura de manga</string>
     <string name="discord_logout_summary">Esborra l\'autorització de Discord desada</string>
     <string name="reading_s">Llegint %s</string>
     <string name="read_on_s">Llegeix a %s</string>
@@ -2355,7 +2355,7 @@
     <string name="sync_backend_switch_webdav_title">Vols canviar a WebDAV?</string>
     <string name="sync_backend_switch_webdav_confirm">La sincronització de Google Drive està activada actualment. Activar la còpia de seguretat WebDAV desactivarà la sincronització de Google Drive tot mantenint la sessió de Google.</string>
     <string name="sync_sign_in">Prepara Google Drive</string>
-    <string name="sync_sign_in_summary">Utilitza les dades de l\'aplicació de Google Drive amb el permís mínim de dades d\'aplicació per sincronitzar subscripcions i actualitzar registres. Kototoro no pot accedir als teus fitxers de Drive.</string>
+    <string name="sync_sign_in_summary">Utilitza les dades de l\'aplicació de Google Drive amb el permís mínim de dades d\'aplicació per sincronitzar subscripcions i actualitzar registres. Amuratsu no pot accedir als teus fitxers de Drive.</string>
     <string name="google_drive_sync_unregistered_build_error">La sincronització de Google Drive no és compatible amb versions de desenvolupament o nocturnes. Si us plau, utilitza versions oficials o la sincronització WebDAV.</string>
     <string name="sync_sign_out">Tanca sessió</string>
     <string name="sync_account">Sessió iniciada</string>
@@ -2410,8 +2410,8 @@
     <string name="webdav_remote_backups_inspect">Comprova les còpies remotes</string>
     <string name="webdav_remote_backups_inspect_summary">Baixa i verifica si cada còpia remota es pot restaurar de manera segura.</string>
     <string name="webdav_remote_backups_clear">Neteja les còpies de WebDAV</string>
-    <string name="webdav_remote_backups_clear_summary">Suprimeix tots els fitxers de còpia de Kototoro a la ruta WebDAV configurada. Les dades locals no canvien.</string>
-    <string name="webdav_remote_backups_clear_confirm">Voleu suprimir totes les còpies de Kototoro de la ruta WebDAV configurada? Les dades locals no es modificaran.</string>
+    <string name="webdav_remote_backups_clear_summary">Suprimeix tots els fitxers de còpia de Amuratsu a la ruta WebDAV configurada. Les dades locals no canvien.</string>
+    <string name="webdav_remote_backups_clear_confirm">Voleu suprimir totes les còpies de Amuratsu de la ruta WebDAV configurada? Les dades locals no es modificaran.</string>
     <string name="webdav_remote_backups_loading">Carregant còpies de WebDAV…</string>
     <string name="webdav_remote_backup_status_unknown">No comprovat</string>
     <string name="webdav_remote_backup_status_restorable">Restaurable</string>
@@ -2819,7 +2819,7 @@
     <string name="trust_and_add">Confia-hi i afegeix-ho</string>
     <string name="trust_extension_repository_message">Repositori: %1$s\nLloc web: %2$s\nEmpremta SHA-256:\n%3$s\n\nVerifiqueu aquesta empremta amb l\'autor abans de confiar en el repositori.</string>
     <string name="untrusted_extension_message">%1$s (%2$s) està instal·lat, però la seva signatura no coincideix amb l\'empremta digital del repositori seleccionat.\n\nEmpremta digital del repositori: %3$s\n\nElimineu el paquet instal·lat abans de tornar-lo a instal·lar des d\'aquest repositori.</string>
-    <string name="incompatible_extension_message">No es pot instal·lar %1$s %2$s perquè la seva versió de biblioteca (%3$s) està fora del rang compatible de Kototoro.</string>
+    <string name="incompatible_extension_message">No es pot instal·lar %1$s %2$s perquè la seva versió de biblioteca (%3$s) està fora del rang compatible de Amuratsu.</string>
     <string name="built_in_sources">Integrades</string>
     <string name="select_all">Selecciona-ho tot</string>
     <string name="deselect_all">Desselecciona-ho tot</string>
@@ -2859,7 +2859,7 @@
     <string name="welcome_plugins_repo_yakateam">Analitzadors de Yakateam</string>
     <string name="welcome_plugins_repo_redo">Analitzadors de Redo</string>
     <string name="welcome_plugins_repo_uma">UMA (Analitzadors de Tsuki)</string>
-    <string name="welcome_plugins_disclaimer">Aquests repositoris d\'extensions són mantinguts per comunitats en línia independents. Els desenvolupadors de Kototoro no tenen cap afiliació, control ni associació amb aquests repositoris de tercers. Reconec que configuro aquestes fonts sota la meva pròpia responsabilitat.</string>
+    <string name="welcome_plugins_disclaimer">Aquests repositoris d\'extensions són mantinguts per comunitats en línia independents. Els desenvolupadors de Amuratsu no tenen cap afiliació, control ni associació amb aquests repositoris de tercers. Reconec que configuro aquestes fonts sota la meva pròpia responsabilitat.</string>
     <string name="welcome_plugins_start_btn">Configura els repositoris</string>
     <string name="welcome_plugins_configured">S\'han configurat %1$d tipus de font/repositori nous: %2$s. Els paquets encara no s\'han baixat; instal·leu els coincidents al pas següent.</string>
     <string name="welcome_plugins_configured_none">No s\'ha pogut configurar cap font ni repositori. Comproveu la xarxa o trieu repositoris diferents i torneu-ho a provar.</string>
@@ -2889,22 +2889,22 @@
     <string name="welcome_install_system_launch_failed">No s\'ha pogut iniciar l\'instal·lador del sistema: %1$s</string>
     <string name="welcome_install_skip">Omet la instal·lació — Ho faré més tard a la gestió d\'extensions</string>
     <string name="welcome_install_step_title">Instal·lació per lots d\'extensions</string>
-    <string name="welcome_install_step_summary">Trieu quins tipus de font i configuració voleu utilitzar, i deixeu que Kototoro ho descarregue i instal·li tot en segon pla.</string>
+    <string name="welcome_install_step_summary">Trieu quins tipus de font i configuració voleu utilitzar, i deixeu que Amuratsu ho descarregue i instal·li tot en segon pla.</string>
     <string name="welcome_install_kinds_title">Tipus de font a instal·lar</string>
     <string name="welcome_install_kinds_summary">Només es gestionaran els tipus que heu marcat. Els no marcats (p. ex. Mihon, si preferiu fer-ho més tard) es queden perquè els instal·leu a la gestió d\'extensions.</string>
     <string name="welcome_install_kinds_empty">Encara no hi ha repositoris configurats. Torneu enrere i afegiu-ne primer.</string>
     <string name="welcome_install_nsfw_title">Inclou contingut NSFW</string>
     <string name="welcome_install_nsfw_summary">Desactivat per defecte: els paquets només per a adults es filtren de la llista d\'instal·lació.</string>
-    <string name="welcome_intro_app_title">Kototoro · Lector de codi obert</string>
-    <string name="welcome_intro_body">Kototoro és un lector/reproductor multimèdia de codi obert. Admet un ampli ecosistema d\'extensions de la comunitat, però no inclou cap font de contingut pròpia.</string>
+    <string name="welcome_intro_app_title">Amuratsu · Lector de codi obert</string>
+    <string name="welcome_intro_body">Amuratsu és un lector/reproductor multimèdia de codi obert. Admet un ampli ecosistema d\'extensions de la comunitat, però no inclou cap font de contingut pròpia.</string>
     <string name="welcome_intro_concepts_title">Tres conceptes, en 30 segons</string>
     <string name="welcome_intro_repo_label">Repositori</string>
     <string name="welcome_intro_repo_body">Un URL a una col·lecció d\'extensions de tercers, mantinguda per una comunitat independent (per exemple, repositoris de Mihon, llistes de TVBox o repositoris de complements de LNReader).</string>
     <string name="welcome_intro_extension_label">Extensió</string>
-    <string name="welcome_intro_extension_body">Un paquet instal·lable dins d\'un repositori: un JAR, un APK o una llista JSON. Les extensions instal·lades donen a Kototoro la capacitat de llegir o reproduir des d\'un lloc web.</string>
+    <string name="welcome_intro_extension_body">Un paquet instal·lable dins d\'un repositori: un JAR, un APK o una llista JSON. Les extensions instal·lades donen a Amuratsu la capacitat de llegir o reproduir des d\'un lloc web.</string>
     <string name="welcome_intro_source_label">Font</string>
     <string name="welcome_intro_source_body">Una font de contingut concreta que veieu a l\'aplicació després d\'instal·lar o importar una extensió, per exemple un lloc web específic de manga o vídeo.</string>
-    <string name="welcome_intro_disclaimer">L\'ús d\'extensions de tercers és totalment sota la vostra pròpia responsabilitat: el projecte Kototoro no controla el comportament en execució, la legalitat ni el contingut.</string>
+    <string name="welcome_intro_disclaimer">L\'ús d\'extensions de tercers és totalment sota la vostra pròpia responsabilitat: el projecte Amuratsu no controla el comportament en execució, la legalitat ni el contingut.</string>
     <string name="welcome_intro_continue">Ho entenc — continua</string>
     <string name="welcome_done_title">Gairebé a punt</string>
     <string name="welcome_done_summary">Resum i alguns consells.</string>
@@ -2913,10 +2913,10 @@
     <string name="welcome_done_json_note">Els tipus basats en JSON (Legado / TVBox / LNReader) s\'importen automàticament; si també heu afegit altres repositoris JSON, importeu-los a la gestió d\'extensions.</string>
     <string name="welcome_done_title_finished">Configuració completa</string>
     <string name="welcome_done_summary_finished">L\'assistent ha acabat — no s\'ha afegit cap repositori ni font automàticament.</string>
-    <string name="welcome_done_body_finished">Kototoro no ha afegit cap font durant la configuració. Podeu afegir els vostres propis repositoris i fonts en qualsevol moment a Paràmetres → Fonts de contingut (Gestió d\'extensions).</string>
+    <string name="welcome_done_body_finished">Amuratsu no ha afegit cap font durant la configuració. Podeu afegir els vostres propis repositoris i fonts en qualsevol moment a Paràmetres → Fonts de contingut (Gestió d\'extensions).</string>
     <string name="welcome_done_advice_title">Si una font no funciona</string>
     <string name="welcome_done_advice_summary">Una breu ruta de resolució de problemes perquè les persones adequades vegin l\'informe.</string>
-    <string name="welcome_done_advice_body">1. Confirmeu el problema utilitzant l\'aplicació amfitriona original de l\'extensió; per exemple, una font de tipus Mihon s\'ha de provar a l\'aplicació Mihon.\n2. Si el problema també passa allà, pertany al repositori que manté l\'extensió: obriu una incidència a l\'URL del repositori.\n3. Si només passa a Kototoro, informeu-ne al repositori del projecte Kototoro i incloeu-hi el nom de la font, la versió de l\'extensió i què heu provat.</string>
+    <string name="welcome_done_advice_body">1. Confirmeu el problema utilitzant l\'aplicació amfitriona original de l\'extensió; per exemple, una font de tipus Mihon s\'ha de provar a l\'aplicació Mihon.\n2. Si el problema també passa allà, pertany al repositori que manté l\'extensió: obriu una incidència a l\'URL del repositori.\n3. Si només passa a Amuratsu, informeu-ne al repositori del projecte Amuratsu i incloeu-hi el nom de la font, la versió de l\'extensió i què heu provat.</string>
     <string name="welcome_step_counter">Pas %1$d de %2$d</string>
     <string name="welcome_action_configure_repos">Configura els repositoris seleccionats</string>
     <string name="welcome_action_install_count">Instal·la %1$d extensions</string>
@@ -2950,7 +2950,7 @@
     <string name="welcome_permissions_notifications_title">Notificacions</string>
     <string name="welcome_permissions_notifications_summary">Mostra notificacions de baixades, actualitzacions i reproductor.</string>
     <string name="welcome_permissions_packages_title">Apps instal·lades</string>
-    <string name="welcome_permissions_packages_summary">Permet que Kototoro detecti extensions ja instal·lades i aplicacions amfitriones (Mihon, Aniyomi, …). Declarat al manifest i concedit automàticament.</string>
+    <string name="welcome_permissions_packages_summary">Permet que Amuratsu detecti extensions ja instal·lades i aplicacions amfitriones (Mihon, Aniyomi, …). Declarat al manifest i concedit automàticament.</string>
     <string name="welcome_permissions_battery_title">Supervivència en segon pla</string>
     <string name="welcome_permissions_battery_summary">Manté les baixades i actualitzacions en segon pla quan la pantalla està apagada o el dispositiu està inactiu.</string>
     <string name="welcome_permissions_battery_action">Permetre</string>
@@ -3366,11 +3366,11 @@
     <string name="pref_glass_blur_quality_performance">Rendiment</string>
     <string name="pref_glass_blur_quality_balanced">Balanced</string>
     <string name="pref_glass_blur_quality_quality">Qualitat</string>
-    <string name="glass_material_family_kototoro">Kototoro (Recomanat)</string>
+    <string name="glass_material_family_kototoro">Amuratsu (Recomanat)</string>
     <string name="glass_material_family_haze">Haze</string>
     <string name="glass_material_family_cupertino">Cupertino</string>
     <string name="glass_material_family_fluent">Fluent</string>
-    <string name="glass_material_kototoro">Kototoro (Recomanat)</string>
+    <string name="glass_material_kototoro">Amuratsu (Recomanat)</string>
     <string name="glass_material_haze_ultra_thin">Haze Ultra Fí</string>
     <string name="glass_material_haze_thin">Haze Fí</string>
     <string name="glass_material_haze_regular">Haze Regular</string>

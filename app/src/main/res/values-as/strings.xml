@@ -120,7 +120,7 @@
     <string name="_import">ইমপ\'ৰ্ট কৰক</string>
     <string name="delete">মচি পেলাওক</string>
     <string name="operation_not_supported">এই কাৰ্য্য সমৰ্থিত নহয়</string>
-    <string name="cloudstream_newpipe_required">এই এক্সটেনশ্বনটোক নিউপাইপ ক্লাছৰ প্ৰয়োজন যিবোৰ Kototoro ৰ লগত বান্ডেল কৰা নিউপাইপত নাই, সেয়েহে ই ভিডিঅ\' চাব নোৱাৰে। এক্সটেনশ্বন বা Kototoro আপডেট কৰাৰ চেষ্টা কৰক।</string>
+    <string name="cloudstream_newpipe_required">এই এক্সটেনশ্বনটোক নিউপাইপ ক্লাছৰ প্ৰয়োজন যিবোৰ Amuratsu ৰ লগত বান্ডেল কৰা নিউপাইপত নাই, সেয়েহে ই ভিডিঅ\' চাব নোৱাৰে। এক্সটেনশ্বন বা Amuratsu আপডেট কৰাৰ চেষ্টা কৰক।</string>
     <string name="text_file_not_supported">হয় এটা ZIP বা CBZ ফাইল বাছক।</string>
     <string name="no_description">কোনো বিবৰণ নাই</string>
     <string name="clear_pages_cache">পৃষ্ঠাৰ কেশ্ব পৰিষ্কাৰ কৰক</string>
@@ -184,7 +184,7 @@
     <string name="replace_rule_disable_all_summary">সাময়িকভাৱে প্ৰতিস্থাপনৰ নিয়মসমূহ প্ৰয়োগ কৰা বন্ধ ৰাখক</string>
     <string name="replace_rule_edit">নিয়ম সলনি</string>
     <string name="replace_rule_import">Legado নিয়মসমূহ আমদানি কৰক</string>
-    <string name="replace_rule_import_summary">Legado বা Kototoro দ্বাৰা এক্সপৰ্ট কৰা JSON এৰে ২০০ আমদানি কৰক</string>
+    <string name="replace_rule_import_summary">Legado বা Amuratsu দ্বাৰা এক্সপৰ্ট কৰা JSON এৰে ২০০ আমদানি কৰক</string>
     <string name="replace_rule_export">ৰুল এক্সপৰ্ট</string>
     <string name="replace_rule_export_summary">সংগত JSON ফৰ্মেটত নিয়মসমূহ এক্সপৰ্ট কৰক</string>
     <string name="replace_rule_empty">কোনো প্ৰতিস্থাপন নিয়ম নাই</string>
@@ -315,7 +315,7 @@
     <string name="enter_password">পাছৱৰ্ড সুমুৱাওক</string>
     <string name="wrong_password">ভুল পাছৱৰ্ড</string>
     <string name="protect_application">এপ সুৰক্ষিত কৰক</string>
-    <string name="protect_application_summary">Kototoro আৰম্ভ কৰোঁতে পাছৱৰ্ড বিচৰা হ\'ব</string>
+    <string name="protect_application_summary">Amuratsu আৰম্ভ কৰোঁতে পাছৱৰ্ড বিচৰা হ\'ব</string>
     <string name="repeat_password">পাছৱৰ্ড পুনৰাবৃত্তি কৰক</string>
     <string name="passwords_mismatch">পাছৱৰ্ড মিল খোৱা নাই</string>
     <string name="about">বিষয়ে</string>
@@ -422,8 +422,8 @@
     <string name="clear_local_novel_storage_prompt">স্থানীয়ভাৱে সংৰক্ষিত আৰু আমদানি কৰা সকলো উপন্যাস ফাইল ডিলিট কৰিবনে? ইয়াক পূৰ্বৱৰ্তী অৱস্থালৈ আনিব নোৱাৰি।</string>
     <string name="clear_local_video_storage_prompt">স্থানীয়ভাৱে সংৰক্ষিত আৰু আমদানি কৰা সকলো ভিডিঅ\' ফাইল ডিলিট কৰিবনে? ইয়াক পূৰ্বৱৰ্তী অৱস্থালৈ আনিব নোৱাৰি।</string>
     <string name="welcome">স্বাগতম</string>
-    <string name="welcome_intro_title">Kototoro ছেট আপ কৰক</string>
-    <string name="welcome_intro_summary">আপুনি কেনেকৈ পঢ়িব আৰু চাব বিচাৰে নিৰ্বাচন কৰক। Kototoro-এ এতিয়া মাংগা, উপন্যাস, আৰু ভিডিঅ\'ৰ বাবে প্লাগ-ইন ভিত্তিক উৎস পৰিয়াল ব্যৱহাৰ কৰে, যাৰ ভিতৰত JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader, আৰু Cloudstream অন্তৰ্ভুক্ত।</string>
+    <string name="welcome_intro_title">Amuratsu ছেট আপ কৰক</string>
+    <string name="welcome_intro_summary">আপুনি কেনেকৈ পঢ়িব আৰু চাব বিচাৰে নিৰ্বাচন কৰক। Amuratsu-এ এতিয়া মাংগা, উপন্যাস, আৰু ভিডিঅ\'ৰ বাবে প্লাগ-ইন ভিত্তিক উৎস পৰিয়াল ব্যৱহাৰ কৰে, যাৰ ভিতৰত JAR, Mihon, Aniyomi, IReader, Legado, TVBox, LNReader, আৰু Cloudstream অন্তৰ্ভুক্ত।</string>
     <string name="welcome_step_start">আৰম্ভ কৰক</string>
     <string name="welcome_step_sources">উৎসসমূহ</string>
     <string name="welcome_step_preferences">পছন্দসমূহ</string>
@@ -433,11 +433,11 @@
     <string name="welcome_glass_preset_title">গ্লাছ ফিনিশ</string>
     <string name="welcome_glass_preset_summary">iOS শৈলীৰ বাবে গ্লাছ ফিনিশ প্ৰিসেট বাছনি কৰক। ৰেফ্ৰেকচন হৈছে অবিকল্পিত আৰু ইয়াক পিছত এপিয়াৰেন্স ছেটিঙত সুক্ষ্মভাৱে টিউন কৰিব পাৰি।</string>
     <string name="home_quick_action_wizard">ৱিজাৰ্ড</string>
-    <string name="welcome_restore_summary">আগতেই Kototoro ব্যৱহাৰ কৰিছে নেকি? এটা বেকআপ পুনৰুদ্ধাৰ কৰক, ছাইন ইন কৰক, বা স্থানীয় ফোল্ডাৰ যোগ কৰক।</string>
+    <string name="welcome_restore_summary">আগতেই Amuratsu ব্যৱহাৰ কৰিছে নেকি? এটা বেকআপ পুনৰুদ্ধাৰ কৰক, ছাইন ইন কৰক, বা স্থানীয় ফোল্ডাৰ যোগ কৰক।</string>
     <string name="welcome_source_formats_title">সমল ফৰ্মেট বাছনি কৰক</string>
     <string name="welcome_source_formats_summary">এই ফিল্টাৰসমূহে নিৰ্ধাৰণ কৰে যে ছেট আপৰ পিছত কোনবোৰ উৎস পৰিয়াল সক্ৰিয় কৰা হয়।</string>
     <string name="welcome_ecosystems_title">উৎস ইক\'চিষ্টেম</string>
-    <string name="welcome_ecosystems_summary">Kototoro-এ পঢ়া আৰু চোৱাৰ বাবে ποহু প্লাগ-ইন উৎস পৰিয়াল সমৰ্থন কৰে। ইয়াত পৰামৰ্শ দিয়া ৰিপ\'জিটৰীসমূহৰ পৰা আৰম্ভ কৰক, তাৰ পিছত এক্সটেনশ্বন পৰিচালনাত ইয়াক সুক্ষ্মভাৱে টিউন কৰক।</string>
+    <string name="welcome_ecosystems_summary">Amuratsu-এ পঢ়া আৰু চোৱাৰ বাবে ποহু প্লাগ-ইন উৎস পৰিয়াল সমৰ্থন কৰে। ইয়াত পৰামৰ্শ দিয়া ৰিপ\'জিটৰীসমূহৰ পৰা আৰম্ভ কৰক, তাৰ পিছত এক্সটেনশ্বন পৰিচালনাত ইয়াক সুক্ষ্মভাৱে টিউন কৰক।</string>
     <string name="welcome_ecosystem_manga">মাংগা: JAR পাৰ্ছাৰ, Mihon, IReader, LNReader</string>
     <string name="welcome_ecosystem_novel">উপন্যাস: Legado, IReader, LNReader</string>
     <string name="welcome_ecosystem_video">ভিডিঅ\': Aniyomi, TVBox, Cloudstream</string>
@@ -446,10 +446,10 @@
     <string name="welcome_preferences_summary">ভাষা আৰু সমলৰ প্ৰকাৰ বাছনি কৰক। আপুনি পিছত উৎস ছেটিঙত এইটো সলনি কৰিব পাৰে।</string>
     <string name="welcome_spaces_title">আপোনাৰ ঠাইসমূহ পৃথক কৰক</string>
     <string name="welcome_spaces_summary">Space-সমূহে মাংগা, উপন্যাস, আৰু এনিমে\'ক স্বাধীন নেভিগেচন, ব্ৰাউজিং পছন্দ, আৰু পঢ়া বা প্লে\'বেক প্ৰসংগ দিয়ে। উন্নত বিকল্প আৰু কাষ্টম space-সমূহ পিছত Settings &gt; User &gt; Spaces ত উপলব্ধ হ\'ব।</string>
-    <string name="welcome_ready_summary">Setup is complete. Kototoro will enable sources matching your selected languages and formats. You can run this wizard again from Settings &gt; Content sources &gt; Setup wizard.</string>
-    <string name="welcome_jar_install_success">Kototoro: ক্লাউড নেটৱৰ্কৰ পৰা সফলভাৱে %1$d টা শেহতীয়া পাৰ্ছাৰ ইঞ্জিন আনি মাউণ্ট কৰা হ\'ল!</string>
-    <string name="welcome_jar_install_up_to_date">Kototoro: ক্লাউড পৰীক্ষণ সম্পূৰ্ণ, স্থানীয় পাৰ্ছাৰসমূহ আপ-টু-ডেট আছে! (%1$d টা উৎস লোড কৰা হ\'ল)</string>
-    <string name="welcome_jar_install_failed">Kototoro: পাৰ্ছাৰ নেটৱৰ্ক লোডিং ব্যৰ্থ হ\'ল (%1$s), অনুগ্ৰহ কৰি আকৌ চেষ্টা কৰক বা প্ৰক্সি মিৰৰ সলনি কৰিবলৈ ছেটিঙলৈ যাওক</string>
+    <string name="welcome_ready_summary">Setup is complete. Amuratsu will enable sources matching your selected languages and formats. You can run this wizard again from Settings &gt; Content sources &gt; Setup wizard.</string>
+    <string name="welcome_jar_install_success">Amuratsu: ক্লাউড নেটৱৰ্কৰ পৰা সফলভাৱে %1$d টা শেহতীয়া পাৰ্ছাৰ ইঞ্জিন আনি মাউণ্ট কৰা হ\'ল!</string>
+    <string name="welcome_jar_install_up_to_date">Amuratsu: ক্লাউড পৰীক্ষণ সম্পূৰ্ণ, স্থানীয় পাৰ্ছাৰসমূহ আপ-টু-ডেট আছে! (%1$d টা উৎস লোড কৰা হ\'ল)</string>
+    <string name="welcome_jar_install_failed">Amuratsu: পাৰ্ছাৰ নেটৱৰ্ক লোডিং ব্যৰ্থ হ\'ল (%1$s), অনুগ্ৰহ কৰি আকৌ চেষ্টা কৰক বা প্ৰক্সি মিৰৰ সলনি কৰিবলৈ ছেটিঙলৈ যাওক</string>
     <string name="home_placeholder_title">পঢ়াৰ ডেশ্বব’ৰ্ড</string>
     <string name="home_placeholder_subtitle">আপোনাৰ শেহতীয়া পঢ়া, আপডেট, লাইব্ৰেৰী, ছিংক আৰু উৎসসমূহ একে ঠাইতে চাওক।</string>
     <string name="home_hero_local_subtitle">য’তে এৰি গৈছি তাৰ পৰাই আৰম্ভ কৰক, বা শেহতীয়াকৈ খোলা বস্তুলৈ উভতি যাওক।</string>
@@ -1027,7 +1027,7 @@
     <string name="import_completed_hint">ঠাই বচোৱাৰ বাবে আপুনি ষ্ট\'ৰেজৰ পৰা মূল ফাইলটো মচি পেলাব পাৰে</string>
     <string name="import_will_start_soon">শীঘ্ৰেই ইম্প\'ৰ্ট আৰম্ভ হ\'ব</string>
     <string name="feed">ফিড</string>
-    <string name="manga_error_description_pattern">ত্ৰুটিৰ বিৱৰণ:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;১. উৎসটোত উপলব্ধ বুলি নিশ্চিত কৰিবলৈ &lt;a href=\"%2$s\"&gt;ৱেব ব্ৰাউজাৰত মাংগা খোলক&lt;/a&gt; চেষ্টা কৰক&lt;br&gt;২. আপুনি &lt;a href=\"kototoro://about\"&gt;Kototoro ৰ শেহতীয়া সংস্কৰণটো&lt;/a&gt; ব্যৱহাৰ কৰাটো নিশ্চিত কৰক&lt;br&gt;৩. যদি ই উপলব্ধ আছে, বিকাশকসকললৈ এটা ত্ৰুটিৰ প্ৰতিবেদন পঠিয়াওক।</string>
+    <string name="manga_error_description_pattern">ত্ৰুটিৰ বিৱৰণ:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;১. উৎসটোত উপলব্ধ বুলি নিশ্চিত কৰিবলৈ &lt;a href=\"%2$s\"&gt;ৱেব ব্ৰাউজাৰত মাংগা খোলক&lt;/a&gt; চেষ্টা কৰক&lt;br&gt;২. আপুনি &lt;a href=\"amuratsu://about\"&gt;Amuratsu ৰ শেহতীয়া সংস্কৰণটো&lt;/a&gt; ব্যৱহাৰ কৰাটো নিশ্চিত কৰক&lt;br&gt;৩. যদি ই উপলব্ধ আছে, বিকাশকসকললৈ এটা ত্ৰুটিৰ প্ৰতিবেদন পঠিয়াওক।</string>
     <string name="history_shortcuts">শেহতীয়া মাংগা শ্বৰ্টকাটসমূহ দেখুৱাওক</string>
     <string name="history_shortcuts_summary">এপ্লিকেচনৰ আইকনত দীঘলীয়া টিপা মাৰি শেহতীয়া মাংগা উপলব্ধ কৰক</string>
     <string name="reader_control_ltr_summary">ৰীডাৰ ম\'ডলৈ পৃষ্ঠা সলনি কৰা দিশটো সামঞ্জস্য নকৰিব, যেনে সোঁ চাবিটো টিপিলে সদায় পৰৱৰ্তী পৃষ্ঠালৈ সলনি হয়। এই বিকল্পটো কেৱল হাৰ্ডৱেৰ ইনপুট ডিভাইচসমূহহে প্ৰভাৱিত কৰে</string>
@@ -1196,7 +1196,7 @@
     <string name="export_backup_for_other_apps_summary">লক্ষ্য এপ বাছনি কৰক আৰু এটা মিল থকা বেকআপ সৃষ্টি কৰক: Kotatsu, Mihon, Aniyomi, বা Usagi।</string>
     <string name="export_backup_choose_target_app">লক্ষ্য এপ বাছনি কৰক</string>
     <string name="export_kotatsu_backup">Kotatsu বেকআপ এক্সপ\'ৰ্ট কৰক</string>
-    <string name="export_kotatsu_backup_summary">Kototoro-নিৰ্দিষ্ট অংশ অবিহনে Kotatsu-পৰিয়ালৰ এপৰ বাবে এটা পৃথক লেগেচি বেকআপ সৃষ্টি কৰক।</string>
+    <string name="export_kotatsu_backup_summary">Amuratsu-নিৰ্দিষ্ট অংশ অবিহনে Kotatsu-পৰিয়ালৰ এপৰ বাবে এটা পৃথক লেগেচি বেকআপ সৃষ্টি কৰক।</string>
     <string name="export_kotatsu_backup_saved">Kotatsu বেকআপ সংৰক্ষণ কৰা হ\'ল</string>
     <string name="export_mihon_backup">Mihon বেকআপ এক্সপ\'ৰ্ট কৰক</string>
     <string name="export_mihon_backup_summary">কেৱল Mihon-উৎস এণ্ট্ৰিৰ বাবে প্ৰিয়, শ্ৰেণী, আৰু পঢ়াৰ প্ৰগতি এক্সপ\'ৰ্ট কৰক।</string>
@@ -1269,7 +1269,7 @@
     <string name="data_and_privacy">তথ্য আৰু গোপনীয়তা</string>
     <string name="restore_summary">পূৰ্বে সৃষ্টি কৰা বেকআপ পুনৰুদ্ধাৰ কৰক</string>
     <string name="restore_kototoro_backup">বেকআপ পুনৰুদ্ধাৰ কৰক</string>
-    <string name="restore_kototoro_backup_summary">যিকোনো সংস্কৰণৰ Kototoro বেকআপ, অথবা Kotatsu বেকআপ পুনৰুদ্ধাৰ কৰক। ফৰ্মেট স্বয়ংক্ৰিয়ভাৱে চিনাক্ত কৰা হয়।</string>
+    <string name="restore_kototoro_backup_summary">যিকোনো সংস্কৰণৰ Amuratsu বেকআপ, অথবা Kotatsu বেকআপ পুনৰুদ্ধাৰ কৰক। ফৰ্মেট স্বয়ংক্ৰিয়ভাৱে চিনাক্ত কৰা হয়।</string>
     <string name="restore_mode_replace_existing">বৰ্তমানৰ তথ্য প্ৰতিস্থাপন কৰক</string>
     <string name="restore_mode_replace_existing_summary">পুনৰুদ্ধাৰ কৰা অংশবোৰ প্ৰথমে খালী কৰা হয়; বেকআপত নথকা পচন্দৰ আৰু ইতিহাস আঁতৰোৱা হয়</string>
     <string name="restore_mode_merge_with_existing">বৰ্তমানৰ তথ্যৰ সৈতে একত্ৰিত কৰক</string>
@@ -2006,7 +2006,7 @@
     <string name="show_pages_thumbs">পৃষ্ঠাৰ থাম্বনেইলসমূহ দেখুৱাওক</string>
     <string name="show_pages_thumbs_summary">বিৱৰণ স্ক্ৰীণত \"পৃষ্ঠা সমূহ\" টেব সক্ৰিয় কৰক</string>
     <string name="error_no_data_received">ছাৰ্ভাৰৰ পৰা কোনো তথ্য পোৱা নগ\'ল</string>
-    <string name="unsupported_backup_message">অনুগ্ৰহ কৰি এটা সঠিক Kototoro বেকআপ ফাইল বাছক</string>
+    <string name="unsupported_backup_message">অনুগ্ৰহ কৰি এটা সঠিক Amuratsu বেকআপ ফাইল বাছক</string>
     <string name="hours_short">%d ঘণ্টা</string>
     <string name="minutes_short">%d মিনিট</string>
     <string name="seconds_short">%d ছেকেণ্ড</string>
@@ -2058,8 +2058,8 @@
     <string name="chapters_read">পঢ়া অধ্যায়সমূহ</string>
     <string name="chapters_left">বাকী থকা অধ্যায়</string>
     <string name="external_source">বাহ্যিক/প্লাগ-ইন</string>
-    <string name="plugin_incompatible">অসংগত প্লাগ-ইন বা আভ্যন্তৰীণ ত্ৰুটি। অনুগ্ৰহ কৰি প্লাগ-ইন আৰু Kototoroৰ শেহতীয়া সংস্কৰণ ব্যৱহাৰ কৰাটো নিশ্চিত কৰক</string>
-    <string name="plugin_incompatible_with_cause">প্লাগ-ইন ত্ৰুটি: %s\n অনুগ্ৰহ কৰি প্লাগ-ইন আৰু Kototoroৰ শেহতীয়া সংস্কৰণ ব্যৱহাৰ কৰাটো নিশ্চিত কৰক</string>
+    <string name="plugin_incompatible">অসংগত প্লাগ-ইন বা আভ্যন্তৰীণ ত্ৰুটি। অনুগ্ৰহ কৰি প্লাগ-ইন আৰু Amuratsuৰ শেহতীয়া সংস্কৰণ ব্যৱহাৰ কৰাটো নিশ্চিত কৰক</string>
+    <string name="plugin_incompatible_with_cause">প্লাগ-ইন ত্ৰুটি: %s\n অনুগ্ৰহ কৰি প্লাগ-ইন আৰু Amuratsuৰ শেহতীয়া সংস্কৰণ ব্যৱহাৰ কৰাটো নিশ্চিত কৰক</string>
     <string name="plugin_missing_host_classes">%1$s ইনস্টল কৰিব নোৱাৰি কাৰোবাৰ সমৰ্থনহীন %2$s হ\'ষ্ট ক্লাছৰ ওপৰত নিৰ্ভৰশীল:\n%3$s</string>
     <string name="connection_ok">সংযোগ ঠিক আছে</string>
     <string name="invalid_proxy_configuration">অবৈধ প্ৰক্সি কনফিগাৰেচন</string>
@@ -2259,7 +2259,7 @@
     <string name="search_disabled_sources">অক্ষম উৎসসমূহৰ জৰিয়তে সন্ধান কৰক</string>
     <string name="error_details">ত্ৰুটিৰ বিৱৰণ</string>
     <string name="error_disclaimer_manga">উৎসত উপলব্ধ বুলি নিশ্চিত কৰিবলৈ ৱেব ব্ৰাউজাৰত মাংগা খোলাৰ চেষ্টা কৰক।</string>
-    <string name="error_disclaimer_app_outdated">আপোনাৰ Kototoro সংস্কৰণ পুৰণি যেন লাগিছে। সকলো ઉપલબ્ધ ঠিক কৰা বাবে শেহতীয়া সংস্কৰণ ইনষ্টল কৰক।</string>
+    <string name="error_disclaimer_app_outdated">আপোনাৰ Amuratsu সংস্কৰণ পুৰণি যেন লাগিছে। সকলো ઉપલબ્ધ ঠিক কৰা বাবে শেহতীয়া সংস্কৰণ ইনষ্টল কৰক।</string>
     <string name="error_disclaimer_report">আপুনি ডেভেলপাৰসকললৈ ত্ৰুটিৰ প্ৰতিবেদন পঠিয়াব পাৰে, ই আমাক ত্ৰুটি বিচাৰি উলিয়াবলৈ আৰু ঠিক কৰাত সহায় কৰিব</string>
     <string name="enable_source_manga">মাংগা উৎস সক্ৰিয় কৰক</string>
     <string name="enable_source_novel">উপন্যাস উৎস সক্ৰিয় কৰক</string>
@@ -2277,7 +2277,7 @@
     <string name="recommendation_novel">পৰামৰ্শিত উপন্যাস</string>
     <string name="recommendation_video">পৰামৰ্শিত ভিডিঅ\'</string>
     <string name="link_to_manga_on_s">%s ত থকা মাংগাৰ লিংক</string>
-    <string name="link_to_manga_in_app">Kototoro ত মাংগাৰ লিংক</string>
+    <string name="link_to_manga_in_app">Amuratsu ত মাংগাৰ লিংক</string>
     <string name="clear_browser_data">ব্ৰাউজাৰৰ তথ্য περισাফ কৰক</string>
     <string name="clear_browser_data_summary">কেশ্ব আৰু কুকিজৰ দৰে ব্ৰাউজাৰৰ তথ্য περισাফ কৰক। সতৰ্কবাণী: সমল উৎসসমূহত প্ৰামাণিকৰণ অবৈধ হ\'ব পাৰে</string>
     <string name="no_write_permission_to_file">ফাইল লিখাৰ অনুমতি নাই</string>
@@ -2327,7 +2327,7 @@
     <string name="discord_token_hint">আপোনাৰ Discord ট’কেন ইয়াত পেষ্ট কৰক</string>
     <string name="discord_rpc_summary">Discord-ত আপোনাৰ পঢ়াৰ অৱস্থা দেখুৱাওক</string>
     <string name="obtain">প্ৰাপ্ত কৰক</string>
-    <string name="discord_rpc_description">Kototoro-ত মাংগা পঢ়া হৈছে - এটা মাংগা ৰিডাৰ এপ</string>
+    <string name="discord_rpc_description">Amuratsu-ত মাংগা পঢ়া হৈছে - এটা মাংগা ৰিডাৰ এপ</string>
     <string name="discord_logout_summary">সংৰক্ষিত Discord প্ৰামাণীকৰণ মচি পেলাওক</string>
     <string name="reading_s">%s পঢ়া হৈছে</string>
     <string name="read_on_s">%s ত পঢ়ক</string>
@@ -2355,7 +2355,7 @@
     <string name="sync_backend_switch_webdav_title">WebDAV বেকআপলৈ সলনি কৰিবনে?</string>
     <string name="sync_backend_switch_webdav_confirm">বৰ্তমান Google Drive চিংক সক্ষম কৰা আছে। WebDAV বেকআপ সক্ষম কৰিলে আপোনাৰ Google ছাইন-ইন অক্ষুণ্ণ ৰাখি Google Drive চিংক অফ কৰি দিয়া হ’ব।</string>
     <string name="sync_sign_in">Google Drive চিংক প্ৰস্তুত কৰক</string>
-    <string name="sync_sign_in_summary">চাবস্ক্ৰিপচন আৰু আপডেট ৰেকৰ্ডসমূহ চিংক কৰিবলৈ সৰ্বনিম্ন Drive appdata অনুমতিৰ সৈতে Google Drive অ্যাপ ডাটা ব্যৱহাৰ কৰে। Kototoro-এ আপোনাৰ Drive ফাইলসমূহ প্ৰৱেশ কৰিব নোৱাৰে।</string>
+    <string name="sync_sign_in_summary">চাবস্ক্ৰিপচন আৰু আপডেট ৰেকৰ্ডসমূহ চিংক কৰিবলৈ সৰ্বনিম্ন Drive appdata অনুমতিৰ সৈতে Google Drive অ্যাপ ডাটা ব্যৱহাৰ কৰে। Amuratsu-এ আপোনাৰ Drive ফাইলসমূহ প্ৰৱেশ কৰিব নোৱাৰে।</string>
     <string name="google_drive_sync_unregistered_build_error">Development/Nightly বিল্ডত Google Drive চিংক সমৰ্থিত নহয়। অনুগ্ৰহ কৰি অফিচিয়েল ৰিলিজ বিল্ড বা WebDAV চিংক ব্যৱহাৰ কৰক।</string>
     <string name="sync_sign_out">ছাইন আউট কৰক</string>
     <string name="sync_account">ছাইন ইন কৰা হ’ল</string>
@@ -2410,8 +2410,8 @@
     <string name="webdav_remote_backups_inspect">ৰিম’ট বেকআপ পৰীক্ষা কৰক</string>
     <string name="webdav_remote_backups_inspect_summary">প্ৰতিটো ৰিম’ট বেকআপ সুৰক্ষিতভাৱে পুনৰুদ্ধাৰ কৰিব পাৰি নে নাই ডাউনলোড কৰি পৰীক্ষা কৰক।</string>
     <string name="webdav_remote_backups_clear">ৰিম’ট WebDAV বেকআপ মচি পেলাওক</string>
-    <string name="webdav_remote_backups_clear_summary">কনফিগাৰ কৰা WebDAV পথত থকা সকলো Kototoro বেকআপ ফাইল মচি পেলাওক। স্থানীয় ডাটা সলনি কৰা নহয়।</string>
-    <string name="webdav_remote_backups_clear_confirm">কনফিগাৰ কৰা WebDAV পথৰ পৰা সকলো Kototoro বেকআপ ফাইল মচি পেলাব নেকি? স্থানীয় ডাটা সলনি কৰা নহ’ব।</string>
+    <string name="webdav_remote_backups_clear_summary">কনফিগাৰ কৰা WebDAV পথত থকা সকলো Amuratsu বেকআপ ফাইল মচি পেলাওক। স্থানীয় ডাটা সলনি কৰা নহয়।</string>
+    <string name="webdav_remote_backups_clear_confirm">কনফিগাৰ কৰা WebDAV পথৰ পৰা সকলো Amuratsu বেকআপ ফাইল মচি পেলাব নেকি? স্থানীয় ডাটা সলনি কৰা নহ’ব।</string>
     <string name="webdav_remote_backups_loading">WebDAV বেকআপ লোড হৈ আছে…</string>
     <string name="webdav_remote_backup_status_unknown">পৰীক্ষা কৰা নাই</string>
     <string name="webdav_remote_backup_status_restorable">পুনৰুদ্ধাৰযোগ্য</string>
@@ -2819,7 +2819,7 @@
     <string name="trust_and_add">বিশ্বাস কৰি যোগ কৰক</string>
     <string name="trust_extension_repository_message">ৰিপ\'জিটৰী: %1$s\nৱেবছাইট: %2$s\nSHA-256 ফিংগাৰপ্ৰিণ্ট:\n%3$s\n\nএই ৰিপ\'জিটৰী বিশ্বাস কৰাৰ আগতে প্ৰকাশকৰ সৈতে এই ফিংগাৰপ্ৰিণ্ট পৰীক্ষা কৰক।</string>
     <string name="untrusted_extension_message">%1$s (%2$s) ইনষ্টল কৰা আছে, কিন্তু ইয়াৰ স্বাক্ষৰ নিৰ্বাচিত ৰিপ\'জিটৰী ফিংগাৰপ্ৰিণ্টৰ সৈতে মিল নাখায়।\n\nৰিপ\'জিটৰী ফিংগাৰপ্ৰিণ্ট: %3$s\n\nএই ৰিপ\'জিটৰীৰ পৰা পুনৰ ইনষ্টল কৰাৰ আগতে ইনষ্টল কৰা পেকেজটো আঁতৰাওক।</string>
-    <string name="incompatible_extension_message">%1$s %2$s ইনষ্টল কৰিব নোৱাৰি কাৰোৱা ইয়াৰ লাইব্ৰেৰী সংস্কৰণ (%3$s) Kototoro ৰ সমৰ্থিত পৰিসৰৰ বাহিৰত।</string>
+    <string name="incompatible_extension_message">%1$s %2$s ইনষ্টল কৰিব নোৱাৰি কাৰোৱা ইয়াৰ লাইব্ৰেৰী সংস্কৰণ (%3$s) Amuratsu ৰ সমৰ্থিত পৰিসৰৰ বাহিৰত।</string>
     <string name="built_in_sources">বিল্ট-ইন</string>
     <string name="select_all">সকলো বাছক</string>
     <string name="deselect_all">সকলো বাছনি নাকচ কৰক</string>
@@ -2859,7 +2859,7 @@
     <string name="welcome_plugins_repo_yakateam">Yakateam পাৰ্ছাৰসমূহ</string>
     <string name="welcome_plugins_repo_redo">Redo পাৰ্ছাৰসমূহ</string>
     <string name="welcome_plugins_repo_uma">UMA (Tsuki পাৰ্ছাৰসমূহ)</string>
-    <string name="welcome_plugins_disclaimer">এই এক্সটেনশ্বন ৰিপ\'জিটৰীসমূহ স্বাধীন অনলাইন সম্প্ৰদায়সমূহৰ দ্বাৰা পৰিচালিত হয়। Kototoro ডেভেলপাৰসকলৰ এই তৃতীয় পক্ষৰ ৰিপ\'জিটৰীসমূহৰ সৈতে কোনো সম্পৰ্ক, নিয়ন্ত্ৰণ বা সহযোগিতা নাই। মই স্বীকাৰ কৰোঁ যে মই মোৰ নিজৰ দায়িত্বত এই উৎসসমূহ কনফিগাৰ কৰিছোঁ।</string>
+    <string name="welcome_plugins_disclaimer">এই এক্সটেনশ্বন ৰিপ\'জিটৰীসমূহ স্বাধীন অনলাইন সম্প্ৰদায়সমূহৰ দ্বাৰা পৰিচালিত হয়। Amuratsu ডেভেলপাৰসকলৰ এই তৃতীয় পক্ষৰ ৰিপ\'জিটৰীসমূহৰ সৈতে কোনো সম্পৰ্ক, নিয়ন্ত্ৰণ বা সহযোগিতা নাই। মই স্বীকাৰ কৰোঁ যে মই মোৰ নিজৰ দায়িত্বত এই উৎসসমূহ কনফিগাৰ কৰিছোঁ।</string>
     <string name="welcome_plugins_start_btn">ৰিপ\'জিটৰীসমূহ কনফিগাৰ কৰক</string>
     <string name="welcome_plugins_configured">কনফিগাৰ কৰা হ\'ল %1$d টা নতুন উৎস/ৰিপ\'জিটৰী প্ৰকাৰ: %2$s। পেকেজসমূহ এতিয়াও ডাউনলোড কৰা হোৱা নাই — পৰৱৰ্তী পদক্ষেপত মিল থকাবোৰ ইনষ্টল কৰক।</string>
     <string name="welcome_plugins_configured_none">কোনো উৎস বা ৰিপ\'জিটৰী কনফিগাৰ কৰিব পৰা নগ\'ল। আপোনাৰ নেটৱৰ্ক পৰীক্ষা কৰক বা বেলেগ ৰিপ\'জিটৰী বাছি লৈ আকৌ চেষ্টা কৰক।</string>
@@ -2889,22 +2889,22 @@
     <string name="welcome_install_system_launch_failed">চিষ্টেম ইনষ্টলাৰ আৰম্ভ কৰিব নোৱাৰিলে: %1$s</string>
     <string name="welcome_install_skip">ইনষ্টলেশ্বন বাদ দিয়ক — মই ইয়াক পিছত এক্সটেনশ্বন মেনেজমেণ্টত কৰিম</string>
     <string name="welcome_install_step_title">বেটচ ইনষ্টল এক্সটেনশ্বন</string>
-    <string name="welcome_install_step_summary">কোনবোৰ উৎসৰ প্ৰকাৰ আৰু ছেটিংছ ব্যৱহাৰ কৰিব লাগে বাছক, তাৰ পিছত Kototoro ক পটভূমিত সকলো ডাউনলোড আৰু ইনষ্টল কৰিবলৈ দিয়ক।</string>
+    <string name="welcome_install_step_summary">কোনবোৰ উৎসৰ প্ৰকাৰ আৰু ছেটিংছ ব্যৱহাৰ কৰিব লাগে বাছক, তাৰ পিছত Amuratsu ক পটভূমিত সকলো ডাউনলোড আৰু ইনষ্টল কৰিবলৈ দিয়ক।</string>
     <string name="welcome_install_kinds_title">ইনষ্টল কৰ1 লগিয়া উৎসৰ প্ৰকাৰ</string>
     <string name="welcome_install_kinds_summary">কেৱল আপুনি পৰীক্ষা কৰা প্ৰকাৰবোৰেই পৰিচালনা কৰা হ’ব। নিৰ্বাচন নকৰা বোৰ (যেনে Mihon, যদি আপুনি ইয়াক পিছত কৰিবলৈ পছন্দ কৰে) আপুনি এক্সটেনশ্বন মেনেজমেণ্টত ইনষ্টল কৰিবলৈ থাকি যায়।</string>
     <string name="welcome_install_kinds_empty">এতিয়ালৈকে কোনো ৰিপ\'জিটৰী কনফিগাৰ কৰা হোৱা নাই। উভতি গৈ প্ৰথমে ৰিপ\'জিটৰী যোগ কৰক।</string>
     <string name="welcome_install_nsfw_title">NSFW সমল অন্তৰ্ভুক্ত কৰক</string>
     <string name="welcome_install_nsfw_summary">অবিকল্পিতভাৱে অফ — কেৱল প্ৰাপ্তবয়স্কসকলৰ বাবে পেকেজসমূহ ইনষ্টলেশ্বন তালিকাৰ পৰা ফিল্টাৰ কৰা হয়।</string>
-    <string name="welcome_intro_app_title">Kototoro · মুক্ত উৎসৰ ৰীডাৰ</string>
-    <string name="welcome_intro_body">Kototoro এটা মুক্ত উৎসৰ মাল্টিমিডিয়া ৰীডাৰ / প্লেয়াৰ। ই কমিউনিটি এক্সটেনশ্বনৰ বহল পৰিৱেশ তন্ত্ৰক সমৰ্থন কৰে, কিন্তু ইয়াৰ নিজৰ কোনো সমল উৎস পেকেজ হিচাপে নাথাকে।</string>
+    <string name="welcome_intro_app_title">Amuratsu · মুক্ত উৎসৰ ৰীডাৰ</string>
+    <string name="welcome_intro_body">Amuratsu এটা মুক্ত উৎসৰ মাল্টিমিডিয়া ৰীডাৰ / প্লেয়াৰ। ই কমিউনিটি এক্সটেনশ্বনৰ বহল পৰিৱেশ তন্ত্ৰক সমৰ্থন কৰে, কিন্তু ইয়াৰ নিজৰ কোনো সমল উৎস পেকেজ হিচাপে নাথাকে।</string>
     <string name="welcome_intro_concepts_title">তিনিটা ধাৰণা, ৩০ ছেকেণ্ডত</string>
     <string name="welcome_intro_repo_label">ৰিপ\'জিটৰী</string>
     <string name="welcome_intro_repo_body">স্বাধীন সম্প্ৰদায়ৰ দ্বাৰা পৰিচালিত তৃতীয় পক্ষৰ এক্সটেনশ্বন সংগ্ৰহৰ এটা URL (উদাহৰণস্বৰূপে Mihon ৰিপ\', TVBox লিষ্ট বা LNReader প্লাহিন ৰিপ\')।</string>
     <string name="welcome_intro_extension_label">এক্সটেনশ্বন</string>
-    <string name="welcome_intro_extension_body">ৰিপ\'জিটৰীৰ ভিতৰত থকা এটা ইনষ্টল কৰিব পৰা পেকেজ — এটা JAR, এটা APK বা এটা JSON তালিকা। ইনষ্টল কৰা এক্সটেনশ্বনসমূহে Kototoro ক কোনো চাইটৰ পৰা পঢ়িব বা প্লে কৰিব পৰা ক্ষমতা দিয়ে।</string>
+    <string name="welcome_intro_extension_body">ৰিপ\'জিটৰীৰ ভিতৰত থকা এটা ইনষ্টল কৰিব পৰা পেকেজ — এটা JAR, এটা APK বা এটা JSON তালিকা। ইনষ্টল কৰা এক্সটেনশ্বনসমূহে Amuratsu ক কোনো চাইটৰ পৰা পঢ়িব বা প্লে কৰিব পৰা ক্ষমতা দিয়ে।</string>
     <string name="welcome_intro_source_label">উৎস</string>
     <string name="welcome_intro_source_body">এক্সটেনশ্বন ইনষ্টল বা আমদানি কৰাৰ পিছত আপুনি এপটোত দেখা এটা নিৰ্দিষ্ট সমল উৎস — উদাহৰণস্বৰূপে এটা নিৰ্দিষ্ট মাংগা বা ভিডিঅ\' ৱেবছাইট।</string>
-    <string name="welcome_intro_disclaimer">তৃতীয় পক্ষৰ এক্সটেনশ্বনৰ ব্যৱহাৰ সম্পূৰ্ণ নিজৰ দায়িত্বত: ৰাণটাইম আচৰণ, বৈধতা আৰু সমল Kototoro প্ৰকল্পৰ দ্বাৰা নিয়ন্ত্ৰিত নহয়।</string>
+    <string name="welcome_intro_disclaimer">তৃতীয় পক্ষৰ এক্সটেনশ্বনৰ ব্যৱহাৰ সম্পূৰ্ণ নিজৰ দায়িত্বত: ৰাণটাইম আচৰণ, বৈধতা আৰু সমল Amuratsu প্ৰকল্পৰ দ্বাৰা নিয়ন্ত্ৰিত নহয়।</string>
     <string name="welcome_intro_continue">মই বুজি পাইছো — অব্যাহত ৰাখক</string>
     <string name="welcome_done_title">প্ৰায় শেষ</string>
     <string name="welcome_done_summary">আপোনাৰ ছেটআপৰ সাৰাংশ আৰু কেইটামান টিপছ।</string>
@@ -2913,10 +2913,10 @@
     <string name="welcome_done_json_note">JSON-ভিত্তিক প্ৰকাৰসমূহ (Legado / TVBox / LNReader) স্বয়ংক্ৰিয়ভাৱে আমদানি কৰা হয়; যদি আপুনি অন্যান্য JSON ৰিপ\'জিটৰীও যোগ কৰিছে, তেন্তে সেইবোৰ এক্সটেনশ্বন মেনেজমেণ্টত আমদানি কৰক।</string>
     <string name="welcome_done_title_finished">ছেটআপ সম্পূৰ্ণ</string>
     <string name="welcome_done_summary_finished">ৱিজাৰ্ড সম্পূৰ্ণ হ’ল — কোনো ৰিপ\'জিটৰী বা উৎস স্বয়ংক্ৰিয়ভাৱে যোগ কৰা হোৱা নাই।</string>
-    <string name="welcome_done_body_finished">Kototoro য়ে ছেটআপৰ সময়ত কোনো উৎস যোগ কৰা নাই। আপুনি ছেটিংছ › সমল উৎস (এক্সটেনশ্বন মেনেজমেণ্ট)ত যিকোনো সময়তে নিজৰ ৰিপ\'জিটৰী আৰু উৎস যোগ কৰিব পাৰে।</string>
+    <string name="welcome_done_body_finished">Amuratsu য়ে ছেটআপৰ সময়ত কোনো উৎস যোগ কৰা নাই। আপুনি ছেটিংছ › সমল উৎস (এক্সটেনশ্বন মেনেজমেণ্ট)ত যিকোনো সময়তে নিজৰ ৰিপ\'জিটৰী আৰু উৎস যোগ কৰিব পাৰে।</string>
     <string name="welcome_done_advice_title">যদি কোনো উৎস কাম নকৰে</string>
     <string name="welcome_done_advice_summary">এটা চুটি ট্ৰাবলশ্বুটিং পথ, যাতে সঠিক লোকসকলে প্ৰতিবেদনটো দেখে।</string>
-    <string name="welcome_done_advice_body">1. এক্সটেনশ্বনটোৰ প্ৰকৃত হষ্ট এপ ব্যৱহাৰ কৰি সমস্যাটো নিশ্চিত কৰক — উদাহৰণস্বৰূপে Mihon-প্ৰকাৰৰ উৎস এটা Mihon এপটোত পৰীক্ষা কৰা উচিত।\n2. যদি সমস্যাটো তাতেও হয়, তেন্তে ই এক্সটেনশ্বনটো পৰিচালনা কৰা ৰিপ\'জিটৰীৰ অন্তৰ্গত: ৰিপ\'জিটৰীটোৰ নিজৰ URL ত এটা ইছ্যু মুকলি কৰক।\n3. যদি ই কেৱল Kototoro তহে হয়, তেন্তে Kototoro প্ৰকল্পৰ ৰিপ\'জিটৰীত ইয়াৰ প্ৰতিবেদন দিয়ক আৰু উৎসৰ নাম, এক্সটেনশ্বনৰ সংস্কৰণ আৰু আপুনি কি চেষ্টা কৰিছিল সেয়া অন্তৰ্ভুক্ত কৰক।</string>
+    <string name="welcome_done_advice_body">1. এক্সটেনশ্বনটোৰ প্ৰকৃত হষ্ট এপ ব্যৱহাৰ কৰি সমস্যাটো নিশ্চিত কৰক — উদাহৰণস্বৰূপে Mihon-প্ৰকাৰৰ উৎস এটা Mihon এপটোত পৰীক্ষা কৰা উচিত।\n2. যদি সমস্যাটো তাতেও হয়, তেন্তে ই এক্সটেনশ্বনটো পৰিচালনা কৰা ৰিপ\'জিটৰীৰ অন্তৰ্গত: ৰিপ\'জিটৰীটোৰ নিজৰ URL ত এটা ইছ্যু মুকলি কৰক।\n3. যদি ই কেৱল Amuratsu তহে হয়, তেন্তে Amuratsu প্ৰকল্পৰ ৰিপ\'জিটৰীত ইয়াৰ প্ৰতিবেদন দিয়ক আৰু উৎসৰ নাম, এক্সটেনশ্বনৰ সংস্কৰণ আৰু আপুনি কি চেষ্টা কৰিছিল সেয়া অন্তৰ্ভুক্ত কৰক।</string>
     <string name="welcome_step_counter">ছোৱান %1$d ৰ %2$d</string>
     <string name="welcome_action_configure_repos">নিৰ্বাচিত ৰিপ\'জিটৰী কনফিগাৰ কৰক</string>
     <string name="welcome_action_install_count">%1$d টা এক্সটেনশ্বন ইনষ্টল কৰক</string>
@@ -2950,7 +2950,7 @@
     <string name="welcome_permissions_notifications_title">নটিফিকেশ্বনসমূহ</string>
     <string name="welcome_permissions_notifications_summary">ডাউনলোড, আপডে\'ট আৰু প্লেয়াৰৰ নটিফিকেশ্বন দেখুৱায়।</string>
     <string name="welcome_permissions_packages_title">ইনষ্টল কৰা এপসমূহ</string>
-    <string name="welcome_permissions_packages_summary">Kototoro ক ইতিমধ্যে ইনষ্টল কৰা এক্সটেনশ্বন আৰু হ\'ষ্ট এপসমূহ (Mihon, Aniyomi, …) চিনাক্ত কৰিবলৈ দিয়ে।</string>
+    <string name="welcome_permissions_packages_summary">Amuratsu ক ইতিমধ্যে ইনষ্টল কৰা এক্সটেনশ্বন আৰু হ\'ষ্ট এপসমূহ (Mihon, Aniyomi, …) চিনাক্ত কৰিবলৈ দিয়ে।</string>
     <string name="welcome_permissions_battery_title">পটভূমিৰ কাৰ্যক্ষমতা</string>
     <string name="welcome_permissions_battery_summary">স্ক্ৰীণ বন্ধ থকা অৱস্থাত পটভূমিৰ ডাউনলোড আৰু আপডে\'ট সক্ৰিয় কৰি ৰাখে।</string>
     <string name="welcome_permissions_battery_action">অনুমতি দিয়ক</string>
@@ -3366,11 +3366,11 @@
     <string name="pref_glass_blur_quality_performance">কাৰ্যক্ষমতা</string>
     <string name="pref_glass_blur_quality_balanced">Balanced</string>
     <string name="pref_glass_blur_quality_quality">গুণমান</string>
-    <string name="glass_material_family_kototoro">Kototoro (ശുപാৰ্শ কৰা হৈছে)</string>
+    <string name="glass_material_family_kototoro">Amuratsu (ശുപാৰ্শ কৰা হৈছে)</string>
     <string name="glass_material_family_haze">Haze</string>
     <string name="glass_material_family_cupertino">Cupertino</string>
     <string name="glass_material_family_fluent">Fluent</string>
-    <string name="glass_material_kototoro">Kototoro (ശുപാৰ্শ কৰা হৈছে)</string>
+    <string name="glass_material_kototoro">Amuratsu (ശുപാৰ্শ কৰা হৈছে)</string>
     <string name="glass_material_haze_ultra_thin">Haze Ultra Thin</string>
     <string name="glass_material_haze_thin">Haze Thin</string>
     <string name="glass_material_haze_regular">Haze Regular</string>

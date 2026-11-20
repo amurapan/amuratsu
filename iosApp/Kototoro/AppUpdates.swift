@@ -52,11 +52,10 @@ enum AppUpdateChannel: String, CaseIterable, Identifiable {
     var id: String { rawValue }
     var title: String { self == .release ? String(localized: "正式版") : "Nightly" }
     var sourceURL: URL {
-        URL(string: "https://kototoro-app.github.io/Kototoro/altstore/\(rawValue).json")!
+        URL(string: "https://amurapan.github.io/amuratsu/altstore/\(rawValue).json")!
     }
     var releasesURL: URL {
-        let repository = self == .release ? "Kototoro" : "Kototoro-Nightly"
-        return URL(string: "https://github.com/Kototoro-app/\(repository)/releases")!
+        return URL(string: "https://github.com/amurapan/amuratsu/releases")!
     }
 
     func storeURL(scheme: String) -> URL {
@@ -164,7 +163,7 @@ struct AppUpdateClient {
         let directory = FileManager.default.temporaryDirectory
             .appendingPathComponent("app-update-\(UUID().uuidString)")
         let destination = directory
-            .appendingPathComponent("Kototoro-\(release.version)-\(release.buildVersion)-ios.ipa")
+            .appendingPathComponent("Amuratsu-\(release.version)-\(release.buildVersion)-ios.ipa")
         try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
         do {
             try FileManager.default.moveItem(at: temporary, to: destination)

@@ -155,7 +155,7 @@ jobs:
             -Dorg.gradle.jvmargs=-Xmx3g -Pkotlin.daemon.jvmargs=-Xmx3g --max-workers=2 \
             --no-configuration-cache --no-daemon --console=plain --stacktrace
           # The self-update compares this copy against the published releases, so the stamp must match the asset.
-          launcher='desktop-app/build/compose/binaries/main/app/Kototoro.app/Contents/MacOS/Kototoro'
+          launcher='desktop-app/build/compose/binaries/main/app/Amuratsu.app/Contents/MacOS/Amuratsu'
           report="$RUNNER_TEMP/update-check.properties"
           "$launcher" --check-update "$report" --channel "$CHANNEL" &
           probe=$!
@@ -170,10 +170,10 @@ jobs:
           [ "$(stamp install.supported)" = true ] && [ "$(stamp install.kind)" = macos_app ] \
             || { echo 'The packaged app does not recognise itself as a macOS app.' >&2; exit 1; }
           mkdir -p release-macos
-          stem="Kototoro-$version_name-macos-$ARCH-$CHANNEL"
+          stem="Amuratsu-$version_name-macos-$ARCH-$CHANNEL"
           cp "desktop-app/build/compose/binaries/main/update/$stem.dmg" "desktop-app/build/compose/binaries/main/update/$stem.sha256" release-macos/
           # The DMG is ad-hoc signed and not notarized: Gatekeeper asks the user to confirm the first launch.
-          codesign --verify --deep --strict 'desktop-app/build/compose/binaries/main/app/Kototoro.app'
+          codesign --verify --deep --strict 'desktop-app/build/compose/binaries/main/app/Amuratsu.app'
 
       - name: Upload macOS package
         uses: actions/upload-artifact@v6

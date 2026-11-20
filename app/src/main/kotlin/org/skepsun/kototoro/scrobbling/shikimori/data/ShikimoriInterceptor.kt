@@ -10,7 +10,7 @@ import org.skepsun.kototoro.scrobbling.common.domain.ScrobblerAuthRequiredExcept
 import org.skepsun.kototoro.scrobbling.common.domain.model.ScrobblerService
 import java.net.HttpURLConnection
 
-private const val USER_AGENT_SHIKIMORI = "Kototoro"
+private const val USER_AGENT_SHIKIMORI = "Amuratsu"
 
 class ShikimoriInterceptor(private val storage: ScrobblerStorage) : Interceptor {
 
