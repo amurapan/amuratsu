@@ -92,7 +92,7 @@ object BackupPayloadGuard {
     fun detectRestoreFormat(file: File): BackupRestoreFormat {
         val index = readBackupIndex(file) ?: throw UnexpectedBackupFormatException()
         return if (
-            index.appId.isKototoroApplicationId() &&
+            index.appId.isCurrentBackupApplicationId() &&
             index.semanticSchemaVersion >= BackupIndex.LEGACY_SEMANTIC_SCHEMA_BOUNDARY
         ) {
             BackupRestoreFormat.KOTOTORO_CURRENT
@@ -101,8 +101,8 @@ object BackupPayloadGuard {
         }
     }
 
-    private fun String.isKototoroApplicationId(): Boolean {
-        return this in KOTOTORO_APPLICATION_IDS
+    private fun String.isCurrentBackupApplicationId(): Boolean {
+        return this in CURRENT_BACKUP_APPLICATION_IDS
     }
 
     private fun readBackupIndex(file: File): BackupIndex? {
@@ -284,10 +284,12 @@ object BackupPayloadGuard {
     private const val MAX_ENTRIES = 10_000
     private const val MAX_INDEX_BYTES = 1L shl 20
     private const val MAX_SECTION_BYTES = 128L shl 20
-    private val KOTOTORO_APPLICATION_IDS = setOf(
+    private val CURRENT_BACKUP_APPLICATION_IDS = setOf(
         "org.skepsun.kototoro",
         "org.skepsun.kototoro.debug",
         "org.skepsun.kototoro.nightly",
+        "io.github.amurapan.amuratsu",
+        "io.github.amurapan.amuratsu.nightly",
     )
     private val json = Json {
         ignoreUnknownKeys = true

@@ -1,3 +1,4 @@
+import com.android.build.api.variant.ResValue
 import org.gradle.api.DefaultTask
 import org.gradle.api.file.ConfigurableFileCollection
 import org.gradle.api.file.DirectoryProperty
@@ -67,8 +68,8 @@ android {
 		// Phase E: targetSdk 37. Large-screen orientation locks are skipped in
 		// ScreenOrientationHelper to match Android 17 behavior.
 		targetSdk = 37
-		versionCode = 1264
-		versionName = '0.1.0-alpha.2'
+		versionCode = 1265
+		versionName = '0.1.0-alpha.3'
 		manifestPlaceholders = [
 			appClassName: 'org.skepsun.kototoro.KototoroApp'
 		]
@@ -239,7 +240,19 @@ android {
 	// Variant API instead (AGENTS.md: nightly versionCode/versionName are date-generated).
 	androidComponents {
 		onVariants(selector().all(), { variant ->
-			def capName = variant.name.capitalize()
+            def publicId = 'io.github.amurapan.amuratsu'
+            def distributionId = variant.name == 'release' ? publicId :
+                (variant.name == 'nightly' ? "${publicId}.nightly".toString() : null)
+            if (distributionId != null) {
+                variant.applicationId.set(distributionId)
+                variant.resValues.put(variant.makeResValueKey('string', 'account_type_sync'),
+                    new ResValue("${distributionId}.sync", null))
+                variant.resValues.put(variant.makeResValueKey('string', 'sync_authority_history'),
+                    new ResValue("${distributionId}.history", null))
+                variant.resValues.put(variant.makeResValueKey('string', 'sync_authority_favourites'),
+                    new ResValue("${distributionId}.favourites", null))
+            }
+            def capName = variant.name.capitalize()
 			def genUiStrings = tasks.register("generate${capName}UiStringIds", GenerateAndroidUiStringIdsTask) {
 				uiSources.from(
 					fileTree(rootProject.file('core-ui/src/commonMain/kotlin')) { include '**/*.kt' },

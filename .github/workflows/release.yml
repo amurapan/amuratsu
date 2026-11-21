@@ -3,7 +3,8 @@ name: Build and Release
 on:
   push:
     tags:
-      - 'v*'  # 当推送 v* 标签时触发（如 v1.0.0）
+      - 'v*'
+      - '!v*-alpha.*'  # Alpha APKs are validated and uploaded separately.
   repository_dispatch:
     types: [trigger-release]  # 由 sync-parsers 触发
   workflow_dispatch:  # 允许手动触发
@@ -64,28 +65,32 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     
-    - name: Decode keystore
+    - name: Build signed Android APKs
       env:
         KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
+        ORG_GRADLE_PROJECT_RELEASE_STORE_FILE: ${{ runner.temp }}/amuratsu-release.p12
+        ORG_GRADLE_PROJECT_RELEASE_STORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+        ORG_GRADLE_PROJECT_RELEASE_KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+        ORG_GRADLE_PROJECT_RELEASE_KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
       run: |
-        if [ -n "$KEYSTORE_BASE64" ]; then
-          echo "$KEYSTORE_BASE64" | base64 -d > release.keystore
-        else
-          echo "No keystore found, creating debug keystore"
-          keytool -genkey -v -keystore release.keystore -alias release \
-            -keyalg RSA -keysize 2048 -validity 10000 \
-            -storepass password -keypass password \
-            -dname "CN=Debug, OU=Debug, O=Debug, L=Debug, S=Debug, C=US"
+        : "${KEYSTORE_BASE64:?Configure the Amuratsu release keystore}"
+        : "${ORG_GRADLE_PROJECT_RELEASE_STORE_PASSWORD:?Configure the keystore password}"
+        : "${ORG_GRADLE_PROJECT_RELEASE_KEY_ALIAS:?Configure the signing alias}"
+        : "${ORG_GRADLE_PROJECT_RELEASE_KEY_PASSWORD:?Configure the signing key password}"
+        umask 077
+        trap 'rm -f "$ORG_GRADLE_PROJECT_RELEASE_STORE_FILE"' EXIT
+        printf '%s' "$KEYSTORE_BASE64" | base64 -d > "$ORG_GRADLE_PROJECT_RELEASE_STORE_FILE"
+        expected=$(sed -n 's/.*CERT_SHA256 = "\([0-9a-f]*\)".*/\1/p' \
+          app/src/main/kotlin/org/skepsun/kototoro/core/os/AppValidator.kt)
+        actual=$(keytool -exportcert -keystore "$ORG_GRADLE_PROJECT_RELEASE_STORE_FILE" \
+          -alias "$ORG_GRADLE_PROJECT_RELEASE_KEY_ALIAS" -storepass:env ORG_GRADLE_PROJECT_RELEASE_STORE_PASSWORD \
+          | sha256sum | cut -d ' ' -f 1)
+        if [[ -z "$expected" || "$actual" != "$expected" ]]; then
+          echo "Keystore certificate does not match Amuratsu's public signing certificate." >&2
+          exit 1
         fi
-    
-    - name: Build Release APK
-      run: |
-        ./gradlew :app:assembleRelease --no-daemon --stacktrace \
-          -PRELEASE_STORE_FILE=../release.keystore \
-          -PRELEASE_STORE_PASSWORD="${{ secrets.KEYSTORE_PASSWORD || 'password' }}" \
-          -PRELEASE_KEY_ALIAS="${{ secrets.KEY_ALIAS || 'release' }}" \
-          -PRELEASE_KEY_PASSWORD="${{ secrets.KEY_PASSWORD || 'password' }}"
-    
+        ./gradlew :app:assembleRelease --no-daemon --stacktrace
+
     - name: Get version info
       id: version
       run: |

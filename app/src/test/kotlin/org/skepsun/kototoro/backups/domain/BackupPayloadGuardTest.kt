@@ -14,8 +14,15 @@ import java.util.zip.ZipOutputStream
 class BackupPayloadGuardTest {
 
 	@Test
-	fun `current Kototoro backups are detected by app id and semantic schema`() {
-		for (appId in listOf("org.skepsun.kototoro", "org.skepsun.kototoro.nightly", "org.skepsun.kototoro.debug")) {
+	fun `current backups are detected by app id and semantic schema`() {
+		val appIds = listOf(
+            "org.skepsun.kototoro",
+            "org.skepsun.kototoro.nightly",
+            "org.skepsun.kototoro.debug",
+            "io.github.amurapan.amuratsu",
+            "io.github.amurapan.amuratsu.nightly",
+        )
+        for (appId in appIds) {
 			for (schema in listOf(3, 4)) {
 				assertEquals(
 					BackupRestoreFormat.KOTOTORO_CURRENT,

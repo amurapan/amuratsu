@@ -99,4 +99,29 @@ class AppUpdateSourceTest {
 		assertEquals("https://example.test/nightly.apk", version.apkUrl)
 	}
 
+    @Test
+    fun `Amuratsu updates select a public release APK for this ABI and use the tag version`() {
+        val repo = "amurapan/amuratsu"
+        val tag = "v0.1.0-alpha.4"
+        val prefix = "https://github.com/$repo/releases/download/$tag/"
+        val releases = JSONArray(
+            """
+            [{
+                "tag_name": "$tag",
+                "name": "Amuratsu Alpha",
+                "assets": [
+                    {"name":"Amuratsu-N20261121-arm64-v8a-nightly.apk","browser_download_url":"${prefix}Amuratsu-N20261121-arm64-v8a-nightly.apk"},
+                    {"name":"Amuratsu-0.1.0-alpha.4-arm64-v8a-preview.apk","browser_download_url":"${prefix}Amuratsu-0.1.0-alpha.4-arm64-v8a-preview.apk"},
+                    {"name":"Amuratsu-0.1.0-alpha.4-arm64-v8a-release.apk","browser_download_url":"${prefix}Amuratsu-0.1.0-alpha.4-arm64-v8a-release.apk"}
+                ]
+            }]
+            """.trimIndent(),
+        )
+
+        val version = parseUpdateReleases(releases, AppUpdateSource.GITHUB, repo, listOf("arm64-v8a")).single()
+        assertEquals("0.1.0-alpha.4", version.name)
+        assertEquals("${prefix}Amuratsu-0.1.0-alpha.4-arm64-v8a-release.apk", version.apkUrl)
+        assertEquals(emptyList<AppVersion>(), parseUpdateReleases(releases, AppUpdateSource.GITHUB, repo, listOf("x86")))
+    }
+
 }

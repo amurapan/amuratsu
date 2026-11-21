@@ -34,6 +34,8 @@ import javax.inject.Singleton
 
 private const val CONTENT_TYPE_APK = "application/vnd.android.package-archive"
 private const val BUILD_TYPE_RELEASE = "release"
+private const val BUILD_TYPE_NIGHTLY = "nightly"
+private const val AMURATSU_REPOSITORY = "amurapan/amuratsu"
 private const val ABI_ARM64_V8A = "arm64-v8a"
 private const val ABI_ARMEABI_V7A = "armeabi-v7a"
 private const val ABI_X86_64 = "x86_64"
@@ -115,7 +117,10 @@ class AppUpdateRepository @Inject constructor(
             }
             response.parseJsonArray()
         }
-        return parseUpdateReleases(releases, source, repository, Build.SUPPORTED_ABIS.asList())
+        return parseUpdateReleases(
+            releases, source, repository, Build.SUPPORTED_ABIS.asList(),
+            nightly = BuildConfig.BUILD_TYPE == BUILD_TYPE_NIGHTLY,
+        )
     }
 
     suspend fun fetchUpdate(
@@ -143,7 +148,11 @@ class AppUpdateRepository @Inject constructor(
 
     @Suppress("KotlinConstantConditions")
     suspend fun isUpdateSupported(): Boolean {
-        return BuildConfig.BUILD_TYPE != BUILD_TYPE_RELEASE || appValidator.isOriginalApp.getOrNull() == true
+        return when (BuildConfig.BUILD_TYPE) {
+            BUILD_TYPE_RELEASE -> appValidator.isOriginalApp.getOrNull() == true
+            BUILD_TYPE_NIGHTLY -> true
+            else -> false
+        }
     }
 
     private fun repositoryFor(source: AppUpdateSource): String = when (source) {
@@ -162,17 +171,29 @@ internal fun parseUpdateReleases(
     source: AppUpdateSource,
     repository: String,
     supportedAbis: List<String>,
+    nightly: Boolean = false,
 ): List<AppVersion> = jsonArray.mapJSONNotNull { json ->
-    val assets = json.optJSONArray("assets")?.toAssetList().orEmpty()
+    val tagName = json.optString("tag_name")
+    val ownRelease = source == AppUpdateSource.GITHUB && repository.equals(AMURATSU_REPOSITORY, ignoreCase = true)
+    val assets = json.optJSONArray("assets")?.toAssetList().orEmpty().filter { asset ->
+        if (!ownRelease) return@filter true
+        val name = asset.optString("name")
+        val expectedSuffix = if (nightly) "-nightly.apk" else "-release.apk"
+        name.startsWith("Amuratsu-") && name.endsWith(expectedSuffix) &&
+            asset.optString("browser_download_url") == "https://github.com/$repository/releases/download/$tagName/$name"
+    }
     if (assets.isEmpty()) {
         return@mapJSONNotNull null
     }
-    val apkAsset = assets.findBestAsset(supportedAbis) ?: assets.first()
+    val apkAsset = assets.findBestAsset(supportedAbis) ?: return@mapJSONNotNull null
     val apkUrl = apkAsset.optString("browser_download_url").takeIf { it.isNotBlank() }
         ?: return@mapJSONNotNull null
-    val tagName = json.optString("tag_name")
     val versionName = when (source) {
-        AppUpdateSource.GITHUB -> json.optString("name").ifBlank { tagName }.removePrefix("v")
+        AppUpdateSource.GITHUB -> if (ownRelease && !nightly) {
+            tagName.removePrefix("v")
+        } else {
+            json.optString("name").ifBlank { tagName }.removePrefix("v")
+        }
         AppUpdateSource.GITCODE -> tagName.toVersionName()
     }
     val releaseUrl = when (source) {
