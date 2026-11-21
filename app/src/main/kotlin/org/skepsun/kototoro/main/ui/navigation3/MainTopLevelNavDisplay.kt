@@ -1,6 +1,11 @@
 package org.skepsun.kototoro.main.ui.navigation3
 
+import androidx.compose.animation.AnimatedContentTransitionScope
+import androidx.compose.animation.ContentTransform
+import androidx.compose.animation.EnterTransition
+import androidx.compose.animation.ExitTransition
 import androidx.compose.animation.ExperimentalSharedTransitionApi
+import androidx.compose.animation.togetherWith
 import androidx.compose.animation.SharedTransitionScope
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
@@ -22,6 +27,8 @@ import androidx.navigation3.ui.LocalNavAnimatedContentScope
 import androidx.navigation3.ui.NavDisplay
 import org.skepsun.kototoro.core.prefs.ListToDetailsTransition
 import org.skepsun.kototoro.core.ui.compose.LocalNavAnimatedVisibilityScope
+import org.skepsun.kototoro.core.ui.theme.LocalSurfaceStyle
+import org.skepsun.kototoro.core.ui.theme.SurfaceStyle
 
 /**
  * Renders the selected top-level tab's full back stack with a single [NavDisplay].
@@ -56,26 +63,29 @@ fun MainTopLevelNavDisplay(
     }
     val saveableStateHolder = rememberSaveableStateHolder()
     val currentRenderEntry = rememberUpdatedState(renderEntry)
+    val animateTabChanges = LocalSurfaceStyle.current == SurfaceStyle.BACKDROP
     // Decorate each top-level stack independently so switching tabs does not clear its state.
     val decoratedEntriesByTopLevel: Map<TopLevelNavKey, List<NavEntry<MainNavKey>>> = allTopLevelNavKeys.associateWith { key ->
         val backStack: List<MainNavKey> = navState.stackFor(key).toList()
-        val entryDecorators = listOf(
-            rememberSaveableStateHolderNavEntryDecorator<MainNavKey>(saveableStateHolder),
-            rememberViewModelStoreNavEntryDecorator<MainNavKey>(viewModelStoreOwner),
-        )
+        val savedState = rememberSaveableStateHolderNavEntryDecorator<MainNavKey>(saveableStateHolder)
+        val viewModels = rememberViewModelStoreNavEntryDecorator<MainNavKey>(viewModelStoreOwner)
+        val entryDecorators = remember(savedState, viewModels) { listOf(savedState, viewModels) }
+        val entryProvider: (MainNavKey) -> NavEntry<MainNavKey> =
+            remember(backStack, detailsTransitionStyle, animateTabChanges) {
+                { entryKey ->
+                    navEntry(
+                        key = entryKey,
+                        prev = backStack.getOrNull(backStack.indexOf(entryKey) - 1),
+                        detailsTransitionStyle = detailsTransitionStyle,
+                        animateTabChanges = animateTabChanges,
+                        renderEntry = { key -> currentRenderEntry.value(key) },
+                    )
+                }
+            }
         rememberDecoratedNavEntries(
             backStack = backStack,
             entryDecorators = entryDecorators,
-            entryProvider = { entryKey ->
-                // The navigation relation is (previous top of stack, new top of stack).
-                val prev = backStack.takeWhile { it != entryKey }.lastOrNull()
-                navEntry(
-                    key = entryKey,
-                    prev = prev,
-                    detailsTransitionStyle = detailsTransitionStyle,
-                    renderEntry = { key -> currentRenderEntry.value(key) },
-                )
-            },
+            entryProvider = entryProvider,
         )
     }
     val sceneStrategies: List<SceneStrategy<MainNavKey>> = listOf(
@@ -102,11 +112,12 @@ private fun navEntry(
     key: MainNavKey,
     prev: MainNavKey?,
     detailsTransitionStyle: ListToDetailsTransition,
+    animateTabChanges: Boolean,
     renderEntry: @Composable (MainNavKey) -> Unit = {},
 ): NavEntry<MainNavKey> {
     return NavEntry(
         key = key,
-        metadata = transitionMetadata(key, prev, detailsTransitionStyle),
+        metadata = transitionMetadata(key, prev, detailsTransitionStyle, animateTabChanges),
     ) { entryKey ->
         CompositionLocalProvider(
             LocalNavAnimatedVisibilityScope provides LocalNavAnimatedContentScope.current,
@@ -126,6 +137,7 @@ private fun transitionMetadata(
     key: MainNavKey,
     prev: MainNavKey?,
     detailsTransitionStyle: ListToDetailsTransition,
+    animateTabChanges: Boolean,
 ): Map<String, Any> {
     val preset = if (key is DetailsNavKey && detailsTransitionStyle == ListToDetailsTransition.LEGACY_SLIDE) {
         KototoroMotionCatalog.legacySlide
@@ -133,8 +145,14 @@ private fun transitionMetadata(
         KototoroMotionCatalog.preset(KototoroMotionCatalog.forRelation(prev, key))
     }
     return metadata {
-        put(NavDisplay.TransitionKey, preset.enter)
+        put(NavDisplay.TransitionKey, if (key is TopLevelNavKey && !animateTabChanges) instantTab else preset.enter)
         put(NavDisplay.PopTransitionKey, preset.pop)
         put(NavDisplay.PredictivePopTransitionKey, preset.predictivePop)
     }
+}
+
+// Material tabs already animate the selected nav item. An immediate content swap avoids
+// drawing both the outgoing and incoming pages at once while retaining their back stacks.
+private val instantTab: AnimatedContentTransitionScope<*>.() -> ContentTransform = {
+    (EnterTransition.None togetherWith ExitTransition.None).using(null)
 }
