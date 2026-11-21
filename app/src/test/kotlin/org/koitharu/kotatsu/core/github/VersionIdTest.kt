@@ -1,9 +1,8 @@
 package org.skepsun.kototoro.core.github
 
-import org.junit.Assert.assertEquals
-import org.junit.Assert.assertTrue
-import org.junit.Test
-import org.skepsun.kototoro.BuildConfig
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Test
 
 class VersionIdTest {
 
@@ -44,9 +43,9 @@ class VersionIdTest {
 	}
 
 	@Test
-	fun testCurrentVersion() {
-		val version1 = VersionId("2.4.6")
-		val version2 = VersionId(BuildConfig.VERSION_NAME)
+	fun testAmuratsuReleaseOrdering() {
+		val version1 = VersionId("0.1.0-alpha.3")
+		val version2 = VersionId("0.1.0-alpha.4")
 		assertTrue(version1 < version2)
 	}
 }
