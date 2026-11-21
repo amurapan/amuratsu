@@ -3,6 +3,10 @@ package org.skepsun.kototoro.settings.sources.unified
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.FlowRow
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
+import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.MaterialTheme
 import android.content.Intent
 import android.widget.Toast
@@ -22,6 +26,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
@@ -30,11 +35,13 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import kotlinx.coroutines.launch
 import org.skepsun.kototoro.R
 import org.skepsun.kototoro.core.extensions.SelectedSourcesDeletePlan
 import org.skepsun.kototoro.core.extensions.SelectedSourcesNsfwAction
 import org.skepsun.kototoro.core.extensions.resolveSelectedSourcesNsfwAction
 import org.skepsun.kototoro.core.prefs.InterfaceStyle
+import org.skepsun.kototoro.core.ui.search.MediaFilterChips
 import org.skepsun.kototoro.core.ui.theme.LocalInterfaceStyle
 import org.skepsun.kototoro.core.ui.theme.LocalMaterialExpressiveComponentsEnabled
 import org.skepsun.kototoro.settings.compose.SettingsContentHorizontalPadding
@@ -183,6 +190,8 @@ fun UnifiedSourcesRoute(
     pagerState: PagerState = rememberPagerState(pageCount = { UNIFIED_SOURCES_TAB_COUNT }),
     tabReselectTrigger: Pair<Int, Long>? = null,
     viewModel: UnifiedSourcesViewModel = hiltViewModel(),
+    quickSetup: Boolean = false,
+    onFinishSetup: () -> Unit = {},
 ) {
     val context = LocalContext.current
     val state by viewModel.uiState.collectAsStateWithLifecycle()
@@ -193,6 +202,26 @@ fun UnifiedSourcesRoute(
     var selectedSourceIdList by rememberSaveable { mutableStateOf(emptyList<String>()) }
     val selectedSourceIds = remember(selectedSourceIdList) { selectedSourceIdList.toSet() }
     var testSourcesList by remember { mutableStateOf<List<org.skepsun.kototoro.parsers.model.ContentSource>?>(null) }
+
+    val scope = rememberCoroutineScope()
+    var pendingSetupRepoId by rememberSaveable { mutableStateOf<String?>(null) }
+    val setupState = state as? UnifiedSourcesUiState.Ready
+    val connectedSetupRepo = setupState?.allRepositories?.firstOrNull {
+        it.id == pendingSetupRepoId && it.isConfigured
+    }
+
+    fun showSetupPackages(repository: UnifiedSourceRepositoryItem) {
+        viewModel.setKindFilter(repository.kind)
+        viewModel.setRepositoryFilter(repository.id)
+        scope.launch { pagerState.scrollToPage(UNIFIED_SOURCES_TAB_PACKAGES) }
+    }
+
+    LaunchedEffect(connectedSetupRepo, isLoading) {
+        if (connectedSetupRepo != null && !isLoading) {
+            pendingSetupRepoId = null
+            showSetupPackages(connectedSetupRepo)
+        }
+    }
 
     fun proceedThirdPartyAction(action: UnifiedThirdPartyAction, enableImportedSources: Boolean = true) {
         when (action) {
@@ -305,6 +334,24 @@ fun UnifiedSourcesRoute(
         searchActive = searchActive,
         pagerState = pagerState,
         tabReselectTrigger = tabReselectTrigger,
+        setupHeader = if (quickSetup && !searchActive && setupState != null) {
+            { tab ->
+                SourceSetupHeader(
+                    tab = tab,
+                    state = setupState,
+                    busy = isLoading,
+                    onChooseKind = {
+                        viewModel.setRepositoryFilter(null)
+                        viewModel.setKindFilter(it)
+                    },
+                    onBrowsePackages = ::showSetupPackages,
+                    onChooseLanguage = { onActivePanelChange(UnifiedToolbarFilterPanel.LANGUAGE) },
+                    onFinish = onFinishSetup,
+                )
+            }
+        } else {
+            null
+        },
         onSearchClick = { onSearchActiveChange(true) },
         onSearchClose = {
             onSearchActiveChange(false)
@@ -387,14 +434,19 @@ fun UnifiedSourcesRoute(
             viewModel.clearLanguages()
         },
         onAddRepository = { preset ->
-            activeDialog = if (preset != null) {
-                UnifiedSourcesDialogState.UrlInput(
+            activeDialog = when {
+                preset == null -> UnifiedSourcesDialogState.AddSourceAuto
+                quickSetup && preset.isPreset -> {
+                    pendingSetupRepoId = preset.id
+                    UnifiedSourcesDialogState.ThirdPartyDisclaimer(
+                        UnifiedThirdPartyAction.AddRepositoryUrl(preset.kind, preset.url, preset.name),
+                    )
+                }
+                else -> UnifiedSourcesDialogState.UrlInput(
                     kind = preset.kind,
                     prefillUrl = preset.url,
                     prefillTitle = preset.name,
                 )
-            } else {
-                UnifiedSourcesDialogState.AddSourceAuto
             }
         },
         onRefreshRepository = { item -> viewModel.refreshRepository(item.id) },
@@ -763,5 +815,71 @@ fun UnifiedSourcesRoute(
             sources = sourcesToTest,
             onDismiss = { testSourcesList = null },
         )
+    }
+}
+
+
+private val sourceSetupKinds = listOf(UnifiedSourceKind.MIHON, UnifiedSourceKind.LNREADER, UnifiedSourceKind.ANIYOMI)
+
+@OptIn(androidx.compose.foundation.layout.ExperimentalLayoutApi::class)
+@Composable
+private fun SourceSetupHeader(
+    tab: Int,
+    state: UnifiedSourcesUiState.Ready,
+    busy: Boolean,
+    onChooseKind: (UnifiedSourceKind?) -> Unit,
+    onBrowsePackages: (UnifiedSourceRepositoryItem) -> Unit,
+    onChooseLanguage: () -> Unit,
+    onFinish: () -> Unit,
+) {
+    if (tab == UNIFIED_SOURCES_TAB_SOURCES) return
+    Column(
+        Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 6.dp),
+        verticalArrangement = Arrangement.spacedBy(4.dp),
+    ) {
+        if (tab == UNIFIED_SOURCES_TAB_REPOSITORIES) {
+            Text(stringResource(R.string.quick_source_setup_repository), style = MaterialTheme.typography.bodyMedium)
+            MediaFilterChips(
+                options = sourceSetupKinds,
+                selected = state.filters.kinds,
+                label = {
+                    when (it) {
+                        UnifiedSourceKind.MIHON -> stringResource(R.string.manga)
+                        UnifiedSourceKind.LNREADER -> stringResource(R.string.media_books)
+                        else -> stringResource(R.string.media_home_anime)
+                    }
+                },
+                key = { it.name },
+                onSelect = { onChooseKind(it.singleOrNull()) },
+                enabled = !busy,
+                tagPrefix = "setup-format",
+            )
+            val connected = state.allRepositories.filter {
+                it.isConfigured && it.isPreset && it.kind in state.filters.kinds
+            }.singleOrNull()
+            if (connected != null) {
+                FilledTonalButton(onClick = { onBrowsePackages(connected) }, enabled = !busy) {
+                    Text(stringResource(R.string.quick_source_setup_packages))
+                }
+            }
+        } else {
+            val repository = state.allRepositories.firstOrNull { it.id == state.filters.repositoryId }
+            val packagesInCatalog = remember(state.allPackages, repository?.id) {
+                state.allPackages.filter { it.repositoryId == repository?.id }.mapTo(HashSet()) { it.id }
+            }
+            val ready = state.allSources.any { source ->
+                source.isEnabled && source.isAvailable &&
+                    (repository == null || source.repositoryId == repository.id || source.packageId in packagesInCatalog)
+            }
+            Text(stringResource(R.string.quick_source_setup_install), style = MaterialTheme.typography.bodyMedium)
+            FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                FilledTonalButton(onClick = onChooseLanguage, enabled = !busy) {
+                    Text(stringResource(R.string.language))
+                }
+                if (ready) {
+                    Button(onClick = onFinish, enabled = !busy) { Text(stringResource(R.string.done)) }
+                }
+            }
+        }
     }
 }

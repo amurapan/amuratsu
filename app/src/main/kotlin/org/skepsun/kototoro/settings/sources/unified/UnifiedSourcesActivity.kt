@@ -71,6 +71,7 @@ class UnifiedSourcesActivity : BaseComposeActivity() {
                 initialAddRepositoryKind = initialKind,
                 initialAddRepositoryUrl = initialUrl,
                 initialTab = deepLink.initialTab,
+                quickSetup = intent.getBooleanExtra(EXTRA_QUICK_SETUP, false),
                 modifier = Modifier.fillMaxSize(),
             )
         }
@@ -109,6 +110,7 @@ class UnifiedSourcesActivity : BaseComposeActivity() {
         initialAddRepositoryUrl: String? = null,
         modifier: Modifier = Modifier,
         initialTab: String? = null,
+        quickSetup: Boolean = false,
     ) {
         var searchActive by rememberSaveable { mutableStateOf(false) }
         var activePanel by rememberSaveable { mutableStateOf<UnifiedToolbarFilterPanel?>(null) }
@@ -218,6 +220,8 @@ class UnifiedSourcesActivity : BaseComposeActivity() {
                 initialAddRepositoryKind = initialAddRepositoryKind,
                 initialAddRepositoryUrl = initialAddRepositoryUrl,
                 pagerState = pagerState,
+                quickSetup = quickSetup,
+                onFinishSetup = ::finish,
                 tabReselectTrigger = tabReselectTrigger,
                 viewModel = viewModel,
                 onBrowseSource = { item -> router.openList(item.source, null, null) },
@@ -280,6 +284,7 @@ class UnifiedSourcesActivity : BaseComposeActivity() {
         const val EXTRA_INITIAL_TAB = UnifiedSourcesDeepLinkParser.EXTRA_INITIAL_TAB
         const val EXTRA_PACKAGE_FILTER = UnifiedSourcesDeepLinkParser.EXTRA_PACKAGE_FILTER
         const val EXTRA_SOURCE_KEY = UnifiedSourcesDeepLinkParser.EXTRA_SOURCE_KEY
+        private const val EXTRA_QUICK_SETUP = "quick_source_setup"
         private const val HOST_ADD_REPO = "add-repo"
 
         fun newIntent(
@@ -305,8 +310,10 @@ class UnifiedSourcesActivity : BaseComposeActivity() {
         fun newDeepLinkIntent(
             context: Context,
             link: UnifiedSourcesDeepLink,
+            quickSetup: Boolean = false,
         ): Intent {
             return Intent(context, UnifiedSourcesActivity::class.java).apply {
+                if (quickSetup) putExtra(EXTRA_QUICK_SETUP, true)
                 link.initialTab?.let { putExtra(EXTRA_INITIAL_TAB, it) }
                 link.packageFilter?.let { putExtra(EXTRA_PACKAGE_FILTER, it) }
                 link.sourceKey?.let { putExtra(EXTRA_SOURCE_KEY, it) }

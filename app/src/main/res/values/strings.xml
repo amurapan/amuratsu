@@ -4319,4 +4319,7 @@
     <string name="media_home_chapters">New chapters</string>
     <string name="media_home_episodes">New episodes</string>
     <string name="media_home_continue_watching">Continue watching</string>
+    <string name="quick_source_setup_repository">Choose a format and add a catalog.</string>
+    <string name="quick_source_setup_packages">Choose an extension</string>
+    <string name="quick_source_setup_install">Choose a language, then install and enable an extension.</string>
 </resources>

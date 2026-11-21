@@ -4112,4 +4112,7 @@
     <string name="media_home_chapters">Новые главы</string>
     <string name="media_home_episodes">Новые серии</string>
     <string name="media_home_continue_watching">Продолжить просмотр</string>
+    <string name="quick_source_setup_repository">Выбери формат и подключи каталог.</string>
+    <string name="quick_source_setup_packages">Выбрать расширение</string>
+    <string name="quick_source_setup_install">Выбери язык, затем установи и включи расширение.</string>
 </resources>

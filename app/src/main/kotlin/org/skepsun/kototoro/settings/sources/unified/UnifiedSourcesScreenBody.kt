@@ -120,6 +120,7 @@ fun UnifiedSourcesScreen(
     onResetFilters: () -> Unit = {},
     pagerState: PagerState = rememberPagerState(pageCount = { UNIFIED_SOURCES_TAB_COUNT }),
     tabReselectTrigger: Pair<Int, Long>? = null,
+    setupHeader: (@Composable (Int) -> Unit)? = null,
 ) {
     val readyState = state as? UnifiedSourcesUiState.Ready
     val sourceListState = rememberSaveable(saver = LazyListState.Saver) { LazyListState() }
@@ -176,7 +177,7 @@ fun UnifiedSourcesScreen(
                         LinearProgressIndicator(modifier = Modifier.fillMaxWidth())
                     }
                 }
-                if (readyState != null) {
+                if (readyState != null && (setupHeader == null || selectedTab == UNIFIED_SOURCES_TAB_SOURCES)) {
                     UnifiedSourcesContextualFilterTabs(
                         tab = selectedTab,
                         state = readyState,
@@ -203,6 +204,7 @@ fun UnifiedSourcesScreen(
                         .fillMaxSize()
                         .padding(innerPadding),
                 ) {
+                    setupHeader?.invoke(selectedTab)
                     AnimatedVisibility(
                         visible = selectedTab == UNIFIED_SOURCES_TAB_SOURCES && activeSelectedSourceIds.isNotEmpty(),
                         enter = expandVertically() + fadeIn(),

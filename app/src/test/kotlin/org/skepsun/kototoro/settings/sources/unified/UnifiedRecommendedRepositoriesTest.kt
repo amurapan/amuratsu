@@ -5,50 +5,25 @@ import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 import org.skepsun.kototoro.extensions.repo.ExternalExtensionType
 
-/**
- * The preset/recommended repository list is intentionally EMPTY: Kototoro never ships, curates or
- * recommends any third-party extension repository (a copyright risk — e.g. Kakao takedowns), so
- * every repository is an explicit user action.
- *
- * Completion gate: recommended repositories are presets and must NEVER be auto-added or persisted.
- * [UnifiedRecommendedRepository] is a pure in-memory descriptor with no `isConfigured` field and no
- * backing repository, so simply listing an entry in [UnifiedRecommendedRepositories.all] cannot
- * write to [org.skepsun.kototoro.extensions.repo.ExternalExtensionRepoRepository] nor to any other
- * store. Keeping the list empty guarantees no repository is ever offered or configured implicitly.
- * Any future re-introduction of presets must be guarded by these tests.
- */
 class UnifiedRecommendedRepositoriesTest {
 
     @Test
-    fun `preset repository list is empty`() {
-        assertEquals(emptyList<UnifiedRecommendedRepository>(), UnifiedRecommendedRepositories.all)
+    fun `setup offers one catalog for each supported format`() {
+        assertEquals("Keiyoushi", UnifiedRecommendedRepositories.byKind(UnifiedSourceKind.MIHON).single().name)
+        assertEquals("LNReader Plugins", UnifiedRecommendedRepositories.byKind(UnifiedSourceKind.LNREADER).single().name)
+        assertEquals("Yūzōnō", UnifiedRecommendedRepositories.byKind(UnifiedSourceKind.ANIYOMI).single().name)
     }
 
     @Test
-    fun `byKind returns no presets for every kind`() {
-        UnifiedSourceKind.entries.forEach { kind ->
-            assertTrue(
-                UnifiedRecommendedRepositories.byKind(kind).isEmpty(),
-                "Expected no ${kind.name} presets, but found: ${UnifiedRecommendedRepositories.byKind(kind)}",
-            )
+    fun `optional catalogs can be activated through the supported repository workflows`() {
+        for (catalog in UnifiedRecommendedRepositories.all) {
+            assertEquals(UnifiedRepositoryLocationType.REMOTE_URL, catalog.locationType)
+            assertTrue(catalog.url.startsWith("https://"))
+            assertTrue(UnifiedRepositoryCapability.INSTALL_PACKAGE in catalog.capabilities)
         }
-    }
-
-    @Test
-    fun `byExternalType returns no presets for every extension type`() {
-        ExternalExtensionType.entries.forEach { type ->
-            assertTrue(
-                UnifiedRecommendedRepositories.byExternalType(type).isEmpty(),
-                "Expected no ${type} presets, but found: ${UnifiedRecommendedRepositories.byExternalType(type)}",
-            )
-        }
-    }
-
-    @Test
-    fun `no third-party repository is recommended`() {
-        assertTrue(
-            UnifiedRecommendedRepositories.all.none { item -> item.url.isNotBlank() },
-            "A recommended repository must never be shipped inside the app",
+        assertEquals(
+            UnifiedRecommendedRepositories.byKind(UnifiedSourceKind.ANIYOMI),
+            UnifiedRecommendedRepositories.byExternalType(ExternalExtensionType.ANIYOMI),
         )
     }
 }

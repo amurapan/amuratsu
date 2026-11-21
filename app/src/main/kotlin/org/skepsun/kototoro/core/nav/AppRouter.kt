@@ -838,6 +838,7 @@ class AppRouter(
             UnifiedSourcesActivity.newDeepLinkIntent(
                 context,
                 UnifiedSourcesDeepLink(initialTab = UnifiedSourcesDeepLinkParser.TAB_REPOS),
+                quickSetup = true,
             ),
         )
     }
@@ -1278,7 +1279,7 @@ class AppRouter(
                 },
                 onOpenExtensionManagement = {
                     composeActivity.dismissComposeModal(WELCOME_MODAL_KEY)
-                    openManageSources()
+                    openSourceRepositoryCatalog()
                 },
             )
         }
