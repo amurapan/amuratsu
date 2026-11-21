@@ -77,6 +77,7 @@ class HomeViewModel @Inject constructor(
     contentSourcesRepository: ContentSourcesRepository,
     private val exploreRepository: org.skepsun.kototoro.explore.domain.ExploreRepository,
     private val settings: AppSettings,
+    private val globalFavoritesState: org.skepsun.kototoro.favourites.domain.GlobalFavoritesState,
     private val webDavUploader: WebDavBackupUploader,
     private val backupWebDavUploadCoordinator: BackupWebDavUploadCoordinator,
     private val backupWebDavRestoreCoordinator: BackupWebDavRestoreCoordinator,
@@ -104,7 +105,7 @@ class HomeViewModel @Inject constructor(
 
     val onActionDone = MutableEventFlow<ReversibleAction>()
 
-    // The personal home is global. Selecting a format never changes a media space or library filter.
+    // Keep the home selection independent until the user opens a shelf.
     private val selectedTabFlow = savedStateHandle.getStateFlow("home_format", "ALL")
         .map { name -> HomeContentTab.entries.find { it.name == name } }
         .distinctUntilChanged()
@@ -318,6 +319,7 @@ class HomeViewModel @Inject constructor(
                 "contentDataFlow history=${snapshot.history.size} updates=${snapshot.updates.size} recommendations=${snapshot.recommendations.size} resumeContentId=${snapshot.resumeState.content?.id}",
             )
         }
+        .flowOn(Dispatchers.Default)
         .stateIn(
             scope = viewModelScope,
             started = SharingStarted.Eagerly,
@@ -500,6 +502,10 @@ class HomeViewModel @Inject constructor(
                 selectedTab = HomeContentTab.entries.find { it.name == savedStateHandle.get<String>("home_format") },
             ),
         )
+
+    fun applyMediaShelfFilter(tab: HomeContentTab?) {
+        globalFavoritesState.setSelectedGroupTab(tab.toBrowseGroupTab())
+    }
 
     fun setSelectedTab(tab: HomeContentTab?) {
         savedStateHandle["home_format"] = tab?.name ?: "ALL"

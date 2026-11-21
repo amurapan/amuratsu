@@ -806,6 +806,27 @@ internal fun UnifiedRepositoryList(
                     }
                 }
             }
+            if (presets.isNotEmpty()) {
+                item(key = "preset_repositories_header") {
+                    Spacer(modifier = Modifier.height(6.dp))
+                    Text(
+                        text = stringResource(R.string.preset_repositories),
+                        style = MaterialTheme.typography.titleMedium,
+                        fontWeight = FontWeight.SemiBold,
+                        modifier = Modifier.padding(vertical = 4.dp),
+                    )
+                }
+                items(presets, key = { it.id }) { item ->
+                    UnifiedRepositoryCard(
+                        item = item,
+                        style = style,
+                        expressive = expressive,
+                        onRefresh = null,
+                        onDelete = null,
+                        onAdd = { onAddRepository(item) },
+                    )
+                }
+            }
             if (configured.isEmpty()) {
                 item(key = "no_configured_repo_hint") {
                     Surface(
@@ -844,27 +865,7 @@ internal fun UnifiedRepositoryList(
                     )
                 }
             }
-            if (presets.isNotEmpty()) {
-                item(key = "preset_repositories_header") {
-                    Spacer(modifier = Modifier.height(6.dp))
-                    Text(
-                        text = stringResource(R.string.preset_repositories),
-                        style = MaterialTheme.typography.titleMedium,
-                        fontWeight = FontWeight.SemiBold,
-                        modifier = Modifier.padding(vertical = 4.dp),
-                    )
-                }
-                items(presets, key = { it.id }) { item ->
-                    UnifiedRepositoryCard(
-                        item = item,
-                        style = style,
-                        expressive = expressive,
-                        onRefresh = null,
-                        onDelete = null,
-                        onAdd = { onAddRepository(item) },
-                    )
-                }
-            } else if (configured.isEmpty()) {
+            if (presets.isEmpty() && configured.isEmpty()) {
                 item(key = "repo_empty_state") {
                     EmptyStatePanel(
                         icon = Icons.Outlined.SearchOff,

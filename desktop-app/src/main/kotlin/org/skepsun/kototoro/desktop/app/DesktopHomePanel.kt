@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveableStateHolder
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
 import org.skepsun.kototoro.core.library.filter
@@ -38,7 +39,10 @@ internal fun DesktopHomePanel(controller: DesktopController, state: DesktopAppSt
             .filter { filter.accepts(ecosystems[it.source.name], it.source.contentType) }
             .filterNot { content -> content.tags.any { blacklist.containsTagTitle(it.title) } }
     }
-    val contents = (history.map { it.content } + updates.map { it.first } + recommendations).associateBy { it.id }
+    val contents = remember(history, updates, recommendations) {
+        (history.map { it.content } + updates.map { it.first } + recommendations).associateBy { it.id }
+    }
+    val stateHolder = rememberSaveableStateHolder()
     fun model(content: SourceContent, progress: Float? = null, count: Int = 0): MediaHomeItem {
         val type = DesktopSourceFilter.contentTypeOf(content.source.contentType)
         val kind = when {
@@ -52,46 +56,58 @@ internal fun DesktopHomePanel(controller: DesktopController, state: DesktopAppSt
             title = content.title,
             kind = kind,
             progress = validProgress,
+            subtitle = if (kind == HomeMediaKind.BOOKS) content.authors.firstOrNull().orEmpty() else "",
             supportingText = validProgress?.let { strings.format("home_resume_progress", (it * 100).toInt()) }.orEmpty(),
             updateText = if (count > 0) strings.format(
                 if (kind == HomeMediaKind.ANIME) "media_home_new_episodes" else "media_home_new_chapters", count,
             ) else "",
         )
     }
-    MediaHomeScreen(
-        selectedKind = when (filter.tab) {
-            BrowseGroupTab.Content -> HomeMediaKind.MANGA
-            BrowseGroupTab.Novel -> HomeMediaKind.BOOKS
-            BrowseGroupTab.Video -> HomeMediaKind.ANIME
-            else -> HomeMediaKind.ALL
-        },
-        recent = history.map { model(it.content, it.progressPercent) },
-        updates = updates.map { (content, count) -> model(content, count = count) },
-        recommendations = recommendations.map { model(it) },
-        initialized = !state.busy || contents.isNotEmpty(),
-        onKindSelected = { kind ->
-            controller.homeFilter(filter.copy(tab = when (kind) {
-                HomeMediaKind.MANGA -> BrowseGroupTab.Content
-                HomeMediaKind.BOOKS -> BrowseGroupTab.Novel
-                HomeMediaKind.ANIME -> BrowseGroupTab.Video
-                HomeMediaKind.ALL -> BrowseGroupTab.All
-            }))
-        },
-        // Desktop currently searches within a chosen source. Name that capability accurately.
-        searchLabel = strings.string("media_home_browse_sources"),
-        onSearch = { controller.exitSource() },
-        onSettings = { controller.more() },
-        onHistory = { controller.library(true) },
-        onUpdates = { controller.showUpdates() },
-        onRecommendations = { controller.showSuggestions() },
-        onManageSources = { controller.showExtensions() },
-        onOpen = { model -> contents[model.id]?.let { controller.details(it) } },
-        onResume = { model -> contents[model.id]?.let { controller.resumeHomeContent(it) } },
-        cover = { model, modifier ->
-            contents[model.id]?.let { DesktopCover(it, controller.session.covers, modifier) }
-        },
-        contentPadding = PaddingValues(top = LocalDesktopTopInset.current),
-        modifier = Modifier.fillMaxSize().testTag("home-panel"),
-        enabled = enabled,
-    )
+    val selectedKind = when (filter.tab) {
+        BrowseGroupTab.Content -> HomeMediaKind.MANGA
+        BrowseGroupTab.Novel -> HomeMediaKind.BOOKS
+        BrowseGroupTab.Video -> HomeMediaKind.ANIME
+        else -> HomeMediaKind.ALL
+    }
+    stateHolder.SaveableStateProvider(selectedKind.name) {
+        MediaHomeScreen(
+            selectedKind = selectedKind,
+            recent = history.map { model(it.content, it.progressPercent) },
+            updates = updates.map { (content, count) -> model(content, count = count) },
+            recommendations = recommendations.map { model(it) },
+            initialized = !state.busy || contents.isNotEmpty(),
+            onKindSelected = { kind ->
+                controller.homeFilter(filter.copy(tab = when (kind) {
+                    HomeMediaKind.MANGA -> BrowseGroupTab.Content
+                    HomeMediaKind.BOOKS -> BrowseGroupTab.Novel
+                    HomeMediaKind.ANIME -> BrowseGroupTab.Video
+                    HomeMediaKind.ALL -> BrowseGroupTab.All
+                }))
+            },
+            // Desktop currently searches within a chosen source. Name that capability accurately.
+            searchLabel = strings.string("media_home_browse_sources"),
+            onSearch = { controller.exitSource() },
+            onSettings = { controller.more() },
+            onHistory = {
+                controller.library(true, filter.tab)
+            },
+            onLibrary = {
+                controller.library(false, filter.tab)
+            },
+            onUpdates = {
+                controller.feedFilter(state.feedFilter.copy(tab = filter.tab))
+                controller.showUpdates()
+            },
+            onRecommendations = { controller.showSuggestions() },
+            onManageSources = { controller.showExtensions() },
+            onOpen = { model -> contents[model.id]?.let { controller.details(it) } },
+            onResume = { model -> contents[model.id]?.let { controller.resumeHomeContent(it) } },
+            cover = { model, modifier ->
+                contents[model.id]?.let { DesktopCover(it, controller.session.covers, modifier) }
+            },
+            contentPadding = PaddingValues(top = LocalDesktopTopInset.current),
+            modifier = Modifier.fillMaxSize().testTag("home-panel"),
+            enabled = enabled,
+        )
+    }
 }

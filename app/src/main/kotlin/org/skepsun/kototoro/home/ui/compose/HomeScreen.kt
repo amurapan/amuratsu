@@ -5,6 +5,9 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveableStateHolder
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -35,6 +38,7 @@ fun HomeScreen(
     onSearch: () -> Unit,
     onSettings: () -> Unit,
     onHistory: () -> Unit,
+    onLibrary: () -> Unit,
     onUpdates: () -> Unit,
     onRecommendations: () -> Unit,
     onManageSources: () -> Unit,
@@ -43,14 +47,16 @@ fun HomeScreen(
     onResume: (Content) -> Unit,
 ) {
     val context = LocalContext.current
-    val listState = rememberLazyListState()
-    ScrollToTopEffect { listState.scrollToItem(0) }
-    val contents = buildList {
-        state.resumeState.content?.let(::add)
-        addAll(state.recentHistoryItems.map { it.content })
-        addAll(state.recentUpdates.map { it.content })
-        addAll(state.recommendations.map { it.content })
-    }.associateBy { it.id }
+    val configuration = LocalConfiguration.current
+    val stateHolder = rememberSaveableStateHolder()
+    val contents = remember(state.resumeState.content, state.recentHistoryItems, state.recentUpdates, state.recommendations) {
+        buildList {
+            state.resumeState.content?.let(::add)
+            state.recentHistoryItems.forEach { add(it.content) }
+            state.recentUpdates.forEach { add(it.content) }
+            state.recommendations.forEach { add(it.content) }
+        }.associateBy { it.id }
+    }
     fun item(content: Content, history: ContentHistory? = null, newChapters: Int = 0): MediaHomeItem {
         val kind = content.homeMediaKind()
         val progress = (history?.percent ?: state.resumeState.progressPercent
@@ -73,46 +79,61 @@ fun HomeScreen(
             kind = kind,
             progress = progress,
             supportingText = supportingText,
+            subtitle = if (kind == HomeMediaKind.BOOKS) content.authors.firstOrNull().orEmpty() else "",
             updateText = if (newChapters > 0) context.getString(
                 if (kind == HomeMediaKind.ANIME) R.string.media_home_new_episodes else R.string.media_home_new_chapters,
                 newChapters,
             ) else "",
         )
     }
-    val recent = state.recentHistoryItems.map { item(it.content, it.history) }
-    MediaHomeScreen(
-        selectedKind = state.selectedTab.toMediaKind(),
-        recent = recent,
-        updates = state.recentUpdates.map { item(it.content, newChapters = it.newChapters) },
-        recommendations = state.recommendations.map { item(it.content) },
-        initialized = state.isInitialized,
-        contentPadding = contentPadding,
-        listState = listState,
-        onKindSelected = { onKindSelected(it.toContentTab()) },
-        onSearch = onSearch,
-        onSettings = onSettings,
-        onHistory = onHistory,
-        onUpdates = onUpdates,
-        onRecommendations = onRecommendations,
-        onManageSources = onManageSources,
-        onImport = onImport,
-        onOpen = { model -> contents[model.id]?.let(onOpen) },
-        onResume = { model -> contents[model.id]?.let(onResume) },
-        cover = { model, modifier ->
-            Box(modifier.background(MaterialTheme.colorScheme.secondaryContainer), contentAlignment = Alignment.Center) {
-                Text(model.title.take(1), style = MaterialTheme.typography.headlineSmall,
-                    color = MaterialTheme.colorScheme.onSecondaryContainer)
-                contents[model.id]?.let { content ->
-                    AsyncImage(
-                        model = rememberHomeCoverRequest(context, content, false, "media-home"),
-                        contentDescription = null,
-                        contentScale = ContentScale.Crop,
-                        modifier = Modifier.fillMaxSize(),
-                    )
+    val recent = remember(state.recentHistoryItems, state.resumeState, configuration) {
+        state.recentHistoryItems.map { item(it.content, it.history) }
+    }
+    val updates = remember(state.recentUpdates, state.resumeState, configuration) {
+        state.recentUpdates.map { item(it.content, newChapters = it.newChapters) }
+    }
+    val recommendations = remember(state.recommendations, state.resumeState, configuration) {
+        state.recommendations.map { item(it.content) }
+    }
+    val kind = state.selectedTab.toMediaKind()
+    stateHolder.SaveableStateProvider(kind.name) {
+        val listState = rememberLazyListState()
+        ScrollToTopEffect { listState.scrollToItem(0) }
+        MediaHomeScreen(
+            selectedKind = kind,
+            recent = recent,
+            updates = updates,
+            recommendations = recommendations,
+            initialized = state.isInitialized,
+            contentPadding = contentPadding,
+            listState = listState,
+            onKindSelected = { onKindSelected(it.toContentTab()) },
+            onSearch = onSearch,
+            onSettings = onSettings,
+            onHistory = onHistory,
+            onLibrary = onLibrary,
+            onUpdates = onUpdates,
+            onRecommendations = onRecommendations,
+            onManageSources = onManageSources,
+            onImport = onImport,
+            onOpen = { model -> contents[model.id]?.let(onOpen) },
+            onResume = { model -> contents[model.id]?.let(onResume) },
+            cover = { model, modifier ->
+                Box(modifier.background(MaterialTheme.colorScheme.secondaryContainer), contentAlignment = Alignment.Center) {
+                    Text(model.title.take(1), style = MaterialTheme.typography.headlineSmall,
+                        color = MaterialTheme.colorScheme.onSecondaryContainer)
+                    contents[model.id]?.let { content ->
+                        AsyncImage(
+                            model = rememberHomeCoverRequest(context, content, false, "media-home"),
+                            contentDescription = null,
+                            contentScale = ContentScale.Crop,
+                            modifier = Modifier.fillMaxSize(),
+                        )
+                    }
                 }
-            }
-        },
-    )
+            },
+        )
+    }
 }
 
 internal fun Content.homeMediaKind(): HomeMediaKind = when {

@@ -39,6 +39,7 @@ data class MediaHomeItem(
     val supportingText: String = "",
     val progress: Float? = null,
     val updateText: String = "",
+    val subtitle: String = "",
 )
 
 /** Android and desktop render this same personal home; platform services enter through callbacks. */
@@ -66,6 +67,7 @@ fun MediaHomeScreen(
     onImport: (() -> Unit)? = null,
     searchLabel: String = uiString("search_all_media"),
     enabled: Boolean = true,
+    onLibrary: (() -> Unit)? = null,
 ) {
     var showAdd by rememberSaveable { mutableStateOf(false) }
     val hasContent = recent.isNotEmpty() || updates.isNotEmpty() || recommendations.isNotEmpty()
@@ -89,9 +91,10 @@ fun MediaHomeScreen(
                 item(key = "header") {
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Column(Modifier.weight(1f)) {
-                            Text(uiString("home"), style = MaterialTheme.typography.labelMedium,
-                                color = MaterialTheme.colorScheme.onSurfaceVariant)
-                            Text(uiString("media_home_title"), style = MaterialTheme.typography.headlineMedium)
+                            Text(
+                                uiString(if (selectedKind == HomeMediaKind.ALL) "media_home_title" else selectedKind.labelKey),
+                                style = MaterialTheme.typography.headlineMedium,
+                            )
                         }
                         FilledTonalIconButton(onClick = onSettings, enabled = enabled,
                             modifier = Modifier.testTag("media-home-settings")) {
@@ -132,6 +135,21 @@ fun MediaHomeScreen(
                         }
                     }
                 }
+                if (selectedKind != HomeMediaKind.ALL && onLibrary != null) {
+                    item(key = "media-actions") {
+                        FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                            FilledTonalButton(onClick = onLibrary, enabled = enabled) {
+                                Text(uiString("favourites"))
+                            }
+                            TextButton(onClick = onUpdates, enabled = enabled) {
+                                Text(uiString(if (selectedKind == HomeMediaKind.ANIME) "media_home_episodes" else "media_home_chapters"))
+                            }
+                            TextButton(onClick = onManageSources, enabled = enabled) {
+                                Text(uiString("manage_sources"))
+                            }
+                        }
+                    }
+                }
                 if (!initialized) {
                     item(key = "loading") {
                         Box(Modifier.fillMaxWidth().height(180.dp).testTag("media-home-loading"),
@@ -144,29 +162,32 @@ fun MediaHomeScreen(
                         HomeEmpty(selectedKind, onSearch, { showAdd = true }, onImport, enabled)
                     }
                 } else {
-                    item(key = "shelves") {
-                        val primary: @Composable () -> Unit = {
-                            HomeResumeSection(recent, onHistory, onOpen, onResume, cover, enabled)
-                        }
-                        val secondary: @Composable () -> Unit = {
-                            Column(verticalArrangement = Arrangement.spacedBy(24.dp)) {
-                                if (updates.isNotEmpty()) HomeUpdatesSection(updates, onUpdates, onOpen, cover, enabled)
-                                if (recommendations.isNotEmpty()) HomeRecommendationsSection(
-                                    recommendations, onRecommendations, onOpen, cover, enabled,
-                                )
-                            }
-                        }
-                        if (twoColumns && recent.isNotEmpty() && (updates.isNotEmpty() || recommendations.isNotEmpty())) {
+                    if (twoColumns && recent.isNotEmpty() && (updates.isNotEmpty() || recommendations.isNotEmpty())) {
+                        item(key = "shelves") {
                             Row(horizontalArrangement = Arrangement.spacedBy(28.dp),
                                 modifier = Modifier.testTag("media-home-columns")) {
-                                Box(Modifier.weight(1.25f)) { primary() }
-                                Box(Modifier.weight(1f)) { secondary() }
+                                Box(Modifier.weight(1.25f)) {
+                                    HomeResumeSection(selectedKind, recent, onHistory, onOpen, onResume, cover, enabled)
+                                }
+                                Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(24.dp)) {
+                                    if (updates.isNotEmpty()) HomeUpdatesSection(
+                                        selectedKind, updates, onUpdates, onOpen, cover, enabled,
+                                    )
+                                    if (recommendations.isNotEmpty()) HomeRecommendationsSection(
+                                        recommendations, onRecommendations, onOpen, cover, enabled,
+                                    )
+                                }
                             }
-                        } else {
-                            Column(verticalArrangement = Arrangement.spacedBy(24.dp)) {
-                                primary()
-                                secondary()
-                            }
+                        }
+                    } else {
+                        if (recent.isNotEmpty()) item(key = "resume") {
+                            HomeResumeSection(selectedKind, recent, onHistory, onOpen, onResume, cover, enabled)
+                        }
+                        if (updates.isNotEmpty()) item(key = "updates") {
+                            HomeUpdatesSection(selectedKind, updates, onUpdates, onOpen, cover, enabled)
+                        }
+                        if (recommendations.isNotEmpty()) item(key = "recommendations") {
+                            HomeRecommendationsSection(recommendations, onRecommendations, onOpen, cover, enabled)
                         }
                     }
                 }
@@ -235,6 +256,7 @@ private fun HomeEmpty(
 
 @Composable
 private fun HomeResumeSection(
+    selectedKind: HomeMediaKind,
     items: List<MediaHomeItem>,
     onHistory: () -> Unit,
     onOpen: (MediaHomeItem) -> Unit,
@@ -244,7 +266,12 @@ private fun HomeResumeSection(
 ) {
     if (items.isEmpty()) return
     Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
-        MediaHomeHeading(uiString("continue_action"), uiString("history"), "media-home-history", onHistory, enabled)
+        val resumeLabel = when (selectedKind) {
+            HomeMediaKind.ALL -> uiString("continue_action")
+            HomeMediaKind.ANIME -> uiString("media_home_continue_watching")
+            else -> uiString("continue_reading")
+        }
+        MediaHomeHeading(resumeLabel, uiString("history"), "media-home-history", onHistory, enabled)
         val featured = items.first()
         Surface(shape = RoundedCornerShape(28.dp), color = MaterialTheme.colorScheme.primaryContainer) {
             Row(Modifier.fillMaxWidth().padding(16.dp), horizontalArrangement = Arrangement.spacedBy(16.dp),
@@ -259,6 +286,7 @@ private fun HomeResumeSection(
                     Text(uiString(featured.kind.labelKey), style = MaterialTheme.typography.labelSmall)
                     Text(featured.title, style = MaterialTheme.typography.titleLarge, maxLines = 2,
                         overflow = TextOverflow.Ellipsis)
+                    MediaSubtitle(featured)
                     if (featured.supportingText.isNotBlank()) Text(featured.supportingText,
                         style = MaterialTheme.typography.bodySmall)
                     HomeProgress(featured)
@@ -317,10 +345,19 @@ private fun HomeSmallResume(
                 color = MaterialTheme.colorScheme.primary)
             Text(item.title, style = MaterialTheme.typography.titleMedium, maxLines = 2,
                 overflow = TextOverflow.Ellipsis)
+            MediaSubtitle(item)
             if (item.supportingText.isNotBlank()) Text(item.supportingText,
                 style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
             HomeProgress(item)
         }
+    }
+}
+
+@Composable
+private fun MediaSubtitle(item: MediaHomeItem) {
+    if (item.subtitle.isNotBlank()) {
+        Text(item.subtitle, style = MaterialTheme.typography.bodySmall, maxLines = 1,
+            overflow = TextOverflow.Ellipsis, color = MaterialTheme.colorScheme.onSurfaceVariant)
     }
 }
 
@@ -336,6 +373,7 @@ private fun HomeProgress(item: MediaHomeItem) {
 
 @Composable
 private fun HomeUpdatesSection(
+    selectedKind: HomeMediaKind,
     items: List<MediaHomeItem>,
     onAll: () -> Unit,
     onOpen: (MediaHomeItem) -> Unit,
@@ -343,7 +381,12 @@ private fun HomeUpdatesSection(
     enabled: Boolean,
 ) {
     Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
-        MediaHomeHeading(uiString("media_home_updates"), uiString("all"), "media-home-updates", onAll, enabled)
+        val title = when (selectedKind) {
+            HomeMediaKind.ALL -> uiString("media_home_updates")
+            HomeMediaKind.ANIME -> uiString("media_home_episodes")
+            else -> uiString("media_home_chapters")
+        }
+        MediaHomeHeading(title, uiString("all"), "media-home-updates", onAll, enabled)
         Surface(shape = RoundedCornerShape(24.dp), color = MaterialTheme.colorScheme.surfaceContainerLow) {
             Column(Modifier.padding(horizontal = 14.dp)) {
                 items.take(3).forEachIndexed { index, item ->

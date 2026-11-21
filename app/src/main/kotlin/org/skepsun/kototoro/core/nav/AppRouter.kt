@@ -128,6 +128,9 @@ import org.skepsun.kototoro.search.domain.SearchKind
 import org.skepsun.kototoro.search.domain.SearchContentKind
 import org.skepsun.kototoro.search.ui.ContentListActivity
 import org.skepsun.kototoro.search.ui.multi.SearchActivity
+import org.skepsun.kototoro.settings.sources.unified.UnifiedSourcesActivity
+import org.skepsun.kototoro.settings.sources.unified.UnifiedSourcesDeepLink
+import org.skepsun.kototoro.settings.sources.unified.UnifiedSourcesDeepLinkParser
 import org.skepsun.kototoro.settings.sources.blacklist.GlobalTagBlacklistActivity
 import org.skepsun.kototoro.settings.SettingsActivity
 import org.skepsun.kototoro.settings.about.AppUpdateActivity
@@ -395,28 +398,32 @@ class AppRouter(
         state: ReaderState?,
         positionMs: Long? = null,
     ) {
+        fun launchVideo(content: Content, target: VideoLaunchTarget) {
+            val seekPosition = positionMs.takeIf { target.state?.chapterId == state?.chapterId }
+            openVideo(target.url, content, anchor, target.state, seekPosition)
+        }
+
         val target = resolveVideoLaunchTarget(manga, state)
         val lastSegment = target.url.toUriOrNull()?.lastPathSegment ?: target.url
         val isDirectStream = lastSegment.endsWith(".m3u8", ignoreCase = true) ||
             lastSegment.endsWith(".mp4", ignoreCase = true)
         if (isDirectStream || !manga.chapters.isNullOrEmpty()) {
-            openVideo(target.url, manga, anchor, target.state, positionMs)
+            launchVideo(manga, target)
             return
         }
 
         val lifecycleOwner = activity as? LifecycleOwner
         if (lifecycleOwner == null) {
-            openVideo(target.url, manga, anchor, target.state, positionMs)
+            launchVideo(manga, target)
             return
         }
         lifecycleOwner.lifecycleScope.launch {
             try {
                 val details = mangaRepositoryFactory.create(manga.source).getDetails(manga)
-                val resolvedTarget = resolveVideoLaunchTarget(details, state)
-                openVideo(resolvedTarget.url, details, anchor, resolvedTarget.state, positionMs)
+                launchVideo(details, resolveVideoLaunchTarget(details, state))
             } catch (e: Exception) {
                 Log.e("AppRouter", "Failed to load chapters for video", e)
-                openVideo(target.url, manga, anchor, target.state, positionMs)
+                launchVideo(manga, target)
             }
         }
     }
@@ -822,6 +829,16 @@ class AppRouter(
     fun openManageSources() {
         startActivity(
             manageSourcesIntent(contextOrNull() ?: return),
+        )
+    }
+
+    fun openSourceRepositoryCatalog() {
+        val context = contextOrNull() ?: return
+        startActivity(
+            UnifiedSourcesActivity.newDeepLinkIntent(
+                context,
+                UnifiedSourcesDeepLink(initialTab = UnifiedSourcesDeepLinkParser.TAB_REPOS),
+            ),
         )
     }
 

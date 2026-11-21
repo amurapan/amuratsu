@@ -70,6 +70,7 @@ class UnifiedSourcesActivity : BaseComposeActivity() {
             UnifiedSourcesContent(
                 initialAddRepositoryKind = initialKind,
                 initialAddRepositoryUrl = initialUrl,
+                initialTab = deepLink.initialTab,
                 modifier = Modifier.fillMaxSize(),
             )
         }
@@ -107,12 +108,20 @@ class UnifiedSourcesActivity : BaseComposeActivity() {
         initialAddRepositoryKind: UnifiedSourceKind? = null,
         initialAddRepositoryUrl: String? = null,
         modifier: Modifier = Modifier,
+        initialTab: String? = null,
     ) {
         var searchActive by rememberSaveable { mutableStateOf(false) }
         var activePanel by rememberSaveable { mutableStateOf<UnifiedToolbarFilterPanel?>(null) }
         val state by viewModel.uiState.collectAsStateWithLifecycle()
         val readyState = state as? UnifiedSourcesUiState.Ready
-        val pagerState = rememberPagerState(pageCount = { UNIFIED_SOURCES_TAB_COUNT })
+        val pagerState = rememberPagerState(
+            initialPage = when (initialTab) {
+                UnifiedSourcesDeepLinkParser.TAB_REPOS -> UNIFIED_SOURCES_TAB_REPOSITORIES
+                UnifiedSourcesDeepLinkParser.TAB_INSTALLED -> UNIFIED_SOURCES_TAB_PACKAGES
+                else -> UNIFIED_SOURCES_TAB_SOURCES
+            },
+            pageCount = { UNIFIED_SOURCES_TAB_COUNT },
+        )
         val coroutineScope = rememberCoroutineScope()
         var sourceOrder by remember { mutableStateOf<List<org.skepsun.kototoro.core.ui.compose.ReorderItem>?>(null) }
         var loadingOrder by remember { mutableStateOf(false) }

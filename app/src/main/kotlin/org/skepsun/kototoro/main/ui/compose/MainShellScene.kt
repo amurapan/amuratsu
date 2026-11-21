@@ -391,7 +391,7 @@ private fun MainShellTopLevelEntryContent(
             org.skepsun.kototoro.search.ui.compose.SearchHomeRoute(
                 contentPadding = contentPadding,
                 onSearch = onOpenSearch,
-                onManageSources = appRouter::openManageSources,
+                onManageSources = appRouter::openSourceRepositoryCatalog,
             )
         org.skepsun.kototoro.main.ui.navigation3.HomeNavKey -> HomeRoute(
             animatedVisibilityScope = animatedVisibilityScope,

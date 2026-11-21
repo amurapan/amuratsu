@@ -16,7 +16,12 @@ import org.skepsun.kototoro.core.exceptions.resolve.SnackbarErrorObserver
 import org.skepsun.kototoro.core.nav.AppRouter
 import org.skepsun.kototoro.core.ui.BaseComposeActivity
 import org.skepsun.kototoro.home.ui.compose.HomeScreen
+import org.skepsun.kototoro.home.ui.compose.homeMediaKind
+import org.skepsun.kototoro.core.ui.home.HomeMediaKind
+import org.skepsun.kototoro.reader.ui.ReaderState
+import org.skepsun.kototoro.main.ui.navigation3.TopLevelNavKey
 import org.skepsun.kototoro.local.ui.compose.ImportDialog
+import org.skepsun.kototoro.main.ui.navigation3.FavoritesNavKey
 import org.skepsun.kototoro.main.ui.navigation3.HistoryNavKey
 import org.skepsun.kototoro.main.ui.navigation3.MainNavigator
 import org.skepsun.kototoro.main.ui.navigation3.SearchHomeNavKey
@@ -44,21 +49,30 @@ internal fun HomeRoute(
         val observer = SnackbarErrorObserver(rootView, activity?.exceptionResolver, null)
         viewModel.onError.collect { event -> event?.consume(observer) }
     }
+    fun openShelf(route: TopLevelNavKey) {
+        viewModel.applyMediaShelfFilter(state.selectedTab)
+        mainNavigator.openTopLevel(route)
+    }
     HomeScreen(
         state = state,
         contentPadding = contentPadding,
         onKindSelected = viewModel::setSelectedTab,
         onSearch = { mainNavigator.openTopLevel(SearchHomeNavKey) },
         onSettings = appRouter::openSettings,
-        onHistory = { mainNavigator.openTopLevel(HistoryNavKey) },
-        onUpdates = { mainNavigator.openTopLevel(UpdatedNavKey) },
-        onRecommendations = { mainNavigator.openTopLevel(SuggestionsNavKey) },
-        onManageSources = appRouter::openManageSources,
+        onHistory = { openShelf(HistoryNavKey) },
+        onLibrary = { openShelf(FavoritesNavKey) },
+        onUpdates = { openShelf(UpdatedNavKey) },
+        onRecommendations = { openShelf(SuggestionsNavKey) },
+        onManageSources = appRouter::openSourceRepositoryCatalog,
         onImport = { showImport = true },
         onOpen = { navigateToDetailsWithContent(it, null) },
         onResume = { content ->
             val history = state.recentHistoryItems.firstOrNull { it.content.id == content.id }?.history
-            appRouter.openReader(content, state = history?.let { org.skepsun.kototoro.reader.ui.ReaderState(it) })
+            if (content.homeMediaKind() == HomeMediaKind.ANIME && history != null) {
+                appRouter.openVideo(content, chapterId = history.chapterId, positionMs = history.page.toLong())
+            } else {
+                appRouter.openReader(content, state = history?.let(::ReaderState))
+            }
         },
     )
     if (showImport) ImportDialog(onDismissRequest = { showImport = false })

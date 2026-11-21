@@ -4316,4 +4316,7 @@
     <string name="about_report_issue">Report an issue</string>
     <string name="about_upstream_kototoro">Built on Kototoro</string>
     <string name="about_upstream_kotatsu">Original project: Kotatsu</string>
+    <string name="media_home_chapters">New chapters</string>
+    <string name="media_home_episodes">New episodes</string>
+    <string name="media_home_continue_watching">Continue watching</string>
 </resources>

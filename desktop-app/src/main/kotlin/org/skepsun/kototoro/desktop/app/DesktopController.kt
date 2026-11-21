@@ -1,5 +1,6 @@
 package org.skepsun.kototoro.desktop.app
 
+import org.skepsun.kototoro.explore.ui.model.BrowseGroupTab
 import org.skepsun.kototoro.history.domain.ChapterOrder
 import org.skepsun.kototoro.history.domain.furthestReadChapterId
 import androidx.room.immediateTransaction
@@ -1359,10 +1360,26 @@ class DesktopController(
         }
     }
 
-    fun library(history: Boolean = false) = navigate {
+    fun library(history: Boolean = false, tab: BrowseGroupTab? = null) = navigate {
         val snapshot = session.library.snapshot(history)
-        mutableState.update { it.copy(screen = if (history) DesktopScreen.HISTORY else DesktopScreen.LIBRARY,
-            items = snapshot.entries.map { row -> row.content }, library = snapshot, content = null) }
+        mutableState.update { previous ->
+            val screen = if (history) DesktopScreen.HISTORY else DesktopScreen.LIBRARY
+            val updated = previous.copy(
+                screen = screen,
+                items = snapshot.entries.map { row -> row.content },
+                library = snapshot,
+                content = null,
+            )
+            if (tab == null) updated else if (history) {
+                updated.copy(historySelection = updated.historySelection.let {
+                    it.copy(sourceFilter = it.sourceFilter.copy(tab = tab))
+                })
+            } else {
+                updated.copy(librarySelection = updated.librarySelection.let {
+                    it.copy(sourceFilter = it.sourceFilter.copy(tab = tab))
+                })
+            }
+        }
     }
 
     internal fun librarySelection(selection: DesktopLibrarySelection) {
