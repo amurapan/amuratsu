@@ -13,19 +13,25 @@ This adds no runtime dependency. Android themed icons use the system palette; th
 
 ## Compatibility
 
-- The application IDs, namespaces, database and preference names remain unchanged so previews can update
-  the existing test installation without discarding its library. These IDs are not the visible product name.
-- Android preview builds retain debug signing and the `.debug` ID, with release optimization and resource shrinking.
+- The Android public release uses `io.github.amurapan.amuratsu` with a fixed release certificate.
+  Nightly uses `io.github.amurapan.amuratsu.nightly`. Each has separate sync authorities and account identifiers.
+- Preview retains `org.skepsun.kototoro.debug` and debug signing to update earlier previews in place.
   The launcher name is Amuratsu; debug builds are Amuratsu Dev and nightly builds are Amuratsu Nightly.
-- Android's visible version starts at `0.1.0-alpha.2`; its version code stays monotonic (`1264`) to permit upgrades.
-  Nightly version generation remains date based.
+- For preview-to-release migration, export and restore the native backup. Local media files are stored separately and may need to
+  be reimported as new entries. Native backup detection accepts old and new application IDs.
+- Android release and preview are `0.1.0-alpha.3` (version code `1265`). Nightly version generation remains date based.
 - New content links use `amuratsu://content/manga?id=…`. The old `kototoro://` links remain accepted.
   Registered OAuth callbacks keep their existing schemes and client registrations.
 - The Android and desktop About pages share `AppProjectLink`, including the Amuratsu repository and issues,
   plus explicit Kototoro and Kotatsu credits. External parser engines, upstream services and import formats
   retain their real names. Copyright and license notices remain intact.
-- Update checks now target `amurapan/amuratsu`. GitHub releases, Pages and iOS feeds require publication
-  in that repository; changing local configuration does not publish them. The checked-in iOS feeds are empty.
+- Public Android update checks use the GitHub tag version and the matching release APK from
+  `amurapan/amuratsu`. They require the Amuratsu release certificate. Preview APKs use their own package
+  and key, so they do not offer public APKs as in-place updates.
+- The automated release builds require `KEYSTORE_BASE64`, `KEYSTORE_PASSWORD`, `KEY_ALIAS` and
+  `KEY_PASSWORD`. They verify the certificate against the app's public certificate before building.
+  Alpha tags are published after APK validation. Keep the release key and password outside the repository.
+- The checked-in iOS feeds are empty.
 - Automatic Pages deployment is opt-in through the repository variable `DOCS_PAGES_ENABLED=true`, after Pages
   is configured. Scheduled nightly builds use `NIGHTLY_ENABLED=true`, after signing and packaging secrets are set.
   Both workflows remain available through manual dispatch. Pushing source code alone does not publish a release.

@@ -20,11 +20,10 @@ One library, search across media types, and a quick way to pick up where you lef
 Built on [Kototoro](https://github.com/Kototoro-app/Kototoro), with its own home screen
 and **Material You** design.
 
-> **Early alpha · 0.1.0-alpha.2**
+> **Android alpha · 0.1.0-alpha.3**
 >
-> Android is the current focus. The new home screen, reading, and upgrades from the previous
-> test version have been checked on an emulator. Online sources, playback, and performance
-> still need testing on physical devices. Public Amuratsu builds have not been published yet.
+> This is an early build for testing. Source availability depends on the selected extension,
+> and scrolling and tab switching still need testing on physical devices.
 
 ## Features
 
@@ -47,21 +46,25 @@ The app does not include media or subscriptions.
 
 ## Getting started
 
-1. Install an Amuratsu test build or [build the APK](#build) yourself.
-2. Connect your sources in settings or import a local file.
-3. Find a title through search and add it to your library.
-4. Pick up where you left off through **Continue** on the home screen.
+1. Download the [Android alpha](https://github.com/amurapan/amuratsu/releases/tag/v0.1.0-alpha.3)
+   or [build a local preview](#build).
+2. From Home or Search, open **Manage content sources**. Add a catalog or enter your own repository URL.
+3. Open **Packages** to filter by language and install individual sources. You can also import local files from Home.
+4. Search all formats and use **Continue** on Home to return to your saved position.
 
 Requires **Android 8.0 or later**. The current local preview build targets **ARM64**.
-Public APKs will be available in [Releases](https://github.com/amurapan/amuratsu/releases).
+The public APK uses Amuratsu’s own app ID and signing key. To move from an older test build, export
+a backup in **Settings → Backup and restore**, then restore it in the public app. Reimport local files separately. They may appear as new entries and need their
+reading position set again.
+Future public updates are available through **About → Updates** and [GitHub Releases](https://github.com/amurapan/amuratsu/releases).
 Desktop and iOS code is inherited from Kototoro and is being adapted; Amuratsu packages for those platforms are not yet available.
 
 ## Roadmap
 
-- [ ] Refine the separate manga, books, and anime spaces while keeping search across media types.
-- [ ] Test the main sources and improve their initial setup.
-- [ ] Check scrolling and tab switching on physical devices.
-- [ ] Prepare public builds and configure app updates.
+- [x] Add separate Home views for manga, books, and anime with shared search.
+- [x] Offer Keiyoushi, Yūzōnō, and LNReader Plugins as optional catalogs.
+- [x] Prepare signed Android builds and check for updates from Amuratsu Releases.
+- [ ] Test more sources and check scrolling and tab switching on physical devices.
 
 ## Build
 
