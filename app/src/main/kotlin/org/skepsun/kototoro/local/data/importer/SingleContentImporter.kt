@@ -22,6 +22,7 @@ import org.skepsun.kototoro.local.data.LocalStorageRoot
 import org.skepsun.kototoro.local.data.hasZipExtension
 import org.skepsun.kototoro.local.data.input.LocalContentParser
 import org.skepsun.kototoro.local.domain.model.LocalContent
+import org.skepsun.kototoro.parsers.util.runCatchingCancellable
 import java.io.File
 import java.io.IOException
 import java.util.UUID
@@ -41,6 +42,7 @@ enum class ImportMode {
 class SingleContentImporter @Inject constructor(
     @ApplicationContext private val context: Context,
     private val storageManager: LocalStorageManager,
+    private val epubReimportProgress: EpubReimportProgress,
     @LocalStorageChanges private val localStorageChanges: MutableSharedFlow<LocalContent?>,
 ) {
 
@@ -87,7 +89,7 @@ class SingleContentImporter @Inject constructor(
             throw UnsupportedFileException("File $name does not match selected content type: $overrideKind")
         }
         val outputRoot = getOutputRoot(overrideKind ?: kind)
-        if (hasZipExtension(name)) {
+        val imported = if (hasZipExtension(name)) {
             publishFile(outputRoot, name) { target ->
                 copyUriTo(uri, target)
             }
@@ -96,6 +98,12 @@ class SingleContentImporter @Inject constructor(
                 copyUriTo(uri, checkNotNull(target.createFile(name)))
             }
         }
+        if (name.endsWith(".epub", ignoreCase = true)) {
+            runCatchingCancellable { epubReimportProgress.restore(imported, name) }.onFailure {
+                android.util.Log.w("LocalImport", "Could not restore the EPUB position", it)
+            }
+        }
+        imported
     }
 
     /**
