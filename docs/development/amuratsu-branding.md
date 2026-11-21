@@ -17,9 +17,10 @@ This adds no runtime dependency. Android themed icons use the system palette; th
   Nightly uses `io.github.amurapan.amuratsu.nightly`. Each has separate sync authorities and account identifiers.
 - Preview retains `org.skepsun.kototoro.debug` and debug signing to update earlier previews in place.
   The launcher name is Amuratsu; debug builds are Amuratsu Dev and nightly builds are Amuratsu Nightly.
-- For preview-to-release migration, export and restore the native backup. Local media files are stored separately and may need to
-  be reimported as new entries. Native backup detection accepts old and new application IDs.
-- Android release and preview are `0.1.0-alpha.3` (version code `1265`). Nightly version generation remains date based.
+- For preview-to-release migration, export and restore the native backup. Import the media files separately.
+  EPUB reimport recovers the position from an unambiguous legacy entry with matching filename, title,
+  authors, and chapter layout. Native backup detection accepts old and new application IDs.
+- Android release and preview are `0.1.0-alpha.4` (version code `1266`). Nightly version generation remains date based.
 - New content links use `amuratsu://content/manga?id=…`. The old `kototoro://` links remain accepted.
   Registered OAuth callbacks keep their existing schemes and client registrations.
 - The Android and desktop About pages share `AppProjectLink`, including the Amuratsu repository and issues,

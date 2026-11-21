@@ -20,7 +20,7 @@ One library, search across media types, and a quick way to pick up where you lef
 Built on [Kototoro](https://github.com/Kototoro-app/Kototoro), with its own home screen
 and **Material You** design.
 
-> **Android alpha · 0.1.0-alpha.3**
+> **Android alpha · 0.1.0-alpha.4**
 >
 > This is an early build for testing. Source availability depends on the selected extension,
 > and scrolling and tab switching still need testing on physical devices.
@@ -46,16 +46,16 @@ The app does not include media or subscriptions.
 
 ## Getting started
 
-1. Download the [Android alpha](https://github.com/amurapan/amuratsu/releases/tag/v0.1.0-alpha.3)
+1. Download the [Android alpha](https://github.com/amurapan/amuratsu/releases/tag/v0.1.0-alpha.4)
    or [build a local preview](#build).
-2. From Home or Search, open **Manage content sources**. Add a catalog or enter your own repository URL.
-3. Open **Packages** to filter by language and install individual sources. You can also import local files from Home.
+2. From Welcome, Home or Search, open the source setup. Choose Manga, Books, or Anime and add a catalog.
+3. Filter extensions by language and install a source. You can also import local files from Home.
 4. Search all formats and use **Continue** on Home to return to your saved position.
 
 Requires **Android 8.0 or later**. The current local preview build targets **ARM64**.
 The public APK uses Amuratsu’s own app ID and signing key. To move from an older test build, export
-a backup in **Settings → Backup and restore**, then restore it in the public app. Reimport local files separately. They may appear as new entries and need their
-reading position set again.
+a backup in **Settings → Backup and restore**, then restore it in the public app. Reimport local files
+separately. A matching EPUB keeps its saved position when reimported with its original filename.
 Future public updates are available through **About → Updates** and [GitHub Releases](https://github.com/amurapan/amuratsu/releases).
 Desktop and iOS code is inherited from Kototoro and is being adapted; Amuratsu packages for those platforms are not yet available.
 
