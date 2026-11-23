@@ -11,5 +11,5 @@ This preview does not bundle a browser bridge, libmpv, ncnn tools or an applicat
 browser JavaScript or interactive challenges are unavailable. An installed mpv executable can open video streams;
 embedded playback needs a separately supplied libmpv and platform verification. Windows native binaries are not bundled.
 
-Default persistent storage remains ~/.kototoro; --data-dir overrides it. The runtime check requires an explicit
+The default data directory is `~/.amuratsu`. Use `--data-dir` to choose a different directory. The runtime check requires an explicit
 data directory. This local preview retains the existing compatibility runtime provenance and licence requirements.

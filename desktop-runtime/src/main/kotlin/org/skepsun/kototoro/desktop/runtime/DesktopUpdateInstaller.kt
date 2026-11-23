@@ -40,7 +40,7 @@ data class DesktopStagedUpdate(
  * Finds the installed image and replaces it with a downloaded update.
  *
  * The application image and the user data live apart (`DesktopDataPaths` keeps the database, images and preferences
- * under `%LOCALAPPDATA%/Kototoro`, the program under `%LOCALAPPDATA%/Amuratsu-App`), so replacing the image touches no
+ * under `%LOCALAPPDATA%/Amuratsu`, the program under `%LOCALAPPDATA%/Amuratsu-App`), so replacing the image touches no
  * user data. The image cannot replace itself while it is running, so [apply] hands the swap to a small PowerShell
  * script that waits for this process to exit, copies the new image, and starts the app again.
  */

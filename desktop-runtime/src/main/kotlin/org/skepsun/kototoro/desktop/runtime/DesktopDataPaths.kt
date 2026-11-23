@@ -31,12 +31,12 @@ class DesktopDataPaths private constructor(val root: Path) {
             when (DesktopPlatform.detect(osName)) {
                 DesktopPlatform.MACOS -> return home.resolve("Library/Application Support/Kototoro")
                 DesktopPlatform.WINDOWS -> Unit
-                else -> return home.resolve(".kototoro")
+                else -> return home.resolve(".amuratsu")
             }
             val configured = environment["LOCALAPPDATA"]?.takeIf(String::isNotBlank)
             val local = configured?.let(Path::of) ?: home.resolve("AppData").resolve("Local")
             require(local.isAbsolute) { "LOCALAPPDATA must be absolute" }
-            return local.resolve("Kototoro").normalize()
+            return local.resolve("Amuratsu").normalize()
         }
 
         fun create(root: Path = defaultRoot()): DesktopDataPaths {

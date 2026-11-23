@@ -752,7 +752,7 @@ compose.desktop {
                 menu = true
                 menuGroup = 'Amuratsu'
                 shortcut = true
-                upgradeUuid = '78f89549-27ec-4c2c-8b87-297c43349a44'
+                upgradeUuid = '7a592225-8607-556b-8dc7-289c223474ae'
             }
         }
     }

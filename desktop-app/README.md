@@ -22,7 +22,7 @@ bash "desktop-app/run-linux.sh" \
     "-PdesktopDataDirectory=/absolute/path/linux-debug-data"
 ```
 
-默认数据目录沿用 `~/.kototoro`；开发时建议显式指定独立目录。
+默认数据目录为 `~/.amuratsu`；开发时建议显式指定独立目录。
 首个位置参数可以指定已有兼容目录，之后的参数传给 Gradle；例如
 `bash "desktop-app/run-linux.sh" "/absolute/path/compatibility" --debug-jvm`。
 调试器通过 SSH 隧道连接服务器 `localhost:5005`。
@@ -435,7 +435,7 @@ Cookie store 即可供来源请求使用。窗口显示只读地址栏和页面�
 POST 等请求暂不自动重发。当前以自有本地扩展验证流程，尚未进行真实 Cloudflare/代表站点验收。
 SDK 客户端装配依赖固定版本的私有委托字段，详见 [compat 边界](../mihon-desktop-compat/README.md)。
 
-默认数据目录为 `%LOCALAPPDATA%/Kototoro`，与 Android 数据独立；也可显式指定 `DataDirectory`。
+默认数据目录为 `%LOCALAPPDATA%/Amuratsu`，与 Android 数据独立；也可显式指定 `DataDirectory`。
 导入与下载的扩展复制到应用管理的 `extensions/<SHA-256>.jar`，重启时按 package/version/hash 重新核对。
 “扩展与仓库”的已安装列表可卸载扩展/插件、检查更新、全部更新，并可开启“启动时自动更新”；卸载与更新后会删除不再使用的旧文件。Legado 等其他生态入口仍待接入。
 
@@ -467,7 +467,7 @@ WiX 到项目 ignored build 目录，不做全局安装。脚本验证完整选�
 `portable/Amuratsu-Windows-local-preview-0.1.0.zip` 和 `msi/Amuratsu-0.1.0.msi`。
 ZIP 解压整个目录后运行 EXE，无需系统 JDK或构建时的 API 目录；浏览器需要已安装的 Microsoft
 Edge WebView2 Runtime。MSI 使用当前用户安装权限，将程序放在 `%LOCALAPPDATA%/Amuratsu-App`，
-与 `%LOCALAPPDATA%/Kototoro` 用户数据隔离；安装/注册表/快捷方式写入尚未在本轮实际执行。
+与 `%LOCALAPPDATA%/Amuratsu` 用户数据隔离；安装/注册表/快捷方式写入尚未在本轮实际执行。
 安装目录选择关闭；MSI 和 ZIP 都直接使用经过移动目录运行测试的同一份应用目录。
 
 ```powershell
@@ -633,7 +633,7 @@ store 按内容寻址并与阅读索引共享，不会被自动删除；关闭�
 ZIP 必须包含 `Amuratsu.exe`（MSI 校验复合文档头），校验通过才原子改名；随后解压到暂存目录并核对镜像
 结构（EXE + `app/` + `runtime/`）。便携版整目录覆盖，MSI 安装改用 `msiexec`；两者都由一个等待本进程
 退出的 PowerShell 脚本执行（日志在 `updates/update.log`），完成后重启应用。程序目录与
-`%LOCALAPPDATA%/Kototoro` 用户数据分离，覆盖不触碰收藏、历史与下载。
+`%LOCALAPPDATA%/Amuratsu` 用户数据分离，覆盖不触碰收藏、历史与下载。
 
 “自动下载”和“退出时安装”可分别开启；从构建目录（Gradle/IDE）启动的副本没有可替换的镜像，面板会说明
 不支持自更新。签名校验（Authenticode）与 S3/代理镜像仍待接入。

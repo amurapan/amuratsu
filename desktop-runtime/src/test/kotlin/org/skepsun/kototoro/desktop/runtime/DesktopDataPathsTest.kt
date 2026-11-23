@@ -15,15 +15,15 @@ class DesktopDataPathsTest {
         val local = directory.resolve("Local App Data 中文")
         val selected = DesktopDataPaths.defaultRoot(mapOf("LOCALAPPDATA" to local.toString()),
             directory.toString(), "Windows 11")
-        assertEquals(local.resolve("Kototoro"), selected)
+        assertEquals(local.resolve("Amuratsu"), selected)
         assertFalse(Files.exists(local))
     }
 
     @Test
     fun `missing LocalAppData uses persistent user home and generic JVM fallback stays isolated`() {
-        assertEquals(directory.resolve("AppData/Local/Kototoro"),
+        assertEquals(directory.resolve("AppData/Local/Amuratsu"),
             DesktopDataPaths.defaultRoot(emptyMap(), directory.toString(), "Windows 10"))
-        assertEquals(directory.resolve(".kototoro"),
+        assertEquals(directory.resolve(".amuratsu"),
             DesktopDataPaths.defaultRoot(emptyMap(), directory.toString(), "Linux"))
         assertThrows(IllegalArgumentException::class.java) {
             DesktopDataPaths.defaultRoot(mapOf("LOCALAPPDATA" to "relative"), directory.toString(), "Windows 11")

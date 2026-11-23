@@ -17,14 +17,14 @@ Windows/JVM 平台存储装配，供后续桌面应用使用；复用 `core-db` 
 桌面应用的构造装配入口：
 
 ```kotlin
-val storage = DesktopRuntime.open() // Windows: LOCALAPPDATA/Kototoro
+val storage = DesktopRuntime.open() // Windows: LOCALAPPDATA/Amuratsu
 // Share storage.database with repositories; pass storage.images to MihonSourceRuntime(registry, storage.images).
 // A SourceHostPreferencePlatform binds storage.preferences before constructing any extension.
 // The application owns storage lifetime, including close() when its work has stopped.
 ```
 
-默认根目录来自 Windows 的 LOCALAPPDATA，缺省时用 user.home/AppData/Local/Kototoro；其他 JVM 的通用
-回退是 user.home/.kototoro。目录选择本身不写文件，也不修改用户环境变量；open 接受显式 root 供测试/
+默认根目录来自 Windows 的 LOCALAPPDATA，缺省时用 user.home/AppData/Local/Amuratsu；其他 JVM 的通用
+回退是 user.home/.amuratsu。目录选择本身不写文件，也不修改用户环境变量；open 接受显式 root 供测试/
 便携应用使用。路径归一为绝对目录，支持中文/空格，数据库、图片与 preferences 放在同一私有根目录下。
 
 preferences 使用共享的 SourcePreferenceStore 契约和 host 文件 backend，保留六种 SharedPreferences
