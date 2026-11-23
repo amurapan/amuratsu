@@ -12,11 +12,19 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import org.skepsun.kototoro.core.ui.buttons.Button
 import org.skepsun.kototoro.core.ui.buttons.TextButton
+import org.skepsun.kototoro.core.ui.extensions.ExtensionRepositoryAddButton
 import org.skepsun.kototoro.core.ui.extensions.ExtensionRepositoryCard
 import org.skepsun.kototoro.desktop.runtime.DesktopJsonSource
+import org.skepsun.kototoro.extensions.repo.RecommendedExtensionRepository
 import org.skepsun.kototoro.tvbox.TvBoxStoredConfig
 
 internal data class DesktopImportedSourceRepository(val address: String, val title: String, val sources: List<DesktopJsonSource>)
+
+private val desktopRepositoryRecommendations = listOf(
+    RecommendedExtensionRepository.KEIYOUSHI to "space_manga",
+    RecommendedExtensionRepository.YUZONO to "space_anime",
+    RecommendedExtensionRepository.PHISHER to "space_cinema",
+)
 
 /**
  * Existing TVBox documents already carry their origin; no parallel repository store or migration is needed.
@@ -43,12 +51,16 @@ internal fun DesktopExtensionRepositories(
     var removing by remember { mutableStateOf<DesktopImportedSourceRepository?>(null) }
     val repositories = state.repositories.filter { query.isBlank() || it.name.contains(query, true) || it.indexUrl.contains(query, true) }
     val configs = imported.filter { query.isBlank() || it.title.contains(query, true) || it.address.contains(query, true) }
+    val recommendations = desktopRepositoryRecommendations.filter { (repository, _) ->
+        (query.isBlank() || repository.displayName.contains(query, true) || repository.indexUrl.contains(query, true)) &&
+            state.repositories.none { repository.matchesIndex(it.indexUrl) }
+    }
     Column(Modifier.fillMaxSize(), verticalArrangement = Arrangement.spacedBy(12.dp)) {
         DesktopSearchField(query, { query = it }, desktopText("extensions.findRepository"),
             modifier = Modifier.fillMaxWidth(), tag = "repository-search")
         LazyColumn(Modifier.weight(1f).fillMaxWidth().testTag("repository-list"),
             verticalArrangement = Arrangement.spacedBy(10.dp), contentPadding = PaddingValues(bottom = 16.dp)) {
-            if (repositories.isEmpty() && configs.isEmpty()) item {
+            if (repositories.isEmpty() && configs.isEmpty() && recommendations.isEmpty()) item {
                 Column(Modifier.fillMaxWidth().padding(32.dp), horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.spacedBy(12.dp)) {
                     Text(if (query.isBlank()) desktopText("extensions.repositoriesEmpty") else desktopText("extensions.noResults"))
@@ -82,6 +94,29 @@ internal fun DesktopExtensionRepositories(
                         TextButton({ removing = repo }, enabled = enabled,
                             modifier = Modifier.testTag("repository-remove:${repo.address}")) { Text(AndroidStrings["delete"]) }
                     })
+            }
+            if (recommendations.isNotEmpty()) {
+                item(key = "recommended-repositories") {
+                    Text(AndroidStrings["preset_repositories"], style = MaterialTheme.typography.titleMedium)
+                }
+                items(recommendations, key = { (repository, _) -> "recommended:${repository.name}" }) { (repository, mediaKey) ->
+                    ExtensionRepositoryCard(
+                        title = repository.displayName,
+                        location = repository.indexUrl,
+                        leading = { RepositoryIcon() },
+                        badges = {
+                            Text(AndroidStrings[mediaKey], style = MaterialTheme.typography.labelSmall,
+                                color = MaterialTheme.colorScheme.primary)
+                        },
+                        actions = {
+                            ExtensionRepositoryAddButton(
+                                onClick = { controller.fetchRepository(repository.indexUrl) },
+                                enabled = enabled,
+                                modifier = Modifier.testTag("recommended-repository-add:${repository.name}"),
+                            )
+                        },
+                    )
+                }
             }
         }
     }

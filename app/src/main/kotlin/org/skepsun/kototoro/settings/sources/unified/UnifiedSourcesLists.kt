@@ -932,10 +932,7 @@ private fun UnifiedRepositoryCard(
                     CompactActionChip(onClick = onDelete, label = { Text(stringResource(R.string.delete)) })
                 }
             } else if (item.isPreset && onAdd != null) {
-                Button(onClick = onAdd, contentPadding = PaddingValues(horizontal = 12.dp, vertical = 2.dp),
-                    modifier = Modifier.height(30.dp)) {
-                    Text(stringResource(R.string.add), style = MaterialTheme.typography.labelSmall)
-                }
+                org.skepsun.kototoro.core.ui.extensions.ExtensionRepositoryAddButton(onClick = onAdd)
             }
         },
     )

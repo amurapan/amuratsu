@@ -33,10 +33,6 @@ class LNReaderRepository(
 
     companion object {
         private const val TAG = "LNReaderRepository"
-
-        /** Official LNReader plugin repository (preset/recommended). */
-        const val OFFICIAL_REPO_URL =
-            "https://raw.githubusercontent.com/LNReader/lnreader-plugins/plugins/v3.0.0/.dist/plugins.min.json"
     }
 
     /** Mirror-aware download candidates for a plugin index / JS bundle URL. */

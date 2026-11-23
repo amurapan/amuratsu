@@ -107,7 +107,7 @@ internal fun DesktopExtensionsPanel(controller: DesktopController, closing: Bool
             }
         }
         when (tab) {
-            0 -> ManagedSources(controller, state, enabled)
+            0 -> ManagedSources(controller, state, enabled, onBrowseRepositories = { tab = 1 })
             1 -> DesktopExtensionRepositories(controller, state, importedRepositories, enabled, { adding = true })
             2 -> Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(12.dp)) {
                 Row(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.CenterVertically) {
@@ -423,6 +423,7 @@ private fun ManagedSources(
     controller: DesktopController,
     state: DesktopAppState,
     enabled: Boolean,
+    onBrowseRepositories: () -> Unit,
 ) {
     var query by remember { mutableStateOf("") }
     var filter by remember { mutableStateOf(DesktopSourceEnabledFilter.ALL) }
@@ -550,9 +551,19 @@ private fun ManagedSources(
         }
         if (entries.isEmpty()) {
             Box(Modifier.weight(1f).fillMaxWidth(), contentAlignment = Alignment.Center) {
-                Text(if (state.sources.isEmpty()) desktopText("extensions.sourcesEmpty")
-                    else desktopText("sourceList.empty"), style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant)
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.spacedBy(12.dp),
+                ) {
+                    Text(if (state.sources.isEmpty()) desktopText("extensions.sourcesEmpty")
+                        else desktopText("sourceList.empty"), style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant)
+                    if (state.sources.isEmpty()) {
+                        TextButton(onBrowseRepositories, modifier = Modifier.testTag("browse-recommended-repositories")) {
+                            Text(AndroidStrings["preset_repositories"])
+                        }
+                    }
+                }
             }
         } else {
             LazyColumn(Modifier.fillMaxWidth().weight(1f)

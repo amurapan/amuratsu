@@ -13,6 +13,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import org.skepsun.kototoro.core.ui.buttons.Button
+import org.skepsun.kototoro.core.ui.text.uiString
 
 /** Android's repository presentation; hosts provide icons, metadata and platform actions, not another card layout. */
 @Composable
@@ -53,5 +55,21 @@ fun ExtensionRepositoryCard(
                     maxLines = 2, overflow = TextOverflow.Ellipsis)
             }
         }
+    }
+}
+
+@Composable
+fun ExtensionRepositoryAddButton(
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+    enabled: Boolean = true,
+) {
+    Button(
+        onClick = onClick,
+        enabled = enabled,
+        modifier = modifier.height(30.dp),
+        contentPadding = PaddingValues(horizontal = 12.dp, vertical = 2.dp),
+    ) {
+        Text(uiString("add"), style = MaterialTheme.typography.labelSmall)
     }
 }
