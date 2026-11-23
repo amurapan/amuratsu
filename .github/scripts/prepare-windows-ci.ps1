@@ -124,25 +124,18 @@ Get-Content -LiteralPath "$taskRoot/mihon-desktop-compat/windows-runtime-pins.pr
 if ($taskPins.Count -eq 0) { throw "Windows runtime pin list is empty." }
 $taskCompatibilityRoot = Join-Path "$taskBuildRoot" "windows-ci-compatibility"
 New-Item -ItemType Directory -Path "$taskCompatibilityRoot" -Force | Out-Null
-$taskZip = if ($CompatibilityArchive) {
-    [IO.Compression.ZipFile]::OpenRead((Resolve-Path -LiteralPath "$CompatibilityArchive").Path)
-} else { $null }
-try {
+if ($CompatibilityArchive) {
+    & python "$taskRoot/desktop-app/prepare-compatibility.py" "$CompatibilityArchive" --output "$taskCompatibilityRoot"
+    if ($LASTEXITCODE -ne 0) { throw "Cannot extract the pinned compatibility runtime." }
+} else {
     foreach ($taskName in $taskPins.Keys) {
-        # Only copy pinned JAR basenames, including bundles with a containing directory. Never extract arbitrary paths.
         $taskJar = Join-Path "$taskCompatibilityRoot" "$taskName"
-        if ($taskZip) {
-            $taskEntries = @($taskZip.Entries | Where-Object { $_.Name -ceq $taskName })
-            if ($taskEntries.Count -ne 1) { throw "Runtime archive must contain exactly one $taskName." }
-            Copy-ZipEntry $taskEntries[0] "$taskJar"
-        } else {
-            Copy-Item -LiteralPath "$taskRuntimeRoot/$taskName" -Destination "$taskJar"
-        }
+        Copy-Item -LiteralPath "$taskRuntimeRoot/$taskName" -Destination "$taskJar"
         if ((Get-FileHash -LiteralPath "$taskJar" -Algorithm SHA256).Hash -ne $taskPins[$taskName]) {
             throw "Windows runtime SHA-256 mismatch: $taskName"
         }
     }
-} finally { if ($taskZip) { $taskZip.Dispose() } }
+}
 Write-Output "Verified $($taskPins.Count) Windows runtime JARs."
 
 $taskSdkVersion = "1.0.4258.31"

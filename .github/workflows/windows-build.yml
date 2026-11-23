@@ -15,6 +15,11 @@ on:
         required: false
         default: 'nightly'
         type: string
+      compatibility-url:
+        description: 'HTTPS ZIP with the pinned compatibility JARs (empty rebuilds from source)'
+        required: false
+        default: ''
+        type: string
   workflow_call:
     secrets:
       GOOGLE_DRIVE_DESKTOP_CLIENT_SECRET:

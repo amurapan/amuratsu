@@ -119,30 +119,6 @@ install_from_directory() { # directory
     echo "Prepared $pin_count compatibility JARs from $(basename "$from")."
 }
 
-# Copies the pinned JARs out of a ZIP: exactly one entry may carry each pinned basename, and nothing else is unpacked.
-install_from_zip() { # zip
-    local zip="$1" entries name sha256 entry match count
-    command -v unzip >/dev/null 2>&1 || fail "unzip is required"
-    [[ -f $zip ]] || fail "no such archive: $zip"
-    mapfile -t entries < <(unzip -Z1 "$zip")
-    rm -rf "$compat_dir"
-    mkdir -p "$compat_dir"
-    while read -r name sha256; do
-        count=0
-        match=""
-        for entry in "${entries[@]}"; do
-            if [[ ${entry##*/} == "$name" ]]; then
-                count=$((count + 1))
-                match="$entry"
-            fi
-        done
-        ((count == 1)) || fail "the archive must contain exactly one $name, found $count"
-        unzip -p "$zip" "$match" >"$compat_dir/$name" || fail "cannot read $name out of $(basename "$zip")"
-        verify "$compat_dir/$name" "$sha256" "compatibility JAR"
-    done <<<"$pins_list"
-    echo "Prepared $pin_count compatibility JARs from $(basename "$zip")."
-}
-
 github_file() { # api path sha256 destination
     local resource="$1" sha256="$2" destination="$3"
     if [[ -f $destination ]] && checksum_matches "$destination" "$sha256"; then
@@ -238,12 +214,12 @@ if ((want_compatibility)); then
     [[ -n $pins_list ]] || fail "the pin list holds no JAR: mihon-desktop-compat/windows-runtime-pins.properties"
     pin_count="$(grep -c '' <<<"$pins_list")"
     if [[ -n $compatibility_archive ]]; then
-        install_from_zip "$compatibility_archive"
+        python3 "$root/desktop-app/prepare-compatibility.py" "$compatibility_archive" --output "$compat_dir"
     elif [[ -n $compatibility_url ]]; then
         mkdir -p "$build/linux-ci-downloads"
         compatibility_archive="$build/linux-ci-downloads/compatibility.zip"
         download "$compatibility_url" "$compatibility_archive"
-        install_from_zip "$compatibility_archive"
+        python3 "$root/desktop-app/prepare-compatibility.py" "$compatibility_archive" --output "$compat_dir"
     else
         build_compatibility_from_source "${source_java_home:-${JAVA_HOME_25_X64:-}}"
     fi
