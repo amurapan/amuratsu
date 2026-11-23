@@ -509,8 +509,8 @@ sourceSets.main.resources.srcDir(desktopGoogleResources)
 tasks.named('processResources').configure { dependsOn prepareDesktopGoogleOAuth }
 
 def windowsWixDirectory = providers.gradleProperty('windowsWixDirectory')
-def windowsUpgradeUuid = '7a592225-8607-556b-8dc7-289c223474ae'
     .getOrElse(rootProject.layout.buildDirectory.dir('wix311').get().asFile.absolutePath)
+def windowsUpgradeUuid = '7a592225-8607-556b-8dc7-289c223474ae'
 // Optional: a directory holding libmpv-2.dll (run/tests); distributions bundle it either from here or from the pinned
 // release below. ncnnDirectory likewise supplies the two official ncnn-vulkan release zips.
 def libmpvDirectory = providers.gradleProperty('libmpvDirectory').getOrNull()
