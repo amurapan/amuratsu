@@ -21,20 +21,18 @@ One library, search across media types, and a quick way to pick up where you lef
 Built on [Kototoro](https://github.com/Kototoro-app/Kototoro), with its own home screen
 and **Material You** design.
 
-> **Alpha · 0.1.0-alpha.5**
+> **Alpha builds**
 >
 > Early builds are available for Android, Windows x64, and Linux x64.
 > Source availability and features depend on the platform and the selected extension.
 
 ## Downloads
 
-Choose a package from [Amuratsu 0.1.0-alpha.5](https://github.com/amurapan/amuratsu/releases/tag/v0.1.0-alpha.5).
-
-| Platform | Package |
-| :--- | :--- |
-| Android 8.0+ | ARM64 APK for most phones or the Universal APK for other supported devices |
-| Windows x64 | MSI installer or portable ZIP. Extract the ZIP before opening Amuratsu. |
-| Linux x64 | DEB package, tested on Ubuntu 24.04. The embedded player uses the system libmpv. |
+| Platform | Release | Package |
+| :--- | :--- | :--- |
+| Android 8.0+ | [0.1.0-alpha.5](https://github.com/amurapan/amuratsu/releases/tag/v0.1.0-alpha.5) | ARM64 APK for most phones or the Universal APK for other supported devices |
+| Windows x64 | [0.1.1-alpha.1](https://github.com/amurapan/amuratsu/releases/tag/v0.1.1-alpha.1) | MSI installer or portable ZIP. Extract the ZIP before opening Amuratsu. |
+| Linux x64 | [0.1.1-alpha.1](https://github.com/amurapan/amuratsu/releases/tag/v0.1.1-alpha.1) | DEB package, tested on Ubuntu 24.04. The embedded player uses the system libmpv. |
 
 ## Features
 
@@ -59,7 +57,7 @@ The app does not include media or subscriptions.
 
 1. Download the package for your platform from [Downloads](#downloads)
    or [build a local preview](#build).
-2. From Welcome, Home or Search, open the source setup. Choose Manga, Books, or Anime and add a catalog.
+2. On Android, open source setup from Welcome, Home, or Search. On desktop, open **More → Extensions and repositories → Repositories**. Choose and add a catalog.
 3. Filter extensions by language and install a source. You can also import local files from Home.
 4. Search all formats and use **Continue** on Home to return to your saved position.
 
