@@ -3,6 +3,7 @@ param(
     [Parameter(Mandatory = $true)] [string] $MsiPath,
     [Parameter(Mandatory = $true)] [string] $ImageDirectory,
     [Parameter(Mandatory = $true)] [string] $WixDirectory,
+    [Parameter(Mandatory = $true)] [guid] $UpgradeCode,
     [Parameter(Mandatory = $true)] [string] $OutputDirectory
 )
 
@@ -24,7 +25,7 @@ if ($LASTEXITCODE -ne 0) { throw "MSI decompilation failed with exit code $LASTE
 [xml] $taskXml = Get-Content -LiteralPath "$taskXmlPath" -Raw
 $taskProduct = $taskXml.Wix.Product
 if ($taskProduct.Package.InstallPrivileges -ne "limited") { throw "Installer must require only per-user privileges." }
-if ($taskProduct.UpgradeCode -ne "{78F89549-27EC-4C2C-8B87-297C43349A44}") { throw "Unexpected installer upgrade identity." }
+if ([guid]($taskProduct.UpgradeCode) -ne $UpgradeCode) { throw "Unexpected installer upgrade identity." }
 $taskInstall = $taskXml.SelectSingleNode('//*[local-name()="Directory" and @Id="INSTALLDIR"]')
 if ($taskInstall.Name -ne "Amuratsu-App" -or $taskInstall.ParentNode.Id -ne "LocalAppDataFolder") {
     throw "Program installation must be separated from LOCALAPPDATA/Amuratsu user data."

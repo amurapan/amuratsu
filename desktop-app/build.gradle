@@ -509,6 +509,7 @@ sourceSets.main.resources.srcDir(desktopGoogleResources)
 tasks.named('processResources').configure { dependsOn prepareDesktopGoogleOAuth }
 
 def windowsWixDirectory = providers.gradleProperty('windowsWixDirectory')
+def windowsUpgradeUuid = '7a592225-8607-556b-8dc7-289c223474ae'
     .getOrElse(rootProject.layout.buildDirectory.dir('wix311').get().asFile.absolutePath)
 // Optional: a directory holding libmpv-2.dll (run/tests); distributions bundle it either from here or from the pinned
 // release below. ncnnDirectory likewise supplies the two official ncnn-vulkan release zips.
@@ -752,7 +753,7 @@ compose.desktop {
                 menu = true
                 menuGroup = 'Amuratsu'
                 shortcut = true
-                upgradeUuid = '7a592225-8607-556b-8dc7-289c223474ae'
+                upgradeUuid = windowsUpgradeUuid
             }
         }
     }
@@ -1005,6 +1006,7 @@ if (bundleWindowsRuntime) {
     tasks.register('windowsMsiContentsCheck', Exec) {
         dependsOn 'packageMsi', 'createDistributable'
         inputs.file('inspect-windows-msi.ps1')
+        inputs.property('upgradeCode', windowsUpgradeUuid)
         inputs.file(layout.buildDirectory.file("compose/binaries/main/msi/Amuratsu-${windowsPackageVersion}.msi"))
         inputs.dir(layout.buildDirectory.dir('compose/binaries/main/app/Amuratsu'))
         commandLine 'powershell.exe', '-NoProfile', '-ExecutionPolicy', 'Bypass',
@@ -1012,6 +1014,7 @@ if (bundleWindowsRuntime) {
             '-MsiPath', layout.buildDirectory.file("compose/binaries/main/msi/Amuratsu-${windowsPackageVersion}.msi").get().asFile.absolutePath,
             '-ImageDirectory', layout.buildDirectory.dir('compose/binaries/main/app/Amuratsu').get().asFile.absolutePath,
             '-WixDirectory', windowsWixDirectory,
+            '-UpgradeCode', windowsUpgradeUuid,
             '-OutputDirectory', layout.buildDirectory.dir('reports/windows-msi').get().asFile.absolutePath
     }
     tasks.register('windowsPortableZip', Zip) {
