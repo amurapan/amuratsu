@@ -18,6 +18,8 @@ import java.security.MessageDigest
 
 data class FileSourcePreferenceSnapshot(val namespace: String, val byteSize: Long, val sha256: String)
 
+class PreferenceDirectoryInUseException : IOException("Preference directory already has an owner")
+
 /** One process owns the directory. Atomic UTF-8 snapshots never use extension names as filesystem paths. */
 class FileSourcePreferenceStore(root: Path, private val maximumBytes: Int = 4 * 1024 * 1024) :
     SourcePreferenceStore, Closeable {
@@ -35,7 +37,7 @@ class FileSourcePreferenceStore(root: Path, private val maximumBytes: Int = 4 * 
         directory = absolute.toRealPath()
         lockChannel = FileChannel.open(directory.resolve(".owner.lock"), CREATE, WRITE, NOFOLLOW_LINKS)
         try {
-            fileLock = lockChannel.tryLock() ?: throw IOException("Preference directory already has an owner")
+            fileLock = lockChannel.tryLock() ?: throw PreferenceDirectoryInUseException()
         } catch (error: Throwable) {
             try { lockChannel.close() } catch (cleanup: Throwable) { error.addSuppressed(cleanup) }
             throw error

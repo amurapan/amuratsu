@@ -40,8 +40,8 @@ class DesktopRuntime private constructor(
     override fun close() {
         if (!closed.compareAndSet(false, true)) return
         var failure: Throwable? = null
-        try { preferences.close() } catch (error: Throwable) { failure = error }
-        try { storage.close() } catch (error: Throwable) {
+        try { storage.close() } catch (error: Throwable) { failure = error }
+        try { preferences.close() } catch (error: Throwable) {
             if (failure != null) failure.addSuppressed(error) else failure = error
         }
         failure?.let { throw it }
@@ -61,16 +61,19 @@ class DesktopRuntime private constructor(
 
         private suspend fun openOnIo(root: Path): DesktopRuntime {
             val paths = DesktopDataPaths.create(root)
-            val storage = DesktopDatabase.create(paths.database)
+            // Hold the profile lock from before Room opens or migrates the database until Room has closed.
+            val preferences = FileSourcePreferenceStore(paths.preferences)
+            var storage: DesktopDatabase? = null
             try {
+                val database = DesktopDatabase.create(paths.database).also { storage = it }
                 // Room is lazy: validate schema/migrations before publishing a usable runtime or creating image cache.
-                storage.database.getSourcesDao().getMaxSortKey()
+                database.database.getSourcesDao().getMaxSortKey()
                 currentCoroutineContext().ensureActive()
                 val images = FileSourceImageStore(paths.images)
-                val preferences = FileSourcePreferenceStore(paths.preferences)
-                return DesktopRuntime(paths, storage, images, preferences)
+                return DesktopRuntime(paths, database, images, preferences)
             } catch (error: Throwable) {
-                try { storage.close() } catch (cleanup: Throwable) { error.addSuppressed(cleanup) }
+                try { storage?.close() } catch (cleanup: Throwable) { error.addSuppressed(cleanup) }
+                try { preferences.close() } catch (cleanup: Throwable) { error.addSuppressed(cleanup) }
                 throw error
             }
         }

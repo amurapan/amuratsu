@@ -837,29 +837,28 @@ class DesktopSession private constructor(
             // The runtime reports catalog keys with English fallbacks; from here they follow the interface language.
             org.skepsun.kototoro.desktop.runtime.DesktopRuntimeStrings.install(DesktopStrings::localized)
             val storage = DesktopRuntime.open(root)
-            // Android installs its crash writer before the UI starts; here the data root is only known once storage is
-            // open, so the reports of a failed source or renderer land in `<root>/logs/crash_logs` from this point on.
-            org.skepsun.kototoro.desktop.runtime.DesktopCrashLogs
-                .of(storage.paths, DesktopAppVersion.load().versionName)
-                .install()
-            // The proxy the settings page edits becomes the SDK client's route before any source is constructed.
-            val network = storage.preferences.open("desktop_network")
-            val proxy = org.skepsun.kototoro.desktop.runtime.DesktopProxy(network)
-            val githubMirror = org.skepsun.kototoro.desktop.runtime.DesktopGitHubMirror(network)
-            val platform = MihonDesktopPlatform(storage.paths.root.resolve("compat"), enableBrowserChallenges = true,
-                proxySelector = proxy.selector, proxyAuthenticator = proxy.authenticator)
+            var platform: MihonDesktopPlatform? = null
             var registry: MihonJarRegistry? = null
             var parsers: ParserPluginRegistry? = null
             try {
-                registry = MihonJarRegistry(platform.initialize(storage.preferences))
+                org.skepsun.kototoro.desktop.runtime.DesktopCrashLogs
+                    .of(storage.paths, DesktopAppVersion.load().versionName)
+                    .install()
+                // Apply the proxy settings before constructing any source.
+                val network = storage.preferences.open("desktop_network")
+                val proxy = org.skepsun.kototoro.desktop.runtime.DesktopProxy(network)
+                val githubMirror = org.skepsun.kototoro.desktop.runtime.DesktopGitHubMirror(network)
+                val sourcePlatform = MihonDesktopPlatform(storage.paths.root.resolve("compat"), enableBrowserChallenges = true,
+                    proxySelector = proxy.selector, proxyAuthenticator = proxy.authenticator).also { platform = it }
+                registry = MihonJarRegistry(sourcePlatform.initialize(storage.preferences))
                 // Parser plugins reuse the platform's HTTP client: one cookie store and challenge flow for all ecosystems.
-                val parserPlatform = DesktopParserPlatform(platform.sharedHttpClient(), storage.preferences)
+                val parserPlatform = DesktopParserPlatform(sourcePlatform.sharedHttpClient(), storage.preferences)
                 // Android's JAR priority decides which of two plugins declaring the same source serves it; read it
                 // before the registry resolves anything, like Android builds its extensions list with it.
                 val jarPriorityOrder = (storage.preferences.open("desktop_extensions").snapshot()[JAR_PRIORITY_ORDER_KEY]
                     as? SourcePreferenceValue.Text)?.value.orEmpty()
                 parsers = ParserPluginRegistry(parserPlatform, priority = parserPluginPriority(jarPriorityOrder))
-                return DesktopSession(storage, platform, registry, parserPlatform, parsers, proxy, githubMirror).also {
+                return DesktopSession(storage, sourcePlatform, registry, parserPlatform, parsers, proxy, githubMirror).also {
                     it.restoreJars()
                     it.reconcileBrokenSources()
                     // Superseded and removed versions are deleted once nothing has them open.

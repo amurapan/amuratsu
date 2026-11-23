@@ -37,6 +37,7 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -67,14 +68,23 @@ import javax.swing.JFileChooser
 import javax.swing.filechooser.FileNameExtensionFilter
 
 @Composable
-fun DesktopStartup(error: String?) = DesktopTheme {
-    Box(Modifier.fillMaxSize().background(Canvas), contentAlignment = Alignment.Center) {
+fun DesktopStartup(error: String?, onRetry: (() -> Unit)? = null, onClose: (() -> Unit)? = null) = DesktopTheme {
+    Box(Modifier.fillMaxSize().background(Canvas).padding(24.dp), contentAlignment = Alignment.Center) {
         Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(18.dp)) {
             Text("Amuratsu", fontSize = 32.sp, fontWeight = FontWeight.Bold)
             if (error == null) {
                 CircularProgressIndicator()
                 Text(desktopText("app.opening"), color = Muted)
-            } else Text(desktopText("app.startFailed", error), color = MaterialTheme.colorScheme.error, modifier = Modifier.widthIn(max = 700.dp))
+            } else {
+                Text(error, color = MaterialTheme.colorScheme.error, textAlign = TextAlign.Center,
+                    modifier = Modifier.widthIn(max = 560.dp))
+                if (onRetry != null && onClose != null) {
+                    Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                        OutlinedButton(onClick = onClose) { Text(desktopText("common.close")) }
+                        Button(onClick = onRetry) { Text(desktopText("common.retry")) }
+                    }
+                }
+            }
         }
     }
 }

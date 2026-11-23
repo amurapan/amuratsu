@@ -10,9 +10,11 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.NonCancellable
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
 import org.skepsun.kototoro.desktop.runtime.DesktopDataPaths
 import org.skepsun.kototoro.desktop.runtime.DesktopPlatform
+import org.skepsun.kototoro.source.host.PreferenceDirectoryInUseException
 import java.awt.Dimension
 import java.nio.file.Path
 import kotlin.system.exitProcess
@@ -58,6 +60,8 @@ internal fun runDesktop(args: Array<String>) {
     application(exitProcessOnExit = false) {
         var controller by remember { mutableStateOf<DesktopController?>(null) }
         var startupError by remember { mutableStateOf<String?>(null) }
+        var profileInUse by remember { mutableStateOf(false) }
+        var startupAttempt by remember { mutableIntStateOf(0) }
         var closing by remember { mutableStateOf(false) }
         val windowState = rememberWindowState(width = 1260.dp, height = 850.dp)
         val scope = rememberCoroutineScope()
@@ -75,11 +79,11 @@ internal fun runDesktop(args: Array<String>) {
                 }
             }
         }
-        LaunchedEffect(root) {
+        LaunchedEffect(root, startupAttempt) {
             startup = kotlinx.coroutines.currentCoroutineContext()[kotlinx.coroutines.Job]
             var acquired: DesktopSession? = null
             try {
-                val session = DesktopSession.open(root)
+                val session = openDesktopSession(root)
                 acquired = session
                 try { for (jar in imports) session.importJar(jar) } catch (error: CancellationException) {
                     throw error
@@ -91,9 +95,15 @@ internal fun runDesktop(args: Array<String>) {
                 acquired = null
             } catch (error: CancellationException) {
                 throw error
+            } catch (_: PreferenceDirectoryInUseException) {
+                profileInUse = true
+                startupError = desktopText("app.profileInUse")
             } catch (error: LinkageError) {
-                startupError = desktopText("app.runtimeIncompatible", error.message ?: error.javaClass.simpleName)
-            } catch (error: Exception) { startupError = error.message ?: error.javaClass.simpleName }
+                startupError = desktopText("app.startFailed",
+                    desktopText("app.runtimeIncompatible", error.message ?: error.javaClass.simpleName))
+            } catch (error: Exception) {
+                startupError = desktopText("app.startFailed", error.message ?: error.javaClass.simpleName)
+            }
             finally { withContext(NonCancellable + Dispatchers.IO) { acquired?.close() } }
         }
         Window(
@@ -105,8 +115,32 @@ internal fun runDesktop(args: Array<String>) {
             window.minimumSize = Dimension(920, 620)
             val owner = controller
             val fullscreen = rememberDesktopFullscreen(window, windowState)
-            if (owner == null) DesktopStartup(startupError) else DesktopApp(owner, closing,
+            if (owner == null) {
+                DesktopStartup(
+                    error = startupError,
+                    onRetry = if (profileInUse && !closing) {
+                        {
+                            profileInUse = false
+                            startupError = null
+                            startupAttempt++
+                        }
+                    } else null,
+                    onClose = if (profileInUse && !closing) requestExit else null,
+                )
+            } else DesktopApp(owner, closing,
                 fullscreen = fullscreen.active, onToggleFullscreen = fullscreen::toggle, onExitRequest = requestExit)
         }
     }
+}
+
+private suspend fun openDesktopSession(root: Path): DesktopSession {
+    // A relaunch can arrive while the previous window is still saving progress and closing the database.
+    repeat(3) {
+        try {
+            return DesktopSession.open(root)
+        } catch (_: PreferenceDirectoryInUseException) {
+            delay(500)
+        }
+    }
+    return DesktopSession.open(root)
 }

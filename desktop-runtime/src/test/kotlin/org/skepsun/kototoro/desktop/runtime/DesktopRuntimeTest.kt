@@ -24,6 +24,7 @@ import org.skepsun.kototoro.favourites.data.FavouriteEntity
 import org.skepsun.kototoro.history.data.HistoryEntity
 import java.io.File
 import java.io.IOException
+import java.nio.channels.OverlappingFileLockException
 import java.nio.file.Files
 import java.nio.file.Path
 import java.util.Base64
@@ -54,15 +55,18 @@ class DesktopRuntimeTest {
     }
 
     @Test
-    fun `occupied preference owner fails startup and still releases database handles`() {
-        FileSourcePreferenceStore(directory.resolve("preferences")).use {
-            assertThrows(Exception::class.java) { runBlocking { DesktopRuntime.open(directory) } }
-            val database = directory.resolve("kototoro.db")
-            val moved = directory.resolve("released.db")
-            Files.move(database, moved)
-            Files.move(moved, database)
+    fun `busy profile does not open a database and can be reopened when released`() = runBlocking {
+        val paths = DesktopDataPaths.create(directory)
+        FileSourcePreferenceStore(paths.preferences).use { owner ->
+            owner.open("fixture").edit(SourcePreferenceEdit(changes = mapOf("key" to SourcePreferenceValue.Text("saved"))))
+            assertThrows(OverlappingFileLockException::class.java) { runBlocking { DesktopRuntime.open(directory) } }
+            assertFalse(Files.exists(paths.database))
+            assertFalse(Files.exists(paths.images))
         }
-        runBlocking { DesktopRuntime.open(directory).close() }
+        DesktopRuntime.open(directory).use { runtime ->
+            assertEquals(SourcePreferenceValue.Text("saved"), runtime.preferences.open("fixture").snapshot()["key"])
+            assertEquals(DATABASE_VERSION, runtime.storageInfo().schemaVersion)
+        }
     }
 
     @Test
