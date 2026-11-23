@@ -18,6 +18,7 @@ class LinuxDistributionTest {
     @Test
     fun `relocated Linux image checks runtime restores sources and closes production windows`() {
         val original = Path.of(System.getProperty("kototoro.desktop.distribution"))
+        val launcherName = original.fileName.toString()
         val image = directory.resolve("中文 Linux portable image")
         Files.walk(original).use { paths -> paths.forEach { source ->
             val target = image.resolve(original.relativize(source))
@@ -25,7 +26,7 @@ class LinuxDistributionTest {
             else Files.copy(source, target, LinkOption.NOFOLLOW_LINKS, StandardCopyOption.COPY_ATTRIBUTES)
         } }
         val app = image.resolve("lib/app")
-        val cfg = Files.readAllLines(app.resolve("Kototoro.cfg"))
+        val cfg = Files.readAllLines(app.resolve("$launcherName.cfg"))
         val classpath = cfg.filter { it.startsWith("app.classpath=") }.flatMap { line ->
             line.substringAfter("app.classpath=").split(java.io.File.pathSeparator)
         }.map { entry ->
@@ -42,7 +43,7 @@ class LinuxDistributionTest {
         assertTrue(Files.isRegularFile(app.resolve("resources/PROJECT_LICENSE")))
         assertTrue(Files.isRegularFile(app.resolve("resources/LINUX_PREVIEW.md")))
         assertTrue(Files.isRegularFile(app.resolve("resources/windows-runtime-pins.properties")))
-        val launcher = image.resolve("bin/Kototoro")
+        val launcher = image.resolve("bin").resolve(launcherName)
         assertTrue(Files.isExecutable(launcher))
         val fixture = System.getProperty("kototoro.desktop.fixture.jar")
         val root = directory.resolve("中文 persistent data")
