@@ -9,6 +9,7 @@
 </p>
 
 <p align="center">
+  <a href="#downloads">Downloads</a> ·
   <a href="#features">Features</a> ·
   <a href="#getting-started">Getting started</a> ·
   <a href="#build">Build</a> ·
@@ -20,10 +21,20 @@ One library, search across media types, and a quick way to pick up where you lef
 Built on [Kototoro](https://github.com/Kototoro-app/Kototoro), with its own home screen
 and **Material You** design.
 
-> **Android alpha · 0.1.0-alpha.4**
+> **Alpha · 0.1.0-alpha.5**
 >
-> This is an early build for testing. Source availability depends on the selected extension,
-> and scrolling and tab switching still need testing on physical devices.
+> Early builds are available for Android, Windows x64, and Linux x64.
+> Source availability and features depend on the platform and the selected extension.
+
+## Downloads
+
+Choose a package from [Amuratsu 0.1.0-alpha.5](https://github.com/amurapan/amuratsu/releases/tag/v0.1.0-alpha.5).
+
+| Platform | Package |
+| :--- | :--- |
+| Android 8.0+ | ARM64 APK for most phones or the Universal APK for other supported devices |
+| Windows x64 | MSI installer or portable ZIP. Extract the ZIP before opening Amuratsu. |
+| Linux x64 | DEB package, tested on Ubuntu 24.04. The embedded player uses the system libmpv. |
 
 ## Features
 
@@ -46,24 +57,24 @@ The app does not include media or subscriptions.
 
 ## Getting started
 
-1. Download the [Android alpha](https://github.com/amurapan/amuratsu/releases/tag/v0.1.0-alpha.4)
+1. Download the package for your platform from [Downloads](#downloads)
    or [build a local preview](#build).
 2. From Welcome, Home or Search, open the source setup. Choose Manga, Books, or Anime and add a catalog.
 3. Filter extensions by language and install a source. You can also import local files from Home.
 4. Search all formats and use **Continue** on Home to return to your saved position.
 
-Requires **Android 8.0 or later**. The current local preview build targets **ARM64**.
-The public APK uses Amuratsu’s own app ID and signing key. To move from an older test build, export
+The local Android preview targets **ARM64**. The public Android APK uses Amuratsu’s own app ID and signing key.
+To move from an older test build, export
 a backup in **Settings → Backup and restore**, then restore it in the public app. Reimport local files
 separately. A matching EPUB keeps its saved position when reimported with its original filename.
-Future public updates are available through **About → Updates** and [GitHub Releases](https://github.com/amurapan/amuratsu/releases).
-Desktop and iOS code is inherited from Kototoro and is being adapted; Amuratsu packages for those platforms are not yet available.
+Android updates are available through **About → Updates**. All public packages are available from [GitHub Releases](https://github.com/amurapan/amuratsu/releases).
 
 ## Roadmap
 
 - [x] Add separate Home views for manga, books, and anime with shared search.
 - [x] Offer Keiyoushi, Yūzōnō, and LNReader Plugins as optional catalogs.
 - [x] Prepare signed Android builds and check for updates from Amuratsu Releases.
+- [x] Publish desktop alpha builds for Windows and Linux.
 - [ ] Test more sources and check scrolling and tab switching on physical devices.
 
 ## Build
@@ -85,7 +96,7 @@ app/build/outputs/apk/preview/app-arm64-v8a-preview.apk
 
 Preview uses release optimizations and a local test signing key.
 Use the same signing key to install over a previous test version while keeping its data.
-Public releases will require a separate signing setup.
+Public Android builds use a separate signing key. See the [desktop build guide](desktop-app/README.md) for desktop development and packaging.
 
 <details>
 <summary><strong>For development</strong></summary>
