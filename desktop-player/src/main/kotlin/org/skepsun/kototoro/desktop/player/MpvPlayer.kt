@@ -1,6 +1,7 @@
 package org.skepsun.kototoro.desktop.player
 
 import com.sun.jna.Native
+import com.sun.jna.Platform
 import com.sun.jna.Pointer
 import kotlinx.coroutines.channels.BufferOverflow
 import kotlinx.coroutines.flow.MutableSharedFlow
@@ -106,6 +107,10 @@ class MpvPlayer(
             defaults["wid"] = windowId.toString()
             defaults["force-window"] = "yes"
             defaults["vo"] = "gpu"
+            if (Platform.isLinux()) {
+                // The AWT canvas is an X11 window, including under XWayland. A native Wayland surface ignores wid.
+                defaults["gpu-context"] = if (options["gpu-api"] == "vulkan") "x11vk" else "x11egl"
+            }
             // mpv's window covers the canvas and swallows the mouse; it reports it back instead (bindPointerInput),
             // and hides the idle cursor over the picture as players do.
             defaults["input-cursor"] = "yes"

@@ -1,5 +1,7 @@
 package org.skepsun.kototoro.desktop.player
 
+import com.sun.jna.Native
+import com.sun.jna.Platform
 import com.sun.net.httpserver.HttpServer
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertNotNull
@@ -8,6 +10,10 @@ import org.junit.jupiter.api.Assumptions.assumeFalse
 import org.junit.jupiter.api.Assumptions.assumeTrue
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.io.TempDir
+import java.awt.Canvas
+import java.awt.EventQueue
+import java.awt.Frame
+import java.awt.GraphicsEnvironment
 import java.net.InetAddress
 import java.net.InetSocketAddress
 import java.nio.file.Files
@@ -76,6 +82,35 @@ class MpvPlayerTest {
                 player.state.value.speed == 1.5 && player.state.value.volume == 40
             }
             assertEquals("测试", player.property("media-title"))
+        }
+    }
+
+    @Test
+    fun `Linux playback stays on the X11 canvas when mpv can also use Wayland`() {
+        assumeTrue(Platform.isLinux() && !GraphicsEnvironment.isHeadless(), "An X11 canvas is required")
+        val library = library()
+        val clip = MpvProbeVideo.write(directory.resolve("embedded.y4m"), seconds = 8)
+        val (frame, canvas) = java.util.concurrent.FutureTask {
+            val surface = Canvas()
+            val window = Frame().apply {
+                add(surface)
+                setSize(480, 360)
+                isVisible = true
+            }
+            window to surface
+        }.also(EventQueue::invokeAndWait).get()
+        try {
+            val window = Native.getComponentID(canvas)
+            val options = mapOf("ao" to "null", "gpu-sw" to "yes")
+            MpvPlayer(library, window, options).use { player ->
+                assertEquals("x11egl", player.property("options/gpu-context"))
+                player.load(MpvStream(clip.toUri().toString()))
+                waitFor(message = { "Video did not play in the X11 window: ${player.state.value}" }) {
+                    player.state.value.loaded && player.state.value.position > 0.3
+                }
+            }
+        } finally {
+            EventQueue.invokeAndWait(frame::dispose)
         }
     }
 
