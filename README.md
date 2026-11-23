@@ -31,8 +31,8 @@ and **Material You** design.
 | Platform | Release | Package |
 | :--- | :--- | :--- |
 | Android 8.0+ | [0.1.0-alpha.5](https://github.com/amurapan/amuratsu/releases/tag/v0.1.0-alpha.5) | ARM64 APK for most phones or the Universal APK for other supported devices |
-| Windows x64 | [0.1.2-alpha.1](https://github.com/amurapan/amuratsu/releases/tag/v0.1.2-alpha.1) | MSI installer or portable ZIP. Extract the ZIP before opening Amuratsu. |
-| Linux x64 | [0.1.2-alpha.1](https://github.com/amurapan/amuratsu/releases/tag/v0.1.2-alpha.1) | DEB package, tested on Ubuntu 24.04. The embedded player uses the system libmpv. |
+| Windows x64 | [0.1.3-alpha.1](https://github.com/amurapan/amuratsu/releases/tag/v0.1.3-alpha.1) | MSI installer or portable ZIP. Extract the ZIP before opening Amuratsu. |
+| Linux x64 | [0.1.3-alpha.1](https://github.com/amurapan/amuratsu/releases/tag/v0.1.3-alpha.1) | DEB package, tested on Ubuntu 24.04. The embedded player uses the system libmpv. |
 
 ## Features
 
