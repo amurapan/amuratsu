@@ -2,6 +2,7 @@ package org.skepsun.kototoro.cloudstream.desktop
 
 import com.lagradost.cloudstream3.network.WebViewResolver
 import com.lagradost.cloudstream3.plugins.Plugin
+import com.lagradost.cloudstream3.syncproviders.providers.AniListApi
 import com.sun.net.httpserver.HttpServer
 import java.io.File
 import java.net.InetSocketAddress
@@ -51,6 +52,25 @@ class CloudstreamDesktopRuntimeTest {
         registry.close()
         platform.close()
         preferences.close()
+    }
+
+    @Test
+    fun `shared host classes expose Compose stability fields to Android plugins`() {
+        val types = listOf(
+            Plugin::class.java,
+            AniListApi.Title::class.java,
+            AniListApi.CoverImage::class.java,
+            AniListApi.LikePageInfo::class.java,
+            AniListApi.SeasonNextAiringEpisode::class.java,
+            AniListApi.RecommendationConnection::class.java,
+        )
+        for (type in types) {
+            // StreamPlay v715 reads the superclass field in its static initializer before registering sources.
+            val field = type.getDeclaredField("\$stable")
+            assertEquals(Int::class.javaPrimitiveType, field.type, type.name)
+            assertTrue(java.lang.reflect.Modifier.isPublic(field.modifiers), type.name)
+            assertTrue(java.lang.reflect.Modifier.isStatic(field.modifiers), type.name)
+        }
     }
 
     @Test

@@ -5,7 +5,9 @@ import java.util.zip.ZipFile
 
 plugins {
 	id 'org.jetbrains.kotlin.jvm'
+	id 'org.jetbrains.kotlin.plugin.compose'
 	id 'org.jetbrains.kotlin.plugin.serialization'
+	id 'org.jetbrains.compose' version '1.12.0'
 }
 
 kotlin {
@@ -136,6 +138,8 @@ dependencies {
 	implementation 'org.ow2.asm:asm:9.10.1'
 	implementation 'org.ow2.asm:asm-commons:9.10.1'
 	api cloudstreamRuntimeJar
+	// Plugins compiled against the Android app read Compose stability fields on the shared host classes.
+	implementation compose.runtime
 	implementation libs.okhttp
 	implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${libs.versions.coroutines.get()}"
 	implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:${libs.versions.serialization.get()}"
@@ -161,6 +165,7 @@ dependencies {
 	compileOnly compatibilityApi
 
 	fixtureCompileOnly files(cloudstreamLibrary)
+	fixtureCompileOnly compose.runtime
 	fixtureCompileOnly "org.jetbrains.kotlinx:kotlinx-coroutines-core:${libs.versions.coroutines.get()}"
 	fixtureCompileOnly compatibilityApi
 	fixtureCompileOnly sourceSets.main.output
