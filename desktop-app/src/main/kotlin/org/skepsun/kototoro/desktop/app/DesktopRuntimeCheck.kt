@@ -17,6 +17,7 @@ import org.skepsun.kototoro.desktop.runtime.DesktopUpscaleModel
 import org.skepsun.kototoro.desktop.runtime.DesktopUpscaleSetting
 import org.skepsun.kototoro.backups.domain.BackupSection
 import java.awt.Color
+import java.awt.EventQueue
 import java.awt.image.BufferedImage
 import java.nio.file.Files
 import java.nio.file.Path
@@ -37,10 +38,15 @@ internal object DesktopRuntimeCheck {
             org.skepsun.kototoro.desktop.runtime.locateInstallLayout()?.kind?.name?.lowercase() ?: "unavailable")
         try {
             runBlocking {
+                withContext(Dispatchers.Main.immediate) {
+                    check(EventQueue.isDispatchThread()) { "Packaged Dispatchers.Main must use the Swing event thread" }
+                }
+                result.setProperty("main.dispatcher", "swing")
                 DesktopSession.open(root).use { session ->
                     check(session.startupErrors.isEmpty()) { session.startupErrors.joinToString() }
                     for (jar in imports) session.importJar(jar)
                     result.setProperty("sources", session.registry.installed().sumOf { it.sources.size }.toString())
+                    result.setProperty("cloudstream.sources", session.cloudstream.sources().size.toString())
                     val owner = Class.forName("android.os.Looper").protectionDomain.codeSource.location
                     check(Path.of(owner.toURI()).fileName.toString().matches(Regex("(?:[0-9]{3}-)?AndroidCompat-.*\\.jar"))) {
                         "Android classes must come from AndroidCompat: $owner"

@@ -55,6 +55,7 @@ class LinuxDistributionTest {
             assertEquals(0, execute(arguments, mode))
             val result = properties(report)
             assertEquals("ok", result.getProperty("status"))
+            assertEquals("swing", result.getProperty("main.dispatcher"))
             assertEquals("Linux", result.getProperty("platform"))
             assertEquals(DATABASE_VERSION.toString(), result.getProperty("schema"))
             assertEquals("ok", result.getProperty("backup"))

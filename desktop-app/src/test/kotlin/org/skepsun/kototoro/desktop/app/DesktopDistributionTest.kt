@@ -49,6 +49,7 @@ class DesktopDistributionTest {
             "--check-runtime", report.toString()), "native-exe")
         val result = Properties().apply { Files.newBufferedReader(report).use { load(it) } }
         assertEquals("ok", result.getProperty("status"))
+        assertEquals("swing", result.getProperty("main.dispatcher"))
         assertEquals(DATABASE_VERSION.toString(), result.getProperty("schema"))
         assertEquals("ok", result.getProperty("backup"))
         assertEquals("ok", result.getProperty("image"))

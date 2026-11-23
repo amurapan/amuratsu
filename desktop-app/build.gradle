@@ -398,6 +398,8 @@ dependencies {
     implementation project(':core-net')
     implementation libs.ktor.client.java
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${libs.versions.coroutines.get()}"
+    // Extensions call Dispatchers.Main. The JVM discovers its Swing implementation at runtime.
+    runtimeOnly "org.jetbrains.kotlinx:kotlinx-coroutines-swing:${libs.versions.coroutines.get()}"
     implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:${libs.versions.serialization.get()}"
     testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
     testImplementation libs.ktor.client.mock
