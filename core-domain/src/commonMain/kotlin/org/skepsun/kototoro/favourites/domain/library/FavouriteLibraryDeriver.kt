@@ -1,5 +1,7 @@
 package org.skepsun.kototoro.favourites.domain.library
 
+import org.skepsun.kototoro.core.video.CinemaFilter
+
 import org.skepsun.kototoro.core.jsonsource.ContentGroup
 import org.skepsun.kototoro.core.jsonsource.OriginGroup
 import org.skepsun.kototoro.core.db.ListFilterCriteria
@@ -20,6 +22,7 @@ data class FavouriteLibraryDerivationInput(
     val sourcePresetNames: Set<String>? = null,
     val allowedContentTypes: Set<ContentType>? = null,
     val allowedSourceNames: Set<String>? = null,
+    val cinemaFilter: CinemaFilter? = null,
     val excludeNsfw: Boolean = false,
     val filters: Set<ListFilterCriteria> = emptySet(),
     val tagBlacklist: TagBlacklist = TagBlacklist.Empty,
@@ -137,6 +140,7 @@ internal fun applyVisibility(
         if (input.allowedContentTypes != null && row.contentType !in input.allowedContentTypes) {
             continue@outer
         }
+        if (input.cinemaFilter?.accepts(row.cinemaKind) == false) continue@outer
         // Space source names apply to the work's source.
         if (input.allowedSourceNames != null && row.sourceName !in input.allowedSourceNames) {
             continue@outer

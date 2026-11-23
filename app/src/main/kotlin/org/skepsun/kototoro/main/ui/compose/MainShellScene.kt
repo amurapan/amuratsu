@@ -34,6 +34,7 @@ import org.skepsun.kototoro.home.ui.HomeViewModel
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.rememberCoroutineScope
@@ -63,6 +64,12 @@ import org.skepsun.kototoro.core.util.ShareHelper
 import org.skepsun.kototoro.core.model.isLocal
 import org.skepsun.kototoro.search.ui.compose.SearchNavigationRequest
 import org.skepsun.kototoro.search.ui.compose.SearchResultsRoute
+import org.skepsun.kototoro.search.domain.ALL_SEARCH_CONTENT_KINDS
+import org.skepsun.kototoro.search.domain.SearchContentKind
+import org.skepsun.kototoro.core.video.CinemaKind
+import org.skepsun.kototoro.space.domain.BuiltInSpaces
+import org.skepsun.kototoro.space.domain.SpaceId
+import org.skepsun.kototoro.space.ui.LocalBrowseSpaceId
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.ExperimentalSharedTransitionApi
 import androidx.compose.animation.SharedTransitionScope
@@ -122,6 +129,8 @@ import org.skepsun.kototoro.main.ui.navigation3.MainStateNavigator
 import org.skepsun.kototoro.main.ui.navigation3.BookmarksNavKey
 import org.skepsun.kototoro.main.ui.navigation3.FavoritesNavKey
 import org.skepsun.kototoro.main.ui.navigation3.HistoryNavKey
+import org.skepsun.kototoro.main.ui.navigation3.HomeNavKey
+import org.skepsun.kototoro.main.ui.navigation3.LocalMainTabActive
 import org.skepsun.kototoro.main.ui.navigation3.LocalNavKey
 import org.skepsun.kototoro.main.ui.navigation3.SuggestionsNavKey
 import org.skepsun.kototoro.main.ui.navigation3.TopLevelNavKey
@@ -215,13 +224,18 @@ private const val TOP_BAR_OWNER_SUGGESTIONS = "suggestions"
 private const val TOP_BAR_OWNER_UPDATED = "updated"
 private const val TOP_BAR_OWNER_BOOKMARKS = "bookmarks"
 
+@Composable
+internal fun BoxScope.MainShellChromeLayer(render: State<@Composable BoxScope.() -> Unit>) {
+    render.value(this)
+}
+
 @OptIn(ExperimentalSharedTransitionApi::class, androidx.compose.material3.ExperimentalMaterial3Api::class)
 @Composable
 fun MainShellScene(
     mainNavState: MainNavState,
     shellBackdropOwnerKey: String,
-    contentPadding: androidx.compose.foundation.layout.PaddingValues = androidx.compose.foundation.layout.PaddingValues(0.dp),
-    bottomBarOffsetPx: Float = 0f,
+    isTopChromeOverlappingContent: () -> Boolean,
+    pagePadding: (MainNavKey) -> PaddingValues,
     bottomBarHeightPx: Int = 0,
     pageSaveHelper: org.skepsun.kototoro.reader.ui.PageSaveHelper? = null,
     modifier: Modifier = Modifier,
@@ -229,6 +243,7 @@ fun MainShellScene(
     onExploreSourceSelectionTopBarChanged: (TopBarOverrideState?) -> Unit = {},
     onContextualMenuActionsChanged: (RouteScopedTopBarMenuActions) -> Unit = {},
     onOpenSearch: (SearchNavigationRequest) -> Unit = {},
+    onSelectSpace: ((SpaceId) -> Unit)? = null,
     onDetailsTransitionRequested: () -> Unit = {},
     onDetailsReturnTransitionRequested: () -> Unit = {},
     onDetailsBottomPanelStateChanged: (Float, Dp) -> Unit = { _, _ -> },
@@ -247,7 +262,10 @@ fun MainShellScene(
     val appRouter = remember(activity) { activity.router }
     val mainActivity = activity as? MainActivity
     val rootView = LocalView.current
-    val isMainShellRouteVisible = mainNavState.currentStack().lastOrNull() is TopLevelNavKey
+    var cinemaTab by rememberSaveable { mutableStateOf(CinemaKind.MOVIE) }
+    val isMainShellRouteVisible by remember(mainNavState) {
+        derivedStateOf { mainNavState.currentStack().lastOrNull() is TopLevelNavKey }
+    }
     val density = LocalDensity.current
     val layoutDirection = LocalLayoutDirection.current
     val displayCutoutPadding = WindowInsets.displayCutout.asPaddingValues()
@@ -279,11 +297,15 @@ fun MainShellScene(
             ownerKey = shellBackdropOwnerKey,
             active = isMainShellRouteVisible,
         ) { layerBackdrop ->
-            // iOS already records the page for its glass; Material records it only for the edge blur.
             val glassPrefs = LocalGlassPrefs.current
-            val isAnyEdgeBlurred = immersiveEdgeBlurRadius() > 0.dp &&
-                (glassPrefs?.isTopImmersiveEdgeEnabled != false || glassPrefs?.isBottomImmersiveEdgeEnabled == true)
-            val materialEdgeLayer = if (!useLiquidGlass && isAnyEdgeBlurred) {
+            // Material's top bar already reserves space above the first row. Record the page once
+            // content can move under that edge, instead of adding a blur pass to every tab switch.
+            val materialEdgeLayer = if (!useLiquidGlass && isMainShellRouteVisible &&
+                immersiveEdgeBlurRadius() > 0.dp &&
+                (glassPrefs?.isBottomImmersiveEdgeEnabled == true ||
+                    (glassPrefs?.isTopImmersiveEdgeEnabled != false && isTopChromeOverlappingContent())) &&
+                mainNavState.selectedTopLevel != HomeNavKey
+            ) {
                 val backgroundColor = MaterialTheme.colorScheme.background
                 rememberLayerBackdrop {
                     drawRect(backgroundColor)
@@ -327,18 +349,18 @@ fun MainShellScene(
                             mainNavState = mainNavState,
                             appRouter = appRouter,
                             rootView = rootView,
-                            contentPadding = contentPadding,
-                            bottomBarOffsetPx = bottomBarOffsetPx,
-                            bottomBarHeightPx = bottomBarHeightPx,
+                            contentPadding = pagePadding(key),
                             pageSaveHelper = pageSaveHelper,
                             isLandscapeNavigation = isLandscapeNavigation,
                             mainNavigator = mainNavigator,
-                            isRouteVisible = isMainShellRouteVisible &&
-                                mainNavState.selectedTopLevel == org.skepsun.kototoro.main.ui.navigation3.HomeNavKey,
+                            isRouteVisible = key == HomeNavKey && isMainShellRouteVisible && LocalMainTabActive.current,
                             onDetailsBottomPanelStateChanged = onDetailsBottomPanelStateChanged,
                             onExploreSourceSelectionTopBarChanged = onExploreSourceSelectionTopBarChanged,
                             onContextualMenuActionsChanged = onContextualMenuActionsChanged,
                             onOpenSearch = onOpenSearch,
+                            onSelectSpace = onSelectSpace,
+                            cinemaTab = cinemaTab,
+                            onCinemaTabSelected = { cinemaTab = it },
                             onDetailsReturnTransitionRequested = onDetailsReturnTransitionRequested,
                             navigateToDetailsWithContent = navigateToDetailsWithContent,
                             navigateToDetailsWithOrigin = navigateToDetailsWithOrigin,
@@ -368,8 +390,6 @@ private fun MainShellTopLevelEntryContent(
     appRouter: org.skepsun.kototoro.core.nav.AppRouter,
     rootView: android.view.View,
     contentPadding: androidx.compose.foundation.layout.PaddingValues,
-    bottomBarOffsetPx: Float,
-    bottomBarHeightPx: Int,
     pageSaveHelper: org.skepsun.kototoro.reader.ui.PageSaveHelper?,
     isLandscapeNavigation: Boolean,
     mainNavigator: MainNavigator,
@@ -378,6 +398,9 @@ private fun MainShellTopLevelEntryContent(
     onExploreSourceSelectionTopBarChanged: (TopBarOverrideState?) -> Unit,
     onContextualMenuActionsChanged: (RouteScopedTopBarMenuActions) -> Unit,
     onOpenSearch: (SearchNavigationRequest) -> Unit,
+    onSelectSpace: ((SpaceId) -> Unit)?,
+    cinemaTab: CinemaKind,
+    onCinemaTabSelected: (CinemaKind) -> Unit,
     onDetailsReturnTransitionRequested: () -> Unit = {},
     navigateToDetailsWithContent: (Content, String?) -> Unit,
     navigateToDetailsWithOrigin: (org.skepsun.kototoro.details.ui.model.DetailsOrigin, String?) -> Unit,
@@ -387,12 +410,20 @@ private fun MainShellTopLevelEntryContent(
     }
     val activity = LocalContext.current as FragmentActivity
     when (key) {
-        org.skepsun.kototoro.main.ui.navigation3.SearchHomeNavKey ->
+        org.skepsun.kototoro.main.ui.navigation3.SearchHomeNavKey -> {
+            val cinema = LocalBrowseSpaceId.current == BuiltInSpaces.Cinema
             org.skepsun.kototoro.search.ui.compose.SearchHomeRoute(
                 contentPadding = contentPadding,
                 onSearch = onOpenSearch,
-                onManageSources = appRouter::openSourceRepositoryCatalog,
+                onManageSources = { appRouter.openSourceRepositoryCatalog(cinema = cinema) },
+                onOpenSource = { source -> mainNavigator.openContentList(source, null, null) },
+                initialContentKinds = if (cinema) {
+                    setOf(if (cinemaTab == CinemaKind.MOVIE) SearchContentKind.MOVIE else SearchContentKind.SERIES)
+                } else {
+                    ALL_SEARCH_CONTENT_KINDS
+                },
             )
+        }
         org.skepsun.kototoro.main.ui.navigation3.HomeNavKey -> HomeRoute(
             animatedVisibilityScope = animatedVisibilityScope,
             appRouter = appRouter,
@@ -401,6 +432,9 @@ private fun MainShellTopLevelEntryContent(
             mainNavigator = mainNavigator,
             onOpenSearch = onOpenSearch,
             navigateToDetailsWithContent = navigateToDetailsWithContent,
+            onSelectSpace = onSelectSpace,
+            cinemaTab = cinemaTab,
+            onCinemaTabSelected = onCinemaTabSelected,
             isRouteVisible = isRouteVisible,
         )
         org.skepsun.kototoro.main.ui.navigation3.DiscoverNavKey -> BrowseTopLevelRouteContent(
@@ -1072,6 +1106,7 @@ internal fun LocalTopLevelRouteContent(
     navigateToDetailsWithContent: (Content, String?) -> Unit,
 ) {
     val viewModel = hiltViewModel<org.skepsun.kototoro.local.ui.LocalListViewModel>()
+    val mainTabActive = LocalMainTabActive.current
     val localLibraryQuery by viewModel.libraryQuery.collectAsStateWithLifecycle()
     val activity = LocalContext.current as? androidx.activity.ComponentActivity
     var pendingRemoveSelection by remember { mutableStateOf<Set<Long>?>(null) }
@@ -1192,7 +1227,7 @@ internal fun LocalTopLevelRouteContent(
             },
         )
 
-        pendingRemoveSelection?.let { ids ->
+        pendingRemoveSelection?.takeIf { mainTabActive }?.let { ids ->
             AlertDialog(
                 onDismissRequest = { pendingRemoveSelection = null },
                 title = {
@@ -1857,6 +1892,7 @@ internal fun FavoritesTopLevelRouteContent(
     navigateToDetailsWithContent: (Content, String?) -> Unit,
     navigateToDetailsWithOrigin: (org.skepsun.kototoro.details.ui.model.DetailsOrigin, String?) -> Unit,
 ) {
+    val mainTabActive = LocalMainTabActive.current
     val viewModel = spaceBoundHiltViewModel<org.skepsun.kototoro.favourites.ui.container.FavouritesContainerViewModel>(
         "favorites",
     )
@@ -1891,7 +1927,8 @@ internal fun FavoritesTopLevelRouteContent(
         favoritesSelectionDialog = null
     }
 
-    LaunchedEffect(pendingFavoritesDialog) {
+    LaunchedEffect(pendingFavoritesDialog, mainTabActive) {
+        if (!mainTabActive) return@LaunchedEffect
         val request = pendingFavoritesDialog ?: return@LaunchedEffect
         val candidates = if (request.isSync) {
             viewModel.loadSyncCandidates()
@@ -1922,7 +1959,7 @@ internal fun FavoritesTopLevelRouteContent(
         favoritesSelectionDialog = null
     }
 
-    favoritesSelectionDialog?.let { dialog ->
+    favoritesSelectionDialog?.takeIf { mainTabActive }?.let { dialog ->
         AlertDialog(
             onDismissRequest = {
                 favoritesSelectionDialog = null
@@ -2018,7 +2055,7 @@ internal fun FavoritesTopLevelRouteContent(
         )
     }
 
-    activeReorderItems?.let { items ->
+    activeReorderItems?.takeIf { mainTabActive }?.let { items ->
         val host = activeReorderCategoryHost
         if (host != null) {
             org.skepsun.kototoro.core.ui.compose.ReorderDialog(
@@ -2037,7 +2074,7 @@ internal fun FavoritesTopLevelRouteContent(
     }
 
     val visibility = categoryVisibility
-    if (showCategoryDisplayDialog && visibility != null) {
+    if (mainTabActive && showCategoryDisplayDialog && visibility != null) {
         FavouriteCategoryDisplayDialog(
             state = visibility,
             onShownChanged = viewModel::setCategoryShownInSpace,
@@ -2126,7 +2163,8 @@ internal fun FavoritesTopLevelRouteContent(
         }
     }
 
-    LaunchedEffect(viewModel.importMessages) {
+    LaunchedEffect(viewModel.importMessages, mainTabActive) {
+        if (!mainTabActive) return@LaunchedEffect
         viewModel.importMessages.collect { event ->
             event?.consume(eventCollector { message ->
                 showToast(message)
@@ -2134,7 +2172,8 @@ internal fun FavoritesTopLevelRouteContent(
         }
     }
 
-    LaunchedEffect(viewModel.syncMessages) {
+    LaunchedEffect(viewModel.syncMessages, mainTabActive) {
+        if (!mainTabActive) return@LaunchedEffect
         viewModel.syncMessages.collect { event ->
             event?.consume(eventCollector { message ->
                 showToast(message)
@@ -2143,7 +2182,8 @@ internal fun FavoritesTopLevelRouteContent(
     }
 
     val mainChromeController = LocalMainChromeController.current
-    DisposableEffect(viewModel, selectedGroupTab, selectedSourceTags) {
+    DisposableEffect(viewModel, selectedGroupTab, selectedSourceTags, mainTabActive) {
+        if (!mainTabActive) return@DisposableEffect onDispose {}
         val callback = object : SearchBarFilterCallback {
             override fun isSourceTagFilterVisible(): Boolean = true
 

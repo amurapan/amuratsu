@@ -1,5 +1,7 @@
 package org.skepsun.kototoro.favourites.domain.library
 
+import org.skepsun.kototoro.core.video.CinemaKind
+
 import org.skepsun.kototoro.parsers.model.ContentState
 import org.skepsun.kototoro.parsers.model.ContentType
 
@@ -54,6 +56,7 @@ data class FavouriteCardRow(
     val isPinned: Boolean,
     val createdAt: Long,
     val updatedAt: Long,
+    val cinemaKind: CinemaKind? = null,
 ) {
     /** Display title after the entity-level manual override. */
     val resolvedTitle: String

@@ -1,19 +1,27 @@
 package org.skepsun.kototoro.main.ui.navigation3
 
-import androidx.compose.animation.AnimatedContentTransitionScope
-import androidx.compose.animation.ContentTransform
-import androidx.compose.animation.EnterTransition
-import androidx.compose.animation.ExitTransition
 import androidx.compose.animation.ExperimentalSharedTransitionApi
-import androidx.compose.animation.togetherWith
 import androidx.compose.animation.SharedTransitionScope
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.SideEffect
+import androidx.compose.runtime.compositionLocalOf
+import androidx.compose.runtime.derivedStateOf
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.key
+import androidx.compose.runtime.mutableStateSetOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberUpdatedState
+import androidx.compose.runtime.structuralEqualityPolicy
 import androidx.compose.runtime.saveable.rememberSaveableStateHolder
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.Layout
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.compose.LocalLifecycleOwner
+import androidx.lifecycle.compose.rememberLifecycleOwner
 import androidx.lifecycle.viewmodel.compose.LocalViewModelStoreOwner
 import androidx.lifecycle.viewmodel.navigation3.rememberViewModelStoreNavEntryDecorator
 import androidx.navigation3.runtime.NavEntry
@@ -27,11 +35,15 @@ import androidx.navigation3.ui.LocalNavAnimatedContentScope
 import androidx.navigation3.ui.NavDisplay
 import org.skepsun.kototoro.core.prefs.ListToDetailsTransition
 import org.skepsun.kototoro.core.ui.compose.LocalNavAnimatedVisibilityScope
-import org.skepsun.kototoro.core.ui.theme.LocalSurfaceStyle
-import org.skepsun.kototoro.core.ui.theme.SurfaceStyle
+
+internal val LocalMainTabActive = compositionLocalOf { true }
+
+private val retainedMainTabs = setOf(HomeNavKey, SearchHomeNavKey, FavoritesNavKey, LocalNavKey)
 
 /**
- * Renders the selected top-level tab's full back stack with a single [NavDisplay].
+ * Owns a [NavDisplay] per visible or retained tab. Previously visited primary tabs can
+ * keep their root composition while offscreen, without measuring, drawing, or collecting
+ * lifecycle-aware flows. Only the active tab can show an immersive back stack.
  *
  * The innermost entry of the selected tab's stack is shown as the current scene:
  * a [TopLevelNavKey] renders the tab content, while a [DetailsNavKey],
@@ -44,8 +56,7 @@ import org.skepsun.kototoro.core.ui.theme.SurfaceStyle
  * leaving list scene and the entering details scene register their shared bounds
  * against the same active scene transition and the cover hero animates.
  *
- * Scene motion is owned by [KototoroMotionCatalog]: the global [NavDisplay]
- * defaults (FadeThrough for tab / space switches) and the per-entry
+ * In-tab scene motion is owned by [KototoroMotionCatalog] and the per-entry
  * [NavDisplay.TransitionKey] metadata overrides (content list / details /
  * search). See docs/architecture/navigation3-motion-system.md.
  */
@@ -63,7 +74,6 @@ fun MainTopLevelNavDisplay(
     }
     val saveableStateHolder = rememberSaveableStateHolder()
     val currentRenderEntry = rememberUpdatedState(renderEntry)
-    val animateTabChanges = LocalSurfaceStyle.current == SurfaceStyle.BACKDROP
     // Decorate each top-level stack independently so switching tabs does not clear its state.
     val decoratedEntriesByTopLevel: Map<TopLevelNavKey, List<NavEntry<MainNavKey>>> = allTopLevelNavKeys.associateWith { key ->
         val backStack: List<MainNavKey> = navState.stackFor(key).toList()
@@ -71,13 +81,12 @@ fun MainTopLevelNavDisplay(
         val viewModels = rememberViewModelStoreNavEntryDecorator<MainNavKey>(viewModelStoreOwner)
         val entryDecorators = remember(savedState, viewModels) { listOf(savedState, viewModels) }
         val entryProvider: (MainNavKey) -> NavEntry<MainNavKey> =
-            remember(backStack, detailsTransitionStyle, animateTabChanges) {
+            remember(backStack, detailsTransitionStyle) {
                 { entryKey ->
                     navEntry(
                         key = entryKey,
                         prev = backStack.getOrNull(backStack.indexOf(entryKey) - 1),
                         detailsTransitionStyle = detailsTransitionStyle,
-                        animateTabChanges = animateTabChanges,
                         renderEntry = { key -> currentRenderEntry.value(key) },
                     )
                 }
@@ -88,36 +97,92 @@ fun MainTopLevelNavDisplay(
             entryProvider = entryProvider,
         )
     }
-    val sceneStrategies: List<SceneStrategy<MainNavKey>> = listOf(
-        remember { SinglePaneSceneStrategy<MainNavKey>() },
-    )
-    // Global default: sibling / space switches cross-fade. Immersive destinations
-    // override it through per-entry metadata below.
-    val fadeThrough = remember { KototoroMotionCatalog.preset(KototoroMotion.FadeThrough) }
-    NavDisplay(
-        entries = decoratedEntriesByTopLevel.getValue(navState.selectedTopLevel),
+    val visitedTabs = remember(navState) { mutableStateSetOf<TopLevelNavKey>() }
+    val displayedTabs = remember(navState, visitedTabs) {
+        derivedStateOf(structuralEqualityPolicy()) {
+            allTopLevelNavKeys.filter { tab ->
+                tab == navState.selectedTopLevel || (tab in visitedTabs && navState.stackFor(tab).size == 1)
+            }
+        }
+    }.value
+    val onTabVisited: (TopLevelNavKey) -> Unit = remember(visitedTabs) {
+        { tab -> visitedTabs.add(tab) }
+    }
+    Layout(
         modifier = modifier,
-        contentAlignment = Alignment.TopStart,
-        sceneStrategies = sceneStrategies,
-        sceneDecoratorStrategies = emptyList<SceneDecoratorStrategy<MainNavKey>>(),
-        sharedTransitionScope = sharedTransitionScope,
-        transitionSpec = { fadeThrough.enter(this) },
-        popTransitionSpec = { fadeThrough.pop(this) },
-        predictivePopTransitionSpec = { progress -> fadeThrough.predictivePop(this, progress) },
-        onBack = { navState.pop() },
+        content = {
+            displayedTabs.forEach { tab ->
+                key(tab) {
+                    MainTab(
+                        navState = navState,
+                        tab = tab,
+                        entries = decoratedEntriesByTopLevel.getValue(tab),
+                        sharedTransitionScope = sharedTransitionScope,
+                        onTabVisited = onTabVisited,
+                    )
+                }
+            }
+        },
+    ) { tabs, constraints ->
+        // A switch between cached screens only invalidates placement and the two affected tabs.
+        val selectedIndex = displayedTabs.indexOf(navState.selectedTopLevel)
+        val visibleTab = tabs[selectedIndex].measure(constraints)
+        layout(visibleTab.width, visibleTab.height) {
+            visibleTab.placeRelative(0, 0)
+        }
+    }
+}
+
+@OptIn(ExperimentalSharedTransitionApi::class)
+@Composable
+private fun MainTab(
+    navState: MainNavState,
+    tab: TopLevelNavKey,
+    entries: List<NavEntry<MainNavKey>>,
+    sharedTransitionScope: SharedTransitionScope?,
+    onTabVisited: (TopLevelNavKey) -> Unit,
+) {
+    val active by remember(navState, tab) {
+        derivedStateOf(structuralEqualityPolicy()) { navState.selectedTopLevel == tab }
+    }
+    if (active && tab in retainedMainTabs) {
+        SideEffect { onTabVisited(tab) }
+    }
+    val lifecycleOwner = rememberLifecycleOwner(
+        maxLifecycle = if (active) Lifecycle.State.RESUMED else Lifecycle.State.CREATED,
     )
+    val sceneStrategies: List<SceneStrategy<MainNavKey>> = remember { listOf(SinglePaneSceneStrategy()) }
+    val fadeThrough = remember { KototoroMotionCatalog.preset(KototoroMotion.FadeThrough) }
+    CompositionLocalProvider(
+        LocalLifecycleOwner provides lifecycleOwner,
+        LocalMainTabActive provides active,
+    ) {
+        Box(Modifier.fillMaxSize()) {
+            NavDisplay(
+                entries = entries,
+                modifier = Modifier.fillMaxSize(),
+                contentAlignment = Alignment.TopStart,
+                sceneStrategies = sceneStrategies,
+                sceneDecoratorStrategies = emptyList<SceneDecoratorStrategy<MainNavKey>>(),
+                sharedTransitionScope = sharedTransitionScope,
+                transitionSpec = { fadeThrough.enter(this) },
+                popTransitionSpec = { fadeThrough.pop(this) },
+                predictivePopTransitionSpec = { progress -> fadeThrough.predictivePop(this, progress) },
+                onBack = { if (navState.selectedTopLevel == tab) navState.pop() },
+            )
+        }
+    }
 }
 
 private fun navEntry(
     key: MainNavKey,
     prev: MainNavKey?,
     detailsTransitionStyle: ListToDetailsTransition,
-    animateTabChanges: Boolean,
     renderEntry: @Composable (MainNavKey) -> Unit = {},
 ): NavEntry<MainNavKey> {
     return NavEntry(
         key = key,
-        metadata = transitionMetadata(key, prev, detailsTransitionStyle, animateTabChanges),
+        metadata = transitionMetadata(key, prev, detailsTransitionStyle),
     ) { entryKey ->
         CompositionLocalProvider(
             LocalNavAnimatedVisibilityScope provides LocalNavAnimatedContentScope.current,
@@ -128,7 +193,7 @@ private fun navEntry(
 }
 
 /**
- * Navigation-relation -> scene metadata. Top-level / sibling entries fade through
+ * Navigation-relation -> scene metadata. Sibling entries fade through
  * (also the NavDisplay default); source lists use Hierarchical; search uses the
  * Z-axis workspace; details use HeroExpand by default, or the selectable legacy
  * full-width page turn when the user opts into it.
@@ -137,7 +202,6 @@ private fun transitionMetadata(
     key: MainNavKey,
     prev: MainNavKey?,
     detailsTransitionStyle: ListToDetailsTransition,
-    animateTabChanges: Boolean,
 ): Map<String, Any> {
     val preset = if (key is DetailsNavKey && detailsTransitionStyle == ListToDetailsTransition.LEGACY_SLIDE) {
         KototoroMotionCatalog.legacySlide
@@ -145,14 +209,8 @@ private fun transitionMetadata(
         KototoroMotionCatalog.preset(KototoroMotionCatalog.forRelation(prev, key))
     }
     return metadata {
-        put(NavDisplay.TransitionKey, if (key is TopLevelNavKey && !animateTabChanges) instantTab else preset.enter)
+        put(NavDisplay.TransitionKey, preset.enter)
         put(NavDisplay.PopTransitionKey, preset.pop)
         put(NavDisplay.PredictivePopTransitionKey, preset.predictivePop)
     }
-}
-
-// Material tabs already animate the selected nav item. An immediate content swap avoids
-// drawing both the outgoing and incoming pages at once while retaining their back stacks.
-private val instantTab: AnimatedContentTransitionScope<*>.() -> ContentTransform = {
-    (EnterTransition.None togetherWith ExitTransition.None).using(null)
 }

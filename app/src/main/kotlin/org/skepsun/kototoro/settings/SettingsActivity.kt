@@ -1459,6 +1459,7 @@ class SettingsActivity :
                         openDestination(SettingsDestination.ChangelogSettings, null, false)
                     },
                     onLinkClick = { key -> openAboutLink(key) },
+                    onAuthorSupportClick = { url, title -> openAboutUrl(url, title) },
                     onCrashLogsClick = {
                         startActivity(org.skepsun.kototoro.settings.about.crashlog.CrashLogActivity.newIntent(this))
                     },
@@ -2209,7 +2210,11 @@ class SettingsActivity :
         val link = org.skepsun.kototoro.core.ui.text.AppProjectLink.entries
             .firstOrNull { it.preferenceKey == key } ?: return false
         val strings = org.skepsun.kototoro.core.ui.text.AndroidUiStrings(this)
-        return if (router.openExternalBrowser(strings.string(link.urlKey), strings.string(link.titleKey))) {
+        return openAboutUrl(strings.string(link.urlKey), strings.string(link.titleKey))
+    }
+
+    private fun openAboutUrl(url: String, title: String): Boolean {
+        return if (router.openExternalBrowser(url, title)) {
             true
         } else {
             Toast.makeText(this, R.string.operation_not_supported, Toast.LENGTH_SHORT).show()

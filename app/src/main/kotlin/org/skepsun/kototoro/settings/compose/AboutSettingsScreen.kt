@@ -18,6 +18,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import org.skepsun.kototoro.BuildConfig
+import org.skepsun.kototoro.core.ui.settings.AuthorSupportCard
+import org.skepsun.kototoro.core.ui.settings.authorSupportLinks
 import org.skepsun.kototoro.core.ui.text.AppProjectLink
 import org.skepsun.kototoro.core.ui.text.uiString
 import org.skepsun.kototoro.R
@@ -48,9 +50,11 @@ fun AboutSettingsScreen(
     onCheckUpdate: () -> Unit,
     onChangelogClick: () -> Unit,
     onLinkClick: (key: String) -> Unit,
+    onAuthorSupportClick: (url: String, title: String) -> Unit,
     onCrashLogsClick: () -> Unit,
 ) {
     val isStableVersion = VersionId(BuildConfig.VERSION_NAME).isStable
+    val supportLinks = authorSupportLinks()
 
     Surface(
         modifier = Modifier.fillMaxSize(),
@@ -71,6 +75,11 @@ fun AboutSettingsScreen(
         ) {
             item(key = "about_banner") {
                 AboutBanner()
+            }
+            if (supportLinks.isNotEmpty()) {
+                item(key = "about_author_support") {
+                    AuthorSupportCard(supportLinks, onOpenLink = { onAuthorSupportClick(it.url, it.title) })
+                }
             }
             item(key = "about_overview") {
                 SettingsPreferenceGroup(title = stringResource(R.string.about)) {

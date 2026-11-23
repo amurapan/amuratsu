@@ -1,5 +1,7 @@
 package org.skepsun.kototoro.history.domain.library
 
+import org.skepsun.kototoro.core.video.CinemaKind
+
 import org.skepsun.kototoro.parsers.model.ContentState
 import org.skepsun.kototoro.parsers.model.ContentType
 
@@ -95,4 +97,5 @@ data class HistoryCardEntry(
     val metadataTrackingCoverUrl: String?,
     val sourceGroupFlags: Int,
     val sourceOriginFlags: Int,
+    val cinemaKind: CinemaKind? = null,
 )

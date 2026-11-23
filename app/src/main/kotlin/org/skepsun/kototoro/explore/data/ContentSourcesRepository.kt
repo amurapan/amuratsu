@@ -19,6 +19,7 @@ import kotlinx.coroutines.flow.callbackFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.conflate
 import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.flowOn
@@ -26,6 +27,7 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.mapLatest
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.flow.shareIn
 import kotlinx.coroutines.flow.stateIn
 import org.skepsun.kototoro.BuildConfig
 import org.skepsun.kototoro.R
@@ -123,15 +125,20 @@ class ContentSourcesRepository @Inject constructor(
         started = SharingStarted.Eagerly,
         initialValue = TVBoxRepositorySelection(),
     )
-    private val enabledSources: StateFlow<List<ContentSourceInfo>> =
+    private val enabledSourceSnapshots =
         createEnabledSourcesFlow()
             .distinctUntilChanged()
             .flowOn(Dispatchers.Default)
-            .stateIn(
+            .shareIn(
                 scope = processLifecycleScope,
                 started = SharingStarted.Eagerly,
-                initialValue = emptyList(),
+                replay = 1,
             )
+    private val enabledSources = enabledSourceSnapshots.stateIn(
+        scope = processLifecycleScope,
+        started = SharingStarted.Eagerly,
+        initialValue = emptyList(),
+    )
     private val enabledBrowseSources: StateFlow<List<ContentSourceInfo>> =
         createEnabledBrowseSourcesFlow()
             .onEach { sources ->
@@ -803,6 +810,12 @@ class ContentSourcesRepository @Inject constructor(
 
     fun observeEnabledSources(): StateFlow<List<ContentSourceInfo>> = enabledSources
 
+    internal fun observeEnabledSourceSnapshots(): Flow<List<ContentSourceInfo>> = enabledSourceSnapshots
+        .combine(cloudstreamRuntimeManager.initialLoadCompleted) { sources, loaded ->
+            sources.takeIf { loaded || it.isNotEmpty() }
+        }
+        .filterNotNull()
+
     private fun createEnabledSourcesFlow(): Flow<List<ContentSourceInfo>> = combine(
         observeIsNsfwDisabled(),
         observeAllEnabled(),
@@ -811,7 +824,7 @@ class ContentSourcesRepository @Inject constructor(
 
         combine(
             dao.observeAll(false, order),
-            observeJarParserSourceChanges(),
+            observeJarParserSourceChanges().combine(cloudstreamRuntimeManager.sources) { _, _ -> Unit },
             mihonExtensionManager.installedExtensions,
             aniyomiExtensionManager.installedExtensions,
             jsonSourceManager.observeEnabledJsonSources()

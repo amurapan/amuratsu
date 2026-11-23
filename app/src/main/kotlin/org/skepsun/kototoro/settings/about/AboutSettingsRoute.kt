@@ -13,6 +13,7 @@ fun AboutSettingsRoute(
     onCheckUpdate: () -> Unit,
     onChangelogClick: () -> Unit,
     onLinkClick: (String) -> Unit,
+    onAuthorSupportClick: (url: String, title: String) -> Unit,
     onCrashLogsClick: () -> Unit,
 ) {
     val isUpdateSupported by viewModel.isUpdateSupported.collectAsStateWithLifecycle(initialValue = false)
@@ -24,6 +25,7 @@ fun AboutSettingsRoute(
         onCheckUpdate = onCheckUpdate,
         onChangelogClick = onChangelogClick,
         onLinkClick = { key -> onLinkClick(key) },
+        onAuthorSupportClick = onAuthorSupportClick,
         onCrashLogsClick = onCrashLogsClick,
     )
 }

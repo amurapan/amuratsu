@@ -46,6 +46,7 @@ abstract class HistoryLibraryReadDao {
             m.large_cover_url AS display_large_cover_url,
             m.author AS display_author,
             m.source AS display_source,
+            m.source_data AS display_source_data,
             m.state AS display_state,
             m.nsfw AS display_nsfw,
             m.rating AS display_rating,

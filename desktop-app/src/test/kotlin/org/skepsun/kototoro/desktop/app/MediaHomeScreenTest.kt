@@ -12,11 +12,55 @@ import org.jetbrains.skia.Image
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 import org.skepsun.kototoro.core.ui.home.*
+import org.skepsun.kototoro.core.video.CinemaKind
 import java.nio.file.Files
 import java.nio.file.Path
 
 @OptIn(ExperimentalTestApi::class)
 class MediaHomeScreenTest {
+    @Test
+    fun `cinema separates movies series and anime without changing card actions`() {
+        for (width in listOf(360, 1000)) runDesktopComposeUiTest(width = width, height = 1000) {
+            var selected by mutableStateOf(HomeMediaKind.ALL)
+            var cinemaTab by mutableStateOf(CinemaKind.MOVIE)
+            var opened: Long? = null
+            var resumed: Long? = null
+            val videos = listOf(
+                MediaHomeItem(10, "Film", HomeMediaKind.CINEMA, cinemaKind = CinemaKind.MOVIE),
+                MediaHomeItem(11, "Series", HomeMediaKind.CINEMA, cinemaKind = CinemaKind.SERIES),
+                MediaHomeItem(12, "Anime", HomeMediaKind.ANIME),
+            )
+            setContent {
+                DesktopTheme {
+                    HomeFixture(
+                        selected = selected,
+                        recent = videos,
+                        onKind = { selected = it },
+                        onOpen = { opened = it.id },
+                        onResume = { resumed = it.id },
+                        cinemaTab = cinemaTab,
+                        onCinemaTabSelected = { cinemaTab = it },
+                    )
+                }
+            }
+            onNodeWithTag("media-home-filter:CINEMA").performClick().assertIsSelected()
+            onNodeWithTag("cinema-tab:MOVIE").assertIsSelected()
+            onNodeWithTag("media-home-details:10").assertIsDisplayed().performClick()
+            onNodeWithTag("media-home-details:11").assertDoesNotExist()
+            onNodeWithTag("media-home-details:12").assertDoesNotExist()
+            onNodeWithTag("cinema-tab:SERIES").performClick().assertIsSelected()
+            onNodeWithTag("media-home-details:10").assertDoesNotExist()
+            onNodeWithTag("media-home-resume:11").assertIsDisplayed().performClick()
+            runOnIdle {
+                assertEquals(10L, opened)
+                assertEquals(11L, resumed)
+            }
+            onNodeWithTag("media-home-filter:ANIME").performClick().assertIsSelected()
+            onNodeWithTag("cinema-tabs").assertDoesNotExist()
+            onNodeWithTag("media-home-details:12").assertIsDisplayed()
+        }
+    }
+
     @Test
     fun `loading never displays first launch prompt and import remains reachable on small screens`() {
         runDesktopComposeUiTest(width = 320, height = 640) {
@@ -122,9 +166,11 @@ private fun HomeFixture(
     onImport: () -> Unit = {},
     onOpen: (MediaHomeItem) -> Unit = {},
     onResume: (MediaHomeItem) -> Unit = {},
+    cinemaTab: CinemaKind = CinemaKind.MOVIE,
+    onCinemaTabSelected: ((CinemaKind) -> Unit)? = null,
 ) {
     MediaHomeScreen(selected, recent, updates, emptyList(), initialized,
         onKind, onSearch, {}, {}, {}, {}, onSources, onOpen, onResume,
         cover = { _, modifier -> Box(modifier.background(MaterialTheme.colorScheme.secondaryContainer)) },
-        onImport = onImport)
+        onImport = onImport, cinemaTab = cinemaTab, onCinemaTabSelected = onCinemaTabSelected)
 }

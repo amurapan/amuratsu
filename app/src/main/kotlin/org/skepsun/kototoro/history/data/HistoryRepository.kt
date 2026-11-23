@@ -21,6 +21,7 @@ import org.skepsun.kototoro.core.model.ContentHistory
 import org.skepsun.kototoro.core.model.getContentType
 import org.skepsun.kototoro.core.model.isLocal
 import org.skepsun.kototoro.core.model.isNsfw
+import org.skepsun.kototoro.core.model.cinemaKind
 import org.skepsun.kototoro.core.parser.ContentDataRepository
 import org.skepsun.kototoro.core.prefs.AppSettings
 import org.skepsun.kototoro.core.prefs.ProgressIndicatorMode
@@ -44,6 +45,7 @@ import org.skepsun.kototoro.search.domain.AdvancedSearchParams
 import org.skepsun.kototoro.search.domain.LocalContentSearchQuery
 import org.skepsun.kototoro.space.domain.SpaceContentPolicy
 import org.skepsun.kototoro.space.domain.SpaceId
+import org.skepsun.kototoro.space.domain.cinemaFilter
 import org.skepsun.kototoro.tracker.domain.CheckNewChaptersUseCase
 import org.skepsun.kototoro.tracker.domain.SourceTrackerEvent
 import org.skepsun.kototoro.tracker.domain.SourceTrackerEventEmitter
@@ -51,7 +53,7 @@ import java.time.Instant
 import javax.inject.Inject
 import javax.inject.Provider
 
-private const val NSFW_FILTER_BATCH_SIZE = 32
+private const val HISTORY_FILTER_BATCH_SIZE = 32
 
 data class HistoryPopularFilterOptions(
     val tags: List<ContentTag> = emptyList(),
@@ -428,13 +430,21 @@ class HistoryRepository @Inject constructor(
             return emptyList()
         }
         val targetSize = if (limit == null) Int.MAX_VALUE else offset + limit
-        // NSFW rows are filtered after loading, so keep widening the window until enough
+        val cinemaFilter = spaceId?.cinemaFilter()
+        // Video subtypes and NSFW status are filtered after loading, so widen the window until enough
         // visible rows are found or the history is exhausted.
-        var fetchSize = if (excludeNsfw) maxOf(targetSize, NSFW_FILTER_BATCH_SIZE) else targetSize
+        val hasRowFilter = excludeNsfw || cinemaFilter != null
+        var fetchSize = if (hasRowFilter) maxOf(targetSize, HISTORY_FILTER_BATCH_SIZE) else targetSize
         while (true) {
             val rows = findRecentRows(spaceId, allowedSourceNames, fetchSize)
             val contents = rows.map { it.toContent() }
-            val visible = if (excludeNsfw) contents.filterNot { it.isNsfw() } else contents
+            val visible = if (hasRowFilter) {
+                contents.filter { content ->
+                    (!excludeNsfw || !content.isNsfw()) && (cinemaFilter?.accepts(content.cinemaKind()) != false)
+                }
+            } else {
+                contents
+            }
             if (visible.size >= targetSize || rows.size < fetchSize || fetchSize == Int.MAX_VALUE) {
                 return visible.drop(offset).let { if (limit == null) it else it.take(limit) }
             }

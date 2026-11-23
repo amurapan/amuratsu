@@ -17,7 +17,9 @@ import org.skepsun.kototoro.core.nav.AppRouter
 import org.skepsun.kototoro.core.ui.BaseComposeActivity
 import org.skepsun.kototoro.home.ui.compose.HomeScreen
 import org.skepsun.kototoro.home.ui.compose.homeMediaKind
+import org.skepsun.kototoro.home.ui.compose.toContentTab
 import org.skepsun.kototoro.core.ui.home.HomeMediaKind
+import org.skepsun.kototoro.core.video.CinemaKind
 import org.skepsun.kototoro.reader.ui.ReaderState
 import org.skepsun.kototoro.main.ui.navigation3.TopLevelNavKey
 import org.skepsun.kototoro.local.ui.compose.ImportDialog
@@ -29,6 +31,9 @@ import org.skepsun.kototoro.main.ui.navigation3.SuggestionsNavKey
 import org.skepsun.kototoro.main.ui.navigation3.UpdatedNavKey
 import org.skepsun.kototoro.parsers.model.Content
 import org.skepsun.kototoro.search.ui.compose.SearchNavigationRequest
+import org.skepsun.kototoro.space.domain.BuiltInSpaces
+import org.skepsun.kototoro.space.domain.SpaceId
+import org.skepsun.kototoro.space.ui.LocalBrowseSpaceId
 
 @Composable
 internal fun HomeRoute(
@@ -39,13 +44,21 @@ internal fun HomeRoute(
     mainNavigator: MainNavigator,
     onOpenSearch: (SearchNavigationRequest) -> Unit,
     navigateToDetailsWithContent: (Content, String?) -> Unit,
+    onSelectSpace: ((SpaceId) -> Unit)? = null,
+    cinemaTab: CinemaKind = CinemaKind.MOVIE,
+    onCinemaTabSelected: (CinemaKind) -> Unit = {},
     isRouteVisible: Boolean = true,
 ) {
-    val viewModel = hiltViewModel<HomeViewModel>()
+    val isCinema = LocalBrowseSpaceId.current == BuiltInSpaces.Cinema
+    val viewModel = hiltViewModel<HomeViewModel>(key = "cinema-home".takeIf { isCinema })
     val state by viewModel.summaryState.collectAsStateWithLifecycle()
     val activity = LocalContext.current as? BaseComposeActivity
     var showImport by rememberSaveable { mutableStateOf(false) }
-    LaunchedEffect(viewModel.onError, activity) {
+    LaunchedEffect(isCinema, viewModel) {
+        if (isCinema) viewModel.setSelectedTab(HomeContentTab.VIDEO)
+    }
+    LaunchedEffect(viewModel.onError, activity, isRouteVisible) {
+        if (!isRouteVisible) return@LaunchedEffect
         val observer = SnackbarErrorObserver(rootView, activity?.exceptionResolver, null)
         viewModel.onError.collect { event -> event?.consume(observer) }
     }
@@ -56,24 +69,38 @@ internal fun HomeRoute(
     HomeScreen(
         state = state,
         contentPadding = contentPadding,
-        onKindSelected = viewModel::setSelectedTab,
+        onKindSelected = { kind ->
+            if (kind == HomeMediaKind.CINEMA) {
+                onSelectSpace?.invoke(BuiltInSpaces.Cinema)
+            } else if (isCinema) {
+                onSelectSpace?.invoke(when (kind) {
+                    HomeMediaKind.BOOKS -> BuiltInSpaces.Novel
+                    HomeMediaKind.ANIME -> BuiltInSpaces.Anime
+                    else -> BuiltInSpaces.Manga
+                })
+            } else {
+                viewModel.setSelectedTab(kind.toContentTab())
+            }
+        },
         onSearch = { mainNavigator.openTopLevel(SearchHomeNavKey) },
         onSettings = appRouter::openSettings,
         onHistory = { openShelf(HistoryNavKey) },
         onLibrary = { openShelf(FavoritesNavKey) },
         onUpdates = { openShelf(UpdatedNavKey) },
         onRecommendations = { openShelf(SuggestionsNavKey) },
-        onManageSources = appRouter::openSourceRepositoryCatalog,
+        onManageSources = { appRouter.openSourceRepositoryCatalog(cinema = isCinema) },
         onImport = { showImport = true },
         onOpen = { navigateToDetailsWithContent(it, null) },
         onResume = { content ->
             val history = state.recentHistoryItems.firstOrNull { it.content.id == content.id }?.history
-            if (content.homeMediaKind() == HomeMediaKind.ANIME && history != null) {
+            if (content.homeMediaKind().isVideo && history != null) {
                 appRouter.openVideo(content, chapterId = history.chapterId, positionMs = history.page.toLong())
             } else {
                 appRouter.openReader(content, state = history?.let(::ReaderState))
             }
         },
+        selectedCinemaTab = cinemaTab.takeIf { isCinema },
+        onCinemaTabSelected = onCinemaTabSelected.takeIf { onSelectSpace != null || isCinema },
     )
-    if (showImport) ImportDialog(onDismissRequest = { showImport = false })
+    if (showImport && isRouteVisible) ImportDialog(onDismissRequest = { showImport = false })
 }

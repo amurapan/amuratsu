@@ -4,6 +4,8 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.EnterTransition
+import androidx.compose.animation.ExitTransition
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.slideInHorizontally
@@ -165,6 +167,7 @@ fun BoxScope.SpaceSidekick(
     visible: Boolean,
     position: SpaceSwitcherPosition = SpaceSwitcherPosition.TOP_RIGHT,
     modifier: Modifier = Modifier,
+    animateHandleVisibility: Boolean = true,
 ) {
     if (!state.switcherEnabled) return
     val isLeft = position == SpaceSwitcherPosition.TOP_LEFT ||
@@ -245,8 +248,16 @@ fun BoxScope.SpaceSidekick(
                     },
                 )
                 .then(if (isCentered) Modifier else Modifier.statusBarsPadding().padding(top = 72.dp)),
-            enter = fadeIn() + slideInHorizontally(initialOffsetX = { if (isLeft) -it else it }),
-            exit = fadeOut() + slideOutHorizontally(targetOffsetX = { if (isLeft) -it else it }),
+            enter = if (animateHandleVisibility) {
+                fadeIn() + slideInHorizontally(initialOffsetX = { if (isLeft) -it else it })
+            } else {
+                EnterTransition.None
+            },
+            exit = if (animateHandleVisibility) {
+                fadeOut() + slideOutHorizontally(targetOffsetX = { if (isLeft) -it else it })
+            } else {
+                ExitTransition.None
+            },
         ) {
             SpaceSidekickHandle(
                 state = state,
@@ -1006,6 +1017,7 @@ internal fun SpaceContext.customMonogram(): String? {
 private fun SpaceId.presentation(): SpacePresentation = when (this) {
     BuiltInSpaces.Novel -> SpacePresentation(R.string.space_novel, R.drawable.ic_content_novel, R.drawable.ic_read)
     BuiltInSpaces.Anime -> SpacePresentation(R.string.space_anime, R.drawable.ic_content_video, R.drawable.ic_play)
+    BuiltInSpaces.Cinema -> SpacePresentation(R.string.space_cinema, R.drawable.ic_movie_compact, R.drawable.ic_play)
     BuiltInSpaces.Manga -> SpacePresentation(R.string.space_manga, R.drawable.ic_content_manga, R.drawable.ic_read)
     else -> SpacePresentation(R.string.all, R.drawable.ic_filter_content_type, R.drawable.ic_read)
 }
@@ -1015,6 +1027,8 @@ private fun SpaceContext.presentation(): SpacePresentation = when (kind) {
         SpacePresentation(R.string.space_novel, R.drawable.ic_content_novel, R.drawable.ic_read)
     org.skepsun.kototoro.space.domain.SpaceKind.ANIME ->
         SpacePresentation(R.string.space_anime, R.drawable.ic_content_video, R.drawable.ic_play)
+    org.skepsun.kototoro.space.domain.SpaceKind.CINEMA ->
+        SpacePresentation(R.string.space_cinema, R.drawable.ic_movie_compact, R.drawable.ic_play)
     org.skepsun.kototoro.space.domain.SpaceKind.MANGA ->
         SpacePresentation(R.string.space_manga, R.drawable.ic_content_manga, R.drawable.ic_read)
     org.skepsun.kototoro.space.domain.SpaceKind.ALL ->

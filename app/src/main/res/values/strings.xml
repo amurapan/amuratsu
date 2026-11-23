@@ -81,12 +81,14 @@
     <string name="search">Search</string>
     <string name="discover">Discover</string>
     <string name="search_content">Search content</string>
-    <string name="search_all_media">Search manga, books and anime</string>
+    <string name="search_all_media">Search all formats</string>
     <string name="media_books">Books</string>
     <string name="media_anime_video">Anime &amp; video</string>
     <string name="media_library">Library</string>
     <string name="media_search_hint">Find something to read or watch</string>
     <string name="media_search_description">Search your library and enabled sources across all media. Choose a format only when you want to narrow the results.</string>
+    <string name="search_no_enabled_sources">Enable a source to search beyond your library.</string>
+    <string name="search_no_sources_for_format">There are no enabled sources for this format.</string>
     <string name="manga_downloading_">Downloading…</string>
     <string name="translating_">Translating…</string>
     <string name="super_resolution_processing_">Upscaling…</string>
@@ -2821,7 +2823,7 @@
     <string name="refresh_repositories">Refresh repositories</string>
     <string name="refresh_action">Refresh</string>
     <string name="no_extension_repositories">No repositories configured</string>
-    <string name="no_extension_repositories_text">Add a compatible Mihon or Aniyomi repository to load available extensions.</string>
+    <string name="no_extension_repositories_text">Add a compatible repository to see available extensions.</string>
     <string name="no_available_extensions">No available extensions</string>
     <string name="no_available_extensions_text">Pull to refresh after your repositories finish syncing.</string>
     <string name="no_available_extensions_no_repo_text">No repository is configured yet. Add one from the menu first.</string>
@@ -4227,6 +4229,9 @@
     <string name="extension_settings">Extension settings</string>
     <string name="cloudstream_plugin_reloaded">%1$s was reloaded to apply its settings</string>
     <string name="details_episodes">Episodes</string>
+    <string name="details_watch">Watch</string>
+    <string name="details_season_number">Season %d</string>
+    <string name="details_unknown_season">Unknown season</string>
     <string name="details_all_episodes">All %1$d</string>
     <string name="details_start_playing">Start playing</string>
     <string name="details_play_from_first">Play from Episode 1</string>
@@ -4301,6 +4306,14 @@
     <string name="suggestion_reason_default">Close to your reading taste</string>
     <string name="media_home_title">Your stories</string>
     <string name="media_home_anime">Anime</string>
+    <string name="space_cinema">Cinema</string>
+    <string name="cinema_movies">Movies</string>
+    <string name="cinema_series">TV series</string>
+    <string name="cinema_movie">Movie</string>
+    <string name="cinema_series_title">TV series</string>
+    <string name="cinema_empty">Connect a video source and search for a movie or series.</string>
+    <string name="cinema_search_movies">Search movies</string>
+    <string name="cinema_search_series">Search TV series</string>
     <string name="media_home_add">Add to your collection</string>
     <string name="media_home_import">Import a file</string>
     <string name="media_home_empty_title">Your stories start here</string>
@@ -4314,6 +4327,11 @@
     <string name="media_home_browse_sources">Browse sources</string>
     <string name="media_home_video_position">At %1$d:%2$02d</string>
     <string name="about_report_issue">Report an issue</string>
+    <string name="about_author_support">Support the developer</string>
+    <string name="about_author_support_summary">Make a one-time contribution to Amuratsu.</string>
+    <!-- Set these to the developer's public profile URLs. Empty URLs hide the buttons. -->
+    <string name="url_author_support_kofi" translatable="false" />
+    <string name="url_author_support_buy_me_a_coffee" translatable="false" />
     <string name="about_upstream_kototoro">Built on Kototoro</string>
     <string name="about_upstream_kotatsu">Original project: Kotatsu</string>
     <string name="media_home_chapters">New chapters</string>

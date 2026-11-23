@@ -3,8 +3,12 @@ package org.skepsun.kototoro.desktop.app
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.saveable.rememberSaveableStateHolder
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
 import org.skepsun.kototoro.core.library.filter
@@ -13,6 +17,7 @@ import org.skepsun.kototoro.core.ui.home.HomeMediaKind
 import org.skepsun.kototoro.core.ui.home.MediaHomeItem
 import org.skepsun.kototoro.core.ui.home.MediaHomeScreen
 import org.skepsun.kototoro.core.ui.text.LocalUiStrings
+import org.skepsun.kototoro.core.video.CinemaKind
 import org.skepsun.kototoro.explore.ui.model.BrowseGroupTab
 
 /** The same personal home as Android. Runtime, source browsing and readers stay with the desktop host. */
@@ -43,9 +48,13 @@ internal fun DesktopHomePanel(controller: DesktopController, state: DesktopAppSt
         (history.map { it.content } + updates.map { it.first } + recommendations).associateBy { it.id }
     }
     val stateHolder = rememberSaveableStateHolder()
+    var cinemaSelected by rememberSaveable { mutableStateOf(false) }
+    var cinemaTab by rememberSaveable { mutableStateOf(CinemaKind.MOVIE) }
     fun model(content: SourceContent, progress: Float? = null, count: Int = 0): MediaHomeItem {
         val type = DesktopSourceFilter.contentTypeOf(content.source.contentType)
+        val cinema = CinemaKind.fromSourceData(content.source.name, content.sourceData)
         val kind = when {
+            cinema != null -> HomeMediaKind.CINEMA
             BrowseGroupTab.Video.matchesContentType(type) -> HomeMediaKind.ANIME
             BrowseGroupTab.Novel.matchesContentType(type) -> HomeMediaKind.BOOKS
             else -> HomeMediaKind.MANGA
@@ -59,17 +68,18 @@ internal fun DesktopHomePanel(controller: DesktopController, state: DesktopAppSt
             subtitle = if (kind == HomeMediaKind.BOOKS) content.authors.firstOrNull().orEmpty() else "",
             supportingText = validProgress?.let { strings.format("home_resume_progress", (it * 100).toInt()) }.orEmpty(),
             updateText = if (count > 0) strings.format(
-                if (kind == HomeMediaKind.ANIME) "media_home_new_episodes" else "media_home_new_chapters", count,
+                if (kind.isVideo) "media_home_new_episodes" else "media_home_new_chapters", count,
             ) else "",
+            cinemaKind = cinema,
         )
     }
     val selectedKind = when (filter.tab) {
         BrowseGroupTab.Content -> HomeMediaKind.MANGA
         BrowseGroupTab.Novel -> HomeMediaKind.BOOKS
-        BrowseGroupTab.Video -> HomeMediaKind.ANIME
+        BrowseGroupTab.Video -> if (cinemaSelected) HomeMediaKind.CINEMA else HomeMediaKind.ANIME
         else -> HomeMediaKind.ALL
     }
-    stateHolder.SaveableStateProvider(selectedKind.name) {
+    stateHolder.SaveableStateProvider(if (selectedKind == HomeMediaKind.CINEMA) "cinema:${cinemaTab.name}" else selectedKind.name) {
         MediaHomeScreen(
             selectedKind = selectedKind,
             recent = history.map { model(it.content, it.progressPercent) },
@@ -77,13 +87,16 @@ internal fun DesktopHomePanel(controller: DesktopController, state: DesktopAppSt
             recommendations = recommendations.map { model(it) },
             initialized = !state.busy || contents.isNotEmpty(),
             onKindSelected = { kind ->
+                cinemaSelected = kind == HomeMediaKind.CINEMA
                 controller.homeFilter(filter.copy(tab = when (kind) {
                     HomeMediaKind.MANGA -> BrowseGroupTab.Content
                     HomeMediaKind.BOOKS -> BrowseGroupTab.Novel
-                    HomeMediaKind.ANIME -> BrowseGroupTab.Video
+                    HomeMediaKind.ANIME, HomeMediaKind.CINEMA -> BrowseGroupTab.Video
                     HomeMediaKind.ALL -> BrowseGroupTab.All
                 }))
             },
+            cinemaTab = cinemaTab,
+            onCinemaTabSelected = { cinemaTab = it },
             // Desktop currently searches within a chosen source. Name that capability accurately.
             searchLabel = strings.string("media_home_browse_sources"),
             onSearch = { controller.exitSource() },

@@ -19,6 +19,8 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.interaction.collectIsFocusedAsState
+import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.gestures.awaitEachGesture
 import androidx.compose.foundation.gestures.awaitFirstDown
 import androidx.compose.foundation.gestures.detectDragGestures
@@ -48,6 +50,7 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.unit.Density
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
@@ -134,8 +137,10 @@ fun KototoroBottomNav(
     railHeaderContent: (@Composable () -> Unit)? = null,
     railActionsContent: (@Composable () -> Unit)? = null,
     adjacentAction: (@Composable () -> Unit)? = null,
+    activeItemId: Int? = null,
 ) {
     val navState by state.collectAsStateWithLifecycle()
+    val selectedItemId = activeItemId ?: navState.selectedItemId
     val clickPulses = remember { mutableStateMapOf<Int, Int>() }
     val context = LocalContext.current
     val configuration = LocalConfiguration.current
@@ -193,9 +198,9 @@ fun KototoroBottomNav(
     val labelsAlwaysVisible = prefs.isNavLabelsAlwaysVisible
     val tabletUiMode by appSettings.observeAsState(AppSettings.KEY_TABLET_UI_MODE) { tabletUiMode }
 
-    val activeItems = navState.items
-        .filter { navState.itemVisibility[it.id] != false }
-        .limitMainNavigationItems()
+    val activeItems = remember(navState.items, navState.itemVisibility) {
+        navState.items.filter { navState.itemVisibility[it.id] != false }.limitMainNavigationItems()
+    }
     val showSelectedLabels = navState.showLabels
     val isTvPresentation = LocalUiPresentationConfig.current.isTv
     val useNavigationRail = remember(
@@ -246,7 +251,8 @@ fun KototoroBottomNav(
         if (isFloating && !useNavigationRail) (navFloatingHeight + 4).dp else navHeight.dp,
     )
     val nonFloatingContentHorizontalPadding = 6.dp
-    val nonFloatingTopPadding = 4.dp
+    val compactMaterialTab = !isIosStyle && currentExplicitHeight < 64.dp
+    val nonFloatingTopPadding = if (compactMaterialTab) 0.dp else 4.dp
 
     val navContainerStyle = if (isFloating) {
         GlassDefaults.bottomBarChromeStyle().copy(
@@ -270,7 +276,7 @@ fun KototoroBottomNav(
         }
         TabletVerticalBar(
             destinations = activeItems.map { TabletNavigationDestination(it.id, stringResource(it.title)) },
-            selectedId = navState.selectedItemId,
+            selectedId = selectedItemId,
             onSelect = { id ->
                 clickPulses[id] = (clickPulses[id] ?: 0) + 1
                 onItemSelected(id)
@@ -352,7 +358,7 @@ fun KototoroBottomNav(
                 ) {
                     FullWidthFloatingBottomNavRow(
                         items = activeItems,
-                        selectedItemId = navState.selectedItemId,
+                        selectedItemId = selectedItemId,
                         badges = navState.badges,
                         clickPulses = clickPulses,
                         showSelectedLabels = showSelectedLabels,
@@ -380,7 +386,7 @@ fun KototoroBottomNav(
                 ) {
                     FloatingBottomNavRow(
                         items = activeItems,
-                        selectedItemId = navState.selectedItemId,
+                        selectedItemId = selectedItemId,
                         badges = navState.badges,
                         clickPulses = clickPulses,
                         showSelectedLabels = layoutSpec.showLabels,
@@ -431,19 +437,31 @@ fun KototoroBottomNav(
                     windowInsets = WindowInsets(0),
                 ) {
                     activeItems.forEach { item ->
-                        val isSelected = navState.selectedItemId == item.id
+                        val isSelected = selectedItemId == item.id
                         val badge = navState.badges[item.id]
+                        val onClick = {
+                            if (isSelected) {
+                                onItemReselected(item.id)
+                            } else {
+                                if (isIosStyle) clickPulses[item.id] = (clickPulses[item.id] ?: 0) + 1
+                                onItemSelected(item.id)
+                            }
+                        }
+                        if (!isIosStyle) {
+                            MaterialBottomNavTab(
+                                item = item,
+                                selected = isSelected,
+                                showLabel = showSelectedLabels || isSelected,
+                                compact = compactMaterialTab,
+                                badge = badge,
+                                onClick = onClick,
+                            )
+                            return@forEach
+                        }
 
                         NavigationBarItem(
                             selected = isSelected,
-                            onClick = {
-                                if (isSelected) {
-                                    onItemReselected(item.id)
-                                } else {
-                                    clickPulses[item.id] = (clickPulses[item.id] ?: 0) + 1
-                                    onItemSelected(item.id)
-                                }
-                            },
+                            onClick = onClick,
                             icon = {
                                 PremiumNavigationIcon(
                                     itemId = item.id,
@@ -454,16 +472,17 @@ fun KototoroBottomNav(
                                     selectedTint = sampleAccent,
                                 )
                             },
-                            label = { Text(stringResource(item.title)) },
-                            alwaysShowLabel = showSelectedLabels,
+                            label = {
+                                Text(
+                                    text = if (showSelectedLabels || isSelected) stringResource(item.title) else "",
+                                    style = MaterialTheme.typography.labelSmall,
+                                    maxLines = 1,
+                                    overflow = TextOverflow.Ellipsis,
+                                )
+                            },
                             colors = NavigationBarItemDefaults.colors(
-                                indicatorColor = if (isIosStyle) Color.Transparent
-                                    else MaterialTheme.colorScheme.secondaryContainer,
-                                selectedIconColor = sampleAccent ?: if (isIosStyle) {
-                                    MaterialTheme.colorScheme.primary
-                                } else {
-                                    MaterialTheme.colorScheme.onSecondaryContainer
-                                },
+                                indicatorColor = Color.Transparent,
+                                selectedIconColor = sampleAccent ?: MaterialTheme.colorScheme.primary,
                                 selectedTextColor = MaterialTheme.colorScheme.onSurface,
                                 unselectedIconColor = MaterialTheme.colorScheme.onSurfaceVariant,
                                 unselectedTextColor = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -473,6 +492,63 @@ fun KototoroBottomNav(
                 }
             }
             adjacentAction?.invoke()
+        }
+    }
+}
+
+@Composable
+private fun RowScope.MaterialBottomNavTab(
+    item: NavItem,
+    selected: Boolean,
+    showLabel: Boolean,
+    compact: Boolean,
+    badge: BadgeInfo?,
+    onClick: () -> Unit,
+) {
+    val interaction = remember(item.id) { MutableInteractionSource() }
+    val focused by interaction.collectIsFocusedAsState()
+    val colors = MaterialTheme.colorScheme
+    val label = stringResource(item.title)
+    val indicatorShape = RoundedCornerShape(percent = 50)
+    val indicatorColor = if (selected) colors.secondaryContainer else Color.Transparent
+    Column(
+        modifier = Modifier.weight(1f).fillMaxHeight().selectable(
+            selected = selected,
+            onClick = onClick,
+            role = Role.Tab,
+            interactionSource = interaction,
+            indication = null,
+        ),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center,
+    ) {
+        Box(
+            modifier = Modifier.size(64.dp, if (compact) 24.dp else 32.dp)
+                .background(indicatorColor, indicatorShape)
+                .then(if (focused) Modifier.border(2.dp, colors.primary, indicatorShape) else Modifier),
+            contentAlignment = Alignment.Center,
+        ) {
+            CompositionLocalProvider(
+                LocalContentColor provides if (selected) colors.onSecondaryContainer else colors.onSurfaceVariant,
+            ) {
+                PremiumNavigationIcon(
+                    itemId = item.id,
+                    isSelected = selected,
+                    clickPulse = 0,
+                    badge = badge,
+                    contentDescription = label.takeUnless { showLabel },
+                )
+            }
+        }
+        if (!compact) Spacer(Modifier.height(4.dp))
+        NavigationLabelFontScale {
+            Text(
+                text = label.takeIf { showLabel }.orEmpty(),
+                color = if (selected) colors.onSurface else colors.onSurfaceVariant,
+                style = MaterialTheme.typography.labelSmall,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
+            )
         }
     }
 }
@@ -886,9 +962,6 @@ private fun FloatingBottomNavRow(
         items.forEach { item ->
             val isSelected = displayedSelectedItemId == item.id
             val interactionSource = remember(item.id) { MutableInteractionSource() }
-            val iconOffsetY by androidx.compose.animation.core.animateDpAsState(
-                targetValue = if (isSelected && !useExpressivePill) (-3).dp else 0.dp,
-            )
             val contentColor = if (isSelected) {
                 selectedContentColor
             } else {
@@ -1082,22 +1155,20 @@ private fun FloatingBottomNavRow(
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.Center,
                 ) {
-                    Box(modifier = Modifier.offset(y = iconOffsetY)) {
-                        PremiumNavigationIcon(
-                            itemId = item.id,
-                            isSelected = isSelected,
-                            clickPulse = clickPulses[item.id] ?: 0,
-                            badge = badges[item.id],
-                            contentDescription = stringResource(item.title),
-                        )
-                    }
-                    if ((isSelected || labelsAlwaysVisible) && showSelectedLabels) {
-                        Spacer(modifier = Modifier.height(0.dp))
+                    PremiumNavigationIcon(
+                        itemId = item.id,
+                        isSelected = isSelected,
+                        clickPulse = clickPulses[item.id] ?: 0,
+                        badge = badges[item.id],
+                        contentDescription = stringResource(item.title),
+                    )
+                    if (showSelectedLabels) {
                         NavigationLabelFontScale {
                             Text(
-                                text = stringResource(item.title),
+                                text = if (isSelected || labelsAlwaysVisible) stringResource(item.title) else "",
                                 style = MaterialTheme.typography.labelSmall,
                                 maxLines = 1,
+                                overflow = TextOverflow.Ellipsis,
                             )
                         }
                     }
@@ -1449,12 +1520,12 @@ private fun FullWidthFloatingBottomNavRow(
                             // The sample always keeps every tab label visible; expose
                             // that via the "always show labels" toggle (fall back to
                             // the selected-only label when it is off).
-                            if (showSelectedLabels && (isSelected || labelsAlwaysVisible)) {
+                            if (showSelectedLabels) {
                                 Text(
-                                    text = stringResource(item.title),
+                                    text = if (isSelected || labelsAlwaysVisible) stringResource(item.title) else "",
                                     style = MaterialTheme.typography.labelMedium,
                                     maxLines = 1,
-                                    softWrap = false,
+                                    overflow = TextOverflow.Ellipsis,
                                 )
                             }
                         }
@@ -1480,7 +1551,7 @@ private fun PremiumNavigationIcon(
     isSelected: Boolean,
     clickPulse: Int,
     badge: BadgeInfo?,
-    contentDescription: String,
+    contentDescription: String?,
     selectedTint: Color? = null,
 ) {
     BadgedBox(
@@ -1527,13 +1598,15 @@ private fun AnimatedNavigationIcon(
     itemId: Int,
     isSelected: Boolean,
     clickPulse: Int,
-    contentDescription: String,
+    contentDescription: String?,
     selectedTint: Color? = null,
 ) {
     val isIosStyle = LocalInterfaceStyle.current == InterfaceStyle.IOS
     val animatedResId = remember(itemId) { navEnterAnimationResId(itemId) }
     val staticResId = remember(itemId, isSelected) { premiumIconResId(itemId, isSelected) }
-    val enterAnimationResId = if (isSelected && clickPulse > 0) animatedResId else null
+    // The Material navigation indicator already animates selection. Avoid creating an Android
+    // view and a drawable on the same frame that composes the destination.
+    val enterAnimationResId = if (isIosStyle && isSelected && clickPulse > 0) animatedResId else null
     val tint = lerp(
         MaterialTheme.colorScheme.onSurfaceVariant,
         selectedTint ?: if (isIosStyle) {
@@ -1551,15 +1624,13 @@ private fun AnimatedNavigationIcon(
                 factory = { context ->
                     android.widget.ImageView(context).apply {
                         scaleType = android.widget.ImageView.ScaleType.CENTER
-                        setColorFilter(tint.toArgb())
-                        this.contentDescription = contentDescription
+                        setImageDrawable(ContextCompat.getDrawable(context, enterAnimationResId)?.mutate())
+                        (drawable as? android.graphics.drawable.Animatable)?.start()
                     }
                 },
                 update = { view ->
                     view.contentDescription = contentDescription
                     view.setColorFilter(tint.toArgb())
-                    view.setImageDrawable(ContextCompat.getDrawable(view.context, enterAnimationResId)?.mutate())
-                    (view.drawable as? android.graphics.drawable.Animatable)?.start()
                 },
             )
         }

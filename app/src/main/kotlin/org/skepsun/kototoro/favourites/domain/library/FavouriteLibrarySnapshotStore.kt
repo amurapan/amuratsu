@@ -1,5 +1,7 @@
 package org.skepsun.kototoro.favourites.domain.library
 
+import org.skepsun.kototoro.core.video.CinemaKind
+
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
@@ -162,6 +164,7 @@ class FavouriteLibrarySnapshotStore @Inject constructor(
                 isPinned = base.representativePinned,
                 createdAt = base.representativeCreatedAt,
                 updatedAt = base.representativeUpdatedAt,
+                cinemaKind = CinemaKind.fromSourceData(base.displaySource.orEmpty(), base.displaySourceData),
             )
         }
 

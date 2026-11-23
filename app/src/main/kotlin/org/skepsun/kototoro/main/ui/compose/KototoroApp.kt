@@ -740,7 +740,7 @@ fun KototoroApp(
         when (spaceUiState.spaces.firstOrNull { it.id == spaceUiState.activeSpaceId }?.kind) {
             SpaceKind.MANGA -> ContentType.MANGA
             SpaceKind.NOVEL -> ContentType.NOVEL
-            SpaceKind.ANIME -> ContentType.VIDEO
+            SpaceKind.ANIME, SpaceKind.CINEMA -> ContentType.VIDEO
             SpaceKind.ALL, null -> effectiveResumeContent?.source?.getContentType()
         }
     } else {
@@ -895,6 +895,9 @@ fun KototoroApp(
     val shouldUseMaterialTopBarScroll = shouldShowChrome && !hasSelectionTopChrome && chromeTopLevelKey != HomeNavKey
     val isChromeOffsetFromCurrentDestination =
         offsetDestinationRoute == currentDestinationRoute && offsetDestinationOwnerKey == currentTopBarOwnerKey
+    val hasScrolledMainContent = remember(chromeScrollState) {
+        derivedStateOf { chromeScrollState.totalContentScrollOffset.floatValue < 0f }
+    }
     val shouldRevealChromeForFocus = presentationConfig.isTv && isChromeFocused
     val effectiveTopBarOffset = if (isChromeOffsetFromCurrentDestination && shouldUseMaterialTopBarScroll) {
         if (shouldRevealChromeForFocus) 0f else topAppBarState.heightOffset
@@ -989,14 +992,32 @@ fun KototoroApp(
         }
     }
 
-    val contentPadding = remember(contentTopInsetPx, contentBottomInsetPx, density) {
-        with(density) {
-            androidx.compose.foundation.layout.PaddingValues(
-                top = contentTopInsetPx.toDp(),
-                bottom = contentBottomInsetPx.toDp()
-            )
-        }
+    val restBottomInsetPx = if (isLandscapeNavigation) navigationBarHeightPx else {
+        maxOf(bottomNavHeightPx + extraPinnedBottomInsetPx, navigationBarHeightPx)
     }
+    val pagePadding = rememberMainPagePadding(
+        with(density) {
+            MainPageInsets(
+                homeTop = statusBarHeightPx.toDp(),
+                top = reservedTopBarHeightPx.toDp(),
+                bottom = restBottomInsetPx.toDp(),
+                scrolledPage = currentTopLevelKey.takeIf {
+                    effectiveTopBarOffset != 0f || effectiveBottomNavOffset != 0f
+                },
+                scrolledTop = if (effectiveTopBarOffset == 0f && effectiveBottomNavOffset == 0f) {
+                    0.dp
+                } else {
+                    contentTopInsetPx.toDp()
+                },
+                scrolledBottom = if (effectiveBottomNavOffset == 0f) {
+                    restBottomInsetPx.toDp()
+                } else {
+                    contentBottomInsetPx.toDp()
+                },
+            )
+        },
+    )
+    val chromeOffsetsCurrentRoute = rememberUpdatedState(isChromeOffsetFromCurrentDestination)
 
 
     val mainSpaceSwitcherFabBounds by KototoroAppChromeEffects(
@@ -1361,6 +1382,7 @@ fun KototoroApp(
                         heroTransitionInProgress = heroTransitionInProgress,
                         isDetailsChromeTransitionPending = isDetailsChromeTransitionPending,
                         effectiveBottomNavOffset = effectiveBottomNavOffset,
+                        bottomNavHeightPx = bottomNavHeightPx,
                         onLandscapeRailInteractingChange = { isLandscapeRailInteracting = it },
                         onBottomNavHeightMeasured = { newHeight ->
                             if (bottomNavHeightPx != newHeight) {
@@ -1369,6 +1391,7 @@ fun KototoroApp(
                             }
                         },
                         navStateFlow = navStateFlow,
+                        activeItemId = currentTopLevelKey?.let(::bottomNavItemIdForTopLevelKey),
                         onItemSelected = bottomNavDispatcher,
                         onItemReselected = bottomNavReselectionDispatcher,
                         isResumeEnabled = effectiveResumeEnabled && !isHomeRoute,
@@ -1398,7 +1421,7 @@ fun KototoroApp(
                         } else {
                             null
                         },
-                        adjacentAction = if (
+                        resumeContent = if (
                             (!isLandscapeNavigation || isTabletVerticalBar) && effectiveResumeEnabled && !isHomeRoute
                         ) {
                             {
@@ -1418,6 +1441,7 @@ fun KototoroApp(
                     )
                 }
             }
+            val currentShellChrome = rememberUpdatedState(mainShellChrome)
             DynamicArtworkBackdrop(
                 content = backgroundArtwork.content,
                 imageUri = backgroundArtwork.imageUri,
@@ -1474,9 +1498,11 @@ fun KototoroApp(
                             val renderedNavigationState = spaceNavigationStates[renderedSpaceId]
                             spaceSaveableStateHolder.SaveableStateProvider(renderedSpaceId.value) {
                                 CompositionLocalProvider(
-                                    LocalBrowseSpaceId provides renderedSpaceId.takeIf {
-                                        spaceUiState.switcherEnabled
-                                    },
+                                    LocalBrowseSpaceId provides (if (spaceUiState.persistentNavigationEnabled) {
+                                        renderedSpaceId
+                                    } else {
+                                        spaceUiState.activeSpaceId
+                                    }).takeIf { spaceUiState.switcherEnabled },
                                     LocalScrollToTopEvents provides scrollToTopEventsBySpace.getOrPut(renderedSpaceId) {
                                         MutableSharedFlow(extraBufferCapacity = 1)
                                     },
@@ -1487,10 +1513,17 @@ fun KototoroApp(
                                         detailsTransitionStyle = detailsTransitionStyle,
                                         isLandscapeNavigation = isLandscapeNavigation,
                                         navigationInsetEdge = navigationInsetEdge,
-                                        contentPadding = contentPadding,
-                                        bottomBarOffsetPx = effectiveBottomNavOffset,
+                                        pagePadding = pagePadding,
+                                        isTopChromeOverlappingContent = {
+                                            chromeOffsetsCurrentRoute.value && hasScrolledMainContent.value
+                                        },
                                         bottomBarHeightPx = bottomNavHeightPx,
                                         pageSaveHelper = pageSaveHelper,
+                                        onSelectSpace = if (spaceUiState.switcherEnabled) {
+                                            { id -> onSpaceAction(SpaceAction.SelectSpace(id)) }
+                                        } else {
+                                            null
+                                        },
                                         onDetailsTransitionRequested = {
                                             chromeState.setDetailsChromeTransitionPending(true)
                                             chromeState.setHeroTransitionPhase(HeroTransitionPhase.EnteringDetails)
@@ -1572,7 +1605,7 @@ fun KototoroApp(
                                         },
                                         mainShellChrome = {
                                             if (renderedSpaceId == navigationSpaceId) {
-                                                mainShellChrome()
+                                                MainShellChromeLayer(currentShellChrome)
                                             }
                                         },
                                         modifier = Modifier.fillMaxSize(),
@@ -1614,6 +1647,7 @@ fun KototoroApp(
                             detailsBottomPanelRoute != currentDestinationRoute ||
                             detailsBottomPanelExpansion <= 0.01f),
                     modifier = Modifier.matchParentSize(),
+                    animateHandleVisibility = false,
                 )
                 RootGlassMenuOverlay(
                     host = rootGlassMenuHost,

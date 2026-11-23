@@ -12,6 +12,7 @@ class UnifiedRecommendedRepositoriesTest {
         assertEquals("Keiyoushi", UnifiedRecommendedRepositories.byKind(UnifiedSourceKind.MIHON).single().name)
         assertEquals("LNReader Plugins", UnifiedRecommendedRepositories.byKind(UnifiedSourceKind.LNREADER).single().name)
         assertEquals("Yūzōnō", UnifiedRecommendedRepositories.byKind(UnifiedSourceKind.ANIYOMI).single().name)
+        assertEquals("Phisher Repo", UnifiedRecommendedRepositories.byKind(UnifiedSourceKind.CLOUDSTREAM).single().name)
     }
 
     @Test

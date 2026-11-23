@@ -35,6 +35,13 @@ object UnifiedRecommendedRepositories {
             locationType = UnifiedRepositoryLocationType.REMOTE_URL,
             capabilities = setOf(UnifiedRepositoryCapability.REFRESH, UnifiedRepositoryCapability.INSTALL_PACKAGE),
         ),
+        UnifiedRecommendedRepository(
+            kind = UnifiedSourceKind.CLOUDSTREAM,
+            name = "Phisher Repo",
+            url = "https://raw.githubusercontent.com/phisher98/cloudstream-extensions-phisher/builds/repo.json",
+            locationType = UnifiedRepositoryLocationType.REMOTE_URL,
+            capabilities = setOf(UnifiedRepositoryCapability.REFRESH, UnifiedRepositoryCapability.INSTALL_PACKAGE),
+        ),
     )
 
     fun byKind(kind: UnifiedSourceKind): List<UnifiedRecommendedRepository> {

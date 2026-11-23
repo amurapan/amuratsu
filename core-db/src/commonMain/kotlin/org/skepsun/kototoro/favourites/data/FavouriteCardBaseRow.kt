@@ -21,6 +21,7 @@ data class FavouriteCardBaseRow(
     @ColumnInfo(name = "display_cover_url") val displayCoverUrl: String?,
     @ColumnInfo(name = "display_author") val displayAuthor: String?,
     @ColumnInfo(name = "display_source") val displaySource: String?,
+    @ColumnInfo(name = "display_source_data") val displaySourceData: String?,
     @ColumnInfo(name = "display_content_type") val displayContentType: String?,
     @ColumnInfo(name = "display_state") val displayState: String?,
     @ColumnInfo(name = "display_nsfw") val displayNsfw: Boolean?,

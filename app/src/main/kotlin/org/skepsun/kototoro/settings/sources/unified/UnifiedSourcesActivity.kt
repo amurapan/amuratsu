@@ -66,6 +66,11 @@ class UnifiedSourcesActivity : BaseComposeActivity() {
         // T5.2: apply the deep link (parsed from the intent Uri and/or extras; restored from
         // saved state on process recreation so the target tab / filter survives a kill).
         viewModel.applyDeepLink(deepLink)
+        if (savedInstanceState == null) {
+            intent.getStringExtra(EXTRA_INITIAL_KIND_FILTER)
+                ?.let { name -> UnifiedSourceKind.entries.firstOrNull { it.name == name } }
+                ?.let(viewModel::setKindFilter)
+        }
         setComposeContent {
             UnifiedSourcesContent(
                 initialAddRepositoryKind = initialKind,
@@ -285,6 +290,7 @@ class UnifiedSourcesActivity : BaseComposeActivity() {
         const val EXTRA_PACKAGE_FILTER = UnifiedSourcesDeepLinkParser.EXTRA_PACKAGE_FILTER
         const val EXTRA_SOURCE_KEY = UnifiedSourcesDeepLinkParser.EXTRA_SOURCE_KEY
         private const val EXTRA_QUICK_SETUP = "quick_source_setup"
+        private const val EXTRA_INITIAL_KIND_FILTER = "initial_source_kind_filter"
         private const val HOST_ADD_REPO = "add-repo"
 
         fun newIntent(
@@ -311,9 +317,11 @@ class UnifiedSourcesActivity : BaseComposeActivity() {
             context: Context,
             link: UnifiedSourcesDeepLink,
             quickSetup: Boolean = false,
+            initialKindFilter: UnifiedSourceKind? = null,
         ): Intent {
             return Intent(context, UnifiedSourcesActivity::class.java).apply {
                 if (quickSetup) putExtra(EXTRA_QUICK_SETUP, true)
+                initialKindFilter?.let { putExtra(EXTRA_INITIAL_KIND_FILTER, it.name) }
                 link.initialTab?.let { putExtra(EXTRA_INITIAL_TAB, it) }
                 link.packageFilter?.let { putExtra(EXTRA_PACKAGE_FILTER, it) }
                 link.sourceKey?.let { putExtra(EXTRA_SOURCE_KEY, it) }

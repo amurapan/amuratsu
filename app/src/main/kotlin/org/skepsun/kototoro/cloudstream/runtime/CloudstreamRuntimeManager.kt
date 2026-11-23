@@ -66,6 +66,8 @@ class CloudstreamRuntimeManager @Inject constructor(
     private val loadedPlugins = ConcurrentHashMap<String, LoadedCloudstreamPlugin>()
     private val _sources = MutableStateFlow<List<CloudstreamSource>>(emptyList())
     val sources: StateFlow<List<CloudstreamSource>> = _sources.asStateFlow()
+    private val _initialLoadCompleted = MutableStateFlow(false)
+    internal val initialLoadCompleted = _initialLoadCompleted.asStateFlow()
     private val diagnosticsFile by lazy(LazyThreadSafetyMode.NONE) {
         File(File(context.filesDir, "cloudstream"), "runtime-diagnostics.txt")
     }
@@ -99,6 +101,14 @@ class CloudstreamRuntimeManager @Inject constructor(
 
     @Synchronized
     fun initialize() {
+        try {
+            loadInstalledPlugins()
+        } finally {
+            _initialLoadCompleted.value = true
+        }
+    }
+
+    private fun loadInstalledPlugins() {
         writeDiagnostic("initialize:start")
         configureCloudstreamEnvironment()
         val pluginsDir = File(File(context.filesDir, "cloudstream"), "plugins").apply { mkdirs() }

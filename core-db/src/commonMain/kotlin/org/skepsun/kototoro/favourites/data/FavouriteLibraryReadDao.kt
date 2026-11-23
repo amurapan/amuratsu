@@ -44,6 +44,7 @@ abstract class FavouriteLibraryReadDao {
             dm.cover_url AS display_cover_url,
             dm.author AS display_author,
             dm.source AS display_source,
+            dm.source_data AS display_source_data,
             dm.content_type AS display_content_type,
             dm.state AS display_state,
             dm.nsfw AS display_nsfw,

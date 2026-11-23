@@ -4,6 +4,9 @@ import android.content.Context
 import org.skepsun.kototoro.R
 import org.skepsun.kototoro.bookmarks.domain.Bookmark
 import org.skepsun.kototoro.core.ui.chapters.ChapterSection
+import org.skepsun.kototoro.core.ui.chapters.localizedTitle
+import org.skepsun.kototoro.core.ui.text.AndroidUiStrings
+import org.skepsun.kototoro.core.model.getContentType
 import org.skepsun.kototoro.history.domain.ChapterOrder
 import org.skepsun.kototoro.history.domain.chapterIsAfter
 import org.skepsun.kototoro.history.domain.chapterReadThrough
@@ -17,6 +20,7 @@ import org.skepsun.kototoro.list.ui.model.ListModel
 import org.skepsun.kototoro.local.epub.ChapterMetadata
 import org.skepsun.kototoro.local.epub.ChapterType
 import org.skepsun.kototoro.parsers.model.ContentChapter
+import org.skepsun.kototoro.parsers.model.ContentType
 import org.skepsun.kototoro.parsers.util.mapToSet
 import org.skepsun.kototoro.core.model.isLocal
 import org.skepsun.kototoro.reader.ui.FULLY_READ_CHAPTER_ID
@@ -171,17 +175,14 @@ fun List<ChapterListItem>.withVolumeHeaders(context: Context): MutableList<ListM
         return withEpubVolumeGroups(context)
     } else {
         // 普通章节：共享的 volume 分组逻辑（与 Windows 端一致）
+        val strings = AndroidUiStrings(context)
+        val type = firstOrNull()?.chapter?.source?.getContentType()
+        val isVideo = type == ContentType.VIDEO || type == ContentType.HENTAI_VIDEO
         return withVolumeSections(this, { it.chapter.volume }, { it.chapter.scanlator }).mapTo(
             ArrayList<ListModel>((size * 1.4).toInt()),
         ) { section ->
             when (section) {
-                is ChapterSection.Header -> ListHeader(
-                    section.customName ?: if (section.volume <= 0) {
-                        context.getString(R.string.volume_unknown)
-                    } else {
-                        context.getString(R.string.volume_, section.volume)
-                    },
-                )
+                is ChapterSection.Header -> ListHeader(section.localizedTitle(strings, isVideo))
                 is ChapterSection.Item -> section.chapter
             }
         }

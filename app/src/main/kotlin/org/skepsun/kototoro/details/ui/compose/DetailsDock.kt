@@ -151,8 +151,8 @@ internal fun DetailsPaneActionsRow(
     val isChapterSearchVisible = detailsPaneState.isChapterSearchVisible
     val chapterSelectionState = detailsPaneState.chapterSelectionState
     val paneOpacityProgress = easedOpacityProgress(sheetExpansionProgress)
-    val showPagesTab = contentType != ContentType.VIDEO &&
-        contentType != ContentType.HENTAI_VIDEO &&
+    val isVideo = contentType == ContentType.VIDEO || contentType == ContentType.HENTAI_VIDEO
+    val showPagesTab = !isVideo &&
         contentType != ContentType.NOVEL &&
         contentType != ContentType.HENTAI_NOVEL
     val showBookmarksTab = true
@@ -436,7 +436,7 @@ internal fun DetailsPaneActionsRow(
                         ) {
                             DetailsDockActionButton(
                                 iconRes = R.drawable.ic_list,
-                                contentDescription = stringResource(R.string.chapters),
+                                contentDescription = stringResource(if (isVideo) R.string.details_episodes else R.string.chapters),
                                 isSelected = selectedTabId == DETAILS_TAB_CHAPTERS,
                                 modernStyle = isModernDockEnabled,
                                 spacingAfter = if (isModernDockEnabled && showAllDockTabs && (showPagesTab || showBookmarksTab)) {

@@ -130,9 +130,13 @@ fun ChaptersPagesTabsContent(
     val isBookmarksTabEnabled = true
     val isDownloadedFilterVisible = mangaDetails?.local != null
 
-    val tabsList = remember(isPagesTabEnabled, isBookmarksTabEnabled, isNovel) {
+    val tabsList = remember(isPagesTabEnabled, isBookmarksTabEnabled, isNovel, isVideo) {
         buildList {
-            add(DetailsTabSpec(tabId = DETAILS_TAB_CHAPTERS, titleResId = R.string.chapters, iconResId = R.drawable.ic_list))
+            add(DetailsTabSpec(
+                tabId = DETAILS_TAB_CHAPTERS,
+                titleResId = if (isVideo) R.string.details_episodes else R.string.chapters,
+                iconResId = R.drawable.ic_list,
+            ))
             if (isPagesTabEnabled) {
                 add(DetailsTabSpec(tabId = DETAILS_TAB_PAGES, titleResId = R.string.pages, iconResId = R.drawable.ic_grid))
             }

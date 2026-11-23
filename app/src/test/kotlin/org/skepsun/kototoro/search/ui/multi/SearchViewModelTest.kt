@@ -102,6 +102,24 @@ class SearchViewModelTest {
     }
 
     @Test
+    fun `movie search filters remote titles from a mixed video source`() = runBlocking {
+        val videoSource = source("CLOUDSTREAM_test_mixed", ContentType.VIDEO)
+        val film = content().copy(source = videoSource, sourceData = """{"type":"Movie"}""")
+        val series = film.copy(id = 2, sourceData = """{"type":"TvSeries"}""")
+        val anime = film.copy(id = 3, sourceData = """{"type":"Anime"}""")
+        coEvery { sources.getEnabledSources() } returns listOf(videoSource)
+        every { factory.create(videoSource) } returns firstHelper
+        coEvery { firstHelper.invoke(any(), any(), any()) } returns result().copy(manga = listOf(film, series, anime))
+
+        val searched = model(contentKindNames = listOf(SearchContentKind.MOVIE.name)).awaitIdle()
+
+        assertEquals(1, searched.totalSources)
+        assertEquals(videoSource, searched.sections.single().source)
+        coVerify(exactly = 1) { mapper.toListModelList(listOf(film), any(), any()) }
+        coVerify(exactly = 0) { mapper.toListModelList(listOf(film, series, anime), any(), any()) }
+    }
+
+    @Test
     fun `retry searches only the failed source and preserves successful results`() = runBlocking {
         coEvery { firstHelper.invoke(any(), any(), any()) } throws IOException("failed")
         val model = model()
@@ -252,6 +270,7 @@ class SearchViewModelTest {
         query: String = "query",
         kind: SearchKind = SearchKind.SIMPLE,
         advancedTitle: String = "",
+        contentKindNames: List<String>? = null,
     ) = SearchViewModel(
         query = query,
         kind = kind,
@@ -261,7 +280,7 @@ class SearchViewModelTest {
         initialPinnedOnly = false,
         initialHideEmpty = false,
         sourceTypeNames = null,
-        contentKindNames = null,
+        contentKindNames = contentKindNames,
         initialLanguagePresetId = -1L,
         mangaListMapper = mapper,
         searchHelperFactory = factory,

@@ -15,9 +15,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import coil3.compose.AsyncImage
 import org.skepsun.kototoro.R
 import org.skepsun.kototoro.core.model.ContentHistory
+import org.skepsun.kototoro.core.model.cinemaKind
 import org.skepsun.kototoro.core.model.getContentType
 import org.skepsun.kototoro.core.model.looksLikeLocalNovelContent
 import org.skepsun.kototoro.core.model.looksLikeLocalVideoContent
@@ -25,6 +27,7 @@ import org.skepsun.kototoro.core.ui.compose.ScrollToTopEffect
 import org.skepsun.kototoro.core.ui.home.HomeMediaKind
 import org.skepsun.kototoro.core.ui.home.MediaHomeItem
 import org.skepsun.kototoro.core.ui.home.MediaHomeScreen
+import org.skepsun.kototoro.core.video.CinemaKind
 import org.skepsun.kototoro.home.ui.HomeContentTab
 import org.skepsun.kototoro.home.ui.HomeSummaryState
 import org.skepsun.kototoro.home.ui.toHomeTab
@@ -34,7 +37,7 @@ import org.skepsun.kototoro.parsers.model.Content
 fun HomeScreen(
     state: HomeSummaryState,
     contentPadding: PaddingValues,
-    onKindSelected: (HomeContentTab?) -> Unit,
+    onKindSelected: (HomeMediaKind) -> Unit,
     onSearch: () -> Unit,
     onSettings: () -> Unit,
     onHistory: () -> Unit,
@@ -45,6 +48,8 @@ fun HomeScreen(
     onImport: () -> Unit,
     onOpen: (Content) -> Unit,
     onResume: (Content) -> Unit,
+    selectedCinemaTab: CinemaKind? = null,
+    onCinemaTabSelected: ((CinemaKind) -> Unit)? = null,
 ) {
     val context = LocalContext.current
     val configuration = LocalConfiguration.current
@@ -58,12 +63,13 @@ fun HomeScreen(
         }.associateBy { it.id }
     }
     fun item(content: Content, history: ContentHistory? = null, newChapters: Int = 0): MediaHomeItem {
-        val kind = content.homeMediaKind()
+        val cinema = content.cinemaKind()
+        val kind = if (cinema == null) content.homeMediaKind() else HomeMediaKind.CINEMA
         val progress = (history?.percent ?: state.resumeState.progressPercent
             ?.takeIf { state.resumeState.content?.id == content.id }?.div(100f))
             ?.takeIf { it.isFinite() && it in 0f..1f }
         val supportingText = when {
-            kind == HomeMediaKind.ANIME && history != null -> {
+            kind.isVideo && history != null -> {
                 val seconds = history.page.coerceAtLeast(0) / 1000
                 context.getString(R.string.media_home_video_position, seconds / 60, seconds % 60)
             }
@@ -81,9 +87,10 @@ fun HomeScreen(
             supportingText = supportingText,
             subtitle = if (kind == HomeMediaKind.BOOKS) content.authors.firstOrNull().orEmpty() else "",
             updateText = if (newChapters > 0) context.getString(
-                if (kind == HomeMediaKind.ANIME) R.string.media_home_new_episodes else R.string.media_home_new_chapters,
+                if (kind.isVideo) R.string.media_home_new_episodes else R.string.media_home_new_chapters,
                 newChapters,
             ) else "",
+            cinemaKind = cinema,
         )
     }
     val recent = remember(state.recentHistoryItems, state.resumeState, configuration) {
@@ -95,8 +102,8 @@ fun HomeScreen(
     val recommendations = remember(state.recommendations, state.resumeState, configuration) {
         state.recommendations.map { item(it.content) }
     }
-    val kind = state.selectedTab.toMediaKind()
-    stateHolder.SaveableStateProvider(kind.name) {
+    val kind = if (selectedCinemaTab != null) HomeMediaKind.CINEMA else state.selectedTab.toMediaKind()
+    stateHolder.SaveableStateProvider(selectedCinemaTab?.let { "cinema:${it.name}" } ?: kind.name) {
         val listState = rememberLazyListState()
         ScrollToTopEffect { listState.scrollToItem(0) }
         MediaHomeScreen(
@@ -107,8 +114,13 @@ fun HomeScreen(
             initialized = state.isInitialized,
             contentPadding = contentPadding,
             listState = listState,
-            onKindSelected = { onKindSelected(it.toContentTab()) },
+            onKindSelected = onKindSelected,
             onSearch = onSearch,
+            searchLabel = stringResource(when (selectedCinemaTab) {
+                CinemaKind.MOVIE -> R.string.cinema_search_movies
+                CinemaKind.SERIES -> R.string.cinema_search_series
+                null -> R.string.search_all_media
+            }),
             onSettings = onSettings,
             onHistory = onHistory,
             onLibrary = onLibrary,
@@ -118,6 +130,8 @@ fun HomeScreen(
             onImport = onImport,
             onOpen = { model -> contents[model.id]?.let(onOpen) },
             onResume = { model -> contents[model.id]?.let(onResume) },
+            cinemaTab = selectedCinemaTab ?: CinemaKind.MOVIE,
+            onCinemaTabSelected = onCinemaTabSelected,
             cover = { model, modifier ->
                 Box(modifier.background(MaterialTheme.colorScheme.secondaryContainer), contentAlignment = Alignment.Center) {
                     Text(model.title.take(1), style = MaterialTheme.typography.headlineSmall,
@@ -152,6 +166,6 @@ internal fun HomeContentTab?.toMediaKind(): HomeMediaKind = when (this) {
 internal fun HomeMediaKind.toContentTab(): HomeContentTab? = when (this) {
     HomeMediaKind.MANGA -> HomeContentTab.MANGA
     HomeMediaKind.BOOKS -> HomeContentTab.NOVEL
-    HomeMediaKind.ANIME -> HomeContentTab.VIDEO
+    HomeMediaKind.ANIME, HomeMediaKind.CINEMA -> HomeContentTab.VIDEO
     HomeMediaKind.ALL -> null
 }

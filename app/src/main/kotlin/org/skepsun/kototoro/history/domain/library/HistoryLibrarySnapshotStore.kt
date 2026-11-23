@@ -1,5 +1,7 @@
 package org.skepsun.kototoro.history.domain.library
 
+import org.skepsun.kototoro.core.video.CinemaKind
+
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
@@ -155,6 +157,7 @@ class HistoryLibrarySnapshotStore @Inject constructor(
                 metadataTrackingCoverUrl = base.metadataTrackingCoverUrl?.takeIf { it.isNotBlank() },
                 sourceGroupFlags = contentGroupFlag(base.displaySource, base.displayNsfw == true),
                 sourceOriginFlags = originGroupFlag(base.displaySource),
+                cinemaKind = CinemaKind.fromSourceData(base.displaySource.orEmpty(), base.displaySourceData),
             )
         }
         return HistorySnapshot(rows = rows)

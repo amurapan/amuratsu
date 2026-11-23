@@ -22,6 +22,7 @@ import org.skepsun.kototoro.list.ui.ContentListHost
 import org.skepsun.kototoro.list.ui.RetainedPagingSnapshotHost
 import org.skepsun.kototoro.list.ui.ContentListViewModel
 import org.skepsun.kototoro.main.ui.LocalMainChromeController
+import org.skepsun.kototoro.main.ui.navigation3.LocalMainTabActive
 import org.skepsun.kototoro.core.parser.tvbox.TVBoxActionHostActivity
 import androidx.compose.runtime.saveable.rememberSaveable
 import org.skepsun.kototoro.core.ui.BaseComposeActivity
@@ -61,31 +62,6 @@ class ContentSelectionControl(
 
 private fun <T> eventCollector(block: suspend (T) -> Unit): FlowCollector<T> = FlowCollector { value ->
     block(value)
-}
-
-private data class ContentSelectionModels(
-    val allContentIds: Set<Long>,
-    val selectedModels: List<ContentListModel>,
-)
-
-private fun prepareContentSelectionModels(
-    items: List<ListModel>,
-    selectedIds: Set<Long>,
-): ContentSelectionModels {
-    val allContentIds = linkedSetOf<Long>()
-    val selectedModels = ArrayList<ContentListModel>()
-    items.forEach { item ->
-        if (item is ContentListModel) {
-            allContentIds += item.id
-            if (item.id in selectedIds) {
-                selectedModels += item
-            }
-        }
-    }
-    return ContentSelectionModels(
-        allContentIds = allContentIds,
-        selectedModels = selectedModels,
-    )
 }
 
 @Composable
@@ -198,6 +174,7 @@ fun AppContentListRoute(
     val activity = LocalContext.current as? androidx.activity.ComponentActivity
     val context = LocalContext.current
     val lifecycleOwner = LocalLifecycleOwner.current
+    val mainTabActive = LocalMainTabActive.current
     val entryPoint = remember(context.applicationContext) {
         runCatching {
             EntryPointAccessors.fromApplication(
@@ -227,22 +204,22 @@ fun AppContentListRoute(
     val gridState = retainedPagingState.gridState
     val listState = retainedPagingState.listState
     val detailedListState = retainedPagingState.detailedListState
-    val selectionModels = remember(
-        retainedPagingState.displayedItems,
-        loadedPagingItems,
-        retainedPagingState.displayedPagingItems,
-        currentSelectionIds,
-    ) {
-        prepareContentSelectionModels(
-            if (retainedPagingState.displayedPagingItems == null) {
-                retainedPagingState.displayedItems
-            } else {
-                loadedPagingItems
-            },
-            currentSelectionIds,
-        )
+    val selectionItems = if (retainedPagingState.displayedPagingItems == null) {
+        retainedPagingState.displayedItems
+    } else {
+        loadedPagingItems
     }
-    val selectedModels = selectionModels.selectedModels
+    val selectedModels = if (currentSelectionIds.isEmpty()) {
+        emptyList()
+    } else {
+        remember(selectionItems, currentSelectionIds) {
+            selectionItems.mapNotNull { (it as? ContentListModel)?.takeIf { model -> model.id in currentSelectionIds } }
+        }
+    }
+    fun selectAll() {
+        hapticFeedback.performSelectionHapticFeedback()
+        updateSelection(selectionItems.mapNotNullTo(linkedSetOf()) { (it as? ContentListModel)?.id })
+    }
     val quickFilterRailOverride = remember(quickFilter, context) {
         quickFilter?.let { filter ->
             CompactFilterRailOverrideState(
@@ -271,11 +248,11 @@ fun AppContentListRoute(
         }
     }
 
-    BackHandler(enabled = currentSelectionIds.isNotEmpty()) {
+    BackHandler(enabled = mainTabActive && currentSelectionIds.isNotEmpty()) {
         updateSelection(emptySet())
     }
 
-    if (!usesExternalSelection) {
+    if (mainTabActive && !usesExternalSelection) {
         if (currentSelectionIds.isNotEmpty()) {
             SideEffect {
                 val supportedActions = buildSet {
@@ -316,10 +293,7 @@ fun AppContentListRoute(
                                 onResolveSelectionContents?.invoke(ids) ?: selectedModels.map { it.manga }
                             }
                             when (action) {
-                                SelectionAction.SELECT_ALL -> {
-                                    hapticFeedback.performSelectionHapticFeedback()
-                                    updateSelection(selectionModels.allContentIds)
-                                }
+                                SelectionAction.SELECT_ALL -> selectAll()
 
                                 SelectionAction.REMOVE -> {
                                     onRemoveSelection?.invoke(currentSelectionIds)
@@ -389,7 +363,7 @@ fun AppContentListRoute(
         }
     }
 
-    if (emitFilterRailOverride) {
+    if (mainTabActive && emitFilterRailOverride) {
         SideEffect {
             onFilterRailOverrideChanged(
                 if (currentSelectionIds.isEmpty()) {
@@ -401,7 +375,7 @@ fun AppContentListRoute(
         }
     }
 
-    pendingMarkAsCompletedItems?.let { itemsToMark ->
+    pendingMarkAsCompletedItems?.takeIf { mainTabActive }?.let { itemsToMark ->
         ContentActionConfirmationDialog(
             title = stringResource(org.skepsun.kototoro.R.string.mark_as_completed),
             message = stringResource(org.skepsun.kototoro.R.string.mark_as_completed_prompt),
@@ -415,17 +389,20 @@ fun AppContentListRoute(
         )
     }
 
-    DisposableEffect(Unit) {
+    DisposableEffect(mainTabActive) {
         onDispose {
-            onTopBarOverrideChanged(null)
-            if (emitFilterRailOverride) {
-                onFilterRailOverrideChanged(null)
+            if (mainTabActive) {
+                onTopBarOverrideChanged(null)
+                if (emitFilterRailOverride) {
+                    onFilterRailOverrideChanged(null)
+                }
             }
         }
     }
 
     // Error observation
-    LaunchedEffect(viewModel.onError) {
+    LaunchedEffect(viewModel.onError, mainTabActive) {
+        if (!mainTabActive) return@LaunchedEffect
         viewModel.onError.collect { event ->
             event?.consume(eventCollector { error ->
                 Toast.makeText(context, error.getDisplayMessage(context.resources), Toast.LENGTH_SHORT).show()
@@ -441,7 +418,8 @@ fun AppContentListRoute(
         }
     }
 
-    LaunchedEffect(viewModel.onContentMessage) {
+    LaunchedEffect(viewModel.onContentMessage, mainTabActive) {
+        if (!mainTabActive) return@LaunchedEffect
         viewModel.onContentMessage.collect { event ->
             event?.consume(eventCollector { message ->
                 Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
@@ -449,7 +427,8 @@ fun AppContentListRoute(
         }
     }
 
-    LaunchedEffect(viewModel.onContentActionHostRequest) {
+    LaunchedEffect(viewModel.onContentActionHostRequest, mainTabActive) {
+        if (!mainTabActive) return@LaunchedEffect
         viewModel.onContentActionHostRequest.collect { event ->
             event?.consume(eventCollector { request ->
                 val hostActivity = activity ?: return@eventCollector
@@ -478,7 +457,7 @@ fun AppContentListRoute(
     // Filter Coordinator integration via MainActivity callback
     // When registerFilterCallback is false, the parent composable manages the callback
     // (e.g. FavoritesHostScreen centralizes it to avoid HorizontalPager contention)
-    if (registerFilterCallback) {
+    if (registerFilterCallback && mainTabActive) {
         val mainChromeController = LocalMainChromeController.current
         val selectedGroupTab by viewModel.currentGroupTab.collectAsStateWithLifecycle()
         val selectedSourceTags by viewModel.currentSourceTags.collectAsStateWithLifecycle()
@@ -619,10 +598,7 @@ fun AppContentListRoute(
         onClearSelection = { updateSelection(emptySet()) },
         onSelectionAction = { action ->
             when (action) {
-                SelectionAction.SELECT_ALL -> {
-                    hapticFeedback.performSelectionHapticFeedback()
-                    updateSelection(selectionModels.allContentIds)
-                }
+                SelectionAction.SELECT_ALL -> selectAll()
                 SelectionAction.REMOVE -> {
                     onRemoveSelection?.invoke(currentSelectionIds)
                     updateSelection(emptySet())

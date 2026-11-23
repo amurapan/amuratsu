@@ -49,6 +49,7 @@ internal fun DesktopDetailsChapters(
     leadingContent: (@Composable () -> Unit)? = null,
 ) {
     val chapters = state.content?.chapters.orEmpty()
+    val isVideo = DesktopReaderKind.of(state.content) == DesktopReaderKind.VIDEO
     val current = remember(chapters, state.detailsChapterId) { chapters.firstOrNull { it.id == state.detailsChapterId } }
     val furthest = remember(chapters, state.detailsFurthestChapterId) {
         chapters.firstOrNull { it.id == state.detailsFurthestChapterId }
@@ -188,13 +189,15 @@ internal fun DesktopDetailsChapters(
             },
         ) { _, section, grid ->
             when (section) {
-                is ChapterSection.Header -> ChapterSectionHeader(desktopChapterSectionTitle(section),
-                    Modifier.testTag("chapter-header:${desktopChapterSectionTitle(section)}"))
+                is ChapterSection.Header -> {
+                    val title = desktopChapterSectionTitle(section, isVideo)
+                    ChapterSectionHeader(title, Modifier.testTag("chapter-header:$title"))
+                }
                 is ChapterSection.Item -> {
                     val chapter = section.chapter
                     val isDownloaded = downloaded.any { DesktopDownloadStore.sameChapter(it, chapter) }
                     val baseCard = desktopChapterCardData(chapter, current, bookmarked, downloaded, furthest)
-                    val cardData = if (DesktopReaderKind.of(state.content) == DesktopReaderKind.VIDEO) {
+                    val cardData = if (isVideo) {
                         baseCard.copy(title = stripEpisodeLinePrefix(baseCard.title, state.chapterBranch))
                     } else {
                         baseCard

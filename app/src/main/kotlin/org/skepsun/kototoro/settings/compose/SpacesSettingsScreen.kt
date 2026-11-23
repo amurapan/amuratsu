@@ -833,6 +833,7 @@ private fun SpaceEditorDialog(
 
 private fun SpaceContext.iconRes(): Int = when {
     id == BuiltInSpaces.Novel || kind == SpaceKind.NOVEL -> R.drawable.ic_content_novel
+    kind == SpaceKind.CINEMA -> R.drawable.ic_movie_compact
     id == BuiltInSpaces.Anime || kind == SpaceKind.ANIME -> R.drawable.ic_content_video
     kind == SpaceKind.ALL -> R.drawable.ic_filter_content_type
     else -> R.drawable.ic_content_manga
@@ -843,7 +844,7 @@ private fun SpaceContext.iconTone(): SettingsIconTone = when {
     id == BuiltInSpaces.Novel -> SettingsIconTone.SECONDARY
     id == BuiltInSpaces.Anime -> SettingsIconTone.TERTIARY
     kind == SpaceKind.NOVEL -> SettingsIconTone.SECONDARY_VARIANT
-    kind == SpaceKind.ANIME -> SettingsIconTone.TERTIARY_VARIANT
+    kind == SpaceKind.ANIME || kind == SpaceKind.CINEMA -> SettingsIconTone.TERTIARY_VARIANT
     else -> SettingsIconTone.PRIMARY_VARIANT
 }
 
@@ -889,6 +890,7 @@ private fun SpaceKind.defaultTitleRes() = when (this) {
     SpaceKind.MANGA -> R.string.space_manga
     SpaceKind.NOVEL -> R.string.space_novel
     SpaceKind.ANIME -> R.string.space_anime
+    SpaceKind.CINEMA -> R.string.space_cinema
     SpaceKind.ALL -> R.string.all
 }
 

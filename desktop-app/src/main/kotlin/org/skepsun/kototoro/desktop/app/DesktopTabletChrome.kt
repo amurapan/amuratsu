@@ -38,9 +38,11 @@ import androidx.compose.ui.unit.sp
 import org.skepsun.kototoro.core.source.SourceChapter
 import org.skepsun.kototoro.core.ui.adaptive.*
 import org.skepsun.kototoro.core.ui.chapters.*
+import org.skepsun.kototoro.core.ui.settings.AuthorSupportCard
 import org.skepsun.kototoro.core.ui.settings.SettingsGroup
 import org.skepsun.kototoro.core.ui.settings.SettingsRowDivider
 import org.skepsun.kototoro.core.ui.settings.SettingsSectionHeader
+import org.skepsun.kototoro.core.ui.settings.authorSupportLinks
 import org.skepsun.kototoro.core.ui.settings.SettingsValueRow
 import org.skepsun.kototoro.desktop.runtime.DesktopNavItem
 
@@ -275,6 +277,11 @@ internal fun DesktopMorePanel(controller: DesktopController, enabled: Boolean, o
         }
         DesktopTrackerSettings(controller, state, enabled)
         DesktopAppUpdateSection(controller, state, enabled, onExitRequest)
+        AuthorSupportCard(
+            links = authorSupportLinks(),
+            onOpenLink = { controller.openExternalUrl(it.title, it.url) },
+            enabled = enabled,
+        )
         // Android keeps "crash logs" on the about screen itself, between the update card and the support links.
         SettingsGroup {
             SettingsValueRow(AndroidStrings["crash_logs"], AndroidStrings["crash_logs_summary"], null, enabled,

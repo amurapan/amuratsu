@@ -1,5 +1,7 @@
 package org.skepsun.kototoro.favourites.ui.container
 
+import org.skepsun.kototoro.space.domain.cinemaFilter
+
 import androidx.compose.runtime.Immutable
 import org.skepsun.kototoro.core.model.GlobalTagBlacklist
 import org.skepsun.kototoro.core.model.TagBlacklist
@@ -81,6 +83,7 @@ internal fun buildFavouriteLibraryUiState(
             sourcePresetNames = params.preset?.sources?.takeIf { it.isNotEmpty() },
             allowedContentTypes = spaceId?.let(spaceContentPolicy::allowedTypes)?.takeIf { it.isNotEmpty() },
             allowedSourceNames = spaceId?.let(spaceContentPolicy::allowedSourceNames),
+            cinemaFilter = spaceId?.cinemaFilter(),
             excludeNsfw = params.excludeNsfw,
             filters = params.filters.toCriteria(),
             tagBlacklist = if (params.blacklist.isEmpty()) TagBlacklist.Empty else GlobalTagBlacklist(params.blacklist),

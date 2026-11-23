@@ -1,5 +1,7 @@
 package org.skepsun.kototoro.history.ui
 
+import org.skepsun.kototoro.space.domain.cinemaFilter
+
 import android.content.Context
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -281,6 +283,7 @@ class HistoryListViewModel @Inject constructor(
                     classifiedTypes = org.skepsun.kototoro.space.domain.BuiltInSpaces.contexts
                         .flatMapTo(LinkedHashSet()) { context -> context.allowedContentTypes },
                     allowedSources = spaceContentPolicy.allowedSourceNames(spaceId),
+                    cinemaFilter = spaceId.cinemaFilter(),
                 )
             }
             org.skepsun.kototoro.history.domain.library.HistoryLibraryDeriver.derive(

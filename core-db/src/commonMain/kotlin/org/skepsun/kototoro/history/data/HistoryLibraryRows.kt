@@ -43,6 +43,7 @@ data class HistoryCardRow(
     @ColumnInfo(name = "display_large_cover_url") val displayLargeCoverUrl: String?,
     @ColumnInfo(name = "display_author") val displayAuthor: String?,
     @ColumnInfo(name = "display_source") val displaySource: String?,
+    @ColumnInfo(name = "display_source_data") val displaySourceData: String?,
     @ColumnInfo(name = "display_state") val displayState: String?,
     @ColumnInfo(name = "display_nsfw") val displayNsfw: Boolean?,
     @ColumnInfo(name = "display_rating") val displayRating: Float?,

@@ -21,7 +21,9 @@ internal fun SearchMediaChips(
                 when (kind) {
                     SearchContentKind.MANGA -> R.string.content_type_manga
                     SearchContentKind.NOVEL -> R.string.media_books
-                    SearchContentKind.VIDEO -> R.string.media_anime_video
+                    SearchContentKind.VIDEO -> R.string.content_type_video
+                    SearchContentKind.MOVIE -> R.string.cinema_movies
+                    SearchContentKind.SERIES -> R.string.cinema_series
                 },
             )
         },

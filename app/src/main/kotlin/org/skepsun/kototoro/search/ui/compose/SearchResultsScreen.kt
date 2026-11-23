@@ -1,5 +1,8 @@
 package org.skepsun.kototoro.search.ui.compose
 
+import org.skepsun.kototoro.core.model.cinemaKind
+import org.skepsun.kototoro.core.video.CinemaKind
+
 import androidx.compose.foundation.focusGroup
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -112,6 +115,7 @@ import org.skepsun.kototoro.search.domain.SEARCH_CONTENT_KIND_OPTIONS
 import org.skepsun.kototoro.search.domain.SOURCE_TYPE_OPTIONS
 import org.skepsun.kototoro.search.domain.AdvancedSearchParams
 import org.skepsun.kototoro.search.domain.SearchContentKind
+import org.skepsun.kototoro.search.domain.matches
 import org.skepsun.kototoro.search.domain.SearchKind
 import org.skepsun.kototoro.main.ui.compose.SearchFilterSheet
 import org.skepsun.kototoro.search.ui.multi.SearchResultsListModel
@@ -458,6 +462,8 @@ fun SearchResultsRoute(
                     cardUiPrefs = cardUiPrefs,
                     selectedItemsIds = selectedItemsIds,
                     selectionEnabled = selectedItemsIds.isNotEmpty() && !isPickMode,
+                    canOpenSourceResults = !filters.hasCinemaTypeRestriction ||
+                        !SearchContentKind.VIDEO.matches(section.source),
                     isSearching = searchState.isSearching,
                     isRetrying = section.sectionKey in searchState.retryingSectionKeys,
                     onRetryClick = { viewModel.retrySource(section) },
@@ -794,6 +800,7 @@ private fun SearchResultsSection(
     cardUiPrefs: org.skepsun.kototoro.list.ui.compose.ContentCardUiPrefs,
     selectedItemsIds: Set<Long>,
     selectionEnabled: Boolean,
+    canOpenSourceResults: Boolean,
     isSearching: Boolean,
     isRetrying: Boolean,
     onRetryClick: () -> Unit,
@@ -861,7 +868,7 @@ private fun SearchResultsSection(
                         contentDescription = stringResource(R.string.favourites),
                     )
                 }
-            } else if (section.source !== UnknownContentSource) {
+            } else if (section.source !== UnknownContentSource && canOpenSourceResults) {
                 Button(
                     onClick = onSectionClick,
                     modifier = Modifier.tvFocusable(shape = RoundedCornerShape(12.dp), addFocusTarget = false),
@@ -912,7 +919,7 @@ private fun SearchResultsSection(
                         animationFactor = railAnimationFactor,
                         enableScrollLinkedAnimation = false,
                     ) { animatedModifier ->
-                        Box(
+                        Column(
                             modifier = animatedModifier.width(posterStyle.itemWidth),
                         ) {
                             KototoroContentCard(
@@ -927,6 +934,17 @@ private fun SearchResultsSection(
                                 focusRequester = resultFocusRequester.takeIf { item.id == restoreFocusToId },
                                 onFocused = { onItemFocused(item) },
                             )
+                            val cinema = remember(item.source.name, item.manga.sourceData) { item.manga.cinemaKind() }
+                            if (cinema != null) {
+                                Text(
+                                    text = stringResource(
+                                        if (cinema == CinemaKind.MOVIE) R.string.cinema_movie else R.string.cinema_series_title,
+                                    ),
+                                    style = MaterialTheme.typography.labelSmall,
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                    modifier = Modifier.padding(horizontal = 8.dp, vertical = 2.dp),
+                                )
+                            }
                         }
                     }
                 }

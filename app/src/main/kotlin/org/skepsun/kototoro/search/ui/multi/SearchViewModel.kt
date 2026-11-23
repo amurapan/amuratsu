@@ -208,7 +208,7 @@ class SearchViewModel @AssistedInject constructor(
                 prevJob?.join()
                 val sources = resolveSources(filters, includeDisabled = true)
                 updateSearchState(generation) { it.copy(totalSources = it.totalSources + sources.size) }
-                searchSources(sources, generation)
+                searchSources(sources, filters, generation)
             } finally {
                 updateSearchState(generation) { it.finished() }
             }
@@ -238,7 +238,7 @@ class SearchViewModel @AssistedInject constructor(
                 appendResult(searchLocal(filters), generation)
                 val sources = resolveSources(filters, includeDisabled = false)
                 updateSearchState(generation) { it.copy(totalSources = sources.size) }
-                searchSources(sources, generation)
+                searchSources(sources, filters, generation)
             } finally {
                 updateSearchState(generation) { it.finished() }
             }
@@ -277,7 +277,7 @@ class SearchViewModel @AssistedInject constructor(
                                 section.titleResId == R.string.history -> searchHistory(filters)
                                 section.titleResId == R.string.favourites -> searchFavorites(filters)
                                 section.source == LocalMangaSource -> searchLocal(filters)
-                                else -> searchSource(section.source)
+                                else -> searchSource(section.source, filters)
                             }
                             updateSearchState(generation) {
                                 it.withResult(result, section).copy(
@@ -294,13 +294,13 @@ class SearchViewModel @AssistedInject constructor(
         }
     }
 
-    private suspend fun searchSources(sources: List<ContentSource>, generation: Long) =
+    private suspend fun searchSources(sources: List<ContentSource>, filters: SearchFilters, generation: Long) =
         kotlinx.coroutines.coroutineScope {
             val semaphore = Semaphore(MAX_PARALLELISM)
             sources.map { source ->
                 launch {
                     semaphore.withPermit {
-                        appendResult(searchSource(source), generation)
+                        appendResult(searchSource(source, filters), generation)
                         updateSearchState(generation) { it.copy(completedSources = it.completedSources + 1) }
                     }
                 }
@@ -331,16 +331,23 @@ class SearchViewModel @AssistedInject constructor(
 
     // impl
 
-    private suspend fun searchSource(source: ContentSource): SearchResultsListModel? = runCatchingCancellable {
+    private suspend fun searchSource(source: ContentSource, filters: SearchFilters): SearchResultsListModel? = runCatchingCancellable {
         val searchHelper = searchHelperFactory.create(source)
         searchHelper(query, kind, advancedQuery)
     }.fold(
         onSuccess = { result ->
-            if (result == null || result.manga.isEmpty()) {
+            val visible = result?.manga?.let { found ->
+                if (filters.hasCinemaTypeRestriction) {
+                    found.filter { item -> filters.contentKinds.any { it.matches(item) } }
+                } else {
+                    found
+                }
+            }
+            if (result == null || visible.isNullOrEmpty()) {
                 null
             } else {
                 val list = mangaListMapper.toListModelList(
-                    manga = result.manga,
+                    manga = visible,
                     mode = ListMode.GRID,
                 )
                 Log.d(

@@ -163,14 +163,15 @@ internal fun StateFlow<BrowseGroupTab>.scopedToSpace(
 
 internal fun SpaceId.toBrowseGroupTab(): BrowseGroupTab = when (this) {
     BuiltInSpaces.Novel -> BrowseGroupTab.Novel
-    BuiltInSpaces.Anime -> BrowseGroupTab.Video
+    BuiltInSpaces.Anime, BuiltInSpaces.Cinema -> BrowseGroupTab.Video
     BuiltInSpaces.Manga -> BrowseGroupTab.Content
     else -> BrowseGroupTab.All
 }
 
 internal fun org.skepsun.kototoro.space.domain.SpaceKind.toBrowseGroupTab(): BrowseGroupTab = when (this) {
     org.skepsun.kototoro.space.domain.SpaceKind.NOVEL -> BrowseGroupTab.Novel
-    org.skepsun.kototoro.space.domain.SpaceKind.ANIME -> BrowseGroupTab.Video
+    org.skepsun.kototoro.space.domain.SpaceKind.ANIME,
+    org.skepsun.kototoro.space.domain.SpaceKind.CINEMA -> BrowseGroupTab.Video
     org.skepsun.kototoro.space.domain.SpaceKind.MANGA -> BrowseGroupTab.Content
     org.skepsun.kototoro.space.domain.SpaceKind.ALL -> BrowseGroupTab.All
 }

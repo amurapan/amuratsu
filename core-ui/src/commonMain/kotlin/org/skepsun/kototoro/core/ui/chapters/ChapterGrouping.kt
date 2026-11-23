@@ -1,5 +1,7 @@
 package org.skepsun.kototoro.core.ui.chapters
 
+import org.skepsun.kototoro.core.ui.text.UiStrings
+
 /*
  * Android's chapter branch and volume grouping rules, generic over the platform chapter model so the
  * Android details screen and the Windows host build the same list.
@@ -7,6 +9,13 @@ package org.skepsun.kototoro.core.ui.chapters
 
 /** A locale the user reads, as Android matches it against branch names. */
 data class ChapterBranchLocale(val displayLanguage: String, val displayName: String)
+
+fun ChapterSection.Header.localizedTitle(strings: UiStrings, isVideo: Boolean): String = customName ?: when {
+    isVideo && volume > 0 -> strings.format("details_season_number", volume)
+    isVideo -> strings.string("details_unknown_season")
+    volume > 0 -> strings.format("volume_", volume)
+    else -> strings.string("volume_unknown")
+}
 
 /**
  * The branch to open: the one holding the history chapter, the only branch, the largest branch whose name

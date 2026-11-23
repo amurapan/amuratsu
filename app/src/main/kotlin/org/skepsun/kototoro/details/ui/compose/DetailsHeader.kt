@@ -1,5 +1,8 @@
 package org.skepsun.kototoro.details.ui.compose
 
+import org.skepsun.kototoro.core.model.cinemaKind
+import org.skepsun.kototoro.core.video.CinemaKind
+
 
 import org.skepsun.kototoro.core.ui.compose.ExpandableDescriptionText
 import androidx.compose.material.icons.Icons
@@ -401,9 +404,15 @@ fun DetailsHeader(
                 valueMuted = originalLanguage.isBlank() && readingLanguage.isBlank(),
             ),
         )
-        if (!renderCinemaHero) add(
+        if (!renderCinemaHero && content?.cinemaKind() != CinemaKind.MOVIE) add(
             DetailsInfoItem(
-                label = stringResource(R.string.chapters),
+                label = stringResource(
+                    if (resolvedContentType == ContentType.VIDEO || resolvedContentType == ContentType.HENTAI_VIDEO) {
+                        R.string.details_episodes
+                    } else {
+                        R.string.chapters
+                    },
+                ),
                 value = chapterProgressLabel,
                 iconRes = R.drawable.ic_book_page,
                 onClick = onOpenChapters,

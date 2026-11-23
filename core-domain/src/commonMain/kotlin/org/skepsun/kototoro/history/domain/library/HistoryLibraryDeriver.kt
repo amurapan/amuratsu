@@ -1,5 +1,7 @@
 package org.skepsun.kototoro.history.domain.library
 
+import org.skepsun.kototoro.core.video.CinemaFilter
+
 import org.skepsun.kototoro.core.model.TagBlacklist
 import org.skepsun.kototoro.core.jsonsource.ContentGroup
 import org.skepsun.kototoro.core.jsonsource.OriginGroup
@@ -52,6 +54,7 @@ object HistoryLibraryDeriver {
         val allowedTypes: Set<ContentType> = emptySet(),
         val classifiedTypes: Set<ContentType> = emptySet(),
         val allowedSources: Set<String>? = null,
+        val cinemaFilter: CinemaFilter? = null,
     )
 
     data class Derived(
@@ -102,6 +105,7 @@ object HistoryLibraryDeriver {
      */
     private fun HistoryCardEntry.matchesSpace(space: SpaceScope?): Boolean {
         if (space == null) return true
+        if (space.cinemaFilter?.accepts(cinemaKind) == false) return false
         val allowed = space.allowedTypes
         if (allowed.isNotEmpty()) {
             val hasAllowed = bindings.any { binding -> binding.contentType in allowed }

@@ -819,7 +819,12 @@ fun UnifiedSourcesRoute(
 }
 
 
-private val sourceSetupKinds = listOf(UnifiedSourceKind.MIHON, UnifiedSourceKind.LNREADER, UnifiedSourceKind.ANIYOMI)
+private val sourceSetupKinds = listOf(
+    UnifiedSourceKind.MIHON,
+    UnifiedSourceKind.LNREADER,
+    UnifiedSourceKind.ANIYOMI,
+    UnifiedSourceKind.CLOUDSTREAM,
+)
 
 @OptIn(androidx.compose.foundation.layout.ExperimentalLayoutApi::class)
 @Composable
@@ -846,6 +851,7 @@ private fun SourceSetupHeader(
                     when (it) {
                         UnifiedSourceKind.MIHON -> stringResource(R.string.manga)
                         UnifiedSourceKind.LNREADER -> stringResource(R.string.media_books)
+                        UnifiedSourceKind.CLOUDSTREAM -> stringResource(R.string.space_cinema)
                         else -> stringResource(R.string.media_home_anime)
                     }
                 },

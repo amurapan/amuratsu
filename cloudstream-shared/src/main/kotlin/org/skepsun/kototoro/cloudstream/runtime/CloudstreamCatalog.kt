@@ -14,7 +14,6 @@ import com.lagradost.cloudstream3.ShowStatus
 import com.lagradost.cloudstream3.SubtitleFile
 import com.lagradost.cloudstream3.TorrentLoadResponse
 import com.lagradost.cloudstream3.TvSeriesLoadResponse
-import com.lagradost.cloudstream3.TvType
 import com.lagradost.cloudstream3.USER_AGENT
 import com.lagradost.cloudstream3.utils.ExtractorLink
 import com.lagradost.cloudstream3.utils.ExtractorLinkType
@@ -151,7 +150,6 @@ class CloudstreamCatalog(
         homeRowName: String? = null,
         horizontalImages: Boolean? = null,
     ): Content {
-        val type = type ?: TvType.Movie
         CloudstreamArtworkHeaders.remember(source.name, posterUrl, posterHeaders)
         return Content(
             id = cloudstreamStableId("${source.name}|content|$url"),
@@ -173,7 +171,7 @@ class CloudstreamCatalog(
             source = source,
             sourceData = CloudstreamMetadataCodec.encodeContent(
                 CloudstreamContentMetadata(
-                    type = type.name,
+                    type = type?.name,
                     posterHeaders = CloudstreamArtworkHeaders.persistable(posterHeaders),
                     quality = quality?.name,
                     providerId = id,

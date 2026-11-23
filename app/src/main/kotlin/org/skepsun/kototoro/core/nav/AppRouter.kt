@@ -832,13 +832,14 @@ class AppRouter(
         )
     }
 
-    fun openSourceRepositoryCatalog() {
+    fun openSourceRepositoryCatalog(cinema: Boolean = false) {
         val context = contextOrNull() ?: return
         startActivity(
             UnifiedSourcesActivity.newDeepLinkIntent(
                 context,
                 UnifiedSourcesDeepLink(initialTab = UnifiedSourcesDeepLinkParser.TAB_REPOS),
                 quickSetup = true,
+                initialKindFilter = UnifiedSourceKind.CLOUDSTREAM.takeIf { cinema },
             ),
         )
     }

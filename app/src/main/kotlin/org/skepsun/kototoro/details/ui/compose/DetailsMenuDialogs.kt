@@ -79,7 +79,7 @@ internal fun resolveReadActionLabel(
 ): String {
     val isChaptersLoading = isLoading && (historyInfo.totalChapters <= 0 || historyInfo.isChapterMissing)
     val defaultReadRes = when (contentType) {
-        ContentType.VIDEO, ContentType.HENTAI_VIDEO -> R.string.play
+        ContentType.VIDEO, ContentType.HENTAI_VIDEO -> R.string.details_watch
         else -> R.string.read
     }
     val continueRes = when (contentType) {

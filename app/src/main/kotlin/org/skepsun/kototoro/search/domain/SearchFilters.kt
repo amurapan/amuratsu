@@ -9,6 +9,10 @@ data class SearchFilters(
     val hideEmpty: Boolean = false,
     val languagePresetId: Long = -1L,
 ) {
+    val hasCinemaTypeRestriction: Boolean
+        get() = SearchContentKind.VIDEO !in contentKinds &&
+            (SearchContentKind.MOVIE in contentKinds || SearchContentKind.SERIES in contentKinds)
+
     fun normalized(): SearchFilters = copy(
         sourceTypes = sourceTypes.ifEmpty { ALL_SOURCE_TYPES },
         contentKinds = contentKinds.ifEmpty { ALL_SEARCH_CONTENT_KINDS },

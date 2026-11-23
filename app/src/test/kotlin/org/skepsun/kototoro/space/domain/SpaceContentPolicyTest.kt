@@ -31,6 +31,7 @@ class SpaceContentPolicyTest {
         assertEquals("builtin:manga", BuiltInSpaces.Manga.value)
         assertEquals("builtin:novel", BuiltInSpaces.Novel.value)
         assertEquals("builtin:anime", BuiltInSpaces.Anime.value)
+        assertEquals("builtin:cinema", BuiltInSpaces.Cinema.value)
     }
 
     @Test
@@ -65,14 +66,15 @@ class SpaceContentPolicyTest {
     }
 
     @Test
-    fun `every classified content type belongs to exactly one space`() {
+    fun `cinema shares the video transport type while other transport types stay unique`() {
         val occurrences = BuiltInSpaces.contexts
             .flatMap(SpaceContext::allowedContentTypes)
             .groupingBy { it }
             .eachCount()
 
         assertEquals(ContentType.entries.toSet() - ContentType.OTHER, occurrences.keys)
-        assertTrue(occurrences.values.all { it == 1 })
+        assertEquals(2, occurrences[ContentType.VIDEO])
+        assertTrue(occurrences.filterKeys { it != ContentType.VIDEO }.values.all { it == 1 })
     }
 
     @Test
@@ -87,12 +89,13 @@ class SpaceContentPolicyTest {
 
     @Test
     fun `content lookup and acceptance use the same mapping`() {
-        BuiltInSpaces.contexts.forEach { context ->
+        BuiltInSpaces.contexts.filterNot { it.id == BuiltInSpaces.Cinema }.forEach { context ->
             context.allowedContentTypes.forEach { contentType ->
                 assertEquals(context.id, policy.spaceFor(contentType))
                 assertTrue(policy.accepts(context.id, contentType))
             }
         }
+        assertTrue(policy.accepts(BuiltInSpaces.Cinema, ContentType.VIDEO))
     }
 
     @Test

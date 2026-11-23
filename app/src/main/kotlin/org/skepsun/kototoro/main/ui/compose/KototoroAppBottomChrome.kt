@@ -7,6 +7,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -18,6 +19,7 @@ import androidx.compose.ui.AbsoluteAlignment
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.input.pointer.pointerInteropFilter
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.ui.layout.onGloballyPositioned
@@ -134,9 +136,11 @@ internal fun BoxScope.MainBottomChrome(
     heroTransitionInProgress: Boolean,
     isDetailsChromeTransitionPending: Boolean,
     effectiveBottomNavOffset: Float,
+    bottomNavHeightPx: Int,
     onLandscapeRailInteractingChange: (Boolean) -> Unit,
     onBottomNavHeightMeasured: (Int) -> Unit,
     navStateFlow: StateFlow<BottomNavState>,
+    activeItemId: Int?,
     onItemSelected: (Int) -> Unit,
     onItemReselected: (Int) -> Unit,
     isResumeEnabled: Boolean,
@@ -144,10 +148,10 @@ internal fun BoxScope.MainBottomChrome(
     resumeAction: MainResumeAction,
     railHeaderContent: (@Composable () -> Unit)?,
     railActionsContent: (@Composable () -> Unit)? = null,
-    adjacentAction: (@Composable () -> Unit)?,
+    resumeContent: (@Composable () -> Unit)?,
 ) {
     val isTvPresentation = LocalUiPresentationConfig.current.isTv
-    Box(
+    Column(
         modifier = Modifier
             .align(
                 when {
@@ -186,49 +190,65 @@ internal fun BoxScope.MainBottomChrome(
                 } else {
                     androidx.compose.ui.unit.IntOffset(0, effectiveBottomNavOffset.toInt())
                 }
+            },
+        horizontalAlignment = Alignment.End,
+    ) {
+        if (!isLandscapeNavigation && !isTvPresentation && resumeContent != null) {
+            Box(
+                Modifier.graphicsLayer {
+                    val hiddenFraction = (effectiveBottomNavOffset / bottomNavHeightPx.coerceAtLeast(1))
+                        .coerceIn(0f, 1f)
+                    translationY = size.height * hiddenFraction
+                    alpha = 1f - hiddenFraction
+                }.padding(end = 16.dp, bottom = 8.dp),
+            ) {
+                resumeContent()
             }
-            .onGloballyPositioned { coords ->
+        }
+        Box(
+            Modifier.onGloballyPositioned { coords ->
                 val measuredDimensionPx = if (isLandscapeNavigation) coords.size.width else coords.size.height
                 onBottomNavHeightMeasured(measuredDimensionPx)
             },
-    ) {
-        val bottomNavContent: @Composable () -> Unit = {
-            if (isTvPresentation) {
-                TvNavigationRail(
-                    state = navStateFlow,
-                    onItemSelected = onItemSelected,
-                    onItemReselected = onItemReselected,
-                    railHeaderContent = railHeaderContent,
-                    showContinueReadingButton = isResumeEnabled,
-                    onContinueReadingClick = onResumeClick,
-                    continueReadingIconRes = resumeAction.iconRes,
-                    continueReadingContentDescriptionRes = resumeAction.contentDescriptionRes,
-                )
-            } else {
-                KototoroBottomNav(
-                    railActionsContent = railActionsContent,
-                    state = navStateFlow,
-                    onItemSelected = onItemSelected,
-                    onItemReselected = onItemReselected,
-                    railHeaderContent = railHeaderContent,
-                    adjacentAction = adjacentAction,
-                )
+        ) {
+            val bottomNavContent: @Composable () -> Unit = {
+                if (isTvPresentation) {
+                    TvNavigationRail(
+                        state = navStateFlow,
+                        onItemSelected = onItemSelected,
+                        onItemReselected = onItemReselected,
+                        railHeaderContent = railHeaderContent,
+                        showContinueReadingButton = isResumeEnabled,
+                        onContinueReadingClick = onResumeClick,
+                        continueReadingIconRes = resumeAction.iconRes,
+                        continueReadingContentDescriptionRes = resumeAction.contentDescriptionRes,
+                    )
+                } else {
+                    KototoroBottomNav(
+                        railActionsContent = railActionsContent,
+                        state = navStateFlow,
+                        activeItemId = activeItemId,
+                        onItemSelected = onItemSelected,
+                        onItemReselected = onItemReselected,
+                        railHeaderContent = railHeaderContent,
+                        adjacentAction = resumeContent.takeIf { isLandscapeNavigation },
+                    )
+                }
             }
-        }
-        if (isLayeredSurface && !isLandscapeNavigation && !isTvPresentation) {
-            Surface(
-                shape = RoundedCornerShape(16.dp),
-                color = MaterialTheme.colorScheme.surfaceContainer,
-                shadowElevation = 6.dp,
-                modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp),
-            ) {
+            if (isLayeredSurface && !isLandscapeNavigation && !isTvPresentation) {
+                Surface(
+                    shape = RoundedCornerShape(16.dp),
+                    color = MaterialTheme.colorScheme.surfaceContainer,
+                    shadowElevation = 6.dp,
+                    modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp),
+                ) {
+                    bottomNavContent()
+                }
+            } else {
                 bottomNavContent()
             }
-        } else {
-            bottomNavContent()
         }
     }
-
 }
 
 @Preview(showBackground = true)

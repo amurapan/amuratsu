@@ -1,5 +1,7 @@
 package org.skepsun.kototoro.desktop.app
 
+import org.skepsun.kototoro.core.ui.chapters.localizedTitle
+
 import androidx.compose.foundation.VerticalScrollbar
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.rememberLazyListState
@@ -173,5 +175,5 @@ internal fun desktopChapterTitle(chapter: SourceChapter): String {
 /** The parser API's number label, with the same unknown-number policy as Android's chapter model. */
 internal fun SourceChapter.numberLabel(): String? = number.takeIf { it > 0f }?.formatSimple()
 
-internal fun desktopChapterSectionTitle(section: ChapterSection.Header): String = section.customName
-    ?: if (section.volume > 0) AndroidStrings["volume_"].format(section.volume) else AndroidStrings["volume_unknown"]
+internal fun desktopChapterSectionTitle(section: ChapterSection.Header, isVideo: Boolean = false): String =
+    section.localizedTitle(DesktopUiStrings, isVideo)

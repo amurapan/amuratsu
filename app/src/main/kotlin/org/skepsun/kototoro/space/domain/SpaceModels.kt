@@ -1,6 +1,7 @@
 package org.skepsun.kototoro.space.domain
 
 import org.skepsun.kototoro.core.jsonsource.SourceType
+import org.skepsun.kototoro.core.video.CinemaFilter
 import org.skepsun.kototoro.parsers.model.ContentType
 
 @JvmInline
@@ -10,6 +11,7 @@ enum class SpaceKind {
     MANGA,
     NOVEL,
     ANIME,
+    CINEMA,
     ALL,
 }
 
@@ -30,6 +32,7 @@ object BuiltInSpaces {
     val Manga = SpaceId("builtin:manga")
     val Novel = SpaceId("builtin:novel")
     val Anime = SpaceId("builtin:anime")
+    val Cinema = SpaceId("builtin:cinema")
 
     val contexts: List<SpaceContext> = listOf(
         SpaceContext(
@@ -67,11 +70,23 @@ object BuiltInSpaces {
             ),
             sortKey = 2,
         ),
+        SpaceContext(
+            id = Cinema,
+            kind = SpaceKind.CINEMA,
+            allowedContentTypes = setOf(ContentType.VIDEO),
+            sortKey = 3,
+        ),
     )
 }
 
 private val NOVEL_CONTENT_TYPES = setOf(ContentType.NOVEL, ContentType.HENTAI_NOVEL)
 private val VIDEO_CONTENT_TYPES = setOf(ContentType.VIDEO, ContentType.HENTAI_VIDEO)
+
+internal fun SpaceId.cinemaFilter(): CinemaFilter? = when (this) {
+    BuiltInSpaces.Cinema -> CinemaFilter.ONLY
+    BuiltInSpaces.Anime -> CinemaFilter.EXCLUDE
+    else -> null
+}
 
 fun Set<ContentType>.primarySpaceKind(): SpaceKind = when {
     isEmpty() -> SpaceKind.ALL
