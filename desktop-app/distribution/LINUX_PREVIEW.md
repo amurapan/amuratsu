@@ -7,9 +7,9 @@ The image includes its own JVM and the pinned compatibility JARs. It needs an X1
 provide one), system fonts and the native libraries required by AWT/Skiko. A headless runtime check does not prove
 GPU rendering, video playback or compatibility with every Linux distribution.
 
-This preview does not bundle a browser bridge, libmpv, ncnn tools or an application updater. Sources requiring
-browser JavaScript or interactive challenges are unavailable. An installed mpv executable can open video streams;
-embedded playback needs a separately supplied libmpv and platform verification. Windows native binaries are not bundled.
+Embedded playback uses the distribution's libmpv. APT installs `libmpv2` with the Debian package. For the standalone
+image, install the library through your package manager. An installed mpv executable can open streams externally.
+The preview downloads ncnn tools on demand. Browser-based sources and automatic app updates are unavailable on Linux.
 
 The default data directory is `~/.amuratsu`. Use `--data-dir` to choose a different directory. The runtime check requires an explicit
 data directory. This local preview retains the existing compatibility runtime provenance and licence requirements.

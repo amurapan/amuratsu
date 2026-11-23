@@ -952,6 +952,8 @@ if (bundleLinuxRuntime) {
         appImage.set(layout.buildDirectory.dir('compose/binaries/main/app/Amuratsu'))
         // With --app-image, Compose omits --icon and jpackage otherwise replaces our icon with Java's default.
         freeArgs.addAll(['--icon', rootProject.file('app/src/main/ic_launcher-playstore.png').absolutePath])
+        // The player opens libmpv through JNA, so jpackage cannot infer this dependency from ELF binaries.
+        freeArgs.addAll(['--linux-package-deps', 'libmpv2'])
         dependsOn 'linuxDistributionTest'
     }
     tasks.register('linuxDebContentsCheck', Exec) {

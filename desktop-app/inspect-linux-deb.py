@@ -12,6 +12,9 @@ import tempfile
 
 def verify(package: Path, image: Path, icon: Path, output: Path) -> None:
     output.mkdir(parents=True, exist_ok=True)
+    depends = subprocess.check_output(["dpkg-deb", "-f", str(package), "Depends"], text=True)
+    if "libmpv2" not in {item.strip() for item in depends.split(",")}:
+        raise ValueError("The Debian package must depend on libmpv2 for embedded playback")
     with tempfile.TemporaryDirectory(prefix="amuratsu-deb-") as temporary:
         root = Path(temporary)
         subprocess.run(["dpkg-deb", "-x", str(package), str(root / "extracted")], check=True)
@@ -50,9 +53,11 @@ def verify(package: Path, image: Path, icon: Path, output: Path) -> None:
             subprocess.run([str(installed / "bin/Amuratsu"), "--data-dir", str(root / "data"),
                             "--check-runtime", str(report)], env=environment, stdout=log,
                            stderr=subprocess.STDOUT, check=True, timeout=60)
+        if "player=ok" not in report.read_text().splitlines():
+            raise ValueError(f"The Debian launcher could not play the local test video: {report}")
         (output / "contents.json").write_text(json.dumps({
             "package": str(package), "files_checked": checked, "content": "identical",
-            "executable_modes": "preserved", "icon": "android", "runtime_exit": 0,
+            "executable_modes": "preserved", "icon": "android", "runtime_exit": 0, "player": "ok",
         }, indent=2) + "\n")
         print(f"Verified {checked} files and the extracted Debian launcher: {package}")
 
