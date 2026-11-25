@@ -16,7 +16,6 @@ import kotlinx.coroutines.sync.Semaphore
 import kotlinx.coroutines.sync.withPermit
 import org.json.JSONArray
 import org.json.JSONObject
-import org.skepsun.kototoro.core.model.ContentSourceAvailability
 import org.skepsun.kototoro.explore.data.SourceAvailabilityRepository
 import org.skepsun.kototoro.explore.data.ContentSourcesRepository
 import org.skepsun.kototoro.parsers.model.ContentSource
@@ -38,7 +37,7 @@ class SourceTestViewModel @Inject constructor(
 	private var job: Job? = null
 	private val lock = Any()
 	private val allResults = ArrayList<SourceTestResult>()
-	private val pendingAvailability = LinkedHashMap<String, ContentSourceAvailability>()
+	private val pendingResults = LinkedHashMap<String, SourceTestResult>()
 	private var lastPublishAt = -1L
 	private var lastFlushAt = SystemClock.elapsedRealtime()
 
@@ -50,7 +49,7 @@ class SourceTestViewModel @Inject constructor(
 		unique.forEach { sourcesByKey[it.name] = it }
 		synchronized(lock) {
 			allResults.clear()
-			pendingAvailability.clear()
+			pendingResults.clear()
 			lastPublishAt = -1L
 			lastFlushAt = SystemClock.elapsedRealtime()
 		}
@@ -70,6 +69,18 @@ class SourceTestViewModel @Inject constructor(
 		if (remaining.isEmpty()) return
 		_progress.update { it.copy(finished = false, cancelled = false, running = emptySet()) }
 		runSources(remaining)
+	}
+
+	fun retryFailed() {
+		if (!_progress.value.finished) return
+		val targets = _progress.value.results.filter { it.overall != StepStatus.PASS }
+			.mapNotNull { sourcesByKey[it.sourceKey] }
+		if (targets.isEmpty()) return
+		val previous = job
+		viewModelScope.launch {
+			previous?.join()
+			if (job === previous) testAll(targets)
+		}
 	}
 
 	private fun runSources(unique: List<ContentSource>) {
@@ -98,11 +109,11 @@ class SourceTestViewModel @Inject constructor(
 			} finally {
 				val (finalResults, batch) = synchronized(lock) {
 					val snapshot = allResults.toList()
-					val pending = LinkedHashMap(pendingAvailability)
-					pendingAvailability.clear()
+					val pending = LinkedHashMap(pendingResults)
+					pendingResults.clear()
 					snapshot to pending
 				}
-				flushAvailability(batch)
+				flushResults(batch)
 				_progress.update {
 					it.copy(running = emptySet(), results = finalResults, finished = true, cancelled = !completed)
 				}
@@ -117,14 +128,14 @@ class SourceTestViewModel @Inject constructor(
 	 */
 	private fun onResult(source: ContentSource, result: SourceTestResult) {
 		var published: List<SourceTestResult>? = null
-		var batch: Map<String, ContentSourceAvailability>? = null
+		var batch: Map<String, SourceTestResult>? = null
 		synchronized(lock) {
 			allResults += result
-			pendingAvailability[source.name] = result.toAvailability()
+			pendingResults[source.name] = result
 			val now = SystemClock.elapsedRealtime()
-			if (pendingAvailability.size >= RESULT_BATCH_SIZE || now - lastFlushAt >= FLUSH_INTERVAL_MS) {
-				batch = LinkedHashMap(pendingAvailability)
-				pendingAvailability.clear()
+			if (pendingResults.size >= RESULT_BATCH_SIZE || now - lastFlushAt >= FLUSH_INTERVAL_MS) {
+				batch = LinkedHashMap(pendingResults)
+				pendingResults.clear()
 				lastFlushAt = now
 			}
 			if (lastPublishAt < 0L || now - lastPublishAt >= PUBLISH_INTERVAL_MS) {
@@ -132,22 +143,17 @@ class SourceTestViewModel @Inject constructor(
 				published = allResults.toList()
 			}
 		}
-		batch?.let(::flushAvailability)
+		batch?.let(::flushResults)
 		published?.let { snapshot ->
 			_progress.update { if (snapshot.size > it.results.size) it.copy(results = snapshot) else it }
 		}
 	}
 
-	/** Persists the verdicts so the sources list shows the tested state of every source. */
-	private fun flushAvailability(batch: Map<String, ContentSourceAvailability>) {
+	private fun flushResults(batch: Map<String, SourceTestResult>) {
 		if (batch.isEmpty()) return
-		runCatching { sourceAvailabilityRepository.setAvailabilities(batch) }
-	}
-
-	private fun SourceTestResult.toAvailability(): ContentSourceAvailability = when (overall) {
-		StepStatus.PASS, StepStatus.SKIP -> ContentSourceAvailability.AVAILABLE
-		StepStatus.FAIL -> ContentSourceAvailability.EMPTY
-		StepStatus.CLOUDFLARE -> ContentSourceAvailability.CLOUDFLARE
+		runCatching {
+			sourceAvailabilityRepository.recordChecks(batch.mapValues { (_, result) -> result.toCheck() })
+		}
 	}
 
 	fun cancel() {
@@ -179,6 +185,7 @@ class SourceTestViewModel @Inject constructor(
 					.put("title", result.title)
 					.put("status", result.overall.name.lowercase())
 					.put("durationMs", result.durationMs)
+					.put("checkedAt", Instant.ofEpochMilli(result.checkedAt).toString())
 					.put("steps", steps),
 			)
 		}

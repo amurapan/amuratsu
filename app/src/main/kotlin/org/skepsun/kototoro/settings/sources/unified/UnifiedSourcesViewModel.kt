@@ -1,5 +1,8 @@
 package org.skepsun.kototoro.settings.sources.unified
 
+import org.skepsun.kototoro.settings.sources.test.SourceHealth
+import org.skepsun.kototoro.settings.sources.test.SourceHealthStatus
+
 import android.content.Context
 import org.skepsun.kototoro.core.model.getTitle
 import android.content.Intent
@@ -340,10 +343,23 @@ class UnifiedSourcesViewModel @Inject constructor(
     private val baseSourcesUiState: Flow<UnifiedSourcesUiState.Ready> = combine(
         fullCatalogState,
         filterState,
-    ) { catalogData, filters ->
+        sourceAvailabilityRepository.observeHealth(),
+    ) { catalogData, filters, health ->
         val visibleRepositories = catalogData.repositories.filterBy(filters)
         val visiblePackages = catalogData.packages.filterBy(filters, catalogData.repositoriesById)
-        val visibleSources = catalogData.sources.filterBy(filters, catalogData.repositoriesById, catalogData.packagesById)
+        val visibleSources = catalogData.sources.filterBy(
+            filters, catalogData.repositoriesById, catalogData.packagesById, health,
+        )
+        val sourcesForCheck = when (filters.testAvailabilityFilter) {
+            UnifiedTestAvailabilityFilter.VERIFIED, UnifiedTestAvailabilityFilter.INTERMITTENT ->
+                catalogData.sources.filterBy(
+                    filters.copy(testAvailabilityFilter = UnifiedTestAvailabilityFilter.ALL),
+                    catalogData.repositoriesById,
+                    catalogData.packagesById,
+                    health,
+                )
+            else -> visibleSources
+        }
 
         UnifiedSourcesUiState.Ready(
             filters = filters,
@@ -357,6 +373,8 @@ class UnifiedSourcesViewModel @Inject constructor(
             availableContentTypes = catalogData.availableContentTypes,
             availableLocationTypes = catalogData.availableLocationTypes,
             availableLanguages = catalogData.availableLanguages,
+            sourceHealth = health,
+            sourcesForCheck = sourcesForCheck,
             recommendedPackages = catalogData.recommendedPackages,
             missingSourcesWithoutMatch = catalogData.missingSourcesWithoutMatch,
             suggestedRepositoriesForMissing = catalogData.suggestedRepositoriesForMissing,
@@ -459,6 +477,17 @@ class UnifiedSourcesViewModel @Inject constructor(
 
     fun setTestAvailabilityFilter(filter: UnifiedTestAvailabilityFilter) {
         filterState.update { it.copy(testAvailabilityFilter = filter) }
+    }
+
+    fun toggleVerifiedSources() {
+        filterState.update { state ->
+            val filter = if (state.testAvailabilityFilter == UnifiedTestAvailabilityFilter.VERIFIED) {
+                UnifiedTestAvailabilityFilter.ALL
+            } else {
+                UnifiedTestAvailabilityFilter.VERIFIED
+            }
+            state.copy(testAvailabilityFilter = filter)
+        }
     }
 
     fun setNsfwFilter(filter: UnifiedNsfwFilter) {
@@ -2524,6 +2553,7 @@ class UnifiedSourcesViewModel @Inject constructor(
         filters: UnifiedSourcesFilterState,
         repositoriesById: Map<String, UnifiedSourceRepositoryItem>,
         packagesById: Map<String, UnifiedSourcePackageItem>,
+        sourceHealth: Map<String, SourceHealth>,
     ): List<UnifiedSourceItem> {
         val query = filters.query.trim()
         return asSequence()
@@ -2548,7 +2578,11 @@ class UnifiedSourcesViewModel @Inject constructor(
             .filter {
                 when (filters.testAvailabilityFilter) {
                     UnifiedTestAvailabilityFilter.ALL -> true
-                    UnifiedTestAvailabilityFilter.UNTESTED -> it.testAvailability == ContentSourceAvailability.UNKNOWN
+                    UnifiedTestAvailabilityFilter.VERIFIED -> sourceHealth[it.source.name]?.status == SourceHealthStatus.VERIFIED
+                    UnifiedTestAvailabilityFilter.INTERMITTENT ->
+                        sourceHealth[it.source.name]?.status == SourceHealthStatus.INTERMITTENT
+                    UnifiedTestAvailabilityFilter.UNTESTED ->
+                        it.source.name !in sourceHealth && it.testAvailability == ContentSourceAvailability.UNKNOWN
                     UnifiedTestAvailabilityFilter.AVAILABLE -> it.testAvailability == ContentSourceAvailability.AVAILABLE
                     UnifiedTestAvailabilityFilter.UNAVAILABLE -> it.testAvailability == ContentSourceAvailability.EMPTY
                     UnifiedTestAvailabilityFilter.CLOUDFLARE -> it.testAvailability == ContentSourceAvailability.CLOUDFLARE
@@ -2936,14 +2970,16 @@ internal fun UnifiedSourcesUiState.Ready.withEnabledOverrides(
     }
     val mergedAll = allSources.withEnabledOverrides(overrides)
     val mergedVisible = sources.withEnabledOverrides(overrides)
+    val mergedCheck = if (sourcesForCheck === sources) mergedVisible else sourcesForCheck.withEnabledOverrides(overrides)
     // Keep the same instance when no override changes anything, so downstream collectors and
     // Compose see an identical state instead of a fresh copy on every merge.
-    if (mergedAll === allSources && mergedVisible === sources) {
+    if (mergedAll === allSources && mergedVisible === sources && mergedCheck === sourcesForCheck) {
         return this
     }
     return copy(
         allSources = mergedAll,
         sources = mergedVisible,
+        sourcesForCheck = mergedCheck,
     )
 }
 

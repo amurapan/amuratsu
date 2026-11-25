@@ -4,6 +4,7 @@ import android.content.Intent
 import org.skepsun.kototoro.extensions.install.ExtensionInstallMode
 import org.skepsun.kototoro.extensions.repo.ExternalExtensionRepo
 import org.skepsun.kototoro.parsers.model.ContentType
+import org.skepsun.kototoro.settings.sources.test.SourceHealth
 
 sealed interface UnifiedSourcesEvent {
     data class Message(val message: String) : UnifiedSourcesEvent
@@ -93,6 +94,8 @@ enum class UnifiedAvailabilityFilter {
 
 enum class UnifiedTestAvailabilityFilter {
     ALL,
+    VERIFIED,
+    INTERMITTENT,
     UNTESTED,
     AVAILABLE,
     UNAVAILABLE,
@@ -126,6 +129,8 @@ sealed interface UnifiedSourcesUiState {
         val availableContentTypes: List<ContentType>,
         val availableLocationTypes: List<UnifiedRepositoryLocationType>,
         val availableLanguages: List<String>,
+        val sourceHealth: Map<String, SourceHealth> = emptyMap(),
+        val sourcesForCheck: List<UnifiedSourceItem> = sources,
         /** Store packages whose sources cover sources missing from imported backups. */
         val recommendedPackages: List<RecommendedPackageItem> = emptyList(),
         /** Missing sources (recorded at import time) that no configured repository covers. */

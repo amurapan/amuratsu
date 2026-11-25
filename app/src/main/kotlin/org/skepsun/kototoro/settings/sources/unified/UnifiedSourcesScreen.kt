@@ -355,6 +355,7 @@ fun UnifiedSourcesRoute(
         onLanguageFilterClick = { onActivePanelChange(UnifiedToolbarFilterPanel.LANGUAGE) },
         onMoreFiltersClick = { onActivePanelChange(UnifiedToolbarFilterPanel.FILTER) },
         onSourceEnabledChange = viewModel::setSourceEnabled,
+        onVerifiedFilterClick = viewModel::toggleVerifiedSources,
         onEnableAllSources = { confirmSetFilteredSourcesEnabled(true) },
         onDisableAllSources = { confirmSetFilteredSourcesEnabled(false) },
         selectedSourceIds = selectedSourceIds,

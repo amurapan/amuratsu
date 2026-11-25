@@ -1,12 +1,15 @@
 package org.skepsun.kototoro.settings.sources.test
 
+import kotlinx.serialization.Serializable
+
 internal const val SOURCE_TEST_STEP_TIMEOUT_MS = 20_000L
 internal const val SOURCE_TEST_SOURCE_TIMEOUT_MS = 90_000L
-internal const val SOURCE_TEST_MAX_PARALLELISM = 10
+internal const val SOURCE_TEST_MAX_PARALLELISM = 4
 internal const val SOURCE_TEST_COVER_SAMPLE = 3
 internal const val SOURCE_TEST_DETAILS_SAMPLE = 3
 internal val SOURCE_TEST_SEARCH_QUERIES = listOf("a", "one")
 
+@Serializable
 enum class SourceTestStep {
 	LIST,
 	COVERS,
@@ -17,6 +20,7 @@ enum class SourceTestStep {
 	SEARCH,
 }
 
+@Serializable
 enum class StepStatus {
 	PASS,
 	FAIL,
@@ -24,10 +28,13 @@ enum class StepStatus {
 	CLOUDFLARE,
 }
 
+@Serializable
 data class StepResult(
 	val status: StepStatus,
 	val message: String = "",
 	val durationMs: Long = 0L,
+	val sampled: Int = 0,
+	val passedSamples: Int = 0,
 )
 
 /**
@@ -47,6 +54,8 @@ data class SourceTestResult(
 	val steps: Map<SourceTestStep, StepResult>,
 	val overall: StepStatus = overallStatusOf(steps),
 	val durationMs: Long = 0L,
+	val startedAt: Long = System.currentTimeMillis(),
+	val checkedAt: Long = System.currentTimeMillis(),
 )
 
 /** Live state of a "test all" run. */

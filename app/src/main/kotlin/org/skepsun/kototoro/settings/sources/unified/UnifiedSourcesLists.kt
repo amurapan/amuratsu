@@ -93,7 +93,12 @@ import org.skepsun.kototoro.core.ui.theme.LocalMaterialExpressiveComponentsEnabl
 import org.skepsun.kototoro.ireader.model.IReaderMangaSource
 import org.skepsun.kototoro.mihon.model.MihonMangaSource
 import org.skepsun.kototoro.settings.compose.SettingsContentHorizontalPadding
+import org.skepsun.kototoro.settings.sources.test.SourceHealth
+import org.skepsun.kototoro.settings.sources.test.SourceHealthDialog
+import org.skepsun.kototoro.settings.sources.test.SourceHealthStatus
 import org.skepsun.kototoro.settings.sources.test.SourceTestDialog
+import org.skepsun.kototoro.settings.sources.test.labelRes
+import org.skepsun.kototoro.settings.sources.test.sourceCheckedAtLabel
 
 private object PackageIconMemoryCache {
     private val cache = ConcurrentHashMap<String, Drawable>()
@@ -105,11 +110,17 @@ private object PackageIconMemoryCache {
     }
 }
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 internal fun UnifiedSourceList(
     modifier: Modifier = Modifier,
     listState: LazyListState,
     sources: List<UnifiedSourceItem>,
+    allSources: List<UnifiedSourceItem>,
+    sourcesForCheck: List<UnifiedSourceItem>,
+    sourceHealth: Map<String, SourceHealth>,
+    verifiedOnly: Boolean,
+    onVerifiedFilterClick: () -> Unit,
     onBrowseSource: (UnifiedSourceItem) -> Unit,
     onOpenSourceSettings: (UnifiedSourceItem) -> Unit,
     onSourceEnabledChange: (String, Boolean) -> Unit,
@@ -118,8 +129,6 @@ internal fun UnifiedSourceList(
     selectedSourceIds: Set<String>,
     onSourceSelectionChange: (Set<String>) -> Unit,
     onSourcePinnedChange: (String, Boolean) -> Unit,
-    // False when nothing is installed at all, as opposed to everything being filtered away.
-    hasAnySources: Boolean = true,
     onAddSource: () -> Unit = {},
     onResetFilters: () -> Unit = {},
 ) {
@@ -146,7 +155,10 @@ internal fun UnifiedSourceList(
     // Keep the first action chip aligned with the global content margin; the actions
     // row itself is still horizontally scrollable towards the screen edge.
     val actionsStartPadding = (SettingsContentHorizontalPadding - horizontalPadding).coerceAtLeast(0.dp)
-    var showSourceTest by rememberSaveable { mutableStateOf(false) }
+    val hasAnySources = allSources.isNotEmpty()
+    val testableIds = remember(sourcesForCheck) { sourcesForCheck.filter { it.isEnabled }.map { it.id } }
+    var testSourceIds by rememberSaveable { mutableStateOf(emptyList<String>()) }
+    var checkDetailsId by rememberSaveable { mutableStateOf<String?>(null) }
     Box(modifier = modifier) {
         LazyColumn(
             state = listState,
@@ -158,14 +170,24 @@ internal fun UnifiedSourceList(
                 bottom = 4.dp,
             ),
         ) {
-            if (sources.any { it.isEnabled }) item(key = "test_all_sources") {
-                Button(
-                    onClick = { showSourceTest = true },
-                    modifier = Modifier.padding(start = actionsStartPadding, bottom = 8.dp),
+            if (hasAnySources) item(key = "test_all_sources") {
+                FlowRow(
+                    modifier = Modifier.padding(start = actionsStartPadding, bottom = 4.dp),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                    itemVerticalAlignment = Alignment.CenterVertically,
                 ) {
-                    Icon(painterResource(R.drawable.ic_play), null, Modifier.size(18.dp))
-                    Spacer(Modifier.width(8.dp))
-                    Text(stringResource(R.string.source_test_action))
+                    if (testableIds.isNotEmpty()) {
+                        Button(onClick = { testSourceIds = testableIds }) {
+                            Icon(painterResource(R.drawable.ic_play), null, Modifier.size(18.dp))
+                            Spacer(Modifier.width(8.dp))
+                            Text(stringResource(R.string.source_test_action))
+                        }
+                    }
+                    CompactFilterChip(
+                        selected = verifiedOnly,
+                        onClick = onVerifiedFilterClick,
+                        text = stringResource(R.string.source_health_filter_verified),
+                    )
                 }
             }
             // Bulk actions over an empty catalogue are a row of dead buttons above the one thing the
@@ -243,6 +265,9 @@ internal fun UnifiedSourceList(
                         val isSelected = item.id in selectedSourceIds
                         UnifiedSourceRow(
                             item = item,
+                            health = sourceHealth[item.source.name],
+                            onOpenLastCheck = { checkDetailsId = item.id },
+                            onTestSource = { testSourceIds = listOf(item.id) },
                             isSelectionMode = selectedSourceIds.isNotEmpty(),
                             isSelected = isSelected,
                             groupColor = rememberPackageGroupColor(row.groupPackageId),
@@ -304,8 +329,12 @@ internal fun UnifiedSourceList(
                     if (hasAnySources) {
                         EmptyStatePanel(
                             icon = Icons.Outlined.SearchOff,
-                            title = stringResource(R.string.no_sources_found),
-                            message = stringResource(R.string.no_sources_found_desc),
+                            title = stringResource(
+                                if (verifiedOnly) R.string.source_health_empty_verified else R.string.no_sources_found,
+                            ),
+                            message = stringResource(
+                                if (verifiedOnly) R.string.source_health_empty_verified_hint else R.string.no_sources_found_desc,
+                            ),
                             actionLabel = stringResource(R.string.reset_filter),
                             onAction = onResetFilters,
                         )
@@ -328,8 +357,25 @@ internal fun UnifiedSourceList(
             alwaysVisible = true,
             contentPadding = PaddingValues(vertical = 4.dp),
         )
-        if (showSourceTest) {
-            SourceTestDialog(sources = sources.filter { it.isEnabled }.map { it.source }, onDismiss = { showSourceTest = false })
+        if (testSourceIds.isNotEmpty()) {
+            val targets = remember(allSources, testSourceIds) {
+                val ids = testSourceIds.toHashSet()
+                allSources.filter { it.id in ids }.map { it.source }
+            }
+            if (targets.isNotEmpty()) SourceTestDialog(sources = targets, onDismiss = { testSourceIds = emptyList() })
+        }
+        val checkedSource = checkDetailsId?.let { id -> allSources.firstOrNull { it.id == id } }
+        val check = checkedSource?.let { sourceHealth[it.source.name] }
+        if (checkedSource != null && check != null) {
+            SourceHealthDialog(
+                title = checkedSource.title,
+                health = check,
+                onRetest = {
+                    checkDetailsId = null
+                    testSourceIds = listOf(checkedSource.id)
+                },
+                onDismiss = { checkDetailsId = null },
+            )
         }
     }
 }
@@ -575,6 +621,9 @@ private fun UnifiedSourcePackageHeader(
 @Composable
 private fun UnifiedSourceRow(
     item: UnifiedSourceItem,
+    health: SourceHealth?,
+    onOpenLastCheck: () -> Unit,
+    onTestSource: () -> Unit,
     isSelectionMode: Boolean,
     isSelected: Boolean,
     groupColor: Color?,
@@ -686,9 +735,9 @@ private fun UnifiedSourceRow(
                 if (!item.isAvailable || item.isBroken) {
                     CompactTag(text = stringResource(R.string.unavailable), tone = CompactTagTone.Warning)
                 }
-                when (item.testAvailability) {
+                if (health == null) when (item.testAvailability) {
                     ContentSourceAvailability.AVAILABLE -> CompactTag(
-                        text = stringResource(R.string.source_test_available),
+                        text = stringResource(R.string.source_health_reply_received),
                         tone = CompactTagTone.TestedAvailable,
                     )
                     ContentSourceAvailability.EMPTY -> CompactTag(
@@ -701,6 +750,22 @@ private fun UnifiedSourceRow(
                     )
                     ContentSourceAvailability.UNKNOWN -> Unit
                 }
+            }
+            if (health != null) {
+                val status = stringResource(health.status.labelRes)
+                val checked = sourceCheckedAtLabel(health.latest.checkedAt)
+                val color = when (health.status) {
+                    SourceHealthStatus.VERIFIED -> MaterialTheme.colorScheme.primary
+                    SourceHealthStatus.UNAVAILABLE, SourceHealthStatus.CONTENT_FAILED -> MaterialTheme.colorScheme.error
+                    SourceHealthStatus.STALE -> MaterialTheme.colorScheme.onSurfaceVariant
+                    else -> MaterialTheme.colorScheme.tertiary
+                }
+                Text(
+                    text = "$status · $checked",
+                    modifier = if (isSelectionMode) Modifier else Modifier.clickable(onClick = onOpenLastCheck),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = color,
+                )
             }
             Text(
                 text = item.source.getSummary(context, item.contentType) ?: buildSourceSubtitle(item),
@@ -739,6 +804,22 @@ private fun UnifiedSourceRow(
                         onSourcePinnedChange(item.id, !item.isPinned)
                     },
                 )
+                TvDropdownMenuItem(
+                    text = { Text(stringResource(R.string.source_test_one)) },
+                    onClick = {
+                        menuExpanded = false
+                        onTestSource()
+                    },
+                )
+                if (health != null) {
+                    TvDropdownMenuItem(
+                        text = { Text(stringResource(R.string.source_health_details)) },
+                        onClick = {
+                            menuExpanded = false
+                            onOpenLastCheck()
+                        },
+                    )
+                }
                     TvDropdownMenuItem(
                         text = { Text(stringResource(R.string.settings)) },
                     onClick = {

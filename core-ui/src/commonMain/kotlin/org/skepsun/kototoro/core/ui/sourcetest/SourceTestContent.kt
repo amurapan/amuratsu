@@ -1,6 +1,7 @@
 package org.skepsun.kototoro.core.ui.sourcetest
 
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -173,38 +174,45 @@ fun SourceTestResultRow(
             }
         }
         if (expanded) {
-            result.steps.forEach { step ->
-                Row(
-                    modifier = Modifier.fillMaxWidth().padding(start = 12.dp, top = 6.dp),
-                    verticalAlignment = Alignment.CenterVertically,
-                ) {
-                    Text(
-                        text = step.label,
-                        style = MaterialTheme.typography.bodySmall,
-                        modifier = Modifier.weight(1f),
-                    )
-                    Text(
-                        text = step.verdictLabel,
-                        style = MaterialTheme.typography.labelMedium,
-                        color = sourceTestVerdictColor(step.verdict),
-                        modifier = Modifier.then(stepTag?.invoke(step.key)?.let { Modifier.testTag(it) } ?: Modifier),
-                    )
-                    Text(
-                        text = durationLabel(step.durationMs),
-                        style = MaterialTheme.typography.labelSmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        modifier = Modifier.padding(start = 8.dp),
-                    )
-                }
-                if (step.message.isNotBlank()) {
-                    Text(
-                        text = step.message,
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        modifier = Modifier.fillMaxWidth().padding(start = 12.dp),
-                    )
-                }
+            SourceTestSteps(result.steps, stepTag = stepTag, durationLabel = durationLabel)
+        }
+    }
+}
+
+@Composable
+fun SourceTestSteps(
+    steps: List<SourceTestStepLine>,
+    stepTag: ((key: String) -> String)? = null,
+    durationLabel: (Long) -> String? = { "$it ms" },
+) {
+    steps.forEach { step ->
+        Row(
+            modifier = Modifier.fillMaxWidth().padding(start = 12.dp, top = 6.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(8.dp),
+        ) {
+            Text(text = step.label, style = MaterialTheme.typography.bodySmall, modifier = Modifier.weight(1f))
+            Text(
+                text = step.verdictLabel,
+                style = MaterialTheme.typography.labelMedium,
+                color = sourceTestVerdictColor(step.verdict),
+                modifier = Modifier.then(stepTag?.invoke(step.key)?.let { Modifier.testTag(it) } ?: Modifier),
+            )
+            durationLabel(step.durationMs)?.let { duration ->
+                Text(
+                    text = duration,
+                    style = MaterialTheme.typography.labelSmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
             }
+        }
+        if (step.message.isNotBlank()) {
+            Text(
+                text = step.message,
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.fillMaxWidth().padding(start = 12.dp),
+            )
         }
     }
 }

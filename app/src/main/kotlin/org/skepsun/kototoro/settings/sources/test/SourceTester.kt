@@ -13,6 +13,7 @@ import org.skepsun.kototoro.core.network.ContentHttpClient
 import org.skepsun.kototoro.core.parser.ContentRepository
 import org.skepsun.kototoro.explore.data.classifyAvailability
 import org.skepsun.kototoro.parsers.model.Content
+import org.skepsun.kototoro.parsers.model.ContentChapter
 import org.skepsun.kototoro.parsers.model.ContentListFilter
 import org.skepsun.kototoro.parsers.model.ContentSource
 import org.skepsun.kototoro.parsers.model.ContentType
@@ -41,6 +42,7 @@ class SourceTester @Inject constructor(
 		onStep: (SourceTestStep, StepResult) -> Unit = { _, _ -> },
 	): SourceTestResult {
 		val startedAt = System.nanoTime()
+		val startedAtMillis = System.currentTimeMillis()
 		val steps = LinkedHashMap<SourceTestStep, StepResult>()
 		val record: (SourceTestStep, StepResult) -> Unit = { step, result ->
 			steps[step] = result
@@ -67,6 +69,7 @@ class SourceTester @Inject constructor(
 			title = source.getTitle(context),
 			steps = steps.toMap(),
 			durationMs = elapsedMs(startedAt),
+			startedAt = startedAtMillis,
 		)
 	}
 
@@ -102,65 +105,30 @@ class SourceTester @Inject constructor(
 			}
 		}
 
-		var details: Content? = null
+		val details = ArrayList<Content>()
 		runOrSkip(SourceTestStep.DETAILS, record, listOk) {
-			// The first list entry can legitimately have no chapters (announcements, empty series),
-			// so try a few entries before declaring the details/chapters steps failed.
-			val sample = items.take(SOURCE_TEST_DETAILS_SAMPLE)
-			if (sample.isEmpty()) return@runOrSkip failed(R.string.source_test_msg_no_items)
-			var firstError: Throwable? = null
-			for (item in sample) {
-				val attempt = runCatchingCancellable { repo.getDetails(item) }
-				val loaded = attempt.getOrNull()
-				if (loaded == null) {
-					if (firstError == null) firstError = attempt.exceptionOrNull()
-					continue
-				}
-				details = loaded
-				if (loaded.chapters.orEmpty().isNotEmpty()) break
-			}
-			val loaded = details ?: throw (firstError ?: IllegalStateException("details"))
-			passed(R.string.source_test_msg_details, loaded.title)
-		}
-
-		val chapter = details?.chapters?.firstOrNull()
-		runOrSkip(SourceTestStep.CHAPTERS, record, details != null) {
-			val count = details?.chapters.orEmpty().size
-			if (count == 0) {
-				failed(R.string.source_test_msg_no_chapters)
-			} else {
-				passed(R.string.source_test_msg_chapters, count)
+			val sample = items.distinctBy { it.id }.take(SOURCE_TEST_DETAILS_SAMPLE)
+			testSample(sample) { item ->
+				val loaded = repo.getDetails(item, ContentRepository.DetailsFetchMode.FORCE_REFRESH)
+				details += loaded
+				passed(R.string.source_test_msg_details, loaded.title)
 			}
 		}
 
-		runOrSkip(SourceTestStep.PAGES, record, chapter != null) {
-			val target = chapter ?: return@runOrSkip failed(R.string.source_test_msg_no_chapters)
-			val pages = repo.getPages(target)
-			if (pages.isEmpty()) {
-				if (repo.getChapterContent(target) != null) {
-					return@runOrSkip passed(R.string.source_test_msg_text_chapter)
-				}
-				return@runOrSkip failed(R.string.source_test_msg_no_pages)
-			}
-			val page = pages.first()
-			val pageUrl = repo.getPageUrl(page)
-			val response = repo.fetchPageResponse(pageUrl, page)
-				?: (repo.getImageClient() ?: okHttp).newCall(repo.createPageRequest(pageUrl, page)).await()
-			if (repo.source.contentType.isVideo()) {
-				// Video sources expose MP4/HLS/DASH streams through ContentPage; an image check would fail them.
-				val error = verifyStream(response)
-				return@runOrSkip if (error == null) {
-					passed(R.string.source_test_msg_video_stream, pages.size)
+		val chapters = details.mapNotNull { it.chapters?.firstOrNull() }
+		runOrSkip(SourceTestStep.CHAPTERS, record, details.isNotEmpty()) {
+			summarizeSamples(details.map { item ->
+				val count = item.chapters.orEmpty().size
+				if (count == 0) {
+					failed(R.string.source_test_msg_no_chapters)
 				} else {
-					failed(R.string.source_test_msg_stream_failed, error)
+					passed(R.string.source_test_msg_chapters, count)
 				}
-			}
-			val error = verifyImage(response)
-			if (error == null) {
-				passed(R.string.source_test_msg_pages, pages.size)
-			} else {
-				failed(R.string.source_test_msg_image_failed, error)
-			}
+			})
+		}
+
+		runOrSkip(SourceTestStep.PAGES, record, chapters.isNotEmpty()) {
+			testSample(chapters) { chapter -> checkPayload(repo, chapter) }
 		}
 
 		// No per-source random capability exists in the parser API (only app-level random suggestions).
@@ -183,6 +151,46 @@ class SourceTester @Inject constructor(
 		}
 	}
 
+	private suspend fun checkPayload(repo: ContentRepository, chapter: ContentChapter): StepResult {
+		val pages = repo.getPages(chapter)
+		val page = pages.firstOrNull() ?: return if (repo.getChapterContent(chapter)?.html.isNullOrBlank()) {
+			failed(R.string.source_test_msg_no_pages)
+		} else {
+			passed(R.string.source_test_msg_text_chapter)
+		}
+		val pageUrl = repo.getPageUrl(page)
+		val response = repo.fetchPageResponse(pageUrl, page)
+			?: (repo.getImageClient() ?: okHttp).newCall(repo.createPageRequest(pageUrl, page)).await()
+		if (repo.source.contentType.isVideo()) {
+			val error = verifyStream(response)
+			return if (error == null) passed(R.string.source_test_msg_video_stream, pages.size)
+			else failed(R.string.source_test_msg_stream_failed, error)
+		}
+		val error = verifyImage(response)
+		return if (error == null) passed(R.string.source_test_msg_pages, pages.size)
+		else failed(R.string.source_test_msg_image_failed, error)
+	}
+
+	private suspend fun <T> testSample(sample: List<T>, test: suspend (T) -> StepResult): StepResult {
+		if (sample.isEmpty()) return failed(R.string.source_test_msg_no_items)
+		val perTitleTimeout = (SOURCE_TEST_STEP_TIMEOUT_MS - 1_000) / sample.size
+		return summarizeSamples(sample.map { item -> check(perTitleTimeout) { test(item) } })
+	}
+
+	private fun summarizeSamples(results: List<StepResult>): StepResult {
+		val passed = results.count { it.status == StepStatus.PASS }
+		val problem = results.firstOrNull { it.status == StepStatus.FAIL }
+			?: results.firstOrNull { it.status == StepStatus.CLOUDFLARE }
+		val sampleLabel = text(R.string.source_test_sample_progress, passed, results.size)
+		val reason = (problem ?: results.singleOrNull())?.message.orEmpty()
+		return StepResult(
+			status = problem?.status ?: StepStatus.PASS,
+			message = listOf(sampleLabel, reason).filter(String::isNotBlank).joinToString("\n"),
+			sampled = results.size,
+			passedSamples = passed,
+		)
+	}
+
 	/** Runs [block] under the per-step timeout, records the timed result and returns true on PASS. */
 	private suspend fun runStep(
 		step: SourceTestStep,
@@ -190,7 +198,14 @@ class SourceTester @Inject constructor(
 		block: suspend () -> StepResult,
 	): Boolean {
 		val startedAt = System.nanoTime()
-		val result = withTimeoutOrNull(SOURCE_TEST_STEP_TIMEOUT_MS) {
+		val result = check(SOURCE_TEST_STEP_TIMEOUT_MS, block)
+		val timed = result.copy(durationMs = elapsedMs(startedAt))
+		record(step, timed)
+		return timed.status == StepStatus.PASS
+	}
+
+	private suspend fun check(timeoutMs: Long, block: suspend () -> StepResult): StepResult =
+		withTimeoutOrNull(timeoutMs) {
 			runCatchingCancellable { block() }.getOrElse { e ->
 				if (isCloudflareBlocked(e)) {
 					StepResult(StepStatus.CLOUDFLARE, text(R.string.source_test_msg_cloudflare))
@@ -198,11 +213,7 @@ class SourceTester @Inject constructor(
 					StepResult(StepStatus.FAIL, describe(e))
 				}
 			}
-		} ?: failed(R.string.source_test_msg_timeout, SOURCE_TEST_STEP_TIMEOUT_MS / 1000)
-		val timed = result.copy(durationMs = elapsedMs(startedAt))
-		record(step, timed)
-		return timed.status == StepStatus.PASS
-	}
+		} ?: failed(R.string.source_test_msg_timeout, timeoutMs / 1000)
 
 	private suspend fun runOrSkip(
 		step: SourceTestStep,
@@ -276,9 +287,12 @@ private fun ContentType.isVideo(): Boolean = this == ContentType.VIDEO || this =
  */
 internal fun looksLikeVideoStream(contentType: String, head: ByteArray): Boolean {
 	val type = contentType.substringBefore(';').trim().lowercase()
+	val text = head.toString(Charsets.UTF_8).trimStart('\uFEFF', ' ', '\t', '\r', '\n')
+	if (text.startsWith("<html", ignoreCase = true) || text.startsWith("<!doctype html", ignoreCase = true) ||
+		text.startsWith("{")
+	) return false
 	if (type.startsWith("video/") || type.startsWith("audio/")) return true
 	if (type.contains("mpegurl") || type.contains("dash+xml")) return true
-	val text = head.take(16).toByteArray().toString(Charsets.ISO_8859_1)
 	if (text.startsWith("#EXTM3U")) return true
 	if (head.size >= 8 && String(head, 4, 4, Charsets.ISO_8859_1) == "ftyp") return true
 	if (head.size >= 4 && head[0] == 0x1A.toByte() && head[1] == 0x45.toByte() &&

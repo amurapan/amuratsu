@@ -365,6 +365,8 @@ internal fun UnifiedAvailabilityFilter.displayLabel(): String {
 internal fun UnifiedTestAvailabilityFilter.displayLabel(): String {
     return when (this) {
         UnifiedTestAvailabilityFilter.ALL -> stringResource(R.string.all)
+        UnifiedTestAvailabilityFilter.VERIFIED -> stringResource(R.string.source_health_filter_verified)
+        UnifiedTestAvailabilityFilter.INTERMITTENT -> stringResource(R.string.source_health_filter_intermittent)
         UnifiedTestAvailabilityFilter.UNTESTED -> stringResource(R.string.source_untested)
         UnifiedTestAvailabilityFilter.AVAILABLE -> stringResource(R.string.available)
         UnifiedTestAvailabilityFilter.UNAVAILABLE -> stringResource(R.string.unavailable)

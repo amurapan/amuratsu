@@ -1,6 +1,6 @@
 package org.skepsun.kototoro.settings.sources.test
 
-import androidx.compose.foundation.clickable
+import android.text.format.DateFormat
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
@@ -11,6 +11,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ExpandMore
 import androidx.compose.material3.HorizontalDivider
@@ -48,6 +50,7 @@ import org.skepsun.kototoro.core.ui.sourcetest.SourceTestProgressHeader
 import org.skepsun.kototoro.core.ui.sourcetest.SourceTestResultLine
 import org.skepsun.kototoro.core.ui.sourcetest.SourceTestResultRow
 import org.skepsun.kototoro.core.ui.sourcetest.SourceTestStepLine
+import org.skepsun.kototoro.core.ui.sourcetest.SourceTestSteps
 import org.skepsun.kototoro.core.ui.sourcetest.SourceTestVerdict
 import org.skepsun.kototoro.core.ui.text.LocalUiStrings
 import org.skepsun.kototoro.core.ui.text.UiStrings
@@ -55,6 +58,7 @@ import org.skepsun.kototoro.parsers.model.ContentSource
 import org.skepsun.kototoro.settings.compose.SettingsAlertDialog
 import java.io.File
 import java.time.Instant
+import java.util.Date
 
 /**
  * "Test all" dialog for the sources tab. Starts testing [sources] when shown and cancels
@@ -166,6 +170,11 @@ internal fun SourceTestDialog(
 					horizontalArrangement = Arrangement.End,
 					verticalArrangement = Arrangement.Center,
 				) {
+					if (progress.finished && progress.results.any { it.overall != StepStatus.PASS }) {
+						TvTextButton(onClick = viewModel::retryFailed) {
+							Text(stringResource(R.string.source_test_retry))
+						}
+					}
 					if (progress.finished && failedCount > 0) {
 						TvTextButton(onClick = viewModel::disableFailed) {
 							Text(stringResource(R.string.source_test_disable_failed))
@@ -215,18 +224,75 @@ private fun SourceTestResult.toLine(strings: UiStrings, disabled: Boolean): Sour
 		strings.string(statusLabelKey(overall))
 	},
 	disabled = disabled,
-	steps = SourceTestStep.entries.mapNotNull { step ->
-		val stepResult = steps[step] ?: return@mapNotNull null
+	steps = steps.toLines(strings),
+)
+
+private fun Map<SourceTestStep, StepResult>.toLines(strings: UiStrings): List<SourceTestStepLine> =
+	SourceTestStep.entries.mapNotNull { step ->
+		val stepResult = this[step] ?: return@mapNotNull null
+		val sample = stepResult.takeIf { it.sampled > 0 }?.let {
+			strings.format("source_test_sample_progress", it.passedSamples, it.sampled)
+		}
 		SourceTestStepLine(
 			key = step.name,
 			label = strings.string(stepLabelKey(step)),
 			verdict = stepResult.status.toVerdict(),
 			verdictLabel = strings.string(statusLabelKey(stepResult.status)),
 			durationMs = stepResult.durationMs,
-			message = stepResult.message,
+			message = stepResult.message.ifBlank { sample.orEmpty() },
 		)
-	},
-)
+	}
+
+@Composable
+internal fun SourceHealthDialog(
+	title: String,
+	health: SourceHealth,
+	onRetest: () -> Unit,
+	onDismiss: () -> Unit,
+) {
+	val strings = LocalUiStrings.current
+	SettingsAlertDialog(
+		title = title,
+		onDismissRequest = onDismiss,
+		confirmButton = {
+			TvTextButton(onClick = onRetest) { Text(stringResource(R.string.source_test_one)) }
+		},
+		dismissButton = {
+			TvTextButton(onClick = onDismiss) { Text(stringResource(R.string.source_test_close)) }
+		},
+		text = {
+			Column(
+				modifier = Modifier.fillMaxWidth().verticalScroll(rememberScrollState()),
+				verticalArrangement = Arrangement.spacedBy(6.dp),
+			) {
+				Text(stringResource(health.status.labelRes), style = MaterialTheme.typography.titleMedium)
+				Text(sourceCheckedAtLabel(health.latest.checkedAt), style = MaterialTheme.typography.bodySmall)
+				SourceTestSteps(health.latest.steps.toLines(strings))
+			}
+		},
+	)
+}
+
+@Composable
+internal fun sourceCheckedAtLabel(checkedAt: Long): String {
+	val context = LocalContext.current
+	val formatted = remember(context, checkedAt) {
+		val date = Date(checkedAt)
+		"${DateFormat.getDateFormat(context).format(date)} · ${DateFormat.getTimeFormat(context).format(date)}"
+	}
+	return stringResource(R.string.source_health_checked_at, formatted)
+}
+
+internal val SourceHealthStatus.labelRes: Int
+	get() = when (this) {
+		SourceHealthStatus.VERIFIED -> R.string.source_health_verified
+		SourceHealthStatus.INTERMITTENT -> R.string.source_health_intermittent
+		SourceHealthStatus.PARTIAL -> R.string.source_health_partial
+		SourceHealthStatus.CONTENT_FAILED -> R.string.source_health_content_failed
+		SourceHealthStatus.UNAVAILABLE -> R.string.source_health_unavailable
+		SourceHealthStatus.CHALLENGE -> R.string.source_test_cloudflare
+		SourceHealthStatus.STALE -> R.string.source_health_stale
+	}
 
 private fun StepStatus.toVerdict(): SourceTestVerdict = when (this) {
 	StepStatus.PASS -> SourceTestVerdict.PASS
@@ -247,7 +313,7 @@ private fun stepLabelKey(step: SourceTestStep): String = when (step) {
 	SourceTestStep.COVERS -> "source_test_step_covers"
 	SourceTestStep.DETAILS -> "source_test_step_details"
 	SourceTestStep.CHAPTERS -> "source_test_step_chapters"
-	SourceTestStep.PAGES -> "source_test_step_pages"
+	SourceTestStep.PAGES -> "source_test_step_content"
 	SourceTestStep.RANDOM -> "source_test_step_random"
 	SourceTestStep.SEARCH -> "source_test_step_search"
 }
