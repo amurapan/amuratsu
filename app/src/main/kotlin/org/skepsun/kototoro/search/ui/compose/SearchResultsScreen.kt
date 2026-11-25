@@ -7,6 +7,7 @@ import androidx.compose.foundation.focusGroup
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -639,54 +640,44 @@ private fun SearchResultsProgress(
             modifier = Modifier.padding(12.dp),
             verticalArrangement = Arrangement.spacedBy(8.dp),
         ) {
-        Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth()) {
-            Column(modifier = Modifier.weight(1f)) {
-                Text(
-                    text = if (state.isRefreshing) stringResource(R.string.search_refreshing_results) else
-                        stringResource(R.string.search_loaded_results, sections.sumOf { it.list.distinctBy { it.id }.size }),
-                    style = MaterialTheme.typography.titleSmall,
-                )
-                // One line for both counters: a failure appearing mid-search must not grow the card and
-                // shove every result section down while the user is reading.
-                if (state.totalSources > 0 || state.failedSources > 0) {
-                    Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-                        if (state.totalSources > 0) {
-                            Text(
-                                text = stringResource(
-                                    R.string.search_sources_progress,
-                                    state.completedSources,
-                                    state.totalSources,
-                                ),
-                                style = MaterialTheme.typography.bodySmall,
-                                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                            )
-                        }
-                        if (state.failedSources > 0) {
-                            Text(
-                                text = stringResource(R.string.search_sources_failed, state.failedSources),
-                                style = MaterialTheme.typography.bodySmall,
-                                color = MaterialTheme.colorScheme.error,
-                            )
-                        }
-                    }
+            Text(
+                text = if (state.isRefreshing) stringResource(R.string.search_refreshing_results) else
+                    stringResource(R.string.search_loaded_results, sections.sumOf { it.list.distinctBy { it.id }.size }),
+                style = MaterialTheme.typography.titleSmall,
+            )
+            FlowRow(
+                horizontalArrangement = Arrangement.spacedBy(12.dp),
+                verticalArrangement = Arrangement.spacedBy(4.dp),
+            ) {
+                if (state.totalSources > 0) {
+                    Text(
+                        text = stringResource(R.string.search_sources_progress, state.completedSources, state.totalSources),
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
+                }
+                if (state.failedSources > 0) {
+                    Text(
+                        text = stringResource(R.string.search_sources_failed, state.failedSources),
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.error,
+                    )
                 }
             }
-            if (state.failedSources > 0) {
-                TvTextButton(onClick = onRetryFailed, enabled = !state.isSearching) {
+            if (state.isSearching) {
+                if (state.totalSources > 0) {
+                    LinearProgressIndicator(
+                        progress = { state.completedSources.toFloat() / state.totalSources },
+                        modifier = Modifier.fillMaxWidth(),
+                    )
+                } else {
+                    LinearProgressIndicator(modifier = Modifier.fillMaxWidth())
+                }
+            } else if (state.failedSources > 0) {
+                TvTextButton(onClick = onRetryFailed, modifier = Modifier.align(Alignment.End)) {
                     Text(stringResource(R.string.search_retry_failed_sources))
                 }
             }
-        }
-        if (state.isSearching) {
-            if (state.totalSources > 0) {
-                LinearProgressIndicator(
-                    progress = { state.completedSources.toFloat() / state.totalSources },
-                    modifier = Modifier.fillMaxWidth(),
-                )
-            } else {
-                LinearProgressIndicator(modifier = Modifier.fillMaxWidth())
-            }
-        }
         }
     }
 }
