@@ -2694,7 +2694,7 @@ class DetailsViewModel @Inject constructor(
         get() = selectedBranch.value
 
     init {
-        if (initialContentIntentOverride?.mangaId?.takeIf { it != 0L } != null || intent.mangaId != 0L || intent.manga != null) {
+        if ((initialContentIntentOverride ?: intent).hasTarget) {
             loadingJob = doLoad(force = false)
         }
         scrobblingInfo
@@ -3864,7 +3864,7 @@ class DetailsViewModel @Inject constructor(
             "load.start force=$force intentId=${resolvedIntent.mangaId} requestedMangaId=$requestedMangaId " +
                 "activeMangaId=${activeMangaIdFlow.value} currentOverride=${currentLoadIntentOverride?.mangaId}",
         )
-        if (resolvedIntent.mangaId == 0L && resolvedIntent.manga == null) {
+        if (!resolvedIntent.hasTarget) {
             Log.w(DETAILS_TRACE_TAG, "load.skip reason=emptyIntent")
             return@launchLoadingJob
         }

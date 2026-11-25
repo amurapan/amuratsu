@@ -38,6 +38,9 @@ class ContentIntent private constructor(
     val mangaId: Long
         get() = if (id != ID_NONE) id else manga?.id ?: uri?.lastPathSegment?.toLongOrNull() ?: ID_NONE
 
+    internal val hasTarget: Boolean
+        get() = id != ID_NONE || manga != null || uri != null
+
     companion object {
 
         const val ID_NONE = 0L
