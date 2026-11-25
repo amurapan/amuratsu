@@ -759,6 +759,7 @@ private fun UnifiedSourceRow(
     }
 }
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 internal fun UnifiedRepositoryList(
     modifier: Modifier = Modifier,
@@ -783,12 +784,13 @@ internal fun UnifiedRepositoryList(
             verticalArrangement = Arrangement.spacedBy(unifiedCardSpacing),
         ) {
             item(key = "add_repository_header") {
-                Row(
+                FlowRow(
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(vertical = 4.dp),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(12.dp),
+                    verticalArrangement = Arrangement.spacedBy(4.dp),
+                    itemVerticalAlignment = Alignment.CenterVertically,
                 ) {
                     Text(
                         text = stringResource(R.string.configured_repositories),
