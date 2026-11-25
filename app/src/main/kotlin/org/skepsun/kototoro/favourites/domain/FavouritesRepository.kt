@@ -290,9 +290,9 @@ class FavouritesRepository @Inject constructor(
         }
     }
 
-    suspend fun getCategoryTitles(mangaIds: Collection<Long>): Map<Long, List<String>> = mangaIds.distinct().chunked(400)
+    suspend fun getCategoryTitles(mangaIds: Collection<Long>): Map<Pair<Long, String>, List<String>> = mangaIds.distinct().chunked(400)
         .flatMap { db.getFavouritesDao().findCategoryTitles(it) }
-        .groupBy({ it.mangaId }, { it.title })
+        .groupBy({ it.mangaId to it.sourceName }, { it.title })
 
     suspend fun createCategory(
         title: String,

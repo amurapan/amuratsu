@@ -11,9 +11,11 @@ import java.util.Locale
 
 internal data class SearchTitleGroups(
     val items: List<ListModel> = emptyList(),
-    val variants: Map<Long, List<ContentListModel>> = emptyMap(),
-    val groupedIds: Set<Long> = emptySet(),
+    val variants: Map<String, List<ContentListModel>> = emptyMap(),
+    val groupedKeys: Set<String> = emptySet(),
 )
+
+internal val ContentListModel.sourceVariantKey: String get() = "${source.name}:$id"
 
 private data class SearchTitleKey(val title: String, val type: ContentType, val cinemaKind: CinemaKind?)
 
@@ -24,7 +26,7 @@ private fun String.normalizedTitle() = Normalizer.normalize(this, Normalizer.For
 
 internal fun groupSearchTitles(items: List<ListModel>): SearchTitleGroups {
     val candidates = items.filterIsInstance<SearchResultsListModel>()
-        .filter { it.titleResId == 0 && it.error == null }.flatMap { it.list }.distinctBy { it.id }
+        .filter { it.titleResId == 0 && it.error == null }.flatMap { it.list }.distinctBy { it.sourceVariantKey }
     val matches = candidates.groupBy { item ->
         SearchTitleKey(item.manga.title.normalizedTitle(), item.source.getContentType(), item.manga.cinemaKind())
     }.values.filter { group ->
@@ -35,6 +37,6 @@ internal fun groupSearchTitles(items: List<ListModel>): SearchTitleGroups {
             .filter { it.isNotEmpty() }
         hasOneMatchPerSource && knownAuthors.distinct().size <= 1
     }
-    return SearchTitleGroups(items, matches.associateBy { it.first().id },
-        matches.flatten().mapTo(HashSet()) { it.id })
+    return SearchTitleGroups(items, matches.associateBy { it.first().sourceVariantKey },
+        matches.flatten().mapTo(HashSet()) { it.sourceVariantKey })
 }

@@ -55,8 +55,9 @@ abstract class FavouritesDao {
 
     @Query(
         """
-        SELECT f.manga_id AS mangaId, fc.title AS title FROM favourites f
+        SELECT f.manga_id AS mangaId, m.source AS sourceName, fc.title AS title FROM favourites f
         INNER JOIN favourite_categories fc ON fc.category_id = f.category_id
+        INNER JOIN manga m ON m.manga_id = f.manga_id
         WHERE f.deleted_at = 0 AND fc.deleted_at = 0 AND f.manga_id IN (:mangaIds)
         ORDER BY fc.sort_key, fc.category_id
         """,
@@ -171,4 +172,4 @@ abstract class FavouritesDao {
     protected abstract suspend fun setUpdatedAtAll(categoryId: Long, updatedAt: Long)
 }
 
-data class FavouriteCategoryTitle(val mangaId: Long, val title: String)
+data class FavouriteCategoryTitle(val mangaId: Long, val sourceName: String, val title: String)

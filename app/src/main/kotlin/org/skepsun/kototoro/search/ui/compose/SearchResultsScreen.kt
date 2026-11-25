@@ -127,6 +127,7 @@ import org.skepsun.kototoro.search.ui.multi.SearchResultsListModel
 import org.skepsun.kototoro.search.ui.multi.SearchViewModel
 import org.skepsun.kototoro.search.ui.multi.SearchResultsState
 import org.skepsun.kototoro.search.ui.multi.sectionKey
+import org.skepsun.kototoro.search.ui.multi.sourceVariantKey
 
 private data class SearchPreparedItems(
     val sections: List<SearchResultsListModel>,
@@ -305,7 +306,7 @@ fun SearchResultsRoute(
     val preparedItems = remember(listModels) { prepareSearchItems(listModels) }
     val sections = preparedItems.sections
     var groupByTitle by rememberSaveable { mutableStateOf(true) }
-    var selectedTitleGroup by rememberSaveable { mutableStateOf<Long?>(null) }
+    var selectedTitleGroup by rememberSaveable { mutableStateOf<String?>(null) }
     val canGroup = !isTvPresentation && !isPickMode
     val showGroupedResults = canGroup && groupByTitle && titleGroups.items === listModels &&
         titleGroups.variants.isNotEmpty()
@@ -316,7 +317,7 @@ fun SearchResultsRoute(
             addAll(sections.filter { it.titleResId != 0 })
             add(SearchResultsListModel(R.string.search_by_title, UnknownContentSource, null, null, representatives, null))
             sections.filter { it.titleResId == 0 }.forEach { section ->
-                val unmatched = section.list.filterNot { item -> item.id in titleGroups.groupedIds }
+                val unmatched = section.list.filterNot { item -> item.sourceVariantKey in titleGroups.groupedKeys }
                 if (unmatched.isNotEmpty() || section.list.isEmpty()) add(section.copy(list = unmatched))
             }
         }
@@ -517,7 +518,7 @@ fun SearchResultsRoute(
                         } else if (isPickMode) {
                             onPickContent(item.toContentWithOverride())
                         } else if (section.titleResId == R.string.search_by_title) {
-                            selectedTitleGroup = item.id
+                            selectedTitleGroup = item.sourceVariantKey
                         } else {
                             val content = item.toContentWithOverride()
                             onOpenContent(
@@ -583,7 +584,7 @@ fun SearchResultsRoute(
             title = { Text(variants.first().title, maxLines = 2, overflow = TextOverflow.Ellipsis) },
             text = {
                 LazyColumn(Modifier.heightIn(max = 350.dp)) {
-                    items(variants, key = { it.id }) { item ->
+                    items(variants, key = { it.sourceVariantKey }) { item ->
                         val sourceTitle = item.source.getTitle(context)
                         val sourceSummary = item.source.getSummary(context)
                         TvTextButton(modifier = Modifier.fillMaxWidth(), onClick = {
@@ -870,7 +871,7 @@ private fun SearchResultsSection(
     canOpenSourceResults: Boolean,
     isSearching: Boolean,
     isRetrying: Boolean,
-    sourceVariants: Map<Long, List<ContentListModel>> = emptyMap(),
+    sourceVariants: Map<String, List<ContentListModel>> = emptyMap(),
     onRetryClick: () -> Unit,
     onSectionClick: () -> Unit,
     onItemClick: (ContentListModel) -> Unit,
@@ -883,13 +884,13 @@ private fun SearchResultsSection(
     val isTvPresentation = LocalUiPresentationConfig.current.isTv
     val rowState = rememberLazyListState()
     val scrollIntensity = rememberHorizontalRailScrollIntensity(rowState)
-    val uniqueItems = remember(section.list) { section.list.distinctBy { it.id } }
+    val uniqueItems = remember(section.list) { section.list.distinctBy { it.sourceVariantKey } }
     val resultFocusRequester = remember { FocusRequester() }
     LaunchedEffect(restoreFocusToId, uniqueItems) {
         val targetId = restoreFocusToId ?: return@LaunchedEffect
         val targetIndex = uniqueItems.indexOfFirst { it.id == targetId }
         if (targetIndex < 0) return@LaunchedEffect
-        val targetKey = "${section.sectionKey}_$targetId"
+        val targetKey = "${section.sectionKey}_${uniqueItems[targetIndex].sourceVariantKey}"
         if (rowState.layoutInfo.visibleItemsInfo.none { it.key == targetKey }) {
             rowState.scrollToItem(targetIndex)
         }
@@ -975,12 +976,12 @@ private fun SearchResultsSection(
                 itemsIndexed(
                     items = uniqueItems,
                     key = { _, item ->
-                        "${section.sectionKey}_${item.id}"
+                        "${section.sectionKey}_${item.sourceVariantKey}"
                     },
                     contentType = { _, _ -> "search_result_card" },
                 ) { index, item ->
                     HorizontalRailAnimatedVisibility(
-                        animationKey = "search_${section.source.name}_${item.id}",
+                        animationKey = "search_${section.sectionKey}_${item.sourceVariantKey}",
                         index = index,
                         listState = rowState,
                         scrollIntensity = scrollIntensity,
@@ -1002,7 +1003,7 @@ private fun SearchResultsSection(
                                 focusRequester = resultFocusRequester.takeIf { item.id == restoreFocusToId },
                                 onFocused = { onItemFocused(item) },
                             )
-                            sourceVariants[item.id]?.size?.let { count ->
+                            sourceVariants[item.sourceVariantKey]?.size?.let { count ->
                                 TvTextButton(modifier = Modifier.fillMaxWidth(), onClick = { onItemClick(item) }) {
                                     Text(pluralStringResource(R.plurals.search_source_variants, count, count),
                                         maxLines = 1, overflow = TextOverflow.Ellipsis)

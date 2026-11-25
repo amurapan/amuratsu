@@ -73,13 +73,13 @@ class SearchViewModelTest {
     @Test
     fun `identical titles group across sources within the same media type`() {
         val manga = resultSection(firstSource, 1L, "Frieren")
-        val translation = resultSection(secondSource, 2L, " ＦＲＩＥＲＥＮ ")
-        val video = resultSection(source("video", ContentType.VIDEO), 3L, "Frieren")
+        val translation = resultSection(secondSource, 1L, " ＦＲＩＥＲＥＮ ")
+        val video = resultSection(source("video", ContentType.VIDEO), 1L, "Frieren")
 
         val groups = groupSearchTitles(listOf(manga, translation, video))
 
-        assertEquals(listOf(1L, 2L), groups.variants.getValue(1L).map { it.id })
-        assertEquals(setOf(1L, 2L), groups.groupedIds)
+        assertEquals(listOf("first:1", "second:1"), groups.variants.getValue("first:1").map { it.sourceVariantKey })
+        assertEquals(setOf("first:1", "second:1"), groups.groupedKeys)
     }
 
     @Test

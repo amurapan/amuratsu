@@ -124,7 +124,7 @@ class ContentListMapper @Inject constructor(
                     trackingDetailsCache = trackingDetailsCache,
                 ),
             )
-            val shelves = categoryTitles[it.id].orEmpty()
+            val shelves = categoryTitles[it.id to it.source.name].orEmpty()
             val showFavorite = options.isBadgeEnabled(FAVORITE)
             if (shelves.isEmpty()) model else when (model) {
                 is ContentCompactListModel -> model.copy(favouriteCategoryTitles = shelves)
