@@ -209,7 +209,9 @@ private fun RecentWidgetContent(
     if (items.isEmpty()) {
         WidgetEmptyState(text = emptyText, modifier = rootModifier)
     } else {
-        val showHeader = hasBackground && LocalSize.current.height >= 140.dp
+        val size = LocalSize.current
+        val showHeader = hasBackground && size.height >= 140.dp
+        val showCover = size.width >= 180.dp
         Column(modifier = rootModifier) {
             if (showHeader) {
                 WidgetHeader(title = title, itemCount = items.size)
@@ -218,7 +220,7 @@ private fun RecentWidgetContent(
                 items(
                     items = items,
                 ) { item ->
-                    RecentCard(item)
+                    RecentCard(item, showCover = showCover)
                 }
             }
         }
@@ -226,7 +228,7 @@ private fun RecentWidgetContent(
 }
 
 @Composable
-private fun RecentCard(item: RecentWidgetItem) {
+private fun RecentCard(item: RecentWidgetItem, showCover: Boolean) {
     Row(
         modifier = GlanceModifier
             .fillMaxWidth()
@@ -236,14 +238,16 @@ private fun RecentCard(item: RecentWidgetItem) {
             .clickable(actionStartActivity(item.readerIntent)),
         verticalAlignment = Alignment.CenterVertically,
     ) {
-        Image(
-            provider = item.cover?.let { ImageProvider(it) } ?: ImageProvider(R.drawable.ic_placeholder),
-            contentDescription = item.title,
-            contentScale = ContentScale.Crop,
-            modifier = GlanceModifier
-                .width(64.dp)
-                .height(88.dp),
-        )
+        if (showCover) {
+            Image(
+                provider = item.cover?.let { ImageProvider(it) } ?: ImageProvider(R.drawable.ic_placeholder),
+                contentDescription = item.title,
+                contentScale = ContentScale.Crop,
+                modifier = GlanceModifier
+                    .width(64.dp)
+                    .height(88.dp),
+            )
+        }
         Column(
             modifier = GlanceModifier
                 .defaultWeight()
@@ -255,7 +259,7 @@ private fun RecentCard(item: RecentWidgetItem) {
                 maxLines = 2,
                 style = TextStyle(
                     color = WidgetPrimaryTextColor,
-                    fontSize = 15.sp,
+                    fontSize = if (showCover) 15.sp else 13.sp,
                     fontWeight = FontWeight.Bold,
                 ),
             )
@@ -264,7 +268,7 @@ private fun RecentCard(item: RecentWidgetItem) {
                 maxLines = 1,
                 style = TextStyle(
                     color = WidgetSecondaryTextColor,
-                    fontSize = 12.sp,
+                    fontSize = if (showCover) 12.sp else 11.sp,
                 ),
                 modifier = GlanceModifier.padding(top = 5.dp),
             )
