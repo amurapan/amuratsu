@@ -1,6 +1,6 @@
 # Amuratsu branding
 
-Amuratsu is a fork of Kototoro. Product branding uses a red A with an open-book base on white.
+Amuratsu is a fork of Kototoro. The logo is a red bookmark with a play symbol on white.
 The Android alpha is the currently validated distribution; desktop and iOS sources are also branded,
 but native Windows, macOS and iOS packages have not been published or validated on those platforms.
 
