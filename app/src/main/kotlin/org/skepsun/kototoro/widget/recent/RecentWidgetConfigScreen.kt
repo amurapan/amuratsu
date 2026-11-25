@@ -59,7 +59,7 @@ internal fun RecentWidgetConfigScreen(
                 modifier = Modifier.windowInsetsPadding(
                     WindowInsets.systemBars.only(WindowInsetsSides.Horizontal),
                 ),
-                title = { Text(stringResource(R.string.recent_manga)) },
+                title = { Text(stringResource(R.string.appwidget_resume_title)) },
                 navigationIcon = {
                     IconButton(onClick = onNavigateUp, modifier = Modifier.tvIconButtonRing()) {
                         Icon(

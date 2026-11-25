@@ -318,7 +318,8 @@ fun KototoroContentCardGrid(
 
     ContentPosterCard(
         model = ContentCardPresentation(renderModel.id, renderModel.title, supportingText = metadataText),
-        caption = item.recommendationReason,
+        caption = libraryCategoriesLabel(item) ?: item.recommendationReason,
+        captionMaxLines = if (item.favouriteCategoryTitles.isEmpty()) 1 else 2,
         onClick = { onClick(coverBounds.currentBounds()) },
         onLongClick = onLongClick,
         modifier = modifier,
@@ -682,6 +683,7 @@ fun KototoroContentCardList(
 
         },
         status = {
+            LibraryCategoriesLine(item)
             ContentCardStatusRow(counter = renderModel.counter, progress = renderModel.progress,
                 modifier = Modifier.padding(top = 5.dp))
         },
@@ -1136,6 +1138,7 @@ fun KototoroContentCardDetailedList(
                         modifier = Modifier.padding(top = 4.dp)
                     )
                 }
+                LibraryCategoriesLine(item)
                 ContentCardStatusRow(
                     counter = renderModel.counter,
                     progress = renderModel.progress,
@@ -1148,6 +1151,21 @@ fun KototoroContentCardDetailedList(
             thickness = 0.5.dp,
             color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.25f),
         )
+    }
+}
+
+@Composable
+private fun libraryCategoriesLabel(item: ContentListModel): String? = item.favouriteCategoryTitles
+    .takeIf { it.isNotEmpty() }?.let { names ->
+        stringResource(R.string.catalog_library_categories, names.joinToString())
+    }
+
+@Composable
+private fun LibraryCategoriesLine(item: ContentListModel) {
+    libraryCategoriesLabel(item)?.let {
+        Text(it, modifier = Modifier.padding(top = 4.dp),
+            style = MaterialTheme.typography.labelSmall,
+            color = MaterialTheme.colorScheme.tertiary, maxLines = 2, overflow = TextOverflow.Ellipsis)
     }
 }
 

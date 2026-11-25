@@ -22,6 +22,7 @@ data class ContentDetailedListModel(
     override val isPinned: Boolean = false,
     override val metadataTrackingService: ScrobblerService? = null,
     override val scoreText: String? = null,
+    override val favouriteCategoryTitles: List<String> = emptyList(),
 ) : ContentListModel() {
 
     override fun getChangePayload(previousState: ListModel): Any? = when {

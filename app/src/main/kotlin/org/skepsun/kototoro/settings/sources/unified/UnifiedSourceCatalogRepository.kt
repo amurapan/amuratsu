@@ -188,6 +188,7 @@ class UnifiedSourceCatalogRepository @Inject constructor(
                             UnifiedRepositoryCapability.REFRESH,
                             UnifiedRepositoryCapability.VERSIONED_INDEX,
                             UnifiedRepositoryCapability.IMPORT_JSON_LIST,
+                            UnifiedRepositoryCapability.INSTALL_PACKAGE,
                         ),
                     )
                 } + legado.map { url ->

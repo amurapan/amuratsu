@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -36,6 +37,7 @@ import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.FilterChip
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
@@ -66,6 +68,7 @@ import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.semantics.paneTitle
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.style.TextAlign
@@ -76,6 +79,8 @@ import kotlinx.coroutines.flow.first
 import org.skepsun.kototoro.R
 import org.skepsun.kototoro.core.jsonsource.SourceType
 import org.skepsun.kototoro.core.model.UnknownContentSource
+import org.skepsun.kototoro.core.model.getSummary
+import org.skepsun.kototoro.core.model.getTitle
 import org.skepsun.kototoro.core.model.isLocal
 import org.skepsun.kototoro.core.prefs.AppSettings
 import org.skepsun.kototoro.core.prefs.observeAsState
@@ -201,6 +206,7 @@ fun SearchResultsRoute(
     isPickMode: Boolean,
 ) {
     val listModels by viewModel.list.collectAsStateWithLifecycle()
+    val titleGroups by viewModel.titleGroups.collectAsStateWithLifecycle()
     val searchState by viewModel.searchState.collectAsStateWithLifecycle()
     val filters by viewModel.filters.collectAsStateWithLifecycle()
     val languagePresets by viewModel.languagePresets.collectAsStateWithLifecycle()
@@ -298,6 +304,23 @@ fun SearchResultsRoute(
 
     val preparedItems = remember(listModels) { prepareSearchItems(listModels) }
     val sections = preparedItems.sections
+    var groupByTitle by rememberSaveable { mutableStateOf(true) }
+    var selectedTitleGroup by rememberSaveable { mutableStateOf<Long?>(null) }
+    val canGroup = !isTvPresentation && !isPickMode
+    val showGroupedResults = canGroup && groupByTitle && titleGroups.items === listModels &&
+        titleGroups.variants.isNotEmpty()
+    val visibleSections = remember(sections, showGroupedResults, titleGroups) {
+        if (!showGroupedResults) sections else buildList {
+            val representatives = titleGroups.variants.values.map { it.first() }
+            // Keep favourite/history/local rails and per-source failures accessible alongside the grouped matches.
+            addAll(sections.filter { it.titleResId != 0 })
+            add(SearchResultsListModel(R.string.search_by_title, UnknownContentSource, null, null, representatives, null))
+            sections.filter { it.titleResId == 0 }.forEach { section ->
+                val unmatched = section.list.filterNot { item -> item.id in titleGroups.groupedIds }
+                if (unmatched.isNotEmpty() || section.list.isEmpty()) add(section.copy(list = unmatched))
+            }
+        }
+    }
     val supplementaryItems = preparedItems.supplementaryItems
     val resultsListState = rememberLazyListState()
     val showsProgress = searchState.isSearching || sections.isNotEmpty() || searchState.totalSources > 0 ||
@@ -451,8 +474,20 @@ fun SearchResultsRoute(
                     SearchResultsProgress(searchState, sections, viewModel::retryFailedSources)
                 }
             }
+            if (canGroup && titleGroups.variants.isNotEmpty()) {
+                item(key = "search_group_mode") {
+                    Row(Modifier.padding(horizontal = 16.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                        FilterChip(groupByTitle, onClick = { groupByTitle = true }, label = {
+                            Text(stringResource(R.string.search_by_title))
+                        })
+                        FilterChip(!groupByTitle, onClick = { groupByTitle = false }, label = {
+                            Text(stringResource(R.string.search_by_source))
+                        })
+                    }
+                }
+            }
             itemsIndexed(
-                items = sections,
+                items = visibleSections,
                 key = { _, section -> section.sectionKey },
                 contentType = { _, _ -> "search_section" },
             ) { _, section ->
@@ -466,6 +501,7 @@ fun SearchResultsRoute(
                         !SearchContentKind.VIDEO.matches(section.source),
                     isSearching = searchState.isSearching,
                     isRetrying = section.sectionKey in searchState.retryingSectionKeys,
+                    sourceVariants = if (section.titleResId == R.string.search_by_title) titleGroups.variants else emptyMap(),
                     onRetryClick = { viewModel.retrySource(section) },
                     onSectionClick = {
                         if (section.titleResId == R.string.favourites) {
@@ -480,6 +516,8 @@ fun SearchResultsRoute(
                             selectedItemsIds = selectedItemsIds.toggle(item.id)
                         } else if (isPickMode) {
                             onPickContent(item.toContentWithOverride())
+                        } else if (section.titleResId == R.string.search_by_title) {
+                            selectedTitleGroup = item.id
                         } else {
                             val content = item.toContentWithOverride()
                             onOpenContent(
@@ -537,6 +575,35 @@ fun SearchResultsRoute(
                 )
             }
         }
+    }
+
+    selectedTitleGroup?.let(titleGroups.variants::get)?.let { variants ->
+        androidx.compose.material3.AlertDialog(
+            onDismissRequest = { selectedTitleGroup = null },
+            title = { Text(variants.first().title, maxLines = 2, overflow = TextOverflow.Ellipsis) },
+            text = {
+                LazyColumn(Modifier.heightIn(max = 350.dp)) {
+                    items(variants, key = { it.id }) { item ->
+                        val sourceTitle = item.source.getTitle(context)
+                        val sourceSummary = item.source.getSummary(context)
+                        TvTextButton(modifier = Modifier.fillMaxWidth(), onClick = {
+                            selectedTitleGroup = null
+                            onOpenContent(item.toContentWithOverride(), null)
+                        }) {
+                            Column(Modifier.fillMaxWidth()) {
+                                Text(sourceTitle)
+                                if (!sourceSummary.isNullOrBlank()) Text(sourceSummary,
+                                    style = MaterialTheme.typography.bodySmall,
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant)
+                            }
+                        }
+                    }
+                }
+            },
+            confirmButton = {
+                TvTextButton(onClick = { selectedTitleGroup = null }) { Text(stringResource(R.string.close)) }
+            },
+        )
     }
 
     if (showOptionsSheet) {
@@ -803,6 +870,7 @@ private fun SearchResultsSection(
     canOpenSourceResults: Boolean,
     isSearching: Boolean,
     isRetrying: Boolean,
+    sourceVariants: Map<Long, List<ContentListModel>> = emptyMap(),
     onRetryClick: () -> Unit,
     onSectionClick: () -> Unit,
     onItemClick: (ContentListModel) -> Unit,
@@ -934,6 +1002,12 @@ private fun SearchResultsSection(
                                 focusRequester = resultFocusRequester.takeIf { item.id == restoreFocusToId },
                                 onFocused = { onItemFocused(item) },
                             )
+                            sourceVariants[item.id]?.size?.let { count ->
+                                TvTextButton(modifier = Modifier.fillMaxWidth(), onClick = { onItemClick(item) }) {
+                                    Text(pluralStringResource(R.plurals.search_source_variants, count, count),
+                                        maxLines = 1, overflow = TextOverflow.Ellipsis)
+                                }
+                            }
                             val cinema = remember(item.source.name, item.manga.sourceData) { item.manga.cinemaKind() }
                             if (cinema != null) {
                                 Text(

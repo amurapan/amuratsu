@@ -46,14 +46,18 @@ import kotlinx.coroutines.withTimeoutOrNull
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withContext
 import org.skepsun.kototoro.R
 import org.skepsun.kototoro.core.BaseApp
-import org.skepsun.kototoro.core.nav.ReaderIntent
+import org.skepsun.kototoro.core.db.MangaDatabase
+import org.skepsun.kototoro.core.nav.AppRouter
 import org.skepsun.kototoro.core.ui.compose.contentCoverCacheKey
 import org.skepsun.kototoro.core.prefs.AppWidgetConfig
 import org.skepsun.kototoro.core.util.ext.getDrawableOrThrow
 import org.skepsun.kototoro.core.util.ext.mangaExtra
+import org.skepsun.kototoro.home.ui.compose.homeMediaKind
+import org.skepsun.kototoro.main.ui.MainActivity
 import org.skepsun.kototoro.parsers.model.Content
 import org.skepsun.kototoro.parsers.util.runCatchingCancellable
 import org.skepsun.kototoro.widget.WidgetEmptyState
@@ -61,6 +65,7 @@ import org.skepsun.kototoro.widget.WidgetHeader
 import org.skepsun.kototoro.widget.WidgetPrimaryTextColor
 import org.skepsun.kototoro.widget.WidgetSecondaryTextColor
 import org.skepsun.kototoro.widget.widgetRootModifier
+import java.text.NumberFormat
 
 private const val WIDGET_ITEM_LIMIT = 10
 private const val COVER_CACHE_READ_TIMEOUT_MILLIS = 5_000L
@@ -98,13 +103,13 @@ private object RecentGlanceWidget : GlanceAppWidget() {
         val config = AppWidgetConfig(context, RecentWidgetProvider::class.java, appWidgetId)
         val items = runCatchingCancellable {
             val entryPoint = EntryPointAccessors.fromApplication<BaseApp.BaseAppEntryPoint>(context.applicationContext)
-            loadItems(context, entryPoint.historyRepository(), entryPoint.imageLoader(), entryPoint.settings())
+            loadItems(context, entryPoint.historyRepository(), entryPoint.imageLoader(), entryPoint.settings(), entryPoint.database().get())
         }.getOrDefault(emptyList())
         provideContent {
             RecentWidgetContent(
                 items = items,
                 hasBackground = config.hasBackground,
-                title = context.getString(R.string.recent_manga),
+                title = context.getString(R.string.appwidget_resume_title),
                 emptyText = context.getString(R.string.history_is_empty),
             )
         }
@@ -121,25 +126,41 @@ private object RecentGlanceWidget : GlanceAppWidget() {
         historyRepository: org.skepsun.kototoro.history.data.HistoryRepository,
         imageLoader: ImageLoader,
         settings: org.skepsun.kototoro.core.prefs.AppSettings,
+        database: MangaDatabase,
     ): List<RecentWidgetItem> = withContext(Dispatchers.IO) {
-        if (!settings.appPassword.isNullOrEmpty()) {
+        if (!settings.appPassword.isNullOrEmpty() || settings.isIncognitoModeEnabled) {
             return@withContext emptyList()
         }
-        val list = runCatchingCancellable { historyRepository.getList(0, WIDGET_ITEM_LIMIT) }
-            .getOrDefault(emptyList())
+        val items = historyRepository.observeRecentWithHistory(WIDGET_ITEM_LIMIT).first()
+        val chapters = database.getChaptersDao().findByIds(items.map { it.history.parentChapterId ?: it.history.chapterId })
+            .associateBy { it.mangaId to it.chapterId }
         coroutineScope {
-            list.map { content ->
+            items.map { (content, history) ->
                 async {
                     runCatchingCancellable {
+                        val chapter = chapters[content.id to (history.parentChapterId ?: history.chapterId)]
+                        val isVideo = content.homeMediaKind().isVideo
+                        val position = if (isVideo) {
+                            val seconds = history.page.coerceAtLeast(0) / 1000
+                            context.getString(R.string.media_home_video_position, seconds / 60, seconds % 60)
+                        } else {
+                            context.getString(R.string.home_resume_progress, (history.percent.coerceIn(0f, 1f) * 100).toInt())
+                        }
+                        val label = chapter?.number?.takeIf { it.isFinite() && it > 0f }?.let {
+                            context.getString(
+                                if (isVideo) R.string.appwidget_resume_episode else R.string.chapter_number,
+                                NumberFormat.getNumberInstance().format(it),
+                            )
+                        } ?: chapter?.title?.takeIf(String::isNotBlank)
                         RecentWidgetItem(
                             id = content.id,
                             title = content.title,
-                            metadata = content.authors.firstOrNull() ?: content.source.name,
+                            metadata = label?.let { "$it · $position" } ?: position,
                             cover = loadCover(context, imageLoader, content),
-                            readerIntent = ReaderIntent.Builder(context)
-                                .manga(content)
-                                .build()
-                                .intent,
+                            readerIntent = Intent(context, MainActivity::class.java)
+                                .setData(AppRouter.shortContentUrl(content.id))
+                                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
+                                .putExtra(MainActivity.EXTRA_WIDGET_RESUME, content.id),
                         )
                     }.getOrNull()
                 }

@@ -53,6 +53,16 @@ abstract class FavouritesDao {
     @Query("SELECT * FROM favourites WHERE manga_id IN (:mangaIds) AND deleted_at = 0")
     abstract suspend fun findAllActiveByMangaIds(mangaIds: Collection<Long>): List<FavouriteEntity>
 
+    @Query(
+        """
+        SELECT f.manga_id AS mangaId, fc.title AS title FROM favourites f
+        INNER JOIN favourite_categories fc ON fc.category_id = f.category_id
+        WHERE f.deleted_at = 0 AND fc.deleted_at = 0 AND f.manga_id IN (:mangaIds)
+        ORDER BY fc.sort_key, fc.category_id
+        """,
+    )
+    abstract suspend fun findCategoryTitles(mangaIds: List<Long>): List<FavouriteCategoryTitle>
+
     @Query("SELECT COUNT(*) FROM favourites WHERE manga_id = :mangaId AND deleted_at = 0")
     abstract suspend fun countCategories(mangaId: Long): Int
 
@@ -160,3 +170,5 @@ abstract class FavouritesDao {
     @Query("UPDATE favourites SET updated_at = :updatedAt WHERE category_id = :categoryId AND deleted_at = 0")
     protected abstract suspend fun setUpdatedAtAll(categoryId: Long, updatedAt: Long)
 }
+
+data class FavouriteCategoryTitle(val mangaId: Long, val title: String)

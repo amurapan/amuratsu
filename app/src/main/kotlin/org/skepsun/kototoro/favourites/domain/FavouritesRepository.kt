@@ -180,6 +180,7 @@ class FavouritesRepository @Inject constructor(
     fun observeFavouriteBadgeChanges(): Flow<Unit> {
         return db.invalidationTracker.createFlow(
             TABLE_FAVOURITES,
+            TABLE_FAVOURITE_CATEGORIES,
             TABLE_PREFERENCES,
             emitInitialState = false,
         ).map { Unit }
@@ -288,6 +289,10 @@ class FavouritesRepository @Inject constructor(
             byMangaId[mangaId]?.toCollection(LinkedHashSet()).orEmpty()
         }
     }
+
+    suspend fun getCategoryTitles(mangaIds: Collection<Long>): Map<Long, List<String>> = mangaIds.distinct().chunked(400)
+        .flatMap { db.getFavouritesDao().findCategoryTitles(it) }
+        .groupBy({ it.mangaId }, { it.title })
 
     suspend fun createCategory(
         title: String,

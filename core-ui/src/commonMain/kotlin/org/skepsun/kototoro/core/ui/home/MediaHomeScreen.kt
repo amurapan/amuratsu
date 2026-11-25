@@ -1,5 +1,6 @@
 package org.skepsun.kototoro.core.ui.home
 
+import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.gestures.Orientation
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyListState
@@ -35,6 +36,8 @@ enum class HomeMediaKind(val labelKey: String) {
     val isVideo: Boolean get() = this == ANIME || this == CINEMA
 }
 
+enum class HomeResumeAction { PIN, UNPIN, SNOOZE, HIDE }
+
 /** Presentation data only. Hosts resolve covers, persisted progress and reader/player launches. */
 @Immutable
 data class MediaHomeItem(
@@ -46,6 +49,7 @@ data class MediaHomeItem(
     val updateText: String = "",
     val subtitle: String = "",
     val cinemaKind: CinemaKind? = null,
+    val isPinned: Boolean = false,
 )
 
 private fun List<MediaHomeItem>.forHomeKind(kind: HomeMediaKind, cinemaTab: CinemaKind) = when (kind) {
@@ -104,6 +108,7 @@ fun MediaHomeScreen(
     onLibrary: (() -> Unit)? = null,
     cinemaTab: CinemaKind = CinemaKind.MOVIE,
     onCinemaTabSelected: ((CinemaKind) -> Unit)? = null,
+    onResumeAction: ((MediaHomeItem, HomeResumeAction) -> Unit)? = null,
 ) {
     var showAdd by rememberSaveable { mutableStateOf(false) }
     val visibleRecent = remember(recent, selectedKind, cinemaTab) { recent.forHomeKind(selectedKind, cinemaTab) }
@@ -216,7 +221,8 @@ fun MediaHomeScreen(
                             Row(horizontalArrangement = Arrangement.spacedBy(28.dp),
                                 modifier = Modifier.testTag("media-home-columns")) {
                                 Box(Modifier.weight(1.25f)) {
-                                    HomeResumeSection(selectedKind, visibleRecent, onHistory, onOpen, onResume, cover, enabled)
+                                    HomeResumeSection(selectedKind, visibleRecent, onHistory, onOpen, onResume,
+                                        cover, enabled, onResumeAction)
                                 }
                                 Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(24.dp)) {
                                     if (visibleUpdates.isNotEmpty()) HomeUpdatesSection(
@@ -230,7 +236,8 @@ fun MediaHomeScreen(
                         }
                     } else {
                         if (visibleRecent.isNotEmpty()) item(key = "resume") {
-                            HomeResumeSection(selectedKind, visibleRecent, onHistory, onOpen, onResume, cover, enabled)
+                            HomeResumeSection(selectedKind, visibleRecent, onHistory, onOpen, onResume,
+                                cover, enabled, onResumeAction)
                         }
                         if (visibleUpdates.isNotEmpty()) item(key = "updates") {
                             HomeUpdatesSection(selectedKind, visibleUpdates, onUpdates, onOpen, cover, enabled)
@@ -313,6 +320,7 @@ private fun HomeResumeSection(
     onResume: (MediaHomeItem) -> Unit,
     cover: @Composable (MediaHomeItem, Modifier) -> Unit,
     enabled: Boolean,
+    onResumeAction: ((MediaHomeItem, HomeResumeAction) -> Unit)?,
 ) {
     if (items.isEmpty()) return
     Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
@@ -323,17 +331,29 @@ private fun HomeResumeSection(
         }
         MediaHomeHeading(resumeLabel, uiString("history"), "media-home-history", onHistory, enabled)
         val featured = items.first()
+        var showMenu by remember(featured.id) { mutableStateOf(false) }
+        val menuLabel = uiString("more_options")
         Surface(shape = RoundedCornerShape(28.dp), color = MaterialTheme.colorScheme.primaryContainer) {
             Row(Modifier.fillMaxWidth().padding(16.dp), horizontalArrangement = Arrangement.spacedBy(16.dp),
                 verticalAlignment = Alignment.CenterVertically) {
-                Surface(onClick = { onOpen(featured) }, enabled = enabled, shape = RoundedCornerShape(12.dp),
-                    color = MaterialTheme.colorScheme.surfaceContainerHigh,
-                    modifier = Modifier.size(80.dp, 112.dp).semantics { contentDescription = featured.title }
-                        .testTag("media-home-details:${featured.id}")) {
+                Surface(shape = RoundedCornerShape(12.dp), color = MaterialTheme.colorScheme.surfaceContainerHigh,
+                    modifier = Modifier.size(80.dp, 112.dp).clip(RoundedCornerShape(12.dp))
+                        .combinedClickable(enabled = enabled, onClick = { onOpen(featured) }, onLongClickLabel = menuLabel,
+                            onLongClick = onResumeAction?.let { { showMenu = true } })
+                        .semantics { contentDescription = featured.title }.testTag("media-home-details:${featured.id}")) {
                     cover(featured, Modifier.fillMaxSize())
                 }
                 Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                    Text(uiString(featured.mediaLabelKey), style = MaterialTheme.typography.labelSmall)
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Text(uiString(featured.mediaLabelKey), style = MaterialTheme.typography.labelSmall,
+                            modifier = Modifier.weight(1f))
+                        if (onResumeAction != null) Box {
+                            IconButton(onClick = { showMenu = true }, enabled = enabled, modifier = Modifier.size(36.dp)) {
+                                Icon(ReaderPanelIcons.MoreVert, menuLabel)
+                            }
+                            ResumeMenu(featured, showMenu, { showMenu = false }, onResumeAction)
+                        }
+                    }
                     Text(featured.title, style = MaterialTheme.typography.titleLarge, maxLines = 2,
                         overflow = TextOverflow.Ellipsis)
                     MediaSubtitle(featured)
@@ -355,11 +375,13 @@ private fun HomeResumeSection(
             BoxWithConstraints {
                 if (maxWidth < 320.dp || LocalDensity.current.fontScale > 1.3f) {
                     Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
-                        next.forEach { HomeSmallResume(it, onOpen, onResume, cover, enabled, Modifier.fillMaxWidth()) }
+                        next.forEach { HomeSmallResume(it, onOpen, onResume, cover, enabled,
+                            Modifier.fillMaxWidth(), onResumeAction) }
                     }
                 } else {
                     Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-                        next.forEach { HomeSmallResume(it, onOpen, onResume, cover, enabled, Modifier.weight(1f)) }
+                        next.forEach { HomeSmallResume(it, onOpen, onResume, cover, enabled,
+                            Modifier.weight(1f), onResumeAction) }
                     }
                 }
             }
@@ -378,14 +400,22 @@ private fun HomeSmallResume(
     cover: @Composable (MediaHomeItem, Modifier) -> Unit,
     enabled: Boolean,
     modifier: Modifier,
+    onResumeAction: ((MediaHomeItem, HomeResumeAction) -> Unit)?,
 ) {
-    Surface(onClick = { onOpen(item) }, enabled = enabled, shape = RoundedCornerShape(20.dp),
+    var showMenu by remember(item.id) { mutableStateOf(false) }
+    val shape = RoundedCornerShape(20.dp)
+    Surface(shape = shape,
         color = MaterialTheme.colorScheme.surfaceContainerLow,
-        modifier = modifier.testTag("media-home-details:${item.id}")) {
+        modifier = modifier.clip(shape).combinedClickable(enabled = enabled, onClick = { onOpen(item) },
+            onLongClickLabel = uiString("more_options"), onLongClick = onResumeAction?.let { { showMenu = true } })
+            .testTag("media-home-details:${item.id}")) {
         Column(Modifier.padding(14.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
             Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.SpaceBetween) {
-                cover(item, Modifier.size(42.dp, 58.dp).clip(RoundedCornerShape(8.dp)))
+                Box {
+                    cover(item, Modifier.size(42.dp, 58.dp).clip(RoundedCornerShape(8.dp)))
+                    if (onResumeAction != null) ResumeMenu(item, showMenu, { showMenu = false }, onResumeAction)
+                }
                 FilledTonalIconButton(onClick = { onResume(item) }, enabled = enabled,
                     modifier = Modifier.testTag("media-home-resume:${item.id}")) {
                     Icon(resumeIcon(item), uiString("space_continue_content_description", item.title))
@@ -400,6 +430,29 @@ private fun HomeSmallResume(
                 style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
             HomeProgress(item)
         }
+    }
+}
+
+@Composable
+private fun ResumeMenu(
+    item: MediaHomeItem,
+    expanded: Boolean,
+    onDismiss: () -> Unit,
+    onAction: (MediaHomeItem, HomeResumeAction) -> Unit,
+) {
+    DropdownMenu(expanded = expanded, onDismissRequest = onDismiss) {
+        DropdownMenuItem(text = { Text(if (item.isPinned) uiString("unpin") else uiString("pin")) }, onClick = {
+            onDismiss()
+            onAction(item, if (item.isPinned) HomeResumeAction.UNPIN else HomeResumeAction.PIN)
+        })
+        DropdownMenuItem(text = { Text(uiString("media_home_snooze")) }, onClick = {
+            onDismiss()
+            onAction(item, HomeResumeAction.SNOOZE)
+        })
+        DropdownMenuItem(text = { Text(uiString("media_home_hide")) }, onClick = {
+            onDismiss()
+            onAction(item, HomeResumeAction.HIDE)
+        })
     }
 }
 

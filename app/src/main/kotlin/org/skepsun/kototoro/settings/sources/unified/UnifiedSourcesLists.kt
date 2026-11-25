@@ -158,6 +158,16 @@ internal fun UnifiedSourceList(
                 bottom = 4.dp,
             ),
         ) {
+            if (sources.any { it.isEnabled }) item(key = "test_all_sources") {
+                Button(
+                    onClick = { showSourceTest = true },
+                    modifier = Modifier.padding(start = actionsStartPadding, bottom = 8.dp),
+                ) {
+                    Icon(painterResource(R.drawable.ic_play), null, Modifier.size(18.dp))
+                    Spacer(Modifier.width(8.dp))
+                    Text(stringResource(R.string.source_test_action))
+                }
+            }
             // Bulk actions over an empty catalogue are a row of dead buttons above the one thing the
             // user can do, which is to add a source.
             if (hasAnySources) item(key = "source_actions") {
@@ -208,14 +218,6 @@ internal fun UnifiedSourceList(
                                 )
                             },
                             label = { Text(stringResource(R.string.unified_sources_expand_all)) },
-                        )
-                    }
-                    item(key = "test_all_sources") {
-                        CompactActionChip(
-                            onClick = { showSourceTest = true },
-                            enabled = sources.any { it.isEnabled },
-                            leadingIcon = { Icon(painterResource(R.drawable.ic_play), null, Modifier.size(16.dp)) },
-                            label = { Text(stringResource(R.string.source_test_all)) },
                         )
                     }
                     item(key = "collapse_all_groups") {
@@ -763,6 +765,7 @@ internal fun UnifiedRepositoryList(
     listState: LazyListState,
     repositories: List<UnifiedSourceRepositoryItem>,
     onAddRepository: (UnifiedSourceRepositoryItem?) -> Unit,
+    onBrowsePackages: (UnifiedSourceRepositoryItem) -> Unit,
     onRefreshRepository: (UnifiedSourceRepositoryItem) -> Unit,
     onDeleteRepository: (UnifiedSourceRepositoryItem) -> Unit,
     onEditRepository: (UnifiedSourceRepositoryItem) -> Unit = {},
@@ -862,6 +865,9 @@ internal fun UnifiedRepositoryList(
                         onDelete = { onDeleteRepository(item) },
                         onEdit = { onEditRepository(item) },
                         onAdd = null,
+                        onBrowsePackages = if (UnifiedRepositoryCapability.INSTALL_PACKAGE in item.capabilities) {
+                            { onBrowsePackages(item) }
+                        } else null,
                     )
                 }
             }
@@ -894,6 +900,7 @@ private fun UnifiedRepositoryCard(
     onDelete: (() -> Unit)?,
     onEdit: (() -> Unit)? = null,
     onAdd: (() -> Unit)?,
+    onBrowsePackages: (() -> Unit)? = null,
     modifier: Modifier = Modifier,
 ) {
     org.skepsun.kototoro.core.ui.extensions.ExtensionRepositoryCard(
@@ -921,6 +928,10 @@ private fun UnifiedRepositoryCard(
         },
         actions = {
             if (item.isConfigured) {
+                if (onBrowsePackages != null) {
+                    CompactActionChip(onClick = onBrowsePackages,
+                        label = { Text(stringResource(R.string.source_management_open_packages)) })
+                }
                 if (onEdit != null) {
                     CompactActionChip(onClick = onEdit, label = { Text(stringResource(R.string.edit)) })
                 }

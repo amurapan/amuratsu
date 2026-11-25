@@ -95,9 +95,11 @@ class ContentListMapper @Inject constructor(
         mode: ListMode,
         @Flags flags: Int = DEFAULTS,
         pinnedIds: Set<Long>? = null,
+        includeFavouriteCategories: Boolean = false,
     ) {
         val options = getOptions(flags)
         val mangaIds = manga.map { it.id }
+        val categoryTitles = if (includeFavouriteCategories) favouritesRepository.getCategoryTitles(mangaIds) else emptyMap()
         val manualOverrides = dataRepository.getOverrides()
         val metadataSelections = dataRepository.getMetadataSourceSelections(mangaIds)
         val counters = getCounters(mangaIds, options)
@@ -107,10 +109,10 @@ class ContentListMapper @Inject constructor(
         )
         manga.mapTo(destination) {
             val metadataSelection = metadataSelections[it.id]
-            toListModelImpl(
+            val model = toListModelImpl(
                 manga = it,
                 mode = mode,
-                options = options,
+                options = if (includeFavouriteCategories) options and FAVORITE.inv() else options,
                 pinnedIds = pinnedIds,
                 counters = counters,
                 progress = progress,
@@ -122,6 +124,13 @@ class ContentListMapper @Inject constructor(
                     trackingDetailsCache = trackingDetailsCache,
                 ),
             )
+            val shelves = categoryTitles[it.id].orEmpty()
+            val showFavorite = options.isBadgeEnabled(FAVORITE)
+            if (shelves.isEmpty()) model else when (model) {
+                is ContentCompactListModel -> model.copy(favouriteCategoryTitles = shelves)
+                is ContentDetailedListModel -> model.copy(favouriteCategoryTitles = shelves, isFavorite = showFavorite)
+                is ContentGridModel -> model.copy(favouriteCategoryTitles = shelves, isFavorite = showFavorite)
+            }
         }
     }
 

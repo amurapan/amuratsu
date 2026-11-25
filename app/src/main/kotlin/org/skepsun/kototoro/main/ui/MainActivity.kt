@@ -50,6 +50,9 @@ import org.skepsun.kototoro.explore.data.SourcePresetsRepository
 import org.skepsun.kototoro.explore.ui.model.BrowseGroupTab
 import org.skepsun.kototoro.explore.ui.model.SourceTag
 import org.skepsun.kototoro.extensions.install.ExtensionInstallService
+import org.skepsun.kototoro.history.data.HistoryRepository
+import org.skepsun.kototoro.home.ui.compose.homeMediaKind
+import org.skepsun.kototoro.reader.ui.ReaderState
 import org.skepsun.kototoro.local.ui.LocalIndexUpdateWorker
 import org.skepsun.kototoro.local.ui.LocalStorageCleanupWorker
 import org.skepsun.kototoro.main.ui.compose.ComposeAppNavBarDelegator
@@ -58,6 +61,7 @@ import org.skepsun.kototoro.main.ui.compose.MainAppState
 import org.skepsun.kototoro.parsers.model.Content
 import org.skepsun.kototoro.parsers.model.ContentType
 import org.skepsun.kototoro.search.domain.ALL_SEARCH_CONTENT_KINDS
+import org.skepsun.kototoro.search.domain.ALL_SOURCE_TYPES
 import org.skepsun.kototoro.search.domain.AdvancedSearchParams
 import org.skepsun.kototoro.search.domain.SearchContentKind
 import org.skepsun.kototoro.search.domain.SearchKind
@@ -88,6 +92,7 @@ class MainActivity : BaseComposeActivity(), SystemInstallLauncherHost {
     companion object {
         const val EXTRA_RESUME_SPACE_ID = "main_activity.resume_space_id"
         const val EXTRA_RESTORE_IMMERSIVE_SPACE_ID = "main_activity.restore_immersive_space_id"
+        internal const val EXTRA_WIDGET_RESUME = "main_activity.widget_resume"
     }
 
     @Inject
@@ -143,6 +148,9 @@ class MainActivity : BaseComposeActivity(), SystemInstallLauncherHost {
 
     @Inject
     lateinit var contentDataRepository: ContentDataRepository
+
+    @Inject
+    lateinit var historyRepository: HistoryRepository
 
     @Inject
     lateinit var librarySearchQueries: org.skepsun.kototoro.search.domain.LibrarySearchQueries
@@ -470,6 +478,8 @@ class MainActivity : BaseComposeActivity(), SystemInstallLauncherHost {
         }
 
         consumeResumeSpaceIntent(intent)
+        consumeSharedText(intent)
+        consumeWidgetResume(intent)
         observeFoldableState()
 
     }
@@ -478,6 +488,40 @@ class MainActivity : BaseComposeActivity(), SystemInstallLauncherHost {
         super.onNewIntent(intent)
         setIntent(intent)
         consumeResumeSpaceIntent(intent)
+        consumeSharedText(intent)
+        consumeWidgetResume(intent)
+    }
+
+    private fun consumeSharedText(intent: Intent) {
+        if (intent.action != Intent.ACTION_SEND || intent.type != "text/plain") return
+        val text = intent.getCharSequenceExtra(Intent.EXTRA_TEXT)?.toString()?.trim().orEmpty()
+        intent.removeExtra(Intent.EXTRA_TEXT)
+        if (text.isBlank()) return
+        val link = SHARED_CONTENT_URL.find(text)?.value?.trimEnd('.', ',', ')', ']')
+            ?.takeIf(ContentLinkResolver::isValidLink)
+        if (link != null) {
+            router.openDetails(link.toUri())
+        } else {
+            val query = text.lineSequence().first().take(256)
+            openSearchInMain(query, SearchKind.SIMPLE, sourceTypes = ALL_SOURCE_TYPES, contentKinds = ALL_SEARCH_CONTENT_KINDS)
+            searchSuggestionViewModel.saveQuery(query)
+        }
+    }
+
+    private fun consumeWidgetResume(intent: Intent) {
+        if (!intent.hasExtra(EXTRA_WIDGET_RESUME)) return
+        val id = intent.getLongExtra(EXTRA_WIDGET_RESUME, 0L)
+        intent.removeExtra(EXTRA_WIDGET_RESUME)
+        if (id == 0L || !settings.appPassword.isNullOrEmpty() || settings.isIncognitoModeEnabled) return
+        lifecycleScope.launch {
+            val content = contentDataRepository.findContentById(id, withChapters = false) ?: return@launch
+            val history = historyRepository.observeOne(id).first() ?: return@launch
+            if (content.homeMediaKind().isVideo) {
+                router.openVideo(content, chapterId = history.chapterId, positionMs = history.page.toLong())
+            } else {
+                router.openReader(content, state = ReaderState(history))
+            }
+        }
     }
 
     private fun consumeResumeSpaceIntent(intent: Intent) {
@@ -783,3 +827,4 @@ internal fun shouldRestoreImmersiveSessionFromMain(
 ): Boolean = immersiveSwitchEnabled && hasActiveSession && transitionSuppressionTarget == null
 
 private const val STATE_TOP_BAR_QUERY = "main_activity.top_bar_query"
+private val SHARED_CONTENT_URL = Regex("(?:https?://|amuratsu://|kototoro://)[^\\s<>]+", RegexOption.IGNORE_CASE)

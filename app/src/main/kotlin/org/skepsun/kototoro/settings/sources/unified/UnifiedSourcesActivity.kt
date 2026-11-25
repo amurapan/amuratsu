@@ -10,14 +10,18 @@ import androidx.activity.viewModels
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -26,6 +30,8 @@ import org.skepsun.kototoro.settings.sources.groups.SourceGroupsDialog
 import org.skepsun.kototoro.core.nav.router
 import org.skepsun.kototoro.core.ui.BaseComposeActivity
 import org.skepsun.kototoro.settings.compose.SettingsSectionScaffold
+import org.skepsun.kototoro.settings.compose.LocalSettingsContentTopInset
+import org.skepsun.kototoro.settings.compose.settingsContentTopInset
 
 @AndroidEntryPoint
 class UnifiedSourcesActivity : BaseComposeActivity() {
@@ -157,25 +163,6 @@ class UnifiedSourcesActivity : BaseComposeActivity() {
 
         SettingsSectionScaffold(
             title = if (searchActive) null else stringResource(R.string.extension_management),
-            titleContent = if (!searchActive) {
-                {
-                    UnifiedSourcesTopBarTabs(
-                        pagerState = pagerState,
-                        onTabClick = { tabIndex ->
-                            if (pagerState.currentPage == tabIndex) {
-                                tabReselectTrigger = tabIndex to System.currentTimeMillis()
-                            } else {
-                                coroutineScope.launch {
-                                    pagerState.animateScrollToPage(tabIndex)
-                                }
-                            }
-                        },
-                        readyState = readyState,
-                    )
-                }
-            } else {
-                null
-            },
             onNavigateUp = ::finish,
             searchContent = if (searchActive) {
                 {
@@ -217,35 +204,52 @@ class UnifiedSourcesActivity : BaseComposeActivity() {
             },
             modifier = modifier,
         ) {
-            UnifiedSourcesRoute(
-                searchActive = searchActive,
-                onSearchActiveChange = { searchActive = it },
-                activePanel = activePanel,
-                onActivePanelChange = { activePanel = it },
-                initialAddRepositoryKind = initialAddRepositoryKind,
-                initialAddRepositoryUrl = initialAddRepositoryUrl,
-                pagerState = pagerState,
-                quickSetup = quickSetup,
-                onFinishSetup = ::finish,
-                tabReselectTrigger = tabReselectTrigger,
-                viewModel = viewModel,
-                onBrowseSource = { item -> router.openList(item.source, null, null) },
-                onOpenSourceSettings = { item -> router.openSourceSettings(item.source) },
-                onOpenRepositoryFile = ::openRepositoryFilePicker,
-                onOpenLocalJarPicker = ::openLocalJarPicker,
-                onStartInstall = { intent ->
-                    runCatching { installLauncher.launch(intent) }
-                        .onFailure {
-                            viewModel.onInstallerActivityReturned()
-                            Toast.makeText(this@UnifiedSourcesActivity, it.message, Toast.LENGTH_SHORT).show()
+            Column(Modifier.fillMaxSize().padding(top = settingsContentTopInset())) {
+                UnifiedSourcesTopBarTabs(
+                    pagerState = pagerState,
+                    onTabClick = { tabIndex ->
+                        if (pagerState.currentPage == tabIndex) {
+                            tabReselectTrigger = tabIndex to System.currentTimeMillis()
+                        } else {
+                            coroutineScope.launch { pagerState.scrollToPage(tabIndex) }
                         }
-                },
-                onStartUninstall = { intent ->
-                    runCatching { uninstallLauncher.launch(intent) }
-                        .onFailure { Toast.makeText(this@UnifiedSourcesActivity, it.message, Toast.LENGTH_SHORT).show() }
-                },
-                modifier = Modifier.fillMaxSize(),
-            )
+                    },
+                    readyState = readyState,
+                    equalWidth = true,
+                    modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp),
+                )
+                CompositionLocalProvider(LocalSettingsContentTopInset provides 0.dp) {
+                    UnifiedSourcesRoute(
+                        searchActive = searchActive,
+                        onSearchActiveChange = { searchActive = it },
+                        activePanel = activePanel,
+                        onActivePanelChange = { activePanel = it },
+                        initialAddRepositoryKind = initialAddRepositoryKind,
+                        initialAddRepositoryUrl = initialAddRepositoryUrl,
+                        pagerState = pagerState,
+                        quickSetup = quickSetup,
+                        onFinishSetup = ::finish,
+                        tabReselectTrigger = tabReselectTrigger,
+                        viewModel = viewModel,
+                        onBrowseSource = { item -> router.openList(item.source, null, null) },
+                        onOpenSourceSettings = { item -> router.openSourceSettings(item.source) },
+                        onOpenRepositoryFile = ::openRepositoryFilePicker,
+                        onOpenLocalJarPicker = ::openLocalJarPicker,
+                        onStartInstall = { intent ->
+                            runCatching { installLauncher.launch(intent) }
+                                .onFailure {
+                                    viewModel.onInstallerActivityReturned()
+                                    Toast.makeText(this@UnifiedSourcesActivity, it.message, Toast.LENGTH_SHORT).show()
+                                }
+                        },
+                        onStartUninstall = { intent ->
+                            runCatching { uninstallLauncher.launch(intent) }
+                                .onFailure { Toast.makeText(this@UnifiedSourcesActivity, it.message, Toast.LENGTH_SHORT).show() }
+                        },
+                        modifier = Modifier.weight(1f),
+                    )
+                }
+            }
         }
     }
 

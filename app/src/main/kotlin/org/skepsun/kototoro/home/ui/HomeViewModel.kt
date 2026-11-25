@@ -45,6 +45,7 @@ import org.skepsun.kototoro.core.parser.ContentDataRepository
 import org.skepsun.kototoro.core.prefs.AppSettings
 import org.skepsun.kototoro.core.prefs.observeAsFlow
 import org.skepsun.kototoro.core.ui.BaseViewModel
+import org.skepsun.kototoro.core.ui.home.HomeResumeAction
 import org.skepsun.kototoro.core.ui.util.ReversibleAction
 import org.skepsun.kototoro.core.ui.model.ContentOverride
 import org.skepsun.kototoro.core.util.ext.MutableEventFlow
@@ -115,16 +116,38 @@ class HomeViewModel @Inject constructor(
     private val homeTabTypesFlow = selectedTabFlow
         .map { tab -> tab.toBrowseGroupTab().allowedContentTypes() }
         .distinctUntilChanged()
-    private val recentHistoryWithMetadataFlow = homeTabTypesFlow
-        .flatMapLatest { tabTypes ->
+    private val resumePreferences = HomeResumePreferences(settings)
+    private val resumeVisibility = resumePreferences.observe()
+        .stateIn(viewModelScope, SharingStarted.Eagerly, emptyMap())
+    internal val pinnedResumeIds = resumeVisibility.map { preferences ->
+        preferences.filterValues { it.visibility == ResumeVisibility.PINNED }.keys
+    }.distinctUntilChanged().stateIn(viewModelScope, SharingStarted.Eagerly, emptySet())
+    private val recentHistoryWithMetadataFlow = combine(homeTabTypesFlow, pinnedResumeIds, ::Pair)
+        .flatMapLatest { (tabTypes, pinnedIds) ->
             // Push the selected type chip into SQL: the home rail is capped at
             // `limit` rows, so filtering types in memory could never surface
             // novels/videos when the recent global history is manga-heavy.
-            historyRepository.observeRecentWithHistory(limit = 64, tabTypes = tabTypes)
+            historyRepository.observeRecentWithHistory(limit = 64, tabTypes = tabTypes, pinnedIds = pinnedIds)
+        }
+        .combine(resumeVisibility) { items, preferences ->
+            items.filter { item ->
+                preferences[item.manga.id]?.isVisible(item.history.updatedAt.toEpochMilli()) != false
+            }
         }
         .distinctUntilChanged()
         .flowOn(Dispatchers.Default)
         .shareIn(viewModelScope, SharingStarted.Eagerly, replay = 1)
+
+    internal fun updateResumeItem(id: Long, history: ContentHistory?, action: HomeResumeAction): () -> Unit {
+        val preference = when (action) {
+            HomeResumeAction.PIN -> ResumePreference(ResumeVisibility.PINNED)
+            HomeResumeAction.UNPIN -> null
+            HomeResumeAction.SNOOZE -> HomeResumePreferences.snooze()
+            HomeResumeAction.HIDE -> ResumePreference(ResumeVisibility.HIDDEN, history?.updatedAt?.toEpochMilli() ?: 0)
+        }
+        val previous = resumePreferences.set(id, preference)
+        return { resumePreferences.set(id, previous) }
+    }
     private val recentHistoryFlow = recentHistoryWithMetadataFlow
         .map { items -> items.map(ContentWithHistory::manga) }
         .distinctUntilChanged()

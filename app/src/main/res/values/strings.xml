@@ -317,6 +317,12 @@
     <string name="updates">Updates</string>
     <string name="text_feed_holder">New chapters of what you are reading are shown here</string>
     <string name="search_results">Search results</string>
+    <string name="search_by_title">By title</string>
+    <string name="search_by_source">By source</string>
+    <plurals name="search_source_variants">
+        <item quantity="one">%d source</item>
+        <item quantity="other">%d sources</item>
+    </plurals>
     <string name="new_version_s">New version: %s</string>
     <string name="size_s">Size: %s</string>
     <string name="clear_updates_feed">Clear updates feed</string>
@@ -948,7 +954,10 @@
     <string name="disable_all">Disable all</string>
     <string name="use_fingerprint">Use biometric if available</string>
     <string name="appwidget_shelf_description">Manga from your favorites</string>
-    <string name="appwidget_recent_description">Your recently read manga</string>
+    <string name="appwidget_recent_description">Resume manga, books, or video</string>
+    <string name="appwidget_resume_title">Continue</string>
+    <string name="appwidget_resume_episode">Episode %s</string>
+    <string name="catalog_library_categories">In library · %s</string>
     <string name="report">Report</string>
     <string name="show_reading_indicators">Show reading progress indicators</string>
     <string name="data_deletion">Data deletion</string>
@@ -1875,7 +1884,7 @@
     <string name="unified_sources_choose_kind_manually">Choose a type</string>
     <string name="unified_sources_address_hint">Repository index, TVBox/CMS or Legado link — the format is read from the address and its content. For a local file, import it from the file picker.</string>
 <string name="unified_sources_address_is_file">This is an extension file, not a source address — import it from the file picker instead.</string>
-    <string name="unified_sources_preview_count">This will add %1$d sources.</string>
+    <string name="unified_sources_preview_count">Sources found: %1$d.</string>
     <string name="unified_sources_preview_note">They are added as sources you can browse right away; enable or disable each one later on this page.</string>
     <string name="unified_sources_browse_now">Browse now</string>
     <string name="unified_sources_imported_none_enabled">The sources were imported but are not enabled yet — enable them on this page, then browse.</string>
@@ -2709,6 +2718,9 @@
     <string name="repositories">Repositories</string>
     <string name="tvbox_repository_selector">TVBox repository: %1$s</string>
     <string name="packages">Packages</string>
+    <string name="source_management_sources">Sources</string>
+    <string name="source_management_open_packages">View packages</string>
+    <string name="source_management_packages_next">After adding the repository, choose a package to install.</string>
     <string name="all_content">All content</string>
     <string name="all_sources">All sources</string>
     <string name="more_filters">More filters</string>
@@ -4337,6 +4349,9 @@
     <string name="media_home_chapters">New chapters</string>
     <string name="media_home_episodes">New episodes</string>
     <string name="media_home_continue_watching">Continue watching</string>
+    <string name="media_home_snooze">Snooze for a day</string>
+    <string name="media_home_hide">Hide until opened again</string>
+    <string name="media_home_resume_changed">Continue list updated</string>
     <string name="quick_source_setup_repository">Choose a format and add a catalog.</string>
     <string name="quick_source_setup_packages">Choose an extension</string>
     <string name="quick_source_setup_install">Choose a language, then install and enable an extension.</string>

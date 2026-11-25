@@ -22,6 +22,7 @@ sealed class ContentListModel : ListModel {
     open val isPinned: Boolean = false
     open val metadataTrackingService: ScrobblerService? = null
     open val scoreText: String? = null
+    open val favouriteCategoryTitles: List<String> = emptyList()
 
     open val id: Long
         get() = manga.id
@@ -44,6 +45,10 @@ sealed class ContentListModel : ListModel {
         appendLine()
         if (manga.tags.isNotEmpty()) {
             manga.tags.joinTo(this) { it.title }
+            appendLine()
+        }
+        if (favouriteCategoryTitles.isNotEmpty()) {
+            append(context.getString(R.string.catalog_library_categories, favouriteCategoryTitles.joinToString()))
             appendLine()
         }
         append(manga.source.getTitle(context))

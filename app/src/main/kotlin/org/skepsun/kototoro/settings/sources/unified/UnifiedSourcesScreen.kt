@@ -204,23 +204,12 @@ fun UnifiedSourcesRoute(
     var testSourcesList by remember { mutableStateOf<List<org.skepsun.kototoro.parsers.model.ContentSource>?>(null) }
 
     val scope = rememberCoroutineScope()
-    var pendingSetupRepoId by rememberSaveable { mutableStateOf<String?>(null) }
     val setupState = state as? UnifiedSourcesUiState.Ready
-    val connectedSetupRepo = setupState?.allRepositories?.firstOrNull {
-        it.id == pendingSetupRepoId && it.isConfigured
-    }
 
-    fun showSetupPackages(repository: UnifiedSourceRepositoryItem) {
-        viewModel.setKindFilter(repository.kind)
-        viewModel.setRepositoryFilter(repository.id)
+    fun showRepositoryPackages(kind: UnifiedSourceKind, id: String) {
+        viewModel.showPackagesForRepository(kind, id)
+        onSearchActiveChange(false)
         scope.launch { pagerState.scrollToPage(UNIFIED_SOURCES_TAB_PACKAGES) }
-    }
-
-    LaunchedEffect(connectedSetupRepo, isLoading) {
-        if (connectedSetupRepo != null && !isLoading) {
-            pendingSetupRepoId = null
-            showSetupPackages(connectedSetupRepo)
-        }
     }
 
     fun proceedThirdPartyAction(action: UnifiedThirdPartyAction, enableImportedSources: Boolean = true) {
@@ -271,6 +260,7 @@ fun UnifiedSourcesRoute(
                 is UnifiedSourcesEvent.PackageStateDetails -> {
                     activeDialog = UnifiedSourcesDialogState.PackageDetails(event.item)
                 }
+                is UnifiedSourcesEvent.RepositoryAdded -> showRepositoryPackages(event.kind, event.id)
                 is UnifiedSourcesEvent.SourceAddressResolved -> {
                     activeDialog = UnifiedSourcesDialogState.ThirdPartyDisclaimer(
                         action = UnifiedThirdPartyAction.AddRepositoryUrl(
@@ -344,7 +334,7 @@ fun UnifiedSourcesRoute(
                         viewModel.setRepositoryFilter(null)
                         viewModel.setKindFilter(it)
                     },
-                    onBrowsePackages = ::showSetupPackages,
+                    onBrowsePackages = { showRepositoryPackages(it.kind, it.id) },
                     onChooseLanguage = { onActivePanelChange(UnifiedToolbarFilterPanel.LANGUAGE) },
                     onFinish = onFinishSetup,
                 )
@@ -437,7 +427,6 @@ fun UnifiedSourcesRoute(
             activeDialog = when {
                 preset == null -> UnifiedSourcesDialogState.AddSourceAuto
                 quickSetup && preset.isPreset -> {
-                    pendingSetupRepoId = preset.id
                     UnifiedSourcesDialogState.ThirdPartyDisclaimer(
                         UnifiedThirdPartyAction.AddRepositoryUrl(preset.kind, preset.url, preset.name),
                     )
@@ -449,6 +438,7 @@ fun UnifiedSourcesRoute(
                 )
             }
         },
+        onBrowseRepositoryPackages = { showRepositoryPackages(it.kind, it.id) },
         onRefreshRepository = { item -> viewModel.refreshRepository(item.id) },
         onDeleteRepository = { item -> activeDialog = UnifiedSourcesDialogState.DeleteRepository(item) },
         onEditRepository = { item -> activeDialog = UnifiedSourcesDialogState.EditRepository(item) },
@@ -649,6 +639,9 @@ fun UnifiedSourcesRoute(
         is UnifiedSourcesDialogState.ThirdPartyDisclaimer -> UnifiedDisclaimerDialog(
             previewCount = dialog.previewCount,
             previewNames = dialog.previewNames,
+            opensPackages = (dialog.action as? UnifiedThirdPartyAction.AddRepositoryUrl)?.kind?.let {
+                it != UnifiedSourceKind.JS && it != UnifiedSourceKind.NATIVE
+            } == true,
             onDismiss = { activeDialog = null },
             onConfirm = {
                 val kind = dialog.action.installKindOrNull()

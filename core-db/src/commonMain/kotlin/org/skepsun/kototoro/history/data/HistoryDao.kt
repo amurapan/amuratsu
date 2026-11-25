@@ -36,6 +36,10 @@ abstract class HistoryDao {
     abstract suspend fun findRecent(limit: Int): List<HistoryWithContent>
 
     @Transaction
+    @Query("SELECT * FROM history WHERE deleted_at = 0 AND manga_id IN (:ids) ORDER BY updated_at DESC")
+    abstract suspend fun findActiveWithContentByIds(ids: Collection<Long>): List<HistoryWithContent>
+
+    @Transaction
     @Query(
         """
         SELECT history.* FROM history

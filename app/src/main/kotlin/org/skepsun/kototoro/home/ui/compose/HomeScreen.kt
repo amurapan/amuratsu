@@ -25,6 +25,7 @@ import org.skepsun.kototoro.core.model.looksLikeLocalNovelContent
 import org.skepsun.kototoro.core.model.looksLikeLocalVideoContent
 import org.skepsun.kototoro.core.ui.compose.ScrollToTopEffect
 import org.skepsun.kototoro.core.ui.home.HomeMediaKind
+import org.skepsun.kototoro.core.ui.home.HomeResumeAction
 import org.skepsun.kototoro.core.ui.home.MediaHomeItem
 import org.skepsun.kototoro.core.ui.home.MediaHomeScreen
 import org.skepsun.kototoro.core.video.CinemaKind
@@ -50,6 +51,8 @@ fun HomeScreen(
     onResume: (Content) -> Unit,
     selectedCinemaTab: CinemaKind? = null,
     onCinemaTabSelected: ((CinemaKind) -> Unit)? = null,
+    pinnedResumeIds: Set<Long> = emptySet(),
+    onResumeAction: ((Long, HomeResumeAction) -> Unit)? = null,
 ) {
     val context = LocalContext.current
     val configuration = LocalConfiguration.current
@@ -91,9 +94,10 @@ fun HomeScreen(
                 newChapters,
             ) else "",
             cinemaKind = cinema,
+            isPinned = content.id in pinnedResumeIds,
         )
     }
-    val recent = remember(state.recentHistoryItems, state.resumeState, configuration) {
+    val recent = remember(state.recentHistoryItems, state.resumeState, configuration, pinnedResumeIds) {
         state.recentHistoryItems.map { item(it.content, it.history) }
     }
     val updates = remember(state.recentUpdates, state.resumeState, configuration) {
@@ -130,6 +134,7 @@ fun HomeScreen(
             onImport = onImport,
             onOpen = { model -> contents[model.id]?.let(onOpen) },
             onResume = { model -> contents[model.id]?.let(onResume) },
+            onResumeAction = onResumeAction?.let { action -> { model, type -> action(model.id, type) } },
             cinemaTab = selectedCinemaTab ?: CinemaKind.MOVIE,
             onCinemaTabSelected = onCinemaTabSelected,
             cover = { model, modifier ->

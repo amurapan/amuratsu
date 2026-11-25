@@ -25,6 +25,7 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.semantics.*
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -42,6 +43,7 @@ fun ExtensionManagementTabs(
     modifier: Modifier = Modifier,
     height: Dp = 44.dp,
     isIosStyle: Boolean = false,
+    equalWidth: Boolean = false,
 ) {
     val scrollState = rememberScrollState()
     val bringIntoViewRequesters = remember(tabs.size) {
@@ -51,7 +53,7 @@ fun ExtensionManagementTabs(
     val tabFocusRequesters = remember(tabs.size) { List(tabs.size) { FocusRequester() } }
 
     LaunchedEffect(selectedTab) {
-        bringIntoViewRequesters.getOrNull(selectedTab)?.bringIntoView()
+        if (!equalWidth) bringIntoViewRequesters.getOrNull(selectedTab)?.bringIntoView()
     }
 
     // The strip is a horizontally scrollable row: a host slot narrower than the labels clips the trailing
@@ -60,7 +62,7 @@ fun ExtensionManagementTabs(
     Surface(
         modifier = modifier
             .height(height)
-            .wrapContentWidth()
+            .then(if (equalWidth) Modifier.fillMaxWidth() else Modifier.wrapContentWidth())
             .testTag("extensions-tabs"),
         shape = RoundedCornerShape(height / 2),
         color = if (isIosStyle) {
@@ -76,7 +78,7 @@ fun ExtensionManagementTabs(
         Row(
             modifier = Modifier
                 .padding(3.dp)
-                .horizontalScroll(scrollState),
+                .then(if (equalWidth) Modifier.fillMaxWidth() else Modifier.horizontalScroll(scrollState)),
             horizontalArrangement = Arrangement.spacedBy(2.dp),
             verticalAlignment = Alignment.CenterVertically,
         ) {
@@ -105,6 +107,7 @@ fun ExtensionManagementTabs(
 
                 Box(
                     modifier = Modifier
+                        .then(if (equalWidth) Modifier.weight(1f) else Modifier)
                         .height(height - 6.dp)
                         .testTag("extensions-tab:$index")
                         .bringIntoViewRequester(bringIntoViewRequesters.getOrElse(index) { BringIntoViewRequester() })
@@ -142,7 +145,7 @@ fun ExtensionManagementTabs(
                     contentAlignment = Alignment.Center,
                 ) {
                     Row(
-                        modifier = Modifier.padding(horizontal = 9.dp),
+                        modifier = Modifier.padding(horizontal = if (equalWidth) 4.dp else 9.dp),
                         verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.spacedBy(4.dp),
                     ) {
@@ -158,6 +161,8 @@ fun ExtensionManagementTabs(
                             fontWeight = if (selected) FontWeight.SemiBold else FontWeight.Normal,
                             color = animatedTextColor,
                             maxLines = 1,
+                            overflow = TextOverflow.Ellipsis,
+                            modifier = if (equalWidth) Modifier.weight(1f, fill = false) else Modifier,
                         )
                         if (tab.badgeCount > 0) {
                             Surface(

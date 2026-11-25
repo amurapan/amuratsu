@@ -117,6 +117,14 @@
     <string name="updates">Обновления</string>
     <string name="text_feed_holder">Новые главы того, что вы читаете, будут показаны здесь</string>
     <string name="search_results">Результаты поиска</string>
+    <string name="search_by_title">По тайтлам</string>
+    <string name="search_by_source">По источникам</string>
+    <plurals name="search_source_variants">
+        <item quantity="one">%d источник</item>
+        <item quantity="few">%d источника</item>
+        <item quantity="many">%d источников</item>
+        <item quantity="other">%d источника</item>
+    </plurals>
     <string name="new_version_s">Новая версия: %s</string>
     <string name="size_s">Размер: %s</string>
     <string name="clear_updates_feed">Очистить ленту обновлений</string>
@@ -258,7 +266,10 @@
     <string name="disable_all">Отключить все</string>
     <string name="use_fingerprint">Использовать биометрические данные, если они доступны</string>
     <string name="appwidget_shelf_description">Манга из Вашего избранного</string>
-    <string name="appwidget_recent_description">Манга, которую Вы недавно читали</string>
+    <string name="appwidget_recent_description">Продолжить мангу, книгу или видео</string>
+    <string name="appwidget_resume_title">Продолжить</string>
+    <string name="appwidget_resume_episode">Серия %s</string>
+    <string name="catalog_library_categories">В библиотеке · %s</string>
     <string name="status_reading">Читаю</string>
     <string name="status_planned">Запланировано</string>
     <string name="status_on_hold">Отложено</string>
@@ -2650,6 +2661,10 @@
     <string name="strict_language_filter">Строгий языковой фильтр</string>
     <string name="strict_language_filter_summary">Скрывать расширения без языка или с несколькими</string>
     <string name="repositories">Репозитории</string>
+    <string name="source_management_sources">Источники</string>
+    <string name="source_management_open_packages">Смотреть пакеты</string>
+    <string name="source_management_packages_next">После добавления репозитория выбери пакет для установки.</string>
+    <string name="unified_sources_preview_count">Найдено источников: %1$d.</string>
     <string name="tvbox_repository_selector">Репозиторий TVBox: %1$s</string>
     <string name="packages">Пакеты</string>
     <string name="all_content">Весь контент</string>
@@ -4128,6 +4143,9 @@
     <string name="media_home_chapters">Новые главы</string>
     <string name="media_home_episodes">Новые серии</string>
     <string name="media_home_continue_watching">Продолжить просмотр</string>
+    <string name="media_home_snooze">Отложить на сутки</string>
+    <string name="media_home_hide">Скрыть до следующего открытия</string>
+    <string name="media_home_resume_changed">Список «Продолжить» обновлён</string>
     <string name="quick_source_setup_repository">Выбери формат и подключи каталог.</string>
     <string name="quick_source_setup_packages">Выбрать расширение</string>
     <string name="quick_source_setup_install">Выбери язык, затем установи и включи расширение.</string>

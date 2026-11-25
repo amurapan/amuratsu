@@ -117,6 +117,11 @@
 				<category android:name="android.intent.category.LAUNCHER" />
 				<category android:name="android.intent.category.LEANBACK_LAUNCHER" />
 			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.SEND" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<data android:mimeType="text/plain" />
+			</intent-filter>
 			<meta-data
 				android:name="android.app.default_searchable"
 				android:value="org.skepsun.kototoro.search.ui.multi.MultiSearchActivity" />
@@ -642,7 +647,7 @@
 		<receiver
 			android:name="org.skepsun.kototoro.widget.recent.RecentWidgetProvider"
 			android:exported="true"
-			android:label="@string/recent_manga">
+			android:label="@string/appwidget_resume_title">
 			<intent-filter>
 				<action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
 			</intent-filter>

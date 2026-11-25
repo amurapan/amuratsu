@@ -357,6 +357,7 @@ internal fun UnifiedDisclaimerDialog(
     onConfirm: () -> Unit,
     previewCount: Int = 0,
     previewNames: List<String> = emptyList(),
+    opensPackages: Boolean = false,
 ) {
     SettingsAlertDialog(
         title = stringResource(R.string.add_repository),
@@ -394,12 +395,13 @@ internal fun UnifiedDisclaimerDialog(
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                         )
                     }
-                    Text(
-                        text = stringResource(R.string.unified_sources_preview_note),
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    )
                 }
+                if (opensPackages || previewCount > 0) Text(
+                    text = stringResource(if (opensPackages) R.string.source_management_packages_next
+                        else R.string.unified_sources_preview_note),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
             }
         },
     )

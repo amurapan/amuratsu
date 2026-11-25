@@ -20,6 +20,7 @@ data class ContentGridModel(
     override val metadataTrackingService: ScrobblerService? = null,
     override val scoreText: String? = null,
     val recommendationReason: String? = null,
+    override val favouriteCategoryTitles: List<String> = emptyList(),
 ) : ContentListModel() {
 
     override fun getChangePayload(previousState: ListModel): Any? = when {

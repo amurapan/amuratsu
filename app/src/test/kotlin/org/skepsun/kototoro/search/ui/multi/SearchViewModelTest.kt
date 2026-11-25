@@ -33,6 +33,7 @@ import org.skepsun.kototoro.explore.data.SourcePresetsRepository
 import org.skepsun.kototoro.favourites.domain.FavouritesRepository
 import org.skepsun.kototoro.history.data.HistoryRepository
 import org.skepsun.kototoro.list.domain.ContentListMapper
+import org.skepsun.kototoro.list.ui.model.ContentGridModel
 import org.skepsun.kototoro.list.ui.model.ContentListModel
 import org.skepsun.kototoro.parsers.model.Content
 import org.skepsun.kototoro.parsers.model.ContentListFilter
@@ -68,6 +69,40 @@ class SearchViewModelTest {
     private val localHelper = mockk<SearchV2Helper>()
     private var presetId = 0L
     private var hideEmptyPref = false
+
+    @Test
+    fun `identical titles group across sources within the same media type`() {
+        val manga = resultSection(firstSource, 1L, "Frieren")
+        val translation = resultSection(secondSource, 2L, " ＦＲＩＥＲＥＮ ")
+        val video = resultSection(source("video", ContentType.VIDEO), 3L, "Frieren")
+
+        val groups = groupSearchTitles(listOf(manga, translation, video))
+
+        assertEquals(listOf(1L, 2L), groups.variants.getValue(1L).map { it.id })
+        assertEquals(setOf(1L, 2L), groups.groupedIds)
+    }
+
+    @Test
+    fun `conflicting authors and same source name collisions are kept separate`() {
+        val first = resultSection(firstSource, 1L, "Shared title", setOf("One author"))
+        val second = resultSection(secondSource, 2L, "Shared title", setOf("Another author"))
+        val ambiguous = first.copy(list = first.list + resultSection(firstSource, 3L, "Shared title").list)
+        val withoutAuthor = resultSection(secondSource, 4L, "Shared title")
+
+        assertTrue(groupSearchTitles(listOf(first, second)).variants.isEmpty())
+        assertTrue(groupSearchTitles(listOf(ambiguous, withoutAuthor)).variants.isEmpty())
+    }
+
+    private fun resultSection(source: ContentSource, id: Long, title: String, authors: Set<String> = emptySet()) =
+        SearchResultsListModel(0, source, null, null, listOf(ContentGridModel(
+            manga = Content(id, title, emptySet(), "/$id", "https://example.test/$id", 0f,
+                null, null, emptySet(), null, authors, source = source),
+            override = null,
+            counter = 0,
+            progress = null,
+            isFavorite = false,
+            isSaved = false,
+        )), null)
 
     @BeforeEach
     fun setUp() {

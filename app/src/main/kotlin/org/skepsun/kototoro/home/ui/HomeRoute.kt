@@ -12,6 +12,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.LocalContext
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.google.android.material.snackbar.Snackbar
+import org.skepsun.kototoro.R
 import org.skepsun.kototoro.core.exceptions.resolve.SnackbarErrorObserver
 import org.skepsun.kototoro.core.nav.AppRouter
 import org.skepsun.kototoro.core.ui.BaseComposeActivity
@@ -52,6 +54,7 @@ internal fun HomeRoute(
     val isCinema = LocalBrowseSpaceId.current == BuiltInSpaces.Cinema
     val viewModel = hiltViewModel<HomeViewModel>(key = "cinema-home".takeIf { isCinema })
     val state by viewModel.summaryState.collectAsStateWithLifecycle()
+    val pinnedResumeIds by viewModel.pinnedResumeIds.collectAsStateWithLifecycle()
     val activity = LocalContext.current as? BaseComposeActivity
     var showImport by rememberSaveable { mutableStateOf(false) }
     LaunchedEffect(isCinema, viewModel) {
@@ -101,6 +104,13 @@ internal fun HomeRoute(
         },
         selectedCinemaTab = cinemaTab.takeIf { isCinema },
         onCinemaTabSelected = onCinemaTabSelected.takeIf { onSelectSpace != null || isCinema },
+        pinnedResumeIds = pinnedResumeIds,
+        onResumeAction = { id, action ->
+            val history = state.recentHistoryItems.firstOrNull { it.content.id == id }?.history
+            val undo = viewModel.updateResumeItem(id, history, action)
+            Snackbar.make(rootView, R.string.media_home_resume_changed, Snackbar.LENGTH_LONG)
+                .setAction(R.string.undo) { undo() }.show()
+        },
     )
     if (showImport && isRouteVisible) ImportDialog(onDismissRequest = { showImport = false })
 }

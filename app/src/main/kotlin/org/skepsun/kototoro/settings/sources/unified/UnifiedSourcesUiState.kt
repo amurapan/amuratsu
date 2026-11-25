@@ -19,6 +19,7 @@ sealed interface UnifiedSourcesEvent {
     data class StartInstall(val intent: Intent) : UnifiedSourcesEvent
     data class StartUninstall(val intent: Intent) : UnifiedSourcesEvent
     data class PackageStateDetails(val item: UnifiedSourcePackageItem) : UnifiedSourcesEvent
+    data class RepositoryAdded(val kind: UnifiedSourceKind, val id: String) : UnifiedSourcesEvent
 
     /**
      * A pasted address was recognised as [kind]; the screen continues down the same add path the manual choice uses,

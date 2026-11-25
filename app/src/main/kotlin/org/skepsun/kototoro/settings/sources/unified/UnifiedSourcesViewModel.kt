@@ -428,6 +428,11 @@ class UnifiedSourcesViewModel @Inject constructor(
         filterState.update { it.copy(repositoryId = repositoryId) }
     }
 
+    internal fun showPackagesForRepository(kind: UnifiedSourceKind, id: String) {
+        filterState.update { it.copy(query = "", kinds = setOf(kind), repositoryId = id,
+            contentTypes = emptySet(), packageStatusFilter = UnifiedPackageStatusFilter.ALL) }
+    }
+
     fun toggleLocationType(locationType: UnifiedRepositoryLocationType) {
         filterState.update { state ->
             state.copy(locationTypes = state.locationTypes.toggle(locationType))
@@ -889,6 +894,7 @@ class UnifiedSourcesViewModel @Inject constructor(
                         .sortedBy { it.name.lowercase() }
                 }
                 emitMessage(appContext.getString(R.string.unified_sources_repository_added))
+                _events.emit(UnifiedSourcesEvent.RepositoryAdded(kind, repositoryIdForAction(kind, cleanUrl)))
                 true
             }
             UnifiedSourceKind.JS -> {
@@ -912,6 +918,7 @@ class UnifiedSourcesViewModel @Inject constructor(
                         .sortedBy { it.name.lowercase() }
                 }
                 emitMessage(appContext.getString(R.string.unified_sources_repository_added))
+                _events.emit(UnifiedSourcesEvent.RepositoryAdded(kind, repositoryIdForAction(kind, cleanUrl)))
                 true
             }
             UnifiedSourceKind.LNREADER -> addLnReaderRepository(cleanUrl)
@@ -1201,6 +1208,10 @@ class UnifiedSourcesViewModel @Inject constructor(
                     emitMessage(appContext.getString(R.string.extension_repo_added_message, result.repo.displayName))
                     extensionRepoRepository.refresh(repo.type)
                     refreshAvailableExternalPackages(listOf(repo.type))
+                    if (pendingEdit == null) {
+                        val kind = repo.type.toUnifiedKindForPackage()
+                        _events.emit(UnifiedSourcesEvent.RepositoryAdded(kind, repositoryIdForAction(kind, result.repo.baseUrl)))
+                    }
                 }
                 is ExternalExtensionRepoRepository.AddRepoResult.DuplicateFingerprint -> emitMessage(
                     appContext.getString(
@@ -1757,6 +1768,8 @@ class UnifiedSourcesViewModel @Inject constructor(
         settings.lnReaderRepoUrls = current + url
         refreshAvailableLnReaderPackages()
         emitMessage(appContext.getString(R.string.unified_sources_repository_added))
+        _events.emit(UnifiedSourcesEvent.RepositoryAdded(UnifiedSourceKind.LNREADER,
+            repositoryIdForAction(UnifiedSourceKind.LNREADER, url)))
         return true
     }
 

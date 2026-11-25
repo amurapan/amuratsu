@@ -53,6 +53,7 @@ fun ContentPosterCard(
     caption: String? = null,
     overlays: @Composable BoxScope.() -> Unit = {},
     progress: @Composable BoxScope.() -> Unit = {},
+    captionMaxLines: Int = 1,
 ) {
     Column(modifier.fillMaxWidth()
         .cardInteraction(RoundedCornerShape(style.cornerRadius), isSelected, isHighlighted, enabled,
@@ -85,7 +86,7 @@ fun ContentPosterCard(
         }
         if (!caption.isNullOrBlank()) {
             Text(caption, style = MaterialTheme.typography.labelSmall,
-                color = MaterialTheme.colorScheme.tertiary, maxLines = 1, overflow = TextOverflow.Ellipsis,
+                color = MaterialTheme.colorScheme.tertiary, maxLines = captionMaxLines, overflow = TextOverflow.Ellipsis,
                 modifier = Modifier.fillMaxWidth().padding(top = 6.dp).testTag("content-reason:${model.id}"))
         }
     }

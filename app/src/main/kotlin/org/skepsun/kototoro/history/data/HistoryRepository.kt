@@ -171,6 +171,7 @@ class HistoryRepository @Inject constructor(
     fun observeRecentWithHistory(
         limit: Int,
         tabTypes: Set<ContentType>? = null,
+        pinnedIds: Set<Long> = emptySet(),
     ): Flow<List<ContentWithHistory>> {
         require(limit > 0)
         return db.invalidationTracker.createFlow(
@@ -183,7 +184,9 @@ class HistoryRepository @Inject constructor(
             emitInitialState = true,
         ).mapLatest {
             val queryLimit = if (tabTypes != null) limit * 3 else limit
-            val recent = db.getHistoryDao().findRecent(queryLimit)
+            val dao = db.getHistoryDao()
+            val pinned = if (pinnedIds.isEmpty()) emptyList() else dao.findActiveWithContentByIds(pinnedIds)
+            val recent = pinned + dao.findRecent(queryLimit).filterNot { it.history.mangaId in pinnedIds }
             recent.asSequence()
                 .map { row ->
                     val content = row.toContent()

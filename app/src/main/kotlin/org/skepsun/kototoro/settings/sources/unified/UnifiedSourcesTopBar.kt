@@ -430,9 +430,10 @@ fun UnifiedSourcesTopBarTabs(
     onTabClick: (Int) -> Unit,
     readyState: UnifiedSourcesUiState.Ready?,
     modifier: Modifier = Modifier,
+    equalWidth: Boolean = false,
 ) {
     UnifiedSourcesTopBarTabs(pagerState.currentPage.coerceIn(0, UNIFIED_SOURCES_TAB_COUNT - 1),
-        onTabClick, readyState, modifier)
+        onTabClick, readyState, modifier, equalWidth)
 }
 
 @Composable
@@ -441,6 +442,7 @@ fun UnifiedSourcesTopBarTabs(
     onTabClick: (Int) -> Unit,
     readyState: UnifiedSourcesUiState.Ready?,
     modifier: Modifier = Modifier,
+    equalWidth: Boolean = false,
 ) {
     val sources = readyState?.sources?.size ?: 0
     val repositories = readyState?.repositories?.size ?: 0
@@ -448,17 +450,18 @@ fun UnifiedSourcesTopBarTabs(
     ExtensionManagementTabs(
         tabs = listOf(
             ExtensionManagementTab(
-                stringResource(R.string.sources_tab_title, sources), sources),
+                if (equalWidth) stringResource(R.string.source_management_sources) else stringResource(R.string.sources_tab_title, sources), sources),
             ExtensionManagementTab(
-                stringResource(R.string.repositories_tab_title, repositories), repositories),
+                if (equalWidth) stringResource(R.string.repositories) else stringResource(R.string.repositories_tab_title, repositories), repositories),
             ExtensionManagementTab(
-                stringResource(R.string.packages_tab_title, packages), packages, readyState?.packageUpdateCount ?: 0),
+                if (equalWidth) stringResource(R.string.packages) else stringResource(R.string.packages_tab_title, packages), packages, readyState?.packageUpdateCount ?: 0),
         ),
         selectedTab = selectedTab,
         onTabClick = onTabClick,
         modifier = modifier,
         height = LocalInterfaceStyleTokens.current.topBarButtonSize,
         isIosStyle = LocalInterfaceStyle.current == InterfaceStyle.IOS,
+        equalWidth = equalWidth,
     )
 }
 

@@ -961,7 +961,7 @@
     <string name="unified_sources_choose_kind_manually">手动选择类型</string>
     <string name="unified_sources_address_hint">仓库索引、TVBox/CMS 或 Legado 链接均可，格式按地址和内容自动识别；本地文件请从文件选择器导入。</string>
 <string name="unified_sources_address_is_file">这是一个扩展文件而不是来源地址，请改用文件导入。</string>
-    <string name="unified_sources_preview_count">将添加 %1$d 个来源。</string>
+    <string name="unified_sources_preview_count">找到 %1$d 个来源。</string>
     <string name="unified_sources_preview_note">添加后即可直接浏览；启用或禁用随时在本页调整。</string>
     <string name="unified_sources_browse_now">立即浏览</string>
     <string name="unified_sources_imported_none_enabled">来源已导入但尚未启用，请先在本页启用再浏览。</string>

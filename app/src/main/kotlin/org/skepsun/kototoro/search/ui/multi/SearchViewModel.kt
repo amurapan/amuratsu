@@ -14,6 +14,7 @@ import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.joinAll
@@ -138,6 +139,9 @@ class SearchViewModel @AssistedInject constructor(
     ) { state, filters ->
         state.asListModels(filters.hideEmpty)
     }.stateIn(viewModelScope + Dispatchers.Default, SharingStarted.Eagerly, listOf(LoadingState))
+
+    internal val titleGroups = list.map(::groupSearchTitles)
+        .stateIn(viewModelScope + Dispatchers.Default, SharingStarted.WhileSubscribed(5_000), SearchTitleGroups())
 
     init {
         doSearch()
