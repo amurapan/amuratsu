@@ -46,6 +46,7 @@ import okhttp3.OkHttpClient
 import org.skepsun.kototoro.core.model.ContentSource
 import org.skepsun.kototoro.aniyomi.AniyomiAnimeRepository
 import org.skepsun.kototoro.core.parser.ContentRepository
+import org.skepsun.kototoro.core.parser.starter.StarterSource
 import org.skepsun.kototoro.core.nav.AppRouter
 import org.skepsun.kototoro.core.network.CommonHeaders
 import org.skepsun.kototoro.core.network.ContentHttpClient
@@ -319,6 +320,7 @@ class VideoPlayerActivity : BaseComposeFullscreenActivity(), ReaderNavigationCal
     private var pendingExternalSubtitles: List<PlaybackSubtitle> = emptyList()
     private var activePlaybackSubtitles: List<PlaybackSubtitle> = emptyList()
     private var pendingExternalAudio: List<eu.kanade.tachiyomi.animesource.model.Track> = emptyList()
+    private var activeExternalAudio = pendingExternalAudio
     private lateinit var subtitleSessionController: SubtitleSessionController
     private var pendingSubtitleReload: PendingSubtitleReload? = null
     private lateinit var playerView: PlayerView
@@ -427,6 +429,7 @@ class VideoPlayerActivity : BaseComposeFullscreenActivity(), ReaderNavigationCal
     private var subtitlePollCounter = 0
     // Track user's manual subtitle selection to restore after file reload
     private var userManualSubtitleSelection: ManualSubtitleSelection? = null
+    private var userManualAudioSelection: VideoPlayerEngine.TrackInfo? = null
     // In-memory selected subtitle-track index (0 = off) for the subtitle panel, refreshed immediately on selection
     private var subtitlePanelSelectedIndex by mutableIntStateOf(0)
     private var subtitleCatalogVersion by mutableIntStateOf(0)
@@ -466,7 +469,8 @@ class VideoPlayerActivity : BaseComposeFullscreenActivity(), ReaderNavigationCal
             ) {
                 return
             }
-            val shouldRetrySuspiciousPlayback = dur in 1L..90_000L || isCloudstreamShortPlayback
+            val shouldRetrySuspiciousPlayback = currentVideoSource !is StarterSource &&
+                (dur in 1L..90_000L || isCloudstreamShortPlayback)
             if (shouldRetrySuspiciousPlayback && suspiciousAdRetryCount < 1) {
                 if (currentVideoSource != null) {
                     suspiciousAdRetryCount++
@@ -1289,7 +1293,7 @@ class VideoPlayerActivity : BaseComposeFullscreenActivity(), ReaderNavigationCal
         audioManager = getSystemService(Context.AUDIO_SERVICE) as AudioManager
         initCurrentBrightness()
 
-        // Hook player view gestures: 双击播放/暂停；单击显隐UI；长按左右持续快?快退
+        // Double tap seeks, single tap toggles controls, and a long press temporarily speeds up playback.
         playerGestureInstaller = { pv ->
             pv.isClickable = true
 
@@ -1327,49 +1331,33 @@ class VideoPlayerActivity : BaseComposeFullscreenActivity(), ReaderNavigationCal
                     return true
                 }
                 override fun onDoubleTap(e: MotionEvent): Boolean {
-                    if (isScreenLocked) return true // no-op when locked
+                    if (isScreenLocked) return true
                     if (::videoZoomController.isInitialized && videoZoomController.isZoomed) {
                         videoZoomController.animateReset {
                             showZoomOverlay(1.0f, durationMs = 600L)
                         }
                         return true
                     }
-                    val w = pv.width.takeIf { it > 0 } ?: -1
-                    val x = e.x
-                    val p = videoPlayer
-                    val allowDoubleTapSeek = appSettings.videoDoubleTapSeekEnabled
-                    if (w > 0 && p != null) {
-                        val left = w * 0.33f
-                        val right = w * 0.67f
-                        when {
-                            allowDoubleTapSeek && x < left -> {
-                                val newPos = (p.positionMs - quickTapBackMs).coerceAtLeast(0)
-                                p.seekTo(newPos)
-                                val sec = (appSettings.videoSeekBackwardMs / 1000).coerceAtLeast(1)
-                                showOverlayLeft(getString(R.string.video_rewind_time, sec.toString()))
-                            }
-                            allowDoubleTapSeek && x > right -> {
-                                val dur = p.durationMs.takeIf { it > 0 } ?: Long.MAX_VALUE
-                                val newPos = (p.positionMs + quickTapJumpMs).coerceAtMost(dur)
-                                p.seekTo(newPos)
-                                val sec = (appSettings.videoSeekForwardMs / 1000).coerceAtLeast(1)
-                                showOverlayRight(getString(R.string.video_fast_forward_time, sec.toString()))
-                            }
-                            else -> {
-                                val wasPlaying = p.isPlaying
-                                if (wasPlaying) p.pause() else p.play()
-                                showPlayPauseOverlay(getString(if (wasPlaying) R.string.video_pause else R.string.video_play))
-                            }
-                        }
-                        updatePlaybackMenu()
-                        return true
-                    }
-                    videoPlayer?.let { p ->
-                        val wasPlaying = p.isPlaying
-                        if (wasPlaying) p.pause() else p.play()
+                    val player = videoPlayer ?: return true
+                    if (!appSettings.videoDoubleTapSeekEnabled) {
+                        val wasPlaying = player.player.playWhenReady
+                        if (wasPlaying) player.pause() else player.play()
                         showPlayPauseOverlay(getString(if (wasPlaying) R.string.video_pause else R.string.video_play))
-                        updatePlaybackMenu()
+                    } else if (pv.width > 0 && player.player.isCurrentMediaItemSeekable) {
+                        val rewind = e.x < pv.width / 2f
+                        val interval = if (rewind) quickTapBackMs else quickTapJumpMs
+                        val position = player.positionMs
+                        val duration = player.durationMs.takeIf { it > 0L } ?: Long.MAX_VALUE
+                        val offset = if (rewind) -interval else interval
+                        player.seekTo((position + offset).coerceIn(0L, duration))
+                        val seconds = (interval / 1000L).coerceAtLeast(1L).toString()
+                        if (rewind) {
+                            showOverlayLeft(getString(R.string.video_rewind_time, seconds))
+                        } else {
+                            showOverlayRight(getString(R.string.video_fast_forward_time, seconds))
+                        }
                     }
+                    updatePlaybackMenu()
                     return true
                 }
 
@@ -2260,6 +2248,7 @@ class VideoPlayerActivity : BaseComposeFullscreenActivity(), ReaderNavigationCal
         val mediaKind = normalized.mediaKind.takeUnless { dynamicCloudstreamPlaylistUrl != null }
             ?: PlaybackMediaKind.HLS
         activePlaybackSubtitles = pendingExternalSubtitles
+        activeExternalAudio = pendingExternalAudio
         if (::subtitleSessionController.isInitialized) {
             subtitleSessionController.updateExternalTracks(activePlaybackSubtitles)
             subtitleSessionController.updateEmbeddedTracks(emptyList())
@@ -2274,7 +2263,7 @@ class VideoPlayerActivity : BaseComposeFullscreenActivity(), ReaderNavigationCal
                 mediaKind = mediaKind,
                 headers = playHeaders,
                 subtitles = activePlaybackSubtitles,
-                externalAudio = pendingExternalAudio,
+                externalAudio = activeExternalAudio,
                 startPositionMs = initialStartMs ?: 0L,
             ),
         )
@@ -2982,6 +2971,11 @@ class VideoPlayerActivity : BaseComposeFullscreenActivity(), ReaderNavigationCal
             title = getString(R.string.options),
             items = orderVideoPlayerMoreItems(listOfNotNull(
                 VideoActionDialogItem(
+                    title = getString(R.string.video_audio_track),
+                    iconRes = R.drawable.ic_audiotrack,
+                    onClick = { onComposePlayerAction(VideoPlayerAction.OpenAudioTracks(lastMoreAnchorBounds)) },
+                ),
+                VideoActionDialogItem(
                     title = getString(R.string.video_quality),
                     iconRes = R.drawable.ic_settings,
                     onClick = { onComposePlayerAction(VideoPlayerAction.OpenQuality(lastMoreAnchorBounds)) },
@@ -3338,6 +3332,7 @@ class VideoPlayerActivity : BaseComposeFullscreenActivity(), ReaderNavigationCal
         )
         pendingExternalSubtitles = subtitleSessionController.state.value.tracks
             .filter { it.origin != SubtitleOrigin.EMBEDDED }
+        pendingExternalAudio = activeExternalAudio
         startPlayback(
             url = mediaUrl,
             source = currentVideoSource,
@@ -3440,14 +3435,21 @@ class VideoPlayerActivity : BaseComposeFullscreenActivity(), ReaderNavigationCal
             }
         }
 
-        // Auto-select audio track matching system language (if multiple audio tracks exist)
         val audioTracks = player.getAudioTracks()
         if (audioTracks.size > 1) {
-            val systemLang = java.util.Locale.getDefault().language
-            val match = audioTracks.find { it.language?.startsWith(systemLang, ignoreCase = true) == true }
+            val manualAudio = userManualAudioSelection
+            val manualMatch = manualAudio?.let { selected ->
+                val matches = audioTracks.filter { it.title == selected.title && it.language == selected.language }
+                matches.firstOrNull { it.id == selected.id } ?: matches.singleOrNull()?.takeIf {
+                    !selected.title.isNullOrBlank() || !selected.language.isNullOrBlank()
+                }
+            }
+            val systemLanguage = java.util.Locale.getDefault().language
+            val match = manualMatch ?: audioTracks.firstOrNull {
+                it.language?.substringBefore('-').equals(systemLanguage, ignoreCase = true)
+            }
             if (match != null && !match.isSelected) {
                 player.setAudioTrack(match.id)
-                Log.d("VideoPlayerActivity", "Auto-selected audio: ${match.displayName()}")
             }
         }
     }
@@ -3851,14 +3853,34 @@ class VideoPlayerActivity : BaseComposeFullscreenActivity(), ReaderNavigationCal
     private fun showAudioTrackDialog() {
         val player = videoPlayer ?: return
         val tracks = player.getAudioTracks()
-        if (tracks.isEmpty()) {
-            showPlayerMessage(org.skepsun.kototoro.R.string.video_no_audio_tracks)
+        val hasVideoVersions = availableVideos.size > 1
+        if (tracks.isEmpty() && !hasVideoVersions) {
+            showPlayerMessage(R.string.video_no_audio_tracks)
             return
         }
-        val labels = tracks.map { it.displayName() }.toTypedArray()
-        val checked = tracks.indexOfFirst { it.isSelected }.coerceAtLeast(0)
-        showSelectionDialog(R.string.video_audio_track, labels.asList(), checked) { which ->
-            player.setAudioTrack(tracks[which].id)
+        val labels = tracks.mapIndexed { index, track ->
+            if (track.title.isNullOrBlank() && track.language.isNullOrBlank()) {
+                getString(R.string.video_audio_track_number, index + 1)
+            } else {
+                track.displayName()
+            }
+        }
+        val labelCounts = labels.groupingBy { it }.eachCount()
+        val options = labels.mapIndexed { index, label ->
+            if (labelCounts.getValue(label) > 1) "$label · ${getString(R.string.video_audio_track_number, index + 1)}"
+            else label
+        } + listOfNotNull(getString(R.string.video_audio_other_versions).takeIf { hasVideoVersions })
+        val requestId = player.snapshot.requestId
+        showSelectionDialog(R.string.video_audio_track, options, tracks.indexOfFirst { it.isSelected }) { which ->
+            if (videoPlayer !== player || player.snapshot.requestId != requestId) return@showSelectionDialog
+            val selected = tracks.getOrNull(which)
+            if (selected == null) {
+                showQualityDialog()
+                return@showSelectionDialog
+            }
+            val current = player.getAudioTracks().firstOrNull { it.id == selected.id } ?: return@showSelectionDialog
+            userManualAudioSelection = current
+            if (!current.isSelected) player.setAudioTrack(current.id)
         }
     }
 

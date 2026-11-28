@@ -694,7 +694,9 @@
     <string name="video_auto_next">Auto Play Next</string>
     <string name="video_landscape_sensor">Landscape Sensor Mode</string>
     <string name="video_subtitle_track">Subtitle Track</string>
-    <string name="video_audio_track">Audio Track</string>
+    <string name="video_audio_track">Audio tracks</string>
+    <string name="video_audio_track_number">Track %1$d</string>
+    <string name="video_audio_other_versions">Other video versions</string>
     <string name="video_subtitle_off">Off</string>
     <string name="video_subtitle_embedded">Embedded</string>
     <string name="video_subtitle_external">External</string>

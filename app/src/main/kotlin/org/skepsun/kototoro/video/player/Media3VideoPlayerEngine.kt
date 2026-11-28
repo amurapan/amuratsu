@@ -169,6 +169,7 @@ class Media3VideoPlayerEngine(
 
     override fun load(request: PlaybackRequest) {
         currentRequest = request
+        trackTargets.clear()
         currentError = null
         currentStatus = VideoPlaybackStatus.PREPARING
         fileLoadedForRequest = null
@@ -323,18 +324,28 @@ class Media3VideoPlayerEngine(
     private fun buildTracks(trackType: Int, label: String): List<VideoPlayerEngine.TrackInfo> {
         trackTargets.entries.removeAll { it.value.type == trackType }
         val result = mutableListOf<VideoPlayerEngine.TrackInfo>()
-        val externalSubtitleIds = currentRequest?.subtitles?.mapTo(HashSet(), PlaybackSubtitle::id).orEmpty()
+        val request = currentRequest
+        val externalSubtitleIds = request?.subtitles?.mapTo(HashSet(), PlaybackSubtitle::id).orEmpty()
         exoPlayer.currentTracks.groups.filter { it.type == trackType }.forEachIndexed { groupIndex, group ->
+            val externalAudioLabel = if (trackType == C.TRACK_TYPE_AUDIO && request != null && request.externalAudio.isNotEmpty()) {
+                // MergingMediaPeriod prefixes each group with its source index: video, subtitles, then audio.
+                val child = group.mediaTrackGroup.id.substringBefore(':').toIntOrNull()
+                child?.let { request.externalAudio.getOrNull(it - 1 - request.subtitles.size)?.lang }
+                    ?.takeIf(String::isNotBlank)
+            } else {
+                null
+            }
             for (index in 0 until group.length) {
+                if (trackType == C.TRACK_TYPE_AUDIO && !group.isTrackSupported(index, true)) continue
                 val format = group.getTrackFormat(index)
-                val configuredId = format.id?.takeIf(String::isNotBlank)
+                val configuredId = format.id?.takeIf { trackType == C.TRACK_TYPE_TEXT && it.isNotBlank() }
                 val id = configuredId ?: "track:$trackType:${group.mediaTrackGroup.id}:$groupIndex:$index"
                 trackTargets[id] = TrackTarget(trackType, group, index)
                 result += VideoPlayerEngine.TrackInfo(
                     id = id,
                     type = label,
-                    title = format.label,
-                    language = format.language,
+                    title = externalAudioLabel ?: format.label,
+                    language = format.language?.takeUnless { trackType == C.TRACK_TYPE_AUDIO && it.equals("und", true) },
                     codec = format.codecs ?: format.sampleMimeType,
                     origin = if (trackType == C.TRACK_TYPE_TEXT) {
                         if (id in externalSubtitleIds) {

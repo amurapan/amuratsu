@@ -262,7 +262,7 @@ fun VideoPlayerTopControls(
             )
             PlayerIconButton(
                 icon = { Icon(VideoPlayerIcons.Audiotrack, contentDescription = null) },
-                contentDescription = "Audio tracks",
+                contentDescription = uiString("video_audio_track"),
                 onClick = { onAction(VideoPlayerAction.OpenAudioTracks(audioAnchorBounds)) },
                 modifier = Modifier.onGloballyPositioned {
                     audioAnchorBounds = it.boundsInWindowIntRect()

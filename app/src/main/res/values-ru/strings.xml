@@ -1368,7 +1368,9 @@
     <string name="video_auto_next">Авто-лед. серия</string>
     <string name="video_landscape_sensor">Ландшафтный датчик</string>
     <string name="video_subtitle_track">Дорожка субтитров</string>
-    <string name="video_audio_track">Аудиодорожка</string>
+    <string name="video_audio_track">Озвучка</string>
+    <string name="video_audio_track_number">Дорожка %1$d</string>
+    <string name="video_audio_other_versions">Другие версии видео</string>
     <string name="video_subtitle_off">Выкл</string>
     <string name="video_subtitle_embedded">Встроенные</string>
     <string name="video_subtitle_external">Внешние</string>
