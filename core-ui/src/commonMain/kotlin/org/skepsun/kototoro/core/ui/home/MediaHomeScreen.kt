@@ -80,6 +80,13 @@ private fun CinemaTabs(selected: CinemaKind, enabled: Boolean, onSelect: (Cinema
     }
 }
 
+data class MediaHomeStarterPack(
+    val key: String,
+    val title: String,
+    val kind: HomeMediaKind,
+    val cinemaKind: CinemaKind? = null,
+)
+
 /** Android and desktop render this same personal home; platform services enter through callbacks. */
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalLayoutApi::class)
 @Composable
@@ -109,6 +116,8 @@ fun MediaHomeScreen(
     cinemaTab: CinemaKind = CinemaKind.MOVIE,
     onCinemaTabSelected: ((CinemaKind) -> Unit)? = null,
     onResumeAction: ((MediaHomeItem, HomeResumeAction) -> Unit)? = null,
+    starterPacks: List<MediaHomeStarterPack> = emptyList(),
+    onOpenStarterPack: (MediaHomeStarterPack) -> Unit = {},
 ) {
     var showAdd by rememberSaveable { mutableStateOf(false) }
     val visibleRecent = remember(recent, selectedKind, cinemaTab) { recent.forHomeKind(selectedKind, cinemaTab) }
@@ -117,6 +126,11 @@ fun MediaHomeScreen(
         recommendations.forHomeKind(selectedKind, cinemaTab)
     }
     val hasContent = visibleRecent.isNotEmpty() || visibleUpdates.isNotEmpty() || visibleRecommendations.isNotEmpty()
+    val visibleStarterPacks = starterPacks.filter { pack ->
+        selectedKind == HomeMediaKind.ALL || (
+            pack.kind == selectedKind && (selectedKind != HomeMediaKind.CINEMA || pack.cinemaKind == cinemaTab)
+        )
+    }
     val fontScale = LocalDensity.current.fontScale
     Surface(modifier.fillMaxSize(), color = MaterialTheme.colorScheme.surface) {
         BoxWithConstraints(Modifier.fillMaxSize().padding(contentPadding)) {
@@ -187,6 +201,22 @@ fun MediaHomeScreen(
                         CinemaTabs(cinemaTab, enabled, onCinemaTabSelected)
                     }
                 }
+                if (visibleStarterPacks.isNotEmpty()) {
+                    item(key = "starter-packs") {
+                        Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
+                            Text(uiString("starter_home_title"), style = MaterialTheme.typography.titleLarge)
+                            FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                                visibleStarterPacks.forEach { pack ->
+                                    FilledTonalButton(
+                                        onClick = { onOpenStarterPack(pack) },
+                                        enabled = enabled,
+                                        modifier = Modifier.testTag("starter-pack:${pack.key}"),
+                                    ) { Text(pack.title) }
+                                }
+                            }
+                        }
+                    }
+                }
                 if (selectedKind != HomeMediaKind.ALL && onLibrary != null) {
                     item(key = "media-actions") {
                         FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -209,7 +239,7 @@ fun MediaHomeScreen(
                             CircularProgressIndicator()
                         }
                     }
-                } else if (!hasContent) {
+                } else if (!hasContent && visibleStarterPacks.isEmpty()) {
                     item(key = "empty") {
                         HomeEmpty(selectedKind, onSearch, { showAdd = true }, onImport, enabled)
                     }

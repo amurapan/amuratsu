@@ -1,5 +1,7 @@
 package org.skepsun.kototoro.settings.sources.unified
 
+import org.skepsun.kototoro.core.parser.starter.StarterSource
+
 import android.content.Context
 import android.net.Uri
 import android.util.Log
@@ -434,7 +436,25 @@ class UnifiedSourceCatalogRepository @Inject constructor(
         }
 
         return combine(apkPackages, jarPackages, cloudstreamPackages, jsonPackages) { apk, jar, cloudstream, json ->
-            (apk + jar + cloudstream + json).sortedWith(compareBy({ it.kind.ordinal }, { it.name.lowercase() }))
+            val starter = StarterSource.entries.map { source ->
+                val title = source.getTitle(localizedContext)
+                UnifiedSourcePackageItem(
+                    id = packageId(UnifiedSourceKind.NATIVE, source.name),
+                    kind = UnifiedSourceKind.NATIVE,
+                    name = title,
+                    packageName = source.name,
+                    repositoryId = null,
+                    repositoryName = null,
+                    versionName = null,
+                    versionCode = null,
+                    language = null,
+                    isInstalled = true,
+                    isNsfw = false,
+                    sourceCount = 1,
+                    sourceNames = emptyList(),
+                )
+            }
+            (starter + apk + jar + cloudstream + json).sortedWith(compareBy({ it.kind.ordinal }, { it.name.lowercase() }))
         }.flowOn(Dispatchers.Default).distinctUntilChanged().catch { e ->
             Log.e("UnifiedSourceCatalog", "Error in observePackages flow", e)
             emit(emptyList())
@@ -627,7 +647,7 @@ class UnifiedSourceCatalogRepository @Inject constructor(
             isEnabled = jsonSummary?.enabled ?: (settings.isAllSourcesEnabled || sourceEntity?.isEnabled == true),
             isPinned = jsonSummary?.isPinned ?: (sourceEntity?.isPinned == true),
             isAvailable = true,
-            isInstalled = kind != UnifiedSourceKind.NATIVE,
+            isInstalled = this is StarterSource || kind != UnifiedSourceKind.NATIVE,
             isNsfw = nsfw,
             isBroken = isBroken,
         )
@@ -673,6 +693,7 @@ class UnifiedSourceCatalogRepository @Inject constructor(
         jsonEntity: JsonSourceEntity?,
     ): Pair<String, String>? {
         return when (this) {
+            is StarterSource -> packageId(UnifiedSourceKind.NATIVE, name) to name
             is MihonMangaSource -> packageId(UnifiedSourceKind.MIHON, pkgName) to pkgName
             is AniyomiAnimeSource -> packageId(UnifiedSourceKind.ANIYOMI, pkgName) to pkgName
             is IReaderMangaSource -> packageId(UnifiedSourceKind.IREADER, pkgName) to pkgName

@@ -55,6 +55,7 @@ internal fun HomeRoute(
     val viewModel = hiltViewModel<HomeViewModel>(key = "cinema-home".takeIf { isCinema })
     val state by viewModel.summaryState.collectAsStateWithLifecycle()
     val pinnedResumeIds by viewModel.pinnedResumeIds.collectAsStateWithLifecycle()
+    val starterSources by viewModel.starterSources.collectAsStateWithLifecycle(initialValue = emptyList())
     val activity = LocalContext.current as? BaseComposeActivity
     var showImport by rememberSaveable { mutableStateOf(false) }
     LaunchedEffect(isCinema, viewModel) {
@@ -92,6 +93,8 @@ internal fun HomeRoute(
         onUpdates = { openShelf(UpdatedNavKey) },
         onRecommendations = { openShelf(SuggestionsNavKey) },
         onManageSources = { appRouter.openSourceRepositoryCatalog(cinema = isCinema) },
+        starterSources = starterSources,
+        onOpenStarter = { appRouter.openList(it, null, null) },
         onImport = { showImport = true },
         onOpen = { navigateToDetailsWithContent(it, null) },
         onResume = { content ->

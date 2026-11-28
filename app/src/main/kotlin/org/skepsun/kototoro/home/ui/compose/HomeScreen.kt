@@ -21,6 +21,7 @@ import org.skepsun.kototoro.R
 import org.skepsun.kototoro.core.model.ContentHistory
 import org.skepsun.kototoro.core.model.cinemaKind
 import org.skepsun.kototoro.core.model.getContentType
+import org.skepsun.kototoro.core.parser.starter.StarterSource
 import org.skepsun.kototoro.core.model.looksLikeLocalNovelContent
 import org.skepsun.kototoro.core.model.looksLikeLocalVideoContent
 import org.skepsun.kototoro.core.ui.compose.ScrollToTopEffect
@@ -28,6 +29,7 @@ import org.skepsun.kototoro.core.ui.home.HomeMediaKind
 import org.skepsun.kototoro.core.ui.home.HomeResumeAction
 import org.skepsun.kototoro.core.ui.home.MediaHomeItem
 import org.skepsun.kototoro.core.ui.home.MediaHomeScreen
+import org.skepsun.kototoro.core.ui.home.MediaHomeStarterPack
 import org.skepsun.kototoro.core.video.CinemaKind
 import org.skepsun.kototoro.home.ui.HomeContentTab
 import org.skepsun.kototoro.home.ui.HomeSummaryState
@@ -53,6 +55,8 @@ fun HomeScreen(
     onCinemaTabSelected: ((CinemaKind) -> Unit)? = null,
     pinnedResumeIds: Set<Long> = emptySet(),
     onResumeAction: ((Long, HomeResumeAction) -> Unit)? = null,
+    starterSources: List<StarterSource> = emptyList(),
+    onOpenStarter: (StarterSource) -> Unit = {},
 ) {
     val context = LocalContext.current
     val configuration = LocalConfiguration.current
@@ -107,6 +111,15 @@ fun HomeScreen(
         state.recommendations.map { item(it.content) }
     }
     val kind = if (selectedCinemaTab != null) HomeMediaKind.CINEMA else state.selectedTab.toMediaKind()
+    val starterPacks = starterSources.map { source ->
+        val cinema = CinemaKind.fromSourceData(source.name, null)
+        MediaHomeStarterPack(
+            key = source.name,
+            title = stringResource(source.titleRes),
+            kind = if (cinema != null) HomeMediaKind.CINEMA else source.contentType.toHomeTab().toMediaKind(),
+            cinemaKind = cinema,
+        )
+    }
     stateHolder.SaveableStateProvider(selectedCinemaTab?.let { "cinema:${it.name}" } ?: kind.name) {
         val listState = rememberLazyListState()
         ScrollToTopEffect { listState.scrollToItem(0) }
@@ -135,6 +148,8 @@ fun HomeScreen(
             onOpen = { model -> contents[model.id]?.let(onOpen) },
             onResume = { model -> contents[model.id]?.let(onResume) },
             onResumeAction = onResumeAction?.let { action -> { model, type -> action(model.id, type) } },
+            starterPacks = starterPacks,
+            onOpenStarterPack = { pack -> starterSources.firstOrNull { it.name == pack.key }?.let(onOpenStarter) },
             cinemaTab = selectedCinemaTab ?: CinemaKind.MOVIE,
             onCinemaTabSelected = onCinemaTabSelected,
             cover = { model, modifier ->

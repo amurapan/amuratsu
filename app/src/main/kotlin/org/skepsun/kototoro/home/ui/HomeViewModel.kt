@@ -1,5 +1,7 @@
 package org.skepsun.kototoro.home.ui
 
+import org.skepsun.kototoro.core.parser.starter.StarterSource
+
 import android.content.Context
 import android.util.Log
 import androidx.annotation.StringRes
@@ -105,6 +107,9 @@ class HomeViewModel @Inject constructor(
     }
 
     val onActionDone = MutableEventFlow<ReversibleAction>()
+    val starterSources = contentSourcesRepository.observeEnabledSources()
+        .map { sources -> sources.mapNotNull { it.mangaSource as? StarterSource }.sortedBy { it.ordinal } }
+        .distinctUntilChanged()
 
     // Keep the home selection independent until the user opens a shelf.
     private val selectedTabFlow = savedStateHandle.getStateFlow("home_format", "ALL")

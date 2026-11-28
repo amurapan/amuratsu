@@ -11,6 +11,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.text.inSpans
 import org.skepsun.kototoro.R
 import org.skepsun.kototoro.core.parser.external.ExternalContentSource
+import org.skepsun.kototoro.core.parser.starter.StarterSource
 import org.skepsun.kototoro.core.util.ext.getDisplayName
 import org.skepsun.kototoro.core.util.ext.toLocale
 import org.skepsun.kototoro.core.util.ext.toLocaleOrNull
@@ -66,6 +67,7 @@ fun ContentSource(name: String?, fallbackContentType: ContentType?): ContentSour
     LocalVideoSource.name -> return LocalVideoSource
     TestContentSource.name -> return TestContentSource
     }
+    StarterSource.entries.firstOrNull { it.name == name }?.let { return it }
     if (name.startsWith("content:")) {
         val parts = name.substringAfter(':').splitTwoParts('/') ?: return UnknownContentSource
         return ExternalContentSource(packageName = parts.first, authority = parts.second)
@@ -280,6 +282,7 @@ fun ContentSource.getTitle(context: Context): String {
         LocalNovelSource -> context.getString(R.string.domain_novel) + " " + context.getString(R.string.local_storage)
         LocalVideoSource -> context.getString(R.string.domain_video) + " " + context.getString(R.string.local_storage)
         TestContentSource -> context.getString(R.string.test_parser)
+        is StarterSource -> context.getString(source.titleRes)
         is ExternalContentSource -> source.resolveName(context)
         is org.skepsun.kototoro.core.jsonsource.JsonContentSource -> source.displayName.ifBlank { source.name }
         is org.skepsun.kototoro.core.jsonsource.JsonSourceListSource -> source.displayName.ifBlank { source.name }

@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="starter_home_title">Можно открыть сразу</string>
+    <string name="starter_manga">Классическая манга</string>
+    <string name="starter_books">Классические книги</string>
+    <string name="starter_anime">Классическое аниме</string>
+    <string name="starter_movies">Классика кино</string>
+    <string name="starter_series">Открытый сериал</string>
+    <string name="starter_offline">Встроено · доступно офлайн</string>
+    <string name="starter_open_package">Открыть подборку</string>
     <string name="source_groups_title">Группы расширений</string>
     <string name="source_groups_save_current">Сохранить тек. состояние в группу</string>
     <string name="source_groups_import">Импорт</string>

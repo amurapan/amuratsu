@@ -11,6 +11,7 @@ import org.skepsun.kototoro.core.model.ContentSourceAvailability
 import org.skepsun.kototoro.core.model.getTitle
 import org.skepsun.kototoro.core.network.ContentHttpClient
 import org.skepsun.kototoro.core.parser.ContentRepository
+import org.skepsun.kototoro.core.parser.starter.StarterContentRepository
 import org.skepsun.kototoro.explore.data.classifyAvailability
 import org.skepsun.kototoro.parsers.model.Content
 import org.skepsun.kototoro.parsers.model.ContentChapter
@@ -90,7 +91,8 @@ class SourceTester @Inject constructor(
 			val client = repo.getImageClient() ?: okHttp
 			val errors = candidates.mapNotNull { content ->
 				val url = content.coverUrl ?: return@mapNotNull text(R.string.source_test_msg_no_cover)
-				val response = client.newCall(repo.createCoverRequest(url)).await()
+				val response = if (repo is StarterContentRepository) repo.fetchCoverResponse(url)
+					else client.newCall(repo.createCoverRequest(url)).await()
 				verifyImage(response)
 			}
 			if (errors.isEmpty()) {

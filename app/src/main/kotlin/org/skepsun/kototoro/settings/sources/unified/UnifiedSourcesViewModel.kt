@@ -1,5 +1,7 @@
 package org.skepsun.kototoro.settings.sources.unified
 
+import org.skepsun.kototoro.core.parser.starter.StarterSource
+
 import org.skepsun.kototoro.settings.sources.test.SourceHealth
 import org.skepsun.kototoro.settings.sources.test.SourceHealthStatus
 
@@ -2578,7 +2580,9 @@ class UnifiedSourcesViewModel @Inject constructor(
             .filter {
                 when (filters.testAvailabilityFilter) {
                     UnifiedTestAvailabilityFilter.ALL -> true
-                    UnifiedTestAvailabilityFilter.VERIFIED -> sourceHealth[it.source.name]?.status == SourceHealthStatus.VERIFIED
+                    UnifiedTestAvailabilityFilter.VERIFIED -> sourceHealth[it.source.name]?.let { health ->
+                        health.status == SourceHealthStatus.VERIFIED
+                    } ?: (it.source is StarterSource)
                     UnifiedTestAvailabilityFilter.INTERMITTENT ->
                         sourceHealth[it.source.name]?.status == SourceHealthStatus.INTERMITTENT
                     UnifiedTestAvailabilityFilter.UNTESTED ->

@@ -1,5 +1,7 @@
 package org.skepsun.kototoro.settings.sources.unified
 
+import org.skepsun.kototoro.core.parser.starter.StarterSource
+
 
 import android.graphics.drawable.Drawable
 import androidx.compose.animation.AnimatedVisibility
@@ -765,6 +767,12 @@ private fun UnifiedSourceRow(
                     modifier = if (isSelectionMode) Modifier else Modifier.clickable(onClick = onOpenLastCheck),
                     style = MaterialTheme.typography.bodySmall,
                     color = color,
+                )
+            } else if (item.source is StarterSource) {
+                Text(
+                    text = stringResource(R.string.starter_offline),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.primary,
                 )
             }
             Text(
@@ -1563,9 +1571,14 @@ private fun UnifiedPackageRow(
                                 label = { Text(chipText) },
                             )
                         }
-                    UnifiedSourcePackageState.INSTALLED -> Unit
+                    UnifiedSourcePackageState.INSTALLED -> if (item.kind == UnifiedSourceKind.NATIVE) {
+                        CompactActionChip(
+                            onClick = onPrimaryAction,
+                            label = { Text(stringResource(R.string.starter_open_package)) },
+                        )
+                    } else Unit
                 }
-                    if (item.isInstalled) {
+                    if (item.isInstalled && item.kind != UnifiedSourceKind.NATIVE) {
                         CompactActionChip(
                             onClick = onUninstall,
                             label = { Text(stringResource(R.string.remove)) },

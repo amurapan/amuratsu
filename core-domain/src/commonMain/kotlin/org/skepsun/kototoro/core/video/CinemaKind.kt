@@ -12,6 +12,10 @@ enum class CinemaKind {
 
     companion object {
         fun fromSourceData(sourceName: String, sourceData: String?): CinemaKind? {
+            when (sourceName) {
+                "AMURATSU_STARTER_MOVIES" -> return MOVIE
+                "AMURATSU_STARTER_SERIES" -> return SERIES
+            }
             if (!sourceName.startsWith("CLOUDSTREAM_") || sourceData.isNullOrEmpty()) return null
             val metadata = runCatching { Json.parseToJsonElement(sourceData) as? JsonObject }.getOrNull()
             return fromVideoType((metadata?.get("type") as? JsonPrimitive)?.content)

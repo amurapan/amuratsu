@@ -1,5 +1,7 @@
 package org.skepsun.kototoro.explore.data
 
+import org.skepsun.kototoro.core.parser.starter.StarterSource
+
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
@@ -180,6 +182,7 @@ class ContentSourcesRepository @Inject constructor(
     val allContentSources: Set<ContentSource>
         get() {
             val set = LinkedHashSet<ContentSource>()
+            set.addAll(StarterSource.entries)
             org.skepsun.kototoro.core.extensions.GlobalExtensionManager.contentSources.value.forEach { set.add(it) }
             org.skepsun.kototoro.core.extensions.GlobalExtensionManager.mangaSources.value.forEach {
                 set.add(cachedKotatsuSources.getOrPut(it.name) { org.skepsun.kototoro.core.parser.kotatsu.KotatsuParserSource(it) })
@@ -1269,7 +1272,7 @@ class ContentSourcesRepository @Inject constructor(
                 source = x.name,
                 // A parser marked broken starts disabled even under "all sources enabled"; the user can enable it in
                 // extension management. Group locks still win.
-                isEnabled = locks[x.name] ?: (isAllEnabled && !x.isBroken),
+                isEnabled = locks[x.name] ?: (x is StarterSource || (isAllEnabled && !x.isBroken)),
                 sortKey = ++maxSortKey,
                 addedIn = BuildConfig.VERSION_CODE,
                 lastUsedAt = 0,
@@ -1307,6 +1310,9 @@ class ContentSourcesRepository @Inject constructor(
     }
 
     suspend fun isSetupRequired(): Boolean {
+        // Built-in packages are usable from Home. A disabled starter row is still an explicit setup choice.
+        assimilateNewSources(force = true)
+        if (dao.findAll().any { row -> StarterSource.entries.any { it.name == row.source } }) return false
         return !settings.hasSeenPluginWelcome || (settings.sourcesVersion == 0 && dao.findAllEnabledNames().isEmpty())
     }
 

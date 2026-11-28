@@ -1,0 +1,283 @@
+[
+  {
+    "id": 710125000001,
+    "source": "AMURATSU_STARTER_MANGA",
+    "title": "Tagosaku and Mokube in Tokyo",
+    "altTitles": [
+      "Тагосаку и Мокубэ в Токио",
+      "Tagosaku to Mokube no Tokyo Kenbutsu"
+    ],
+    "author": "Rakuten Kitazawa",
+    "url": "https://commons.wikimedia.org/wiki/File:Tagosaku_to_Mokube_no_Tokyo_Kenbutsu.jpg",
+    "cover": "tokyo.jpg",
+    "chapters": [
+      {
+        "title": null,
+        "files": [
+          "tokyo.jpg"
+        ]
+      }
+    ],
+    "credits": "Complete Japanese comic strip, first published in 1902. Scan from Wikimedia Commons. Public domain."
+  },
+  {
+    "id": 710125000002,
+    "source": "AMURATSU_STARTER_BOOKS",
+    "title": "Пиковая дама",
+    "altTitles": [
+      "The Queen of Spades",
+      "Pikovaya dama"
+    ],
+    "author": "Александр Пушкин",
+    "url": "https://ru.wikisource.org/wiki/%D0%9F%D0%B8%D0%BA%D0%BE%D0%B2%D0%B0%D1%8F_%D0%B4%D0%B0%D0%BC%D0%B0_%28%D0%9F%D1%83%D1%88%D0%BA%D0%B8%D0%BD%29/%D0%92%D0%B5%D1%80%D1%81%D0%B8%D1%8F_2",
+    "cover": "pushkin.jpg",
+    "chapters": [
+      {
+        "title": "Глава I",
+        "files": [
+          "pushkin-01.html"
+        ]
+      },
+      {
+        "title": "Глава II",
+        "files": [
+          "pushkin-02.html"
+        ]
+      },
+      {
+        "title": "Глава III",
+        "files": [
+          "pushkin-03.html"
+        ]
+      },
+      {
+        "title": "Глава IV",
+        "files": [
+          "pushkin-04.html"
+        ]
+      },
+      {
+        "title": "Глава V",
+        "files": [
+          "pushkin-05.html"
+        ]
+      },
+      {
+        "title": "Глава VI",
+        "files": [
+          "pushkin-06.html"
+        ]
+      },
+      {
+        "title": "Заключение",
+        "files": [
+          "pushkin-07.html"
+        ]
+      }
+    ],
+    "credits": "Повесть в шести главах с заключением. Текст Викитеки. Портрет работы Ореста Кипренского. Общественное достояние."
+  },
+  {
+    "id": 710125000003,
+    "source": "AMURATSU_STARTER_BOOKS",
+    "title": "Alice’s Adventures in Wonderland",
+    "altTitles": [
+      "Алиса в Стране чудес",
+      "Alice in Wonderland"
+    ],
+    "author": "Lewis Carroll",
+    "url": "https://standardebooks.org/ebooks/lewis-carroll/alices-adventures-in-wonderland/john-tenniel",
+    "cover": "alice.jpg",
+    "chapters": [
+      {
+        "title": "Down the Rabbit-Hole",
+        "files": [
+          "alice-01.html"
+        ]
+      },
+      {
+        "title": "The Pool of Tears",
+        "files": [
+          "alice-02.html"
+        ]
+      },
+      {
+        "title": "A Caucus-Race and a Long Tale",
+        "files": [
+          "alice-03.html"
+        ]
+      },
+      {
+        "title": "The Rabbit Sends in a Little Bill",
+        "files": [
+          "alice-04.html"
+        ]
+      },
+      {
+        "title": "Advice from a Caterpillar",
+        "files": [
+          "alice-05.html"
+        ]
+      },
+      {
+        "title": "Pig and Pepper",
+        "files": [
+          "alice-06.html"
+        ]
+      },
+      {
+        "title": "A Mad Tea-Party",
+        "files": [
+          "alice-07.html"
+        ]
+      },
+      {
+        "title": "The Queen’s Croquet-Ground",
+        "files": [
+          "alice-08.html"
+        ]
+      },
+      {
+        "title": "The Mock Turtle’s Story",
+        "files": [
+          "alice-09.html"
+        ]
+      },
+      {
+        "title": "The Lobster Quadrille",
+        "files": [
+          "alice-10.html"
+        ]
+      },
+      {
+        "title": "Who Stole the Tarts?",
+        "files": [
+          "alice-11.html"
+        ]
+      },
+      {
+        "title": "Alice’s Evidence",
+        "files": [
+          "alice-12.html"
+        ]
+      }
+    ],
+    "credits": "Complete text in English from Standard Ebooks. Illustrations omitted. Text and original cover artwork are in the public domain."
+  },
+  {
+    "id": 710125000004,
+    "source": "AMURATSU_STARTER_ANIME",
+    "title": "Namakura Gatana",
+    "altTitles": [
+      "Тупой меч",
+      "Намакура Гатана",
+      "The Dull Sword"
+    ],
+    "author": "Jun’ichi Kōuchi",
+    "url": "https://commons.wikimedia.org/wiki/File:Kouichi_Jun%27ichi_-_Namakura_Gatana_%281917%29_-_4-minute_restored_version.webm",
+    "cover": "anime.jpg",
+    "chapters": [
+      {
+        "title": null,
+        "files": [
+          "anime.mp4"
+        ]
+      }
+    ],
+    "credits": "Restored Japanese silent animated short (1917). Wikimedia Commons, public domain. Transcoded for offline playback."
+  },
+  {
+    "id": 710125000005,
+    "source": "AMURATSU_STARTER_ANIME",
+    "title": "Kobu-tori Jiisan",
+    "altTitles": [
+      "Старик и шишка",
+      "Kobutori Jiisan"
+    ],
+    "author": "Chūzō Aoji and Yasuji Murata",
+    "url": "https://commons.wikimedia.org/wiki/File:Kobu-tori_Jiisan_%281929%29.webm",
+    "cover": "anime2.jpg",
+    "chapters": [
+      {
+        "title": null,
+        "files": [
+          "anime2.mp4"
+        ]
+      }
+    ],
+    "credits": "Japanese animated short (1929). Wikimedia Commons, public domain. Transcoded as a silent video."
+  },
+  {
+    "id": 710125000006,
+    "source": "AMURATSU_STARTER_MOVIES",
+    "title": "L’Arroseur arrosé",
+    "altTitles": [
+      "Политый поливальщик",
+      "The Sprinkler Sprinkled"
+    ],
+    "author": "Louis Lumière",
+    "url": "https://commons.wikimedia.org/wiki/File:Le_Jardinier_%28l%27Arroseur_arros%C3%A9%29_%281895%29.webm",
+    "cover": "gardener.jpg",
+    "chapters": [
+      {
+        "title": null,
+        "files": [
+          "gardener.mp4"
+        ]
+      }
+    ],
+    "credits": "French silent comedy short (1895). Wikimedia Commons, public domain. Transcoded for offline playback."
+  },
+  {
+    "id": 710125000007,
+    "source": "AMURATSU_STARTER_MOVIES",
+    "title": "Le Débarquement du congrès de photographie à Lyon",
+    "altTitles": [
+      "Прибытие делегатов фотоконгресса в Лион"
+    ],
+    "author": "Louis Lumière",
+    "url": "https://commons.wikimedia.org/wiki/File:Le_D%C3%A9barquement_du_Congr%C3%A8s_de_Photographie_%C3%A0_Lyon_%281895%29.webm",
+    "cover": "congress.jpg",
+    "chapters": [
+      {
+        "title": null,
+        "files": [
+          "congress.mp4"
+        ]
+      }
+    ],
+    "credits": "Short documentary from 1895. Wikimedia Commons, public domain. Transcoded for offline playback."
+  },
+  {
+    "id": 710125000008,
+    "source": "AMURATSU_STARTER_SERIES",
+    "title": "Caminandes",
+    "altTitles": [
+      "Каминандес"
+    ],
+    "author": "Blender Foundation",
+    "url": "https://commons.wikimedia.org/wiki/File:Caminandes_3_-_Llamigos_-_Blender_Animated_Short.webm",
+    "cover": "caminandes1.jpg",
+    "chapters": [
+      {
+        "title": "Llama Drama",
+        "files": [
+          "caminandes1.mp4"
+        ]
+      },
+      {
+        "title": "Gran Dillama",
+        "files": [
+          "caminandes2.mp4"
+        ]
+      },
+      {
+        "title": "Llamigos",
+        "files": [
+          "caminandes3.mp4"
+        ]
+      }
+    ],
+    "credits": "<p>All three episodes. Videos were transcoded for offline playback.</p><p>Llama Drama — Pablo Vazquez, Beorn Leonard, Francesco Siddi, and Jan Morgenstern. <a href=\"https://commons.wikimedia.org/wiki/File:Caminandes-_Llama_Drama_-_Short_Movie.ogv\">Wikimedia Commons</a> · <a href=\"https://creativecommons.org/licenses/by/3.0/\">CC BY 3.0</a>.</p><p>Gran Dillama — (CC) caminandes.com. <a href=\"https://commons.wikimedia.org/wiki/File:Caminandes_-_Gran_Dillama_-_Blender_Foundation%27s_new_Open_Movie.webm\">Wikimedia Commons</a> · <a href=\"https://creativecommons.org/licenses/by-sa/3.0/\">CC BY-SA 3.0</a>.</p><p>Llamigos — Blender. <a href=\"https://commons.wikimedia.org/wiki/File:Caminandes_3_-_Llamigos_-_Blender_Animated_Short.webm\">Wikimedia Commons</a> · <a href=\"https://creativecommons.org/licenses/by/3.0/\">CC BY 3.0</a>.</p>"
+  }
+]

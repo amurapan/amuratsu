@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="starter_home_title">Ready to open</string>
+    <string name="starter_manga">Classic manga</string>
+    <string name="starter_books">Classic books</string>
+    <string name="starter_anime">Classic anime</string>
+    <string name="starter_movies">Classic films</string>
+    <string name="starter_series">Open series</string>
+    <string name="starter_offline">Built in · available offline</string>
+    <string name="starter_open_package">Open collection</string>
     <string name="source_groups_title">Extension Groups</string>
     <string name="source_groups_save_current">Save current state as group</string>
     <string name="source_groups_import">Import</string>

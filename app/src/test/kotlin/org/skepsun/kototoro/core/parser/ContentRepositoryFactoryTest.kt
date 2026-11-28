@@ -111,6 +111,7 @@ class ContentRepositoryFactoryTest {
 			builtinContentRepositoryProvider = BuiltinContentRepositoryProvider(
 				localMangaRepository = localContentRepository,
 				localNovelRepository = localNovelRepository,
+				starterCatalog = mockk(),
 			),
 			parserContentRepositoryProvider = parserContentRepositoryProvider,
 			kotatsuContentRepositoryProvider = kotatsuContentRepositoryProvider,

@@ -1,5 +1,7 @@
 package org.skepsun.kototoro.settings.sources.unified
 
+import org.skepsun.kototoro.core.parser.starter.StarterSource
+
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -444,7 +446,12 @@ fun UnifiedSourcesRoute(
         onDeleteRepository = { item -> activeDialog = UnifiedSourcesDialogState.DeleteRepository(item) },
         onEditRepository = { item -> activeDialog = UnifiedSourcesDialogState.EditRepository(item) },
         onUpdateAllPackages = viewModel::onUpdateAllPackagesAction,
-        onPackagePrimaryAction = viewModel::onPackagePrimaryAction,
+        onPackagePrimaryAction = { packageId ->
+            val source = (state as? UnifiedSourcesUiState.Ready)?.allSources?.firstOrNull {
+                it.packageId == packageId && it.source is StarterSource
+            }
+            if (source == null) viewModel.onPackagePrimaryAction(packageId) else onBrowseSource(source)
+        },
         onPackageSystemInstall = viewModel::installPackageWithSystemInstaller,
         onPackageUninstall = viewModel::uninstallPackage,
         onPackageCancelInstall = viewModel::cancelPackageInstall,
