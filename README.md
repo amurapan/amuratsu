@@ -30,7 +30,7 @@ and **Material You** design.
 
 | Platform | Release | Package |
 | :--- | :--- | :--- |
-| Android 8.0+ | [0.1.7-alpha.3](https://github.com/amurapan/amuratsu/releases/tag/v0.1.7-alpha.3) | ARM64 APK for most phones or the Universal APK for other supported devices |
+| Android 8.0+ | [0.1.7-alpha.4](https://github.com/amurapan/amuratsu/releases/tag/v0.1.7-alpha.4) | ARM64 APK for most phones or the Universal APK for other supported devices |
 | Windows x64 | [0.1.3-alpha.1](https://github.com/amurapan/amuratsu/releases/tag/v0.1.3-alpha.1) | MSI installer or portable ZIP. Extract the ZIP before opening Amuratsu. |
 | Linux x64 | [0.1.6-alpha.1](https://github.com/amurapan/amuratsu/releases/tag/v0.1.6-alpha.1) | DEB package, tested on Ubuntu 24.04. Install it with `sudo apt install ./amuratsu_0.1.6_amd64.deb` to fetch the video player dependency. |
 
