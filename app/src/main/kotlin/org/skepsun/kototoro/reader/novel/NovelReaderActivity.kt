@@ -2999,7 +2999,8 @@ class NovelReaderActivity :
                 if (!isLegadoSource) {
                     // Non-Legado sources: check for EPUB type
                     val pages = chapterRepo.getPages(chapter)
-                    prefetchedPages = pages
+                    // A repository can provide the chapter as HTML without returning image pages.
+                    prefetchedPages = pages.takeIf { it.isNotEmpty() }
 
                     android.util.Log.d("NovelReaderActivity", "Got ${pages.size} pages, first page preview: ${pages.firstOrNull()?.preview}, url: ${pages.firstOrNull()?.url?.take(100)}")
 
