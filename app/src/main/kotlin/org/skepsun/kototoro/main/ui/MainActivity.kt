@@ -1,8 +1,6 @@
 package org.skepsun.kototoro.main.ui
 
-import android.Manifest
 import android.content.Intent
-import android.content.pm.PackageManager.PERMISSION_GRANTED
 import android.os.Build
 import android.os.Bundle
 import android.view.View
@@ -15,8 +13,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import androidx.core.net.toUri
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -779,26 +775,11 @@ class MainActivity : BaseComposeActivity(), SystemInstallLauncherHost {
             }
             lifecycle.withResumed {
                 ContentPrefetchService.prefetchLast(this@MainActivity)
-                requestNotificationsPermission()
                 backupStartupCoordinator.startOnFirstLaunch(lifecycleScope)
             }
         }
     } catch (e: IllegalStateException) {
         e.printStackTrace()
-    }
-
-    private fun requestNotificationsPermission() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU && ContextCompat.checkSelfPermission(
-                this,
-                Manifest.permission.POST_NOTIFICATIONS,
-            ) != PERMISSION_GRANTED
-        ) {
-            ActivityCompat.requestPermissions(
-                this,
-                arrayOf(Manifest.permission.POST_NOTIFICATIONS),
-                1,
-            )
-        }
     }
 
     private fun setNavbarPinned(isPinned: Boolean) = Unit

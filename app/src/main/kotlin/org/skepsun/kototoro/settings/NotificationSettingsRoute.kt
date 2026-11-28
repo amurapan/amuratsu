@@ -1,16 +1,27 @@
 package org.skepsun.kototoro.settings
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager.PERMISSION_GRANTED
 import android.media.RingtoneManager
+import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.LocalContext
+import androidx.core.content.ContextCompat
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.compose.LifecycleEventEffect
 import org.skepsun.kototoro.R
 import org.skepsun.kototoro.core.prefs.AppSettings
 import org.skepsun.kototoro.core.prefs.observeAsState
@@ -28,6 +39,14 @@ fun NotificationSettingsRoute(
     onNotificationVibrateClick: () -> Unit,
 ) {
     val context = LocalContext.current
+    fun hasNotificationPermission(): Boolean = Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU ||
+        ContextCompat.checkSelfPermission(context, Manifest.permission.POST_NOTIFICATIONS) == PERMISSION_GRANTED
+    var permissionGranted by remember(context) { mutableStateOf(hasNotificationPermission()) }
+    LifecycleEventEffect(Lifecycle.Event.ON_RESUME) { permissionGranted = hasNotificationPermission() }
+    val requestPermission = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
+        permissionGranted = granted
+        if (granted) settings.isTrackerNotificationsEnabled = true
+    }
     val isTrackerNotificationsEnabled = settings.observeAsState(
         AppSettings.KEY_TRACKER_NOTIFICATIONS,
     ) { isTrackerNotificationsEnabled }.value
@@ -43,17 +62,23 @@ fun NotificationSettingsRoute(
         ?: context.getString(R.string.silent)
 
     val state = NotificationSettingsUiState(
-        isTrackerNotificationsEnabled = isTrackerNotificationsEnabled,
+        isTrackerNotificationsEnabled = isTrackerNotificationsEnabled && permissionGranted,
         ringtoneSummary = ringtoneSummary,
         isNotificationLightEnabled = notificationLight,
-        isNotificationsInfoVisible = !isTrackerNotificationsEnabled,
+        isNotificationsInfoVisible = !isTrackerNotificationsEnabled || !permissionGranted,
     )
 
     NotificationSettingsScreen(
         notificationsTitle = context.getString(R.string.notifications),
         state = state,
         snackbarHostState = snackbarHostState,
-        onTrackerNotificationsEnabledChange = { settings.isTrackerNotificationsEnabled = it },
+        onTrackerNotificationsEnabledChange = { enabled ->
+            if (enabled && !permissionGranted && Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                requestPermission.launch(Manifest.permission.POST_NOTIFICATIONS)
+            } else {
+                settings.isTrackerNotificationsEnabled = enabled
+            }
+        },
         onNotificationSoundClick = onNotificationSoundClick,
         onNotificationVibrateClick = onNotificationVibrateClick,
         onNotificationLightChange = { settings.notificationLight = it },
