@@ -265,10 +265,6 @@ class AppSettings @Inject constructor(@ApplicationContext private val context: C
         }
     }
 
-    var hasSeenPluginWelcome: Boolean
-        get() = prefs.getBoolean("has_seen_plugin_welcome", false)
-        set(value) = prefs.edit { putBoolean("has_seen_plugin_welcome", value) }
-
     /**
      * 外部备份导入后的「同名作品实体合并」失败过、尚未成功重跑。
      *

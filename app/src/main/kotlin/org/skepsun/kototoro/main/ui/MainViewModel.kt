@@ -28,7 +28,6 @@ import org.skepsun.kototoro.core.prefs.observeAsStateFlow
 import org.skepsun.kototoro.core.ui.BaseViewModel
 import org.skepsun.kototoro.core.util.ext.MutableEventFlow
 import org.skepsun.kototoro.core.util.ext.call
-import org.skepsun.kototoro.explore.data.ContentSourcesRepository
 import org.skepsun.kototoro.history.data.HistoryRepository
 import org.skepsun.kototoro.main.domain.ReadingResumeEnabledUseCase
 import org.skepsun.kototoro.parsers.model.Content
@@ -49,12 +48,10 @@ class MainViewModel @Inject constructor(
     trackingRepository: TrackingRepository,
     private val settings: AppSettings,
     readingResumeEnabledUseCase: ReadingResumeEnabledUseCase,
-    private val sourcesRepository: ContentSourcesRepository,
     private val contentDataRepository: ContentDataRepository,
 ) : BaseViewModel() {
 
     val onOpenReader = MutableEventFlow<MainReaderRequest>()
-    val onFirstStart = MutableEventFlow<Unit>()
 
     private val _topBarHeightPx = MutableStateFlow(0)
     val topBarHeightPx = _topBarHeightPx.asStateFlow()
@@ -141,11 +138,6 @@ class MainViewModel @Inject constructor(
     init {
         launchJob {
             appUpdateRepository.fetchUpdate()
-        }
-        launchJob(Dispatchers.Default) {
-            if (sourcesRepository.isSetupRequired()) {
-                onFirstStart.call(Unit)
-            }
         }
     }
 

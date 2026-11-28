@@ -321,7 +321,6 @@ class WelcomeViewModel @Inject constructor(
     )
 
     init {
-        settings.hasSeenPluginWelcome = true
         refreshState()
         launchJob(Dispatchers.Default) {
             GlobalExtensionManager.contentSources.collect {

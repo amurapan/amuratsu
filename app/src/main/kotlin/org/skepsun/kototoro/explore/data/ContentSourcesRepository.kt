@@ -1309,13 +1309,6 @@ class ContentSourcesRepository @Inject constructor(
         traceBrowseSources { "broken source visibility migrated broken=${broken.size} showBroken=${settings.isShowBrokenSources}" }
     }
 
-    suspend fun isSetupRequired(): Boolean {
-        // Built-in packages are usable from Home. A disabled starter row is still an explicit setup choice.
-        assimilateNewSources(force = true)
-        if (dao.findAll().any { row -> StarterSource.entries.any { it.name == row.source } }) return false
-        return !settings.hasSeenPluginWelcome || (settings.sourcesVersion == 0 && dao.findAllEnabledNames().isEmpty())
-    }
-
     suspend fun setIsPinned(sources: Collection<ContentSource>, isPinned: Boolean): ReversibleHandle {
         setSourcesPinnedImpl(sources, isPinned)
         return ReversibleHandle {

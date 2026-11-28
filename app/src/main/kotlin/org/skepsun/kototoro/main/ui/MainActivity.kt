@@ -466,7 +466,6 @@ class MainActivity : BaseComposeActivity(), SystemInstallLauncherHost {
                 state = request.state,
             )
         }
-        viewModel.onFirstStart.observeEvent(this) { this.router.showWelcomeSheet() }
         viewModel.isBottomNavPinned.observe(this, ::setNavbarPinned)
 
         if (savedInstanceState == null) {
