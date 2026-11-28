@@ -30,7 +30,7 @@ and **Material You** design.
 
 | Platform | Release | Package |
 | :--- | :--- | :--- |
-| Android 8.0+ | [0.1.7-alpha.2](https://github.com/amurapan/amuratsu/releases/tag/v0.1.7-alpha.2) | ARM64 APK for most phones or the Universal APK for other supported devices |
+| Android 8.0+ | [0.1.7-alpha.3](https://github.com/amurapan/amuratsu/releases/tag/v0.1.7-alpha.3) | ARM64 APK for most phones or the Universal APK for other supported devices |
 | Windows x64 | [0.1.3-alpha.1](https://github.com/amurapan/amuratsu/releases/tag/v0.1.3-alpha.1) | MSI installer or portable ZIP. Extract the ZIP before opening Amuratsu. |
 | Linux x64 | [0.1.6-alpha.1](https://github.com/amurapan/amuratsu/releases/tag/v0.1.6-alpha.1) | DEB package, tested on Ubuntu 24.04. Install it with `sudo apt install ./amuratsu_0.1.6_amd64.deb` to fetch the video player dependency. |
 
@@ -50,15 +50,14 @@ and **Material You** design.
 | Light novels, novels, and fanfiction | Text reader, appearance settings, and EPUB/TXT import |
 | Anime and video | Video player, episodes, subtitles, and audio track selection |
 
-Content availability and individual features depend on the source and file format.
-The app does not include media or subscriptions.
+On Android, five built-in collections offer eight works for offline reading and viewing. They include classic manga, books, anime, films, and an animated series. See the [starter collection credits](app/src/main/assets/starter/credits.md). Additional content and features depend on the source and file format.
 
 ## Getting started
 
 1. Download the package for your platform from [Downloads](#downloads)
    or [build a local preview](#build).
-2. On Android, open source setup from Welcome, Home, or Search. On desktop, open **More → Extensions and repositories → Repositories**. Choose and add a catalog.
-3. On Android, the catalog's **Packages** open after you add it. Filter extensions by language and install a source. You can also import local files from Home.
+2. On Android, pick a collection under **Ready to open** on Home. The five collections work offline as soon as you install the app.
+3. To find more content, open **Extensions and repositories → Repositories** and add a catalog, then choose a source in **Packages**. On desktop, open extension management from **More**. You can also import local files.
 4. Search all formats and use **Continue** on Home to return to your saved position.
 
 The local Android preview targets **ARM64**. The public Android APK uses Amuratsu’s own app ID and signing key.
